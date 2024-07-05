@@ -1,13 +1,14 @@
-property pLockLocZ, pDefLocX, pDefLocY, pClsList, pModalID
+property pLockLocZ, pDefLocX, pDefLocY, pClsList, pModalID, pLastEventData
 
 on construct me
+  pLastEventData = [:]
   pLockLocZ = 0
   pDefLocX = getIntVariable("window.default.locx", 100)
   pDefLocY = getIntVariable("window.default.locy", 100)
   me.pItemList = []
   me.pHideList = []
   me.setProperty(#defaultLocZ, getIntVariable("window.default.locz", 0))
-  me.pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + getVariableValue("window.boundary.limit")
+  me.pBoundary = rect(0, 0, (the stage).rect.width, (the stage).rect.height) + getVariableValue("window.boundary.limit")
   me.pInstanceClass = getClassVariable("window.instance.class")
   pClsList = [:]
   pModalID = #modal
@@ -29,6 +30,8 @@ on create me, tid, tLayout, tLocX, tLocY, tSpecial
   case tSpecial of
     #modal:
       return me.modal(tid, tLayout)
+    #modalcorner:
+      return me.modal(tid, tLayout, #corner)
   end case
   if voidp(tLayout) then
     tLayout = "empty.window"
@@ -56,7 +59,7 @@ on create me, tid, tLayout, tLocX, tLocY, tSpecial
   end if
   tItem = getObjectManager().create(tid, me.pInstanceClass)
   if not tItem then
-    return error(me, "Failed to create window object:" && tid, #create)
+    return error(me, "Failed to create window object:" && tid, #create, #major)
   end if
   tProps = [:]
   tProps[#locX] = tX
@@ -148,6 +151,21 @@ on Activate me, tid
   return me.get(tid).setActive()
 end
 
+on reOrder me, tNewOrder
+  if tNewOrder = me.pItemList then
+    return 1
+  end if
+  me.pItemList = tNewOrder
+  me.pAvailableLocZ = me.pDefaultLocZ
+  repeat with tCurrID in me.pItemList
+    tWndObj = me.get(tCurrID)
+    repeat with tSpr in tWndObj.getProperty(#spriteList)
+      tSpr.locZ = me.pAvailableLocZ
+      me.pAvailableLocZ = me.pAvailableLocZ + 1
+    end repeat
+  end repeat
+end
+
 on deactivate me, tid
   if me.exists(tid) then
     if not me.get(tid).getProperty(#modal) then
@@ -170,27 +188,45 @@ on unlock me
   return 1
 end
 
-on modal me, tid, tLayout
+on modal me, tid, tLayout, tPosition
+  if voidp(tPosition) then
+    tPosition = #center
+  end if
   if not me.create(tid, tLayout) then
     return 0
   end if
   tWndObj = me.get(tid)
-  tWndObj.center()
+  case tPosition of
+    #center:
+      tWndObj.center()
+    #corner:
+      tWndObj.moveTo(0, 0)
+  end case
   tWndObj.lock()
   tWndObj.setProperty(#modal, 1)
   if not me.exists(pModalID) then
     if me.create(pModalID, "modal.window") then
       tModal = me.get(pModalID)
       tModal.moveTo(0, 0)
-      tModal.resizeTo((the stage).sourceRect.width, (the stage).sourceRect.height)
+      tModal.resizeTo((the stage).rect.width, (the stage).rect.height)
       tModal.lock()
       tModal.getElement("modal").setProperty(#blend, 40)
     else
-      error(me, "Failed to create modal window layer!", #modal)
+      error(me, "Failed to create modal window layer!", #modal, #major)
     end if
   end if
   the keyboardFocusSprite = 0
   me.pActiveItem = tid
   me.Activate(tid)
   return 1
+end
+
+on registerWindowEvent me, tTitle, tSprID, tEvent
+  pLastEventData[#title] = tTitle
+  pLastEventData[#sprite] = tSprID
+  pLastEventData[#event] = tEvent
+end
+
+on getLastEvent me
+  return pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-" & pLastEventData[#event]
 end

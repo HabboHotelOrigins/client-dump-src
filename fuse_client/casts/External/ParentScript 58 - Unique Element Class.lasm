@@ -315,7 +315,7 @@ on moveBy me, tOffX, tOffY
   [ 36] ret
 end
 
-on resizeTo me, tX, tY
+on resizeTo me, tX, tY, tForcedTag
   [  0] getparam 1 .............................. <tX>
   [  2] getprop 35 .............................. <pSprite>
   [  4] getobjprop 42 ........................... <pSprite.width>
@@ -329,14 +329,15 @@ on resizeTo me, tX, tY
   [ 18] getparam 0 .............................. <me>
   [ 20] getlocal 0 .............................. <tOffX>
   [ 22] getlocal 1 .............................. <tOffY>
-  [ 24] pusharglist 3 ........................... <me, tOffX, tOffY>
-  [ 26] objcall 1354 ............................ <me.resizeBy(tOffX, tOffY)>
-  [ 29] pusharglistnoret 1 ...................... <me.resizeBy(tOffX, tOffY)>
-  [ 31] extcall 25 .............................. return me.resizeBy(tOffX, tOffY)
-  [ 33] ret
+  [ 24] getparam 3 .............................. <tForcedTag>
+  [ 26] pusharglist 4 ........................... <me, tOffX, tOffY, tForcedTag>
+  [ 28] objcall 1354 ............................ <me.resizeBy(tOffX, tOffY, tForcedTag)>
+  [ 31] pusharglistnoret 1 ...................... <me.resizeBy(tOffX, tOffY, tForcedTag)>
+  [ 33] extcall 25 .............................. return me.resizeBy(tOffX, tOffY, tForcedTag)
+  [ 35] ret
 end
 
-on resizeBy me, tOffH, tOffV
+on resizeBy me, tOffH, tOffV, tForcedTag
   [  0] getparam 1 .............................. <tOffH>
   [  2] pushzero ................................ <0>
   [  3] nteq .................................... <tOffH <> 0>
@@ -344,7 +345,7 @@ on resizeBy me, tOffH, tOffV
   [  6] pushzero ................................ <0>
   [  7] nteq .................................... <tOffV <> 0>
   [  8] or ...................................... <(tOffH <> 0) or (tOffV <> 0)>
-  [  9] jmpifz [177] ............................ if (tOffH <> 0) or (tOffV <> 0) then
+  [  9] jmpifz [233] ............................ if (tOffH <> 0) or (tOffV <> 0) then
   [ 12] getprop 1411 ............................ <pScaleH>
   [ 15] peek 0 .................................. case pScaleH of
   [ 17] pushsymb 1232 ........................... <#move>
@@ -355,7 +356,7 @@ on resizeBy me, tOffH, tOffV
   [ 28] pushzero ................................ <0>
   [ 29] pusharglistnoret 3 ...................... <me, tOffH, 0>
   [ 31] objcall 979 ............................. me.moveBy(tOffH, 0)
-  [ 34] jmp [ 82]
+  [ 34] jmp [110]
   [ 37] peek 0
   [ 39] pushsymb 1235 ........................... <#scale>
   [ 42] eq
@@ -366,11 +367,11 @@ on resizeBy me, tOffH, tOffV
   [ 52] getparam 1 .............................. <tOffH>
   [ 54] add ..................................... <pSprite.width + tOffH>
   [ 55] setobjprop 42 ........................... pSprite.width = pSprite.width + tOffH
-  [ 57] jmp [ 82]
+  [ 57] jmp [110]
   [ 60] peek 0
   [ 62] pushsymb 506 ............................ <#center>
   [ 65] eq
-  [ 66] jmpifz [ 82] ............................ (case) #center:
+  [ 66] jmpifz [ 85] ............................ (case) #center:
   [ 69] getparam 0 .............................. <me>
   [ 71] getparam 1 .............................. <tOffH>
   [ 73] pushint8 2 .............................. <2>
@@ -378,51 +379,77 @@ on resizeBy me, tOffH, tOffV
   [ 76] pushzero ................................ <0>
   [ 77] pusharglistnoret 3 ...................... <me, tOffH / 2, 0>
   [ 79] objcall 979 ............................. me.moveBy(tOffH / 2, 0)
-  [ 82] pop 1 ................................... end case
-  [ 84] getprop 1412 ............................ <pScaleV>
-  [ 87] peek 0 .................................. case pScaleV of
-  [ 89] pushsymb 1232 ........................... <#move>
-  [ 92] eq
-  [ 93] jmpifz [109] ............................ (case) #move:
-  [ 96] getparam 0 .............................. <me>
-  [ 98] pushzero ................................ <0>
-  [ 99] getparam 2 .............................. <tOffV>
-  [101] pusharglistnoret 3 ...................... <me, 0, tOffV>
-  [103] objcall 979 ............................. me.moveBy(0, tOffV)
-  [106] jmp [154]
-  [109] peek 0
-  [111] pushsymb 1235 ........................... <#scale>
-  [114] eq
-  [115] jmpifz [132] ............................ (case) #scale:
-  [118] getprop 35 .............................. <pSprite>
-  [120] getprop 35 .............................. <pSprite>
-  [122] getobjprop 43 ........................... <pSprite.height>
-  [124] getparam 2 .............................. <tOffV>
-  [126] add ..................................... <pSprite.height + tOffV>
-  [127] setobjprop 43 ........................... pSprite.height = pSprite.height + tOffV
-  [129] jmp [154]
-  [132] peek 0
-  [134] pushsymb 506 ............................ <#center>
-  [137] eq
-  [138] jmpifz [154] ............................ (case) #center:
-  [141] getparam 0 .............................. <me>
-  [143] pushzero ................................ <0>
-  [144] getparam 2 .............................. <tOffV>
-  [146] pushint8 2 .............................. <2>
-  [148] div ..................................... <tOffV / 2>
-  [149] pusharglistnoret 3 ...................... <me, 0, tOffV / 2>
-  [151] objcall 979 ............................. me.moveBy(0, tOffV / 2)
-  [154] pop 1 ................................... end case
-  [156] getprop 35 .............................. <pSprite>
-  [158] getobjprop 42 ........................... <pSprite.width>
-  [160] setprop 497 ............................. pwidth = pSprite.width
-  [163] getprop 35 .............................. <pSprite>
-  [165] getobjprop 43 ........................... <pSprite.height>
-  [167] setprop 502 ............................. pheight = pSprite.height
-  [170] getparam 0 .............................. <me>
-  [172] pusharglistnoret 1 ...................... <me>
-  [174] objcall 447 ............................. me.render()
-  [177] ret
+  [ 82] jmp [110]
+  [ 85] peek 0
+  [ 87] pushsymb 1229 ........................... <#fixed>
+  [ 90] eq
+  [ 91] jmpifz [110] ............................ (case) #fixed:
+  [ 94] getparam 3 .............................. <tForcedTag>
+  [ 96] jmpifz [110] ............................ if tForcedTag then
+  [ 99] getprop 35 .............................. <pSprite>
+  [101] getprop 35 .............................. <pSprite>
+  [103] getobjprop 42 ........................... <pSprite.width>
+  [105] getparam 1 .............................. <tOffH>
+  [107] add ..................................... <pSprite.width + tOffH>
+  [108] setobjprop 42 ........................... pSprite.width = pSprite.width + tOffH
+  [110] pop 1 ................................... end case
+  [112] getprop 1412 ............................ <pScaleV>
+  [115] peek 0 .................................. case pScaleV of
+  [117] pushsymb 1232 ........................... <#move>
+  [120] eq
+  [121] jmpifz [137] ............................ (case) #move:
+  [124] getparam 0 .............................. <me>
+  [126] pushzero ................................ <0>
+  [127] getparam 2 .............................. <tOffV>
+  [129] pusharglistnoret 3 ...................... <me, 0, tOffV>
+  [131] objcall 979 ............................. me.moveBy(0, tOffV)
+  [134] jmp [210]
+  [137] peek 0
+  [139] pushsymb 1235 ........................... <#scale>
+  [142] eq
+  [143] jmpifz [160] ............................ (case) #scale:
+  [146] getprop 35 .............................. <pSprite>
+  [148] getprop 35 .............................. <pSprite>
+  [150] getobjprop 43 ........................... <pSprite.height>
+  [152] getparam 2 .............................. <tOffV>
+  [154] add ..................................... <pSprite.height + tOffV>
+  [155] setobjprop 43 ........................... pSprite.height = pSprite.height + tOffV
+  [157] jmp [210]
+  [160] peek 0
+  [162] pushsymb 506 ............................ <#center>
+  [165] eq
+  [166] jmpifz [185] ............................ (case) #center:
+  [169] getparam 0 .............................. <me>
+  [171] pushzero ................................ <0>
+  [172] getparam 2 .............................. <tOffV>
+  [174] pushint8 2 .............................. <2>
+  [176] div ..................................... <tOffV / 2>
+  [177] pusharglistnoret 3 ...................... <me, 0, tOffV / 2>
+  [179] objcall 979 ............................. me.moveBy(0, tOffV / 2)
+  [182] jmp [210]
+  [185] peek 0
+  [187] pushsymb 1229 ........................... <#fixed>
+  [190] eq
+  [191] jmpifz [210] ............................ (case) #fixed:
+  [194] getparam 3 .............................. <tForcedTag>
+  [196] jmpifz [210] ............................ if tForcedTag then
+  [199] getprop 35 .............................. <pSprite>
+  [201] getprop 35 .............................. <pSprite>
+  [203] getobjprop 43 ........................... <pSprite.height>
+  [205] getparam 2 .............................. <tOffV>
+  [207] add ..................................... <pSprite.height + tOffV>
+  [208] setobjprop 43 ........................... pSprite.height = pSprite.height + tOffV
+  [210] pop 1 ................................... end case
+  [212] getprop 35 .............................. <pSprite>
+  [214] getobjprop 42 ........................... <pSprite.width>
+  [216] setprop 497 ............................. pwidth = pSprite.width
+  [219] getprop 35 .............................. <pSprite>
+  [221] getobjprop 43 ........................... <pSprite.height>
+  [223] setprop 502 ............................. pheight = pSprite.height
+  [226] getparam 0 .............................. <me>
+  [228] pusharglistnoret 1 ...................... <me>
+  [230] objcall 447 ............................. me.render()
+  [233] ret
 end
 
 on flipH me
@@ -432,42 +459,45 @@ on flipH me
   [  8] getobjprop 43 ........................... <pimage.height>
   [ 10] getprop 496 ............................. <pimage>
   [ 13] getobjprop 540 .......................... <pimage.depth>
-  [ 16] pusharglist 3 ........................... <pimage.width, pimage.height, pimage.depth>
-  [ 18] extcall 500 ............................. <image(pimage.width, pimage.height, pimage.depth)>
-  [ 21] setlocal 0 .............................. tImage = image(pimage.width, pimage.height, pimage.depth)
-  [ 23] getprop 496 ............................. <pimage>
-  [ 26] getobjprop 42 ........................... <pimage.width>
-  [ 28] pushzero ................................ <0>
-  [ 29] pusharglist 2 ........................... <pimage.width, 0>
-  [ 31] extcall 508 ............................. <point(pimage.width, 0)>
-  [ 34] pushzero ................................ <0>
-  [ 35] pushzero ................................ <0>
-  [ 36] pusharglist 2 ........................... <0, 0>
-  [ 38] extcall 508 ............................. <point(0, 0)>
-  [ 41] pushzero ................................ <0>
-  [ 42] getprop 496 ............................. <pimage>
-  [ 45] getobjprop 43 ........................... <pimage.height>
-  [ 47] pusharglist 2 ........................... <0, pimage.height>
-  [ 49] extcall 508 ............................. <point(0, pimage.height)>
-  [ 52] getprop 496 ............................. <pimage>
-  [ 55] getobjprop 42 ........................... <pimage.width>
-  [ 57] getprop 496 ............................. <pimage>
-  [ 60] getobjprop 43 ........................... <pimage.height>
-  [ 62] pusharglist 2 ........................... <pimage.width, pimage.height>
-  [ 64] extcall 508 ............................. <point(pimage.width, pimage.height)>
-  [ 67] pusharglist 4 ........................... <[point(pimage.width, 0), point(0, 0), point(0, pimage.height), point(pimage.width, pimage.height)]>
-  [ 69] pushlist ................................ <[point(pimage.width, 0), point(0, 0), point(0, pimage.height), point(pimage.width, pimage.height)]>
-  [ 70] setlocal 1 .............................. tQuad = [point(pimage.width, 0), point(0, 0), point(0, pimage.height), point(pimage.width, pimage.height)]
-  [ 72] getlocal 0 .............................. <tImage>
-  [ 74] getprop 496 ............................. <pimage>
-  [ 77] getlocal 1 .............................. <tQuad>
-  [ 79] getprop 496 ............................. <pimage>
-  [ 82] getobjprop 555 .......................... <pimage.rect>
-  [ 85] pusharglistnoret 4 ...................... <tImage, pimage, tQuad, pimage.rect>
-  [ 87] objcall 556 ............................. tImage.copyPixels(pimage, tQuad, pimage.rect)
-  [ 90] getlocal 0 .............................. <tImage>
-  [ 92] setprop 496 ............................. pimage = tImage
-  [ 95] ret
+  [ 16] getparam 0 .............................. <me>
+  [ 18] getchainedprop 496 ...................... <me.pimage>
+  [ 21] getobjprop 571 .......................... <me.pimage.paletteRef>
+  [ 24] pusharglist 4 ........................... <pimage.width, pimage.height, pimage.depth, me.pimage.paletteRef>
+  [ 26] extcall 500 ............................. <image(pimage.width, pimage.height, pimage.depth, me.pimage.paletteRef)>
+  [ 29] setlocal 0 .............................. tImage = image(pimage.width, pimage.height, pimage.depth, me.pimage.paletteRef)
+  [ 31] getprop 496 ............................. <pimage>
+  [ 34] getobjprop 42 ........................... <pimage.width>
+  [ 36] pushzero ................................ <0>
+  [ 37] pusharglist 2 ........................... <pimage.width, 0>
+  [ 39] extcall 508 ............................. <point(pimage.width, 0)>
+  [ 42] pushzero ................................ <0>
+  [ 43] pushzero ................................ <0>
+  [ 44] pusharglist 2 ........................... <0, 0>
+  [ 46] extcall 508 ............................. <point(0, 0)>
+  [ 49] pushzero ................................ <0>
+  [ 50] getprop 496 ............................. <pimage>
+  [ 53] getobjprop 43 ........................... <pimage.height>
+  [ 55] pusharglist 2 ........................... <0, pimage.height>
+  [ 57] extcall 508 ............................. <point(0, pimage.height)>
+  [ 60] getprop 496 ............................. <pimage>
+  [ 63] getobjprop 42 ........................... <pimage.width>
+  [ 65] getprop 496 ............................. <pimage>
+  [ 68] getobjprop 43 ........................... <pimage.height>
+  [ 70] pusharglist 2 ........................... <pimage.width, pimage.height>
+  [ 72] extcall 508 ............................. <point(pimage.width, pimage.height)>
+  [ 75] pusharglist 4 ........................... <[point(pimage.width, 0), point(0, 0), point(0, pimage.height), point(pimage.width, pimage.height)]>
+  [ 77] pushlist ................................ <[point(pimage.width, 0), point(0, 0), point(0, pimage.height), point(pimage.width, pimage.height)]>
+  [ 78] setlocal 1 .............................. tQuad = [point(pimage.width, 0), point(0, 0), point(0, pimage.height), point(pimage.width, pimage.height)]
+  [ 80] getlocal 0 .............................. <tImage>
+  [ 82] getprop 496 ............................. <pimage>
+  [ 85] getlocal 1 .............................. <tQuad>
+  [ 87] getprop 496 ............................. <pimage>
+  [ 90] getobjprop 555 .......................... <pimage.rect>
+  [ 93] pusharglistnoret 4 ...................... <tImage, pimage, tQuad, pimage.rect>
+  [ 95] objcall 556 ............................. tImage.copyPixels(pimage, tQuad, pimage.rect)
+  [ 98] getlocal 0 .............................. <tImage>
+  [100] setprop 496 ............................. pimage = tImage
+  [103] ret
 end
 
 on flipV me
@@ -477,42 +507,45 @@ on flipV me
   [  8] getobjprop 43 ........................... <pimage.height>
   [ 10] getprop 496 ............................. <pimage>
   [ 13] getobjprop 540 .......................... <pimage.depth>
-  [ 16] pusharglist 3 ........................... <pimage.width, pimage.height, pimage.depth>
-  [ 18] extcall 500 ............................. <image(pimage.width, pimage.height, pimage.depth)>
-  [ 21] setlocal 0 .............................. tImage = image(pimage.width, pimage.height, pimage.depth)
-  [ 23] pushzero ................................ <0>
-  [ 24] getprop 496 ............................. <pimage>
-  [ 27] getobjprop 43 ........................... <pimage.height>
-  [ 29] pusharglist 2 ........................... <0, pimage.height>
-  [ 31] extcall 508 ............................. <point(0, pimage.height)>
-  [ 34] getprop 496 ............................. <pimage>
-  [ 37] getobjprop 42 ........................... <pimage.width>
-  [ 39] getprop 496 ............................. <pimage>
-  [ 42] getobjprop 43 ........................... <pimage.height>
-  [ 44] pusharglist 2 ........................... <pimage.width, pimage.height>
-  [ 46] extcall 508 ............................. <point(pimage.width, pimage.height)>
-  [ 49] getprop 496 ............................. <pimage>
-  [ 52] getobjprop 42 ........................... <pimage.width>
-  [ 54] pushzero ................................ <0>
-  [ 55] pusharglist 2 ........................... <pimage.width, 0>
-  [ 57] extcall 508 ............................. <point(pimage.width, 0)>
-  [ 60] pushzero ................................ <0>
-  [ 61] pushzero ................................ <0>
-  [ 62] pusharglist 2 ........................... <0, 0>
-  [ 64] extcall 508 ............................. <point(0, 0)>
-  [ 67] pusharglist 4 ........................... <[point(0, pimage.height), point(pimage.width, pimage.height), point(pimage.width, 0), point(0, 0)]>
-  [ 69] pushlist ................................ <[point(0, pimage.height), point(pimage.width, pimage.height), point(pimage.width, 0), point(0, 0)]>
-  [ 70] setlocal 1 .............................. tQuad = [point(0, pimage.height), point(pimage.width, pimage.height), point(pimage.width, 0), point(0, 0)]
-  [ 72] getlocal 0 .............................. <tImage>
-  [ 74] getprop 496 ............................. <pimage>
-  [ 77] getlocal 1 .............................. <tQuad>
-  [ 79] getprop 496 ............................. <pimage>
-  [ 82] getobjprop 555 .......................... <pimage.rect>
-  [ 85] pusharglistnoret 4 ...................... <tImage, pimage, tQuad, pimage.rect>
-  [ 87] objcall 556 ............................. tImage.copyPixels(pimage, tQuad, pimage.rect)
-  [ 90] getlocal 0 .............................. <tImage>
-  [ 92] setprop 496 ............................. pimage = tImage
-  [ 95] ret
+  [ 16] getparam 0 .............................. <me>
+  [ 18] getchainedprop 496 ...................... <me.pimage>
+  [ 21] getobjprop 571 .......................... <me.pimage.paletteRef>
+  [ 24] pusharglist 4 ........................... <pimage.width, pimage.height, pimage.depth, me.pimage.paletteRef>
+  [ 26] extcall 500 ............................. <image(pimage.width, pimage.height, pimage.depth, me.pimage.paletteRef)>
+  [ 29] setlocal 0 .............................. tImage = image(pimage.width, pimage.height, pimage.depth, me.pimage.paletteRef)
+  [ 31] pushzero ................................ <0>
+  [ 32] getprop 496 ............................. <pimage>
+  [ 35] getobjprop 43 ........................... <pimage.height>
+  [ 37] pusharglist 2 ........................... <0, pimage.height>
+  [ 39] extcall 508 ............................. <point(0, pimage.height)>
+  [ 42] getprop 496 ............................. <pimage>
+  [ 45] getobjprop 42 ........................... <pimage.width>
+  [ 47] getprop 496 ............................. <pimage>
+  [ 50] getobjprop 43 ........................... <pimage.height>
+  [ 52] pusharglist 2 ........................... <pimage.width, pimage.height>
+  [ 54] extcall 508 ............................. <point(pimage.width, pimage.height)>
+  [ 57] getprop 496 ............................. <pimage>
+  [ 60] getobjprop 42 ........................... <pimage.width>
+  [ 62] pushzero ................................ <0>
+  [ 63] pusharglist 2 ........................... <pimage.width, 0>
+  [ 65] extcall 508 ............................. <point(pimage.width, 0)>
+  [ 68] pushzero ................................ <0>
+  [ 69] pushzero ................................ <0>
+  [ 70] pusharglist 2 ........................... <0, 0>
+  [ 72] extcall 508 ............................. <point(0, 0)>
+  [ 75] pusharglist 4 ........................... <[point(0, pimage.height), point(pimage.width, pimage.height), point(pimage.width, 0), point(0, 0)]>
+  [ 77] pushlist ................................ <[point(0, pimage.height), point(pimage.width, pimage.height), point(pimage.width, 0), point(0, 0)]>
+  [ 78] setlocal 1 .............................. tQuad = [point(0, pimage.height), point(pimage.width, pimage.height), point(pimage.width, 0), point(0, 0)]
+  [ 80] getlocal 0 .............................. <tImage>
+  [ 82] getprop 496 ............................. <pimage>
+  [ 85] getlocal 1 .............................. <tQuad>
+  [ 87] getprop 496 ............................. <pimage>
+  [ 90] getobjprop 555 .......................... <pimage.rect>
+  [ 93] pusharglistnoret 4 ...................... <tImage, pimage, tQuad, pimage.rect>
+  [ 95] objcall 556 ............................. tImage.copyPixels(pimage, tQuad, pimage.rect)
+  [ 98] getlocal 0 .............................. <tImage>
+  [100] setprop 496 ............................. pimage = tImage
+  [103] ret
 end
 
 on getProperty me, tProp

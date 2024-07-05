@@ -7,7 +7,7 @@ on construct me
   pHideList = []
   pDefaultLocZ = getIntVariable("visualizer.default.locz", -20000000)
   pAvailableLocZ = pDefaultLocZ
-  pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + getVariableValue("visualizer.boundary.limit")
+  pBoundary = rect(0, 0, (the stage).rect.width, (the stage).rect.height) + getVariableValue("visualizer.boundary.limit")
   if not objectExists(#layout_parser) then
     createObject(#layout_parser, getClassVariable("layout.parser.class"))
   end if
@@ -26,7 +26,7 @@ on create me, tid, tLayout, tLocX, tLocY
   end if
   tItem = getObjectManager().create(tid, pInstanceClass)
   if not tItem then
-    return error(me, "Item creation failed:" && tid, #create)
+    return error(me, "Item creation failed:" && tid, #create, #major)
   end if
   tProps = [:]
   tProps[#locX] = tLocX
@@ -124,7 +124,7 @@ end
 
 on setDefaultLocZ me, tValue
   if not integerp(tValue) then
-    return error(me, "integer expected:" && tValue, #setDefaultLocZ)
+    return error(me, "integer expected:" && tValue, #setDefaultLocZ, #minor)
   end if
   pDefaultLocZ = tValue
   return Activate(me)
@@ -132,7 +132,7 @@ end
 
 on setBoundary me, tValue
   if not listp(tValue) and not ilk(tValue, #rect) then
-    return error(me, "List or rect expected:" && tValue, #setBoundary)
+    return error(me, "List or rect expected:" && tValue, #setBoundary, #minor)
   end if
   pBoundary[1] = tValue[1]
   pBoundary[2] = tValue[2]

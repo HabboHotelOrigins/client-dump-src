@@ -24,18 +24,18 @@ on construct me
   [ 48] pushzero ................................ <0>
   [ 49] pushzero ................................ <0>
   [ 50] getmovieprop 968 ........................ <the stage>
-  [ 53] getchainedprop 969 ...................... <(the stage).sourceRect>
-  [ 56] getobjprop 42 ........................... <(the stage).sourceRect.width>
+  [ 53] getchainedprop 555 ...................... <(the stage).rect>
+  [ 56] getobjprop 42 ........................... <(the stage).rect.width>
   [ 58] getmovieprop 968 ........................ <the stage>
-  [ 61] getchainedprop 969 ...................... <(the stage).sourceRect>
-  [ 64] getobjprop 43 ........................... <(the stage).sourceRect.height>
-  [ 66] pusharglist 4 ........................... <0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height>
-  [ 68] extcall 555 ............................. <rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height)>
+  [ 61] getchainedprop 555 ...................... <(the stage).rect>
+  [ 64] getobjprop 43 ........................... <(the stage).rect.height>
+  [ 66] pusharglist 4 ........................... <0, 0, (the stage).rect.width, (the stage).rect.height>
+  [ 68] extcall 555 ............................. <rect(0, 0, (the stage).rect.width, (the stage).rect.height)>
   [ 71] pushcons 3 .............................. <"visualizer.boundary.limit">
   [ 73] pusharglist 1 ........................... <"visualizer.boundary.limit">
   [ 75] extcall 375 ............................. <getVariableValue("visualizer.boundary.limit")>
-  [ 78] add ..................................... <rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + getVariableValue("visualizer.boundary.limit")>
-  [ 79] setprop 967 ............................. pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + getVariableValue("visualizer.boundary.limit")
+  [ 78] add ..................................... <rect(0, 0, (the stage).rect.width, (the stage).rect.height) + getVariableValue("visualizer.boundary.limit")>
+  [ 79] setprop 967 ............................. pBoundary = rect(0, 0, (the stage).rect.width, (the stage).rect.height) + getVariableValue("visualizer.boundary.limit")
   [ 82] pushsymb 457 ............................ <#layout_parser>
   [ 85] pusharglist 1 ........................... <#layout_parser>
   [ 87] extcall 67 .............................. <objectExists(#layout_parser)>
@@ -86,74 +86,75 @@ on create me, tid, tLayout, tLocX, tLocY
   [ 60] setlocal 0 .............................. tItem = getObjectManager().create(tid, pInstanceClass)
   [ 62] getlocal 0 .............................. <tItem>
   [ 64] not ..................................... <not tItem>
-  [ 65] jmpifz [ 85] ............................ if not tItem then
+  [ 65] jmpifz [ 88] ............................ if not tItem then
   [ 68] getparam 0 .............................. <me>
   [ 70] pushcons 5 .............................. <"Item creation failed:">
   [ 72] getparam 1 .............................. <tid>
   [ 74] joinpadstr .............................. <"Item creation failed:" && tid>
   [ 75] pushsymb 81 ............................. <#create>
-  [ 77] pusharglist 3 ........................... <me, "Item creation failed:" && tid, #create>
-  [ 79] extcall 39 .............................. <error(me, "Item creation failed:" && tid, #create)>
-  [ 81] pusharglistnoret 1 ...................... <error(me, "Item creation failed:" && tid, #create)>
-  [ 83] extcall 25 .............................. return error(me, "Item creation failed:" && tid, #create)
-  [ 85] pusharglist 0 ........................... <[:]>
-  [ 87] pushproplist ............................ <[:]>
-  [ 88] setlocal 1 .............................. tProps = [:]
-  [ 90] getlocal 1 .............................. <tProps>
-  [ 92] pushsymb 538 ............................ <#locX>
-  [ 95] getparam 3 .............................. <tLocX>
-  [ 97] pusharglistnoret 3 ...................... <tProps, #locX, tLocX>
-  [ 99] objcall 24 .............................. tProps[#locX] = tLocX
-  [101] getlocal 1 .............................. <tProps>
-  [103] pushsymb 539 ............................ <#locY>
-  [106] getparam 4 .............................. <tLocY>
-  [108] pusharglistnoret 3 ...................... <tProps, #locY, tLocY>
-  [110] objcall 24 .............................. tProps[#locY] = tLocY
-  [112] getlocal 1 .............................. <tProps>
-  [114] pushsymb 881 ............................ <#locZ>
-  [117] getprop 966 ............................. <pAvailableLocZ>
-  [120] pusharglistnoret 3 ...................... <tProps, #locZ, pAvailableLocZ>
-  [122] objcall 24 .............................. tProps[#locZ] = pAvailableLocZ
-  [124] getlocal 1 .............................. <tProps>
-  [126] pushsymb 970 ............................ <#layout>
-  [129] getparam 2 .............................. <tLayout>
-  [131] pusharglistnoret 3 ...................... <tProps, #layout, tLayout>
-  [133] objcall 24 .............................. tProps[#layout] = tLayout
-  [135] getlocal 1 .............................. <tProps>
-  [137] pushsymb 971 ............................ <#boundary>
-  [140] getprop 967 ............................. <pBoundary>
-  [143] pusharglistnoret 3 ...................... <tProps, #boundary, pBoundary>
-  [145] objcall 24 .............................. tProps[#boundary] = pBoundary
-  [147] getlocal 0 .............................. <tItem>
-  [149] getlocal 1 .............................. <tProps>
-  [151] pusharglist 2 ........................... <tItem, tProps>
-  [153] objcall 434 ............................. <tItem.define(tProps)>
-  [156] not ..................................... <not tItem.define(tProps)>
-  [157] jmpifz [175] ............................ if not tItem.define(tProps) then
-  [160] pusharglist 0 ........................... <>
-  [162] extcall 93 .............................. <getObjectManager()>
-  [164] getparam 1 .............................. <tid>
-  [166] pusharglistnoret 2 ...................... <getObjectManager(), tid>
-  [168] objcall 125 ............................. getObjectManager().Remove(tid)
-  [170] pushzero ................................ <0>
-  [171] pusharglistnoret 1 ...................... <0>
-  [173] extcall 25 .............................. return 0
-  [175] getparam 0 .............................. <me>
-  [177] getchainedprop 639 ...................... <me.pItemList>
-  [180] getparam 1 .............................. <tid>
-  [182] pusharglistnoret 2 ...................... <me.pItemList, tid>
-  [184] objcall 122 ............................. me.pItemList.add(tid)
-  [186] getprop 966 ............................. <pAvailableLocZ>
-  [189] getlocal 0 .............................. <tItem>
-  [191] pushsymb 972 ............................ <#sprCount>
-  [194] pusharglist 2 ........................... <tItem, #sprCount>
-  [196] objcall 442 ............................. <tItem.getProperty(#sprCount)>
-  [199] add ..................................... <pAvailableLocZ + tItem.getProperty(#sprCount)>
-  [200] setprop 966 ............................. pAvailableLocZ = pAvailableLocZ + tItem.getProperty(#sprCount)
-  [203] pushint8 1 .............................. <1>
-  [205] pusharglistnoret 1 ...................... <1>
-  [207] extcall 25 .............................. return 1
-  [209] ret
+  [ 77] pushsymb 1177 ........................... <#major>
+  [ 80] pusharglist 4 ........................... <me, "Item creation failed:" && tid, #create, #major>
+  [ 82] extcall 39 .............................. <error(me, "Item creation failed:" && tid, #create, #major)>
+  [ 84] pusharglistnoret 1 ...................... <error(me, "Item creation failed:" && tid, #create, #major)>
+  [ 86] extcall 25 .............................. return error(me, "Item creation failed:" && tid, #create, #major)
+  [ 88] pusharglist 0 ........................... <[:]>
+  [ 90] pushproplist ............................ <[:]>
+  [ 91] setlocal 1 .............................. tProps = [:]
+  [ 93] getlocal 1 .............................. <tProps>
+  [ 95] pushsymb 538 ............................ <#locX>
+  [ 98] getparam 3 .............................. <tLocX>
+  [100] pusharglistnoret 3 ...................... <tProps, #locX, tLocX>
+  [102] objcall 24 .............................. tProps[#locX] = tLocX
+  [104] getlocal 1 .............................. <tProps>
+  [106] pushsymb 539 ............................ <#locY>
+  [109] getparam 4 .............................. <tLocY>
+  [111] pusharglistnoret 3 ...................... <tProps, #locY, tLocY>
+  [113] objcall 24 .............................. tProps[#locY] = tLocY
+  [115] getlocal 1 .............................. <tProps>
+  [117] pushsymb 881 ............................ <#locZ>
+  [120] getprop 966 ............................. <pAvailableLocZ>
+  [123] pusharglistnoret 3 ...................... <tProps, #locZ, pAvailableLocZ>
+  [125] objcall 24 .............................. tProps[#locZ] = pAvailableLocZ
+  [127] getlocal 1 .............................. <tProps>
+  [129] pushsymb 970 ............................ <#layout>
+  [132] getparam 2 .............................. <tLayout>
+  [134] pusharglistnoret 3 ...................... <tProps, #layout, tLayout>
+  [136] objcall 24 .............................. tProps[#layout] = tLayout
+  [138] getlocal 1 .............................. <tProps>
+  [140] pushsymb 971 ............................ <#boundary>
+  [143] getprop 967 ............................. <pBoundary>
+  [146] pusharglistnoret 3 ...................... <tProps, #boundary, pBoundary>
+  [148] objcall 24 .............................. tProps[#boundary] = pBoundary
+  [150] getlocal 0 .............................. <tItem>
+  [152] getlocal 1 .............................. <tProps>
+  [154] pusharglist 2 ........................... <tItem, tProps>
+  [156] objcall 434 ............................. <tItem.define(tProps)>
+  [159] not ..................................... <not tItem.define(tProps)>
+  [160] jmpifz [178] ............................ if not tItem.define(tProps) then
+  [163] pusharglist 0 ........................... <>
+  [165] extcall 93 .............................. <getObjectManager()>
+  [167] getparam 1 .............................. <tid>
+  [169] pusharglistnoret 2 ...................... <getObjectManager(), tid>
+  [171] objcall 125 ............................. getObjectManager().Remove(tid)
+  [173] pushzero ................................ <0>
+  [174] pusharglistnoret 1 ...................... <0>
+  [176] extcall 25 .............................. return 0
+  [178] getparam 0 .............................. <me>
+  [180] getchainedprop 639 ...................... <me.pItemList>
+  [183] getparam 1 .............................. <tid>
+  [185] pusharglistnoret 2 ...................... <me.pItemList, tid>
+  [187] objcall 122 ............................. me.pItemList.add(tid)
+  [189] getprop 966 ............................. <pAvailableLocZ>
+  [192] getlocal 0 .............................. <tItem>
+  [194] pushsymb 972 ............................ <#sprCount>
+  [197] pusharglist 2 ........................... <tItem, #sprCount>
+  [199] objcall 442 ............................. <tItem.getProperty(#sprCount)>
+  [202] add ..................................... <pAvailableLocZ + tItem.getProperty(#sprCount)>
+  [203] setprop 966 ............................. pAvailableLocZ = pAvailableLocZ + tItem.getProperty(#sprCount)
+  [206] pushint8 1 .............................. <1>
+  [208] pusharglistnoret 1 ...................... <1>
+  [210] extcall 25 .............................. return 1
+  [212] ret
 end
 
 on Remove me, tid
@@ -428,24 +429,25 @@ on setDefaultLocZ me, tValue
   [  2] pusharglist 1 ........................... <tValue>
   [  4] extcall 681 ............................. <integerp(tValue)>
   [  7] not ..................................... <not integerp(tValue)>
-  [  8] jmpifz [ 29] ............................ if not integerp(tValue) then
+  [  8] jmpifz [ 32] ............................ if not integerp(tValue) then
   [ 11] getparam 0 .............................. <me>
   [ 13] pushcons 6 .............................. <"integer expected:">
   [ 15] getparam 1 .............................. <tValue>
   [ 17] joinpadstr .............................. <"integer expected:" && tValue>
   [ 18] pushsymb 959 ............................ <#setDefaultLocZ>
-  [ 21] pusharglist 3 ........................... <me, "integer expected:" && tValue, #setDefaultLocZ>
-  [ 23] extcall 39 .............................. <error(me, "integer expected:" && tValue, #setDefaultLocZ)>
-  [ 25] pusharglistnoret 1 ...................... <error(me, "integer expected:" && tValue, #setDefaultLocZ)>
-  [ 27] extcall 25 .............................. return error(me, "integer expected:" && tValue, #setDefaultLocZ)
-  [ 29] getparam 1 .............................. <tValue>
-  [ 31] setprop 965 ............................. pDefaultLocZ = tValue
-  [ 34] getparam 0 .............................. <me>
-  [ 36] pusharglist 1 ........................... <me>
-  [ 38] localcall 3 ............................. <Activate(me)>
-  [ 40] pusharglistnoret 1 ...................... <Activate(me)>
-  [ 42] extcall 25 .............................. return Activate(me)
-  [ 44] ret
+  [ 21] pushsymb 932 ............................ <#minor>
+  [ 24] pusharglist 4 ........................... <me, "integer expected:" && tValue, #setDefaultLocZ, #minor>
+  [ 26] extcall 39 .............................. <error(me, "integer expected:" && tValue, #setDefaultLocZ, #minor)>
+  [ 28] pusharglistnoret 1 ...................... <error(me, "integer expected:" && tValue, #setDefaultLocZ, #minor)>
+  [ 30] extcall 25 .............................. return error(me, "integer expected:" && tValue, #setDefaultLocZ, #minor)
+  [ 32] getparam 1 .............................. <tValue>
+  [ 34] setprop 965 ............................. pDefaultLocZ = tValue
+  [ 37] getparam 0 .............................. <me>
+  [ 39] pusharglist 1 ........................... <me>
+  [ 41] localcall 3 ............................. <Activate(me)>
+  [ 43] pusharglistnoret 1 ...................... <Activate(me)>
+  [ 45] extcall 25 .............................. return Activate(me)
+  [ 47] ret
 end
 
 on setBoundary me, tValue
@@ -459,57 +461,58 @@ on setBoundary me, tValue
   [ 14] extcall 488 ............................. <ilk(tValue, #rect)>
   [ 17] not ..................................... <not ilk(tValue, #rect)>
   [ 18] and ..................................... <not listp(tValue) and not ilk(tValue, #rect)>
-  [ 19] jmpifz [ 40] ............................ if not listp(tValue) and not ilk(tValue, #rect) then
+  [ 19] jmpifz [ 43] ............................ if not listp(tValue) and not ilk(tValue, #rect) then
   [ 22] getparam 0 .............................. <me>
   [ 24] pushcons 7 .............................. <"List or rect expected:">
   [ 26] getparam 1 .............................. <tValue>
   [ 28] joinpadstr .............................. <"List or rect expected:" && tValue>
   [ 29] pushsymb 960 ............................ <#setBoundary>
-  [ 32] pusharglist 3 ........................... <me, "List or rect expected:" && tValue, #setBoundary>
-  [ 34] extcall 39 .............................. <error(me, "List or rect expected:" && tValue, #setBoundary)>
-  [ 36] pusharglistnoret 1 ...................... <error(me, "List or rect expected:" && tValue, #setBoundary)>
-  [ 38] extcall 25 .............................. return error(me, "List or rect expected:" && tValue, #setBoundary)
-  [ 40] getprop 967 ............................. <pBoundary>
-  [ 43] pushint8 1 .............................. <1>
-  [ 45] getparam 1 .............................. <tValue>
-  [ 47] pushint8 1 .............................. <1>
-  [ 49] pusharglist 2 ........................... <tValue, 1>
-  [ 51] objcall 54 .............................. <tValue[1]>
-  [ 53] pusharglistnoret 3 ...................... <pBoundary, 1, tValue[1]>
-  [ 55] objcall 24 .............................. pBoundary[1] = tValue[1]
-  [ 57] getprop 967 ............................. <pBoundary>
-  [ 60] pushint8 2 .............................. <2>
-  [ 62] getparam 1 .............................. <tValue>
-  [ 64] pushint8 2 .............................. <2>
-  [ 66] pusharglist 2 ........................... <tValue, 2>
-  [ 68] objcall 54 .............................. <tValue[2]>
-  [ 70] pusharglistnoret 3 ...................... <pBoundary, 2, tValue[2]>
-  [ 72] objcall 24 .............................. pBoundary[2] = tValue[2]
-  [ 74] getprop 967 ............................. <pBoundary>
-  [ 77] pushint8 3 .............................. <3>
-  [ 79] getparam 1 .............................. <tValue>
-  [ 81] pushint8 3 .............................. <3>
-  [ 83] pusharglist 2 ........................... <tValue, 3>
-  [ 85] objcall 54 .............................. <tValue[3]>
-  [ 87] pusharglistnoret 3 ...................... <pBoundary, 3, tValue[3]>
-  [ 89] objcall 24 .............................. pBoundary[3] = tValue[3]
-  [ 91] getprop 967 ............................. <pBoundary>
-  [ 94] pushint8 4 .............................. <4>
-  [ 96] getparam 1 .............................. <tValue>
-  [ 98] pushint8 4 .............................. <4>
-  [100] pusharglist 2 ........................... <tValue, 4>
-  [102] objcall 54 .............................. <tValue[4]>
-  [104] pusharglistnoret 3 ...................... <pBoundary, 4, tValue[4]>
-  [106] objcall 24 .............................. pBoundary[4] = tValue[4]
-  [108] pushsymb 979 ............................ <#moveBy>
-  [111] getparam 0 .............................. <me>
-  [113] getobjprop 639 .......................... <me.pItemList>
-  [116] pushzero ................................ <0>
-  [117] pushzero ................................ <0>
-  [118] pusharglistnoret 4 ...................... <#moveBy, me.pItemList, 0, 0>
-  [120] extcall 68 .............................. call(#moveBy, me.pItemList, 0, 0)
-  [122] pushint8 1 .............................. <1>
-  [124] pusharglistnoret 1 ...................... <1>
-  [126] extcall 25 .............................. return 1
-  [128] ret
+  [ 32] pushsymb 932 ............................ <#minor>
+  [ 35] pusharglist 4 ........................... <me, "List or rect expected:" && tValue, #setBoundary, #minor>
+  [ 37] extcall 39 .............................. <error(me, "List or rect expected:" && tValue, #setBoundary, #minor)>
+  [ 39] pusharglistnoret 1 ...................... <error(me, "List or rect expected:" && tValue, #setBoundary, #minor)>
+  [ 41] extcall 25 .............................. return error(me, "List or rect expected:" && tValue, #setBoundary, #minor)
+  [ 43] getprop 967 ............................. <pBoundary>
+  [ 46] pushint8 1 .............................. <1>
+  [ 48] getparam 1 .............................. <tValue>
+  [ 50] pushint8 1 .............................. <1>
+  [ 52] pusharglist 2 ........................... <tValue, 1>
+  [ 54] objcall 54 .............................. <tValue[1]>
+  [ 56] pusharglistnoret 3 ...................... <pBoundary, 1, tValue[1]>
+  [ 58] objcall 24 .............................. pBoundary[1] = tValue[1]
+  [ 60] getprop 967 ............................. <pBoundary>
+  [ 63] pushint8 2 .............................. <2>
+  [ 65] getparam 1 .............................. <tValue>
+  [ 67] pushint8 2 .............................. <2>
+  [ 69] pusharglist 2 ........................... <tValue, 2>
+  [ 71] objcall 54 .............................. <tValue[2]>
+  [ 73] pusharglistnoret 3 ...................... <pBoundary, 2, tValue[2]>
+  [ 75] objcall 24 .............................. pBoundary[2] = tValue[2]
+  [ 77] getprop 967 ............................. <pBoundary>
+  [ 80] pushint8 3 .............................. <3>
+  [ 82] getparam 1 .............................. <tValue>
+  [ 84] pushint8 3 .............................. <3>
+  [ 86] pusharglist 2 ........................... <tValue, 3>
+  [ 88] objcall 54 .............................. <tValue[3]>
+  [ 90] pusharglistnoret 3 ...................... <pBoundary, 3, tValue[3]>
+  [ 92] objcall 24 .............................. pBoundary[3] = tValue[3]
+  [ 94] getprop 967 ............................. <pBoundary>
+  [ 97] pushint8 4 .............................. <4>
+  [ 99] getparam 1 .............................. <tValue>
+  [101] pushint8 4 .............................. <4>
+  [103] pusharglist 2 ........................... <tValue, 4>
+  [105] objcall 54 .............................. <tValue[4]>
+  [107] pusharglistnoret 3 ...................... <pBoundary, 4, tValue[4]>
+  [109] objcall 24 .............................. pBoundary[4] = tValue[4]
+  [111] pushsymb 979 ............................ <#moveBy>
+  [114] getparam 0 .............................. <me>
+  [116] getobjprop 639 .......................... <me.pItemList>
+  [119] pushzero ................................ <0>
+  [120] pushzero ................................ <0>
+  [121] pusharglistnoret 4 ...................... <#moveBy, me.pItemList, 0, 0>
+  [123] extcall 68 .............................. call(#moveBy, me.pItemList, 0, 0)
+  [125] pushint8 1 .............................. <1>
+  [127] pusharglistnoret 1 ...................... <1>
+  [129] extcall 25 .............................. return 1
+  [131] ret
 end

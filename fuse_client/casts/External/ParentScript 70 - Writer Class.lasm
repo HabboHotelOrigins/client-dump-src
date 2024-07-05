@@ -561,106 +561,107 @@ on setFont me, tStruct
   [  2] getobjprop 488 .......................... <tStruct.ilk>
   [  5] pushsymb 1054 ........................... <#struct>
   [  8] nteq .................................... <tStruct.ilk <> #struct>
-  [  9] jmpifz [ 27] ............................ if tStruct.ilk <> #struct then
+  [  9] jmpifz [ 30] ............................ if tStruct.ilk <> #struct then
   [ 12] getparam 0 .............................. <me>
   [ 14] pushcons 1 .............................. <"Font struct expected!">
   [ 16] pushsymb 1055 ........................... <#setFont>
-  [ 19] pusharglist 3 ........................... <me, "Font struct expected!", #setFont>
-  [ 21] extcall 39 .............................. <error(me, "Font struct expected!", #setFont)>
-  [ 23] pusharglistnoret 1 ...................... <error(me, "Font struct expected!", #setFont)>
-  [ 25] extcall 25 .............................. return error(me, "Font struct expected!", #setFont)
-  [ 27] getprop 1456 ............................ <pMember>
-  [ 30] getobjprop 594 .......................... <pMember.font>
-  [ 33] getparam 1 .............................. <tStruct>
-  [ 35] pushsymb 594 ............................ <#font>
-  [ 38] pusharglist 2 ........................... <tStruct, #font>
-  [ 40] objcall 31 .............................. <tStruct.getaProp(#font)>
-  [ 42] nteq .................................... <pMember.font <> tStruct.getaProp(#font)>
-  [ 43] jmpifz [ 61] ............................ if pMember.font <> tStruct.getaProp(#font) then
-  [ 46] getprop 1456 ............................ <pMember>
-  [ 49] getparam 1 .............................. <tStruct>
-  [ 51] pushsymb 594 ............................ <#font>
-  [ 54] pusharglist 2 ........................... <tStruct, #font>
-  [ 56] objcall 31 .............................. <tStruct.getaProp(#font)>
-  [ 58] setobjprop 594 .......................... pMember.font = tStruct.getaProp(#font)
-  [ 61] getprop 1456 ............................ <pMember>
-  [ 64] getobjprop 596 .......................... <pMember.fontSize>
-  [ 67] getparam 1 .............................. <tStruct>
-  [ 69] pushsymb 596 ............................ <#fontSize>
-  [ 72] pusharglist 2 ........................... <tStruct, #fontSize>
-  [ 74] objcall 31 .............................. <tStruct.getaProp(#fontSize)>
-  [ 76] nteq .................................... <pMember.fontSize <> tStruct.getaProp(#fontSize)>
-  [ 77] jmpifz [ 95] ............................ if pMember.fontSize <> tStruct.getaProp(#fontSize) then
-  [ 80] getprop 1456 ............................ <pMember>
-  [ 83] getparam 1 .............................. <tStruct>
-  [ 85] pushsymb 596 ............................ <#fontSize>
-  [ 88] pusharglist 2 ........................... <tStruct, #fontSize>
-  [ 90] objcall 31 .............................. <tStruct.getaProp(#fontSize)>
-  [ 92] setobjprop 596 .......................... pMember.fontSize = tStruct.getaProp(#fontSize)
-  [ 95] getprop 1456 ............................ <pMember>
-  [ 98] getobjprop 595 .......................... <pMember.fontStyle>
-  [101] getparam 1 .............................. <tStruct>
-  [103] pushsymb 595 ............................ <#fontStyle>
-  [106] pusharglist 2 ........................... <tStruct, #fontStyle>
-  [108] objcall 31 .............................. <tStruct.getaProp(#fontStyle)>
-  [110] nteq .................................... <pMember.fontStyle <> tStruct.getaProp(#fontStyle)>
-  [111] jmpifz [129] ............................ if pMember.fontStyle <> tStruct.getaProp(#fontStyle) then
-  [114] getprop 1456 ............................ <pMember>
-  [117] getparam 1 .............................. <tStruct>
-  [119] pushsymb 595 ............................ <#fontStyle>
-  [122] pusharglist 2 ........................... <tStruct, #fontStyle>
-  [124] objcall 31 .............................. <tStruct.getaProp(#fontStyle)>
-  [126] setobjprop 595 .......................... pMember.fontStyle = tStruct.getaProp(#fontStyle)
-  [129] getprop 1456 ............................ <pMember>
-  [132] getobjprop 597 .......................... <pMember.color>
-  [135] getparam 1 .............................. <tStruct>
-  [137] pushsymb 597 ............................ <#color>
-  [140] pusharglist 2 ........................... <tStruct, #color>
-  [142] objcall 31 .............................. <tStruct.getaProp(#color)>
-  [144] nteq .................................... <pMember.color <> tStruct.getaProp(#color)>
-  [145] jmpifz [163] ............................ if pMember.color <> tStruct.getaProp(#color) then
-  [148] getprop 1456 ............................ <pMember>
-  [151] getparam 1 .............................. <tStruct>
-  [153] pushsymb 597 ............................ <#color>
-  [156] pusharglist 2 ........................... <tStruct, #color>
-  [158] objcall 31 .............................. <tStruct.getaProp(#color)>
-  [160] setobjprop 597 .......................... pMember.color = tStruct.getaProp(#color)
-  [163] getprop 1456 ............................ <pMember>
-  [166] getobjprop 475 .......................... <pMember.fixedLineSpace>
-  [169] getprop 1456 ............................ <pMember>
-  [172] getobjprop 596 .......................... <pMember.fontSize>
-  [175] nteq .................................... <pMember.fixedLineSpace <> pMember.fontSize>
-  [176] jmpifz [191] ............................ if pMember.fixedLineSpace <> pMember.fontSize then
-  [179] getprop 1456 ............................ <pMember>
+  [ 19] pushsymb 1177 ........................... <#major>
+  [ 22] pusharglist 4 ........................... <me, "Font struct expected!", #setFont, #major>
+  [ 24] extcall 39 .............................. <error(me, "Font struct expected!", #setFont, #major)>
+  [ 26] pusharglistnoret 1 ...................... <error(me, "Font struct expected!", #setFont, #major)>
+  [ 28] extcall 25 .............................. return error(me, "Font struct expected!", #setFont, #major)
+  [ 30] getprop 1456 ............................ <pMember>
+  [ 33] getobjprop 594 .......................... <pMember.font>
+  [ 36] getparam 1 .............................. <tStruct>
+  [ 38] pushsymb 594 ............................ <#font>
+  [ 41] pusharglist 2 ........................... <tStruct, #font>
+  [ 43] objcall 31 .............................. <tStruct.getaProp(#font)>
+  [ 45] nteq .................................... <pMember.font <> tStruct.getaProp(#font)>
+  [ 46] jmpifz [ 64] ............................ if pMember.font <> tStruct.getaProp(#font) then
+  [ 49] getprop 1456 ............................ <pMember>
+  [ 52] getparam 1 .............................. <tStruct>
+  [ 54] pushsymb 594 ............................ <#font>
+  [ 57] pusharglist 2 ........................... <tStruct, #font>
+  [ 59] objcall 31 .............................. <tStruct.getaProp(#font)>
+  [ 61] setobjprop 594 .......................... pMember.font = tStruct.getaProp(#font)
+  [ 64] getprop 1456 ............................ <pMember>
+  [ 67] getobjprop 596 .......................... <pMember.fontSize>
+  [ 70] getparam 1 .............................. <tStruct>
+  [ 72] pushsymb 596 ............................ <#fontSize>
+  [ 75] pusharglist 2 ........................... <tStruct, #fontSize>
+  [ 77] objcall 31 .............................. <tStruct.getaProp(#fontSize)>
+  [ 79] nteq .................................... <pMember.fontSize <> tStruct.getaProp(#fontSize)>
+  [ 80] jmpifz [ 98] ............................ if pMember.fontSize <> tStruct.getaProp(#fontSize) then
+  [ 83] getprop 1456 ............................ <pMember>
+  [ 86] getparam 1 .............................. <tStruct>
+  [ 88] pushsymb 596 ............................ <#fontSize>
+  [ 91] pusharglist 2 ........................... <tStruct, #fontSize>
+  [ 93] objcall 31 .............................. <tStruct.getaProp(#fontSize)>
+  [ 95] setobjprop 596 .......................... pMember.fontSize = tStruct.getaProp(#fontSize)
+  [ 98] getprop 1456 ............................ <pMember>
+  [101] getobjprop 595 .......................... <pMember.fontStyle>
+  [104] getparam 1 .............................. <tStruct>
+  [106] pushsymb 595 ............................ <#fontStyle>
+  [109] pusharglist 2 ........................... <tStruct, #fontStyle>
+  [111] objcall 31 .............................. <tStruct.getaProp(#fontStyle)>
+  [113] nteq .................................... <pMember.fontStyle <> tStruct.getaProp(#fontStyle)>
+  [114] jmpifz [132] ............................ if pMember.fontStyle <> tStruct.getaProp(#fontStyle) then
+  [117] getprop 1456 ............................ <pMember>
+  [120] getparam 1 .............................. <tStruct>
+  [122] pushsymb 595 ............................ <#fontStyle>
+  [125] pusharglist 2 ........................... <tStruct, #fontStyle>
+  [127] objcall 31 .............................. <tStruct.getaProp(#fontStyle)>
+  [129] setobjprop 595 .......................... pMember.fontStyle = tStruct.getaProp(#fontStyle)
+  [132] getprop 1456 ............................ <pMember>
+  [135] getobjprop 597 .......................... <pMember.color>
+  [138] getparam 1 .............................. <tStruct>
+  [140] pushsymb 597 ............................ <#color>
+  [143] pusharglist 2 ........................... <tStruct, #color>
+  [145] objcall 31 .............................. <tStruct.getaProp(#color)>
+  [147] nteq .................................... <pMember.color <> tStruct.getaProp(#color)>
+  [148] jmpifz [166] ............................ if pMember.color <> tStruct.getaProp(#color) then
+  [151] getprop 1456 ............................ <pMember>
+  [154] getparam 1 .............................. <tStruct>
+  [156] pushsymb 597 ............................ <#color>
+  [159] pusharglist 2 ........................... <tStruct, #color>
+  [161] objcall 31 .............................. <tStruct.getaProp(#color)>
+  [163] setobjprop 597 .......................... pMember.color = tStruct.getaProp(#color)
+  [166] getprop 1456 ............................ <pMember>
+  [169] getobjprop 475 .......................... <pMember.fixedLineSpace>
+  [172] getprop 1456 ............................ <pMember>
+  [175] getobjprop 596 .......................... <pMember.fontSize>
+  [178] nteq .................................... <pMember.fixedLineSpace <> pMember.fontSize>
+  [179] jmpifz [194] ............................ if pMember.fixedLineSpace <> pMember.fontSize then
   [182] getprop 1456 ............................ <pMember>
-  [185] getobjprop 596 .......................... <pMember.fontSize>
-  [188] setobjprop 475 .......................... pMember.fixedLineSpace = pMember.fontSize
-  [191] getprop 1456 ............................ <pMember>
-  [194] getobjprop 596 .......................... <pMember.fontSize>
-  [197] getprop 1456 ............................ <pMember>
-  [200] getobjprop 1589 ......................... <pMember.topSpacing>
-  [203] add ..................................... <pMember.fontSize + pMember.topSpacing>
-  [204] setlocal 0 .............................. tLineHeight = pMember.fontSize + pMember.topSpacing
-  [206] getlocal 0 .............................. <tLineHeight>
-  [208] getparam 1 .............................. <tStruct>
-  [210] pushsymb 1331 ........................... <#lineHeight>
-  [213] pusharglist 2 ........................... <tStruct, #lineHeight>
-  [215] objcall 31 .............................. <tStruct.getaProp(#lineHeight)>
-  [217] nteq .................................... <tLineHeight <> tStruct.getaProp(#lineHeight)>
-  [218] jmpifz [243] ............................ if tLineHeight <> tStruct.getaProp(#lineHeight) then
-  [221] getprop 1456 ............................ <pMember>
-  [224] getparam 1 .............................. <tStruct>
-  [226] pushsymb 1331 ........................... <#lineHeight>
-  [229] pusharglist 2 ........................... <tStruct, #lineHeight>
-  [231] objcall 31 .............................. <tStruct.getaProp(#lineHeight)>
-  [233] getprop 1456 ............................ <pMember>
-  [236] getobjprop 596 .......................... <pMember.fontSize>
-  [239] sub ..................................... <tStruct.getaProp(#lineHeight) - pMember.fontSize>
-  [240] setobjprop 1589 ......................... pMember.topSpacing = tStruct.getaProp(#lineHeight) - pMember.fontSize
-  [243] pushint8 1 .............................. <1>
-  [245] pusharglistnoret 1 ...................... <1>
-  [247] extcall 25 .............................. return 1
-  [249] ret
+  [185] getprop 1456 ............................ <pMember>
+  [188] getobjprop 596 .......................... <pMember.fontSize>
+  [191] setobjprop 475 .......................... pMember.fixedLineSpace = pMember.fontSize
+  [194] getprop 1456 ............................ <pMember>
+  [197] getobjprop 596 .......................... <pMember.fontSize>
+  [200] getprop 1456 ............................ <pMember>
+  [203] getobjprop 1589 ......................... <pMember.topSpacing>
+  [206] add ..................................... <pMember.fontSize + pMember.topSpacing>
+  [207] setlocal 0 .............................. tLineHeight = pMember.fontSize + pMember.topSpacing
+  [209] getlocal 0 .............................. <tLineHeight>
+  [211] getparam 1 .............................. <tStruct>
+  [213] pushsymb 1331 ........................... <#lineHeight>
+  [216] pusharglist 2 ........................... <tStruct, #lineHeight>
+  [218] objcall 31 .............................. <tStruct.getaProp(#lineHeight)>
+  [220] nteq .................................... <tLineHeight <> tStruct.getaProp(#lineHeight)>
+  [221] jmpifz [246] ............................ if tLineHeight <> tStruct.getaProp(#lineHeight) then
+  [224] getprop 1456 ............................ <pMember>
+  [227] getparam 1 .............................. <tStruct>
+  [229] pushsymb 1331 ........................... <#lineHeight>
+  [232] pusharglist 2 ........................... <tStruct, #lineHeight>
+  [234] objcall 31 .............................. <tStruct.getaProp(#lineHeight)>
+  [236] getprop 1456 ............................ <pMember>
+  [239] getobjprop 596 .......................... <pMember.fontSize>
+  [242] sub ..................................... <tStruct.getaProp(#lineHeight) - pMember.fontSize>
+  [243] setobjprop 1589 ......................... pMember.topSpacing = tStruct.getaProp(#lineHeight) - pMember.fontSize
+  [246] pushint8 1 .............................. <1>
+  [248] pusharglistnoret 1 ...................... <1>
+  [250] extcall 25 .............................. return 1
+  [252] ret
 end
 
 on getFont me

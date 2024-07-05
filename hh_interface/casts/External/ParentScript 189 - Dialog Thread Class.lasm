@@ -867,12 +867,12 @@ on showDialog me, tWndID, tProps
 end
 
 on buildResources me
-  [  0] pushcons 35 ............................. <"dialog_writer_plain">
-  [  2] setprop 76 .............................. pWriterPlain = "dialog_writer_plain"
-  [  4] pushcons 36 ............................. <"dialog_writer_link">
-  [  6] setprop 78 .............................. pWriterLink = "dialog_writer_link"
-  [  8] pushcons 37 ............................. <"dialog_writer_bold">
-  [ 10] setprop 79 .............................. pWriterBold = "dialog_writer_bold"
+  [  0] pushcons 35 ............................. <"dialog_writer_plain_dt">
+  [  2] setprop 76 .............................. pWriterPlain = "dialog_writer_plain_dt"
+  [  4] pushcons 36 ............................. <"dialog_writer_link_dt">
+  [  6] setprop 78 .............................. pWriterLink = "dialog_writer_link_dt"
+  [  8] pushcons 37 ............................. <"dialog_writer_bold_dt">
+  [ 10] setprop 79 .............................. pWriterBold = "dialog_writer_bold_dt"
   [ 12] pushcons 38 ............................. <"struct.font.plain">
   [ 14] pusharglist 1 ........................... <"struct.font.plain">
   [ 16] extcall 167 ............................. <getStructVariable("struct.font.plain")>

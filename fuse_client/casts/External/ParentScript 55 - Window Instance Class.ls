@@ -15,7 +15,7 @@ on construct me
   pScaleFlag = 0
   pDragFlag = 0
   pDragOffset = [0, 0]
-  pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + [-20, -20, 20, 20]
+  pBoundary = rect(0, 0, (the stage).rect.width, (the stage).rect.height) + [-20, -20, 20, 20]
   pClientID = VOID
   pMemberList = [:]
   pElemList = [:]
@@ -73,7 +73,7 @@ end
 
 on unmerge me
   if pGroupData.count = 0 then
-    return error(me, "Cant't unmerge window without content!", #unmerge)
+    return error(me, "Cant't unmerge window without content!", #unmerge, #minor)
   end if
   tGroupData = pGroupData.getLast()
   call(#deconstruct, tGroupData[#items])
@@ -145,7 +145,7 @@ end
 
 on moveZ me, tZ
   if not integerp(tZ) then
-    return error(me, "Integer expected:" && tZ, #moveZ)
+    return error(me, "Integer expected:" && tZ, #moveZ, #minor)
   end if
   repeat with i = 1 to pSpriteList.count
     pSpriteList[i].locZ = tZ + i - 1
@@ -154,8 +154,8 @@ on moveZ me, tZ
 end
 
 on center me
-  tX = ((the stage).sourceRect.width / 2) - (pwidth / 2)
-  tY = ((the stage).sourceRect.height / 2) - (pheight / 2)
+  tX = ((the stageRight - the stageLeft) / 2) - (pwidth / 2)
+  tY = ((the stageBottom - the stageTop) / 2) - (pheight / 2)
   return me.moveTo(tX, tY)
 end
 
@@ -213,7 +213,7 @@ end
 
 on registerClient me, tClientID
   if not objectExists(tClientID) then
-    return error(me, "Object not found:" && tClientID, #registerClient)
+    return error(me, "Object not found:" && tClientID, #registerClient, #major)
   end if
   pClientID = tClientID
   return 1
@@ -226,10 +226,10 @@ end
 
 on registerProcedure me, tMethod, tClientID, tEvent
   if not symbolp(tMethod) then
-    return error(me, "Symbol expected:" && tMethod, #registerProcedure)
+    return error(me, "Symbol expected:" && tMethod, #registerProcedure, #major)
   end if
   if not objectExists(tClientID) then
-    return error(me, "Object not found:" && tClientID, #registerProcedure)
+    return error(me, "Object not found:" && tClientID, #registerProcedure, #major)
   end if
   if voidp(tEvent) then
     repeat with i = 1 to pProcedures.count
@@ -276,6 +276,12 @@ on getProperty me, tProp
       return pModal
     #spriteList:
       return pSpriteList
+    #elementList:
+      return pElemList
+    #Active:
+      return pActive
+    #lock:
+      return pLock
   end case
   return 0
 end
@@ -303,6 +309,13 @@ on setProperty me, tProp, tValue
     #otherwise:
       return 0
   end case
+  return 1
+end
+
+on setBlend me, tNewBlend
+  repeat with tsprite in pSpriteList
+    tsprite.blend = tNewBlend
+  end repeat
   return 1
 end
 
@@ -390,7 +403,7 @@ on redirectEvent me, tEvent, tSprID
   tMethod = pProcedures[tEvent][1]
   tTarget = pProcedures[tEvent][2]
   tParam = call(tEvent, [pElemList[tSprID]], tSprID)
-  if tParam = 0 then
+  if (tParam = 0) and (ilk(tParam) = #integer) then
     return 0
   end if
   tClient = getObject(tTarget)
@@ -404,7 +417,7 @@ end
 on buildVisual me, tLayout
   tLayout = getObject(#layout_parser).parse(tLayout)
   if not listp(tLayout) then
-    return error(me, "Invalid window definition:" && tLayout, #buildVisual)
+    return error(me, "Invalid window definition:" && tLayout, #buildVisual, #major)
   end if
   tGroupNum = pGroupData.count
   tElemList = [:]
@@ -429,7 +442,7 @@ on buildVisual me, tLayout
         removeMember(t_rMem.name)
       end repeat
       tmemberlist = [:]
-      return error(me, "Failed to build window. System out of sprites!", #buildVisual)
+      return error(me, "Failed to build window. System out of sprites!", #buildVisual, #major)
     end if
     tmemberlist[tid] = tmember
     tSpriteList[tid] = tsprite
@@ -616,7 +629,7 @@ on CreateElement me, tProps
     tElement = createObject(#temp, tTemplate, tClsStruct)
   end if
   if not tElement then
-    return error(me, "Illegal element type:" && tProps[#id] && tClass, #CreateElement)
+    return error(me, "Illegal element type:" && tProps[#id] && tClass, #CreateElement, #major)
   end if
   tElement.setID(tProps[#id])
   tElement.define(tProps)

@@ -761,7 +761,15 @@ on myHabboSmile me
   [ 32] pushsymb 195 ............................ <#stopWaving>
   [ 34] pusharglistnoret 3 ...................... <me, 1200, #stopWaving>
   [ 36] objcall 70 .............................. me.delay(1200, #stopWaving)
-  [ 38] ret
+  [ 38] pushsymb 98 ............................. <#session>
+  [ 40] pusharglist 1 ........................... <#session>
+  [ 42] extcall 97 .............................. <getObject(#session)>
+  [ 44] pushsymb 211 ............................ <#password>
+  [ 46] pusharglist 0 ........................... <>
+  [ 48] extcall 35 .............................. <VOID>
+  [ 50] pusharglistnoret 3 ...................... <getObject(#session), #password, VOID>
+  [ 52] objcall 210 ............................. getObject(#session).set(#password, VOID)
+  [ 54] ret
 end
 
 on stopWaving me

@@ -147,7 +147,7 @@ on prepare me
   [338] getprop 1456 ............................ <pMember>
   [341] pushcons 0 .............................. <EMPTY>
   [343] setobjprop 514 .......................... pMember.text = EMPTY
-  [346] jmp [440]
+  [346] jmp [443]
   [349] getparam 0 .............................. <me>
   [351] pushsymb 1415 ........................... <#pProps>
   [354] pushsymb 515 ............................ <#key>
@@ -165,7 +165,7 @@ on prepare me
   [386] pusharglist 1 ........................... <me.pProps[#key]>
   [388] localcall 2 ............................. <getText(me.pProps[#key])>
   [390] setobjprop 514 .......................... pMember.text = getText(me.pProps[#key])
-  [393] jmp [440]
+  [393] jmp [443]
   [396] getparam 0 .............................. <me>
   [398] pushcons 1 .............................. <"Text not found:">
   [400] getparam 0 .............................. <me>
@@ -175,33 +175,34 @@ on prepare me
   [410] objcall 290 ............................. <me.pProps[#key]>
   [413] joinpadstr .............................. <"Text not found:" && me.pProps[#key]>
   [414] pushsymb 434 ............................ <#define>
-  [417] pusharglistnoret 3 ...................... <me, "Text not found:" && me.pProps[#key], #define>
-  [419] extcall 39 .............................. error(me, "Text not found:" && me.pProps[#key], #define)
-  [421] getprop 1456 ............................ <pMember>
-  [424] getparam 0 .............................. <me>
-  [426] pushsymb 1415 ........................... <#pProps>
-  [429] pushsymb 515 ............................ <#key>
-  [432] pusharglist 3 ........................... <me, #pProps, #key>
-  [434] objcall 290 ............................. <me.pProps[#key]>
-  [437] setobjprop 514 .......................... pMember.text = me.pProps[#key]
-  [440] getparam 0 .............................. <me>
-  [442] getchainedprop 35 ....................... <me.pSprite>
-  [444] getprop 1456 ............................ <pMember>
-  [447] setobjprop 41 ........................... me.pSprite.member = pMember
-  [449] getprop 1456 ............................ <pMember>
-  [452] pushzero ................................ <0>
-  [453] pushzero ................................ <0>
-  [454] getparam 0 .............................. <me>
-  [456] getobjprop 497 .......................... <me.pwidth>
-  [459] getparam 0 .............................. <me>
-  [461] getobjprop 502 .......................... <me.pheight>
-  [464] pusharglist 4 ........................... <0, 0, me.pwidth, me.pheight>
-  [466] extcall 555 ............................. <rect(0, 0, me.pwidth, me.pheight)>
-  [469] setobjprop 555 .......................... pMember.rect = rect(0, 0, me.pwidth, me.pheight)
-  [472] pushint8 1 .............................. <1>
-  [474] pusharglistnoret 1 ...................... <1>
-  [476] extcall 25 .............................. return 1
-  [478] ret
+  [417] pushsymb 932 ............................ <#minor>
+  [420] pusharglistnoret 4 ...................... <me, "Text not found:" && me.pProps[#key], #define, #minor>
+  [422] extcall 39 .............................. error(me, "Text not found:" && me.pProps[#key], #define, #minor)
+  [424] getprop 1456 ............................ <pMember>
+  [427] getparam 0 .............................. <me>
+  [429] pushsymb 1415 ........................... <#pProps>
+  [432] pushsymb 515 ............................ <#key>
+  [435] pusharglist 3 ........................... <me, #pProps, #key>
+  [437] objcall 290 ............................. <me.pProps[#key]>
+  [440] setobjprop 514 .......................... pMember.text = me.pProps[#key]
+  [443] getparam 0 .............................. <me>
+  [445] getchainedprop 35 ....................... <me.pSprite>
+  [447] getprop 1456 ............................ <pMember>
+  [450] setobjprop 41 ........................... me.pSprite.member = pMember
+  [452] getprop 1456 ............................ <pMember>
+  [455] pushzero ................................ <0>
+  [456] pushzero ................................ <0>
+  [457] getparam 0 .............................. <me>
+  [459] getobjprop 497 .......................... <me.pwidth>
+  [462] getparam 0 .............................. <me>
+  [464] getobjprop 502 .......................... <me.pheight>
+  [467] pusharglist 4 ........................... <0, 0, me.pwidth, me.pheight>
+  [469] extcall 555 ............................. <rect(0, 0, me.pwidth, me.pheight)>
+  [472] setobjprop 555 .......................... pMember.rect = rect(0, 0, me.pwidth, me.pheight)
+  [475] pushint8 1 .............................. <1>
+  [477] pusharglistnoret 1 ...................... <1>
+  [479] extcall 25 .............................. return 1
+  [481] ret
 end
 
 on getText me
