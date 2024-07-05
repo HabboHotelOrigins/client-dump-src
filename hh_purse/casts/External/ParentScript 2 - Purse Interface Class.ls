@@ -720,6 +720,15 @@ on updatePurseSaldo me
 end
 
 on updatePurseTickets me
+  tWndObj = getWindow(pWindowTitle)
+  if tWndObj = 0 then
+    return 0
+  end if
+  if tWndObj.elementExists("purse_info_tickets") then
+    tFieldTxt = getObject(#session).get("user_ph_tickets") && getText("purse_info_tickets")
+    tWndObj.getElement("purse_info_tickets").setText(tFieldTxt)
+  end if
+  return 1
 end
 
 on updatePurseFilm me

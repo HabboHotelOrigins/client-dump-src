@@ -7,7 +7,7 @@ on construct me
   pHideList = []
   pDefaultLocZ = getIntVariable("visualizer.default.locz", -20000000)
   pAvailableLocZ = pDefaultLocZ
-  pBoundary = rect(0, 0, (the stage).rect.width, (the stage).rect.height) + getVariableValue("visualizer.boundary.limit")
+  pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + getVariableValue("visualizer.boundary.limit")
   if not objectExists(#layout_parser) then
     createObject(#layout_parser, getClassVariable("layout.parser.class"))
   end if

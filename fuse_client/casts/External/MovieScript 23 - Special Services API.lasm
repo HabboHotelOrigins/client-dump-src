@@ -1,5 +1,5 @@
 on constructSpecialServices
-  [  0] pushsymb 416 ............................ <#special_services>
+  [  0] pushsymb 417 ............................ <#special_services>
   [  3] pushcons 0 .............................. <"special.services.class">
   [  5] pusharglist 1 ........................... <"special.services.class">
   [  7] extcall 155 ............................. <getClassVariable("special.services.class")>
@@ -11,7 +11,7 @@ on constructSpecialServices
 end
 
 on deconstructSpecialServices
-  [  0] pushsymb 416 ............................ <#special_services>
+  [  0] pushsymb 417 ............................ <#special_services>
   [  3] pusharglist 1 ........................... <#special_services>
   [  5] extcall 100 ............................. <removeManager(#special_services)>
   [  7] pusharglistnoret 1 ...................... <removeManager(#special_services)>
@@ -24,7 +24,7 @@ on getSpecialServices
   [  2] extcall 93 .............................. <getObjectManager()>
   [  4] setlocal 0 .............................. tMgr = getObjectManager()
   [  6] getlocal 0 .............................. <tMgr>
-  [  8] pushsymb 416 ............................ <#special_services>
+  [  8] pushsymb 417 ............................ <#special_services>
   [ 11] pusharglist 2 ........................... <tMgr, #special_services>
   [ 13] objcall 102 ............................. <tMgr.managerExists(#special_services)>
   [ 15] not ..................................... <not tMgr.managerExists(#special_services)>
@@ -34,7 +34,7 @@ on getSpecialServices
   [ 23] pusharglistnoret 1 ...................... <constructSpecialServices()>
   [ 25] extcall 25 .............................. return constructSpecialServices()
   [ 27] getlocal 0 .............................. <tMgr>
-  [ 29] pushsymb 416 ............................ <#special_services>
+  [ 29] pushsymb 417 ............................ <#special_services>
   [ 32] pusharglist 2 ........................... <tMgr, #special_services>
   [ 34] objcall 101 ............................. <tMgr.getManager(#special_services)>
   [ 36] pusharglistnoret 1 ...................... <tMgr.getManager(#special_services)>
@@ -181,18 +181,28 @@ on readValueFromField tFieldName, tDelimiter, tSearchedKey
   [ 19] ret
 end
 
+on callJavaScriptFunction tCallString, tdata
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSpecialServices()>
+  [  4] getparam 0 .............................. <tCallString>
+  [  6] getparam 1 .............................. <tdata>
+  [  8] pusharglistnoret 3 ...................... <getSpecialServices(), tCallString, tdata>
+  [ 10] objcall 414 ............................. getSpecialServices().callJavaScriptFunction(tCallString, tdata)
+  [ 13] ret
+end
+
 on performance
-  [  0] pushsymb 423 ............................ <#perfTester>
+  [  0] pushsymb 425 ............................ <#perfTester>
   [  3] pusharglist 1 ........................... <#perfTester>
   [  5] extcall 67 .............................. <objectExists(#perfTester)>
   [  7] jmpifz [ 24] ............................ if objectExists(#perfTester) then / else
-  [ 10] pushsymb 423 ............................ <#perfTester>
+  [ 10] pushsymb 425 ............................ <#perfTester>
   [ 13] pusharglist 1 ........................... <#perfTester>
   [ 15] extcall 95 .............................. <removeObject(#perfTester)>
   [ 17] pusharglistnoret 1 ...................... <removeObject(#perfTester)>
   [ 19] extcall 25 .............................. return removeObject(#perfTester)
   [ 21] jmp [ 41]
-  [ 24] pushsymb 423 ............................ <#perfTester>
+  [ 24] pushsymb 425 ............................ <#perfTester>
   [ 27] pushcons 1 .............................. <"perf.test.class">
   [ 29] pusharglist 1 ........................... <"perf.test.class">
   [ 31] extcall 155 ............................. <getClassVariable("perf.test.class")>

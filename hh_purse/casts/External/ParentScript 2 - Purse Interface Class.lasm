@@ -2905,7 +2905,44 @@ on updatePurseSaldo me
 end
 
 on updatePurseTickets me
-  [  0] ret
+  [  0] getprop 26 .............................. <pWindowTitle>
+  [  2] pusharglist 1 ........................... <pWindowTitle>
+  [  4] extcall 81 .............................. <getWindow(pWindowTitle)>
+  [  6] setlocal 0 .............................. tWndObj = getWindow(pWindowTitle)
+  [  8] getlocal 0 .............................. <tWndObj>
+  [ 10] pushzero ................................ <0>
+  [ 11] eq ...................................... <tWndObj = 0>
+  [ 12] jmpifz [ 20] ............................ if tWndObj = 0 then
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 62 .............................. return 0
+  [ 20] getlocal 0 .............................. <tWndObj>
+  [ 22] pushcons 116 ............................ <"purse_info_tickets">
+  [ 24] pusharglist 2 ........................... <tWndObj, "purse_info_tickets">
+  [ 26] objcall 95 .............................. <tWndObj.elementExists("purse_info_tickets")>
+  [ 28] jmpifz [ 66] ............................ if tWndObj.elementExists("purse_info_tickets") then
+  [ 31] pushsymb 56 ............................. <#session>
+  [ 33] pusharglist 1 ........................... <#session>
+  [ 35] extcall 55 .............................. <getObject(#session)>
+  [ 37] pushcons 117 ............................ <"user_ph_tickets">
+  [ 39] pusharglist 2 ........................... <getObject(#session), "user_ph_tickets">
+  [ 41] objcall 194 ............................. <getObject(#session).get("user_ph_tickets")>
+  [ 43] pushcons 116 ............................ <"purse_info_tickets">
+  [ 45] pusharglist 1 ........................... <"purse_info_tickets">
+  [ 47] extcall 27 .............................. <getText("purse_info_tickets")>
+  [ 49] joinpadstr .............................. <getObject(#session).get("user_ph_tickets") && getText("purse_info_tickets")>
+  [ 50] setlocal 1 .............................. tFieldTxt = getObject(#session).get("user_ph_tickets") && getText("purse_info_tickets")
+  [ 52] getlocal 0 .............................. <tWndObj>
+  [ 54] pushcons 116 ............................ <"purse_info_tickets">
+  [ 56] pusharglist 2 ........................... <tWndObj, "purse_info_tickets">
+  [ 58] objcall 83 .............................. <tWndObj.getElement("purse_info_tickets")>
+  [ 60] getlocal 1 .............................. <tFieldTxt>
+  [ 62] pusharglistnoret 2 ...................... <tWndObj.getElement("purse_info_tickets"), tFieldTxt>
+  [ 64] objcall 105 ............................. tWndObj.getElement("purse_info_tickets").setText(tFieldTxt)
+  [ 66] pushint8 1 .............................. <1>
+  [ 68] pusharglistnoret 1 ...................... <1>
+  [ 70] extcall 62 .............................. return 1
+  [ 72] ret
 end
 
 on updatePurseFilm me
@@ -2921,23 +2958,23 @@ on updatePurseFilm me
   [ 16] pusharglistnoret 1 ...................... <0>
   [ 18] extcall 62 .............................. return 0
   [ 20] getlocal 0 .............................. <tWndObj>
-  [ 22] pushcons 116 ............................ <"purse_info_film">
+  [ 22] pushcons 118 ............................ <"purse_info_film">
   [ 24] pusharglist 2 ........................... <tWndObj, "purse_info_film">
   [ 26] objcall 95 .............................. <tWndObj.elementExists("purse_info_film")>
   [ 28] jmpifz [ 66] ............................ if tWndObj.elementExists("purse_info_film") then
   [ 31] pushsymb 56 ............................. <#session>
   [ 33] pusharglist 1 ........................... <#session>
   [ 35] extcall 55 .............................. <getObject(#session)>
-  [ 37] pushcons 117 ............................ <"user_photo_film">
+  [ 37] pushcons 119 ............................ <"user_photo_film">
   [ 39] pusharglist 2 ........................... <getObject(#session), "user_photo_film">
   [ 41] objcall 194 ............................. <getObject(#session).get("user_photo_film")>
-  [ 43] pushcons 116 ............................ <"purse_info_film">
+  [ 43] pushcons 118 ............................ <"purse_info_film">
   [ 45] pusharglist 1 ........................... <"purse_info_film">
   [ 47] extcall 27 .............................. <getText("purse_info_film")>
   [ 49] joinpadstr .............................. <getObject(#session).get("user_photo_film") && getText("purse_info_film")>
   [ 50] setlocal 1 .............................. tFieldTxt = getObject(#session).get("user_photo_film") && getText("purse_info_film")
   [ 52] getlocal 0 .............................. <tWndObj>
-  [ 54] pushcons 116 ............................ <"purse_info_film">
+  [ 54] pushcons 118 ............................ <"purse_info_film">
   [ 56] pusharglist 2 ........................... <tWndObj, "purse_info_film">
   [ 58] objcall 83 .............................. <tWndObj.getElement("purse_info_film")>
   [ 60] getlocal 1 .............................. <tFieldTxt>
@@ -3013,7 +3050,7 @@ on eventProcPurse me, tEvent, tElemID, tParm
   [117] extcall 233 ............................. openNetPage(pClickURL)
   [119] jmp [526]
   [122] peek 0
-  [124] pushcons 118 ............................ <"purse_view">
+  [124] pushcons 120 ............................ <"purse_view">
   [126] eq
   [127] jmpifz [246] ............................ (case) "purse_view":
   [130] getprop 58 .............................. <pValueField>
@@ -3041,12 +3078,12 @@ on eventProcPurse me, tEvent, tElemID, tParm
   [172] pushint8 1 .............................. <1>
   [174] pusharglistnoret 2 ...................... <me, 1>
   [176] objcall 5 ............................... me.showPurseLoader(1)
-  [178] pushcons 119 ............................ <"connection.info.id">
+  [178] pushcons 121 ............................ <"connection.info.id">
   [180] pusharglist 1 ........................... <"connection.info.id">
   [182] extcall 235 ............................. <getVariableValue("connection.info.id")>
   [184] pusharglist 1 ........................... <getVariableValue("connection.info.id")>
   [186] extcall 234 ............................. <getConnection(getVariableValue("connection.info.id"))>
-  [188] pushcons 120 ............................ <"GETUSERCREDITLOG">
+  [188] pushcons 122 ............................ <"GETUSERCREDITLOG">
   [190] pusharglistnoret 2 ...................... <getConnection(getVariableValue("connection.info.id")), "GETUSERCREDITLOG">
   [192] objcall 236 ............................. getConnection(getVariableValue("connection.info.id")).send("GETUSERCREDITLOG")
   [194] jmp [228]
@@ -3075,7 +3112,7 @@ on eventProcPurse me, tEvent, tElemID, tParm
   [241] extcall 76 .............................. removeTimeout("flyTimer")
   [243] jmp [526]
   [246] peek 0
-  [248] pushcons 121 ............................ <"show_credits">
+  [248] pushcons 123 ............................ <"show_credits">
   [250] eq
   [251] jmpifz [265] ............................ (case) "show_credits":
   [254] getparam 0 .............................. <me>
@@ -3113,7 +3150,7 @@ on eventProcPurse me, tEvent, tElemID, tParm
   [319] pusharglist 1 ........................... <#session>
   [321] extcall 55 .............................. <getObject(#session)>
   [323] setlocal 3 .............................. tSession = getObject(#session)
-  [325] pushcons 122 ............................ <"url_purselink">
+  [325] pushcons 124 ............................ <"url_purselink">
   [327] pusharglist 1 ........................... <"url_purselink">
   [329] extcall 27 .............................. <getText("url_purselink")>
   [331] setlocal 4 .............................. tURL = getText("url_purselink")
@@ -3207,7 +3244,7 @@ on eventProcPurse me, tEvent, tElemID, tParm
   [507] objcall 9 ............................... me.hideVoucherWindow()
   [509] jmp [526]
   [512] peek 0
-  [514] pushcons 123 ............................ <"close">
+  [514] pushcons 125 ............................ <"close">
   [516] eq
   [517] jmpifz [526] ............................ (case) "close":
   [520] getparam 0 .............................. <me>

@@ -101,6 +101,15 @@ on setcursor me, ttype
   return 1
 end
 
+on callJavaScriptFunction me, tCallString, tdata
+  startProfilingTask("Special Services::callJavascriptFunction")
+  if the runMode = "Author" then
+    return 0
+  end if
+  script("JavaScript Proxy").callJavaScript(QUOTE & tCallString & QUOTE, QUOTE & tdata & QUOTE)
+  finishProfilingTask("Special Services::callJavascriptFunction")
+end
+
 on openNetPage me, tURL_key, tTarget
   if not stringp(tURL_key) then
     return 0

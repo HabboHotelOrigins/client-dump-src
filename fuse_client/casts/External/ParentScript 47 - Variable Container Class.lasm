@@ -2,11 +2,11 @@ on construct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 0 ........................... <[:]>
   [  4] pushproplist ............................ <[:]>
-  [  5] setobjprop 639 .......................... me.pItemList = [:]
+  [  5] setobjprop 641 .......................... me.pItemList = [:]
   [  8] getparam 0 .............................. <me>
-  [ 10] getchainedprop 639 ...................... <me.pItemList>
+  [ 10] getchainedprop 641 ...................... <me.pItemList>
   [ 13] pusharglistnoret 1 ...................... <me.pItemList>
-  [ 15] objcall 640 ............................. me.pItemList.sort()
+  [ 15] objcall 642 ............................. me.pItemList.sort()
   [ 18] pushint8 1 .............................. <1>
   [ 20] pusharglistnoret 1 ...................... <1>
   [ 22] extcall 25 .............................. return 1
@@ -17,7 +17,7 @@ on deconstruct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 0 ........................... <[:]>
   [  4] pushproplist ............................ <[:]>
-  [  5] setobjprop 639 .......................... me.pItemList = [:]
+  [  5] setobjprop 641 .......................... me.pItemList = [:]
   [  8] pushint8 1 .............................. <1>
   [ 10] pusharglistnoret 1 ...................... <1>
   [ 12] extcall 25 .............................. return 1
@@ -45,11 +45,11 @@ on create me, tVariable, tValue
   [ 31] pusharglistnoret 1 ...................... <error(me, "String or symbol expected:" && tVariable, #create)>
   [ 33] extcall 25 .............................. return error(me, "String or symbol expected:" && tVariable, #create)
   [ 35] getparam 0 .............................. <me>
-  [ 37] pushsymb 639 ............................ <#pItemList>
+  [ 37] pushsymb 641 ............................ <#pItemList>
   [ 40] getparam 1 .............................. <tVariable>
   [ 42] getparam 2 .............................. <tValue>
   [ 44] pusharglistnoret 4 ...................... <me, #pItemList, tVariable, tValue>
-  [ 46] objcall 889 ............................. me.pItemList[tVariable] = tValue
+  [ 46] objcall 891 ............................. me.pItemList[tVariable] = tValue
   [ 49] pushint8 1 .............................. <1>
   [ 51] pusharglistnoret 1 ...................... <1>
   [ 53] extcall 25 .............................. return 1
@@ -77,11 +77,11 @@ on set me, tVariable, tValue
   [ 31] pusharglistnoret 1 ...................... <error(me, "String or symbol expected:" && tVariable, #set)>
   [ 33] extcall 25 .............................. return error(me, "String or symbol expected:" && tVariable, #set)
   [ 35] getparam 0 .............................. <me>
-  [ 37] pushsymb 639 ............................ <#pItemList>
+  [ 37] pushsymb 641 ............................ <#pItemList>
   [ 40] getparam 1 .............................. <tVariable>
   [ 42] getparam 2 .............................. <tValue>
   [ 44] pusharglistnoret 4 ...................... <me, #pItemList, tVariable, tValue>
-  [ 46] objcall 889 ............................. me.pItemList[tVariable] = tValue
+  [ 46] objcall 891 ............................. me.pItemList[tVariable] = tValue
   [ 49] pushint8 1 .............................. <1>
   [ 51] pusharglistnoret 1 ...................... <1>
   [ 53] extcall 25 .............................. return 1
@@ -90,7 +90,7 @@ end
 
 on get me, tVariable, tDefault
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 639 ............................ <#pItemList>
+  [  2] pushsymb 641 ............................ <#pItemList>
   [  5] getparam 1 .............................. <tVariable>
   [  7] pusharglist 3 ........................... <me, #pItemList, tVariable>
   [  9] objcall 290 ............................. <me.pItemList[tVariable]>
@@ -138,16 +138,16 @@ end
 
 on getInt me, tVariable, tDefault
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 639 ............................ <#pItemList>
+  [  2] pushsymb 641 ............................ <#pItemList>
   [  5] getparam 1 .............................. <tVariable>
   [  7] pusharglist 3 ........................... <me, #pItemList, tVariable>
   [  9] objcall 290 ............................. <me.pItemList[tVariable]>
   [ 12] pusharglist 1 ........................... <me.pItemList[tVariable]>
-  [ 14] extcall 955 ............................. <integer(me.pItemList[tVariable])>
+  [ 14] extcall 957 ............................. <integer(me.pItemList[tVariable])>
   [ 17] setlocal 0 .............................. tValue = integer(me.pItemList[tVariable])
   [ 19] getlocal 0 .............................. <tValue>
   [ 21] pusharglist 1 ........................... <tValue>
-  [ 23] extcall 681 ............................. <integerp(tValue)>
+  [ 23] extcall 683 ............................. <integerp(tValue)>
   [ 26] not ..................................... <not integerp(tValue)>
   [ 27] jmpifz [ 81] ............................ if not integerp(tValue) then
   [ 30] pushcons 1 .............................. <"Variable not found:">
@@ -186,7 +186,7 @@ end
 
 on getValue me, tVariable, tDefault
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 639 ............................ <#pItemList>
+  [  2] pushsymb 641 ............................ <#pItemList>
   [  5] getparam 1 .............................. <tVariable>
   [  7] pusharglist 3 ........................... <me, #pItemList, tVariable>
   [  9] objcall 290 ............................. <me.pItemList[tVariable]>
@@ -233,10 +233,10 @@ end
 
 on Remove me, tVariable
   [  0] getparam 0 .............................. <me>
-  [  2] getchainedprop 639 ...................... <me.pItemList>
+  [  2] getchainedprop 641 ...................... <me.pItemList>
   [  5] getparam 1 .............................. <tVariable>
   [  7] pusharglist 2 ........................... <me.pItemList, tVariable>
-  [  9] objcall 659 ............................. <me.pItemList.deleteProp(tVariable)>
+  [  9] objcall 661 ............................. <me.pItemList.deleteProp(tVariable)>
   [ 12] pusharglistnoret 1 ...................... <me.pItemList.deleteProp(tVariable)>
   [ 14] extcall 25 .............................. return me.pItemList.deleteProp(tVariable)
   [ 16] ret
@@ -244,7 +244,7 @@ end
 
 on exists me, tVariable
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 639 ............................ <#pItemList>
+  [  2] pushsymb 641 ............................ <#pItemList>
   [  5] getparam 1 .............................. <tVariable>
   [  7] pusharglist 3 ........................... <me, #pItemList, tVariable>
   [  9] objcall 290 ............................. <me.pItemList[tVariable]>
@@ -344,7 +344,7 @@ on dump me, tField, tDelimiter
   [188] setlocal 5 .............................. tValue = tValue.word[1..tValue.word.count]
   [190] getlocal 5 .............................. <tValue>
   [192] pusharglist 0 ........................... <>
-  [194] extcall 884 ............................. <SPACE>
+  [194] extcall 886 ............................. <SPACE>
   [197] containsstr ............................. <tValue contains SPACE>
   [198] not ..................................... <not (tValue contains SPACE)>
   [199] jmpifz [301] ............................ if not (tValue contains SPACE) then / else
@@ -362,22 +362,22 @@ on dump me, tField, tDelimiter
   [226] pusharglist 1 ........................... <tValue>
   [228] extcall 293 ............................. <length(tValue)>
   [231] pusharglist 3 ........................... <tValue, 2, length(tValue)>
-  [233] extcall 930 ............................. <chars(tValue, 2, length(tValue))>
+  [233] extcall 932 ............................. <chars(tValue, 2, length(tValue))>
   [236] pusharglist 1 ........................... <chars(tValue, 2, length(tValue))>
-  [238] extcall 570 ............................. <symbol(chars(tValue, 2, length(tValue)))>
+  [238] extcall 572 ............................. <symbol(chars(tValue, 2, length(tValue)))>
   [241] setlocal 5 .............................. tValue = symbol(chars(tValue, 2, length(tValue)))
   [243] jmp [298]
   [246] getlocal 5 .............................. <tValue>
   [248] pusharglist 1 ........................... <tValue>
-  [250] extcall 955 ............................. <integer(tValue)>
+  [250] extcall 957 ............................. <integer(tValue)>
   [253] pusharglist 1 ........................... <integer(tValue)>
-  [255] extcall 681 ............................. <integerp(integer(tValue))>
+  [255] extcall 683 ............................. <integerp(integer(tValue))>
   [258] jmpifz [298] ............................ if integerp(integer(tValue)) then
   [261] getlocal 5 .............................. <tValue>
   [263] pusharglist 1 ........................... <tValue>
-  [265] extcall 955 ............................. <integer(tValue)>
+  [265] extcall 957 ............................. <integer(tValue)>
   [268] pusharglist 1 ........................... <integer(tValue)>
-  [270] extcall 593 ............................. <string(integer(tValue))>
+  [270] extcall 595 ............................. <string(integer(tValue))>
   [273] pusharglist 1 ........................... <string(integer(tValue))>
   [275] extcall 293 ............................. <length(string(integer(tValue)))>
   [278] getlocal 5 .............................. <tValue>
@@ -387,18 +387,18 @@ on dump me, tField, tDelimiter
   [286] jmpifz [298] ............................ if length(string(integer(tValue))) = length(tValue) then
   [289] getlocal 5 .............................. <tValue>
   [291] pusharglist 1 ........................... <tValue>
-  [293] extcall 955 ............................. <integer(tValue)>
+  [293] extcall 957 ............................. <integer(tValue)>
   [296] setlocal 5 .............................. tValue = integer(tValue)
   [298] jmp [325]
   [301] getlocal 5 .............................. <tValue>
   [303] pusharglist 1 ........................... <tValue>
-  [305] extcall 942 ............................. <float(tValue)>
+  [305] extcall 944 ............................. <float(tValue)>
   [308] pusharglist 1 ........................... <float(tValue)>
-  [310] extcall 1088 ............................ <floatp(float(tValue))>
+  [310] extcall 1116 ............................ <floatp(float(tValue))>
   [313] jmpifz [325] ............................ if floatp(float(tValue)) then
   [316] getlocal 5 .............................. <tValue>
   [318] pusharglist 1 ........................... <tValue>
-  [320] extcall 942 ............................. <float(tValue)>
+  [320] extcall 944 ............................. <float(tValue)>
   [323] setlocal 5 .............................. tValue = float(tValue)
   [325] getlocal 5 .............................. <tValue>
   [327] pusharglist 1 ........................... <tValue>
@@ -418,7 +418,7 @@ on dump me, tField, tDelimiter
   [358] pusharglist 3 ........................... <tValue, #char, j>
   [360] objcall 290 ............................. <tValue.char[j]>
   [363] pusharglist 1 ........................... <tValue.char[j]>
-  [365] extcall 915 ............................. <charToNum(tValue.char[j])>
+  [365] extcall 917 ............................. <charToNum(tValue.char[j])>
   [368] peek 0 .................................. case charToNum(tValue.char[j]) of
   [370] pushint16 228 ........................... <228>
   [373] eq
@@ -457,11 +457,11 @@ on dump me, tField, tDelimiter
   [426] setlocal 6
   [428] endrepeat [338]
   [430] getparam 0 .............................. <me>
-  [432] pushsymb 639 ............................ <#pItemList>
+  [432] pushsymb 641 ............................ <#pItemList>
   [435] getlocal 4 .............................. <tProp>
   [437] getlocal 5 .............................. <tValue>
   [439] pusharglistnoret 4 ...................... <me, #pItemList, tProp, tValue>
-  [441] objcall 889 ............................. me.pItemList[tProp] = tValue
+  [441] objcall 891 ............................. me.pItemList[tProp] = tValue
   [444] getparam 2 .............................. <tDelimiter>
   [446] setmovieprop 286 ........................ the itemDelimiter = tDelimiter
   [449] pushint8 1
@@ -481,6 +481,6 @@ on clear me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 0 ........................... <[:]>
   [  4] pushproplist ............................ <[:]>
-  [  5] setobjprop 639 .......................... me.pItemList = [:]
+  [  5] setobjprop 641 .......................... me.pItemList = [:]
   [  8] ret
 end

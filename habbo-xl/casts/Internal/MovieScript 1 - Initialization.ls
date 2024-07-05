@@ -1,8 +1,6 @@
 on prepareMovie
   castLib(2).preloadMode = 1
   preloadNetThing(castLib(2).fileName)
-  (the stage).drawRect = rect(0, 0, 720, 540)
-  (the stage).rect = rect(the stageLeft, the stageTop, the stageLeft + 720, the stageTop + 540)
   (the stage).drawRect = rect(0, 0, 1440, 1080)
   (the stage).rect = rect(the stageLeft, the stageTop, the stageLeft + 1440, the stageTop + 1080)
   set the centerStage to 1

@@ -8,7 +8,7 @@ on construct me
   me.pItemList = []
   me.pHideList = []
   me.setProperty(#defaultLocZ, getIntVariable("window.default.locz", 0))
-  me.pBoundary = rect(0, 0, (the stage).rect.width, (the stage).rect.height) + getVariableValue("window.boundary.limit")
+  me.pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + getVariableValue("window.boundary.limit")
   me.pInstanceClass = getClassVariable("window.instance.class")
   pClsList = [:]
   pModalID = #modal
@@ -208,7 +208,7 @@ on modal me, tid, tLayout, tPosition
     if me.create(pModalID, "modal.window") then
       tModal = me.get(pModalID)
       tModal.moveTo(0, 0)
-      tModal.resizeTo((the stage).rect.width, (the stage).rect.height)
+      tModal.resizeTo((the stage).sourceRect.width, (the stage).sourceRect.height)
       tModal.lock()
       tModal.getElement("modal").setProperty(#blend, 40)
     else

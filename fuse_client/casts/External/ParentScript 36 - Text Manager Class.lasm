@@ -1,6 +1,6 @@
 on get me, tKey, tDefault
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 639 ............................ <#pItemList>
+  [  2] pushsymb 641 ............................ <#pItemList>
   [  5] getparam 1 .............................. <tKey>
   [  7] pusharglist 3 ........................... <me, #pItemList, tKey>
   [  9] objcall 290 ............................. <me.pItemList[tKey]>
@@ -70,7 +70,7 @@ on dump me, tField, tDelimiter
   [ 47] pushcons 6 .............................. <TAB>
   [ 49] pushcons 7 .............................. <"\\s">
   [ 51] pusharglist 0 ........................... <>
-  [ 53] extcall 884 ............................. <SPACE>
+  [ 53] extcall 886 ............................. <SPACE>
   [ 56] pushcons 8 .............................. <"<BR>">
   [ 58] pushcons 1 .............................. <RETURN>
   [ 60] pusharglist 8 ........................... <["\\r": RETURN, "\\t": TAB, "\\s": SPACE, "<BR>": RETURN]>
@@ -194,11 +194,11 @@ on dump me, tField, tDelimiter
   [318] setlocal 8
   [320] endrepeat [264]
   [322] getparam 0 .............................. <me>
-  [324] pushsymb 639 ............................ <#pItemList>
+  [324] pushsymb 641 ............................ <#pItemList>
   [327] getlocal 6 .............................. <tProp>
   [329] getlocal 7 .............................. <tValue>
   [331] pusharglistnoret 4 ...................... <me, #pItemList, tProp, tValue>
-  [333] objcall 889 ............................. me.pItemList[tProp] = tValue
+  [333] objcall 891 ............................. me.pItemList[tProp] = tValue
   [336] getparam 2 .............................. <tDelimiter>
   [338] setmovieprop 286 ........................ the itemDelimiter = tDelimiter
   [341] pushint8 1

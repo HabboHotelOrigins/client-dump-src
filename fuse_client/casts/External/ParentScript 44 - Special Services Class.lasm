@@ -2,37 +2,37 @@ property pCatchFlag, pSavedHook, pToolTipAct, pToolTipSpr, pToolTipMem, pToolTip
 
 on construct me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1060 ............................ pCatchFlag = 0
+  [  1] setprop 1078 ............................ pCatchFlag = 0
   [  4] pushzero ................................ <0>
-  [  5] setprop 1061 ............................ pSavedHook = 0
+  [  5] setprop 1079 ............................ pSavedHook = 0
   [  8] pushcons 0 .............................. <"tooltip.active">
   [ 10] pushzero ................................ <0>
   [ 11] pusharglist 2 ........................... <"tooltip.active", 0>
   [ 13] extcall 373 ............................. <getIntVariable("tooltip.active", 0)>
-  [ 16] setprop 1062 ............................ pToolTipAct = getIntVariable("tooltip.active", 0)
+  [ 16] setprop 1080 ............................ pToolTipAct = getIntVariable("tooltip.active", 0)
   [ 19] pusharglist 0 ........................... <>
   [ 21] extcall 32 .............................. <VOID>
-  [ 23] setprop 1063 ............................ pToolTipMem = VOID
+  [ 23] setprop 1081 ............................ pToolTipMem = VOID
   [ 26] pusharglist 0 ........................... <>
   [ 28] extcall 32 .............................. <VOID>
-  [ 30] setprop 1064 ............................ pToolTipSpr = VOID
+  [ 30] setprop 1082 ............................ pToolTipSpr = VOID
   [ 33] pushzero ................................ <0>
-  [ 34] setprop 1065 ............................ pCurrCursor = 0
+  [ 34] setprop 1083 ............................ pCurrCursor = 0
   [ 37] pushzero ................................ <0>
-  [ 38] setprop 1066 ............................ pLastCursor = 0
+  [ 38] setprop 1084 ............................ pLastCursor = 0
   [ 41] pushzero ................................ <0>
-  [ 42] setprop 1067 ............................ pUniqueSeed = 0
-  [ 45] pushsymb 656 ............................ <#temp>
+  [ 42] setprop 1085 ............................ pUniqueSeed = 0
+  [ 45] pushsymb 658 ............................ <#temp>
   [ 48] pushcons 1 .............................. <"connection.decoder.class">
   [ 50] pusharglist 1 ........................... <"connection.decoder.class">
   [ 52] extcall 155 ............................. <getClassVariable("connection.decoder.class")>
   [ 54] pusharglist 2 ........................... <#temp, getClassVariable("connection.decoder.class")>
   [ 56] extcall 94 .............................. <createObject(#temp, getClassVariable("connection.decoder.class"))>
-  [ 58] setprop 1068 ............................ pDecoder = createObject(#temp, getClassVariable("connection.decoder.class"))
-  [ 61] getprop 1068 ............................ <pDecoder>
+  [ 58] setprop 1086 ............................ pDecoder = createObject(#temp, getClassVariable("connection.decoder.class"))
+  [ 61] getprop 1086 ............................ <pDecoder>
   [ 64] pushcons 2 .............................. <"sulake1Unique2Key3Generator">
   [ 66] pusharglistnoret 2 ...................... <pDecoder, "sulake1Unique2Key3Generator">
-  [ 68] objcall 1050 ............................ pDecoder.setKey("sulake1Unique2Key3Generator")
+  [ 68] objcall 1063 ............................ pDecoder.setKey("sulake1Unique2Key3Generator")
   [ 71] pushint8 1 .............................. <1>
   [ 73] pusharglistnoret 1 ...................... <1>
   [ 75] extcall 25 .............................. return 1
@@ -40,27 +40,27 @@ on construct me
 end
 
 on deconstruct me
-  [  0] getprop 1064 ............................ <pToolTipSpr>
+  [  0] getprop 1082 ............................ <pToolTipSpr>
   [  3] pusharglist 1 ........................... <pToolTipSpr>
   [  5] extcall 20 .............................. <voidp(pToolTipSpr)>
   [  7] not ..................................... <not voidp(pToolTipSpr)>
   [  8] jmpifz [ 20] ............................ if not voidp(pToolTipSpr) then
-  [ 11] getprop 1064 ............................ <pToolTipSpr>
+  [ 11] getprop 1082 ............................ <pToolTipSpr>
   [ 14] getobjprop 37 ........................... <pToolTipSpr.spriteNum>
   [ 16] pusharglistnoret 1 ...................... <pToolTipSpr.spriteNum>
   [ 18] extcall 233 ............................. releaseSprite(pToolTipSpr.spriteNum)
-  [ 20] getprop 1063 ............................ <pToolTipMem>
+  [ 20] getprop 1081 ............................ <pToolTipMem>
   [ 23] pusharglist 1 ........................... <pToolTipMem>
   [ 25] extcall 20 .............................. <voidp(pToolTipMem)>
   [ 27] not ..................................... <not voidp(pToolTipMem)>
   [ 28] jmpifz [ 41] ............................ if not voidp(pToolTipMem) then
-  [ 31] getprop 1063 ............................ <pToolTipMem>
-  [ 34] getobjprop 725 .......................... <pToolTipMem.name>
+  [ 31] getprop 1081 ............................ <pToolTipMem>
+  [ 34] getobjprop 727 .......................... <pToolTipMem.name>
   [ 37] pusharglistnoret 1 ...................... <pToolTipMem.name>
   [ 39] extcall 165 ............................. removeMember(pToolTipMem.name)
   [ 41] pusharglist 0 ........................... <>
   [ 43] extcall 32 .............................. <VOID>
-  [ 45] setprop 1068 ............................ pDecoder = VOID
+  [ 45] setprop 1086 ............................ pDecoder = VOID
   [ 48] pushint8 1 .............................. <1>
   [ 50] pusharglistnoret 1 ...................... <1>
   [ 52] extcall 25 .............................. return 1
@@ -69,11 +69,11 @@ end
 
 on try me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1060 ............................ pCatchFlag = 0
-  [  4] getmovieprop 673 ........................ <the alertHook>
-  [  7] setprop 1061 ............................ pSavedHook = the alertHook
+  [  1] setprop 1078 ............................ pCatchFlag = 0
+  [  4] getmovieprop 675 ........................ <the alertHook>
+  [  7] setprop 1079 ............................ pSavedHook = the alertHook
   [ 10] getparam 0 .............................. <me>
-  [ 12] setmovieprop 673 ........................ the alertHook = me
+  [ 12] setmovieprop 675 ........................ the alertHook = me
   [ 15] pushint8 1 .............................. <1>
   [ 17] pusharglistnoret 1 ...................... <1>
   [ 19] extcall 25 .............................. return 1
@@ -81,9 +81,9 @@ on try me
 end
 
 on catch me
-  [  0] getprop 1061 ............................ <pSavedHook>
-  [  3] setmovieprop 673 ........................ the alertHook = pSavedHook
-  [  6] getprop 1060 ............................ <pCatchFlag>
+  [  0] getprop 1079 ............................ <pSavedHook>
+  [  3] setmovieprop 675 ........................ the alertHook = pSavedHook
+  [  6] getprop 1078 ............................ <pCatchFlag>
   [  9] pusharglistnoret 1 ...................... <pCatchFlag>
   [ 11] extcall 25 .............................. return pCatchFlag
   [ 13] pushzero ................................ <0>
@@ -93,36 +93,36 @@ on catch me
 end
 
 on createToolTip me, tText
-  [  0] getprop 1062 ............................ <pToolTipAct>
+  [  0] getprop 1080 ............................ <pToolTipAct>
   [  3] jmpifz [129] ............................ if pToolTipAct then
-  [  6] getprop 1063 ............................ <pToolTipMem>
+  [  6] getprop 1081 ............................ <pToolTipMem>
   [  9] pusharglist 1 ........................... <pToolTipMem>
   [ 11] extcall 20 .............................. <voidp(pToolTipMem)>
   [ 13] jmpifz [ 23] ............................ if voidp(pToolTipMem) then
   [ 16] getparam 0 .............................. <me>
   [ 18] pusharglistnoret 1 ...................... <me>
-  [ 20] objcall 1059 ............................ me.prepareToolTip()
-  [ 23] getprop 1064 ............................ <pToolTipSpr>
+  [ 20] objcall 1076 ............................ me.prepareToolTip()
+  [ 23] getprop 1082 ............................ <pToolTipSpr>
   [ 26] pusharglist 1 ........................... <pToolTipSpr>
   [ 28] extcall 20 .............................. <voidp(pToolTipSpr)>
   [ 30] jmpifz [ 40] ............................ if voidp(pToolTipSpr) then
   [ 33] getparam 0 .............................. <me>
   [ 35] pusharglistnoret 1 ...................... <me>
-  [ 37] objcall 1059 ............................ me.prepareToolTip()
+  [ 37] objcall 1076 ............................ me.prepareToolTip()
   [ 40] getparam 1 .............................. <tText>
   [ 42] pusharglist 1 ........................... <tText>
   [ 44] extcall 20 .............................. <voidp(tText)>
   [ 46] jmpifz [ 53] ............................ if voidp(tText) then
   [ 49] pushcons 3 .............................. <"...">
   [ 51] setparam 1 .............................. tText = "..."
-  [ 53] getprop 1064 ............................ <pToolTipSpr>
+  [ 53] getprop 1082 ............................ <pToolTipSpr>
   [ 56] pushzero ................................ <0>
-  [ 57] setobjprop 878 .......................... pToolTipSpr.visible = 0
-  [ 60] getprop 1063 ............................ <pToolTipMem>
+  [ 57] setobjprop 880 .......................... pToolTipSpr.visible = 0
+  [ 60] getprop 1081 ............................ <pToolTipMem>
   [ 63] pushzero ................................ <0>
   [ 64] pushzero ................................ <0>
   [ 65] getparam 1 .............................. <tText>
-  [ 67] pushsymb 598 ............................ <#line>
+  [ 67] pushsymb 600 ............................ <#line>
   [ 70] pushint8 1 .............................. <1>
   [ 72] pusharglist 3 ........................... <tText, #line, 1>
   [ 74] objcall 290 ............................. <tText.line[1]>
@@ -132,41 +132,41 @@ on createToolTip me, tText
   [ 84] mul ..................................... <length(tText.line[1]) * 8>
   [ 85] pushint8 20 ............................. <20>
   [ 87] pusharglist 4 ........................... <0, 0, length(tText.line[1]) * 8, 20>
-  [ 89] extcall 555 ............................. <rect(0, 0, length(tText.line[1]) * 8, 20)>
-  [ 92] setobjprop 555 .......................... pToolTipMem.rect = rect(0, 0, length(tText.line[1]) * 8, 20)
-  [ 95] getprop 1063 ............................ <pToolTipMem>
+  [ 89] extcall 557 ............................. <rect(0, 0, length(tText.line[1]) * 8, 20)>
+  [ 92] setobjprop 557 .......................... pToolTipMem.rect = rect(0, 0, length(tText.line[1]) * 8, 20)
+  [ 95] getprop 1081 ............................ <pToolTipMem>
   [ 98] getparam 1 .............................. <tText>
-  [100] setobjprop 514 .......................... pToolTipMem.text = tText
-  [103] getmovieprop 671 ........................ <the milliSeconds>
-  [106] setprop 1069 ............................ pToolTipID = the milliSeconds
+  [100] setobjprop 516 .......................... pToolTipMem.text = tText
+  [103] getmovieprop 673 ........................ <the milliSeconds>
+  [106] setprop 1087 ............................ pToolTipID = the milliSeconds
   [109] getparam 0 .............................. <me>
-  [111] getprop 1070 ............................ <pToolTipDel>
-  [114] pushsymb 1056 ........................... <#renderToolTip>
-  [117] getprop 1069 ............................ <pToolTipID>
+  [111] getprop 1088 ............................ <pToolTipDel>
+  [114] pushsymb 1069 ........................... <#renderToolTip>
+  [117] getprop 1087 ............................ <pToolTipID>
   [120] pusharglist 4 ........................... <me, pToolTipDel, #renderToolTip, pToolTipID>
-  [122] objcall 549 ............................. <me.delay(pToolTipDel, #renderToolTip, pToolTipID)>
+  [122] objcall 551 ............................. <me.delay(pToolTipDel, #renderToolTip, pToolTipID)>
   [125] pusharglistnoret 1 ...................... <me.delay(pToolTipDel, #renderToolTip, pToolTipID)>
   [127] extcall 25 .............................. return me.delay(pToolTipDel, #renderToolTip, pToolTipID)
   [129] ret
 end
 
 on removeToolTip me, tNextID
-  [  0] getprop 1062 ............................ <pToolTipAct>
+  [  0] getprop 1080 ............................ <pToolTipAct>
   [  3] jmpifz [ 42] ............................ if pToolTipAct then
   [  6] getparam 1 .............................. <tNextID>
   [  8] pusharglist 1 ........................... <tNextID>
   [ 10] extcall 20 .............................. <voidp(tNextID)>
-  [ 12] getprop 1069 ............................ <pToolTipID>
+  [ 12] getprop 1087 ............................ <pToolTipID>
   [ 15] getparam 1 .............................. <tNextID>
   [ 17] eq ...................................... <pToolTipID = tNextID>
   [ 18] or ...................................... <voidp(tNextID) or (pToolTipID = tNextID)>
   [ 19] jmpifz [ 42] ............................ if voidp(tNextID) or (pToolTipID = tNextID) then
   [ 22] pusharglist 0 ........................... <>
   [ 24] extcall 32 .............................. <VOID>
-  [ 26] setprop 1069 ............................ pToolTipID = VOID
-  [ 29] getprop 1064 ............................ <pToolTipSpr>
+  [ 26] setprop 1087 ............................ pToolTipID = VOID
+  [ 29] getprop 1082 ............................ <pToolTipSpr>
   [ 32] pushzero ................................ <0>
-  [ 33] setobjprop 878 .......................... pToolTipSpr.visible = 0
+  [ 33] setobjprop 880 .......................... pToolTipSpr.visible = 0
   [ 36] pushint8 1 .............................. <1>
   [ 38] pusharglistnoret 1 ...................... <1>
   [ 40] extcall 25 .............................. return 1
@@ -174,12 +174,12 @@ on removeToolTip me, tNextID
 end
 
 on renderToolTip me, tNextID
-  [  0] getprop 1062 ............................ <pToolTipAct>
+  [  0] getprop 1080 ............................ <pToolTipAct>
   [  3] jmpifz [ 73] ............................ if pToolTipAct then
   [  6] getparam 1 .............................. <tNextID>
-  [  8] getprop 1069 ............................ <pToolTipID>
+  [  8] getprop 1087 ............................ <pToolTipID>
   [ 11] nteq .................................... <tNextID <> pToolTipID>
-  [ 12] getprop 1069 ............................ <pToolTipID>
+  [ 12] getprop 1087 ............................ <pToolTipID>
   [ 15] pusharglist 1 ........................... <pToolTipID>
   [ 17] extcall 20 .............................. <voidp(pToolTipID)>
   [ 19] or ...................................... <(tNextID <> pToolTipID) or voidp(pToolTipID)>
@@ -187,26 +187,26 @@ on renderToolTip me, tNextID
   [ 23] pushzero ................................ <0>
   [ 24] pusharglistnoret 1 ...................... <0>
   [ 26] extcall 25 .............................. return 0
-  [ 28] getprop 1064 ............................ <pToolTipSpr>
-  [ 31] getmovieprop 1072 ....................... <the mouseLoc>
+  [ 28] getprop 1082 ............................ <pToolTipSpr>
+  [ 31] getmovieprop 1090 ....................... <the mouseLoc>
   [ 34] pushint8 2 .............................. <2>
   [ 36] inv ..................................... <-2>
   [ 37] pushint8 15 ............................. <15>
   [ 39] pusharglist 2 ........................... <[-2, 15]>
   [ 41] pushlist ................................ <[-2, 15]>
   [ 42] add ..................................... <the mouseLoc + [-2, 15]>
-  [ 43] setobjprop 509 .......................... pToolTipSpr.loc = the mouseLoc + [-2, 15]
-  [ 46] getprop 1064 ............................ <pToolTipSpr>
+  [ 43] setobjprop 511 .......................... pToolTipSpr.loc = the mouseLoc + [-2, 15]
+  [ 46] getprop 1082 ............................ <pToolTipSpr>
   [ 49] pushint8 1 .............................. <1>
-  [ 51] setobjprop 878 .......................... pToolTipSpr.visible = 1
+  [ 51] setobjprop 880 .......................... pToolTipSpr.visible = 1
   [ 54] getparam 0 .............................. <me>
-  [ 56] getprop 1070 ............................ <pToolTipDel>
+  [ 56] getprop 1088 ............................ <pToolTipDel>
   [ 59] pushint8 2 .............................. <2>
   [ 61] mul ..................................... <pToolTipDel * 2>
   [ 62] pushsymb 407 ............................ <#removeToolTip>
-  [ 65] getprop 1069 ............................ <pToolTipID>
+  [ 65] getprop 1087 ............................ <pToolTipID>
   [ 68] pusharglistnoret 4 ...................... <me, pToolTipDel * 2, #removeToolTip, pToolTipID>
-  [ 70] objcall 549 ............................. me.delay(pToolTipDel * 2, #removeToolTip, pToolTipID)
+  [ 70] objcall 551 ............................. me.delay(pToolTipDel * 2, #removeToolTip, pToolTipID)
   [ 73] ret
 end
 
@@ -256,23 +256,55 @@ on setcursor me, ttype
   [ 87] setparam 1 .............................. ttype = 4
   [ 89] jmp [106]
   [ 92] peek 0
-  [ 94] pushsymb 1073 ........................... <#previous>
+  [ 94] pushsymb 1091 ........................... <#previous>
   [ 97] eq
   [ 98] jmpifz [106] ............................ (case) #previous:
-  [101] getprop 1066 ............................ <pLastCursor>
+  [101] getprop 1084 ............................ <pLastCursor>
   [104] setparam 1 .............................. ttype = pLastCursor
   [106] pop 1 ................................... end case
   [108] getparam 1 .............................. <ttype>
   [110] pusharglistnoret 1 ...................... <ttype>
   [112] extcall 45 .............................. cursor(ttype)
-  [114] getprop 1065 ............................ <pCurrCursor>
-  [117] setprop 1066 ............................ pLastCursor = pCurrCursor
+  [114] getprop 1083 ............................ <pCurrCursor>
+  [117] setprop 1084 ............................ pLastCursor = pCurrCursor
   [120] getparam 1 .............................. <ttype>
-  [122] setprop 1065 ............................ pCurrCursor = ttype
+  [122] setprop 1083 ............................ pCurrCursor = ttype
   [125] pushint8 1 .............................. <1>
   [127] pusharglistnoret 1 ...................... <1>
   [129] extcall 25 .............................. return 1
   [131] ret
+end
+
+on callJavaScriptFunction me, tCallString, tdata
+  [  0] pushcons 4 .............................. <"Special Services::callJavascriptFunction">
+  [  2] pusharglistnoret 1 ...................... <"Special Services::callJavascriptFunction">
+  [  4] extcall 1092 ............................ startProfilingTask("Special Services::callJavascriptFunction")
+  [  7] getmovieprop 82 ......................... <the runMode>
+  [  9] pushcons 5 .............................. <"Author">
+  [ 11] eq ...................................... <the runMode = "Author">
+  [ 12] jmpifz [ 20] ............................ if the runMode = "Author" then
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 25 .............................. return 0
+  [ 20] pushcons 6 .............................. <"JavaScript Proxy">
+  [ 22] pusharglist 1 ........................... <"JavaScript Proxy">
+  [ 24] extcall 115 ............................. <script("JavaScript Proxy")>
+  [ 26] pushcons 7 .............................. <QUOTE>
+  [ 28] getparam 1 .............................. <tCallString>
+  [ 30] joinstr ................................. <QUOTE & tCallString>
+  [ 31] pushcons 7 .............................. <QUOTE>
+  [ 33] joinstr ................................. <QUOTE & tCallString & QUOTE>
+  [ 34] pushcons 7 .............................. <QUOTE>
+  [ 36] getparam 2 .............................. <tdata>
+  [ 38] joinstr ................................. <QUOTE & tdata>
+  [ 39] pushcons 7 .............................. <QUOTE>
+  [ 41] joinstr ................................. <QUOTE & tdata & QUOTE>
+  [ 42] pusharglistnoret 3 ...................... <script("JavaScript Proxy"), QUOTE & tCallString & QUOTE, QUOTE & tdata & QUOTE>
+  [ 44] objcall 1093 ............................ script("JavaScript Proxy").callJavaScript(QUOTE & tCallString & QUOTE, QUOTE & tdata & QUOTE)
+  [ 47] pushcons 4 .............................. <"Special Services::callJavascriptFunction">
+  [ 49] pusharglistnoret 1 ...................... <"Special Services::callJavascriptFunction">
+  [ 51] extcall 1094 ............................ finishProfilingTask("Special Services::callJavascriptFunction")
+  [ 54] ret
 end
 
 on openNetPage me, tURL_key, tTarget
@@ -299,7 +331,7 @@ on openNetPage me, tURL_key, tTarget
   [ 43] getparam 0 .............................. <me>
   [ 45] getlocal 0 .............................. <tURL>
   [ 47] pusharglist 2 ........................... <me, tURL>
-  [ 49] objcall 1803 ............................ <me.getPredefinedURL(tURL)>
+  [ 49] objcall 1071 ............................ <me.getPredefinedURL(tURL)>
   [ 52] setlocal 0 .............................. tURL = me.getPredefinedURL(tURL)
   [ 54] pusharglist 0 ........................... <>
   [ 56] extcall 32 .............................. <VOID>
@@ -310,25 +342,25 @@ on openNetPage me, tURL_key, tTarget
   [ 65] pusharglist 1 ........................... <tTarget>
   [ 67] extcall 20 .............................. <voidp(tTarget)>
   [ 69] jmpifz [105] ............................ if voidp(tTarget) then / else
-  [ 72] pushcons 4 .............................. <"default.url.open.target">
+  [ 72] pushcons 8 .............................. <"default.url.open.target">
   [ 74] pusharglist 1 ........................... <"default.url.open.target">
   [ 76] extcall 376 ............................. <variableExists("default.url.open.target")>
   [ 79] jmpifz [ 98] ............................ if variableExists("default.url.open.target") then / else
-  [ 82] pushcons 4 .............................. <"default.url.open.target">
+  [ 82] pushcons 8 .............................. <"default.url.open.target">
   [ 84] pusharglist 1 ........................... <"default.url.open.target">
   [ 86] extcall 372 ............................. <getVariable("default.url.open.target")>
   [ 89] setlocal 1 .............................. tResolvedTarget = getVariable("default.url.open.target")
   [ 91] pushint8 1 .............................. <1>
   [ 93] setlocal 2 .............................. tTargetIsPArent = 1
   [ 95] jmp [102]
-  [ 98] pushcons 5 .............................. <"_new">
+  [ 98] pushcons 9 .............................. <"_new">
   [100] setlocal 1 .............................. tResolvedTarget = "_new"
   [102] jmp [153]
   [105] getparam 2 .............................. <tTarget>
-  [107] pushcons 6 .............................. <"self">
+  [107] pushcons 10 ............................. <"self">
   [109] eq ...................................... <tTarget = "self">
   [110] getparam 2 .............................. <tTarget>
-  [112] pushcons 7 .............................. <"_self">
+  [112] pushcons 11 ............................. <"_self">
   [114] eq ...................................... <tTarget = "_self">
   [115] or ...................................... <(tTarget = "self") or (tTarget = "_self")>
   [116] jmpifz [128] ............................ if (tTarget = "self") or (tTarget = "_self") then / else
@@ -337,14 +369,14 @@ on openNetPage me, tURL_key, tTarget
   [123] setlocal 1 .............................. tResolvedTarget = VOID
   [125] jmp [153]
   [128] getparam 2 .............................. <tTarget>
-  [130] pushcons 5 .............................. <"_new">
+  [130] pushcons 9 .............................. <"_new">
   [132] eq ...................................... <tTarget = "_new">
   [133] getparam 2 .............................. <tTarget>
-  [135] pushcons 8 .............................. <"new">
+  [135] pushcons 12 ............................. <"new">
   [137] eq ...................................... <tTarget = "new">
   [138] or ...................................... <(tTarget = "_new") or (tTarget = "new")>
   [139] jmpifz [149] ............................ if (tTarget = "_new") or (tTarget = "new") then / else
-  [142] pushcons 5 .............................. <"_new">
+  [142] pushcons 9 .............................. <"_new">
   [144] setlocal 1 .............................. tResolvedTarget = "_new"
   [146] jmp [153]
   [149] getparam 2 .............................. <tTarget>
@@ -353,15 +385,15 @@ on openNetPage me, tURL_key, tTarget
   [155] getlocal 1 .............................. <tResolvedTarget>
   [157] pusharglistnoret 2 ...................... <tURL, tResolvedTarget>
   [159] extcall 91 .............................. gotoNetPage(tURL, tResolvedTarget)
-  [161] pushcons 9 .............................. <"Open page:">
+  [161] pushcons 13 ............................. <"Open page:">
   [163] getlocal 0 .............................. <tURL>
   [165] joinpadstr .............................. <"Open page:" && tURL>
-  [166] pushcons 10 ............................. <"target:">
+  [166] pushcons 14 ............................. <"target:">
   [168] joinpadstr .............................. <"Open page:" && tURL && "target:">
   [169] getlocal 1 .............................. <tResolvedTarget>
   [171] joinpadstr .............................. <"Open page:" && tURL && "target:" && tResolvedTarget>
   [172] pusharglistnoret 1 ...................... <"Open page:" && tURL && "target:" && tResolvedTarget>
-  [174] extcall 642 ............................. put "Open page:" && tURL && "target:" && tResolvedTarget
+  [174] extcall 644 ............................. put "Open page:" && tURL && "target:" && tResolvedTarget
   [177] pushint8 1 .............................. <1>
   [179] pusharglistnoret 1 ...................... <1>
   [181] extcall 25 .............................. return 1
@@ -369,8 +401,8 @@ on openNetPage me, tURL_key, tTarget
 end
 
 on showLoadingBar me, tLoadID, tProps
-  [  0] pushsymb 655 ............................ <#random>
-  [  3] pushcons 11 ............................. <"loading.bar.class">
+  [  0] pushsymb 657 ............................ <#random>
+  [  3] pushcons 15 ............................. <"loading.bar.class">
   [  5] pusharglist 1 ........................... <"loading.bar.class">
   [  7] extcall 155 ............................. <getClassVariable("loading.bar.class")>
   [  9] pusharglist 2 ........................... <#random, getClassVariable("loading.bar.class")>
@@ -381,9 +413,9 @@ on showLoadingBar me, tLoadID, tProps
   [ 18] eq ...................................... <tObj = 0>
   [ 19] jmpifz [ 40] ............................ if tObj = 0 then
   [ 22] getparam 0 .............................. <me>
-  [ 24] pushcons 12 ............................. <"Couldn't create loading bar instance!">
+  [ 24] pushcons 16 ............................. <"Couldn't create loading bar instance!">
   [ 26] pushsymb 408 ............................ <#showLoadingBar>
-  [ 29] pushsymb 1177 ........................... <#major>
+  [ 29] pushsymb 972 ............................ <#major>
   [ 32] pusharglist 4 ........................... <me, "Couldn't create loading bar instance!", #showLoadingBar, #major>
   [ 34] extcall 39 .............................. <error(me, "Couldn't create loading bar instance!", #showLoadingBar, #major)>
   [ 36] pusharglistnoret 1 ...................... <error(me, "Couldn't create loading bar instance!", #showLoadingBar, #major)>
@@ -392,7 +424,7 @@ on showLoadingBar me, tLoadID, tProps
   [ 42] getparam 1 .............................. <tLoadID>
   [ 44] getparam 2 .............................. <tProps>
   [ 46] pusharglist 3 ........................... <tObj, tLoadID, tProps>
-  [ 48] objcall 434 ............................. <tObj.define(tLoadID, tProps)>
+  [ 48] objcall 436 ............................. <tObj.define(tLoadID, tProps)>
   [ 51] not ..................................... <not tObj.define(tLoadID, tProps)>
   [ 52] jmpifz [ 83] ............................ if not tObj.define(tLoadID, tProps) then
   [ 55] getlocal 0 .............................. <tObj>
@@ -401,9 +433,9 @@ on showLoadingBar me, tLoadID, tProps
   [ 61] pusharglistnoret 1 ...................... <tObj.getID()>
   [ 63] extcall 95 .............................. removeObject(tObj.getID())
   [ 65] getparam 0 .............................. <me>
-  [ 67] pushcons 13 ............................. <"Couldn't initialize loading bar instance!">
+  [ 67] pushcons 17 ............................. <"Couldn't initialize loading bar instance!">
   [ 69] pushsymb 408 ............................ <#showLoadingBar>
-  [ 72] pushsymb 1177 ........................... <#major>
+  [ 72] pushsymb 972 ............................ <#major>
   [ 75] pusharglist 4 ........................... <me, "Couldn't initialize loading bar instance!", #showLoadingBar, #major>
   [ 77] extcall 39 .............................. <error(me, "Couldn't initialize loading bar instance!", #showLoadingBar, #major)>
   [ 79] pusharglistnoret 1 ...................... <error(me, "Couldn't initialize loading bar instance!", #showLoadingBar, #major)>
@@ -417,16 +449,16 @@ on showLoadingBar me, tLoadID, tProps
 end
 
 on getUniqueID me
-  [  0] getprop 1067 ............................ <pUniqueSeed>
+  [  0] getprop 1085 ............................ <pUniqueSeed>
   [  3] pushint8 1 .............................. <1>
   [  5] add ..................................... <pUniqueSeed + 1>
-  [  6] setprop 1067 ............................ pUniqueSeed = pUniqueSeed + 1
-  [  9] pushcons 14 ............................. <"uid:">
-  [ 11] getprop 1067 ............................ <pUniqueSeed>
+  [  6] setprop 1085 ............................ pUniqueSeed = pUniqueSeed + 1
+  [  9] pushcons 18 ............................. <"uid:">
+  [ 11] getprop 1085 ............................ <pUniqueSeed>
   [ 14] joinstr ................................. <"uid:" & pUniqueSeed>
-  [ 15] pushcons 15 ............................. <":">
+  [ 15] pushcons 19 ............................. <":">
   [ 17] joinstr ................................. <"uid:" & pUniqueSeed & ":">
-  [ 18] getmovieprop 671 ........................ <the milliSeconds>
+  [ 18] getmovieprop 673 ........................ <the milliSeconds>
   [ 21] joinstr ................................. <"uid:" & pUniqueSeed & ":" & the milliSeconds>
   [ 22] pusharglistnoret 1 ...................... <"uid:" & pUniqueSeed & ":" & the milliSeconds>
   [ 24] extcall 25 .............................. return "uid:" & pUniqueSeed & ":" & the milliSeconds
@@ -434,27 +466,27 @@ on getUniqueID me
 end
 
 on getMachineID me
-  [  0] pushcons 16 ............................. <"pref.value.id">
+  [  0] pushcons 20 ............................. <"pref.value.id">
   [  2] pusharglist 1 ........................... <"pref.value.id">
   [  4] extcall 372 ............................. <getVariable("pref.value.id")>
   [  7] pusharglist 1 ........................... <getVariable("pref.value.id")>
-  [  9] extcall 1074 ............................ <getPref(getVariable("pref.value.id"))>
+  [  9] extcall 1098 ............................ <getPref(getVariable("pref.value.id"))>
   [ 12] pusharglist 1 ........................... <getPref(getVariable("pref.value.id"))>
-  [ 14] extcall 593 ............................. <string(getPref(getVariable("pref.value.id")))>
+  [ 14] extcall 595 ............................. <string(getPref(getVariable("pref.value.id")))>
   [ 17] setlocal 0 .............................. tMachineID = string(getPref(getVariable("pref.value.id")))
   [ 19] getlocal 0 .............................. <tMachineID>
   [ 21] pushint8 10 ............................. <10>
   [ 23] pusharglist 1 ........................... <10>
-  [ 25] extcall 859 ............................. <numToChar(10)>
-  [ 28] pushcons 17 ............................. <EMPTY>
+  [ 25] extcall 861 ............................. <numToChar(10)>
+  [ 28] pushcons 21 ............................. <EMPTY>
   [ 30] pusharglist 3 ........................... <tMachineID, numToChar(10), EMPTY>
   [ 32] extcall 279 ............................. <replaceChunks(tMachineID, numToChar(10), EMPTY)>
   [ 35] setlocal 0 .............................. tMachineID = replaceChunks(tMachineID, numToChar(10), EMPTY)
   [ 37] getlocal 0 .............................. <tMachineID>
   [ 39] pushint8 13 ............................. <13>
   [ 41] pusharglist 1 ........................... <13>
-  [ 43] extcall 859 ............................. <numToChar(13)>
-  [ 46] pushcons 17 ............................. <EMPTY>
+  [ 43] extcall 861 ............................. <numToChar(13)>
+  [ 46] pushcons 21 ............................. <EMPTY>
   [ 48] pusharglist 3 ........................... <tMachineID, numToChar(13), EMPTY>
   [ 50] extcall 279 ............................. <replaceChunks(tMachineID, numToChar(13), EMPTY)>
   [ 53] setlocal 0 .............................. tMachineID = replaceChunks(tMachineID, numToChar(13), EMPTY)
@@ -464,8 +496,8 @@ on getMachineID me
   [ 61] pushint8 1 .............................. <1>
   [ 63] pushint8 1 .............................. <1>
   [ 65] pusharglist 3 ........................... <tMachineID, 1, 1>
-  [ 67] extcall 930 ............................. <chars(tMachineID, 1, 1)>
-  [ 70] pushcons 18 ............................. <"#">
+  [ 67] extcall 932 ............................. <chars(tMachineID, 1, 1)>
+  [ 70] pushcons 22 ............................. <"#">
   [ 72] eq ...................................... <chars(tMachineID, 1, 1) = "#">
   [ 73] jmpifz [ 95] ............................ if chars(tMachineID, 1, 1) = "#" then / else
   [ 76] getlocal 0 .............................. <tMachineID>
@@ -473,22 +505,22 @@ on getMachineID me
   [ 80] getlocal 0 .............................. <tMachineID>
   [ 82] getobjprop 293 .......................... <tMachineID.length>
   [ 85] pusharglist 3 ........................... <tMachineID, 2, tMachineID.length>
-  [ 87] extcall 930 ............................. <chars(tMachineID, 2, tMachineID.length)>
+  [ 87] extcall 932 ............................. <chars(tMachineID, 2, tMachineID.length)>
   [ 90] setlocal 0 .............................. tMachineID = chars(tMachineID, 2, tMachineID.length)
   [ 92] jmp [123]
   [ 95] getparam 0 .............................. <me>
   [ 97] getlocal 1 .............................. <tMaxLength>
   [ 99] pusharglist 2 ........................... <me, tMaxLength>
-  [101] objcall 1057 ............................ <me.generateMachineId(tMaxLength)>
+  [101] objcall 1074 ............................ <me.generateMachineId(tMaxLength)>
   [104] setlocal 0 .............................. tMachineID = me.generateMachineId(tMaxLength)
-  [106] pushcons 16 ............................. <"pref.value.id">
+  [106] pushcons 20 ............................. <"pref.value.id">
   [108] pusharglist 1 ........................... <"pref.value.id">
   [110] extcall 372 ............................. <getVariable("pref.value.id")>
-  [113] pushcons 18 ............................. <"#">
+  [113] pushcons 22 ............................. <"#">
   [115] getlocal 0 .............................. <tMachineID>
   [117] joinstr ................................. <"#" & tMachineID>
   [118] pusharglistnoret 2 ...................... <getVariable("pref.value.id"), "#" & tMachineID>
-  [120] extcall 1075 ............................ setPref(getVariable("pref.value.id"), "#" & tMachineID)
+  [120] extcall 1099 ............................ setPref(getVariable("pref.value.id"), "#" & tMachineID)
   [123] getlocal 0 .............................. <tMachineID>
   [125] pusharglistnoret 1 ...................... <tMachineID>
   [127] extcall 25 .............................. return tMachineID
@@ -496,7 +528,7 @@ on getMachineID me
 end
 
 on getMoviePath me
-  [  0] pushcons 19 ............................. <"system.v1">
+  [  0] pushcons 23 ............................. <"system.v1">
   [  2] setlocal 0 .............................. tVariableID = "system.v1"
   [  4] getlocal 0 .............................. <tVariableID>
   [  6] pusharglist 1 ........................... <tVariableID>
@@ -504,7 +536,7 @@ on getMoviePath me
   [ 11] not ..................................... <not variableExists(tVariableID)>
   [ 12] jmpifz [ 30] ............................ if not variableExists(tVariableID) then
   [ 15] getlocal 0 .............................. <tVariableID>
-  [ 17] getmovieprop 1080 ....................... <the moviePath>
+  [ 17] getmovieprop 1101 ....................... <the moviePath>
   [ 20] pusharglist 1 ........................... <the moviePath>
   [ 22] extcall 281 ............................. <obfuscate(the moviePath)>
   [ 25] pusharglistnoret 2 ...................... <tVariableID, obfuscate(the moviePath)>
@@ -524,15 +556,15 @@ on getDomainPart me, tPath
   [  2] pusharglist 1 ........................... <tPath>
   [  4] extcall 20 .............................. <voidp(tPath)>
   [  6] jmpifz [ 15] ............................ if voidp(tPath) then
-  [  9] pushcons 17 ............................. <EMPTY>
+  [  9] pushcons 21 ............................. <EMPTY>
   [ 11] pusharglistnoret 1 ...................... <EMPTY>
   [ 13] extcall 25 .............................. return EMPTY
   [ 15] getparam 1 .............................. <tPath>
   [ 17] pushint8 1 .............................. <1>
   [ 19] pushint8 8 .............................. <8>
   [ 21] pusharglist 3 ........................... <tPath, 1, 8>
-  [ 23] extcall 930 ............................. <chars(tPath, 1, 8)>
-  [ 26] pushcons 20 ............................. <"https://">
+  [ 23] extcall 932 ............................. <chars(tPath, 1, 8)>
+  [ 26] pushcons 24 ............................. <"https://">
   [ 28] eq ...................................... <chars(tPath, 1, 8) = "https://">
   [ 29] jmpifz [ 51] ............................ if chars(tPath, 1, 8) = "https://" then / else
   [ 32] getparam 1 .............................. <tPath>
@@ -540,15 +572,15 @@ on getDomainPart me, tPath
   [ 36] getparam 1 .............................. <tPath>
   [ 38] getobjprop 293 .......................... <tPath.length>
   [ 41] pusharglist 3 ........................... <tPath, 9, tPath.length>
-  [ 43] extcall 930 ............................. <chars(tPath, 9, tPath.length)>
+  [ 43] extcall 932 ............................. <chars(tPath, 9, tPath.length)>
   [ 46] setparam 1 .............................. tPath = chars(tPath, 9, tPath.length)
   [ 48] jmp [ 84]
   [ 51] getparam 1 .............................. <tPath>
   [ 53] pushint8 1 .............................. <1>
   [ 55] pushint8 7 .............................. <7>
   [ 57] pusharglist 3 ........................... <tPath, 1, 7>
-  [ 59] extcall 930 ............................. <chars(tPath, 1, 7)>
-  [ 62] pushcons 21 ............................. <"http://">
+  [ 59] extcall 932 ............................. <chars(tPath, 1, 7)>
+  [ 62] pushcons 25 ............................. <"http://">
   [ 64] eq ...................................... <chars(tPath, 1, 7) = "http://">
   [ 65] jmpifz [ 84] ............................ if chars(tPath, 1, 7) = "http://" then
   [ 68] getparam 1 .............................. <tPath>
@@ -556,11 +588,11 @@ on getDomainPart me, tPath
   [ 72] getparam 1 .............................. <tPath>
   [ 74] getobjprop 293 .......................... <tPath.length>
   [ 77] pusharglist 3 ........................... <tPath, 8, tPath.length>
-  [ 79] extcall 930 ............................. <chars(tPath, 8, tPath.length)>
+  [ 79] extcall 932 ............................. <chars(tPath, 8, tPath.length)>
   [ 82] setparam 1 .............................. tPath = chars(tPath, 8, tPath.length)
   [ 84] getmovieprop 286 ........................ <the itemDelimiter>
   [ 87] setlocal 0 .............................. tDelim = the itemDelimiter
-  [ 89] pushcons 22 ............................. <"/">
+  [ 89] pushcons 26 ............................. <"/">
   [ 91] setmovieprop 286 ........................ the itemDelimiter = "/"
   [ 94] getparam 1 .............................. <tPath>
   [ 96] pushsymb 287 ............................ <#item>
@@ -568,12 +600,12 @@ on getDomainPart me, tPath
   [101] pusharglist 3 ........................... <tPath, #item, 1>
   [103] objcall 290 ............................. <tPath.item[1]>
   [106] setparam 1 .............................. tPath = tPath.item[1]
-  [108] pushcons 23 ............................. <".">
+  [108] pushcons 27 ............................. <".">
   [110] setmovieprop 286 ........................ the itemDelimiter = "."
   [113] pushint8 2 .............................. <2>
   [115] setlocal 1 .............................. tMaxItemCount = 2
   [117] getparam 1 .............................. <tPath>
-  [119] pushcons 24 ............................. <".co.">
+  [119] pushcons 28 ............................. <".co.">
   [121] containsstr ............................. <tPath contains ".co.">
   [122] jmpifz [132] ............................ if tPath contains ".co." then
   [125] getlocal 1 .............................. <tMaxItemCount>
@@ -597,7 +629,7 @@ on getDomainPart me, tPath
   [161] pusharglist 4 ........................... <tPath, #item, tPath.item.count - tMaxItemCount + 1, tPath.item.count>
   [163] objcall 290 ............................. <tPath.item[tPath.item.count - tMaxItemCount + 1..tPath.item.count]>
   [166] setparam 1 .............................. tPath = tPath.item[tPath.item.count - tMaxItemCount + 1..tPath.item.count]
-  [168] pushcons 15 ............................. <":">
+  [168] pushcons 19 ............................. <":">
   [170] setmovieprop 286 ........................ the itemDelimiter = ":"
   [173] getparam 1 .............................. <tPath>
   [175] pushsymb 287 ............................ <#item>
@@ -615,16 +647,16 @@ end
 
 on getPredefinedURL me, tURL
   [  0] getparam 1 .............................. <tURL>
-  [  2] pushcons 25 ............................. <"http://%predefined%/">
+  [  2] pushcons 29 ............................. <"http://%predefined%/">
   [  4] containsstr ............................. <tURL contains "http://%predefined%/">
   [  5] jmpifz [ 92] ............................ if tURL contains "http://%predefined%/" then
-  [  8] pushcons 26 ............................. <"url.prefix">
+  [  8] pushcons 30 ............................. <"url.prefix">
   [ 10] pusharglist 1 ........................... <"url.prefix">
   [ 12] extcall 376 ............................. <variableExists("url.prefix")>
   [ 15] jmpifz [ 74] ............................ if variableExists("url.prefix") then / else
-  [ 18] pushcons 27 ............................. <"http://%predefined%">
+  [ 18] pushcons 31 ............................. <"http://%predefined%">
   [ 20] setlocal 0 .............................. tReplace = "http://%predefined%"
-  [ 22] pushcons 26 ............................. <"url.prefix">
+  [ 22] pushcons 30 ............................. <"url.prefix">
   [ 24] pusharglist 1 ........................... <"url.prefix">
   [ 26] extcall 372 ............................. <getVariable("url.prefix")>
   [ 29] setlocal 1 .............................. tPrefix = getVariable("url.prefix")
@@ -634,11 +666,11 @@ on getPredefinedURL me, tURL
   [ 38] getlocal 1 .............................. <tPrefix>
   [ 40] getobjprop 293 .......................... <tPrefix.length>
   [ 43] pusharglist 3 ........................... <tPrefix, tPrefix.length, tPrefix.length>
-  [ 45] extcall 930 ............................. <chars(tPrefix, tPrefix.length, tPrefix.length)>
-  [ 48] pushcons 22 ............................. <"/">
+  [ 45] extcall 932 ............................. <chars(tPrefix, tPrefix.length, tPrefix.length)>
+  [ 48] pushcons 26 ............................. <"/">
   [ 50] eq ...................................... <chars(tPrefix, tPrefix.length, tPrefix.length) = "/">
   [ 51] jmpifz [ 58] ............................ if chars(tPrefix, tPrefix.length, tPrefix.length) = "/" then
-  [ 54] pushcons 25 ............................. <"http://%predefined%/">
+  [ 54] pushcons 29 ............................. <"http://%predefined%/">
   [ 56] setlocal 0 .............................. tReplace = "http://%predefined%/"
   [ 58] getparam 1 .............................. <tURL>
   [ 60] getlocal 0 .............................. <tReplace>
@@ -648,9 +680,9 @@ on getPredefinedURL me, tURL
   [ 69] setparam 1 .............................. tURL = replaceChunks(tURL, tReplace, tPrefix)
   [ 71] jmp [ 92]
   [ 74] getparam 0 .............................. <me>
-  [ 76] pushcons 28 ............................. <"URL prefix not defined, invalid link.">
-  [ 78] pushsymb 1803 ........................... <#getPredefinedURL>
-  [ 81] pushsymb 932 ............................ <#minor>
+  [ 76] pushcons 32 ............................. <"URL prefix not defined, invalid link.">
+  [ 78] pushsymb 1071 ........................... <#getPredefinedURL>
+  [ 81] pushsymb 934 ............................ <#minor>
   [ 84] pusharglist 4 ........................... <me, "URL prefix not defined, invalid link.", #getPredefinedURL, #minor>
   [ 86] extcall 39 .............................. <error(me, "URL prefix not defined, invalid link.", #getPredefinedURL, #minor)>
   [ 88] pusharglistnoret 1 ...................... <error(me, "URL prefix not defined, invalid link.", #getPredefinedURL, #minor)>
@@ -662,7 +694,7 @@ on getPredefinedURL me, tURL
 end
 
 on getExtVarPath me
-  [  0] pushcons 29 ............................. <"system.v2">
+  [  0] pushcons 33 ............................. <"system.v2">
   [  2] setlocal 0 .............................. tVariableID = "system.v2"
   [  4] getlocal 0 .............................. <tVariableID>
   [  6] pusharglist 1 ........................... <tVariableID>
@@ -671,7 +703,7 @@ on getExtVarPath me
   [ 12] jmpifz [ 30] ............................ if not variableExists(tVariableID) then
   [ 15] pusharglist 0 ........................... <>
   [ 17] extcall 368 ............................. <getVariableManager()>
-  [ 20] pushcons 30 ............................. <"external.variables.txt">
+  [ 20] pushcons 34 ............................. <"external.variables.txt">
   [ 22] pusharglist 2 ........................... <getVariableManager(), "external.variables.txt">
   [ 24] objcall 90 .............................. <getVariableManager().get("external.variables.txt")>
   [ 26] pusharglistnoret 1 ...................... <getVariableManager().get("external.variables.txt")>
@@ -687,7 +719,7 @@ on getExtVarPath me
 end
 
 on sendProcessTracking me, tStepValue
-  [  0] pushcons 31 ............................. <"processlog.enabled">
+  [  0] pushcons 35 ............................. <"processlog.enabled">
   [  2] pusharglist 1 ........................... <"processlog.enabled">
   [  4] extcall 376 ............................. <variableExists("processlog.enabled")>
   [  7] not ..................................... <not variableExists("processlog.enabled")>
@@ -695,7 +727,7 @@ on sendProcessTracking me, tStepValue
   [ 11] pushzero ................................ <0>
   [ 12] pusharglistnoret 1 ...................... <0>
   [ 14] extcall 25 .............................. return 0
-  [ 16] pushcons 31 ............................. <"processlog.enabled">
+  [ 16] pushcons 35 ............................. <"processlog.enabled">
   [ 18] pusharglist 1 ........................... <"processlog.enabled">
   [ 20] extcall 372 ............................. <getVariable("processlog.enabled")>
   [ 23] not ..................................... <not getVariable("processlog.enabled")>
@@ -703,11 +735,11 @@ on sendProcessTracking me, tStepValue
   [ 27] pushzero ................................ <0>
   [ 28] pusharglistnoret 1 ...................... <0>
   [ 30] extcall 25 .............................. return 0
-  [ 32] pushcons 32 ............................. <"javascriptLog">
+  [ 32] pushcons 36 ............................. <"javascriptLog">
   [ 34] pusharglist 1 ........................... <"javascriptLog">
   [ 36] extcall 115 ............................. <script("javascriptLog")>
   [ 38] pusharglist 1 ........................... <script("javascriptLog")>
-  [ 40] objcall 1813 ............................ <script("javascriptLog").newJavascriptLog()>
+  [ 40] objcall 1107 ............................ <script("javascriptLog").newJavascriptLog()>
   [ 43] setlocal 0 .............................. tJsHandler = script("javascriptLog").newJavascriptLog()
   [ 45] getlocal 0 .............................. <tJsHandler>
   [ 47] getparam 1 .............................. <tStepValue>
@@ -820,10 +852,10 @@ on secretDecode me, tKey
   [193] pushint8 8 .............................. <8>
   [195] mul ..................................... <(i - 1) mod 3 * 8>
   [196] pusharglist 2 ........................... <2, (i - 1) mod 3 * 8>
-  [198] extcall 1083 ............................ <power(2, (i - 1) mod 3 * 8)>
+  [198] extcall 1111 ............................ <power(2, (i - 1) mod 3 * 8)>
   [201] mul ..................................... <a * power(2, (i - 1) mod 3 * 8)>
   [202] pusharglist 2 ........................... <tCheckSum, a * power(2, (i - 1) mod 3 * 8)>
-  [204] extcall 1082 ............................ <bitXor(tCheckSum, a * power(2, (i - 1) mod 3 * 8))>
+  [204] extcall 1110 ............................ <bitXor(tCheckSum, a * power(2, (i - 1) mod 3 * 8))>
   [207] setlocal 2 .............................. tCheckSum = bitXor(tCheckSum, a * power(2, (i - 1) mod 3 * 8))
   [209] pushint8 1
   [211] getlocal 3
@@ -847,7 +879,7 @@ on readValueFromField me, tField, tDelimiter, tSearchedKey
   [ 13] pusharglist 1 ........................... <tDelimiter>
   [ 15] extcall 20 .............................. <voidp(tDelimiter)>
   [ 17] jmpifz [ 24] ............................ if voidp(tDelimiter) then
-  [ 20] pushcons 33 ............................. <RETURN>
+  [ 20] pushcons 37 ............................. <RETURN>
   [ 22] setparam 2 .............................. tDelimiter = RETURN
   [ 24] getparam 2 .............................. <tDelimiter>
   [ 26] setmovieprop 286 ........................ the itemDelimiter = tDelimiter
@@ -875,14 +907,14 @@ on readValueFromField me, tField, tDelimiter, tSearchedKey
   [ 77] pushint8 1 .............................. <1>
   [ 79] pusharglist 3 ........................... <tPair.word[1], #char, 1>
   [ 81] objcall 290 ............................. <tPair.word[1].char[1]>
-  [ 84] pushcons 18 ............................. <"#">
+  [ 84] pushcons 22 ............................. <"#">
   [ 86] nteq .................................... <tPair.word[1].char[1] <> "#">
   [ 87] getlocal 3 .............................. <tPair>
-  [ 89] pushcons 17 ............................. <EMPTY>
+  [ 89] pushcons 21 ............................. <EMPTY>
   [ 91] nteq .................................... <tPair <> EMPTY>
   [ 92] and ..................................... <(tPair.word[1].char[1] <> "#") and (tPair <> EMPTY)>
   [ 93] jmpifz [352] ............................ if (tPair.word[1].char[1] <> "#") and (tPair <> EMPTY) then
-  [ 96] pushcons 34 ............................. <"=">
+  [ 96] pushcons 38 ............................. <"=">
   [ 98] setmovieprop 286 ........................ the itemDelimiter = "="
   [101] getlocal 3 .............................. <tPair>
   [103] pushsymb 287 ............................ <#item>
@@ -928,21 +960,21 @@ on readValueFromField me, tField, tDelimiter, tSearchedKey
   [195] jmpifz [352] ............................ if tProp = tSearchedKey then
   [198] getlocal 5 .............................. <tValue>
   [200] pusharglist 0 ........................... <>
-  [202] extcall 884 ............................. <SPACE>
+  [202] extcall 886 ............................. <SPACE>
   [205] containsstr ............................. <tValue contains SPACE>
   [206] not ..................................... <not (tValue contains SPACE)>
   [207] getlocal 5 .............................. <tValue>
   [209] pusharglist 1 ........................... <tValue>
-  [211] extcall 955 ............................. <integer(tValue)>
+  [211] extcall 957 ............................. <integer(tValue)>
   [214] pusharglist 1 ........................... <integer(tValue)>
-  [216] extcall 681 ............................. <integerp(integer(tValue))>
+  [216] extcall 683 ............................. <integerp(integer(tValue))>
   [219] and ..................................... <not (tValue contains SPACE) and integerp(integer(tValue))>
   [220] jmpifz [263] ............................ if not (tValue contains SPACE) and integerp(integer(tValue)) then / else
   [223] getlocal 5 .............................. <tValue>
   [225] pusharglist 1 ........................... <tValue>
-  [227] extcall 955 ............................. <integer(tValue)>
+  [227] extcall 957 ............................. <integer(tValue)>
   [230] pusharglist 1 ........................... <integer(tValue)>
-  [232] extcall 593 ............................. <string(integer(tValue))>
+  [232] extcall 595 ............................. <string(integer(tValue))>
   [235] pusharglist 1 ........................... <string(integer(tValue))>
   [237] extcall 293 ............................. <length(string(integer(tValue)))>
   [240] getlocal 5 .............................. <tValue>
@@ -952,18 +984,18 @@ on readValueFromField me, tField, tDelimiter, tSearchedKey
   [248] jmpifz [260] ............................ if length(string(integer(tValue))) = length(tValue) then
   [251] getlocal 5 .............................. <tValue>
   [253] pusharglist 1 ........................... <tValue>
-  [255] extcall 955 ............................. <integer(tValue)>
+  [255] extcall 957 ............................. <integer(tValue)>
   [258] setlocal 5 .............................. tValue = integer(tValue)
   [260] jmp [287]
   [263] getlocal 5 .............................. <tValue>
   [265] pusharglist 1 ........................... <tValue>
-  [267] extcall 942 ............................. <float(tValue)>
+  [267] extcall 944 ............................. <float(tValue)>
   [270] pusharglist 1 ........................... <float(tValue)>
-  [272] extcall 1088 ............................ <floatp(float(tValue))>
+  [272] extcall 1116 ............................ <floatp(float(tValue))>
   [275] jmpifz [287] ............................ if floatp(float(tValue)) then
   [278] getlocal 5 .............................. <tValue>
   [280] pusharglist 1 ........................... <tValue>
-  [282] extcall 942 ............................. <float(tValue)>
+  [282] extcall 944 ............................. <float(tValue)>
   [285] setlocal 5 .............................. tValue = float(tValue)
   [287] getlocal 5 .............................. <tValue>
   [289] pusharglist 1 ........................... <tValue>
@@ -983,7 +1015,7 @@ on readValueFromField me, tField, tDelimiter, tSearchedKey
   [320] pusharglist 3 ........................... <tValue, #char, j>
   [322] objcall 290 ............................. <tValue.char[j]>
   [325] pusharglist 1 ........................... <tValue.char[j]>
-  [327] extcall 915 ............................. <charToNum(tValue.char[j])>
+  [327] extcall 917 ............................. <charToNum(tValue.char[j])>
   [330] pop 1 ................................... case charToNum(tValue.char[j]) of / end case
   [332] pushint8 1
   [334] getlocal 6
@@ -1011,15 +1043,15 @@ on readValueFromField me, tField, tDelimiter, tSearchedKey
 end
 
 on addRandomParamToURL me, tURL
-  [  0] pushcons 35 ............................. <"randp">
+  [  0] pushcons 39 ............................. <"randp">
   [  2] setlocal 0 .............................. tRandomParamName = "randp"
-  [  4] pushcons 36 ............................. <"?">
+  [  4] pushcons 40 ............................. <"?">
   [  6] setlocal 1 .............................. tSeparator = "?"
   [  8] getparam 1 .............................. <tURL>
-  [ 10] pushcons 36 ............................. <"?">
+  [ 10] pushcons 40 ............................. <"?">
   [ 12] containsstr ............................. <tURL contains "?">
   [ 13] jmpifz [ 20] ............................ if tURL contains "?" then
-  [ 16] pushcons 37 ............................. <"&">
+  [ 16] pushcons 41 ............................. <"&">
   [ 18] setlocal 1 .............................. tSeparator = "&"
   [ 20] getparam 1 .............................. <tURL>
   [ 22] getlocal 1 .............................. <tSeparator>
@@ -1028,9 +1060,9 @@ on addRandomParamToURL me, tURL
   [ 27] joinstr ................................. <tURL & tSeparator & tRandomParamName>
   [ 28] pushint16 999 ........................... <999>
   [ 31] pusharglist 1 ........................... <999>
-  [ 33] extcall 655 ............................. <random(999)>
+  [ 33] extcall 657 ............................. <random(999)>
   [ 36] joinstr ................................. <tURL & tSeparator & tRandomParamName & random(999)>
-  [ 37] pushcons 38 ............................. <"=1">
+  [ 37] pushcons 42 ............................. <"=1">
   [ 39] joinstr ................................. <tURL & tSeparator & tRandomParamName & random(999) & "=1">
   [ 40] setparam 1 .............................. tURL = tURL & tSeparator & tRandomParamName & random(999) & "=1"
   [ 42] getparam 1 .............................. <tURL>
@@ -1042,7 +1074,7 @@ end
 on print me, tObj, tMsg
   [  0] getparam 1 .............................. <tObj>
   [  2] pusharglist 1 ........................... <tObj>
-  [  4] extcall 593 ............................. <string(tObj)>
+  [  4] extcall 595 ............................. <string(tObj)>
   [  7] setparam 1 .............................. tObj = string(tObj)
   [  9] getparam 1 .............................. <tObj>
   [ 11] pushsymb 289 ............................ <#word>
@@ -1065,61 +1097,61 @@ on print me, tObj, tMsg
   [ 49] pusharglist 4 ........................... <tObj, #char, 2, length(tObj)>
   [ 51] objcall 290 ............................. <tObj.char[2..length(tObj)]>
   [ 54] setparam 1 .............................. tObj = tObj.char[2..length(tObj)]
-  [ 56] pushcons 39 ............................. <"Print:">
-  [ 58] pushcons 33 ............................. <RETURN>
+  [ 56] pushcons 43 ............................. <"Print:">
+  [ 58] pushcons 37 ............................. <RETURN>
   [ 60] joinstr ................................. <"Print:" & RETURN>
-  [ 61] pushcons 40 ............................. <TAB>
+  [ 61] pushcons 44 ............................. <TAB>
   [ 63] joinstr ................................. <"Print:" & RETURN & TAB>
-  [ 64] pushcons 41 ............................. <"Object: ">
+  [ 64] pushcons 45 ............................. <"Object: ">
   [ 66] joinpadstr .............................. <"Print:" & RETURN & TAB && "Object: ">
   [ 67] getparam 1 .............................. <tObj>
   [ 69] joinpadstr .............................. <"Print:" & RETURN & TAB && "Object: " && tObj>
-  [ 70] pushcons 33 ............................. <RETURN>
+  [ 70] pushcons 37 ............................. <RETURN>
   [ 72] joinstr ................................. <"Print:" & RETURN & TAB && "Object: " && tObj & RETURN>
-  [ 73] pushcons 40 ............................. <TAB>
+  [ 73] pushcons 44 ............................. <TAB>
   [ 75] joinstr ................................. <"Print:" & RETURN & TAB && "Object: " && tObj & RETURN & TAB>
-  [ 76] pushcons 42 ............................. <"Message:">
+  [ 76] pushcons 46 ............................. <"Message:">
   [ 78] joinpadstr .............................. <"Print:" & RETURN & TAB && "Object: " && tObj & RETURN & TAB && "Message:">
   [ 79] getparam 2 .............................. <tMsg>
   [ 81] joinpadstr .............................. <"Print:" & RETURN & TAB && "Object: " && tObj & RETURN & TAB && "Message:" && tMsg>
   [ 82] pusharglistnoret 1 ...................... <"Print:" & RETURN & TAB && "Object: " && tObj & RETURN & TAB && "Message:" && tMsg>
-  [ 84] extcall 642 ............................. put "Print:" & RETURN & TAB && "Object: " && tObj & RETURN & TAB && "Message:" && tMsg
+  [ 84] extcall 644 ............................. put "Print:" & RETURN & TAB && "Object: " && tObj & RETURN & TAB && "Message:" && tMsg
   [ 87] ret
 end
 
 on generateMachineId me, tMaxLength
-  [  0] getmovieprop 671 ........................ <the milliSeconds>
+  [  0] getmovieprop 673 ........................ <the milliSeconds>
   [  3] pusharglist 1 ........................... <the milliSeconds>
-  [  5] extcall 593 ............................. <string(the milliSeconds)>
+  [  5] extcall 595 ............................. <string(the milliSeconds)>
   [  8] pusharglist 0 ........................... <>
-  [ 10] thebuiltin 1077 ......................... <the time>
+  [ 10] thebuiltin 1119 ......................... <the time>
   [ 13] pusharglist 1 ........................... <the time>
-  [ 15] extcall 593 ............................. <string(the time)>
+  [ 15] extcall 595 ............................. <string(the time)>
   [ 18] joinstr ................................. <string(the milliSeconds) & string(the time)>
   [ 19] pusharglist 0 ........................... <>
-  [ 21] thebuiltin 1078 ......................... <the date>
+  [ 21] thebuiltin 1120 ......................... <the date>
   [ 24] pusharglist 1 ........................... <the date>
-  [ 26] extcall 593 ............................. <string(the date)>
+  [ 26] extcall 595 ............................. <string(the date)>
   [ 29] joinstr ................................. <string(the milliSeconds) & string(the time) & string(the date)>
   [ 30] setlocal 0 .............................. tMachineID = string(the milliSeconds) & string(the time) & string(the date)
-  [ 32] pushcons 23 ............................. <".">
-  [ 34] pushcons 43 ............................. <",">
-  [ 36] pushcons 15 ............................. <":">
-  [ 38] pushcons 44 ............................. <";">
-  [ 40] pushcons 22 ............................. <"/">
-  [ 42] pushcons 45 ............................. <"\\">
-  [ 44] pushcons 46 ............................. <"am">
-  [ 46] pushcons 47 ............................. <"pm">
-  [ 48] pushcons 48 ............................. <" ">
-  [ 50] pushcons 49 ............................. <"-">
-  [ 52] pushcons 50 ............................. <"AM">
-  [ 54] pushcons 51 ............................. <"PM">
+  [ 32] pushcons 27 ............................. <".">
+  [ 34] pushcons 47 ............................. <",">
+  [ 36] pushcons 19 ............................. <":">
+  [ 38] pushcons 48 ............................. <";">
+  [ 40] pushcons 26 ............................. <"/">
+  [ 42] pushcons 49 ............................. <"\\">
+  [ 44] pushcons 50 ............................. <"am">
+  [ 46] pushcons 51 ............................. <"pm">
+  [ 48] pushcons 52 ............................. <" ">
+  [ 50] pushcons 53 ............................. <"-">
+  [ 52] pushcons 54 ............................. <"AM">
+  [ 54] pushcons 55 ............................. <"PM">
   [ 56] pushint8 10 ............................. <10>
   [ 58] pusharglist 1 ........................... <10>
-  [ 60] extcall 859 ............................. <numToChar(10)>
+  [ 60] extcall 861 ............................. <numToChar(10)>
   [ 63] pushint8 13 ............................. <13>
   [ 65] pusharglist 1 ........................... <13>
-  [ 67] extcall 859 ............................. <numToChar(13)>
+  [ 67] extcall 861 ............................. <numToChar(13)>
   [ 70] pusharglist 14 .......................... <[".", ",", ":", ";", "/", "\\", "am", "pm", " ", "-", "AM", "PM", numToChar(10), numToChar(13)]>
   [ 72] pushlist ................................ <[".", ",", ":", ";", "/", "\\", "am", "pm", " ", "-", "AM", "PM", numToChar(10), numToChar(13)]>
   [ 73] setlocal 1 .............................. tLocaleDelimiters = [".", ",", ":", ";", "/", "\\", "am", "pm", " ", "-", "AM", "PM", numToChar(10), numToChar(13)]
@@ -1139,7 +1171,7 @@ on generateMachineId me, tMaxLength
   [101] setlocal 2
   [103] getlocal 0 .............................. <tMachineID>
   [105] getlocal 2 .............................. <tDelimiter>
-  [107] pushcons 17 ............................. <EMPTY>
+  [107] pushcons 21 ............................. <EMPTY>
   [109] pusharglist 3 ........................... <tMachineID, tDelimiter, EMPTY>
   [111] extcall 279 ............................. <replaceChunks(tMachineID, tDelimiter, EMPTY)>
   [114] setlocal 0 .............................. tMachineID = replaceChunks(tMachineID, tDelimiter, EMPTY)
@@ -1151,7 +1183,7 @@ on generateMachineId me, tMaxLength
   [125] pushint8 1 .............................. <1>
   [127] getparam 1 .............................. <tMaxLength>
   [129] pusharglist 3 ........................... <tMachineID, 1, tMaxLength>
-  [131] extcall 930 ............................. <chars(tMachineID, 1, tMaxLength)>
+  [131] extcall 932 ............................. <chars(tMachineID, 1, tMaxLength)>
   [134] setlocal 0 .............................. tMachineID = chars(tMachineID, 1, tMaxLength)
   [136] getlocal 0 .............................. <tMachineID>
   [138] pusharglistnoret 1 ...................... <tMachineID>
@@ -1160,7 +1192,7 @@ on generateMachineId me, tMaxLength
 end
 
 on setExtVarPath me, tURL
-  [  0] pushcons 29 ............................. <"system.v2">
+  [  0] pushcons 33 ............................. <"system.v2">
   [  2] getparam 1 .............................. <tURL>
   [  4] pusharglist 1 ........................... <tURL>
   [  6] extcall 281 ............................. <obfuscate(tURL)>
@@ -1172,60 +1204,60 @@ on setExtVarPath me, tURL
 end
 
 on prepareToolTip me
-  [  0] getprop 1062 ............................ <pToolTipAct>
+  [  0] getprop 1080 ............................ <pToolTipAct>
   [  3] jmpifz [196] ............................ if pToolTipAct then
-  [  6] pushcons 52 ............................. <"struct.font.tooltip">
+  [  6] pushcons 56 ............................. <"struct.font.tooltip">
   [  8] pusharglist 1 ........................... <"struct.font.tooltip">
   [ 10] extcall 374 ............................. <getStructVariable("struct.font.tooltip")>
   [ 13] setlocal 0 .............................. tFontStruct = getStructVariable("struct.font.tooltip")
-  [ 15] pushcons 53 ............................. <"ToolTip Text">
-  [ 17] pushsymb 784 ............................ <#field>
+  [ 15] pushcons 57 ............................. <"ToolTip Text">
+  [ 17] pushsymb 786 ............................ <#field>
   [ 20] pusharglist 2 ........................... <"ToolTip Text", #field>
   [ 22] extcall 164 ............................. <createMember("ToolTip Text", #field)>
   [ 24] pusharglist 1 ........................... <createMember("ToolTip Text", #field)>
   [ 26] extcall 41 .............................. <member(createMember("ToolTip Text", #field))>
-  [ 28] setprop 1063 ............................ pToolTipMem = member(createMember("ToolTip Text", #field))
-  [ 31] getprop 1063 ............................ <pToolTipMem>
-  [ 34] pushsymb 1089 ........................... <#adjust>
-  [ 37] setobjprop 851 .......................... pToolTipMem.boxType = #adjust
-  [ 40] getprop 1063 ............................ <pToolTipMem>
+  [ 28] setprop 1081 ............................ pToolTipMem = member(createMember("ToolTip Text", #field))
+  [ 31] getprop 1081 ............................ <pToolTipMem>
+  [ 34] pushsymb 1122 ........................... <#adjust>
+  [ 37] setobjprop 853 .......................... pToolTipMem.boxType = #adjust
+  [ 40] getprop 1081 ............................ <pToolTipMem>
   [ 43] pushzero ................................ <0>
-  [ 44] setobjprop 592 .......................... pToolTipMem.wordWrap = 0
-  [ 47] getprop 1063 ............................ <pToolTipMem>
+  [ 44] setobjprop 594 .......................... pToolTipMem.wordWrap = 0
+  [ 47] getprop 1081 ............................ <pToolTipMem>
   [ 50] pushzero ................................ <0>
   [ 51] pushzero ................................ <0>
   [ 52] pushint8 10 ............................. <10>
   [ 54] pushint8 20 ............................. <20>
   [ 56] pusharglist 4 ........................... <0, 0, 10, 20>
-  [ 58] extcall 555 ............................. <rect(0, 0, 10, 20)>
-  [ 61] setobjprop 555 .......................... pToolTipMem.rect = rect(0, 0, 10, 20)
-  [ 64] getprop 1063 ............................ <pToolTipMem>
+  [ 58] extcall 557 ............................. <rect(0, 0, 10, 20)>
+  [ 61] setobjprop 557 .......................... pToolTipMem.rect = rect(0, 0, 10, 20)
+  [ 64] getprop 1081 ............................ <pToolTipMem>
   [ 67] pushint8 1 .............................. <1>
-  [ 69] setobjprop 1090 ......................... pToolTipMem.border = 1
-  [ 72] getprop 1063 ............................ <pToolTipMem>
+  [ 69] setobjprop 1123 ......................... pToolTipMem.border = 1
+  [ 72] getprop 1081 ............................ <pToolTipMem>
   [ 75] pushint8 4 .............................. <4>
-  [ 77] setobjprop 1091 ......................... pToolTipMem.margin = 4
-  [ 80] getprop 1063 ............................ <pToolTipMem>
-  [ 83] pushcons 54 ............................. <"center">
-  [ 85] setobjprop 470 .......................... pToolTipMem.alignment = "center"
-  [ 88] getprop 1063 ............................ <pToolTipMem>
+  [ 77] setobjprop 1124 ......................... pToolTipMem.margin = 4
+  [ 80] getprop 1081 ............................ <pToolTipMem>
+  [ 83] pushcons 58 ............................. <"center">
+  [ 85] setobjprop 472 .......................... pToolTipMem.alignment = "center"
+  [ 88] getprop 1081 ............................ <pToolTipMem>
   [ 91] getlocal 0 .............................. <tFontStruct>
-  [ 93] pushsymb 594 ............................ <#font>
+  [ 93] pushsymb 596 ............................ <#font>
   [ 96] pusharglist 2 ........................... <tFontStruct, #font>
   [ 98] objcall 31 .............................. <tFontStruct.getaProp(#font)>
-  [100] setobjprop 594 .......................... pToolTipMem.font = tFontStruct.getaProp(#font)
-  [103] getprop 1063 ............................ <pToolTipMem>
+  [100] setobjprop 596 .......................... pToolTipMem.font = tFontStruct.getaProp(#font)
+  [103] getprop 1081 ............................ <pToolTipMem>
   [106] getlocal 0 .............................. <tFontStruct>
-  [108] pushsymb 596 ............................ <#fontSize>
+  [108] pushsymb 598 ............................ <#fontSize>
   [111] pusharglist 2 ........................... <tFontStruct, #fontSize>
   [113] objcall 31 .............................. <tFontStruct.getaProp(#fontSize)>
-  [115] setobjprop 596 .......................... pToolTipMem.fontSize = tFontStruct.getaProp(#fontSize)
-  [118] getprop 1063 ............................ <pToolTipMem>
+  [115] setobjprop 598 .......................... pToolTipMem.fontSize = tFontStruct.getaProp(#fontSize)
+  [118] getprop 1081 ............................ <pToolTipMem>
   [121] getlocal 0 .............................. <tFontStruct>
-  [123] pushsymb 597 ............................ <#color>
+  [123] pushsymb 599 ............................ <#color>
   [126] pusharglist 2 ........................... <tFontStruct, #color>
   [128] objcall 31 .............................. <tFontStruct.getaProp(#color)>
-  [130] setobjprop 597 .......................... pToolTipMem.color = tFontStruct.getaProp(#color)
+  [130] setobjprop 599 .......................... pToolTipMem.color = tFontStruct.getaProp(#color)
   [133] getparam 0 .............................. <me>
   [135] pusharglist 1 ........................... <me>
   [137] objcall 3 ............................... <me.getID()>
@@ -1233,32 +1265,32 @@ on prepareToolTip me
   [141] extcall 232 ............................. <reserveSprite(me.getID())>
   [143] pusharglist 1 ........................... <reserveSprite(me.getID())>
   [145] extcall 36 .............................. <sprite(reserveSprite(me.getID()))>
-  [147] setprop 1064 ............................ pToolTipSpr = sprite(reserveSprite(me.getID()))
-  [150] getprop 1064 ............................ <pToolTipSpr>
-  [153] getprop 1063 ............................ <pToolTipMem>
+  [147] setprop 1082 ............................ pToolTipSpr = sprite(reserveSprite(me.getID()))
+  [150] getprop 1082 ............................ <pToolTipSpr>
+  [153] getprop 1081 ............................ <pToolTipMem>
   [156] setobjprop 41 ........................... pToolTipSpr.member = pToolTipMem
-  [158] getprop 1064 ............................ <pToolTipSpr>
+  [158] getprop 1082 ............................ <pToolTipSpr>
   [161] pushzero ................................ <0>
-  [162] setobjprop 878 .......................... pToolTipSpr.visible = 0
-  [165] getprop 1064 ............................ <pToolTipSpr>
+  [162] setobjprop 880 .......................... pToolTipSpr.visible = 0
+  [165] getprop 1082 ............................ <pToolTipSpr>
   [168] pushint32 200000000 ..................... <200000000>
-  [173] setobjprop 881 .......................... pToolTipSpr.locZ = 200000000
+  [173] setobjprop 883 .......................... pToolTipSpr.locZ = 200000000
   [176] pusharglist 0 ........................... <>
   [178] extcall 32 .............................. <VOID>
-  [180] setprop 1069 ............................ pToolTipID = VOID
-  [183] pushcons 55 ............................. <"tooltip.delay">
+  [180] setprop 1087 ............................ pToolTipID = VOID
+  [183] pushcons 59 ............................. <"tooltip.delay">
   [185] pushint16 2000 .......................... <2000>
   [188] pusharglist 2 ........................... <"tooltip.delay", 2000>
   [190] extcall 373 ............................. <getIntVariable("tooltip.delay", 2000)>
-  [193] setprop 1070 ............................ pToolTipDel = getIntVariable("tooltip.delay", 2000)
+  [193] setprop 1088 ............................ pToolTipDel = getIntVariable("tooltip.delay", 2000)
   [196] ret
 end
 
 on alertHook me
   [  0] pushint8 1 .............................. <1>
-  [  2] setprop 1060 ............................ pCatchFlag = 1
-  [  5] getprop 1061 ............................ <pSavedHook>
-  [  8] setmovieprop 673 ........................ the alertHook = pSavedHook
+  [  2] setprop 1078 ............................ pCatchFlag = 1
+  [  5] getprop 1079 ............................ <pSavedHook>
+  [  8] setmovieprop 675 ........................ the alertHook = pSavedHook
   [ 11] pushint8 1 .............................. <1>
   [ 13] pusharglistnoret 1 ...................... <1>
   [ 15] extcall 25 .............................. return 1
@@ -1280,11 +1312,11 @@ on getReceipt me, tStamp
   [ 22] getlocal 1 .............................. <tCharNo>
   [ 24] getlocal 1 .............................. <tCharNo>
   [ 26] pusharglist 3 ........................... <tStamp, tCharNo, tCharNo>
-  [ 28] extcall 930 ............................. <chars(tStamp, tCharNo, tCharNo)>
+  [ 28] extcall 932 ............................. <chars(tStamp, tCharNo, tCharNo)>
   [ 31] setlocal 2 .............................. tChar = chars(tStamp, tCharNo, tCharNo)
   [ 33] getlocal 2 .............................. <tChar>
   [ 35] pusharglist 1 ........................... <tChar>
-  [ 37] extcall 915 ............................. <charToNum(tChar)>
+  [ 37] extcall 917 ............................. <charToNum(tChar)>
   [ 40] setlocal 2 .............................. tChar = charToNum(tChar)
   [ 42] getlocal 2 .............................. <tChar>
   [ 44] getlocal 1 .............................. <tCharNo>

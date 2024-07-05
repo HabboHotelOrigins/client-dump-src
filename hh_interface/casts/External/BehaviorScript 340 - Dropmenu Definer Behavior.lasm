@@ -19,7 +19,7 @@ on print me
   [ 29] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN>
   [ 30] pushcons 3 .............................. <"id:        ">
   [ 32] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        ">
-  [ 33] getprop 92 .............................. <id>
+  [ 33] getprop 93 .............................. <id>
   [ 35] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id>
   [ 36] pushcons 0 .............................. <RETURN>
   [ 38] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN>
@@ -43,7 +43,7 @@ on print me
   [ 68] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "keylist:   " && keylist & RETURN & "direction: " && direction & RETURN>
   [ 69] pushcons 7 .............................. <"alignment: ">
   [ 71] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "keylist:   " && keylist & RETURN & "direction: " && direction & RETURN & "alignment: ">
-  [ 72] getprop 101 ............................. <alignment>
+  [ 72] getprop 102 ............................. <alignment>
   [ 74] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "keylist:   " && keylist & RETURN & "direction: " && direction & RETURN & "alignment: " && alignment>
   [ 75] pushcons 0 .............................. <RETURN>
   [ 77] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "keylist:   " && keylist & RETURN & "direction: " && direction & RETURN & "alignment: " && alignment & RETURN>
@@ -84,7 +84,7 @@ end
 on getBehaviorDescription me
   [  0] pushcons 12 ............................. <"Defines dropmenus in window objects...">
   [  2] pusharglistnoret 1 ...................... <"Defines dropmenus in window objects...">
-  [  4] extcall 68 .............................. return "Defines dropmenus in window objects..."
+  [  4] extcall 69 .............................. return "Defines dropmenus in window objects..."
   [  6] ret
 end
 
@@ -109,7 +109,7 @@ on getPropertyDescriptionList me
   [ 37] pusharglistnoret 3 ...................... <tList, #type, [#format: #string, #default: "dropmenu", #range: ["dropmenu"], #comment: "type:"]>
   [ 39] objcall 161 ............................. tList[#type] = [#format: #string, #default: "dropmenu", #range: ["dropmenu"], #comment: "type:"]
   [ 41] getlocal 0 .............................. <tList>
-  [ 43] pushsymb 92 ............................. <#id>
+  [ 43] pushsymb 93 ............................. <#id>
   [ 45] pushsymb 319 ............................ <#format>
   [ 48] pushsymb 320 ............................ <#string>
   [ 51] pushsymb 321 ............................ <#default>
@@ -170,12 +170,12 @@ on getPropertyDescriptionList me
   [179] pusharglistnoret 3 ...................... <tList, #direction, [#format: #symbol, #range: [#up, #lastselected, #down], #default: #down, #comment: "direction:"]>
   [181] objcall 161 ............................. tList[#direction] = [#format: #symbol, #range: [#up, #lastselected, #down], #default: #down, #comment: "direction:"]
   [183] getlocal 0 .............................. <tList>
-  [185] pushsymb 101 ............................ <#alignment>
+  [185] pushsymb 102 ............................ <#alignment>
   [187] pushsymb 319 ............................ <#format>
   [190] pushsymb 324 ............................ <#symbol>
   [193] pushsymb 322 ............................ <#range>
   [196] pushsymb 333 ............................ <#left>
-  [199] pushsymb 102 ............................ <#center>
+  [199] pushsymb 103 ............................ <#center>
   [201] pushsymb 334 ............................ <#right>
   [204] pusharglist 3 ........................... <[#left, #center, #right]>
   [206] pushlist ................................ <[#left, #center, #right]>
@@ -213,6 +213,6 @@ on getPropertyDescriptionList me
   [277] objcall 161 ............................. tList[#fixedsize] = [#format: #boolean, #default: 0, #comment: "fixed size:"]
   [279] getlocal 0 .............................. <tList>
   [281] pusharglistnoret 1 ...................... <tList>
-  [283] extcall 68 .............................. return tList
+  [283] extcall 69 .............................. return tList
   [285] ret
 end

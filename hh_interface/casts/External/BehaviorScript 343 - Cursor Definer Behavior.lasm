@@ -42,7 +42,7 @@ end
 on getBehaviorDescription me
   [  0] pushcons 5 .............................. <"Defines element's mouse cursor in window recordings...">
   [  2] pusharglistnoret 1 ...................... <"Defines element's mouse cursor in window recordings...">
-  [  4] extcall 68 .............................. return "Defines element's mouse cursor in window recordings..."
+  [  4] extcall 69 .............................. return "Defines element's mouse cursor in window recordings..."
   [  6] ret
 end
 
@@ -64,6 +64,6 @@ on getPropertyDescriptionList me
   [ 31] objcall 161 ............................. tList[#cursor] = [#format: #string, #default: EMPTY, #comment: "Cursor member's name:"]
   [ 33] getlocal 0 .............................. <tList>
   [ 35] pusharglistnoret 1 ...................... <tList>
-  [ 37] extcall 68 .............................. return tList
+  [ 37] extcall 69 .............................. return tList
   [ 39] ret
 end

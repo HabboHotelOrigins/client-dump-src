@@ -19,7 +19,7 @@ on print me
   [ 29] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN>
   [ 30] pushcons 3 .............................. <"id:        ">
   [ 32] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        ">
-  [ 33] getprop 92 .............................. <id>
+  [ 33] getprop 93 .............................. <id>
   [ 35] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id>
   [ 36] pushcons 0 .............................. <RETURN>
   [ 38] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN>
@@ -58,7 +58,7 @@ on getBehaviorDescription me
   [  5] pushcons 8 .............................. <"Supports scrollbars...">
   [  7] joinstr ................................. <"Defines image areas in window objects." & RETURN & "Supports scrollbars...">
   [  8] pusharglistnoret 1 ...................... <"Defines image areas in window objects." & RETURN & "Supports scrollbars...">
-  [ 10] extcall 68 .............................. return "Defines image areas in window objects." & RETURN & "Supports scrollbars..."
+  [ 10] extcall 69 .............................. return "Defines image areas in window objects." & RETURN & "Supports scrollbars..."
   [ 12] ret
 end
 
@@ -101,7 +101,7 @@ on getPropertyDescriptionList me
   [ 86] pusharglistnoret 3 ...................... <tList, #type, [#format: #string, #default: "image", #range: ["image", "pattern"], #comment: "type:"]>
   [ 88] objcall 161 ............................. tList[#type] = [#format: #string, #default: "image", #range: ["image", "pattern"], #comment: "type:"]
   [ 90] getlocal 1 .............................. <tList>
-  [ 92] pushsymb 92 ............................. <#id>
+  [ 92] pushsymb 93 ............................. <#id>
   [ 94] pushsymb 319 ............................ <#format>
   [ 97] pushsymb 320 ............................ <#string>
   [100] pushsymb 321 ............................ <#default>
@@ -122,7 +122,7 @@ on getPropertyDescriptionList me
   [136] getlocal 0 .............................. <tStreches>
   [138] pushint8 1 .............................. <1>
   [140] pusharglist 2 ........................... <tStreches, 1>
-  [142] objcall 72 .............................. <tStreches[1]>
+  [142] objcall 73 .............................. <tStreches[1]>
   [144] pushsymb 323 ............................ <#comment>
   [147] pushcons 14 ............................. <"strech:">
   [149] pusharglist 8 ........................... <[#format: #symbol, #range: tStreches, #default: tStreches[1], #comment: "strech:"]>
@@ -131,6 +131,6 @@ on getPropertyDescriptionList me
   [154] objcall 161 ............................. tList[#strech] = [#format: #symbol, #range: tStreches, #default: tStreches[1], #comment: "strech:"]
   [156] getlocal 1 .............................. <tList>
   [158] pusharglistnoret 1 ...................... <tList>
-  [160] extcall 68 .............................. return tList
+  [160] extcall 69 .............................. return tList
   [162] ret
 end

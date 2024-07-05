@@ -15,7 +15,7 @@ on construct me
   pScaleFlag = 0
   pDragFlag = 0
   pDragOffset = [0, 0]
-  pBoundary = rect(0, 0, (the stage).rect.width, (the stage).rect.height) + [-20, -20, 20, 20]
+  pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + [-20, -20, 20, 20]
   pClientID = VOID
   pMemberList = [:]
   pElemList = [:]
@@ -154,8 +154,9 @@ on moveZ me, tZ
 end
 
 on center me
-  tX = ((the stageRight - the stageLeft) / 2) - (pwidth / 2)
-  tY = ((the stageBottom - the stageTop) / 2) - (pheight / 2)
+  blah = (the stage).sourceRect
+  tX = ((the stage).sourceRect.width / 2) - (pwidth / 2)
+  tY = ((the stage).sourceRect.height / 2) - (pheight / 2)
   return me.moveTo(tX, tY)
 end
 

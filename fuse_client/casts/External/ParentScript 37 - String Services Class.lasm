@@ -3,27 +3,27 @@ property pConvList, pDigits, pUsesUTF8, pUnicodeDirector
 on construct me
   [  0] pusharglist 0 ........................... <[:]>
   [  2] pushproplist ............................ <[:]>
-  [  3] setprop 904 ............................. pConvList = [:]
+  [  3] setprop 906 ............................. pConvList = [:]
   [  6] pushcons 0 .............................. <"0123456789ABCDEF">
-  [  8] setprop 905 ............................. pDigits = "0123456789ABCDEF"
+  [  8] setprop 907 ............................. pDigits = "0123456789ABCDEF"
   [ 11] pusharglist 0 ........................... <>
   [ 13] extcall 32 .............................. <VOID>
-  [ 15] setprop 906 ............................. pUsesUTF8 = VOID
-  [ 18] gettoplevelprop 907 ..................... <_player>
-  [ 21] getobjprop 908 .......................... <_player.productVersion>
+  [ 15] setprop 908 ............................. pUsesUTF8 = VOID
+  [ 18] gettoplevelprop 909 ..................... <_player>
+  [ 21] getobjprop 910 .......................... <_player.productVersion>
   [ 24] pusharglist 1 ........................... <_player.productVersion>
   [ 26] extcall 113 ............................. <value(_player.productVersion)>
   [ 28] pushint8 11 ............................. <11>
   [ 30] gteq .................................... <value(_player.productVersion) >= 11>
   [ 31] jmpifz [ 42] ............................ if value(_player.productVersion) >= 11 then / else
   [ 34] pushint8 1 .............................. <1>
-  [ 36] setprop 909 ............................. pUnicodeDirector = 1
+  [ 36] setprop 911 ............................. pUnicodeDirector = 1
   [ 39] jmp [ 46]
   [ 42] pushzero ................................ <0>
-  [ 43] setprop 909 ............................. pUnicodeDirector = 0
+  [ 43] setprop 911 ............................. pUnicodeDirector = 0
   [ 46] getparam 0 .............................. <me>
   [ 48] pusharglistnoret 1 ...................... <me>
-  [ 50] objcall 903 ............................. me.initConvList()
+  [ 50] objcall 905 ............................. me.initConvList()
   [ 53] pushint8 1 .............................. <1>
   [ 55] pusharglistnoret 1 ...................... <1>
   [ 57] extcall 25 .............................. return 1
@@ -66,7 +66,7 @@ on getUTF8ObjInstance me
   [ 68] getlocal 2 .............................. <tUTF8Object>
   [ 70] getlocal 3 .............................. <tConversionFormat>
   [ 72] pusharglistnoret 2 ...................... <tUTF8Object, tConversionFormat>
-  [ 74] objcall 910 ............................. tUTF8Object.defineLocale(tConversionFormat)
+  [ 74] objcall 912 ............................. tUTF8Object.defineLocale(tConversionFormat)
   [ 77] jmp [ 88]
   [ 80] pusharglist 0 ........................... <>
   [ 82] extcall 32 .............................. <VOID>
@@ -199,7 +199,7 @@ on convertToLowerCase me, tString
   [ 33] setlocal 2 .............................. tChar = tString.char[i]
   [ 35] getlocal 2 .............................. <tChar>
   [ 37] pusharglist 1 ........................... <tChar>
-  [ 39] extcall 915 ............................. <charToNum(tChar)>
+  [ 39] extcall 917 ............................. <charToNum(tChar)>
   [ 42] setlocal 3 .............................. tNum = charToNum(tChar)
   [ 44] getlocal 3 .............................. <tNum>
   [ 46] pushint8 65 ............................. <65>
@@ -213,7 +213,7 @@ on convertToLowerCase me, tString
   [ 60] pushint8 32 ............................. <32>
   [ 62] add ..................................... <tNum + 32>
   [ 63] pusharglist 1 ........................... <tNum + 32>
-  [ 65] extcall 859 ............................. <numToChar(tNum + 32)>
+  [ 65] extcall 861 ............................. <numToChar(tNum + 32)>
   [ 68] setlocal 2 .............................. tChar = numToChar(tNum + 32)
   [ 70] getlocal 0 .............................. <tValueStr>
   [ 72] getlocal 2 .............................. <tChar>
@@ -249,7 +249,7 @@ on convertToHigherCase me, tString
   [ 33] setlocal 2 .............................. tChar = tString.char[i]
   [ 35] getlocal 2 .............................. <tChar>
   [ 37] pusharglist 1 ........................... <tChar>
-  [ 39] extcall 915 ............................. <charToNum(tChar)>
+  [ 39] extcall 917 ............................. <charToNum(tChar)>
   [ 42] setlocal 3 .............................. tNum = charToNum(tChar)
   [ 44] getlocal 3 .............................. <tNum>
   [ 46] pushint8 97 ............................. <97>
@@ -263,7 +263,7 @@ on convertToHigherCase me, tString
   [ 60] pushint8 32 ............................. <32>
   [ 62] sub ..................................... <tNum - 32>
   [ 63] pusharglist 1 ........................... <tNum - 32>
-  [ 65] extcall 859 ............................. <numToChar(tNum - 32)>
+  [ 65] extcall 861 ............................. <numToChar(tNum - 32)>
   [ 68] setlocal 2 .............................. tChar = numToChar(tNum - 32)
   [ 70] getlocal 0 .............................. <tValueStr>
   [ 72] getlocal 2 .............................. <tChar>
@@ -313,7 +313,7 @@ on convertSpecialChars me, tString, tDirection
   [ 51] getparam 1 .............................. <tString>
   [ 53] getchunk ................................ <char pos of tString>
   [ 54] setlocal 3 .............................. tChar = char pos of tString
-  [ 56] getprop 904 ............................. <pConvList>
+  [ 56] getprop 906 ............................. <pConvList>
   [ 59] getlocal 3 .............................. <tChar>
   [ 61] pusharglist 2 ........................... <pConvList, tChar>
   [ 63] objcall 54 .............................. <pConvList[tChar]>
@@ -353,16 +353,16 @@ on convertSpecialChars me, tString, tDirection
   [123] getparam 1 .............................. <tString>
   [125] getchunk ................................ <char pos of tString>
   [126] setlocal 3 .............................. tChar = char pos of tString
-  [128] getprop 904 ............................. <pConvList>
+  [128] getprop 906 ............................. <pConvList>
   [131] getlocal 3 .............................. <tChar>
   [133] pusharglist 2 ........................... <pConvList, tChar>
-  [135] objcall 517 ............................. <pConvList.getPos(tChar)>
+  [135] objcall 519 ............................. <pConvList.getPos(tChar)>
   [138] setlocal 5 .............................. tPos = pConvList.getPos(tChar)
   [140] getlocal 5 .............................. <tPos>
   [142] pushzero ................................ <0>
   [143] gt ...................................... <tPos > 0>
   [144] jmpifz [162] ............................ if tPos > 0 then
-  [147] getprop 904 ............................. <pConvList>
+  [147] getprop 906 ............................. <pConvList>
   [150] getlocal 5 .............................. <tPos>
   [152] pusharglist 2 ........................... <pConvList, tPos>
   [154] objcall 23 .............................. <pConvList.getPropAt(tPos)>
@@ -404,7 +404,7 @@ on convertIntToHex me, tInt
   [ 32] pushint8 16 ............................. <16>
   [ 34] div ..................................... <tInt / 16>
   [ 35] setparam 1 .............................. tInt = tInt / 16
-  [ 37] getprop 905 ............................. <pDigits>
+  [ 37] getprop 907 ............................. <pDigits>
   [ 40] pushsymb 291 ............................ <#char>
   [ 43] getlocal 0 .............................. <tD>
   [ 45] pushint8 1 .............................. <1>
@@ -459,7 +459,7 @@ on convertHexToInt me, tHex
   [ 37] pushint8 1 .............................. <1>
   [ 39] deletechunk 4 ........................... delete char -30000 of tHex
   [ 41] getlocal 2 .............................. <tLc>
-  [ 43] getprop 905 ............................. <pDigits>
+  [ 43] getprop 907 ............................. <pDigits>
   [ 46] pusharglist 2 ........................... <tLc, pDigits>
   [ 48] extcall 292 ............................. <offset(tLc, pDigits)>
   [ 51] pushint8 1 .............................. <1>
@@ -498,7 +498,7 @@ on explode me, tStr, tDelim, tLimit
   [ 24] extcall 20 .............................. <voidp(tLimit)>
   [ 26] jmpifz [ 36] ............................ if voidp(tLimit) then
   [ 29] pusharglist 0 ........................... <>
-  [ 31] thebuiltin 927 .......................... <the maxinteger>
+  [ 31] thebuiltin 929 .......................... <the maxinteger>
   [ 34] setparam 3 .............................. tLimit = the maxinteger
   [ 36] getparam 2 .............................. <tDelim>
   [ 38] pusharglist 1 ........................... <tDelim>
@@ -634,7 +634,7 @@ on implode me, tList, tDelim
   [ 88] getobjprop 293 .......................... <tDelim.length>
   [ 91] sub ..................................... <tStr.length - tDelim.length>
   [ 92] pusharglist 3 ........................... <tStr, 1, tStr.length - tDelim.length>
-  [ 94] extcall 930 ............................. <chars(tStr, 1, tStr.length - tDelim.length)>
+  [ 94] extcall 932 ............................. <chars(tStr, 1, tStr.length - tDelim.length)>
   [ 97] setlocal 0 .............................. tStr = chars(tStr, 1, tStr.length - tDelim.length)
   [ 99] getlocal 0 .............................. <tStr>
   [101] pusharglistnoret 1 ...................... <tStr>
@@ -699,7 +699,7 @@ on replaceChunks me, tString, tChunkA, tChunkB
   [ 33] pusharglist 1 ........................... <me>
   [ 35] objcall 3 ............................... <me.getID()>
   [ 37] pushsymb 279 ............................ <#replaceChunks>
-  [ 40] pushsymb 932 ............................ <#minor>
+  [ 40] pushsymb 934 ............................ <#minor>
   [ 43] pusharglistnoret 5 ...................... <me, "At least one of the parameters was void!", me.getID(), #replaceChunks, #minor>
   [ 45] extcall 39 .............................. error(me, "At least one of the parameters was void!", me.getID(), #replaceChunks, #minor)
   [ 47] getlocal 0 .............................. <tStr>
@@ -743,7 +743,7 @@ on replaceChunks me, tString, tChunkA, tChunkB
   [123] pusharglist 4 ........................... <tString, #char, 1, tPos + length(tChunkA)>
   [125] objcall 288 ............................. <tString.char[1..tPos + length(tChunkA)]>
   [128] pusharglistnoret 1 ...................... <tString.char[1..tPos + length(tChunkA)]>
-  [130] objcall 933 ............................. delete tString.char[1..tPos + length(tChunkA)]
+  [130] objcall 935 ............................. delete tString.char[1..tPos + length(tChunkA)]
   [133] endrepeat [ 53]
   [135] getparam 1 .............................. <tString>
   [137] pushzero ................................ <0>
@@ -783,7 +783,7 @@ on urlEncode me, tStr
   [ 54] jmp [113] ............................... next repeat
   [ 57] getlocal 3 .............................. <tChar>
   [ 59] pusharglist 0 ........................... <>
-  [ 61] extcall 884 ............................. <SPACE>
+  [ 61] extcall 886 ............................. <SPACE>
   [ 64] eq ...................................... <tChar = SPACE>
   [ 65] jmpifz [ 76] ............................ if tChar = SPACE then
   [ 68] pushcons 11 ............................. <"+">
@@ -793,13 +793,13 @@ on urlEncode me, tStr
   [ 76] pushcons 12 ............................. <"%">
   [ 78] getlocal 3 .............................. <tChar>
   [ 80] pusharglist 1 ........................... <tChar>
-  [ 82] extcall 915 ............................. <charToNum(tChar)>
+  [ 82] extcall 917 ............................. <charToNum(tChar)>
   [ 85] pushzero ................................ <0>
   [ 86] pushzero ................................ <0>
   [ 87] pusharglist 3 ........................... <charToNum(tChar), 0, 0>
-  [ 89] extcall 576 ............................. <rgb(charToNum(tChar), 0, 0)>
+  [ 89] extcall 578 ............................. <rgb(charToNum(tChar), 0, 0)>
   [ 92] pusharglist 1 ........................... <rgb(charToNum(tChar), 0, 0)>
-  [ 94] objcall 934 ............................. <rgb(charToNum(tChar), 0, 0).hexString()>
+  [ 94] objcall 936 ............................. <rgb(charToNum(tChar), 0, 0).hexString()>
   [ 97] pushsymb 291 ............................ <#char>
   [100] pushint8 2 .............................. <2>
   [102] pushint8 3 .............................. <3>
@@ -835,25 +835,25 @@ on obfuscate me, tStr
   [ 26] pusharglist 3 ........................... <tStr, #char, i>
   [ 28] objcall 290 ............................. <tStr.char[i]>
   [ 31] pusharglist 1 ........................... <tStr.char[i]>
-  [ 33] extcall 915 ............................. <charToNum(tStr.char[i])>
+  [ 33] extcall 917 ............................. <charToNum(tStr.char[i])>
   [ 36] setlocal 2 .............................. tNumber = charToNum(tStr.char[i])
   [ 38] getlocal 2 .............................. <tNumber>
   [ 40] pushint8 15 ............................. <15>
   [ 42] pusharglist 2 ........................... <tNumber, 15>
-  [ 44] extcall 861 ............................. <bitAnd(tNumber, 15)>
+  [ 44] extcall 863 ............................. <bitAnd(tNumber, 15)>
   [ 47] pushint8 2 .............................. <2>
   [ 49] mul ..................................... <bitAnd(tNumber, 15) * 2>
   [ 50] setlocal 3 .............................. tNewNumber1 = bitAnd(tNumber, 15) * 2
   [ 52] getlocal 2 .............................. <tNumber>
   [ 54] pushint16 240 ........................... <240>
   [ 57] pusharglist 2 ........................... <tNumber, 240>
-  [ 59] extcall 861 ............................. <bitAnd(tNumber, 240)>
+  [ 59] extcall 863 ............................. <bitAnd(tNumber, 240)>
   [ 62] pushint8 8 .............................. <8>
   [ 64] div ..................................... <bitAnd(tNumber, 240) / 8>
   [ 65] setlocal 4 .............................. tNewNumber2 = bitAnd(tNumber, 240) / 8
   [ 67] pushint8 6 .............................. <6>
   [ 69] pusharglist 1 ........................... <6>
-  [ 71] extcall 655 ............................. <random(6)>
+  [ 71] extcall 657 ............................. <random(6)>
   [ 74] pushint8 1 .............................. <1>
   [ 76] add ..................................... <random(6) + 1>
   [ 77] setlocal 5 .............................. tRandom = random(6) + 1
@@ -861,19 +861,19 @@ on obfuscate me, tStr
   [ 81] getlocal 5 .............................. <tRandom>
   [ 83] pushint8 6 .............................. <6>
   [ 85] pusharglist 2 ........................... <tRandom, 6>
-  [ 87] extcall 861 ............................. <bitAnd(tRandom, 6)>
+  [ 87] extcall 863 ............................. <bitAnd(tRandom, 6)>
   [ 90] pushint8 16 ............................. <16>
   [ 92] mul ..................................... <bitAnd(tRandom, 6) * 16>
   [ 93] add ..................................... <tNewNumber1 + (bitAnd(tRandom, 6) * 16)>
   [ 94] getlocal 5 .............................. <tRandom>
   [ 96] pushint8 1 .............................. <1>
   [ 98] pusharglist 2 ........................... <tRandom, 1>
-  [100] extcall 861 ............................. <bitAnd(tRandom, 1)>
+  [100] extcall 863 ............................. <bitAnd(tRandom, 1)>
   [103] add ..................................... <tNewNumber1 + (bitAnd(tRandom, 6) * 16) + bitAnd(tRandom, 1)>
   [104] setlocal 3 .............................. tNewNumber1 = tNewNumber1 + (bitAnd(tRandom, 6) * 16) + bitAnd(tRandom, 1)
   [106] pushint8 6 .............................. <6>
   [108] pusharglist 1 ........................... <6>
-  [110] extcall 655 ............................. <random(6)>
+  [110] extcall 657 ............................. <random(6)>
   [113] pushint8 1 .............................. <1>
   [115] add ..................................... <random(6) + 1>
   [116] setlocal 5 .............................. tRandom = random(6) + 1
@@ -881,24 +881,24 @@ on obfuscate me, tStr
   [120] getlocal 5 .............................. <tRandom>
   [122] pushint8 6 .............................. <6>
   [124] pusharglist 2 ........................... <tRandom, 6>
-  [126] extcall 861 ............................. <bitAnd(tRandom, 6)>
+  [126] extcall 863 ............................. <bitAnd(tRandom, 6)>
   [129] pushint8 16 ............................. <16>
   [131] mul ..................................... <bitAnd(tRandom, 6) * 16>
   [132] add ..................................... <tNewNumber2 + (bitAnd(tRandom, 6) * 16)>
   [133] getlocal 5 .............................. <tRandom>
   [135] pushint8 1 .............................. <1>
   [137] pusharglist 2 ........................... <tRandom, 1>
-  [139] extcall 861 ............................. <bitAnd(tRandom, 1)>
+  [139] extcall 863 ............................. <bitAnd(tRandom, 1)>
   [142] add ..................................... <tNewNumber2 + (bitAnd(tRandom, 6) * 16) + bitAnd(tRandom, 1)>
   [143] setlocal 4 .............................. tNewNumber2 = tNewNumber2 + (bitAnd(tRandom, 6) * 16) + bitAnd(tRandom, 1)
   [145] getlocal 0 .............................. <tResult>
   [147] getlocal 4 .............................. <tNewNumber2>
   [149] pusharglist 1 ........................... <tNewNumber2>
-  [151] extcall 859 ............................. <numToChar(tNewNumber2)>
+  [151] extcall 861 ............................. <numToChar(tNewNumber2)>
   [154] joinstr ................................. <tResult & numToChar(tNewNumber2)>
   [155] getlocal 3 .............................. <tNewNumber1>
   [157] pusharglist 1 ........................... <tNewNumber1>
-  [159] extcall 859 ............................. <numToChar(tNewNumber1)>
+  [159] extcall 861 ............................. <numToChar(tNewNumber1)>
   [162] joinstr ................................. <tResult & numToChar(tNewNumber2) & numToChar(tNewNumber1)>
   [163] setlocal 0 .............................. tResult = tResult & numToChar(tNewNumber2) & numToChar(tNewNumber1)
   [165] pushint8 1
@@ -936,14 +936,14 @@ on deobfuscate me, tStr
   [ 43] pusharglist 3 ........................... <tStr, #char, i + 1>
   [ 45] objcall 290 ............................. <tStr.char[i + 1]>
   [ 48] pusharglist 1 ........................... <tStr.char[i + 1]>
-  [ 50] extcall 915 ............................. <charToNum(tStr.char[i + 1])>
+  [ 50] extcall 917 ............................. <charToNum(tStr.char[i + 1])>
   [ 53] getparam 1 .............................. <tStr>
   [ 55] pushsymb 291 ............................ <#char>
   [ 58] getlocal 1 .............................. <i>
   [ 60] pusharglist 3 ........................... <tStr, #char, i>
   [ 62] objcall 290 ............................. <tStr.char[i]>
   [ 65] pusharglist 1 ........................... <tStr.char[i]>
-  [ 67] extcall 915 ............................. <charToNum(tStr.char[i])>
+  [ 67] extcall 917 ............................. <charToNum(tStr.char[i])>
   [ 70] pusharglist 2 ........................... <[charToNum(tStr.char[i + 1]), charToNum(tStr.char[i])]>
   [ 72] pushlist ................................ <[charToNum(tStr.char[i + 1]), charToNum(tStr.char[i])]>
   [ 73] setlocal 2 .............................. tRawNumbers = [charToNum(tStr.char[i + 1]), charToNum(tStr.char[i])]
@@ -953,7 +953,7 @@ on deobfuscate me, tStr
   [ 81] objcall 54 .............................. <tRawNumbers[1]>
   [ 83] pushint8 30 ............................. <30>
   [ 85] pusharglist 2 ........................... <tRawNumbers[1], 30>
-  [ 87] extcall 861 ............................. <bitAnd(tRawNumbers[1], 30)>
+  [ 87] extcall 863 ............................. <bitAnd(tRawNumbers[1], 30)>
   [ 90] pushint8 2 .............................. <2>
   [ 92] div ..................................... <bitAnd(tRawNumbers[1], 30) / 2>
   [ 93] getlocal 2 .............................. <tRawNumbers>
@@ -962,7 +962,7 @@ on deobfuscate me, tStr
   [ 99] objcall 54 .............................. <tRawNumbers[2]>
   [101] pushint8 30 ............................. <30>
   [103] pusharglist 2 ........................... <tRawNumbers[2], 30>
-  [105] extcall 861 ............................. <bitAnd(tRawNumbers[2], 30)>
+  [105] extcall 863 ............................. <bitAnd(tRawNumbers[2], 30)>
   [108] pushint8 8 .............................. <8>
   [110] mul ..................................... <bitAnd(tRawNumbers[2], 30) * 8>
   [111] pusharglist 2 ........................... <[bitAnd(tRawNumbers[1], 30) / 2, bitAnd(tRawNumbers[2], 30) * 8]>
@@ -977,12 +977,12 @@ on deobfuscate me, tStr
   [128] pusharglist 2 ........................... <tNumbers, 2>
   [130] objcall 54 .............................. <tNumbers[2]>
   [132] pusharglist 2 ........................... <tNumbers[1], tNumbers[2]>
-  [134] extcall 860 ............................. <bitOr(tNumbers[1], tNumbers[2])>
+  [134] extcall 862 ............................. <bitOr(tNumbers[1], tNumbers[2])>
   [137] setlocal 4 .............................. tNumber = bitOr(tNumbers[1], tNumbers[2])
   [139] getlocal 0 .............................. <tResult>
   [141] getlocal 4 .............................. <tNumber>
   [143] pusharglist 1 ........................... <tNumber>
-  [145] extcall 859 ............................. <numToChar(tNumber)>
+  [145] extcall 861 ............................. <numToChar(tNumber)>
   [148] joinstr ................................. <tResult & numToChar(tNumber)>
   [149] setlocal 0 .............................. tResult = tResult & numToChar(tNumber)
   [151] getlocal 1 .............................. <i>
@@ -1008,7 +1008,7 @@ on getLocalFloat me, tStrFloat
   [  7] jmpifz [ 21] ............................ if not stringp(tStrFloat) then
   [ 10] getparam 1 .............................. <tStrFloat>
   [ 12] pusharglist 1 ........................... <tStrFloat>
-  [ 14] extcall 942 ............................. <float(tStrFloat)>
+  [ 14] extcall 944 ............................. <float(tStrFloat)>
   [ 17] pusharglistnoret 1 ...................... <float(tStrFloat)>
   [ 19] extcall 25 .............................. return float(tStrFloat)
   [ 21] getparam 1 .............................. <tStrFloat>
@@ -1018,7 +1018,7 @@ on getLocalFloat me, tStrFloat
   [ 27] jmpifz [ 41] ............................ if not (tStrFloat contains ".") then
   [ 30] getparam 1 .............................. <tStrFloat>
   [ 32] pusharglist 1 ........................... <tStrFloat>
-  [ 34] extcall 942 ............................. <float(tStrFloat)>
+  [ 34] extcall 944 ............................. <float(tStrFloat)>
   [ 37] pusharglistnoret 1 ...................... <float(tStrFloat)>
   [ 39] extcall 25 .............................. return float(tStrFloat)
   [ 41] getparam 1 .............................. <tStrFloat>
@@ -1048,14 +1048,14 @@ on getLocalFloat me, tStrFloat
   [ 81] putchunk 21 ............................. put "," into char offset(".", tStrFloat) of tStrFloatLocal
   [ 83] getlocal 0 .............................. <tStrFloatLocal>
   [ 85] pusharglist 1 ........................... <tStrFloatLocal>
-  [ 87] extcall 942 ............................. <float(tStrFloatLocal)>
+  [ 87] extcall 944 ............................. <float(tStrFloatLocal)>
   [ 90] pusharglistnoret 1 ...................... <float(tStrFloatLocal)>
   [ 92] extcall 25 .............................. return float(tStrFloatLocal)
   [ 94] ret
 end
 
 on encodeUTF8 me, tStr
-  [  0] getprop 906 ............................. <pUsesUTF8>
+  [  0] getprop 908 ............................. <pUsesUTF8>
   [  3] pusharglist 1 ........................... <pUsesUTF8>
   [  5] extcall 20 .............................. <voidp(pUsesUTF8)>
   [  7] jmpifz [ 44] ............................ if voidp(pUsesUTF8) then
@@ -1068,12 +1068,12 @@ on encodeUTF8 me, tStr
   [ 24] getlocal 0 .............................. <tVar>
   [ 26] pusharglist 1 ........................... <tVar>
   [ 28] extcall 375 ............................. <getVariableValue(tVar)>
-  [ 31] setprop 906 ............................. pUsesUTF8 = getVariableValue(tVar)
+  [ 31] setprop 908 ............................. pUsesUTF8 = getVariableValue(tVar)
   [ 34] jmp [ 44]
   [ 37] pusharglist 0 ........................... <>
   [ 39] extcall 32 .............................. <VOID>
-  [ 41] setprop 906 ............................. pUsesUTF8 = VOID
-  [ 44] getprop 906 ............................. <pUsesUTF8>
+  [ 41] setprop 908 ............................. pUsesUTF8 = VOID
+  [ 44] getprop 908 ............................. <pUsesUTF8>
   [ 47] not ..................................... <not pUsesUTF8>
   [ 48] jmpifz [ 57] ............................ if not pUsesUTF8 then
   [ 51] getparam 1 .............................. <tStr>
@@ -1082,7 +1082,7 @@ on encodeUTF8 me, tStr
   [ 57] getparam 0 .............................. <me>
   [ 59] getparam 1 .............................. <tStr>
   [ 61] pusharglist 2 ........................... <me, tStr>
-  [ 63] objcall 900 ............................. <me.convertToUnicode(tStr)>
+  [ 63] objcall 902 ............................. <me.convertToUnicode(tStr)>
   [ 66] setlocal 1 .............................. tUnicodeData = me.convertToUnicode(tStr)
   [ 68] pusharglist 0 ........................... <[]>
   [ 70] pushlist ................................ <[]>
@@ -1119,7 +1119,7 @@ on encodeUTF8 me, tStr
   [135] div ..................................... <tValue / 64>
   [136] pushint8 31 ............................. <31>
   [138] pusharglist 2 ........................... <tValue / 64, 31>
-  [140] extcall 861 ............................. <bitAnd(tValue / 64, 31)>
+  [140] extcall 863 ............................. <bitAnd(tValue / 64, 31)>
   [143] add ..................................... <192 + bitAnd(tValue / 64, 31)>
   [144] pusharglistnoret 2 ...................... <tUTF8Data, 192 + bitAnd(tValue / 64, 31)>
   [146] objcall 122 ............................. tUTF8Data.add(192 + bitAnd(tValue / 64, 31))
@@ -1128,7 +1128,7 @@ on encodeUTF8 me, tStr
   [153] getlocal 4 .............................. <tValue>
   [155] pushint8 63 ............................. <63>
   [157] pusharglist 2 ........................... <tValue, 63>
-  [159] extcall 861 ............................. <bitAnd(tValue, 63)>
+  [159] extcall 863 ............................. <bitAnd(tValue, 63)>
   [162] add ..................................... <128 + bitAnd(tValue, 63)>
   [163] pusharglistnoret 2 ...................... <tUTF8Data, 128 + bitAnd(tValue, 63)>
   [165] objcall 122 ............................. tUTF8Data.add(128 + bitAnd(tValue, 63))
@@ -1146,7 +1146,7 @@ on encodeUTF8 me, tStr
   [193] div ..................................... <tValue / (64 * 64)>
   [194] pushint8 15 ............................. <15>
   [196] pusharglist 2 ........................... <tValue / (64 * 64), 15>
-  [198] extcall 861 ............................. <bitAnd(tValue / (64 * 64), 15)>
+  [198] extcall 863 ............................. <bitAnd(tValue / (64 * 64), 15)>
   [201] add ..................................... <224 + bitAnd(tValue / (64 * 64), 15)>
   [202] pusharglistnoret 2 ...................... <tUTF8Data, 224 + bitAnd(tValue / (64 * 64), 15)>
   [204] objcall 122 ............................. tUTF8Data.add(224 + bitAnd(tValue / (64 * 64), 15))
@@ -1157,7 +1157,7 @@ on encodeUTF8 me, tStr
   [215] div ..................................... <tValue / 64>
   [216] pushint8 63 ............................. <63>
   [218] pusharglist 2 ........................... <tValue / 64, 63>
-  [220] extcall 861 ............................. <bitAnd(tValue / 64, 63)>
+  [220] extcall 863 ............................. <bitAnd(tValue / 64, 63)>
   [223] add ..................................... <128 + bitAnd(tValue / 64, 63)>
   [224] pusharglistnoret 2 ...................... <tUTF8Data, 128 + bitAnd(tValue / 64, 63)>
   [226] objcall 122 ............................. tUTF8Data.add(128 + bitAnd(tValue / 64, 63))
@@ -1166,7 +1166,7 @@ on encodeUTF8 me, tStr
   [233] getlocal 4 .............................. <tValue>
   [235] pushint8 63 ............................. <63>
   [237] pusharglist 2 ........................... <tValue, 63>
-  [239] extcall 861 ............................. <bitAnd(tValue, 63)>
+  [239] extcall 863 ............................. <bitAnd(tValue, 63)>
   [242] add ..................................... <128 + bitAnd(tValue, 63)>
   [243] pusharglistnoret 2 ...................... <tUTF8Data, 128 + bitAnd(tValue, 63)>
   [245] objcall 122 ............................. tUTF8Data.add(128 + bitAnd(tValue, 63))
@@ -1178,7 +1178,7 @@ on encodeUTF8 me, tStr
   [256] getparam 0 .............................. <me>
   [258] getlocal 2 .............................. <tUTF8Data>
   [260] pusharglist 2 ........................... <me, tUTF8Data>
-  [262] objcall 901 ............................. <me.generateStringFromUTF8(tUTF8Data)>
+  [262] objcall 903 ............................. <me.generateStringFromUTF8(tUTF8Data)>
   [265] setlocal 5 .............................. tResult = me.generateStringFromUTF8(tUTF8Data)
   [267] getlocal 5 .............................. <tResult>
   [269] pusharglistnoret 1 ...................... <tResult>
@@ -1187,7 +1187,7 @@ on encodeUTF8 me, tStr
 end
 
 on decodeUTF8 me, tStr, tForceDecode
-  [  0] getprop 906 ............................. <pUsesUTF8>
+  [  0] getprop 908 ............................. <pUsesUTF8>
   [  3] pusharglist 1 ........................... <pUsesUTF8>
   [  5] extcall 20 .............................. <voidp(pUsesUTF8)>
   [  7] jmpifz [ 44] ............................ if voidp(pUsesUTF8) then
@@ -1200,18 +1200,18 @@ on decodeUTF8 me, tStr, tForceDecode
   [ 24] getlocal 0 .............................. <tVar>
   [ 26] pusharglist 1 ........................... <tVar>
   [ 28] extcall 375 ............................. <getVariableValue(tVar)>
-  [ 31] setprop 906 ............................. pUsesUTF8 = getVariableValue(tVar)
+  [ 31] setprop 908 ............................. pUsesUTF8 = getVariableValue(tVar)
   [ 34] jmp [ 44]
   [ 37] pusharglist 0 ........................... <>
   [ 39] extcall 32 .............................. <VOID>
-  [ 41] setprop 906 ............................. pUsesUTF8 = VOID
-  [ 44] getprop 906 ............................. <pUsesUTF8>
+  [ 41] setprop 908 ............................. pUsesUTF8 = VOID
+  [ 44] getprop 908 ............................. <pUsesUTF8>
   [ 47] not ..................................... <not pUsesUTF8>
   [ 48] jmpifz [ 57] ............................ if not pUsesUTF8 then
   [ 51] getparam 1 .............................. <tStr>
   [ 53] pusharglistnoret 1 ...................... <tStr>
   [ 55] extcall 25 .............................. return tStr
-  [ 57] getprop 909 ............................. <pUnicodeDirector>
+  [ 57] getprop 911 ............................. <pUnicodeDirector>
   [ 60] getparam 2 .............................. <tForceDecode>
   [ 62] not ..................................... <not tForceDecode>
   [ 63] and ..................................... <pUnicodeDirector and not tForceDecode>
@@ -1221,7 +1221,7 @@ on decodeUTF8 me, tStr, tForceDecode
   [ 71] extcall 25 .............................. return tStr
   [ 73] getparam 0 .............................. <me>
   [ 75] pusharglist 1 ........................... <me>
-  [ 77] objcall 899 ............................. <me.getUTF8ObjInstance()>
+  [ 77] objcall 901 ............................. <me.getUTF8ObjInstance()>
   [ 80] setlocal 1 .............................. tUTF8Obj = me.getUTF8ObjInstance()
   [ 82] pusharglist 0 ........................... <[]>
   [ 84] pushlist ................................ <[]>
@@ -1277,7 +1277,7 @@ on decodeUTF8 me, tStr, tForceDecode
   [193] setlocal 7 .............................. tChar = tSubStr.char[i]
   [195] getlocal 7 .............................. <tChar>
   [197] pusharglist 1 ........................... <tChar>
-  [199] extcall 915 ............................. <charToNum(tChar)>
+  [199] extcall 917 ............................. <charToNum(tChar)>
   [202] setlocal 8 .............................. tValue = charToNum(tChar)
   [204] getlocal 8 .............................. <tValue>
   [206] pushint16 255 ........................... <255>
@@ -1364,20 +1364,20 @@ on decodeUTF8 me, tStr, tForceDecode
   [367] getlocal 8 .............................. <tValue>
   [369] pushint8 15 ............................. <15>
   [371] pusharglist 2 ........................... <tValue, 15>
-  [373] extcall 861 ............................. <bitAnd(tValue, 15)>
+  [373] extcall 863 ............................. <bitAnd(tValue, 15)>
   [376] pushint8 64 ............................. <64>
   [378] mul ..................................... <bitAnd(tValue, 15) * 64>
   [379] getlocal 10 ............................. <tValue2>
   [381] pushint8 63 ............................. <63>
   [383] pusharglist 2 ........................... <tValue2, 63>
-  [385] extcall 861 ............................. <bitAnd(tValue2, 63)>
+  [385] extcall 863 ............................. <bitAnd(tValue2, 63)>
   [388] add ..................................... <(bitAnd(tValue, 15) * 64) + bitAnd(tValue2, 63)>
   [389] pushint8 64 ............................. <64>
   [391] mul ..................................... <((bitAnd(tValue, 15) * 64) + bitAnd(tValue2, 63)) * 64>
   [392] getlocal 11 ............................. <tValue3>
   [394] pushint8 63 ............................. <63>
   [396] pusharglist 2 ........................... <tValue3, 63>
-  [398] extcall 861 ............................. <bitAnd(tValue3, 63)>
+  [398] extcall 863 ............................. <bitAnd(tValue3, 63)>
   [401] add ..................................... <(((bitAnd(tValue, 15) * 64) + bitAnd(tValue2, 63)) * 64) + bitAnd(tValue3, 63)>
   [402] setlocal 12 ............................. tResVal = (((bitAnd(tValue, 15) * 64) + bitAnd(tValue2, 63)) * 64) + bitAnd(tValue3, 63)
   [404] getlocal 9 .............................. <tUnicodeData>
@@ -1410,13 +1410,13 @@ on decodeUTF8 me, tStr, tForceDecode
   [457] getlocal 8 .............................. <tValue>
   [459] pushint8 31 ............................. <31>
   [461] pusharglist 2 ........................... <tValue, 31>
-  [463] extcall 861 ............................. <bitAnd(tValue, 31)>
+  [463] extcall 863 ............................. <bitAnd(tValue, 31)>
   [466] pushint8 64 ............................. <64>
   [468] mul ..................................... <bitAnd(tValue, 31) * 64>
   [469] getlocal 10 ............................. <tValue2>
   [471] pushint8 63 ............................. <63>
   [473] pusharglist 2 ........................... <tValue2, 63>
-  [475] extcall 861 ............................. <bitAnd(tValue2, 63)>
+  [475] extcall 863 ............................. <bitAnd(tValue2, 63)>
   [478] add ..................................... <(bitAnd(tValue, 31) * 64) + bitAnd(tValue2, 63)>
   [479] setlocal 12 ............................. tResVal = (bitAnd(tValue, 31) * 64) + bitAnd(tValue2, 63)
   [481] getlocal 9 .............................. <tUnicodeData>
@@ -1435,7 +1435,7 @@ on decodeUTF8 me, tStr, tForceDecode
   [505] getparam 0 .............................. <me>
   [507] getlocal 9 .............................. <tUnicodeData>
   [509] pusharglist 2 ........................... <me, tUnicodeData>
-  [511] objcall 902 ............................. <me.convertFromUnicode(tUnicodeData)>
+  [511] objcall 904 ............................. <me.convertFromUnicode(tUnicodeData)>
   [514] setlocal 13 ............................. tResult = me.convertFromUnicode(tUnicodeData)
   [516] getlocal 13 ............................. <tResult>
   [518] pusharglistnoret 1 ...................... <tResult>
@@ -1444,19 +1444,19 @@ on decodeUTF8 me, tStr, tForceDecode
 end
 
 on convertToUnicode me, tStr
-  [  0] getprop 909 ............................. <pUnicodeDirector>
+  [  0] getprop 911 ............................. <pUnicodeDirector>
   [  3] not ..................................... <not pUnicodeDirector>
   [  4] jmpifz [ 62] ............................ if not pUnicodeDirector then
   [  7] getparam 0 .............................. <me>
   [  9] pusharglist 1 ........................... <me>
-  [ 11] objcall 899 ............................. <me.getUTF8ObjInstance()>
+  [ 11] objcall 901 ............................. <me.getUTF8ObjInstance()>
   [ 14] setlocal 0 .............................. tUTF8Object = me.getUTF8ObjInstance()
   [ 16] getlocal 0 .............................. <tUTF8Object>
   [ 18] pusharglist 1 ........................... <tUTF8Object>
   [ 20] extcall 20 .............................. <voidp(tUTF8Object)>
   [ 22] not ..................................... <not voidp(tUTF8Object)>
   [ 23] jmpifz [ 62] ............................ if not voidp(tUTF8Object) then
-  [ 26] pushsymb 900 ............................ <#convertToUnicode>
+  [ 26] pushsymb 902 ............................ <#convertToUnicode>
   [ 29] getlocal 0 .............................. <tUTF8Object>
   [ 31] pusharglist 1 ........................... <[tUTF8Object]>
   [ 33] pushlist ................................ <[tUTF8Object]>
@@ -1466,8 +1466,8 @@ on convertToUnicode me, tStr
   [ 40] setlocal 1 .............................. tdata = call(#convertToUnicode, [tUTF8Object], tStr)
   [ 42] getlocal 1 .............................. <tdata>
   [ 44] pusharglist 1 ........................... <tdata>
-  [ 46] extcall 488 ............................. <ilk(tdata)>
-  [ 49] pushsymb 489 ............................ <#list>
+  [ 46] extcall 490 ............................. <ilk(tdata)>
+  [ 49] pushsymb 491 ............................ <#list>
   [ 52] eq ...................................... <ilk(tdata) = #list>
   [ 53] jmpifz [ 62] ............................ if ilk(tdata) = #list then
   [ 56] getlocal 1 .............................. <tdata>
@@ -1491,7 +1491,7 @@ on convertToUnicode me, tStr
   [ 94] setlocal 4 .............................. tChar = tStr.char[i]
   [ 96] getlocal 4 .............................. <tChar>
   [ 98] pusharglist 1 ........................... <tChar>
-  [100] extcall 915 ............................. <charToNum(tChar)>
+  [100] extcall 917 ............................. <charToNum(tChar)>
   [103] setlocal 5 .............................. tValue = charToNum(tChar)
   [105] getlocal 2 .............................. <tUnicodeData>
   [107] getlocal 5 .............................. <tValue>
@@ -1509,19 +1509,19 @@ on convertToUnicode me, tStr
 end
 
 on generateStringFromUTF8 me, tUTF8Data
-  [  0] getprop 909 ............................. <pUnicodeDirector>
+  [  0] getprop 911 ............................. <pUnicodeDirector>
   [  3] not ..................................... <not pUnicodeDirector>
   [  4] jmpifz [ 62] ............................ if not pUnicodeDirector then
   [  7] getparam 0 .............................. <me>
   [  9] pusharglist 1 ........................... <me>
-  [ 11] objcall 899 ............................. <me.getUTF8ObjInstance()>
+  [ 11] objcall 901 ............................. <me.getUTF8ObjInstance()>
   [ 14] setlocal 0 .............................. tUTF8Object = me.getUTF8ObjInstance()
   [ 16] getlocal 0 .............................. <tUTF8Object>
   [ 18] pusharglist 1 ........................... <tUTF8Object>
   [ 20] extcall 20 .............................. <voidp(tUTF8Object)>
   [ 22] not ..................................... <not voidp(tUTF8Object)>
   [ 23] jmpifz [ 62] ............................ if not voidp(tUTF8Object) then
-  [ 26] pushsymb 901 ............................ <#generateStringFromUTF8>
+  [ 26] pushsymb 903 ............................ <#generateStringFromUTF8>
   [ 29] getlocal 0 .............................. <tUTF8Object>
   [ 31] pusharglist 1 ........................... <[tUTF8Object]>
   [ 33] pushlist ................................ <[tUTF8Object]>
@@ -1531,8 +1531,8 @@ on generateStringFromUTF8 me, tUTF8Data
   [ 40] setlocal 1 .............................. tString = call(#generateStringFromUTF8, [tUTF8Object], tUTF8Data)
   [ 42] getlocal 1 .............................. <tString>
   [ 44] pusharglist 1 ........................... <tString>
-  [ 46] extcall 488 ............................. <ilk(tString)>
-  [ 49] pushsymb 593 ............................ <#string>
+  [ 46] extcall 490 ............................. <ilk(tString)>
+  [ 49] pushsymb 595 ............................ <#string>
   [ 52] eq ...................................... <ilk(tString) = #string>
   [ 53] jmpifz [ 62] ............................ if ilk(tString) = #string then
   [ 56] getlocal 1 .............................. <tString>
@@ -1553,7 +1553,7 @@ on generateStringFromUTF8 me, tUTF8Data
   [ 86] pusharglist 2 ........................... <tUTF8Data, i>
   [ 88] objcall 54 .............................. <tUTF8Data[i]>
   [ 90] pusharglist 1 ........................... <tUTF8Data[i]>
-  [ 92] extcall 859 ............................. <numToChar(tUTF8Data[i])>
+  [ 92] extcall 861 ............................. <numToChar(tUTF8Data[i])>
   [ 95] joinstr ................................. <tResult & numToChar(tUTF8Data[i])>
   [ 96] setlocal 2 .............................. tResult = tResult & numToChar(tUTF8Data[i])
   [ 98] pushint8 1
@@ -1568,19 +1568,19 @@ on generateStringFromUTF8 me, tUTF8Data
 end
 
 on convertFromUnicode me, tUnicodeData
-  [  0] getprop 909 ............................. <pUnicodeDirector>
+  [  0] getprop 911 ............................. <pUnicodeDirector>
   [  3] not ..................................... <not pUnicodeDirector>
   [  4] jmpifz [ 62] ............................ if not pUnicodeDirector then
   [  7] getparam 0 .............................. <me>
   [  9] pusharglist 1 ........................... <me>
-  [ 11] objcall 899 ............................. <me.getUTF8ObjInstance()>
+  [ 11] objcall 901 ............................. <me.getUTF8ObjInstance()>
   [ 14] setlocal 0 .............................. tUTF8Object = me.getUTF8ObjInstance()
   [ 16] getlocal 0 .............................. <tUTF8Object>
   [ 18] pusharglist 1 ........................... <tUTF8Object>
   [ 20] extcall 20 .............................. <voidp(tUTF8Object)>
   [ 22] not ..................................... <not voidp(tUTF8Object)>
   [ 23] jmpifz [ 62] ............................ if not voidp(tUTF8Object) then
-  [ 26] pushsymb 902 ............................ <#convertFromUnicode>
+  [ 26] pushsymb 904 ............................ <#convertFromUnicode>
   [ 29] getlocal 0 .............................. <tUTF8Object>
   [ 31] pusharglist 1 ........................... <[tUTF8Object]>
   [ 33] pushlist ................................ <[tUTF8Object]>
@@ -1590,8 +1590,8 @@ on convertFromUnicode me, tUnicodeData
   [ 40] setlocal 1 .............................. tdata = call(#convertFromUnicode, [tUTF8Object], tUnicodeData)
   [ 42] getlocal 1 .............................. <tdata>
   [ 44] pusharglist 1 ........................... <tdata>
-  [ 46] extcall 488 ............................. <ilk(tdata)>
-  [ 49] pushsymb 593 ............................ <#string>
+  [ 46] extcall 490 ............................. <ilk(tdata)>
+  [ 49] pushsymb 595 ............................ <#string>
   [ 52] eq ...................................... <ilk(tdata) = #string>
   [ 53] jmpifz [ 62] ............................ if ilk(tdata) = #string then
   [ 56] getlocal 1 .............................. <tdata>
@@ -1639,7 +1639,7 @@ on convertFromUnicode me, tUnicodeData
   [138] pusharglist 2 ........................... <tUnicodeData, i + j>
   [140] objcall 54 .............................. <tUnicodeData[i + j]>
   [142] pusharglist 1 ........................... <tUnicodeData[i + j]>
-  [144] extcall 859 ............................. <numToChar(tUnicodeData[i + j])>
+  [144] extcall 861 ............................. <numToChar(tUnicodeData[i + j])>
   [147] joinstr ................................. <tSubResult & numToChar(tUnicodeData[i + j])>
   [148] setlocal 6 .............................. tSubResult = tSubResult & numToChar(tUnicodeData[i + j])
   [150] pushint8 1
@@ -1663,7 +1663,7 @@ on convertFromUnicode me, tUnicodeData
 end
 
 on initConvList me
-  [  0] getprop 909 ............................. <pUnicodeDirector>
+  [  0] getprop 911 ............................. <pUnicodeDirector>
   [  3] jmpifz [ 32] ............................ if pUnicodeDirector then
   [  6] pushcons 17 ............................. <"char.conversion.mac">
   [  8] pusharglist 0 ........................... <[:]>
@@ -1678,7 +1678,7 @@ on initConvList me
   [ 26] pushint8 1 .............................. <1>
   [ 28] pusharglistnoret 1 ...................... <1>
   [ 30] extcall 25 .............................. return 1
-  [ 32] getmovieprop 954 ........................ <the platform>
+  [ 32] getmovieprop 956 ........................ <the platform>
   [ 35] pushcons 19 ............................. <"win">
   [ 37] containsstr ............................. <the platform contains "win">
   [ 38] jmpifz [ 48] ............................ if the platform contains "win" then / else
@@ -1689,7 +1689,7 @@ on initConvList me
   [ 50] setlocal 0 .............................. tMachineType = ".mac"
   [ 52] pusharglist 0 ........................... <[:]>
   [ 54] pushproplist ............................ <[:]>
-  [ 55] setprop 904 ............................. pConvList = [:]
+  [ 55] setprop 906 ............................. pConvList = [:]
   [ 58] pushcons 22 ............................. <"char.conversion">
   [ 60] getlocal 0 .............................. <tMachineType>
   [ 62] joinstr ................................. <"char.conversion" & tMachineType>
@@ -1717,29 +1717,29 @@ on initConvList me
   [105] setlocal 4 .............................. tVal = tCharList[i]
   [107] getlocal 3 .............................. <tKey>
   [109] pusharglist 1 ........................... <tKey>
-  [111] extcall 955 ............................. <integer(tKey)>
+  [111] extcall 957 ............................. <integer(tKey)>
   [114] pusharglist 1 ........................... <integer(tKey)>
-  [116] extcall 681 ............................. <integerp(integer(tKey))>
+  [116] extcall 683 ............................. <integerp(integer(tKey))>
   [119] jmpifz [136] ............................ if integerp(integer(tKey)) then
   [122] getlocal 3 .............................. <tKey>
   [124] pusharglist 1 ........................... <tKey>
-  [126] extcall 955 ............................. <integer(tKey)>
+  [126] extcall 957 ............................. <integer(tKey)>
   [129] pusharglist 1 ........................... <integer(tKey)>
-  [131] extcall 859 ............................. <numToChar(integer(tKey))>
+  [131] extcall 861 ............................. <numToChar(integer(tKey))>
   [134] setlocal 3 .............................. tKey = numToChar(integer(tKey))
   [136] getlocal 4 .............................. <tVal>
   [138] pusharglist 1 ........................... <tVal>
-  [140] extcall 955 ............................. <integer(tVal)>
+  [140] extcall 957 ............................. <integer(tVal)>
   [143] pusharglist 1 ........................... <integer(tVal)>
-  [145] extcall 681 ............................. <integerp(integer(tVal))>
+  [145] extcall 683 ............................. <integerp(integer(tVal))>
   [148] jmpifz [165] ............................ if integerp(integer(tVal)) then
   [151] getlocal 4 .............................. <tVal>
   [153] pusharglist 1 ........................... <tVal>
-  [155] extcall 955 ............................. <integer(tVal)>
+  [155] extcall 957 ............................. <integer(tVal)>
   [158] pusharglist 1 ........................... <integer(tVal)>
-  [160] extcall 859 ............................. <numToChar(integer(tVal))>
+  [160] extcall 861 ............................. <numToChar(integer(tVal))>
   [163] setlocal 4 .............................. tVal = numToChar(integer(tVal))
-  [165] getprop 904 ............................. <pConvList>
+  [165] getprop 906 ............................. <pConvList>
   [168] getlocal 3 .............................. <tKey>
   [170] getlocal 4 .............................. <tVal>
   [172] pusharglistnoret 3 ...................... <pConvList, tKey, tVal>

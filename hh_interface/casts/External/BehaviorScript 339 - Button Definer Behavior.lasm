@@ -19,7 +19,7 @@ on print me
   [ 29] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN>
   [ 30] pushcons 3 .............................. <"id:        ">
   [ 32] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        ">
-  [ 33] getprop 92 .............................. <id>
+  [ 33] getprop 93 .............................. <id>
   [ 35] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id>
   [ 36] pushcons 0 .............................. <RETURN>
   [ 38] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN>
@@ -37,7 +37,7 @@ on print me
   [ 58] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN>
   [ 59] pushcons 6 .............................. <"alignment: ">
   [ 61] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "alignment: ">
-  [ 62] getprop 101 ............................. <alignment>
+  [ 62] getprop 102 ............................. <alignment>
   [ 64] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "alignment: " && alignment>
   [ 65] pushcons 0 .............................. <RETURN>
   [ 67] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "alignment: " && alignment & RETURN>
@@ -84,7 +84,7 @@ end
 on getBehaviorDescription me
   [  0] pushcons 12 ............................. <"Defines buttons in window objects...">
   [  2] pusharglistnoret 1 ...................... <"Defines buttons in window objects...">
-  [  4] extcall 68 .............................. return "Defines buttons in window objects..."
+  [  4] extcall 69 .............................. return "Defines buttons in window objects..."
   [  6] ret
 end
 
@@ -109,7 +109,7 @@ on getPropertyDescriptionList me
   [ 37] pusharglistnoret 3 ...................... <tList, #type, [#format: #string, #default: "button", #range: ["button"], #comment: "type:"]>
   [ 39] objcall 161 ............................. tList[#type] = [#format: #string, #default: "button", #range: ["button"], #comment: "type:"]
   [ 41] getlocal 0 .............................. <tList>
-  [ 43] pushsymb 92 ............................. <#id>
+  [ 43] pushsymb 93 ............................. <#id>
   [ 45] pushsymb 319 ............................ <#format>
   [ 48] pushsymb 320 ............................ <#string>
   [ 51] pushsymb 321 ............................ <#default>
@@ -152,12 +152,12 @@ on getPropertyDescriptionList me
   [135] pusharglistnoret 3 ...................... <tList, #key, [#format: #string, #default: "key", #comment: "text key:"]>
   [137] objcall 161 ............................. tList[#key] = [#format: #string, #default: "key", #comment: "text key:"]
   [139] getlocal 0 .............................. <tList>
-  [141] pushsymb 101 ............................ <#alignment>
+  [141] pushsymb 102 ............................ <#alignment>
   [143] pushsymb 319 ............................ <#format>
   [146] pushsymb 324 ............................ <#symbol>
   [149] pushsymb 322 ............................ <#range>
   [152] pushsymb 333 ............................ <#left>
-  [155] pushsymb 102 ............................ <#center>
+  [155] pushsymb 103 ............................ <#center>
   [157] pushsymb 334 ............................ <#right>
   [160] pusharglist 3 ........................... <[#left, #center, #right]>
   [162] pushlist ................................ <[#left, #center, #right]>
@@ -207,6 +207,6 @@ on getPropertyDescriptionList me
   [261] objcall 161 ............................. tList[#icon] = [#format: #string, #default: EMPTY, #comment: "icon member name:"]
   [263] getlocal 0 .............................. <tList>
   [265] pusharglistnoret 1 ...................... <tList>
-  [267] extcall 68 .............................. return tList
+  [267] extcall 69 .............................. return tList
   [269] ret
 end
