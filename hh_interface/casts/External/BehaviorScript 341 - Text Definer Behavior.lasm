@@ -1,0 +1,171 @@
+property type, id, model, key, strech
+
+on print me
+  [  0] getparam 0 .............................. <me>
+  [  2] getobjprop 300 .......................... <me.spriteNum>
+  [  5] pusharglist 1 ........................... <me.spriteNum>
+  [  7] extcall 299 ............................. <sprite(me.spriteNum)>
+  [ 10] setlocal 0 .............................. tsprite = sprite(me.spriteNum)
+  [ 12] pushcons 0 .............................. <RETURN>
+  [ 14] pushcons 1 .............................. <"-- -- -- -- -- -- -- -- -- -- -- --">
+  [ 16] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --">
+  [ 17] pushcons 0 .............................. <RETURN>
+  [ 19] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN>
+  [ 20] pushcons 2 .............................. <"type:      ">
+  [ 22] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      ">
+  [ 23] getprop 266 ............................. <type>
+  [ 26] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type>
+  [ 27] pushcons 0 .............................. <RETURN>
+  [ 29] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN>
+  [ 30] pushcons 3 .............................. <"id:        ">
+  [ 32] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        ">
+  [ 33] getprop 92 .............................. <id>
+  [ 35] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id>
+  [ 36] pushcons 0 .............................. <RETURN>
+  [ 38] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN>
+  [ 39] pushcons 4 .............................. <"model:     ">
+  [ 41] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     ">
+  [ 42] getprop 326 ............................. <model>
+  [ 45] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model>
+  [ 46] pushcons 0 .............................. <RETURN>
+  [ 48] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN>
+  [ 49] pushcons 5 .............................. <"key:       ">
+  [ 51] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       ">
+  [ 52] getprop 327 ............................. <key>
+  [ 55] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key>
+  [ 56] pushcons 0 .............................. <RETURN>
+  [ 58] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN>
+  [ 59] pushcons 6 .............................. <"strech:    ">
+  [ 61] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    ">
+  [ 62] getprop 301 ............................. <strech>
+  [ 65] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech>
+  [ 66] pushcons 0 .............................. <RETURN>
+  [ 68] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN>
+  [ 69] pushcons 7 .............................. <"member:    ">
+  [ 71] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    ">
+  [ 72] getlocal 0 .............................. <tsprite>
+  [ 74] getchainedprop 259 ...................... <tsprite.member>
+  [ 77] getobjprop 200 .......................... <tsprite.member.name>
+  [ 79] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name>
+  [ 80] pushcons 0 .............................. <RETURN>
+  [ 82] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name & RETURN>
+  [ 83] pushcons 8 .............................. <"location:  ">
+  [ 85] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name & RETURN & "location:  ">
+  [ 86] getlocal 0 .............................. <tsprite>
+  [ 88] getobjprop 302 .......................... <tsprite.loc>
+  [ 91] joinpadstr .............................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name & RETURN & "location:  " && tsprite.loc>
+  [ 92] pushcons 0 .............................. <RETURN>
+  [ 94] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name & RETURN & "location:  " && tsprite.loc & RETURN>
+  [ 95] pushcons 1 .............................. <"-- -- -- -- -- -- -- -- -- -- -- --">
+  [ 97] joinstr ................................. <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name & RETURN & "location:  " && tsprite.loc & RETURN & "-- -- -- -- -- -- -- -- -- -- -- --">
+  [ 98] pusharglistnoret 1 ...................... <RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name & RETURN & "location:  " && tsprite.loc & RETURN & "-- -- -- -- -- -- -- -- -- -- -- --">
+  [100] extcall 303 ............................. put RETURN & "-- -- -- -- -- -- -- -- -- -- -- --" & RETURN & "type:      " && type & RETURN & "id:        " && id & RETURN & "model:     " && model & RETURN & "key:       " && key & RETURN & "strech:    " && strech & RETURN & "member:    " && tsprite.member.name & RETURN & "location:  " && tsprite.loc & RETURN & "-- -- -- -- -- -- -- -- -- -- -- --"
+  [103] ret
+end
+
+on getBehaviorDescription me
+  [  0] pushcons 9 .............................. <"Defines text areas in window objects...">
+  [  2] pusharglistnoret 1 ...................... <"Defines text areas in window objects...">
+  [  4] extcall 68 .............................. return "Defines text areas in window objects..."
+  [  6] ret
+end
+
+on getPropertyDescriptionList me
+  [  0] pushsymb 305 ............................ <#fixed>
+  [  3] pushsymb 102 ............................ <#center>
+  [  5] pushsymb 307 ............................ <#strechH>
+  [  8] pushsymb 308 ............................ <#strechV>
+  [ 11] pushsymb 309 ............................ <#strechHV>
+  [ 14] pushsymb 310 ............................ <#moveH>
+  [ 17] pushsymb 311 ............................ <#moveV>
+  [ 20] pushsymb 312 ............................ <#moveHV>
+  [ 23] pushsymb 313 ............................ <#moveHstrechV>
+  [ 26] pushsymb 314 ............................ <#moveVstrechH>
+  [ 29] pushsymb 315 ............................ <#centerH>
+  [ 32] pushsymb 306 ............................ <#centerV>
+  [ 35] pushsymb 316 ............................ <#centerHV>
+  [ 38] pusharglist 13 .......................... <[#fixed, #center, #strechH, #strechV, #strechHV, #moveH, #moveV, #moveHV, #moveHstrechV, #moveVstrechH, #centerH, #centerV, #centerHV]>
+  [ 40] pushlist ................................ <[#fixed, #center, #strechH, #strechV, #strechHV, #moveH, #moveV, #moveHV, #moveHstrechV, #moveVstrechH, #centerH, #centerV, #centerHV]>
+  [ 41] setlocal 0 .............................. tStreches = [#fixed, #center, #strechH, #strechV, #strechHV, #moveH, #moveV, #moveHV, #moveHstrechV, #moveVstrechH, #centerH, #centerV, #centerHV]
+  [ 43] pusharglist 0 ........................... <[:]>
+  [ 45] pushproplist ............................ <[:]>
+  [ 46] setlocal 1 .............................. tList = [:]
+  [ 48] getlocal 1 .............................. <tList>
+  [ 50] pushsymb 266 ............................ <#type>
+  [ 53] pushsymb 319 ............................ <#format>
+  [ 56] pushsymb 320 ............................ <#string>
+  [ 59] pushsymb 321 ............................ <#default>
+  [ 62] pushcons 10 ............................. <"text">
+  [ 64] pushsymb 322 ............................ <#range>
+  [ 67] pushcons 10 ............................. <"text">
+  [ 69] pusharglist 1 ........................... <["text"]>
+  [ 71] pushlist ................................ <["text"]>
+  [ 72] pushsymb 323 ............................ <#comment>
+  [ 75] pushcons 11 ............................. <"type:">
+  [ 77] pusharglist 8 ........................... <[#format: #string, #default: "text", #range: ["text"], #comment: "type:"]>
+  [ 79] pushproplist ............................ <[#format: #string, #default: "text", #range: ["text"], #comment: "type:"]>
+  [ 80] pusharglistnoret 3 ...................... <tList, #type, [#format: #string, #default: "text", #range: ["text"], #comment: "type:"]>
+  [ 82] objcall 161 ............................. tList[#type] = [#format: #string, #default: "text", #range: ["text"], #comment: "type:"]
+  [ 84] getlocal 1 .............................. <tList>
+  [ 86] pushsymb 92 ............................. <#id>
+  [ 88] pushsymb 319 ............................ <#format>
+  [ 91] pushsymb 320 ............................ <#string>
+  [ 94] pushsymb 321 ............................ <#default>
+  [ 97] pushcons 12 ............................. <"identifier">
+  [ 99] pushsymb 323 ............................ <#comment>
+  [102] pushcons 13 ............................. <"id:">
+  [104] pusharglist 6 ........................... <[#format: #string, #default: "identifier", #comment: "id:"]>
+  [106] pushproplist ............................ <[#format: #string, #default: "identifier", #comment: "id:"]>
+  [107] pusharglistnoret 3 ...................... <tList, #id, [#format: #string, #default: "identifier", #comment: "id:"]>
+  [109] objcall 161 ............................. tList[#id] = [#format: #string, #default: "identifier", #comment: "id:"]
+  [111] getlocal 1 .............................. <tList>
+  [113] pushsymb 326 ............................ <#model>
+  [116] pushsymb 319 ............................ <#format>
+  [119] pushsymb 324 ............................ <#symbol>
+  [122] pushsymb 322 ............................ <#range>
+  [125] pushsymb 261 ............................ <#image>
+  [128] pushsymb 341 ............................ <#edit>
+  [131] pusharglist 2 ........................... <[#image, #edit]>
+  [133] pushlist ................................ <[#image, #edit]>
+  [134] pushsymb 321 ............................ <#default>
+  [137] pushsymb 261 ............................ <#image>
+  [140] pushsymb 323 ............................ <#comment>
+  [143] pushcons 14 ............................. <"model:">
+  [145] pusharglist 8 ........................... <[#format: #symbol, #range: [#image, #edit], #default: #image, #comment: "model:"]>
+  [147] pushproplist ............................ <[#format: #symbol, #range: [#image, #edit], #default: #image, #comment: "model:"]>
+  [148] pusharglistnoret 3 ...................... <tList, #model, [#format: #symbol, #range: [#image, #edit], #default: #image, #comment: "model:"]>
+  [150] objcall 161 ............................. tList[#model] = [#format: #symbol, #range: [#image, #edit], #default: #image, #comment: "model:"]
+  [152] getlocal 1 .............................. <tList>
+  [154] pushsymb 327 ............................ <#key>
+  [157] pushsymb 319 ............................ <#format>
+  [160] pushsymb 320 ............................ <#string>
+  [163] pushsymb 321 ............................ <#default>
+  [166] pushcons 15 ............................. <"key">
+  [168] pushsymb 323 ............................ <#comment>
+  [171] pushcons 16 ............................. <"text key:">
+  [173] pusharglist 6 ........................... <[#format: #string, #default: "key", #comment: "text key:"]>
+  [175] pushproplist ............................ <[#format: #string, #default: "key", #comment: "text key:"]>
+  [176] pusharglistnoret 3 ...................... <tList, #key, [#format: #string, #default: "key", #comment: "text key:"]>
+  [178] objcall 161 ............................. tList[#key] = [#format: #string, #default: "key", #comment: "text key:"]
+  [180] getlocal 1 .............................. <tList>
+  [182] pushsymb 301 ............................ <#strech>
+  [185] pushsymb 319 ............................ <#format>
+  [188] pushsymb 324 ............................ <#symbol>
+  [191] pushsymb 322 ............................ <#range>
+  [194] getlocal 0 .............................. <tStreches>
+  [196] pushsymb 321 ............................ <#default>
+  [199] getlocal 0 .............................. <tStreches>
+  [201] pushint8 1 .............................. <1>
+  [203] pusharglist 2 ........................... <tStreches, 1>
+  [205] objcall 72 .............................. <tStreches[1]>
+  [207] pushsymb 323 ............................ <#comment>
+  [210] pushcons 17 ............................. <"strech:">
+  [212] pusharglist 8 ........................... <[#format: #symbol, #range: tStreches, #default: tStreches[1], #comment: "strech:"]>
+  [214] pushproplist ............................ <[#format: #symbol, #range: tStreches, #default: tStreches[1], #comment: "strech:"]>
+  [215] pusharglistnoret 3 ...................... <tList, #strech, [#format: #symbol, #range: tStreches, #default: tStreches[1], #comment: "strech:"]>
+  [217] objcall 161 ............................. tList[#strech] = [#format: #symbol, #range: tStreches, #default: tStreches[1], #comment: "strech:"]
+  [219] getlocal 1 .............................. <tList>
+  [221] pusharglistnoret 1 ...................... <tList>
+  [223] extcall 68 .............................. return tList
+  [225] ret
+end

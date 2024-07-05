@@ -1,0 +1,83 @@
+on prepareMovie
+  [  0] pushint8 2 .............................. <2>
+  [  2] pusharglist 1 ........................... <2>
+  [  4] extcall 2 ............................... <castLib(2)>
+  [  6] pushint8 1 .............................. <1>
+  [  8] setobjprop 3 ............................ castLib(2).preloadMode = 1
+  [ 10] pushint8 2 .............................. <2>
+  [ 12] pusharglist 1 ........................... <2>
+  [ 14] extcall 2 ............................... <castLib(2)>
+  [ 16] getobjprop 5 ............................ <castLib(2).fileName>
+  [ 18] pusharglistnoret 1 ...................... <castLib(2).fileName>
+  [ 20] extcall 4 ............................... preloadNetThing(castLib(2).fileName)
+  [ 22] getmovieprop 7 .......................... <the stage>
+  [ 24] pushzero ................................ <0>
+  [ 25] pushzero ................................ <0>
+  [ 26] pushint16 720 ........................... <720>
+  [ 29] pushint16 540 ........................... <540>
+  [ 32] pusharglist 4 ........................... <0, 0, 720, 540>
+  [ 34] extcall 16 .............................. <rect(0, 0, 720, 540)>
+  [ 36] setobjprop 17 ........................... (the stage).drawRect = rect(0, 0, 720, 540)
+  [ 38] getmovieprop 7 .......................... <the stage>
+  [ 40] pusharglist 0 ........................... <>
+  [ 42] thebuiltin 18 ........................... <the stageLeft>
+  [ 44] pusharglist 0 ........................... <>
+  [ 46] thebuiltin 19 ........................... <the stageTop>
+  [ 48] pusharglist 0 ........................... <>
+  [ 50] thebuiltin 18 ........................... <the stageLeft>
+  [ 52] pushint16 720 ........................... <720>
+  [ 55] add ..................................... <the stageLeft + 720>
+  [ 56] pusharglist 0 ........................... <>
+  [ 58] thebuiltin 19 ........................... <the stageTop>
+  [ 60] pushint16 540 ........................... <540>
+  [ 63] add ..................................... <the stageTop + 540>
+  [ 64] pusharglist 4 ........................... <the stageLeft, the stageTop, the stageLeft + 720, the stageTop + 540>
+  [ 66] extcall 16 .............................. <rect(the stageLeft, the stageTop, the stageLeft + 720, the stageTop + 540)>
+  [ 68] setobjprop 16 ........................... (the stage).rect = rect(the stageLeft, the stageTop, the stageLeft + 720, the stageTop + 540)
+  [ 70] getmovieprop 7 .......................... <the stage>
+  [ 72] pushzero ................................ <0>
+  [ 73] pushzero ................................ <0>
+  [ 74] pushint16 1440 .......................... <1440>
+  [ 77] pushint16 1080 .......................... <1080>
+  [ 80] pusharglist 4 ........................... <0, 0, 1440, 1080>
+  [ 82] extcall 16 .............................. <rect(0, 0, 1440, 1080)>
+  [ 84] setobjprop 17 ........................... (the stage).drawRect = rect(0, 0, 1440, 1080)
+  [ 86] getmovieprop 7 .......................... <the stage>
+  [ 88] pusharglist 0 ........................... <>
+  [ 90] thebuiltin 18 ........................... <the stageLeft>
+  [ 92] pusharglist 0 ........................... <>
+  [ 94] thebuiltin 19 ........................... <the stageTop>
+  [ 96] pusharglist 0 ........................... <>
+  [ 98] thebuiltin 18 ........................... <the stageLeft>
+  [100] pushint16 1440 .......................... <1440>
+  [103] add ..................................... <the stageLeft + 1440>
+  [104] pusharglist 0 ........................... <>
+  [106] thebuiltin 19 ........................... <the stageTop>
+  [108] pushint16 1080 .......................... <1080>
+  [111] add ..................................... <the stageTop + 1080>
+  [112] pusharglist 4 ........................... <the stageLeft, the stageTop, the stageLeft + 1440, the stageTop + 1080>
+  [114] extcall 16 .............................. <rect(the stageLeft, the stageTop, the stageLeft + 1440, the stageTop + 1080)>
+  [116] setobjprop 16 ........................... (the stage).rect = rect(the stageLeft, the stageTop, the stageLeft + 1440, the stageTop + 1080)
+  [118] pushint8 1 .............................. <1>
+  [120] pushint8 3 .............................. <3>
+  [122] set 7 ................................... set the centerStage to 1
+  [124] getmovieprop 7 .......................... <the stage>
+  [126] pusharglistnoret 1 ...................... <the stage>
+  [128] extcall 6 ............................... moveToFront(the stage)
+  [130] pushint8 1 .............................. <1>
+  [132] pushint8 8 .............................. <8>
+  [134] set 7 ................................... set the exitLock to 1
+  [136] pushint8 15 ............................. <15>
+  [138] pusharglistnoret 1 ...................... <15>
+  [140] extcall 8 ............................... puppetTempo(15)
+  [142] ret
+end
+
+on stopMovie
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 9 ............................... stopClient()
+  [  4] pushint8 1 .............................. <1>
+  [  6] pusharglistnoret 1 ...................... <1>
+  [  8] extcall 10 .............................. go(1)
+  [ 10] ret
+end

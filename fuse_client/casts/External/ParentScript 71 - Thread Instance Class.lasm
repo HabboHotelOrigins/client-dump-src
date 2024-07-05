@@ -1,0 +1,48 @@
+property interface, component, handler
+
+on construct me
+  [  0] pushzero ................................ <0>
+  [  1] setprop 696 ............................. interface = 0
+  [  4] pushzero ................................ <0>
+  [  5] setprop 697 ............................. component = 0
+  [  8] pushzero ................................ <0>
+  [  9] setprop 660 ............................. handler = 0
+  [ 12] pushint8 1 .............................. <1>
+  [ 14] pusharglistnoret 1 ...................... <1>
+  [ 16] extcall 25 .............................. return 1
+  [ 18] ret
+end
+
+on deconstruct me
+  [  0] pushzero ................................ <0>
+  [  1] setprop 696 ............................. interface = 0
+  [  4] pushzero ................................ <0>
+  [  5] setprop 697 ............................. component = 0
+  [  8] pushzero ................................ <0>
+  [  9] setprop 660 ............................. handler = 0
+  [ 12] pushint8 1 .............................. <1>
+  [ 14] pusharglistnoret 1 ...................... <1>
+  [ 16] extcall 25 .............................. return 1
+  [ 18] ret
+end
+
+on getInterface me
+  [  0] getprop 696 ............................. <interface>
+  [  3] pusharglistnoret 1 ...................... <interface>
+  [  5] extcall 25 .............................. return interface
+  [  7] ret
+end
+
+on getComponent me
+  [  0] getprop 697 ............................. <component>
+  [  3] pusharglistnoret 1 ...................... <component>
+  [  5] extcall 25 .............................. return component
+  [  7] ret
+end
+
+on getHandler me
+  [  0] getprop 660 ............................. <handler>
+  [  3] pusharglistnoret 1 ...................... <handler>
+  [  5] extcall 25 .............................. return handler
+  [  7] ret
+end
