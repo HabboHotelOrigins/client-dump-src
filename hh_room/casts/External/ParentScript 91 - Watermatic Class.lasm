@@ -3,289 +3,289 @@ property pTokenList
 on prepare me
   [  0] pushcons 0 .............................. <"obj_">
   [  2] getparam 0 .............................. <me>
-  [  4] getobjprop 1269 ......................... <me.pClass>
-  [  7] joinstr ................................. <"obj_" & me.pClass>
-  [  8] pushcons 1 .............................. <"water">
-  [ 10] pusharglist 2 ........................... <"obj_" & me.pClass, "water">
-  [ 12] extcall 121 ............................. <getVariable("obj_" & me.pClass, "water")>
-  [ 14] pusharglist 1 ........................... <getVariable("obj_" & me.pClass, "water")>
-  [ 16] extcall 411 ............................. <value(getVariable("obj_" & me.pClass, "water"))>
-  [ 19] setprop 1770 ............................ pTokenList = value(getVariable("obj_" & me.pClass, "water"))
-  [ 22] getprop 1770 ............................ <pTokenList>
-  [ 25] pusharglist 1 ........................... <pTokenList>
-  [ 27] extcall 288 ............................. <listp(pTokenList)>
-  [ 30] not ..................................... <not listp(pTokenList)>
-  [ 31] jmpifz [ 42] ............................ if not listp(pTokenList) then
-  [ 34] pushint8 7 .............................. <7>
-  [ 36] pusharglist 1 ........................... <[7]>
-  [ 38] pushlist ................................ <[7]>
-  [ 39] setprop 1770 ............................ pTokenList = [7]
-  [ 42] pushint8 1 .............................. <1>
-  [ 44] pusharglistnoret 1 ...................... <1>
-  [ 46] extcall 21 .............................. return 1
-  [ 48] ret
+  [  4] getobjprop 14 ........................... <me.pClass>
+  [  6] joinstr ................................. <"obj_" & me.pClass>
+  [  7] pushcons 1 .............................. <"water">
+  [  9] pusharglist 2 ........................... <"obj_" & me.pClass, "water">
+  [ 11] extcall 232 ............................. <getVariable("obj_" & me.pClass, "water")>
+  [ 13] pusharglist 1 ........................... <getVariable("obj_" & me.pClass, "water")>
+  [ 15] extcall 480 ............................. <value(getVariable("obj_" & me.pClass, "water"))>
+  [ 18] setprop 1767 ............................ pTokenList = value(getVariable("obj_" & me.pClass, "water"))
+  [ 21] getprop 1767 ............................ <pTokenList>
+  [ 24] pusharglist 1 ........................... <pTokenList>
+  [ 26] extcall 92 .............................. <listp(pTokenList)>
+  [ 28] not ..................................... <not listp(pTokenList)>
+  [ 29] jmpifz [ 40] ............................ if not listp(pTokenList) then
+  [ 32] pushint8 7 .............................. <7>
+  [ 34] pusharglist 1 ........................... <[7]>
+  [ 36] pushlist ................................ <[7]>
+  [ 37] setprop 1767 ............................ pTokenList = [7]
+  [ 40] pushint8 1 .............................. <1>
+  [ 42] pusharglistnoret 1 ...................... <1>
+  [ 44] extcall 31 .............................. return 1
+  [ 46] ret
 end
 
 on select me
-  [  0] pushsymb 949 ............................ <#room>
-  [  3] pusharglist 1 ........................... <#room>
-  [  5] extcall 257 ............................. <threadExists(#room)>
-  [  8] not ..................................... <not threadExists(#room)>
-  [  9] jmpifz [ 27] ............................ if not threadExists(#room) then
-  [ 12] getparam 0 .............................. <me>
-  [ 14] pushcons 2 .............................. <"Room thread not found!!!">
-  [ 16] pushsymb 473 ............................ <#select>
-  [ 19] pusharglist 3 ........................... <me, "Room thread not found!!!", #select>
-  [ 21] extcall 161 ............................. <error(me, "Room thread not found!!!", #select)>
-  [ 23] pusharglistnoret 1 ...................... <error(me, "Room thread not found!!!", #select)>
-  [ 25] extcall 21 .............................. return error(me, "Room thread not found!!!", #select)
-  [ 27] pushsymb 949 ............................ <#room>
-  [ 30] pusharglist 1 ........................... <#room>
-  [ 32] extcall 260 ............................. <getThread(#room)>
-  [ 35] pusharglist 1 ........................... <getThread(#room)>
-  [ 37] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 39] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 41] objcall 235 ............................. <getThread(#room).getComponent().getOwnUser()>
-  [ 43] setlocal 0 .............................. tUserObj = getThread(#room).getComponent().getOwnUser()
-  [ 45] getlocal 0 .............................. <tUserObj>
-  [ 47] not ..................................... <not tUserObj>
-  [ 48] jmpifz [ 79] ............................ if not tUserObj then
-  [ 51] getparam 0 .............................. <me>
-  [ 53] pushcons 3 .............................. <"User object not found:">
-  [ 55] pushsymb 233 ............................ <#session>
-  [ 57] pusharglist 1 ........................... <#session>
-  [ 59] extcall 153 ............................. <getObject(#session)>
-  [ 61] pushcons 4 .............................. <"user_name">
-  [ 63] pusharglist 2 ........................... <getObject(#session), "user_name">
-  [ 65] objcall 234 ............................. <getObject(#session).get("user_name")>
-  [ 67] joinpadstr .............................. <"User object not found:" && getObject(#session).get("user_name")>
-  [ 68] pushsymb 473 ............................ <#select>
-  [ 71] pusharglist 3 ........................... <me, "User object not found:" && getObject(#session).get("user_name"), #select>
-  [ 73] extcall 161 ............................. <error(me, "User object not found:" && getObject(#session).get("user_name"), #select)>
-  [ 75] pusharglistnoret 1 ...................... <error(me, "User object not found:" && getObject(#session).get("user_name"), #select)>
-  [ 77] extcall 21 .............................. return error(me, "User object not found:" && getObject(#session).get("user_name"), #select)
-  [ 79] getparam 0 .............................. <me>
-  [ 81] pushsymb 34 ............................. <#pDirection>
-  [ 83] pushint8 1 .............................. <1>
-  [ 85] pusharglist 3 ........................... <me, #pDirection, 1>
-  [ 87] objcall 33 .............................. <me.pDirection[1]>
-  [ 89] peek 0 .................................. case me.pDirection[1] of
-  [ 91] pushint8 4 .............................. <4>
-  [ 93] eq
-  [ 94] jmpifz [186] ............................ (case) 4:
-  [ 97] getparam 0 .............................. <me>
-  [ 99] getobjprop 494 .......................... <me.pLocX>
-  [102] getlocal 0 .............................. <tUserObj>
-  [104] getobjprop 494 .......................... <tUserObj.pLocX>
-  [107] eq ...................................... <me.pLocX = tUserObj.pLocX>
-  [108] getparam 0 .............................. <me>
-  [110] getobjprop 496 .......................... <me.pLocY>
-  [113] getlocal 0 .............................. <tUserObj>
-  [115] getobjprop 496 .......................... <tUserObj.pLocY>
-  [118] sub ..................................... <me.pLocY - tUserObj.pLocY>
-  [119] pushint8 1 .............................. <1>
-  [121] inv ..................................... <-1>
-  [122] eq ...................................... <(me.pLocY - tUserObj.pLocY) = -1>
-  [123] and ..................................... <(me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = -1)>
-  [124] jmpifz [137] ............................ if (me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = -1) then / else
-  [127] getparam 0 .............................. <me>
-  [129] pusharglistnoret 1 ...................... <me>
-  [131] objcall 1767 ............................ me.giveDrink()
-  [134] jmp [183]
-  [137] pushsymb 949 ............................ <#room>
-  [140] pusharglist 1 ........................... <#room>
-  [142] extcall 260 ............................. <getThread(#room)>
-  [145] pusharglist 1 ........................... <getThread(#room)>
-  [147] objcall 207 ............................. <getThread(#room).getComponent()>
-  [149] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [151] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [154] pushcons 5 .............................. <"MOVE">
-  [156] pushsymb 462 ............................ <#short>
-  [159] getparam 0 .............................. <me>
-  [161] getobjprop 494 .......................... <me.pLocX>
-  [164] pushsymb 462 ............................ <#short>
-  [167] getparam 0 .............................. <me>
-  [169] getobjprop 496 .......................... <me.pLocY>
-  [172] pushint8 1 .............................. <1>
-  [174] add ..................................... <me.pLocY + 1>
-  [175] pusharglist 4 ........................... <[#short: me.pLocX, #short: me.pLocY + 1]>
-  [177] pushproplist ............................ <[#short: me.pLocX, #short: me.pLocY + 1]>
-  [178] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX, #short: me.pLocY + 1]>
-  [180] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX, #short: me.pLocY + 1])
-  [183] jmp [470]
-  [186] peek 0
-  [188] pushzero ................................ <0>
-  [189] eq
-  [190] jmpifz [280] ............................ (case) 0:
-  [193] getparam 0 .............................. <me>
-  [195] getobjprop 494 .......................... <me.pLocX>
-  [198] getlocal 0 .............................. <tUserObj>
-  [200] getobjprop 494 .......................... <tUserObj.pLocX>
-  [203] eq ...................................... <me.pLocX = tUserObj.pLocX>
+  [  0] pushsymb 52 ............................. <#room>
+  [  2] pusharglist 1 ........................... <#room>
+  [  4] extcall 345 ............................. <threadExists(#room)>
+  [  7] not ..................................... <not threadExists(#room)>
+  [  8] jmpifz [ 25] ............................ if not threadExists(#room) then
+  [ 11] getparam 0 .............................. <me>
+  [ 13] pushcons 2 .............................. <"Room thread not found!!!">
+  [ 15] pushsymb 9 .............................. <#select>
+  [ 17] pusharglist 3 ........................... <me, "Room thread not found!!!", #select>
+  [ 19] extcall 72 .............................. <error(me, "Room thread not found!!!", #select)>
+  [ 21] pusharglistnoret 1 ...................... <error(me, "Room thread not found!!!", #select)>
+  [ 23] extcall 31 .............................. return error(me, "Room thread not found!!!", #select)
+  [ 25] pushsymb 52 ............................. <#room>
+  [ 27] pusharglist 1 ........................... <#room>
+  [ 29] extcall 51 .............................. <getThread(#room)>
+  [ 31] pusharglist 1 ........................... <getThread(#room)>
+  [ 33] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 35] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 37] objcall 328 ............................. <getThread(#room).getComponent().getOwnUser()>
+  [ 40] setlocal 0 .............................. tUserObj = getThread(#room).getComponent().getOwnUser()
+  [ 42] getlocal 0 .............................. <tUserObj>
+  [ 44] not ..................................... <not tUserObj>
+  [ 45] jmpifz [ 75] ............................ if not tUserObj then
+  [ 48] getparam 0 .............................. <me>
+  [ 50] pushcons 3 .............................. <"User object not found:">
+  [ 52] pushsymb 131 ............................ <#session>
+  [ 54] pusharglist 1 ........................... <#session>
+  [ 56] extcall 130 ............................. <getObject(#session)>
+  [ 58] pushcons 4 .............................. <"user_name">
+  [ 60] pusharglist 2 ........................... <getObject(#session), "user_name">
+  [ 62] objcall 133 ............................. <getObject(#session).get("user_name")>
+  [ 64] joinpadstr .............................. <"User object not found:" && getObject(#session).get("user_name")>
+  [ 65] pushsymb 9 .............................. <#select>
+  [ 67] pusharglist 3 ........................... <me, "User object not found:" && getObject(#session).get("user_name"), #select>
+  [ 69] extcall 72 .............................. <error(me, "User object not found:" && getObject(#session).get("user_name"), #select)>
+  [ 71] pusharglistnoret 1 ...................... <error(me, "User object not found:" && getObject(#session).get("user_name"), #select)>
+  [ 73] extcall 31 .............................. return error(me, "User object not found:" && getObject(#session).get("user_name"), #select)
+  [ 75] getparam 0 .............................. <me>
+  [ 77] pushsymb 28 ............................. <#pDirection>
+  [ 79] pushint8 1 .............................. <1>
+  [ 81] pusharglist 3 ........................... <me, #pDirection, 1>
+  [ 83] objcall 68 .............................. <me.pDirection[1]>
+  [ 85] peek 0 .................................. case me.pDirection[1] of
+  [ 87] pushint8 4 .............................. <4>
+  [ 89] eq
+  [ 90] jmpifz [172] ............................ (case) 4:
+  [ 93] getparam 0 .............................. <me>
+  [ 95] getobjprop 19 ........................... <me.pLocX>
+  [ 97] getlocal 0 .............................. <tUserObj>
+  [ 99] getobjprop 19 ........................... <tUserObj.pLocX>
+  [101] eq ...................................... <me.pLocX = tUserObj.pLocX>
+  [102] getparam 0 .............................. <me>
+  [104] getobjprop 20 ........................... <me.pLocY>
+  [106] getlocal 0 .............................. <tUserObj>
+  [108] getobjprop 20 ........................... <tUserObj.pLocY>
+  [110] sub ..................................... <me.pLocY - tUserObj.pLocY>
+  [111] pushint8 1 .............................. <1>
+  [113] inv ..................................... <-1>
+  [114] eq ...................................... <(me.pLocY - tUserObj.pLocY) = -1>
+  [115] and ..................................... <(me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = -1)>
+  [116] jmpifz [129] ............................ if (me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = -1) then / else
+  [119] getparam 0 .............................. <me>
+  [121] pusharglistnoret 1 ...................... <me>
+  [123] objcall 1764 ............................ me.giveDrink()
+  [126] jmp [169]
+  [129] pushsymb 52 ............................. <#room>
+  [131] pusharglist 1 ........................... <#room>
+  [133] extcall 51 .............................. <getThread(#room)>
+  [135] pusharglist 1 ........................... <getThread(#room)>
+  [137] objcall 115 ............................. <getThread(#room).getComponent()>
+  [139] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [141] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [143] pushcons 5 .............................. <"MOVE">
+  [145] pushsymb 526 ............................ <#short>
+  [148] getparam 0 .............................. <me>
+  [150] getobjprop 19 ........................... <me.pLocX>
+  [152] pushsymb 526 ............................ <#short>
+  [155] getparam 0 .............................. <me>
+  [157] getobjprop 20 ........................... <me.pLocY>
+  [159] pushint8 1 .............................. <1>
+  [161] add ..................................... <me.pLocY + 1>
+  [162] pusharglist 4 ........................... <[#short: me.pLocX, #short: me.pLocY + 1]>
+  [164] pushproplist ............................ <[#short: me.pLocX, #short: me.pLocY + 1]>
+  [165] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX, #short: me.pLocY + 1]>
+  [167] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX, #short: me.pLocY + 1])
+  [169] jmp [428]
+  [172] peek 0
+  [174] pushzero ................................ <0>
+  [175] eq
+  [176] jmpifz [258] ............................ (case) 0:
+  [179] getparam 0 .............................. <me>
+  [181] getobjprop 19 ........................... <me.pLocX>
+  [183] getlocal 0 .............................. <tUserObj>
+  [185] getobjprop 19 ........................... <tUserObj.pLocX>
+  [187] eq ...................................... <me.pLocX = tUserObj.pLocX>
+  [188] getparam 0 .............................. <me>
+  [190] getobjprop 20 ........................... <me.pLocY>
+  [192] getlocal 0 .............................. <tUserObj>
+  [194] getobjprop 20 ........................... <tUserObj.pLocY>
+  [196] sub ..................................... <me.pLocY - tUserObj.pLocY>
+  [197] pushint8 1 .............................. <1>
+  [199] eq ...................................... <(me.pLocY - tUserObj.pLocY) = 1>
+  [200] and ..................................... <(me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = 1)>
+  [201] jmpifz [214] ............................ if (me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = 1) then / else
   [204] getparam 0 .............................. <me>
-  [206] getobjprop 496 .......................... <me.pLocY>
-  [209] getlocal 0 .............................. <tUserObj>
-  [211] getobjprop 496 .......................... <tUserObj.pLocY>
-  [214] sub ..................................... <me.pLocY - tUserObj.pLocY>
-  [215] pushint8 1 .............................. <1>
-  [217] eq ...................................... <(me.pLocY - tUserObj.pLocY) = 1>
-  [218] and ..................................... <(me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = 1)>
-  [219] jmpifz [232] ............................ if (me.pLocX = tUserObj.pLocX) and ((me.pLocY - tUserObj.pLocY) = 1) then / else
-  [222] getparam 0 .............................. <me>
-  [224] pusharglistnoret 1 ...................... <me>
-  [226] objcall 1767 ............................ me.giveDrink()
-  [229] jmp [277]
-  [232] pushsymb 949 ............................ <#room>
-  [235] pusharglist 1 ........................... <#room>
-  [237] extcall 260 ............................. <getThread(#room)>
-  [240] pusharglist 1 ........................... <getThread(#room)>
-  [242] objcall 207 ............................. <getThread(#room).getComponent()>
-  [244] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [246] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [249] pushcons 5 .............................. <"MOVE">
-  [251] pushsymb 462 ............................ <#short>
-  [254] getparam 0 .............................. <me>
-  [256] getobjprop 166 .......................... <me.locX>
-  [258] pushsymb 462 ............................ <#short>
-  [261] getparam 0 .............................. <me>
-  [263] getobjprop 496 .......................... <me.pLocY>
-  [266] pushint8 1 .............................. <1>
-  [268] sub ..................................... <me.pLocY - 1>
-  [269] pusharglist 4 ........................... <[#short: me.locX, #short: me.pLocY - 1]>
-  [271] pushproplist ............................ <[#short: me.locX, #short: me.pLocY - 1]>
-  [272] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.locX, #short: me.pLocY - 1]>
-  [274] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.locX, #short: me.pLocY - 1])
-  [277] jmp [470]
-  [280] peek 0
-  [282] pushint8 2 .............................. <2>
-  [284] eq
-  [285] jmpifz [377] ............................ (case) 2:
-  [288] getparam 0 .............................. <me>
-  [290] getobjprop 496 .......................... <me.pLocY>
-  [293] getlocal 0 .............................. <tUserObj>
-  [295] getobjprop 496 .......................... <tUserObj.pLocY>
-  [298] eq ...................................... <me.pLocY = tUserObj.pLocY>
-  [299] getparam 0 .............................. <me>
-  [301] getobjprop 494 .......................... <me.pLocX>
-  [304] getlocal 0 .............................. <tUserObj>
-  [306] getobjprop 494 .......................... <tUserObj.pLocX>
-  [309] sub ..................................... <me.pLocX - tUserObj.pLocX>
-  [310] pushint8 1 .............................. <1>
-  [312] inv ..................................... <-1>
-  [313] eq ...................................... <(me.pLocX - tUserObj.pLocX) = -1>
-  [314] and ..................................... <(me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = -1)>
-  [315] jmpifz [328] ............................ if (me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = -1) then / else
-  [318] getparam 0 .............................. <me>
-  [320] pusharglistnoret 1 ...................... <me>
-  [322] objcall 1767 ............................ me.giveDrink()
-  [325] jmp [374]
-  [328] pushsymb 949 ............................ <#room>
-  [331] pusharglist 1 ........................... <#room>
-  [333] extcall 260 ............................. <getThread(#room)>
-  [336] pusharglist 1 ........................... <getThread(#room)>
-  [338] objcall 207 ............................. <getThread(#room).getComponent()>
-  [340] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [342] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [345] pushcons 5 .............................. <"MOVE">
-  [347] pushsymb 462 ............................ <#short>
-  [350] getparam 0 .............................. <me>
-  [352] getobjprop 494 .......................... <me.pLocX>
-  [355] pushint8 1 .............................. <1>
-  [357] add ..................................... <me.pLocX + 1>
-  [358] pushsymb 462 ............................ <#short>
-  [361] getparam 0 .............................. <me>
-  [363] getobjprop 496 .......................... <me.pLocY>
-  [366] pusharglist 4 ........................... <[#short: me.pLocX + 1, #short: me.pLocY]>
-  [368] pushproplist ............................ <[#short: me.pLocX + 1, #short: me.pLocY]>
-  [369] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX + 1, #short: me.pLocY]>
-  [371] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX + 1, #short: me.pLocY])
-  [374] jmp [470]
-  [377] peek 0
-  [379] pushint8 6 .............................. <6>
-  [381] eq
-  [382] jmpifz [470] ............................ (case) 6:
-  [385] getparam 0 .............................. <me>
-  [387] getobjprop 496 .......................... <me.pLocY>
-  [390] getlocal 0 .............................. <tUserObj>
-  [392] getobjprop 496 .......................... <tUserObj.pLocY>
-  [395] eq ...................................... <me.pLocY = tUserObj.pLocY>
-  [396] getparam 0 .............................. <me>
-  [398] getobjprop 494 .......................... <me.pLocX>
-  [401] getlocal 0 .............................. <tUserObj>
-  [403] getobjprop 494 .......................... <tUserObj.pLocX>
-  [406] sub ..................................... <me.pLocX - tUserObj.pLocX>
-  [407] pushint8 1 .............................. <1>
-  [409] eq ...................................... <(me.pLocX - tUserObj.pLocX) = 1>
-  [410] and ..................................... <(me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = 1)>
-  [411] jmpifz [424] ............................ if (me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = 1) then / else
-  [414] getparam 0 .............................. <me>
-  [416] pusharglistnoret 1 ...................... <me>
-  [418] objcall 1767 ............................ me.giveDrink()
-  [421] jmp [470]
-  [424] pushsymb 949 ............................ <#room>
-  [427] pusharglist 1 ........................... <#room>
-  [429] extcall 260 ............................. <getThread(#room)>
-  [432] pusharglist 1 ........................... <getThread(#room)>
-  [434] objcall 207 ............................. <getThread(#room).getComponent()>
-  [436] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [438] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [441] pushcons 5 .............................. <"MOVE">
-  [443] pushsymb 462 ............................ <#short>
-  [446] getparam 0 .............................. <me>
-  [448] getobjprop 494 .......................... <me.pLocX>
-  [451] pushint8 1 .............................. <1>
-  [453] sub ..................................... <me.pLocX - 1>
-  [454] pushsymb 462 ............................ <#short>
-  [457] getparam 0 .............................. <me>
-  [459] getobjprop 496 .......................... <me.pLocY>
-  [462] pusharglist 4 ........................... <[#short: me.pLocX - 1, #short: me.pLocY]>
-  [464] pushproplist ............................ <[#short: me.pLocX - 1, #short: me.pLocY]>
-  [465] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX - 1, #short: me.pLocY]>
-  [467] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX - 1, #short: me.pLocY])
-  [470] pop 1 ................................... end case
-  [472] pushint8 1 .............................. <1>
-  [474] pusharglistnoret 1 ...................... <1>
-  [476] extcall 21 .............................. return 1
-  [478] ret
+  [206] pusharglistnoret 1 ...................... <me>
+  [208] objcall 1764 ............................ me.giveDrink()
+  [211] jmp [255]
+  [214] pushsymb 52 ............................. <#room>
+  [216] pusharglist 1 ........................... <#room>
+  [218] extcall 51 .............................. <getThread(#room)>
+  [220] pusharglist 1 ........................... <getThread(#room)>
+  [222] objcall 115 ............................. <getThread(#room).getComponent()>
+  [224] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [226] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [228] pushcons 5 .............................. <"MOVE">
+  [230] pushsymb 526 ............................ <#short>
+  [233] getparam 0 .............................. <me>
+  [235] getobjprop 272 .......................... <me.locX>
+  [238] pushsymb 526 ............................ <#short>
+  [241] getparam 0 .............................. <me>
+  [243] getobjprop 20 ........................... <me.pLocY>
+  [245] pushint8 1 .............................. <1>
+  [247] sub ..................................... <me.pLocY - 1>
+  [248] pusharglist 4 ........................... <[#short: me.locX, #short: me.pLocY - 1]>
+  [250] pushproplist ............................ <[#short: me.locX, #short: me.pLocY - 1]>
+  [251] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.locX, #short: me.pLocY - 1]>
+  [253] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.locX, #short: me.pLocY - 1])
+  [255] jmp [428]
+  [258] peek 0
+  [260] pushint8 2 .............................. <2>
+  [262] eq
+  [263] jmpifz [345] ............................ (case) 2:
+  [266] getparam 0 .............................. <me>
+  [268] getobjprop 20 ........................... <me.pLocY>
+  [270] getlocal 0 .............................. <tUserObj>
+  [272] getobjprop 20 ........................... <tUserObj.pLocY>
+  [274] eq ...................................... <me.pLocY = tUserObj.pLocY>
+  [275] getparam 0 .............................. <me>
+  [277] getobjprop 19 ........................... <me.pLocX>
+  [279] getlocal 0 .............................. <tUserObj>
+  [281] getobjprop 19 ........................... <tUserObj.pLocX>
+  [283] sub ..................................... <me.pLocX - tUserObj.pLocX>
+  [284] pushint8 1 .............................. <1>
+  [286] inv ..................................... <-1>
+  [287] eq ...................................... <(me.pLocX - tUserObj.pLocX) = -1>
+  [288] and ..................................... <(me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = -1)>
+  [289] jmpifz [302] ............................ if (me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = -1) then / else
+  [292] getparam 0 .............................. <me>
+  [294] pusharglistnoret 1 ...................... <me>
+  [296] objcall 1764 ............................ me.giveDrink()
+  [299] jmp [342]
+  [302] pushsymb 52 ............................. <#room>
+  [304] pusharglist 1 ........................... <#room>
+  [306] extcall 51 .............................. <getThread(#room)>
+  [308] pusharglist 1 ........................... <getThread(#room)>
+  [310] objcall 115 ............................. <getThread(#room).getComponent()>
+  [312] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [314] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [316] pushcons 5 .............................. <"MOVE">
+  [318] pushsymb 526 ............................ <#short>
+  [321] getparam 0 .............................. <me>
+  [323] getobjprop 19 ........................... <me.pLocX>
+  [325] pushint8 1 .............................. <1>
+  [327] add ..................................... <me.pLocX + 1>
+  [328] pushsymb 526 ............................ <#short>
+  [331] getparam 0 .............................. <me>
+  [333] getobjprop 20 ........................... <me.pLocY>
+  [335] pusharglist 4 ........................... <[#short: me.pLocX + 1, #short: me.pLocY]>
+  [337] pushproplist ............................ <[#short: me.pLocX + 1, #short: me.pLocY]>
+  [338] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX + 1, #short: me.pLocY]>
+  [340] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX + 1, #short: me.pLocY])
+  [342] jmp [428]
+  [345] peek 0
+  [347] pushint8 6 .............................. <6>
+  [349] eq
+  [350] jmpifz [428] ............................ (case) 6:
+  [353] getparam 0 .............................. <me>
+  [355] getobjprop 20 ........................... <me.pLocY>
+  [357] getlocal 0 .............................. <tUserObj>
+  [359] getobjprop 20 ........................... <tUserObj.pLocY>
+  [361] eq ...................................... <me.pLocY = tUserObj.pLocY>
+  [362] getparam 0 .............................. <me>
+  [364] getobjprop 19 ........................... <me.pLocX>
+  [366] getlocal 0 .............................. <tUserObj>
+  [368] getobjprop 19 ........................... <tUserObj.pLocX>
+  [370] sub ..................................... <me.pLocX - tUserObj.pLocX>
+  [371] pushint8 1 .............................. <1>
+  [373] eq ...................................... <(me.pLocX - tUserObj.pLocX) = 1>
+  [374] and ..................................... <(me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = 1)>
+  [375] jmpifz [388] ............................ if (me.pLocY = tUserObj.pLocY) and ((me.pLocX - tUserObj.pLocX) = 1) then / else
+  [378] getparam 0 .............................. <me>
+  [380] pusharglistnoret 1 ...................... <me>
+  [382] objcall 1764 ............................ me.giveDrink()
+  [385] jmp [428]
+  [388] pushsymb 52 ............................. <#room>
+  [390] pusharglist 1 ........................... <#room>
+  [392] extcall 51 .............................. <getThread(#room)>
+  [394] pusharglist 1 ........................... <getThread(#room)>
+  [396] objcall 115 ............................. <getThread(#room).getComponent()>
+  [398] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [400] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [402] pushcons 5 .............................. <"MOVE">
+  [404] pushsymb 526 ............................ <#short>
+  [407] getparam 0 .............................. <me>
+  [409] getobjprop 19 ........................... <me.pLocX>
+  [411] pushint8 1 .............................. <1>
+  [413] sub ..................................... <me.pLocX - 1>
+  [414] pushsymb 526 ............................ <#short>
+  [417] getparam 0 .............................. <me>
+  [419] getobjprop 20 ........................... <me.pLocY>
+  [421] pusharglist 4 ........................... <[#short: me.pLocX - 1, #short: me.pLocY]>
+  [423] pushproplist ............................ <[#short: me.pLocX - 1, #short: me.pLocY]>
+  [424] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX - 1, #short: me.pLocY]>
+  [426] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX - 1, #short: me.pLocY])
+  [428] pop 1 ................................... end case
+  [430] pushint8 1 .............................. <1>
+  [432] pusharglistnoret 1 ...................... <1>
+  [434] extcall 31 .............................. return 1
+  [436] ret
 end
 
 on giveDrink me
-  [  0] pushsymb 949 ............................ <#room>
-  [  3] pusharglist 1 ........................... <#room>
-  [  5] extcall 260 ............................. <getThread(#room)>
-  [  8] pusharglist 1 ........................... <getThread(#room)>
-  [ 10] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 12] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 14] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 17] pushcons 6 .............................. <"LOOKTO">
-  [ 19] getparam 0 .............................. <me>
-  [ 21] getobjprop 494 .......................... <me.pLocX>
-  [ 24] getparam 0 .............................. <me>
-  [ 26] getobjprop 496 .......................... <me.pLocY>
-  [ 29] joinpadstr .............................. <me.pLocX && me.pLocY>
-  [ 30] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "LOOKTO", me.pLocX && me.pLocY>
-  [ 32] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("LOOKTO", me.pLocX && me.pLocY)
-  [ 35] pushsymb 949 ............................ <#room>
-  [ 38] pusharglist 1 ........................... <#room>
-  [ 40] extcall 260 ............................. <getThread(#room)>
-  [ 43] pusharglist 1 ........................... <getThread(#room)>
-  [ 45] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 47] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 49] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 52] pushcons 7 .............................. <"CARRYDRINK">
-  [ 54] pushsymb 453 ............................ <#string>
-  [ 57] getprop 1770 ............................ <pTokenList>
-  [ 60] getprop 1770 ............................ <pTokenList>
-  [ 63] getobjprop 14 ........................... <pTokenList.count>
-  [ 65] pusharglist 1 ........................... <pTokenList.count>
-  [ 67] extcall 185 ............................. <random(pTokenList.count)>
-  [ 69] pusharglist 2 ........................... <pTokenList, random(pTokenList.count)>
-  [ 71] objcall 9 ............................... <pTokenList[random(pTokenList.count)]>
-  [ 73] pusharglist 1 ........................... <pTokenList[random(pTokenList.count)]>
-  [ 75] extcall 453 ............................. <string(pTokenList[random(pTokenList.count)])>
-  [ 78] pusharglist 2 ........................... <[#string: string(pTokenList[random(pTokenList.count)])]>
-  [ 80] pushproplist ............................ <[#string: string(pTokenList[random(pTokenList.count)])]>
-  [ 81] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])]>
-  [ 83] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])])
-  [ 86] ret
+  [  0] pushsymb 52 ............................. <#room>
+  [  2] pusharglist 1 ........................... <#room>
+  [  4] extcall 51 .............................. <getThread(#room)>
+  [  6] pusharglist 1 ........................... <getThread(#room)>
+  [  8] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 10] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 12] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 14] pushcons 6 .............................. <"LOOKTO">
+  [ 16] getparam 0 .............................. <me>
+  [ 18] getobjprop 19 ........................... <me.pLocX>
+  [ 20] getparam 0 .............................. <me>
+  [ 22] getobjprop 20 ........................... <me.pLocY>
+  [ 24] joinpadstr .............................. <me.pLocX && me.pLocY>
+  [ 25] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "LOOKTO", me.pLocX && me.pLocY>
+  [ 27] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("LOOKTO", me.pLocX && me.pLocY)
+  [ 29] pushsymb 52 ............................. <#room>
+  [ 31] pusharglist 1 ........................... <#room>
+  [ 33] extcall 51 .............................. <getThread(#room)>
+  [ 35] pusharglist 1 ........................... <getThread(#room)>
+  [ 37] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 39] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 41] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 43] pushcons 7 .............................. <"CARRYDRINK">
+  [ 45] pushsymb 519 ............................ <#string>
+  [ 48] getprop 1767 ............................ <pTokenList>
+  [ 51] getprop 1767 ............................ <pTokenList>
+  [ 54] getobjprop 33 ........................... <pTokenList.count>
+  [ 56] pusharglist 1 ........................... <pTokenList.count>
+  [ 58] extcall 285 ............................. <random(pTokenList.count)>
+  [ 61] pusharglist 2 ........................... <pTokenList, random(pTokenList.count)>
+  [ 63] objcall 34 .............................. <pTokenList[random(pTokenList.count)]>
+  [ 65] pusharglist 1 ........................... <pTokenList[random(pTokenList.count)]>
+  [ 67] extcall 519 ............................. <string(pTokenList[random(pTokenList.count)])>
+  [ 70] pusharglist 2 ........................... <[#string: string(pTokenList[random(pTokenList.count)])]>
+  [ 72] pushproplist ............................ <[#string: string(pTokenList[random(pTokenList.count)])]>
+  [ 73] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])]>
+  [ 75] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])])
+  [ 77] ret
 end

@@ -2,305 +2,305 @@ property pAdMemNum, pClickURL, pSprite, pState, pFrame, pTimeOutID, pToolTipSpr,
 
 on construct me
   [  0] pushzero ................................ <0>
-  [  1] setprop 11 .............................. pState = 0
-  [  3] pushzero ................................ <0>
-  [  4] setprop 1662 ............................ pFrame = 0
-  [  7] pushcons 0 .............................. <"showAdTimeOut">
-  [  9] setprop 1663 ............................ pTimeOutID = "showAdTimeOut"
-  [ 12] pushzero ................................ <0>
-  [ 13] setprop 1664 ............................ pBlendFlag = 0
-  [ 16] pushint8 1 .............................. <1>
-  [ 18] setprop 1665 ............................ pDLCounter = 1
-  [ 21] pushcons 1 .............................. <"billboard-image">
-  [ 23] setprop 1666 ............................ pMemberIDBase = "billboard-image"
-  [ 26] getprop 1666 ............................ <pMemberIDBase>
-  [ 29] getprop 1665 ............................ <pDLCounter>
-  [ 32] joinstr ................................. <pMemberIDBase & pDLCounter>
-  [ 33] setprop 1667 ............................ pMemberID = pMemberIDBase & pDLCounter
-  [ 36] pushsymb 491 ............................ <#leaveRoom>
-  [ 39] getparam 0 .............................. <me>
-  [ 41] pusharglist 1 ........................... <me>
-  [ 43] objcall 156 ............................. <me.getID()>
-  [ 45] pushsymb 1659 ........................... <#removeAd>
-  [ 48] pusharglistnoret 3 ...................... <#leaveRoom, me.getID(), #removeAd>
-  [ 50] extcall 155 ............................. registerMessage(#leaveRoom, me.getID(), #removeAd)
-  [ 52] pushsymb 578 ............................ <#changeRoom>
-  [ 55] getparam 0 .............................. <me>
-  [ 57] pusharglist 1 ........................... <me>
-  [ 59] objcall 156 ............................. <me.getID()>
-  [ 61] pushsymb 1659 ........................... <#removeAd>
-  [ 64] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #removeAd>
-  [ 66] extcall 155 ............................. registerMessage(#changeRoom, me.getID(), #removeAd)
-  [ 68] pushsymb 1668 ........................... <#takingPhoto>
-  [ 71] getparam 0 .............................. <me>
-  [ 73] pusharglist 1 ........................... <me>
-  [ 75] objcall 156 ............................. <me.getID()>
-  [ 77] pushsymb 1655 ........................... <#hideAd>
-  [ 80] pusharglistnoret 3 ...................... <#takingPhoto, me.getID(), #hideAd>
-  [ 82] extcall 155 ............................. registerMessage(#takingPhoto, me.getID(), #hideAd)
-  [ 84] pushsymb 1669 ........................... <#photoTaken>
-  [ 87] getparam 0 .............................. <me>
-  [ 89] pusharglist 1 ........................... <me>
-  [ 91] objcall 156 ............................. <me.getID()>
-  [ 93] pushsymb 1656 ........................... <#showAd>
-  [ 96] pusharglistnoret 3 ...................... <#photoTaken, me.getID(), #showAd>
-  [ 98] extcall 155 ............................. registerMessage(#photoTaken, me.getID(), #showAd)
-  [100] pushint8 1 .............................. <1>
-  [102] pusharglistnoret 1 ...................... <1>
-  [104] extcall 21 .............................. return 1
-  [106] ret
+  [  1] setprop 1175 ............................ pState = 0
+  [  4] pushzero ................................ <0>
+  [  5] setprop 1658 ............................ pFrame = 0
+  [  8] pushcons 0 .............................. <"showAdTimeOut">
+  [ 10] setprop 1659 ............................ pTimeOutID = "showAdTimeOut"
+  [ 13] pushzero ................................ <0>
+  [ 14] setprop 1660 ............................ pBlendFlag = 0
+  [ 17] pushint8 1 .............................. <1>
+  [ 19] setprop 1661 ............................ pDLCounter = 1
+  [ 22] pushcons 1 .............................. <"billboard-image">
+  [ 24] setprop 1662 ............................ pMemberIDBase = "billboard-image"
+  [ 27] getprop 1662 ............................ <pMemberIDBase>
+  [ 30] getprop 1661 ............................ <pDLCounter>
+  [ 33] joinstr ................................. <pMemberIDBase & pDLCounter>
+  [ 34] setprop 1663 ............................ pMemberID = pMemberIDBase & pDLCounter
+  [ 37] pushsymb 552 ............................ <#leaveRoom>
+  [ 40] getparam 0 .............................. <me>
+  [ 42] pusharglist 1 ........................... <me>
+  [ 44] objcall 75 .............................. <me.getID()>
+  [ 46] pushsymb 1655 ........................... <#removeAd>
+  [ 49] pusharglistnoret 3 ...................... <#leaveRoom, me.getID(), #removeAd>
+  [ 51] extcall 264 ............................. registerMessage(#leaveRoom, me.getID(), #removeAd)
+  [ 54] pushsymb 631 ............................ <#changeRoom>
+  [ 57] getparam 0 .............................. <me>
+  [ 59] pusharglist 1 ........................... <me>
+  [ 61] objcall 75 .............................. <me.getID()>
+  [ 63] pushsymb 1655 ........................... <#removeAd>
+  [ 66] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #removeAd>
+  [ 68] extcall 264 ............................. registerMessage(#changeRoom, me.getID(), #removeAd)
+  [ 71] pushsymb 1664 ........................... <#takingPhoto>
+  [ 74] getparam 0 .............................. <me>
+  [ 76] pusharglist 1 ........................... <me>
+  [ 78] objcall 75 .............................. <me.getID()>
+  [ 80] pushsymb 1651 ........................... <#hideAd>
+  [ 83] pusharglistnoret 3 ...................... <#takingPhoto, me.getID(), #hideAd>
+  [ 85] extcall 264 ............................. registerMessage(#takingPhoto, me.getID(), #hideAd)
+  [ 88] pushsymb 1665 ........................... <#photoTaken>
+  [ 91] getparam 0 .............................. <me>
+  [ 93] pusharglist 1 ........................... <me>
+  [ 95] objcall 75 .............................. <me.getID()>
+  [ 97] pushsymb 1652 ........................... <#showAd>
+  [100] pusharglistnoret 3 ...................... <#photoTaken, me.getID(), #showAd>
+  [102] extcall 264 ............................. registerMessage(#photoTaken, me.getID(), #showAd)
+  [105] pushint8 1 .............................. <1>
+  [107] pusharglistnoret 1 ...................... <1>
+  [109] extcall 31 .............................. return 1
+  [111] ret
 end
 
 on deconstruct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 156 ............................. <me.getID()>
+  [  4] objcall 75 .............................. <me.getID()>
   [  6] pusharglistnoret 1 ...................... <me.getID()>
-  [  8] extcall 199 ............................. removeUpdate(me.getID())
-  [ 10] getprop 1670 ............................ <pToolTipSpr>
-  [ 13] getobjprop 248 .......................... <pToolTipSpr.ilk>
-  [ 15] pushsymb 182 ............................ <#sprite>
-  [ 17] eq ...................................... <pToolTipSpr.ilk = #sprite>
-  [ 18] jmpifz [ 31] ............................ if pToolTipSpr.ilk = #sprite then
-  [ 21] getprop 1670 ............................ <pToolTipSpr>
-  [ 24] getobjprop 18 ........................... <pToolTipSpr.spriteNum>
-  [ 26] pusharglistnoret 1 ...................... <pToolTipSpr.spriteNum>
-  [ 28] extcall 367 ............................. releaseSprite(pToolTipSpr.spriteNum)
-  [ 31] getprop 1663 ............................ <pTimeOutID>
+  [  8] extcall 298 ............................. removeUpdate(me.getID())
+  [ 11] getprop 1666 ............................ <pToolTipSpr>
+  [ 14] getobjprop 127 .......................... <pToolTipSpr.ilk>
+  [ 16] pushsymb 73 ............................. <#sprite>
+  [ 18] eq ...................................... <pToolTipSpr.ilk = #sprite>
+  [ 19] jmpifz [ 31] ............................ if pToolTipSpr.ilk = #sprite then
+  [ 22] getprop 1666 ............................ <pToolTipSpr>
+  [ 25] getobjprop 36 ........................... <pToolTipSpr.spriteNum>
+  [ 27] pusharglistnoret 1 ...................... <pToolTipSpr.spriteNum>
+  [ 29] extcall 35 .............................. releaseSprite(pToolTipSpr.spriteNum)
+  [ 31] getprop 1659 ............................ <pTimeOutID>
   [ 34] pusharglist 1 ........................... <pTimeOutID>
-  [ 36] extcall 229 ............................. <timeoutExists(pTimeOutID)>
-  [ 38] jmpifz [ 48] ............................ if timeoutExists(pTimeOutID) then
-  [ 41] getprop 1663 ............................ <pTimeOutID>
-  [ 44] pusharglistnoret 1 ...................... <pTimeOutID>
-  [ 46] extcall 231 ............................. removeTimeout(pTimeOutID)
-  [ 48] pushsymb 491 ............................ <#leaveRoom>
-  [ 51] getparam 0 .............................. <me>
-  [ 53] pusharglist 1 ........................... <me>
-  [ 55] objcall 156 ............................. <me.getID()>
-  [ 57] pusharglistnoret 2 ...................... <#leaveRoom, me.getID()>
-  [ 59] extcall 158 ............................. unregisterMessage(#leaveRoom, me.getID())
-  [ 61] pushsymb 578 ............................ <#changeRoom>
-  [ 64] getparam 0 .............................. <me>
-  [ 66] pusharglist 1 ........................... <me>
-  [ 68] objcall 156 ............................. <me.getID()>
-  [ 70] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
-  [ 72] extcall 158 ............................. unregisterMessage(#changeRoom, me.getID())
-  [ 74] pushsymb 1668 ........................... <#takingPhoto>
-  [ 77] getparam 0 .............................. <me>
-  [ 79] pusharglist 1 ........................... <me>
-  [ 81] objcall 156 ............................. <me.getID()>
-  [ 83] pusharglistnoret 2 ...................... <#takingPhoto, me.getID()>
-  [ 85] extcall 158 ............................. unregisterMessage(#takingPhoto, me.getID())
-  [ 87] pushsymb 1669 ........................... <#photoTaken>
-  [ 90] getparam 0 .............................. <me>
-  [ 92] pusharglist 1 ........................... <me>
-  [ 94] objcall 156 ............................. <me.getID()>
-  [ 96] pusharglistnoret 2 ...................... <#photoTaken, me.getID()>
-  [ 98] extcall 158 ............................. unregisterMessage(#photoTaken, me.getID())
-  [100] getparam 0 .............................. <me>
-  [102] pusharglistnoret 1 ...................... <me>
-  [104] objcall 1659 ............................ me.removeAd()
-  [107] pushint8 1 .............................. <1>
-  [109] pusharglistnoret 1 ...................... <1>
-  [111] extcall 21 .............................. return 1
-  [113] ret
+  [ 36] extcall 324 ............................. <timeoutExists(pTimeOutID)>
+  [ 39] jmpifz [ 50] ............................ if timeoutExists(pTimeOutID) then
+  [ 42] getprop 1659 ............................ <pTimeOutID>
+  [ 45] pusharglistnoret 1 ...................... <pTimeOutID>
+  [ 47] extcall 326 ............................. removeTimeout(pTimeOutID)
+  [ 50] pushsymb 552 ............................ <#leaveRoom>
+  [ 53] getparam 0 .............................. <me>
+  [ 55] pusharglist 1 ........................... <me>
+  [ 57] objcall 75 .............................. <me.getID()>
+  [ 59] pusharglistnoret 2 ...................... <#leaveRoom, me.getID()>
+  [ 61] extcall 266 ............................. unregisterMessage(#leaveRoom, me.getID())
+  [ 64] pushsymb 631 ............................ <#changeRoom>
+  [ 67] getparam 0 .............................. <me>
+  [ 69] pusharglist 1 ........................... <me>
+  [ 71] objcall 75 .............................. <me.getID()>
+  [ 73] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
+  [ 75] extcall 266 ............................. unregisterMessage(#changeRoom, me.getID())
+  [ 78] pushsymb 1664 ........................... <#takingPhoto>
+  [ 81] getparam 0 .............................. <me>
+  [ 83] pusharglist 1 ........................... <me>
+  [ 85] objcall 75 .............................. <me.getID()>
+  [ 87] pusharglistnoret 2 ...................... <#takingPhoto, me.getID()>
+  [ 89] extcall 266 ............................. unregisterMessage(#takingPhoto, me.getID())
+  [ 92] pushsymb 1665 ........................... <#photoTaken>
+  [ 95] getparam 0 .............................. <me>
+  [ 97] pusharglist 1 ........................... <me>
+  [ 99] objcall 75 .............................. <me.getID()>
+  [101] pusharglistnoret 2 ...................... <#photoTaken, me.getID()>
+  [103] extcall 266 ............................. unregisterMessage(#photoTaken, me.getID())
+  [106] getparam 0 .............................. <me>
+  [108] pusharglistnoret 1 ...................... <me>
+  [110] objcall 1655 ............................ me.removeAd()
+  [113] pushint8 1 .............................. <1>
+  [115] pusharglistnoret 1 ...................... <1>
+  [117] extcall 31 .............................. return 1
+  [119] ret
 end
 
 on hideAd me
-  [  0] pushsymb 949 ............................ <#room>
-  [  3] pusharglist 1 ........................... <#room>
-  [  5] extcall 260 ............................. <getThread(#room)>
-  [  8] setlocal 0 .............................. tThread = getThread(#room)
-  [ 10] getlocal 0 .............................. <tThread>
-  [ 12] pushzero ................................ <0>
-  [ 13] eq ...................................... <tThread = 0>
-  [ 14] jmpifz [ 22] ............................ if tThread = 0 then
-  [ 17] pushzero ................................ <0>
-  [ 18] pusharglistnoret 1 ...................... <0>
-  [ 20] extcall 21 .............................. return 0
-  [ 22] getlocal 0 .............................. <tThread>
-  [ 24] pusharglist 1 ........................... <tThread>
-  [ 26] objcall 597 ............................. <tThread.getInterface()>
-  [ 29] pusharglist 1 ........................... <tThread.getInterface()>
-  [ 31] objcall 68 .............................. <tThread.getInterface().getRoomVisualizer()>
-  [ 33] setlocal 1 .............................. tVisObj = tThread.getInterface().getRoomVisualizer()
-  [ 35] getlocal 1 .............................. <tVisObj>
-  [ 37] pushzero ................................ <0>
-  [ 38] eq ...................................... <tVisObj = 0>
-  [ 39] jmpifz [ 47] ............................ if tVisObj = 0 then
-  [ 42] pushzero ................................ <0>
-  [ 43] pusharglistnoret 1 ...................... <0>
-  [ 45] extcall 21 .............................. return 0
-  [ 47] getlocal 1 .............................. <tVisObj>
-  [ 49] pushcons 2 .............................. <"billboard_img">
-  [ 51] pusharglist 2 ........................... <tVisObj, "billboard_img">
-  [ 53] objcall 1671 ............................ <tVisObj.spriteExists("billboard_img")>
-  [ 56] jmpifz [ 74] ............................ if tVisObj.spriteExists("billboard_img") then
-  [ 59] getlocal 1 .............................. <tVisObj>
-  [ 61] pushcons 2 .............................. <"billboard_img">
-  [ 63] pusharglist 2 ........................... <tVisObj, "billboard_img">
-  [ 65] objcall 181 ............................. <tVisObj.getSprById("billboard_img")>
-  [ 67] setlocal 2 .............................. tSpr = tVisObj.getSprById("billboard_img")
-  [ 69] getlocal 2 .............................. <tSpr>
-  [ 71] pushzero ................................ <0>
-  [ 72] setobjprop 251 .......................... tSpr.visible = 0
-  [ 74] ret
+  [  0] pushsymb 52 ............................. <#room>
+  [  2] pusharglist 1 ........................... <#room>
+  [  4] extcall 51 .............................. <getThread(#room)>
+  [  6] setlocal 0 .............................. tThread = getThread(#room)
+  [  8] getlocal 0 .............................. <tThread>
+  [ 10] pushzero ................................ <0>
+  [ 11] eq ...................................... <tThread = 0>
+  [ 12] jmpifz [ 20] ............................ if tThread = 0 then
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 31 .............................. return 0
+  [ 20] getlocal 0 .............................. <tThread>
+  [ 22] pusharglist 1 ........................... <tThread>
+  [ 24] objcall 53 .............................. <tThread.getInterface()>
+  [ 26] pusharglist 1 ........................... <tThread.getInterface()>
+  [ 28] objcall 119 ............................. <tThread.getInterface().getRoomVisualizer()>
+  [ 30] setlocal 1 .............................. tVisObj = tThread.getInterface().getRoomVisualizer()
+  [ 32] getlocal 1 .............................. <tVisObj>
+  [ 34] pushzero ................................ <0>
+  [ 35] eq ...................................... <tVisObj = 0>
+  [ 36] jmpifz [ 44] ............................ if tVisObj = 0 then
+  [ 39] pushzero ................................ <0>
+  [ 40] pusharglistnoret 1 ...................... <0>
+  [ 42] extcall 31 .............................. return 0
+  [ 44] getlocal 1 .............................. <tVisObj>
+  [ 46] pushcons 2 .............................. <"billboard_img">
+  [ 48] pusharglist 2 ........................... <tVisObj, "billboard_img">
+  [ 50] objcall 1667 ............................ <tVisObj.spriteExists("billboard_img")>
+  [ 53] jmpifz [ 73] ............................ if tVisObj.spriteExists("billboard_img") then
+  [ 56] getlocal 1 .............................. <tVisObj>
+  [ 58] pushcons 2 .............................. <"billboard_img">
+  [ 60] pusharglist 2 ........................... <tVisObj, "billboard_img">
+  [ 62] objcall 282 ............................. <tVisObj.getSprById("billboard_img")>
+  [ 65] setlocal 2 .............................. tSpr = tVisObj.getSprById("billboard_img")
+  [ 67] getlocal 2 .............................. <tSpr>
+  [ 69] pushzero ................................ <0>
+  [ 70] setobjprop 341 .......................... tSpr.visible = 0
+  [ 73] ret
 end
 
 on showAd me
-  [  0] pushsymb 949 ............................ <#room>
-  [  3] pusharglist 1 ........................... <#room>
-  [  5] extcall 260 ............................. <getThread(#room)>
-  [  8] setlocal 0 .............................. tThread = getThread(#room)
-  [ 10] getlocal 0 .............................. <tThread>
-  [ 12] pushzero ................................ <0>
-  [ 13] eq ...................................... <tThread = 0>
-  [ 14] jmpifz [ 22] ............................ if tThread = 0 then
-  [ 17] pushzero ................................ <0>
-  [ 18] pusharglistnoret 1 ...................... <0>
-  [ 20] extcall 21 .............................. return 0
-  [ 22] getlocal 0 .............................. <tThread>
-  [ 24] pusharglist 1 ........................... <tThread>
-  [ 26] objcall 597 ............................. <tThread.getInterface()>
-  [ 29] pusharglist 1 ........................... <tThread.getInterface()>
-  [ 31] objcall 68 .............................. <tThread.getInterface().getRoomVisualizer()>
-  [ 33] setlocal 1 .............................. tVisObj = tThread.getInterface().getRoomVisualizer()
-  [ 35] getlocal 1 .............................. <tVisObj>
-  [ 37] pushzero ................................ <0>
-  [ 38] eq ...................................... <tVisObj = 0>
-  [ 39] jmpifz [ 47] ............................ if tVisObj = 0 then
-  [ 42] pushzero ................................ <0>
-  [ 43] pusharglistnoret 1 ...................... <0>
-  [ 45] extcall 21 .............................. return 0
-  [ 47] getlocal 1 .............................. <tVisObj>
-  [ 49] pushcons 2 .............................. <"billboard_img">
-  [ 51] pusharglist 2 ........................... <tVisObj, "billboard_img">
-  [ 53] objcall 1671 ............................ <tVisObj.spriteExists("billboard_img")>
-  [ 56] jmpifz [ 75] ............................ if tVisObj.spriteExists("billboard_img") then
-  [ 59] getlocal 1 .............................. <tVisObj>
-  [ 61] pushcons 2 .............................. <"billboard_img">
-  [ 63] pusharglist 2 ........................... <tVisObj, "billboard_img">
-  [ 65] objcall 181 ............................. <tVisObj.getSprById("billboard_img")>
-  [ 67] setlocal 2 .............................. tSpr = tVisObj.getSprById("billboard_img")
-  [ 69] getlocal 2 .............................. <tSpr>
-  [ 71] pushint8 1 .............................. <1>
-  [ 73] setobjprop 251 .......................... tSpr.visible = 1
-  [ 75] ret
+  [  0] pushsymb 52 ............................. <#room>
+  [  2] pusharglist 1 ........................... <#room>
+  [  4] extcall 51 .............................. <getThread(#room)>
+  [  6] setlocal 0 .............................. tThread = getThread(#room)
+  [  8] getlocal 0 .............................. <tThread>
+  [ 10] pushzero ................................ <0>
+  [ 11] eq ...................................... <tThread = 0>
+  [ 12] jmpifz [ 20] ............................ if tThread = 0 then
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 31 .............................. return 0
+  [ 20] getlocal 0 .............................. <tThread>
+  [ 22] pusharglist 1 ........................... <tThread>
+  [ 24] objcall 53 .............................. <tThread.getInterface()>
+  [ 26] pusharglist 1 ........................... <tThread.getInterface()>
+  [ 28] objcall 119 ............................. <tThread.getInterface().getRoomVisualizer()>
+  [ 30] setlocal 1 .............................. tVisObj = tThread.getInterface().getRoomVisualizer()
+  [ 32] getlocal 1 .............................. <tVisObj>
+  [ 34] pushzero ................................ <0>
+  [ 35] eq ...................................... <tVisObj = 0>
+  [ 36] jmpifz [ 44] ............................ if tVisObj = 0 then
+  [ 39] pushzero ................................ <0>
+  [ 40] pusharglistnoret 1 ...................... <0>
+  [ 42] extcall 31 .............................. return 0
+  [ 44] getlocal 1 .............................. <tVisObj>
+  [ 46] pushcons 2 .............................. <"billboard_img">
+  [ 48] pusharglist 2 ........................... <tVisObj, "billboard_img">
+  [ 50] objcall 1667 ............................ <tVisObj.spriteExists("billboard_img")>
+  [ 53] jmpifz [ 74] ............................ if tVisObj.spriteExists("billboard_img") then
+  [ 56] getlocal 1 .............................. <tVisObj>
+  [ 58] pushcons 2 .............................. <"billboard_img">
+  [ 60] pusharglist 2 ........................... <tVisObj, "billboard_img">
+  [ 62] objcall 282 ............................. <tVisObj.getSprById("billboard_img")>
+  [ 65] setlocal 2 .............................. tSpr = tVisObj.getSprById("billboard_img")
+  [ 67] getlocal 2 .............................. <tSpr>
+  [ 69] pushint8 1 .............................. <1>
+  [ 71] setobjprop 341 .......................... tSpr.visible = 1
+  [ 74] ret
 end
 
 on Init me, tSourceURL, tClickURL, tRegisteredLayout
   [  0] getparam 1 .............................. <tSourceURL>
   [  2] pushzero ................................ <0>
   [  3] nteq .................................... <tSourceURL <> 0>
-  [  4] jmpifz [363] ............................ if tSourceURL <> 0 then / else
+  [  4] jmpifz [365] ............................ if tSourceURL <> 0 then / else
   [  7] getparam 1 .............................. <tSourceURL>
   [  9] pushcons 3 .............................. <"http">
   [ 11] contains0str ............................ <tSourceURL starts "http">
   [ 12] not ..................................... <not (tSourceURL starts "http")>
-  [ 13] jmpifz [ 33] ............................ if not (tSourceURL starts "http") then
+  [ 13] jmpifz [ 35] ............................ if not (tSourceURL starts "http") then
   [ 16] pushzero ................................ <0>
-  [ 17] setprop 11 .............................. pState = 0
-  [ 19] getparam 0 .............................. <me>
-  [ 21] pushcons 4 .............................. <"Incorrect URL!">
-  [ 23] pushsymb 187 ............................ <#Init>
-  [ 25] pusharglist 3 ........................... <me, "Incorrect URL!", #Init>
-  [ 27] extcall 161 ............................. <error(me, "Incorrect URL!", #Init)>
-  [ 29] pusharglistnoret 1 ...................... <error(me, "Incorrect URL!", #Init)>
-  [ 31] extcall 21 .............................. return error(me, "Incorrect URL!", #Init)
-  [ 33] getprop 1666 ............................ <pMemberIDBase>
-  [ 36] getprop 1665 ............................ <pDLCounter>
-  [ 39] joinstr ................................. <pMemberIDBase & pDLCounter>
-  [ 40] setprop 1667 ............................ pMemberID = pMemberIDBase & pDLCounter
-  [ 43] getparam 1 .............................. <tSourceURL>
-  [ 45] pushcons 5 .............................. <"?">
-  [ 47] containsstr ............................. <tSourceURL contains "?">
-  [ 48] jmpifz [ 58] ............................ if tSourceURL contains "?" then / else
-  [ 51] pushcons 6 .............................. <"&">
-  [ 53] setlocal 0 .............................. tSeparator = "&"
-  [ 55] jmp [ 62]
-  [ 58] pushcons 5 .............................. <"?">
-  [ 60] setlocal 0 .............................. tSeparator = "?"
-  [ 62] getparam 1 .............................. <tSourceURL>
-  [ 64] getlocal 0 .............................. <tSeparator>
-  [ 66] joinstr ................................. <tSourceURL & tSeparator>
-  [ 67] pushcons 7 .............................. <"r=">
-  [ 69] joinstr ................................. <tSourceURL & tSeparator & "r=">
-  [ 70] pushcons 8 .............................. <9999999999.0>
-  [ 72] pusharglist 1 ........................... <9999999999.0>
-  [ 74] extcall 185 ............................. <random(9999999999.0)>
-  [ 76] joinstr ................................. <tSourceURL & tSeparator & "r=" & random(9999999999.0)>
-  [ 77] setparam 1 .............................. tSourceURL = tSourceURL & tSeparator & "r=" & random(9999999999.0)
-  [ 79] getparam 1 .............................. <tSourceURL>
-  [ 81] getprop 1667 ............................ <pMemberID>
-  [ 84] pushsymb 321 ............................ <#bitmap>
-  [ 87] pushint8 1 .............................. <1>
-  [ 89] pusharglist 4 ........................... <tSourceURL, pMemberID, #bitmap, 1>
-  [ 91] extcall 952 ............................. <queueDownload(tSourceURL, pMemberID, #bitmap, 1)>
-  [ 94] setprop 1673 ............................ pAdMemNum = queueDownload(tSourceURL, pMemberID, #bitmap, 1)
-  [ 97] getprop 1673 ............................ <pAdMemNum>
-  [100] pushzero ................................ <0>
-  [101] gt ...................................... <pAdMemNum > 0>
-  [102] not ..................................... <not (pAdMemNum > 0)>
-  [103] jmpifz [123] ............................ if not (pAdMemNum > 0) then
-  [106] pushzero ................................ <0>
-  [107] setprop 11 .............................. pState = 0
-  [109] getparam 0 .............................. <me>
-  [111] pushcons 4 .............................. <"Incorrect URL!">
-  [113] pushsymb 187 ............................ <#Init>
-  [115] pusharglist 3 ........................... <me, "Incorrect URL!", #Init>
-  [117] extcall 161 ............................. <error(me, "Incorrect URL!", #Init)>
-  [119] pusharglistnoret 1 ...................... <error(me, "Incorrect URL!", #Init)>
-  [121] extcall 21 .............................. return error(me, "Incorrect URL!", #Init)
-  [123] getparam 3 .............................. <tRegisteredLayout>
-  [125] setprop 1674 ............................ pRegisteredLayout = tRegisteredLayout
-  [128] getprop 1673 ............................ <pAdMemNum>
-  [131] pusharglist 1 ........................... <pAdMemNum>
-  [133] extcall 30 .............................. <member(pAdMemNum)>
-  [135] pushint8 1 .............................. <1>
-  [137] pushint8 1 .............................. <1>
-  [139] pushint8 32 ............................. <32>
-  [141] pusharglist 3 ........................... <1, 1, 32>
-  [143] extcall 290 ............................. <image(1, 1, 32)>
-  [146] setobjprop 290 .......................... member(pAdMemNum).image = image(1, 1, 32)
-  [149] getprop 1673 ............................ <pAdMemNum>
-  [152] pusharglist 1 ........................... <pAdMemNum>
-  [154] extcall 30 .............................. <member(pAdMemNum)>
-  [156] pushzero ................................ <0>
-  [157] setobjprop 953 .......................... member(pAdMemNum).trimWhiteSpace = 0
-  [160] getprop 1673 ............................ <pAdMemNum>
-  [163] pushsymb 1657 ........................... <#adLoaded>
-  [166] getparam 0 .............................. <me>
-  [168] pusharglist 1 ........................... <me>
-  [170] objcall 156 ............................. <me.getID()>
-  [172] pusharglistnoret 3 ...................... <pAdMemNum, #adLoaded, me.getID()>
-  [174] extcall 954 ............................. registerDownloadCallback(pAdMemNum, #adLoaded, me.getID())
-  [177] getparam 2 .............................. <tClickURL>
-  [179] pushcons 3 .............................. <"http">
-  [181] contains0str ............................ <tClickURL starts "http">
-  [182] not ..................................... <not (tClickURL starts "http")>
-  [183] jmpifz [196] ............................ if not (tClickURL starts "http") then / else
-  [186] pusharglist 0 ........................... <>
-  [188] extcall 159 ............................. <VOID>
-  [190] setprop 1675 ............................ pClickURL = VOID
-  [193] jmp [201]
-  [196] getparam 2 .............................. <tClickURL>
-  [198] setprop 1675 ............................ pClickURL = tClickURL
-  [201] pushsymb 949 ............................ <#room>
-  [204] pusharglist 1 ........................... <#room>
-  [206] extcall 260 ............................. <getThread(#room)>
-  [209] setlocal 1 .............................. tThread = getThread(#room)
-  [211] getlocal 1 .............................. <tThread>
-  [213] pushzero ................................ <0>
-  [214] eq ...................................... <tThread = 0>
-  [215] jmpifz [223] ............................ if tThread = 0 then
-  [218] pushzero ................................ <0>
-  [219] pusharglistnoret 1 ...................... <0>
-  [221] extcall 21 .............................. return 0
-  [223] getlocal 1 .............................. <tThread>
-  [225] pusharglist 1 ........................... <tThread>
-  [227] objcall 597 ............................. <tThread.getInterface()>
+  [ 17] setprop 1175 ............................ pState = 0
+  [ 20] getparam 0 .............................. <me>
+  [ 22] pushcons 4 .............................. <"Incorrect URL!">
+  [ 24] pushsymb 286 ............................ <#Init>
+  [ 27] pusharglist 3 ........................... <me, "Incorrect URL!", #Init>
+  [ 29] extcall 72 .............................. <error(me, "Incorrect URL!", #Init)>
+  [ 31] pusharglistnoret 1 ...................... <error(me, "Incorrect URL!", #Init)>
+  [ 33] extcall 31 .............................. return error(me, "Incorrect URL!", #Init)
+  [ 35] getprop 1662 ............................ <pMemberIDBase>
+  [ 38] getprop 1661 ............................ <pDLCounter>
+  [ 41] joinstr ................................. <pMemberIDBase & pDLCounter>
+  [ 42] setprop 1663 ............................ pMemberID = pMemberIDBase & pDLCounter
+  [ 45] getparam 1 .............................. <tSourceURL>
+  [ 47] pushcons 5 .............................. <"?">
+  [ 49] containsstr ............................. <tSourceURL contains "?">
+  [ 50] jmpifz [ 60] ............................ if tSourceURL contains "?" then / else
+  [ 53] pushcons 6 .............................. <"&">
+  [ 55] setlocal 0 .............................. tSeparator = "&"
+  [ 57] jmp [ 64]
+  [ 60] pushcons 5 .............................. <"?">
+  [ 62] setlocal 0 .............................. tSeparator = "?"
+  [ 64] getparam 1 .............................. <tSourceURL>
+  [ 66] getlocal 0 .............................. <tSeparator>
+  [ 68] joinstr ................................. <tSourceURL & tSeparator>
+  [ 69] pushcons 7 .............................. <"r=">
+  [ 71] joinstr ................................. <tSourceURL & tSeparator & "r=">
+  [ 72] pushcons 8 .............................. <9999999999.0>
+  [ 74] pusharglist 1 ........................... <9999999999.0>
+  [ 76] extcall 285 ............................. <random(9999999999.0)>
+  [ 79] joinstr ................................. <tSourceURL & tSeparator & "r=" & random(9999999999.0)>
+  [ 80] setparam 1 .............................. tSourceURL = tSourceURL & tSeparator & "r=" & random(9999999999.0)
+  [ 82] getparam 1 .............................. <tSourceURL>
+  [ 84] getprop 1663 ............................ <pMemberID>
+  [ 87] pushsymb 399 ............................ <#bitmap>
+  [ 90] pushint8 1 .............................. <1>
+  [ 92] pusharglist 4 ........................... <tSourceURL, pMemberID, #bitmap, 1>
+  [ 94] extcall 994 ............................. <queueDownload(tSourceURL, pMemberID, #bitmap, 1)>
+  [ 97] setprop 1669 ............................ pAdMemNum = queueDownload(tSourceURL, pMemberID, #bitmap, 1)
+  [100] getprop 1669 ............................ <pAdMemNum>
+  [103] pushzero ................................ <0>
+  [104] gt ...................................... <pAdMemNum > 0>
+  [105] not ..................................... <not (pAdMemNum > 0)>
+  [106] jmpifz [128] ............................ if not (pAdMemNum > 0) then
+  [109] pushzero ................................ <0>
+  [110] setprop 1175 ............................ pState = 0
+  [113] getparam 0 .............................. <me>
+  [115] pushcons 4 .............................. <"Incorrect URL!">
+  [117] pushsymb 286 ............................ <#Init>
+  [120] pusharglist 3 ........................... <me, "Incorrect URL!", #Init>
+  [122] extcall 72 .............................. <error(me, "Incorrect URL!", #Init)>
+  [124] pusharglistnoret 1 ...................... <error(me, "Incorrect URL!", #Init)>
+  [126] extcall 31 .............................. return error(me, "Incorrect URL!", #Init)
+  [128] getparam 3 .............................. <tRegisteredLayout>
+  [130] setprop 1670 ............................ pRegisteredLayout = tRegisteredLayout
+  [133] getprop 1669 ............................ <pAdMemNum>
+  [136] pusharglist 1 ........................... <pAdMemNum>
+  [138] extcall 64 .............................. <member(pAdMemNum)>
+  [140] pushint8 1 .............................. <1>
+  [142] pushint8 1 .............................. <1>
+  [144] pushint8 32 ............................. <32>
+  [146] pusharglist 3 ........................... <1, 1, 32>
+  [148] extcall 63 .............................. <image(1, 1, 32)>
+  [150] setobjprop 63 ........................... member(pAdMemNum).image = image(1, 1, 32)
+  [152] getprop 1669 ............................ <pAdMemNum>
+  [155] pusharglist 1 ........................... <pAdMemNum>
+  [157] extcall 64 .............................. <member(pAdMemNum)>
+  [159] pushzero ................................ <0>
+  [160] setobjprop 995 .......................... member(pAdMemNum).trimWhiteSpace = 0
+  [163] getprop 1669 ............................ <pAdMemNum>
+  [166] pushsymb 1653 ........................... <#adLoaded>
+  [169] getparam 0 .............................. <me>
+  [171] pusharglist 1 ........................... <me>
+  [173] objcall 75 .............................. <me.getID()>
+  [175] pusharglistnoret 3 ...................... <pAdMemNum, #adLoaded, me.getID()>
+  [177] extcall 996 ............................. registerDownloadCallback(pAdMemNum, #adLoaded, me.getID())
+  [180] getparam 2 .............................. <tClickURL>
+  [182] pushcons 3 .............................. <"http">
+  [184] contains0str ............................ <tClickURL starts "http">
+  [185] not ..................................... <not (tClickURL starts "http")>
+  [186] jmpifz [199] ............................ if not (tClickURL starts "http") then / else
+  [189] pusharglist 0 ........................... <>
+  [191] extcall 30 .............................. <VOID>
+  [193] setprop 1671 ............................ pClickURL = VOID
+  [196] jmp [204]
+  [199] getparam 2 .............................. <tClickURL>
+  [201] setprop 1671 ............................ pClickURL = tClickURL
+  [204] pushsymb 52 ............................. <#room>
+  [206] pusharglist 1 ........................... <#room>
+  [208] extcall 51 .............................. <getThread(#room)>
+  [210] setlocal 1 .............................. tThread = getThread(#room)
+  [212] getlocal 1 .............................. <tThread>
+  [214] pushzero ................................ <0>
+  [215] eq ...................................... <tThread = 0>
+  [216] jmpifz [224] ............................ if tThread = 0 then
+  [219] pushzero ................................ <0>
+  [220] pusharglistnoret 1 ...................... <0>
+  [222] extcall 31 .............................. return 0
+  [224] getlocal 1 .............................. <tThread>
+  [226] pusharglist 1 ........................... <tThread>
+  [228] objcall 53 .............................. <tThread.getInterface()>
   [230] pusharglist 1 ........................... <tThread.getInterface()>
-  [232] objcall 68 .............................. <tThread.getInterface().getRoomVisualizer()>
+  [232] objcall 119 ............................. <tThread.getInterface().getRoomVisualizer()>
   [234] setlocal 2 .............................. tVisObj = tThread.getInterface().getRoomVisualizer()
   [236] getlocal 2 .............................. <tVisObj>
   [238] pushzero ................................ <0>
@@ -308,736 +308,736 @@ on Init me, tSourceURL, tClickURL, tRegisteredLayout
   [240] jmpifz [248] ............................ if tVisObj = 0 then
   [243] pushzero ................................ <0>
   [244] pusharglistnoret 1 ...................... <0>
-  [246] extcall 21 .............................. return 0
+  [246] extcall 31 .............................. return 0
   [248] getlocal 2 .............................. <tVisObj>
   [250] pushcons 9 .............................. <"billboard_bg">
   [252] pusharglist 2 ........................... <tVisObj, "billboard_bg">
-  [254] objcall 1671 ............................ <tVisObj.spriteExists("billboard_bg")>
-  [257] jmpifz [360] ............................ if tVisObj.spriteExists("billboard_bg") then
+  [254] objcall 1667 ............................ <tVisObj.spriteExists("billboard_bg")>
+  [257] jmpifz [362] ............................ if tVisObj.spriteExists("billboard_bg") then
   [260] getlocal 2 .............................. <tVisObj>
   [262] pushcons 9 .............................. <"billboard_bg">
   [264] pusharglist 2 ........................... <tVisObj, "billboard_bg">
-  [266] objcall 181 ............................. <tVisObj.getSprById("billboard_bg")>
-  [268] setlocal 3 .............................. tSprBg = tVisObj.getSprById("billboard_bg")
-  [270] getlocal 2 .............................. <tVisObj>
-  [272] pushcons 2 .............................. <"billboard_img">
-  [274] pusharglist 2 ........................... <tVisObj, "billboard_img">
-  [276] objcall 181 ............................. <tVisObj.getSprById("billboard_img")>
-  [278] setlocal 4 .............................. tSprImg = tVisObj.getSprById("billboard_img")
-  [280] getlocal 3 .............................. <tSprBg>
-  [282] getchainedprop 30 ....................... <tSprBg.member>
-  [284] pushcons 10 ............................. <"adframe_palette1">
-  [286] pusharglist 1 ........................... <"adframe_palette1">
-  [288] extcall 37 .............................. <getmemnum("adframe_palette1")>
-  [290] pusharglist 1 ........................... <getmemnum("adframe_palette1")>
-  [292] extcall 30 .............................. <member(getmemnum("adframe_palette1"))>
-  [294] setobjprop 1163 ......................... tSprBg.member.paletteRef = member(getmemnum("adframe_palette1"))
-  [297] getlocal 3 .............................. <tSprBg>
-  [299] getchainedprop 30 ....................... <tSprBg.member>
-  [301] getobjprop 31 ........................... <tSprBg.member.name>
-  [303] pushcons 11 ............................. <"left">
-  [305] containsstr ............................. <tSprBg.member.name contains "left">
-  [306] jmpifz [329] ............................ if tSprBg.member.name contains "left" then / else
-  [309] getlocal 4 .............................. <tSprImg>
-  [311] pushcons 12 ............................. <"ad_warning_L">
-  [313] pusharglist 1 ........................... <"ad_warning_L">
-  [315] extcall 37 .............................. <getmemnum("ad_warning_L")>
-  [317] pusharglist 1 ........................... <getmemnum("ad_warning_L")>
-  [319] extcall 30 .............................. <member(getmemnum("ad_warning_L"))>
-  [321] pusharglistnoret 2 ...................... <tSprImg, member(getmemnum("ad_warning_L"))>
-  [323] objcall 416 ............................. tSprImg.setMember(member(getmemnum("ad_warning_L")))
-  [326] jmp [346]
-  [329] getlocal 4 .............................. <tSprImg>
-  [331] pushcons 13 ............................. <"ad_warning_R">
-  [333] pusharglist 1 ........................... <"ad_warning_R">
-  [335] extcall 37 .............................. <getmemnum("ad_warning_R")>
-  [337] pusharglist 1 ........................... <getmemnum("ad_warning_R")>
-  [339] extcall 30 .............................. <member(getmemnum("ad_warning_R"))>
-  [341] pusharglistnoret 2 ...................... <tSprImg, member(getmemnum("ad_warning_R"))>
-  [343] objcall 416 ............................. tSprImg.setMember(member(getmemnum("ad_warning_R")))
-  [346] getlocal 3 .............................. <tSprBg>
-  [348] pushint8 100 ............................ <100>
-  [350] setobjprop 362 .......................... tSprBg.blend = 100
-  [353] getlocal 4 .............................. <tSprImg>
-  [355] pushint8 100 ............................ <100>
-  [357] setobjprop 362 .......................... tSprImg.blend = 100
-  [360] jmp [373]
-  [363] pushzero ................................ <0>
-  [364] setprop 11 .............................. pState = 0
-  [366] pusharglist 0 ........................... <>
-  [368] extcall 159 ............................. <VOID>
-  [370] setprop 1675 ............................ pClickURL = VOID
-  [373] ret
+  [266] objcall 282 ............................. <tVisObj.getSprById("billboard_bg")>
+  [269] setlocal 3 .............................. tSprBg = tVisObj.getSprById("billboard_bg")
+  [271] getlocal 2 .............................. <tVisObj>
+  [273] pushcons 2 .............................. <"billboard_img">
+  [275] pusharglist 2 ........................... <tVisObj, "billboard_img">
+  [277] objcall 282 ............................. <tVisObj.getSprById("billboard_img")>
+  [280] setlocal 4 .............................. tSprImg = tVisObj.getSprById("billboard_img")
+  [282] getlocal 3 .............................. <tSprBg>
+  [284] getchainedprop 64 ....................... <tSprBg.member>
+  [286] pushcons 10 ............................. <"adframe_palette1">
+  [288] pusharglist 1 ........................... <"adframe_palette1">
+  [290] extcall 65 .............................. <getmemnum("adframe_palette1")>
+  [292] pusharglist 1 ........................... <getmemnum("adframe_palette1")>
+  [294] extcall 64 .............................. <member(getmemnum("adframe_palette1"))>
+  [296] setobjprop 1192 ......................... tSprBg.member.paletteRef = member(getmemnum("adframe_palette1"))
+  [299] getlocal 3 .............................. <tSprBg>
+  [301] getchainedprop 64 ....................... <tSprBg.member>
+  [303] getobjprop 58 ........................... <tSprBg.member.name>
+  [305] pushcons 11 ............................. <"left">
+  [307] containsstr ............................. <tSprBg.member.name contains "left">
+  [308] jmpifz [331] ............................ if tSprBg.member.name contains "left" then / else
+  [311] getlocal 4 .............................. <tSprImg>
+  [313] pushcons 12 ............................. <"ad_warning_L">
+  [315] pusharglist 1 ........................... <"ad_warning_L">
+  [317] extcall 65 .............................. <getmemnum("ad_warning_L")>
+  [319] pusharglist 1 ........................... <getmemnum("ad_warning_L")>
+  [321] extcall 64 .............................. <member(getmemnum("ad_warning_L"))>
+  [323] pusharglistnoret 2 ...................... <tSprImg, member(getmemnum("ad_warning_L"))>
+  [325] objcall 485 ............................. tSprImg.setMember(member(getmemnum("ad_warning_L")))
+  [328] jmp [348]
+  [331] getlocal 4 .............................. <tSprImg>
+  [333] pushcons 13 ............................. <"ad_warning_R">
+  [335] pusharglist 1 ........................... <"ad_warning_R">
+  [337] extcall 65 .............................. <getmemnum("ad_warning_R")>
+  [339] pusharglist 1 ........................... <getmemnum("ad_warning_R")>
+  [341] extcall 64 .............................. <member(getmemnum("ad_warning_R"))>
+  [343] pusharglistnoret 2 ...................... <tSprImg, member(getmemnum("ad_warning_R"))>
+  [345] objcall 485 ............................. tSprImg.setMember(member(getmemnum("ad_warning_R")))
+  [348] getlocal 3 .............................. <tSprBg>
+  [350] pushint8 100 ............................ <100>
+  [352] setobjprop 436 .......................... tSprBg.blend = 100
+  [355] getlocal 4 .............................. <tSprImg>
+  [357] pushint8 100 ............................ <100>
+  [359] setobjprop 436 .......................... tSprImg.blend = 100
+  [362] jmp [376]
+  [365] pushzero ................................ <0>
+  [366] setprop 1175 ............................ pState = 0
+  [369] pusharglist 0 ........................... <>
+  [371] extcall 30 .............................. <VOID>
+  [373] setprop 1671 ............................ pClickURL = VOID
+  [376] ret
 end
 
 on adLoaded me
-  [  0] getprop 1663 ............................ <pTimeOutID>
+  [  0] getprop 1659 ............................ <pTimeOutID>
   [  3] pushint16 5000 .......................... <5000>
-  [  6] pushsymb 1658 ........................... <#adReady>
+  [  6] pushsymb 1654 ........................... <#adReady>
   [  9] getparam 0 .............................. <me>
   [ 11] pusharglist 1 ........................... <me>
-  [ 13] objcall 156 ............................. <me.getID()>
+  [ 13] objcall 75 .............................. <me.getID()>
   [ 15] pusharglist 0 ........................... <>
-  [ 17] extcall 159 ............................. <VOID>
+  [ 17] extcall 30 .............................. <VOID>
   [ 19] pushint8 1 .............................. <1>
   [ 21] pusharglistnoret 6 ...................... <pTimeOutID, 5000, #adReady, me.getID(), VOID, 1>
-  [ 23] extcall 408 ............................. createTimeout(pTimeOutID, 5000, #adReady, me.getID(), VOID, 1)
+  [ 23] extcall 477 ............................. createTimeout(pTimeOutID, 5000, #adReady, me.getID(), VOID, 1)
   [ 26] ret
 end
 
 on adReady me
-  [  0] pushsymb 949 ............................ <#room>
-  [  3] pusharglist 1 ........................... <#room>
-  [  5] extcall 260 ............................. <getThread(#room)>
-  [  8] setlocal 0 .............................. tThread = getThread(#room)
-  [ 10] getlocal 0 .............................. <tThread>
-  [ 12] pushzero ................................ <0>
-  [ 13] eq ...................................... <tThread = 0>
-  [ 14] jmpifz [ 22] ............................ if tThread = 0 then
-  [ 17] pushzero ................................ <0>
-  [ 18] pusharglistnoret 1 ...................... <0>
-  [ 20] extcall 21 .............................. return 0
-  [ 22] getlocal 0 .............................. <tThread>
-  [ 24] pusharglist 1 ........................... <tThread>
-  [ 26] objcall 597 ............................. <tThread.getInterface()>
-  [ 29] pusharglist 1 ........................... <tThread.getInterface()>
-  [ 31] objcall 68 .............................. <tThread.getInterface().getRoomVisualizer()>
-  [ 33] setlocal 1 .............................. tVisObj = tThread.getInterface().getRoomVisualizer()
-  [ 35] getlocal 1 .............................. <tVisObj>
-  [ 37] pushzero ................................ <0>
-  [ 38] eq ...................................... <tVisObj = 0>
-  [ 39] jmpifz [ 47] ............................ if tVisObj = 0 then
-  [ 42] pushzero ................................ <0>
-  [ 43] pusharglistnoret 1 ...................... <0>
-  [ 45] extcall 21 .............................. return 0
-  [ 47] getlocal 1 .............................. <tVisObj>
-  [ 49] pushcons 2 .............................. <"billboard_img">
-  [ 51] pusharglist 2 ........................... <tVisObj, "billboard_img">
-  [ 53] objcall 1671 ............................ <tVisObj.spriteExists("billboard_img")>
-  [ 56] jmpifz [316] ............................ if tVisObj.spriteExists("billboard_img") then
-  [ 59] getlocal 1 .............................. <tVisObj>
-  [ 61] getobjprop 881 .......................... <tVisObj.pLayout>
-  [ 64] getprop 1674 ............................ <pRegisteredLayout>
-  [ 67] nteq .................................... <tVisObj.pLayout <> pRegisteredLayout>
-  [ 68] jmpifz [ 76] ............................ if tVisObj.pLayout <> pRegisteredLayout then
-  [ 71] pushzero ................................ <0>
-  [ 72] pusharglistnoret 1 ...................... <0>
-  [ 74] extcall 21 .............................. return 0
-  [ 76] getlocal 1 .............................. <tVisObj>
-  [ 78] pushcons 2 .............................. <"billboard_img">
-  [ 80] pusharglist 2 ........................... <tVisObj, "billboard_img">
-  [ 82] objcall 181 ............................. <tVisObj.getSprById("billboard_img")>
-  [ 84] setlocal 2 .............................. tSpr = tVisObj.getSprById("billboard_img")
-  [ 86] getlocal 2 .............................. <tSpr>
-  [ 88] setprop 327 ............................. pSprite = tSpr
-  [ 91] getlocal 2 .............................. <tSpr>
-  [ 93] getprop 1673 ............................ <pAdMemNum>
-  [ 96] pusharglist 1 ........................... <pAdMemNum>
-  [ 98] extcall 30 .............................. <member(pAdMemNum)>
-  [100] pusharglistnoret 2 ...................... <tSpr, member(pAdMemNum)>
-  [102] objcall 416 ............................. tSpr.setMember(member(pAdMemNum))
-  [105] getlocal 2 .............................. <tSpr>
-  [107] getprop 1673 ............................ <pAdMemNum>
-  [110] pusharglist 1 ........................... <pAdMemNum>
-  [112] extcall 30 .............................. <member(pAdMemNum)>
-  [114] getobjprop 252 .......................... <member(pAdMemNum).width>
-  [116] setobjprop 252 .......................... tSpr.width = member(pAdMemNum).width
-  [118] getlocal 2 .............................. <tSpr>
-  [120] getprop 1673 ............................ <pAdMemNum>
-  [123] pusharglist 1 ........................... <pAdMemNum>
-  [125] extcall 30 .............................. <member(pAdMemNum)>
-  [127] getobjprop 291 .......................... <member(pAdMemNum).height>
-  [130] setobjprop 291 .......................... tSpr.height = member(pAdMemNum).height
-  [133] getprop 1673 ............................ <pAdMemNum>
-  [136] pusharglist 1 ........................... <pAdMemNum>
-  [138] extcall 30 .............................. <member(pAdMemNum)>
-  [140] pushzero ................................ <0>
-  [141] setobjprop 953 .......................... member(pAdMemNum).trimWhiteSpace = 0
-  [144] getprop 1664 ............................ <pBlendFlag>
-  [147] jmpifz [173] ............................ if pBlendFlag then / else
-  [150] getlocal 2 .............................. <tSpr>
-  [152] pushzero ................................ <0>
-  [153] setobjprop 362 .......................... tSpr.blend = 0
-  [156] pushcons 14 ............................. <"fadein">
-  [158] setprop 11 .............................. pState = "fadein"
-  [160] getparam 0 .............................. <me>
-  [162] pusharglist 1 ........................... <me>
-  [164] objcall 156 ............................. <me.getID()>
-  [166] pusharglistnoret 1 ...................... <me.getID()>
-  [168] extcall 183 ............................. receiveUpdate(me.getID())
-  [170] jmp [183]
-  [173] pushzero ................................ <0>
-  [174] setprop 11 .............................. pState = 0
-  [176] getlocal 2 .............................. <tSpr>
-  [178] pushint8 100 ............................ <100>
-  [180] setobjprop 362 .......................... tSpr.blend = 100
-  [183] getlocal 1 .............................. <tVisObj>
-  [185] pushcons 9 .............................. <"billboard_bg">
-  [187] pusharglist 2 ........................... <tVisObj, "billboard_bg">
-  [189] objcall 1671 ............................ <tVisObj.spriteExists("billboard_bg")>
-  [192] jmpifz [222] ............................ if tVisObj.spriteExists("billboard_bg") then
-  [195] getlocal 1 .............................. <tVisObj>
-  [197] pushcons 9 .............................. <"billboard_bg">
-  [199] pusharglist 2 ........................... <tVisObj, "billboard_bg">
-  [201] objcall 181 ............................. <tVisObj.getSprById("billboard_bg")>
+  [  0] pushsymb 52 ............................. <#room>
+  [  2] pusharglist 1 ........................... <#room>
+  [  4] extcall 51 .............................. <getThread(#room)>
+  [  6] setlocal 0 .............................. tThread = getThread(#room)
+  [  8] getlocal 0 .............................. <tThread>
+  [ 10] pushzero ................................ <0>
+  [ 11] eq ...................................... <tThread = 0>
+  [ 12] jmpifz [ 20] ............................ if tThread = 0 then
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 31 .............................. return 0
+  [ 20] getlocal 0 .............................. <tThread>
+  [ 22] pusharglist 1 ........................... <tThread>
+  [ 24] objcall 53 .............................. <tThread.getInterface()>
+  [ 26] pusharglist 1 ........................... <tThread.getInterface()>
+  [ 28] objcall 119 ............................. <tThread.getInterface().getRoomVisualizer()>
+  [ 30] setlocal 1 .............................. tVisObj = tThread.getInterface().getRoomVisualizer()
+  [ 32] getlocal 1 .............................. <tVisObj>
+  [ 34] pushzero ................................ <0>
+  [ 35] eq ...................................... <tVisObj = 0>
+  [ 36] jmpifz [ 44] ............................ if tVisObj = 0 then
+  [ 39] pushzero ................................ <0>
+  [ 40] pusharglistnoret 1 ...................... <0>
+  [ 42] extcall 31 .............................. return 0
+  [ 44] getlocal 1 .............................. <tVisObj>
+  [ 46] pushcons 2 .............................. <"billboard_img">
+  [ 48] pusharglist 2 ........................... <tVisObj, "billboard_img">
+  [ 50] objcall 1667 ............................ <tVisObj.spriteExists("billboard_img")>
+  [ 53] jmpifz [316] ............................ if tVisObj.spriteExists("billboard_img") then
+  [ 56] getlocal 1 .............................. <tVisObj>
+  [ 58] getobjprop 923 .......................... <tVisObj.pLayout>
+  [ 61] getprop 1670 ............................ <pRegisteredLayout>
+  [ 64] nteq .................................... <tVisObj.pLayout <> pRegisteredLayout>
+  [ 65] jmpifz [ 73] ............................ if tVisObj.pLayout <> pRegisteredLayout then
+  [ 68] pushzero ................................ <0>
+  [ 69] pusharglistnoret 1 ...................... <0>
+  [ 71] extcall 31 .............................. return 0
+  [ 73] getlocal 1 .............................. <tVisObj>
+  [ 75] pushcons 2 .............................. <"billboard_img">
+  [ 77] pusharglist 2 ........................... <tVisObj, "billboard_img">
+  [ 79] objcall 282 ............................. <tVisObj.getSprById("billboard_img")>
+  [ 82] setlocal 2 .............................. tSpr = tVisObj.getSprById("billboard_img")
+  [ 84] getlocal 2 .............................. <tSpr>
+  [ 86] setprop 404 ............................. pSprite = tSpr
+  [ 89] getlocal 2 .............................. <tSpr>
+  [ 91] getprop 1669 ............................ <pAdMemNum>
+  [ 94] pusharglist 1 ........................... <pAdMemNum>
+  [ 96] extcall 64 .............................. <member(pAdMemNum)>
+  [ 98] pusharglistnoret 2 ...................... <tSpr, member(pAdMemNum)>
+  [100] objcall 485 ............................. tSpr.setMember(member(pAdMemNum))
+  [103] getlocal 2 .............................. <tSpr>
+  [105] getprop 1669 ............................ <pAdMemNum>
+  [108] pusharglist 1 ........................... <pAdMemNum>
+  [110] extcall 64 .............................. <member(pAdMemNum)>
+  [112] getobjprop 80 ........................... <member(pAdMemNum).width>
+  [114] setobjprop 80 ........................... tSpr.width = member(pAdMemNum).width
+  [116] getlocal 2 .............................. <tSpr>
+  [118] getprop 1669 ............................ <pAdMemNum>
+  [121] pusharglist 1 ........................... <pAdMemNum>
+  [123] extcall 64 .............................. <member(pAdMemNum)>
+  [125] getobjprop 81 ........................... <member(pAdMemNum).height>
+  [127] setobjprop 81 ........................... tSpr.height = member(pAdMemNum).height
+  [129] getprop 1669 ............................ <pAdMemNum>
+  [132] pusharglist 1 ........................... <pAdMemNum>
+  [134] extcall 64 .............................. <member(pAdMemNum)>
+  [136] pushzero ................................ <0>
+  [137] setobjprop 995 .......................... member(pAdMemNum).trimWhiteSpace = 0
+  [140] getprop 1660 ............................ <pBlendFlag>
+  [143] jmpifz [171] ............................ if pBlendFlag then / else
+  [146] getlocal 2 .............................. <tSpr>
+  [148] pushzero ................................ <0>
+  [149] setobjprop 436 .......................... tSpr.blend = 0
+  [152] pushcons 14 ............................. <"fadein">
+  [154] setprop 1175 ............................ pState = "fadein"
+  [157] getparam 0 .............................. <me>
+  [159] pusharglist 1 ........................... <me>
+  [161] objcall 75 .............................. <me.getID()>
+  [163] pusharglistnoret 1 ...................... <me.getID()>
+  [165] extcall 283 ............................. receiveUpdate(me.getID())
+  [168] jmp [182]
+  [171] pushzero ................................ <0>
+  [172] setprop 1175 ............................ pState = 0
+  [175] getlocal 2 .............................. <tSpr>
+  [177] pushint8 100 ............................ <100>
+  [179] setobjprop 436 .......................... tSpr.blend = 100
+  [182] getlocal 1 .............................. <tVisObj>
+  [184] pushcons 9 .............................. <"billboard_bg">
+  [186] pusharglist 2 ........................... <tVisObj, "billboard_bg">
+  [188] objcall 1667 ............................ <tVisObj.spriteExists("billboard_bg")>
+  [191] jmpifz [222] ............................ if tVisObj.spriteExists("billboard_bg") then
+  [194] getlocal 1 .............................. <tVisObj>
+  [196] pushcons 9 .............................. <"billboard_bg">
+  [198] pusharglist 2 ........................... <tVisObj, "billboard_bg">
+  [200] objcall 282 ............................. <tVisObj.getSprById("billboard_bg")>
   [203] setlocal 2 .............................. tSpr = tVisObj.getSprById("billboard_bg")
   [205] getlocal 2 .............................. <tSpr>
-  [207] getchainedprop 30 ....................... <tSpr.member>
+  [207] getchainedprop 64 ....................... <tSpr.member>
   [209] pushcons 15 ............................. <"adframe_palette2">
   [211] pusharglist 1 ........................... <"adframe_palette2">
-  [213] extcall 37 .............................. <getmemnum("adframe_palette2")>
+  [213] extcall 65 .............................. <getmemnum("adframe_palette2")>
   [215] pusharglist 1 ........................... <getmemnum("adframe_palette2")>
-  [217] extcall 30 .............................. <member(getmemnum("adframe_palette2"))>
-  [219] setobjprop 1163 ......................... tSpr.member.paletteRef = member(getmemnum("adframe_palette2"))
-  [222] getprop 1675 ............................ <pClickURL>
+  [217] extcall 64 .............................. <member(getmemnum("adframe_palette2"))>
+  [219] setobjprop 1192 ......................... tSpr.member.paletteRef = member(getmemnum("adframe_palette2"))
+  [222] getprop 1671 ............................ <pClickURL>
   [225] pusharglist 1 ........................... <pClickURL>
-  [227] extcall 10 .............................. <voidp(pClickURL)>
+  [227] extcall 120 ............................. <voidp(pClickURL)>
   [229] not ..................................... <not voidp(pClickURL)>
   [230] jmpifz [243] ............................ if not voidp(pClickURL) then
-  [233] getprop 327 ............................. <pSprite>
+  [233] getprop 404 ............................. <pSprite>
   [236] pushcons 16 ............................. <"cursor.finger">
   [238] pusharglistnoret 2 ...................... <pSprite, "cursor.finger">
-  [240] objcall 671 ............................. pSprite.setcursor("cursor.finger")
-  [243] getprop 327 ............................. <pSprite>
-  [246] pushsymb 328 ............................ <#eventProc>
+  [240] objcall 725 ............................. pSprite.setcursor("cursor.finger")
+  [243] getprop 404 ............................. <pSprite>
+  [246] pushsymb 405 ............................ <#eventProc>
   [249] getparam 0 .............................. <me>
   [251] pusharglist 1 ........................... <me>
-  [253] objcall 156 ............................. <me.getID()>
-  [255] pushsymb 41 ............................. <#mouseUp>
+  [253] objcall 75 .............................. <me.getID()>
+  [255] pushsymb 160 ............................ <#mouseUp>
   [257] pusharglistnoret 4 ...................... <pSprite, #eventProc, me.getID(), #mouseUp>
-  [259] objcall 179 ............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseUp)
-  [261] getprop 327 ............................. <pSprite>
-  [264] pushsymb 328 ............................ <#eventProc>
+  [259] objcall 84 .............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseUp)
+  [261] getprop 404 ............................. <pSprite>
+  [264] pushsymb 405 ............................ <#eventProc>
   [267] getparam 0 .............................. <me>
   [269] pusharglist 1 ........................... <me>
-  [271] objcall 156 ............................. <me.getID()>
-  [273] pushsymb 212 ............................ <#mouseEnter>
+  [271] objcall 75 .............................. <me.getID()>
+  [273] pushsymb 86 ............................. <#mouseEnter>
   [275] pusharglistnoret 4 ...................... <pSprite, #eventProc, me.getID(), #mouseEnter>
-  [277] objcall 179 ............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseEnter)
-  [279] getprop 327 ............................. <pSprite>
-  [282] pushsymb 328 ............................ <#eventProc>
+  [277] objcall 84 .............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseEnter)
+  [279] getprop 404 ............................. <pSprite>
+  [282] pushsymb 405 ............................ <#eventProc>
   [285] getparam 0 .............................. <me>
   [287] pusharglist 1 ........................... <me>
-  [289] objcall 156 ............................. <me.getID()>
-  [291] pushsymb 213 ............................ <#mouseLeave>
+  [289] objcall 75 .............................. <me.getID()>
+  [291] pushsymb 87 ............................. <#mouseLeave>
   [293] pusharglistnoret 4 ...................... <pSprite, #eventProc, me.getID(), #mouseLeave>
-  [295] objcall 179 ............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseLeave)
-  [297] getprop 327 ............................. <pSprite>
-  [300] pushsymb 328 ............................ <#eventProc>
+  [295] objcall 84 .............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseLeave)
+  [297] getprop 404 ............................. <pSprite>
+  [300] pushsymb 405 ............................ <#eventProc>
   [303] getparam 0 .............................. <me>
   [305] pusharglist 1 ........................... <me>
-  [307] objcall 156 ............................. <me.getID()>
-  [309] pushsymb 329 ............................ <#mouseWithin>
+  [307] objcall 75 .............................. <me.getID()>
+  [309] pushsymb 406 ............................ <#mouseWithin>
   [312] pusharglistnoret 4 ...................... <pSprite, #eventProc, me.getID(), #mouseWithin>
-  [314] objcall 179 ............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseWithin)
+  [314] objcall 84 .............................. pSprite.registerProcedure(#eventProc, me.getID(), #mouseWithin)
   [316] ret
 end
 
 on removeAd me
   [  0] pushzero ................................ <0>
-  [  1] setprop 11 .............................. pState = 0
-  [  3] pushzero ................................ <0>
-  [  4] setprop 327 ............................. pSprite = 0
-  [  7] getprop 1670 ............................ <pToolTipSpr>
-  [ 10] getobjprop 248 .......................... <pToolTipSpr.ilk>
-  [ 12] pushsymb 182 ............................ <#sprite>
-  [ 14] eq ...................................... <pToolTipSpr.ilk = #sprite>
-  [ 15] jmpifz [ 35] ............................ if pToolTipSpr.ilk = #sprite then
-  [ 18] getprop 1670 ............................ <pToolTipSpr>
-  [ 21] getobjprop 18 ........................... <pToolTipSpr.spriteNum>
-  [ 23] pusharglistnoret 1 ...................... <pToolTipSpr.spriteNum>
-  [ 25] extcall 367 ............................. releaseSprite(pToolTipSpr.spriteNum)
+  [  1] setprop 1175 ............................ pState = 0
+  [  4] pushzero ................................ <0>
+  [  5] setprop 404 ............................. pSprite = 0
+  [  8] getprop 1666 ............................ <pToolTipSpr>
+  [ 11] getobjprop 127 .......................... <pToolTipSpr.ilk>
+  [ 13] pushsymb 73 ............................. <#sprite>
+  [ 15] eq ...................................... <pToolTipSpr.ilk = #sprite>
+  [ 16] jmpifz [ 35] ............................ if pToolTipSpr.ilk = #sprite then
+  [ 19] getprop 1666 ............................ <pToolTipSpr>
+  [ 22] getobjprop 36 ........................... <pToolTipSpr.spriteNum>
+  [ 24] pusharglistnoret 1 ...................... <pToolTipSpr.spriteNum>
+  [ 26] extcall 35 .............................. releaseSprite(pToolTipSpr.spriteNum)
   [ 28] pusharglist 0 ........................... <>
-  [ 30] extcall 159 ............................. <VOID>
-  [ 32] setprop 1670 ............................ pToolTipSpr = VOID
-  [ 35] getprop 1667 ............................ <pMemberID>
+  [ 30] extcall 30 .............................. <VOID>
+  [ 32] setprop 1666 ............................ pToolTipSpr = VOID
+  [ 35] getprop 1663 ............................ <pMemberID>
   [ 38] pusharglist 1 ........................... <pMemberID>
-  [ 40] extcall 35 .............................. <memberExists(pMemberID)>
+  [ 40] extcall 62 .............................. <memberExists(pMemberID)>
   [ 42] jmpifz [ 53] ............................ if memberExists(pMemberID) then
-  [ 45] getprop 1667 ............................ <pMemberID>
+  [ 45] getprop 1663 ............................ <pMemberID>
   [ 48] pusharglistnoret 1 ...................... <pMemberID>
-  [ 50] extcall 1116 ............................ removeMember(pMemberID)
-  [ 53] getprop 1665 ............................ <pDLCounter>
+  [ 50] extcall 1145 ............................ removeMember(pMemberID)
+  [ 53] getprop 1661 ............................ <pDLCounter>
   [ 56] pushint8 1 .............................. <1>
   [ 58] add ..................................... <pDLCounter + 1>
-  [ 59] setprop 1665 ............................ pDLCounter = pDLCounter + 1
-  [ 62] getprop 1663 ............................ <pTimeOutID>
+  [ 59] setprop 1661 ............................ pDLCounter = pDLCounter + 1
+  [ 62] getprop 1659 ............................ <pTimeOutID>
   [ 65] pusharglist 1 ........................... <pTimeOutID>
-  [ 67] extcall 229 ............................. <timeoutExists(pTimeOutID)>
-  [ 69] jmpifz [ 79] ............................ if timeoutExists(pTimeOutID) then
-  [ 72] getprop 1663 ............................ <pTimeOutID>
-  [ 75] pusharglistnoret 1 ...................... <pTimeOutID>
-  [ 77] extcall 231 ............................. removeTimeout(pTimeOutID)
-  [ 79] getparam 0 .............................. <me>
-  [ 81] pusharglist 1 ........................... <me>
-  [ 83] objcall 156 ............................. <me.getID()>
-  [ 85] pusharglistnoret 1 ...................... <me.getID()>
-  [ 87] extcall 199 ............................. removeUpdate(me.getID())
-  [ 89] ret
+  [ 67] extcall 324 ............................. <timeoutExists(pTimeOutID)>
+  [ 70] jmpifz [ 81] ............................ if timeoutExists(pTimeOutID) then
+  [ 73] getprop 1659 ............................ <pTimeOutID>
+  [ 76] pusharglistnoret 1 ...................... <pTimeOutID>
+  [ 78] extcall 326 ............................. removeTimeout(pTimeOutID)
+  [ 81] getparam 0 .............................. <me>
+  [ 83] pusharglist 1 ........................... <me>
+  [ 85] objcall 75 .............................. <me.getID()>
+  [ 87] pusharglistnoret 1 ...................... <me.getID()>
+  [ 89] extcall 298 ............................. removeUpdate(me.getID())
+  [ 92] ret
 end
 
 on ShowToolTip me
-  [  0] getprop 1670 ............................ <pToolTipSpr>
-  [  3] getobjprop 248 .......................... <pToolTipSpr.ilk>
-  [  5] pushsymb 182 ............................ <#sprite>
+  [  0] getprop 1666 ............................ <pToolTipSpr>
+  [  3] getobjprop 127 .......................... <pToolTipSpr.ilk>
+  [  5] pushsymb 73 ............................. <#sprite>
   [  7] nteq .................................... <pToolTipSpr.ilk <> #sprite>
-  [  8] jmpifz [ 68] ............................ if pToolTipSpr.ilk <> #sprite then
+  [  8] jmpifz [ 66] ............................ if pToolTipSpr.ilk <> #sprite then
   [ 11] getparam 0 .............................. <me>
   [ 13] pusharglist 1 ........................... <me>
-  [ 15] objcall 156 ............................. <me.getID()>
+  [ 15] objcall 75 .............................. <me.getID()>
   [ 17] pusharglist 1 ........................... <me.getID()>
-  [ 19] extcall 358 ............................. <reserveSprite(me.getID())>
-  [ 22] pusharglist 1 ........................... <reserveSprite(me.getID())>
-  [ 24] extcall 182 ............................. <sprite(reserveSprite(me.getID()))>
-  [ 26] setprop 1670 ............................ pToolTipSpr = sprite(reserveSprite(me.getID()))
-  [ 29] getprop 1670 ............................ <pToolTipSpr>
-  [ 32] pushint8 8 .............................. <8>
-  [ 34] setobjprop 419 .......................... pToolTipSpr.ink = 8
-  [ 37] pushcons 17 ............................. <"adtooltip">
-  [ 39] pusharglist 1 ........................... <"adtooltip">
-  [ 41] extcall 35 .............................. <memberExists("adtooltip")>
-  [ 43] not ..................................... <not memberExists("adtooltip")>
-  [ 44] jmpifz [ 53] ............................ if not memberExists("adtooltip") then
-  [ 47] getparam 0 .............................. <me>
-  [ 49] pusharglistnoret 1 ...................... <me>
-  [ 51] localcall 9 ............................. createToolTipMember(me)
-  [ 53] getprop 1670 ............................ <pToolTipSpr>
-  [ 56] pushcons 17 ............................. <"adtooltip">
-  [ 58] pusharglist 1 ........................... <"adtooltip">
-  [ 60] extcall 37 .............................. <getmemnum("adtooltip")>
-  [ 62] pusharglist 1 ........................... <getmemnum("adtooltip")>
-  [ 64] extcall 30 .............................. <member(getmemnum("adtooltip"))>
-  [ 66] setobjprop 30 ........................... pToolTipSpr.member = member(getmemnum("adtooltip"))
-  [ 68] getmovieprop 479 ........................ <the mouseLoc>
-  [ 71] pushzero ................................ <0>
-  [ 72] pushint8 30 ............................. <30>
-  [ 74] pusharglist 2 ........................... <0, 30>
-  [ 76] extcall 293 ............................. <point(0, 30)>
-  [ 79] add ..................................... <the mouseLoc + point(0, 30)>
-  [ 80] setlocal 0 .............................. tNewLoc = the mouseLoc + point(0, 30)
-  [ 82] getlocal 0 .............................. <tNewLoc>
-  [ 84] getobjprop 500 .......................... <tNewLoc.locV>
-  [ 87] getprop 1670 ............................ <pToolTipSpr>
-  [ 90] getobjprop 291 .......................... <pToolTipSpr.height>
-  [ 93] pushint8 2 .............................. <2>
-  [ 95] div ..................................... <pToolTipSpr.height / 2>
-  [ 96] sub ..................................... <tNewLoc.locV - (pToolTipSpr.height / 2)>
-  [ 97] pushint8 10 ............................. <10>
-  [ 99] lt ...................................... <(tNewLoc.locV - (pToolTipSpr.height / 2)) < 10>
-  [100] jmpifz [120] ............................ if (tNewLoc.locV - (pToolTipSpr.height / 2)) < 10 then
-  [103] getlocal 0 .............................. <tNewLoc>
-  [105] pushint8 10 ............................. <10>
-  [107] getprop 1670 ............................ <pToolTipSpr>
-  [110] getobjprop 291 .......................... <pToolTipSpr.height>
-  [113] pushint8 2 .............................. <2>
-  [115] div ..................................... <pToolTipSpr.height / 2>
-  [116] add ..................................... <10 + (pToolTipSpr.height / 2)>
-  [117] setobjprop 500 .......................... tNewLoc.locV = 10 + (pToolTipSpr.height / 2)
-  [120] getlocal 0 .............................. <tNewLoc>
-  [122] getobjprop 255 .......................... <tNewLoc.locH>
-  [124] getprop 1670 ............................ <pToolTipSpr>
-  [127] getobjprop 252 .......................... <pToolTipSpr.width>
-  [129] pushint8 2 .............................. <2>
-  [131] div ..................................... <pToolTipSpr.width / 2>
-  [132] sub ..................................... <tNewLoc.locH - (pToolTipSpr.width / 2)>
-  [133] pushint8 10 ............................. <10>
-  [135] lt ...................................... <(tNewLoc.locH - (pToolTipSpr.width / 2)) < 10>
-  [136] jmpifz [154] ............................ if (tNewLoc.locH - (pToolTipSpr.width / 2)) < 10 then
-  [139] getlocal 0 .............................. <tNewLoc>
-  [141] pushint8 10 ............................. <10>
-  [143] getprop 1670 ............................ <pToolTipSpr>
-  [146] getobjprop 252 .......................... <pToolTipSpr.width>
-  [148] pushint8 2 .............................. <2>
-  [150] div ..................................... <pToolTipSpr.width / 2>
-  [151] add ..................................... <10 + (pToolTipSpr.width / 2)>
-  [152] setobjprop 255 .......................... tNewLoc.locH = 10 + (pToolTipSpr.width / 2)
-  [154] getlocal 0 .............................. <tNewLoc>
-  [156] getobjprop 255 .......................... <tNewLoc.locH>
-  [158] getprop 1670 ............................ <pToolTipSpr>
-  [161] getobjprop 252 .......................... <pToolTipSpr.width>
-  [163] pushint8 2 .............................. <2>
-  [165] div ..................................... <pToolTipSpr.width / 2>
-  [166] add ..................................... <tNewLoc.locH + (pToolTipSpr.width / 2)>
-  [167] getmovieprop 253 ........................ <the stage>
-  [169] getchainedprop 254 ...................... <(the stage).sourceRect>
-  [171] getobjprop 252 .......................... <(the stage).sourceRect.width>
-  [173] pushint8 10 ............................. <10>
-  [175] sub ..................................... <(the stage).sourceRect.width - 10>
-  [176] gt ...................................... <(tNewLoc.locH + (pToolTipSpr.width / 2)) > ((the stage).sourceRect.width - 10)>
-  [177] jmpifz [202] ............................ if (tNewLoc.locH + (pToolTipSpr.width / 2)) > ((the stage).sourceRect.width - 10) then
-  [180] getlocal 0 .............................. <tNewLoc>
-  [182] getmovieprop 253 ........................ <the stage>
-  [184] getchainedprop 254 ...................... <(the stage).sourceRect>
-  [186] getobjprop 252 .......................... <(the stage).sourceRect.width>
-  [188] pushint8 10 ............................. <10>
-  [190] sub ..................................... <(the stage).sourceRect.width - 10>
-  [191] getprop 1670 ............................ <pToolTipSpr>
-  [194] getobjprop 252 .......................... <pToolTipSpr.width>
-  [196] pushint8 2 .............................. <2>
-  [198] div ..................................... <pToolTipSpr.width / 2>
-  [199] sub ..................................... <(the stage).sourceRect.width - 10 - (pToolTipSpr.width / 2)>
-  [200] setobjprop 255 .......................... tNewLoc.locH = (the stage).sourceRect.width - 10 - (pToolTipSpr.width / 2)
-  [202] getprop 1670 ............................ <pToolTipSpr>
-  [205] getlocal 0 .............................. <tNewLoc>
-  [207] setobjprop 361 .......................... pToolTipSpr.loc = tNewLoc
-  [210] ret
+  [ 19] extcall 74 .............................. <reserveSprite(me.getID())>
+  [ 21] pusharglist 1 ........................... <reserveSprite(me.getID())>
+  [ 23] extcall 73 .............................. <sprite(reserveSprite(me.getID()))>
+  [ 25] setprop 1666 ............................ pToolTipSpr = sprite(reserveSprite(me.getID()))
+  [ 28] getprop 1666 ............................ <pToolTipSpr>
+  [ 31] pushint8 8 .............................. <8>
+  [ 33] setobjprop 93 ........................... pToolTipSpr.ink = 8
+  [ 35] pushcons 17 ............................. <"adtooltip">
+  [ 37] pusharglist 1 ........................... <"adtooltip">
+  [ 39] extcall 62 .............................. <memberExists("adtooltip")>
+  [ 41] not ..................................... <not memberExists("adtooltip")>
+  [ 42] jmpifz [ 51] ............................ if not memberExists("adtooltip") then
+  [ 45] getparam 0 .............................. <me>
+  [ 47] pusharglistnoret 1 ...................... <me>
+  [ 49] localcall 9 ............................. createToolTipMember(me)
+  [ 51] getprop 1666 ............................ <pToolTipSpr>
+  [ 54] pushcons 17 ............................. <"adtooltip">
+  [ 56] pusharglist 1 ........................... <"adtooltip">
+  [ 58] extcall 65 .............................. <getmemnum("adtooltip")>
+  [ 60] pusharglist 1 ........................... <getmemnum("adtooltip")>
+  [ 62] extcall 64 .............................. <member(getmemnum("adtooltip"))>
+  [ 64] setobjprop 64 ........................... pToolTipSpr.member = member(getmemnum("adtooltip"))
+  [ 66] getmovieprop 541 ........................ <the mouseLoc>
+  [ 69] pushzero ................................ <0>
+  [ 70] pushint8 30 ............................. <30>
+  [ 72] pusharglist 2 ........................... <0, 30>
+  [ 74] extcall 375 ............................. <point(0, 30)>
+  [ 77] add ..................................... <the mouseLoc + point(0, 30)>
+  [ 78] setlocal 0 .............................. tNewLoc = the mouseLoc + point(0, 30)
+  [ 80] getlocal 0 .............................. <tNewLoc>
+  [ 82] getobjprop 113 .......................... <tNewLoc.locV>
+  [ 84] getprop 1666 ............................ <pToolTipSpr>
+  [ 87] getobjprop 81 ........................... <pToolTipSpr.height>
+  [ 89] pushint8 2 .............................. <2>
+  [ 91] div ..................................... <pToolTipSpr.height / 2>
+  [ 92] sub ..................................... <tNewLoc.locV - (pToolTipSpr.height / 2)>
+  [ 93] pushint8 10 ............................. <10>
+  [ 95] lt ...................................... <(tNewLoc.locV - (pToolTipSpr.height / 2)) < 10>
+  [ 96] jmpifz [114] ............................ if (tNewLoc.locV - (pToolTipSpr.height / 2)) < 10 then
+  [ 99] getlocal 0 .............................. <tNewLoc>
+  [101] pushint8 10 ............................. <10>
+  [103] getprop 1666 ............................ <pToolTipSpr>
+  [106] getobjprop 81 ........................... <pToolTipSpr.height>
+  [108] pushint8 2 .............................. <2>
+  [110] div ..................................... <pToolTipSpr.height / 2>
+  [111] add ..................................... <10 + (pToolTipSpr.height / 2)>
+  [112] setobjprop 113 .......................... tNewLoc.locV = 10 + (pToolTipSpr.height / 2)
+  [114] getlocal 0 .............................. <tNewLoc>
+  [116] getobjprop 112 .......................... <tNewLoc.locH>
+  [118] getprop 1666 ............................ <pToolTipSpr>
+  [121] getobjprop 80 ........................... <pToolTipSpr.width>
+  [123] pushint8 2 .............................. <2>
+  [125] div ..................................... <pToolTipSpr.width / 2>
+  [126] sub ..................................... <tNewLoc.locH - (pToolTipSpr.width / 2)>
+  [127] pushint8 10 ............................. <10>
+  [129] lt ...................................... <(tNewLoc.locH - (pToolTipSpr.width / 2)) < 10>
+  [130] jmpifz [148] ............................ if (tNewLoc.locH - (pToolTipSpr.width / 2)) < 10 then
+  [133] getlocal 0 .............................. <tNewLoc>
+  [135] pushint8 10 ............................. <10>
+  [137] getprop 1666 ............................ <pToolTipSpr>
+  [140] getobjprop 80 ........................... <pToolTipSpr.width>
+  [142] pushint8 2 .............................. <2>
+  [144] div ..................................... <pToolTipSpr.width / 2>
+  [145] add ..................................... <10 + (pToolTipSpr.width / 2)>
+  [146] setobjprop 112 .......................... tNewLoc.locH = 10 + (pToolTipSpr.width / 2)
+  [148] getlocal 0 .............................. <tNewLoc>
+  [150] getobjprop 112 .......................... <tNewLoc.locH>
+  [152] getprop 1666 ............................ <pToolTipSpr>
+  [155] getobjprop 80 ........................... <pToolTipSpr.width>
+  [157] pushint8 2 .............................. <2>
+  [159] div ..................................... <pToolTipSpr.width / 2>
+  [160] add ..................................... <tNewLoc.locH + (pToolTipSpr.width / 2)>
+  [161] getmovieprop 342 ........................ <the stage>
+  [164] getchainedprop 343 ...................... <(the stage).sourceRect>
+  [167] getobjprop 80 ........................... <(the stage).sourceRect.width>
+  [169] pushint8 10 ............................. <10>
+  [171] sub ..................................... <(the stage).sourceRect.width - 10>
+  [172] gt ...................................... <(tNewLoc.locH + (pToolTipSpr.width / 2)) > ((the stage).sourceRect.width - 10)>
+  [173] jmpifz [200] ............................ if (tNewLoc.locH + (pToolTipSpr.width / 2)) > ((the stage).sourceRect.width - 10) then
+  [176] getlocal 0 .............................. <tNewLoc>
+  [178] getmovieprop 342 ........................ <the stage>
+  [181] getchainedprop 343 ...................... <(the stage).sourceRect>
+  [184] getobjprop 80 ........................... <(the stage).sourceRect.width>
+  [186] pushint8 10 ............................. <10>
+  [188] sub ..................................... <(the stage).sourceRect.width - 10>
+  [189] getprop 1666 ............................ <pToolTipSpr>
+  [192] getobjprop 80 ........................... <pToolTipSpr.width>
+  [194] pushint8 2 .............................. <2>
+  [196] div ..................................... <pToolTipSpr.width / 2>
+  [197] sub ..................................... <(the stage).sourceRect.width - 10 - (pToolTipSpr.width / 2)>
+  [198] setobjprop 112 .......................... tNewLoc.locH = (the stage).sourceRect.width - 10 - (pToolTipSpr.width / 2)
+  [200] getprop 1666 ............................ <pToolTipSpr>
+  [203] getlocal 0 .............................. <tNewLoc>
+  [205] setobjprop 435 .......................... pToolTipSpr.loc = tNewLoc
+  [208] ret
 end
 
 on createToolTipMember me
   [  0] pushcons 17 ............................. <"adtooltip">
-  [  2] pushsymb 321 ............................ <#bitmap>
+  [  2] pushsymb 399 ............................ <#bitmap>
   [  5] pusharglistnoret 2 ...................... <"adtooltip", #bitmap>
-  [  7] extcall 359 ............................. createMember("adtooltip", #bitmap)
+  [  7] extcall 433 ............................. createMember("adtooltip", #bitmap)
   [ 10] pushcons 18 ............................. <"ad_note">
   [ 12] pushcons 19 ............................. <"Clicking this advertisement will open a new window">
   [ 14] pusharglist 2 ........................... <"ad_note", "Clicking this advertisement will open a new window">
-  [ 16] extcall 136 ............................. <getText("ad_note", "Clicking this advertisement will open a new window")>
+  [ 16] extcall 55 .............................. <getText("ad_note", "Clicking this advertisement will open a new window")>
   [ 18] setlocal 0 .............................. tText = getText("ad_note", "Clicking this advertisement will open a new window")
   [ 20] pushcons 20 ............................. <"struct.font.bold">
   [ 22] pusharglist 1 ........................... <"struct.font.bold">
-  [ 24] extcall 1526 ............................ <getStructVariable("struct.font.bold")>
+  [ 24] extcall 1521 ............................ <getStructVariable("struct.font.bold")>
   [ 27] setlocal 1 .............................. tFontStruct = getStructVariable("struct.font.bold")
   [ 29] pushcons 21 ............................. <"adtooltiptext">
-  [ 31] pushsymb 872 ............................ <#text>
+  [ 31] pushsymb 914 ............................ <#text>
   [ 34] pusharglist 2 ........................... <"adtooltiptext", #text>
-  [ 36] extcall 359 ............................. <createMember("adtooltiptext", #text)>
+  [ 36] extcall 433 ............................. <createMember("adtooltiptext", #text)>
   [ 39] pusharglist 1 ........................... <createMember("adtooltiptext", #text)>
-  [ 41] extcall 30 .............................. <member(createMember("adtooltiptext", #text))>
+  [ 41] extcall 64 .............................. <member(createMember("adtooltiptext", #text))>
   [ 43] setlocal 2 .............................. tmember = member(createMember("adtooltiptext", #text))
   [ 45] getlocal 2 .............................. <tmember>
   [ 47] pushzero ................................ <0>
-  [ 48] setobjprop 1527 ......................... tmember.wordWrap = 0
+  [ 48] setobjprop 1522 ......................... tmember.wordWrap = 0
   [ 51] getlocal 2 .............................. <tmember>
-  [ 53] pushsymb 1528 ........................... <#adjust>
-  [ 56] setobjprop 1529 ......................... tmember.boxType = #adjust
+  [ 53] pushsymb 1523 ........................... <#adjust>
+  [ 56] setobjprop 1524 ......................... tmember.boxType = #adjust
   [ 59] getlocal 2 .............................. <tmember>
   [ 61] pushzero ................................ <0>
-  [ 62] setobjprop 1530 ......................... tmember.antialias = 0
+  [ 62] setobjprop 1525 ......................... tmember.antialias = 0
   [ 65] getlocal 2 .............................. <tmember>
   [ 67] getlocal 1 .............................. <tFontStruct>
-  [ 69] pushsymb 1531 ........................... <#font>
+  [ 69] pushsymb 1526 ........................... <#font>
   [ 72] pusharglist 2 ........................... <tFontStruct, #font>
-  [ 74] objcall 247 ............................. <tFontStruct.getaProp(#font)>
-  [ 76] setobjprop 1531 ......................... tmember.font = tFontStruct.getaProp(#font)
-  [ 79] getlocal 2 .............................. <tmember>
-  [ 81] getlocal 1 .............................. <tFontStruct>
-  [ 83] pushsymb 1532 ........................... <#fontSize>
-  [ 86] pusharglist 2 ........................... <tFontStruct, #fontSize>
-  [ 88] objcall 247 ............................. <tFontStruct.getaProp(#fontSize)>
-  [ 90] setobjprop 1532 ......................... tmember.fontSize = tFontStruct.getaProp(#fontSize)
-  [ 93] getlocal 2 .............................. <tmember>
-  [ 95] getlocal 1 .............................. <tFontStruct>
-  [ 97] pushsymb 1533 ........................... <#fontStyle>
-  [100] pusharglist 2 ........................... <tFontStruct, #fontStyle>
-  [102] objcall 247 ............................. <tFontStruct.getaProp(#fontStyle)>
-  [104] setobjprop 1533 ......................... tmember.fontStyle = tFontStruct.getaProp(#fontStyle)
-  [107] getlocal 2 .............................. <tmember>
-  [109] getlocal 0 .............................. <tText>
-  [111] setobjprop 872 .......................... tmember.text = tText
-  [114] pushcons 11 ............................. <"left">
-  [116] pushcons 22 ............................. <"ad.tooltip.left">
-  [118] pushcons 23 ............................. <"middle">
-  [120] pushcons 24 ............................. <"ad.tooltip.middle">
-  [122] pushcons 25 ............................. <"right">
-  [124] pushcons 26 ............................. <"ad.tooltip.right">
-  [126] pusharglist 6 ........................... <["left": "ad.tooltip.left", "middle": "ad.tooltip.middle", "right": "ad.tooltip.right"]>
-  [128] pushproplist ............................ <["left": "ad.tooltip.left", "middle": "ad.tooltip.middle", "right": "ad.tooltip.right"]>
-  [129] setlocal 3 .............................. tList = ["left": "ad.tooltip.left", "middle": "ad.tooltip.middle", "right": "ad.tooltip.right"]
-  [131] pusharglist 0 ........................... <[:]>
-  [133] pushproplist ............................ <[:]>
-  [134] setlocal 4 .............................. tImgs = [:]
-  [136] pushcons 11 ............................. <"left">
-  [138] pushcons 23 ............................. <"middle">
-  [140] pushcons 25 ............................. <"right">
-  [142] pusharglist 3 ........................... <["left", "middle", "right"]>
-  [144] pushlist ................................ <["left", "middle", "right"]>
-  [145] peek 0
-  [147] pusharglist 1
-  [149] extcall 14
-  [151] pushint8 1
-  [153] peek 0
-  [155] peek 2
-  [157] lteq
-  [158] jmpifz [204] ............................ repeat with i in ["left", "middle", "right"]
-  [161] peek 2
-  [163] peek 1
-  [165] pusharglist 2
-  [167] extcall 9
-  [169] setlocal 5
-  [171] getlocal 4 .............................. <tImgs>
-  [173] getlocal 5 .............................. <i>
-  [175] getlocal 3 .............................. <tList>
-  [177] getlocal 5 .............................. <i>
-  [179] pusharglist 2 ........................... <tList, i>
-  [181] objcall 9 ............................... <tList[i]>
-  [183] pusharglist 1 ........................... <tList[i]>
-  [185] extcall 37 .............................. <getmemnum(tList[i])>
-  [187] pusharglist 1 ........................... <getmemnum(tList[i])>
-  [189] extcall 30 .............................. <member(getmemnum(tList[i]))>
-  [191] getobjprop 290 .......................... <member(getmemnum(tList[i])).image>
-  [194] pusharglistnoret 3 ...................... <tImgs, i, member(getmemnum(tList[i])).image>
-  [196] objcall 690 ............................. tImgs.addProp(i, member(getmemnum(tList[i])).image)
-  [199] pushint8 1
-  [201] add
-  [202] endrepeat [153]
-  [204] pop 3
-  [206] getlocal 2 .............................. <tmember>
+  [ 74] objcall 339 ............................. <tFontStruct.getaProp(#font)>
+  [ 77] setobjprop 1526 ......................... tmember.font = tFontStruct.getaProp(#font)
+  [ 80] getlocal 2 .............................. <tmember>
+  [ 82] getlocal 1 .............................. <tFontStruct>
+  [ 84] pushsymb 1527 ........................... <#fontSize>
+  [ 87] pusharglist 2 ........................... <tFontStruct, #fontSize>
+  [ 89] objcall 339 ............................. <tFontStruct.getaProp(#fontSize)>
+  [ 92] setobjprop 1527 ......................... tmember.fontSize = tFontStruct.getaProp(#fontSize)
+  [ 95] getlocal 2 .............................. <tmember>
+  [ 97] getlocal 1 .............................. <tFontStruct>
+  [ 99] pushsymb 1528 ........................... <#fontStyle>
+  [102] pusharglist 2 ........................... <tFontStruct, #fontStyle>
+  [104] objcall 339 ............................. <tFontStruct.getaProp(#fontStyle)>
+  [107] setobjprop 1528 ......................... tmember.fontStyle = tFontStruct.getaProp(#fontStyle)
+  [110] getlocal 2 .............................. <tmember>
+  [112] getlocal 0 .............................. <tText>
+  [114] setobjprop 914 .......................... tmember.text = tText
+  [117] pushcons 11 ............................. <"left">
+  [119] pushcons 22 ............................. <"ad.tooltip.left">
+  [121] pushcons 23 ............................. <"middle">
+  [123] pushcons 24 ............................. <"ad.tooltip.middle">
+  [125] pushcons 25 ............................. <"right">
+  [127] pushcons 26 ............................. <"ad.tooltip.right">
+  [129] pusharglist 6 ........................... <["left": "ad.tooltip.left", "middle": "ad.tooltip.middle", "right": "ad.tooltip.right"]>
+  [131] pushproplist ............................ <["left": "ad.tooltip.left", "middle": "ad.tooltip.middle", "right": "ad.tooltip.right"]>
+  [132] setlocal 3 .............................. tList = ["left": "ad.tooltip.left", "middle": "ad.tooltip.middle", "right": "ad.tooltip.right"]
+  [134] pusharglist 0 ........................... <[:]>
+  [136] pushproplist ............................ <[:]>
+  [137] setlocal 4 .............................. tImgs = [:]
+  [139] pushcons 11 ............................. <"left">
+  [141] pushcons 23 ............................. <"middle">
+  [143] pushcons 25 ............................. <"right">
+  [145] pusharglist 3 ........................... <["left", "middle", "right"]>
+  [147] pushlist ................................ <["left", "middle", "right"]>
+  [148] peek 0
+  [150] pusharglist 1
+  [152] extcall 33
+  [154] pushint8 1
+  [156] peek 0
+  [158] peek 2
+  [160] lteq
+  [161] jmpifz [206] ............................ repeat with i in ["left", "middle", "right"]
+  [164] peek 2
+  [166] peek 1
+  [168] pusharglist 2
+  [170] extcall 34
+  [172] setlocal 5
+  [174] getlocal 4 .............................. <tImgs>
+  [176] getlocal 5 .............................. <i>
+  [178] getlocal 3 .............................. <tList>
+  [180] getlocal 5 .............................. <i>
+  [182] pusharglist 2 ........................... <tList, i>
+  [184] objcall 34 .............................. <tList[i]>
+  [186] pusharglist 1 ........................... <tList[i]>
+  [188] extcall 65 .............................. <getmemnum(tList[i])>
+  [190] pusharglist 1 ........................... <getmemnum(tList[i])>
+  [192] extcall 64 .............................. <member(getmemnum(tList[i]))>
+  [194] getobjprop 63 ........................... <member(getmemnum(tList[i])).image>
+  [196] pusharglistnoret 3 ...................... <tImgs, i, member(getmemnum(tList[i])).image>
+  [198] objcall 744 ............................. tImgs.addProp(i, member(getmemnum(tList[i])).image)
+  [201] pushint8 1
+  [203] add
+  [204] endrepeat [156]
+  [206] pop 3
   [208] getlocal 2 .............................. <tmember>
-  [210] pushsymb 450 ............................ <#char>
-  [213] pusharglist 2 ........................... <tmember, #char>
-  [215] objcall 14 .............................. <tmember.char.count>
-  [217] pusharglist 2 ........................... <tmember, tmember.char.count>
-  [219] objcall 1547 ............................ <tmember.charPosToLoc(tmember.char.count)>
-  [222] getobjprop 255 .......................... <tmember.charPosToLoc(tmember.char.count).locH>
-  [224] getlocal 4 .............................. <tImgs>
-  [226] pushcons 11 ............................. <"left">
-  [228] pusharglist 2 ........................... <tImgs, "left">
-  [230] objcall 9 ............................... <tImgs["left"]>
-  [232] getobjprop 252 .......................... <tImgs["left"].width>
-  [234] pushint8 2 .............................. <2>
-  [236] mul ..................................... <tImgs["left"].width * 2>
-  [237] add ..................................... <tmember.charPosToLoc(tmember.char.count).locH + (tImgs["left"].width * 2)>
-  [238] setlocal 6 .............................. tTextWidth = tmember.charPosToLoc(tmember.char.count).locH + (tImgs["left"].width * 2)
-  [240] getlocal 6 .............................. <tTextWidth>
-  [242] pushint8 9 .............................. <9>
-  [244] add ..................................... <tTextWidth + 9>
-  [245] setlocal 7 .............................. tWidth = tTextWidth + 9
-  [247] getlocal 2 .............................. <tmember>
-  [249] pushzero ................................ <0>
+  [210] getlocal 2 .............................. <tmember>
+  [212] pushsymb 66 ............................. <#char>
+  [214] pusharglist 2 ........................... <tmember, #char>
+  [216] objcall 33 .............................. <tmember.char.count>
+  [218] pusharglist 2 ........................... <tmember, tmember.char.count>
+  [220] objcall 1542 ............................ <tmember.charPosToLoc(tmember.char.count)>
+  [223] getobjprop 112 .......................... <tmember.charPosToLoc(tmember.char.count).locH>
+  [225] getlocal 4 .............................. <tImgs>
+  [227] pushcons 11 ............................. <"left">
+  [229] pusharglist 2 ........................... <tImgs, "left">
+  [231] objcall 34 .............................. <tImgs["left"]>
+  [233] getobjprop 80 ........................... <tImgs["left"].width>
+  [235] pushint8 2 .............................. <2>
+  [237] mul ..................................... <tImgs["left"].width * 2>
+  [238] add ..................................... <tmember.charPosToLoc(tmember.char.count).locH + (tImgs["left"].width * 2)>
+  [239] setlocal 6 .............................. tTextWidth = tmember.charPosToLoc(tmember.char.count).locH + (tImgs["left"].width * 2)
+  [241] getlocal 6 .............................. <tTextWidth>
+  [243] pushint8 9 .............................. <9>
+  [245] add ..................................... <tTextWidth + 9>
+  [246] setlocal 7 .............................. tWidth = tTextWidth + 9
+  [248] getlocal 2 .............................. <tmember>
   [250] pushzero ................................ <0>
-  [251] getlocal 6 .............................. <tTextWidth>
-  [253] getlocal 2 .............................. <tmember>
-  [255] getobjprop 291 .......................... <tmember.height>
+  [251] pushzero ................................ <0>
+  [252] getlocal 6 .............................. <tTextWidth>
+  [254] getlocal 2 .............................. <tmember>
+  [256] getobjprop 81 ........................... <tmember.height>
   [258] pusharglist 4 ........................... <0, 0, tTextWidth, tmember.height>
-  [260] extcall 322 ............................. <rect(0, 0, tTextWidth, tmember.height)>
-  [263] setobjprop 322 .......................... tmember.rect = rect(0, 0, tTextWidth, tmember.height)
-  [266] getlocal 2 .............................. <tmember>
-  [268] getobjprop 290 .......................... <tmember.image>
-  [271] setlocal 8 .............................. tTextImg = tmember.image
-  [273] getlocal 7 .............................. <tWidth>
-  [275] getlocal 4 .............................. <tImgs>
-  [277] pushcons 11 ............................. <"left">
-  [279] pusharglist 2 ........................... <tImgs, "left">
-  [281] objcall 9 ............................... <tImgs["left"]>
-  [283] getobjprop 291 .......................... <tImgs["left"].height>
-  [286] pushint8 8 .............................. <8>
-  [288] pusharglist 3 ........................... <tWidth, tImgs["left"].height, 8>
-  [290] extcall 290 ............................. <image(tWidth, tImgs["left"].height, 8)>
-  [293] setlocal 9 .............................. tNewImg = image(tWidth, tImgs["left"].height, 8)
-  [295] pushzero ................................ <0>
-  [296] setlocal 10 ............................. tStartPointY = 0
-  [298] getlocal 9 .............................. <tNewImg>
-  [300] getobjprop 291 .......................... <tNewImg.height>
-  [303] setlocal 11 ............................. tEndPointY = tNewImg.height
-  [305] pushzero ................................ <0>
-  [306] setlocal 12 ............................. tStartPointX = 0
-  [308] pushzero ................................ <0>
-  [309] setlocal 13 ............................. tEndPointX = 0
-  [311] pushcons 11 ............................. <"left">
-  [313] pushcons 23 ............................. <"middle">
-  [315] pushcons 25 ............................. <"right">
-  [317] pusharglist 3 ........................... <["left", "middle", "right"]>
-  [319] pushlist ................................ <["left", "middle", "right"]>
-  [320] peek 0
-  [322] pusharglist 1
-  [324] extcall 14
-  [326] pushint8 1
-  [328] peek 0
+  [260] extcall 137 ............................. <rect(0, 0, tTextWidth, tmember.height)>
+  [262] setobjprop 137 .......................... tmember.rect = rect(0, 0, tTextWidth, tmember.height)
+  [264] getlocal 2 .............................. <tmember>
+  [266] getobjprop 63 ........................... <tmember.image>
+  [268] setlocal 8 .............................. tTextImg = tmember.image
+  [270] getlocal 7 .............................. <tWidth>
+  [272] getlocal 4 .............................. <tImgs>
+  [274] pushcons 11 ............................. <"left">
+  [276] pusharglist 2 ........................... <tImgs, "left">
+  [278] objcall 34 .............................. <tImgs["left"]>
+  [280] getobjprop 81 ........................... <tImgs["left"].height>
+  [282] pushint8 8 .............................. <8>
+  [284] pusharglist 3 ........................... <tWidth, tImgs["left"].height, 8>
+  [286] extcall 63 .............................. <image(tWidth, tImgs["left"].height, 8)>
+  [288] setlocal 9 .............................. tNewImg = image(tWidth, tImgs["left"].height, 8)
+  [290] pushzero ................................ <0>
+  [291] setlocal 10 ............................. tStartPointY = 0
+  [293] getlocal 9 .............................. <tNewImg>
+  [295] getobjprop 81 ........................... <tNewImg.height>
+  [297] setlocal 11 ............................. tEndPointY = tNewImg.height
+  [299] pushzero ................................ <0>
+  [300] setlocal 12 ............................. tStartPointX = 0
+  [302] pushzero ................................ <0>
+  [303] setlocal 13 ............................. tEndPointX = 0
+  [305] pushcons 11 ............................. <"left">
+  [307] pushcons 23 ............................. <"middle">
+  [309] pushcons 25 ............................. <"right">
+  [311] pusharglist 3 ........................... <["left", "middle", "right"]>
+  [313] pushlist ................................ <["left", "middle", "right"]>
+  [314] peek 0
+  [316] pusharglist 1
+  [318] extcall 33
+  [320] pushint8 1
+  [322] peek 0
+  [324] peek 2
+  [326] lteq
+  [327] jmpifz [483] ............................ repeat with i in ["left", "middle", "right"]
   [330] peek 2
-  [332] lteq
-  [333] jmpifz [491] ............................ repeat with i in ["left", "middle", "right"]
-  [336] peek 2
-  [338] peek 1
-  [340] pusharglist 2
-  [342] extcall 9
-  [344] setlocal 5
-  [346] getlocal 13 ............................. <tEndPointX>
-  [348] setlocal 12 ............................. tStartPointX = tEndPointX
-  [350] getlocal 5 .............................. <i>
-  [352] peek 0 .................................. case i of
-  [354] pushcons 11 ............................. <"left">
-  [356] eq
-  [357] jmpifz [378] ............................ (case) "left":
-  [360] getlocal 13 ............................. <tEndPointX>
-  [362] getlocal 4 .............................. <tImgs>
-  [364] getlocal 5 .............................. <i>
-  [366] pusharglist 2 ........................... <tImgs, i>
-  [368] objcall 33 .............................. <tImgs.getProp(i)>
-  [370] getobjprop 252 .......................... <tImgs.getProp(i).width>
-  [372] add ..................................... <tEndPointX + tImgs.getProp(i).width>
-  [373] setlocal 13 ............................. tEndPointX = tEndPointX + tImgs.getProp(i).width
-  [375] jmp [441]
-  [378] peek 0
-  [380] pushcons 23 ............................. <"middle">
-  [382] eq
-  [383] jmpifz [418] ............................ (case) "middle":
-  [386] getlocal 13 ............................. <tEndPointX>
-  [388] getlocal 7 .............................. <tWidth>
-  [390] add ..................................... <tEndPointX + tWidth>
-  [391] getlocal 4 .............................. <tImgs>
-  [393] pushcons 11 ............................. <"left">
-  [395] pusharglist 2 ........................... <tImgs, "left">
-  [397] objcall 33 .............................. <tImgs.getProp("left")>
-  [399] getobjprop 252 .......................... <tImgs.getProp("left").width>
-  [401] sub ..................................... <tEndPointX + tWidth - tImgs.getProp("left").width>
-  [402] getlocal 4 .............................. <tImgs>
-  [404] pushcons 25 ............................. <"right">
-  [406] pusharglist 2 ........................... <tImgs, "right">
-  [408] objcall 33 .............................. <tImgs.getProp("right")>
-  [410] getobjprop 252 .......................... <tImgs.getProp("right").width>
-  [412] sub ..................................... <tEndPointX + tWidth - tImgs.getProp("left").width - tImgs.getProp("right").width>
-  [413] setlocal 13 ............................. tEndPointX = tEndPointX + tWidth - tImgs.getProp("left").width - tImgs.getProp("right").width
-  [415] jmp [441]
-  [418] peek 0
-  [420] pushcons 25 ............................. <"right">
-  [422] eq
-  [423] jmpifz [441] ............................ (case) "right":
-  [426] getlocal 13 ............................. <tEndPointX>
-  [428] getlocal 4 .............................. <tImgs>
-  [430] getlocal 5 .............................. <i>
-  [432] pusharglist 2 ........................... <tImgs, i>
-  [434] objcall 33 .............................. <tImgs.getProp(i)>
-  [436] getobjprop 252 .......................... <tImgs.getProp(i).width>
-  [438] add ..................................... <tEndPointX + tImgs.getProp(i).width>
-  [439] setlocal 13 ............................. tEndPointX = tEndPointX + tImgs.getProp(i).width
-  [441] pop 1 ................................... end case
-  [443] getlocal 12 ............................. <tStartPointX>
-  [445] getlocal 10 ............................. <tStartPointY>
-  [447] getlocal 13 ............................. <tEndPointX>
-  [449] getlocal 11 ............................. <tEndPointY>
-  [451] pusharglist 4 ........................... <tStartPointX, tStartPointY, tEndPointX, tEndPointY>
-  [453] extcall 322 ............................. <rect(tStartPointX, tStartPointY, tEndPointX, tEndPointY)>
-  [456] setlocal 14 ............................. tdestrect = rect(tStartPointX, tStartPointY, tEndPointX, tEndPointY)
-  [458] getlocal 9 .............................. <tNewImg>
-  [460] getlocal 4 .............................. <tImgs>
-  [462] getlocal 5 .............................. <i>
-  [464] pusharglist 2 ........................... <tImgs, i>
-  [466] objcall 33 .............................. <tImgs.getProp(i)>
-  [468] getlocal 14 ............................. <tdestrect>
-  [470] getlocal 4 .............................. <tImgs>
-  [472] getlocal 5 .............................. <i>
-  [474] pusharglist 2 ........................... <tImgs, i>
-  [476] objcall 33 .............................. <tImgs.getProp(i)>
-  [478] getobjprop 322 .......................... <tImgs.getProp(i).rect>
-  [481] pusharglistnoret 4 ...................... <tNewImg, tImgs.getProp(i), tdestrect, tImgs.getProp(i).rect>
-  [483] objcall 323 ............................. tNewImg.copyPixels(tImgs.getProp(i), tdestrect, tImgs.getProp(i).rect)
-  [486] pushint8 1
-  [488] add
-  [489] endrepeat [328]
-  [491] pop 3
-  [493] getlocal 4 .............................. <tImgs>
-  [495] pushcons 11 ............................. <"left">
-  [497] pusharglist 2 ........................... <tImgs, "left">
-  [499] objcall 33 .............................. <tImgs.getProp("left")>
-  [501] getobjprop 252 .......................... <tImgs.getProp("left").width>
-  [503] pushint8 8 .............................. <8>
-  [505] add ..................................... <tImgs.getProp("left").width + 8>
-  [506] setlocal 15 ............................. tMarginH = tImgs.getProp("left").width + 8
-  [508] getlocal 9 .............................. <tNewImg>
-  [510] getobjprop 291 .......................... <tNewImg.height>
-  [513] getlocal 8 .............................. <tTextImg>
-  [515] getobjprop 291 .......................... <tTextImg.height>
-  [518] sub ..................................... <tNewImg.height - tTextImg.height>
-  [519] pushint8 2 .............................. <2>
-  [521] div ..................................... <(tNewImg.height - tTextImg.height) / 2>
-  [522] setlocal 16 ............................. tMarginV = (tNewImg.height - tTextImg.height) / 2
-  [524] getlocal 8 .............................. <tTextImg>
-  [526] getobjprop 322 .......................... <tTextImg.rect>
-  [529] getlocal 15 ............................. <tMarginH>
-  [531] getlocal 16 ............................. <tMarginV>
-  [533] getlocal 15 ............................. <tMarginH>
-  [535] getlocal 16 ............................. <tMarginV>
-  [537] pusharglist 4 ........................... <tMarginH, tMarginV, tMarginH, tMarginV>
-  [539] extcall 322 ............................. <rect(tMarginH, tMarginV, tMarginH, tMarginV)>
-  [542] add ..................................... <tTextImg.rect + rect(tMarginH, tMarginV, tMarginH, tMarginV)>
-  [543] setlocal 14 ............................. tdestrect = tTextImg.rect + rect(tMarginH, tMarginV, tMarginH, tMarginV)
-  [545] getlocal 9 .............................. <tNewImg>
-  [547] getlocal 8 .............................. <tTextImg>
-  [549] getlocal 14 ............................. <tdestrect>
-  [551] getlocal 8 .............................. <tTextImg>
-  [553] getobjprop 322 .......................... <tTextImg.rect>
-  [556] pusharglistnoret 4 ...................... <tNewImg, tTextImg, tdestrect, tTextImg.rect>
-  [558] objcall 323 ............................. tNewImg.copyPixels(tTextImg, tdestrect, tTextImg.rect)
-  [561] pushcons 17 ............................. <"adtooltip">
-  [563] pusharglist 1 ........................... <"adtooltip">
-  [565] extcall 37 .............................. <getmemnum("adtooltip")>
-  [567] pusharglist 1 ........................... <getmemnum("adtooltip")>
-  [569] extcall 30 .............................. <member(getmemnum("adtooltip"))>
-  [571] getlocal 9 .............................. <tNewImg>
-  [573] setobjprop 290 .......................... member(getmemnum("adtooltip")).image = tNewImg
-  [576] pushcons 21 ............................. <"adtooltiptext">
-  [578] pusharglistnoret 1 ...................... <"adtooltiptext">
-  [580] extcall 1116 ............................ removeMember("adtooltiptext")
-  [583] ret
+  [332] peek 1
+  [334] pusharglist 2
+  [336] extcall 34
+  [338] setlocal 5
+  [340] getlocal 13 ............................. <tEndPointX>
+  [342] setlocal 12 ............................. tStartPointX = tEndPointX
+  [344] getlocal 5 .............................. <i>
+  [346] peek 0 .................................. case i of
+  [348] pushcons 11 ............................. <"left">
+  [350] eq
+  [351] jmpifz [372] ............................ (case) "left":
+  [354] getlocal 13 ............................. <tEndPointX>
+  [356] getlocal 4 .............................. <tImgs>
+  [358] getlocal 5 .............................. <i>
+  [360] pusharglist 2 ........................... <tImgs, i>
+  [362] objcall 68 .............................. <tImgs.getProp(i)>
+  [364] getobjprop 80 ........................... <tImgs.getProp(i).width>
+  [366] add ..................................... <tEndPointX + tImgs.getProp(i).width>
+  [367] setlocal 13 ............................. tEndPointX = tEndPointX + tImgs.getProp(i).width
+  [369] jmp [435]
+  [372] peek 0
+  [374] pushcons 23 ............................. <"middle">
+  [376] eq
+  [377] jmpifz [412] ............................ (case) "middle":
+  [380] getlocal 13 ............................. <tEndPointX>
+  [382] getlocal 7 .............................. <tWidth>
+  [384] add ..................................... <tEndPointX + tWidth>
+  [385] getlocal 4 .............................. <tImgs>
+  [387] pushcons 11 ............................. <"left">
+  [389] pusharglist 2 ........................... <tImgs, "left">
+  [391] objcall 68 .............................. <tImgs.getProp("left")>
+  [393] getobjprop 80 ........................... <tImgs.getProp("left").width>
+  [395] sub ..................................... <tEndPointX + tWidth - tImgs.getProp("left").width>
+  [396] getlocal 4 .............................. <tImgs>
+  [398] pushcons 25 ............................. <"right">
+  [400] pusharglist 2 ........................... <tImgs, "right">
+  [402] objcall 68 .............................. <tImgs.getProp("right")>
+  [404] getobjprop 80 ........................... <tImgs.getProp("right").width>
+  [406] sub ..................................... <tEndPointX + tWidth - tImgs.getProp("left").width - tImgs.getProp("right").width>
+  [407] setlocal 13 ............................. tEndPointX = tEndPointX + tWidth - tImgs.getProp("left").width - tImgs.getProp("right").width
+  [409] jmp [435]
+  [412] peek 0
+  [414] pushcons 25 ............................. <"right">
+  [416] eq
+  [417] jmpifz [435] ............................ (case) "right":
+  [420] getlocal 13 ............................. <tEndPointX>
+  [422] getlocal 4 .............................. <tImgs>
+  [424] getlocal 5 .............................. <i>
+  [426] pusharglist 2 ........................... <tImgs, i>
+  [428] objcall 68 .............................. <tImgs.getProp(i)>
+  [430] getobjprop 80 ........................... <tImgs.getProp(i).width>
+  [432] add ..................................... <tEndPointX + tImgs.getProp(i).width>
+  [433] setlocal 13 ............................. tEndPointX = tEndPointX + tImgs.getProp(i).width
+  [435] pop 1 ................................... end case
+  [437] getlocal 12 ............................. <tStartPointX>
+  [439] getlocal 10 ............................. <tStartPointY>
+  [441] getlocal 13 ............................. <tEndPointX>
+  [443] getlocal 11 ............................. <tEndPointY>
+  [445] pusharglist 4 ........................... <tStartPointX, tStartPointY, tEndPointX, tEndPointY>
+  [447] extcall 137 ............................. <rect(tStartPointX, tStartPointY, tEndPointX, tEndPointY)>
+  [449] setlocal 14 ............................. tdestrect = rect(tStartPointX, tStartPointY, tEndPointX, tEndPointY)
+  [451] getlocal 9 .............................. <tNewImg>
+  [453] getlocal 4 .............................. <tImgs>
+  [455] getlocal 5 .............................. <i>
+  [457] pusharglist 2 ........................... <tImgs, i>
+  [459] objcall 68 .............................. <tImgs.getProp(i)>
+  [461] getlocal 14 ............................. <tdestrect>
+  [463] getlocal 4 .............................. <tImgs>
+  [465] getlocal 5 .............................. <i>
+  [467] pusharglist 2 ........................... <tImgs, i>
+  [469] objcall 68 .............................. <tImgs.getProp(i)>
+  [471] getobjprop 137 .......................... <tImgs.getProp(i).rect>
+  [473] pusharglistnoret 4 ...................... <tNewImg, tImgs.getProp(i), tdestrect, tImgs.getProp(i).rect>
+  [475] objcall 400 ............................. tNewImg.copyPixels(tImgs.getProp(i), tdestrect, tImgs.getProp(i).rect)
+  [478] pushint8 1
+  [480] add
+  [481] endrepeat [322]
+  [483] pop 3
+  [485] getlocal 4 .............................. <tImgs>
+  [487] pushcons 11 ............................. <"left">
+  [489] pusharglist 2 ........................... <tImgs, "left">
+  [491] objcall 68 .............................. <tImgs.getProp("left")>
+  [493] getobjprop 80 ........................... <tImgs.getProp("left").width>
+  [495] pushint8 8 .............................. <8>
+  [497] add ..................................... <tImgs.getProp("left").width + 8>
+  [498] setlocal 15 ............................. tMarginH = tImgs.getProp("left").width + 8
+  [500] getlocal 9 .............................. <tNewImg>
+  [502] getobjprop 81 ........................... <tNewImg.height>
+  [504] getlocal 8 .............................. <tTextImg>
+  [506] getobjprop 81 ........................... <tTextImg.height>
+  [508] sub ..................................... <tNewImg.height - tTextImg.height>
+  [509] pushint8 2 .............................. <2>
+  [511] div ..................................... <(tNewImg.height - tTextImg.height) / 2>
+  [512] setlocal 16 ............................. tMarginV = (tNewImg.height - tTextImg.height) / 2
+  [514] getlocal 8 .............................. <tTextImg>
+  [516] getobjprop 137 .......................... <tTextImg.rect>
+  [518] getlocal 15 ............................. <tMarginH>
+  [520] getlocal 16 ............................. <tMarginV>
+  [522] getlocal 15 ............................. <tMarginH>
+  [524] getlocal 16 ............................. <tMarginV>
+  [526] pusharglist 4 ........................... <tMarginH, tMarginV, tMarginH, tMarginV>
+  [528] extcall 137 ............................. <rect(tMarginH, tMarginV, tMarginH, tMarginV)>
+  [530] add ..................................... <tTextImg.rect + rect(tMarginH, tMarginV, tMarginH, tMarginV)>
+  [531] setlocal 14 ............................. tdestrect = tTextImg.rect + rect(tMarginH, tMarginV, tMarginH, tMarginV)
+  [533] getlocal 9 .............................. <tNewImg>
+  [535] getlocal 8 .............................. <tTextImg>
+  [537] getlocal 14 ............................. <tdestrect>
+  [539] getlocal 8 .............................. <tTextImg>
+  [541] getobjprop 137 .......................... <tTextImg.rect>
+  [543] pusharglistnoret 4 ...................... <tNewImg, tTextImg, tdestrect, tTextImg.rect>
+  [545] objcall 400 ............................. tNewImg.copyPixels(tTextImg, tdestrect, tTextImg.rect)
+  [548] pushcons 17 ............................. <"adtooltip">
+  [550] pusharglist 1 ........................... <"adtooltip">
+  [552] extcall 65 .............................. <getmemnum("adtooltip")>
+  [554] pusharglist 1 ........................... <getmemnum("adtooltip")>
+  [556] extcall 64 .............................. <member(getmemnum("adtooltip"))>
+  [558] getlocal 9 .............................. <tNewImg>
+  [560] setobjprop 63 ........................... member(getmemnum("adtooltip")).image = tNewImg
+  [562] pushcons 21 ............................. <"adtooltiptext">
+  [564] pusharglistnoret 1 ...................... <"adtooltiptext">
+  [566] extcall 1145 ............................ removeMember("adtooltiptext")
+  [569] ret
 end
 
 on update me
-  [  0] getprop 11 .............................. <pState>
-  [  2] pushzero ................................ <0>
-  [  3] eq ...................................... <pState = 0>
-  [  4] jmpifz [ 21] ............................ if pState = 0 then
-  [  7] getparam 0 .............................. <me>
-  [  9] pusharglist 1 ........................... <me>
-  [ 11] objcall 156 ............................. <me.getID()>
-  [ 13] pusharglistnoret 1 ...................... <me.getID()>
-  [ 15] extcall 199 ............................. removeUpdate(me.getID())
-  [ 17] pusharglistnoret 0 ...................... <>
-  [ 19] extcall 21 .............................. return 
-  [ 21] getprop 1662 ............................ <pFrame>
-  [ 24] not ..................................... <not pFrame>
-  [ 25] setprop 1662 ............................ pFrame = not pFrame
-  [ 28] getprop 1662 ............................ <pFrame>
-  [ 31] jmpifz [ 38] ............................ if pFrame then
-  [ 34] pusharglistnoret 0 ...................... <>
-  [ 36] extcall 21 .............................. return 
-  [ 38] getprop 11 .............................. <pState>
-  [ 40] peek 0 .................................. case pState of
-  [ 42] pushcons 14 ............................. <"fadein">
-  [ 44] eq
-  [ 45] jmpifz [ 81] ............................ (case) "fadein":
-  [ 48] getprop 327 ............................. <pSprite>
-  [ 51] getobjprop 362 .......................... <pSprite.blend>
-  [ 54] pushint8 100 ............................ <100>
-  [ 56] lt ...................................... <pSprite.blend < 100>
-  [ 57] jmpifz [ 78] ............................ if pSprite.blend < 100 then / else
-  [ 60] getprop 327 ............................. <pSprite>
-  [ 63] getprop 327 ............................. <pSprite>
-  [ 66] getobjprop 362 .......................... <pSprite.blend>
-  [ 69] pushint8 10 ............................. <10>
-  [ 71] add ..................................... <pSprite.blend + 10>
-  [ 72] setobjprop 362 .......................... pSprite.blend = pSprite.blend + 10
-  [ 75] jmp [ 81]
-  [ 78] pushzero ................................ <0>
-  [ 79] setprop 11 .............................. pState = 0
-  [ 81] pop 1
-  [ 83] ret
+  [  0] getprop 1175 ............................ <pState>
+  [  3] pushzero ................................ <0>
+  [  4] eq ...................................... <pState = 0>
+  [  5] jmpifz [ 23] ............................ if pState = 0 then
+  [  8] getparam 0 .............................. <me>
+  [ 10] pusharglist 1 ........................... <me>
+  [ 12] objcall 75 .............................. <me.getID()>
+  [ 14] pusharglistnoret 1 ...................... <me.getID()>
+  [ 16] extcall 298 ............................. removeUpdate(me.getID())
+  [ 19] pusharglistnoret 0 ...................... <>
+  [ 21] extcall 31 .............................. return 
+  [ 23] getprop 1658 ............................ <pFrame>
+  [ 26] not ..................................... <not pFrame>
+  [ 27] setprop 1658 ............................ pFrame = not pFrame
+  [ 30] getprop 1658 ............................ <pFrame>
+  [ 33] jmpifz [ 40] ............................ if pFrame then
+  [ 36] pusharglistnoret 0 ...................... <>
+  [ 38] extcall 31 .............................. return 
+  [ 40] getprop 1175 ............................ <pState>
+  [ 43] peek 0 .................................. case pState of
+  [ 45] pushcons 14 ............................. <"fadein">
+  [ 47] eq
+  [ 48] jmpifz [ 85] ............................ (case) "fadein":
+  [ 51] getprop 404 ............................. <pSprite>
+  [ 54] getobjprop 436 .......................... <pSprite.blend>
+  [ 57] pushint8 100 ............................ <100>
+  [ 59] lt ...................................... <pSprite.blend < 100>
+  [ 60] jmpifz [ 81] ............................ if pSprite.blend < 100 then / else
+  [ 63] getprop 404 ............................. <pSprite>
+  [ 66] getprop 404 ............................. <pSprite>
+  [ 69] getobjprop 436 .......................... <pSprite.blend>
+  [ 72] pushint8 10 ............................. <10>
+  [ 74] add ..................................... <pSprite.blend + 10>
+  [ 75] setobjprop 436 .......................... pSprite.blend = pSprite.blend + 10
+  [ 78] jmp [ 85]
+  [ 81] pushzero ................................ <0>
+  [ 82] setprop 1175 ............................ pState = 0
+  [ 85] pop 1
+  [ 87] ret
 end
 
 on eventProc me, tEvent, tSprID, tParm
   [  0] getparam 1 .............................. <tEvent>
-  [  2] pushsymb 41 ............................. <#mouseUp>
+  [  2] pushsymb 160 ............................ <#mouseUp>
   [  4] eq ...................................... <tEvent = #mouseUp>
   [  5] jmpifz [ 30] ............................ if tEvent = #mouseUp then / else
-  [  8] getprop 1675 ............................ <pClickURL>
+  [  8] getprop 1671 ............................ <pClickURL>
   [ 11] pusharglist 1 ........................... <pClickURL>
-  [ 13] extcall 10 .............................. <voidp(pClickURL)>
+  [ 13] extcall 120 ............................. <voidp(pClickURL)>
   [ 15] not ..................................... <not voidp(pClickURL)>
   [ 16] jmpifz [ 27] ............................ if not voidp(pClickURL) then
-  [ 19] getprop 1675 ............................ <pClickURL>
+  [ 19] getprop 1671 ............................ <pClickURL>
   [ 22] pusharglistnoret 1 ...................... <pClickURL>
-  [ 24] extcall 489 ............................. openNetPage(pClickURL)
+  [ 24] extcall 550 ............................. openNetPage(pClickURL)
   [ 27] jmp [ 92]
   [ 30] getparam 1 .............................. <tEvent>
-  [ 32] pushsymb 212 ............................ <#mouseEnter>
+  [ 32] pushsymb 86 ............................. <#mouseEnter>
   [ 34] eq ...................................... <tEvent = #mouseEnter>
   [ 35] getparam 1 .............................. <tEvent>
-  [ 37] pushsymb 329 ............................ <#mouseWithin>
+  [ 37] pushsymb 406 ............................ <#mouseWithin>
   [ 40] eq ...................................... <tEvent = #mouseWithin>
   [ 41] or ...................................... <(tEvent = #mouseEnter) or (tEvent = #mouseWithin)>
   [ 42] jmpifz [ 65] ............................ if (tEvent = #mouseEnter) or (tEvent = #mouseWithin) then / else
-  [ 45] getprop 1675 ............................ <pClickURL>
+  [ 45] getprop 1671 ............................ <pClickURL>
   [ 48] pusharglist 1 ........................... <pClickURL>
-  [ 50] extcall 10 .............................. <voidp(pClickURL)>
+  [ 50] extcall 120 ............................. <voidp(pClickURL)>
   [ 52] not ..................................... <not voidp(pClickURL)>
   [ 53] jmpifz [ 62] ............................ if not voidp(pClickURL) then
   [ 56] getparam 0 .............................. <me>
@@ -1045,16 +1045,16 @@ on eventProc me, tEvent, tSprID, tParm
   [ 60] localcall 8 ............................. ShowToolTip(me)
   [ 62] jmp [ 92]
   [ 65] getparam 1 .............................. <tEvent>
-  [ 67] pushsymb 213 ............................ <#mouseLeave>
+  [ 67] pushsymb 87 ............................. <#mouseLeave>
   [ 69] eq ...................................... <tEvent = #mouseLeave>
   [ 70] jmpifz [ 92] ............................ if tEvent = #mouseLeave then
-  [ 73] getprop 1670 ............................ <pToolTipSpr>
-  [ 76] getobjprop 248 .......................... <pToolTipSpr.ilk>
-  [ 78] pushsymb 182 ............................ <#sprite>
+  [ 73] getprop 1666 ............................ <pToolTipSpr>
+  [ 76] getobjprop 127 .......................... <pToolTipSpr.ilk>
+  [ 78] pushsymb 73 ............................. <#sprite>
   [ 80] eq ...................................... <pToolTipSpr.ilk = #sprite>
   [ 81] jmpifz [ 92] ............................ if pToolTipSpr.ilk = #sprite then
-  [ 84] getprop 1670 ............................ <pToolTipSpr>
+  [ 84] getprop 1666 ............................ <pToolTipSpr>
   [ 87] pushint16 1000 .......................... <1000>
-  [ 90] setobjprop 255 .......................... pToolTipSpr.locH = 1000
+  [ 90] setobjprop 112 .......................... pToolTipSpr.locH = 1000
   [ 92] ret
 end

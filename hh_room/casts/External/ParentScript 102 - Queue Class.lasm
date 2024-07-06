@@ -2,213 +2,213 @@ property pState, pAnimFrame, pFrameCounter, pAnimStartTime, pAnimate, pAnimation
 
 on prepare me, tdata
   [  0] pushint16 600 ........................... <600>
-  [  3] setprop 4 ............................... pAnimationTime = 600
-  [  5] pushint8 1 .............................. <1>
-  [  7] setprop 5 ............................... pMaxSkipFrames = 1
-  [  9] pushzero ................................ <0>
-  [ 10] setprop 6 ............................... pAnimFrame = 0
-  [ 12] pushzero ................................ <0>
-  [ 13] setprop 7 ............................... pFrameCounter = 0
-  [ 15] getparam 1 .............................. <tdata>
-  [ 17] pushsymb 8 .............................. <#extra>
-  [ 19] pusharglist 2 ........................... <tdata, #extra>
-  [ 21] objcall 9 ............................... <tdata[#extra]>
-  [ 23] setlocal 0 .............................. tstate = tdata[#extra]
-  [ 25] getlocal 0 .............................. <tstate>
-  [ 27] pusharglist 1 ........................... <tstate>
-  [ 29] extcall 10 .............................. <voidp(tstate)>
-  [ 31] not ..................................... <not voidp(tstate)>
-  [ 32] jmpifz [ 42] ............................ if not voidp(tstate) then / else
-  [ 35] getlocal 0 .............................. <tstate>
-  [ 37] setprop 11 .............................. pState = tstate
-  [ 39] jmp [ 46]
-  [ 42] pushint8 2 .............................. <2>
-  [ 44] setprop 11 .............................. pState = 2
-  [ 46] getprop 11 .............................. <pState>
-  [ 48] pushint8 3 .............................. <3>
-  [ 50] eq ...................................... <pState = 3>
-  [ 51] jmpifz [ 58] ............................ if pState = 3 then
-  [ 54] getmovieprop 13 ......................... <the milliSeconds>
-  [ 56] setprop 12 .............................. pAnimStartTime = the milliSeconds
-  [ 58] pushint8 2 .............................. <2>
-  [ 60] setlocal 1
-  [ 62] getlocal 1
-  [ 64] getparam 0 .............................. <me>
-  [ 66] getobjprop 15 ........................... <me.pSprList>
-  [ 68] pusharglist 1 ........................... <me.pSprList>
-  [ 70] extcall 14 .............................. <count(me.pSprList)>
-  [ 72] lteq
-  [ 73] jmpifz [101] ............................ repeat with tSpriteNo = 2 to count(me.pSprList)
-  [ 76] getparam 0 .............................. <me>
-  [ 78] pushsymb 15 ............................. <#pSprList>
-  [ 80] getlocal 1 .............................. <tSpriteNo>
-  [ 82] pusharglist 3 ........................... <me, #pSprList, tSpriteNo>
-  [ 84] objcall 17 .............................. <me.pSprList[tSpriteNo]>
-  [ 86] getobjprop 18 ........................... <me.pSprList[tSpriteNo].spriteNum>
-  [ 88] pusharglistnoret 1 ...................... <me.pSprList[tSpriteNo].spriteNum>
-  [ 90] extcall 16 .............................. removeEventBroker(me.pSprList[tSpriteNo].spriteNum)
-  [ 92] pushint8 1
-  [ 94] getlocal 1
-  [ 96] add
-  [ 97] setlocal 1
-  [ 99] endrepeat [ 62]
-  [101] pushcons 0 .............................. <"a">
-  [103] pusharglist 1 ........................... <"a">
-  [105] extcall 20 .............................. <charToNum("a")>
-  [107] getparam 0 .............................. <me>
-  [109] pushsymb 15 ............................. <#pSprList>
-  [111] pusharglist 2 ........................... <me, #pSprList>
-  [113] objcall 14 .............................. <me.pSprList.count>
-  [115] add ..................................... <charToNum("a") + me.pSprList.count>
-  [116] pushint8 1 .............................. <1>
-  [118] sub ..................................... <charToNum("a") + me.pSprList.count - 1>
-  [119] pusharglist 1 ........................... <charToNum("a") + me.pSprList.count - 1>
-  [121] extcall 19 .............................. <numToChar(charToNum("a") + me.pSprList.count - 1)>
-  [123] setprop 24 .............................. pAnimLayer = numToChar(charToNum("a") + me.pSprList.count - 1)
-  [125] pushint8 1 .............................. <1>
-  [127] pusharglistnoret 1 ...................... <1>
-  [129] extcall 21 .............................. return 1
-  [131] ret
+  [  3] setprop 1878 ............................ pAnimationTime = 600
+  [  6] pushint8 1 .............................. <1>
+  [  8] setprop 1879 ............................ pMaxSkipFrames = 1
+  [ 11] pushzero ................................ <0>
+  [ 12] setprop 1387 ............................ pAnimFrame = 0
+  [ 15] pushzero ................................ <0>
+  [ 16] setprop 1864 ............................ pFrameCounter = 0
+  [ 19] getparam 1 .............................. <tdata>
+  [ 21] pushsymb 879 ............................ <#extra>
+  [ 24] pusharglist 2 ........................... <tdata, #extra>
+  [ 26] objcall 34 .............................. <tdata[#extra]>
+  [ 28] setlocal 0 .............................. tstate = tdata[#extra]
+  [ 30] getlocal 0 .............................. <tstate>
+  [ 32] pusharglist 1 ........................... <tstate>
+  [ 34] extcall 120 ............................. <voidp(tstate)>
+  [ 36] not ..................................... <not voidp(tstate)>
+  [ 37] jmpifz [ 48] ............................ if not voidp(tstate) then / else
+  [ 40] getlocal 0 .............................. <tstate>
+  [ 42] setprop 1175 ............................ pState = tstate
+  [ 45] jmp [ 53]
+  [ 48] pushint8 2 .............................. <2>
+  [ 50] setprop 1175 ............................ pState = 2
+  [ 53] getprop 1175 ............................ <pState>
+  [ 56] pushint8 3 .............................. <3>
+  [ 58] eq ...................................... <pState = 3>
+  [ 59] jmpifz [ 68] ............................ if pState = 3 then
+  [ 62] getmovieprop 500 ........................ <the milliSeconds>
+  [ 65] setprop 1880 ............................ pAnimStartTime = the milliSeconds
+  [ 68] pushint8 2 .............................. <2>
+  [ 70] setlocal 1
+  [ 72] getlocal 1
+  [ 74] getparam 0 .............................. <me>
+  [ 76] getobjprop 18 ........................... <me.pSprList>
+  [ 78] pusharglist 1 ........................... <me.pSprList>
+  [ 80] extcall 33 .............................. <count(me.pSprList)>
+  [ 82] lteq
+  [ 83] jmpifz [112] ............................ repeat with tSpriteNo = 2 to count(me.pSprList)
+  [ 86] getparam 0 .............................. <me>
+  [ 88] pushsymb 18 ............................. <#pSprList>
+  [ 90] getlocal 1 .............................. <tSpriteNo>
+  [ 92] pusharglist 3 ........................... <me, #pSprList, tSpriteNo>
+  [ 94] objcall 101 ............................. <me.pSprList[tSpriteNo]>
+  [ 96] getobjprop 36 ........................... <me.pSprList[tSpriteNo].spriteNum>
+  [ 98] pusharglistnoret 1 ...................... <me.pSprList[tSpriteNo].spriteNum>
+  [100] extcall 1583 ............................ removeEventBroker(me.pSprList[tSpriteNo].spriteNum)
+  [103] pushint8 1
+  [105] getlocal 1
+  [107] add
+  [108] setlocal 1
+  [110] endrepeat [ 72]
+  [112] pushcons 0 .............................. <"a">
+  [114] pusharglist 1 ........................... <"a">
+  [116] extcall 718 ............................. <charToNum("a")>
+  [119] getparam 0 .............................. <me>
+  [121] pushsymb 18 ............................. <#pSprList>
+  [123] pusharglist 2 ........................... <me, #pSprList>
+  [125] objcall 33 .............................. <me.pSprList.count>
+  [127] add ..................................... <charToNum("a") + me.pSprList.count>
+  [128] pushint8 1 .............................. <1>
+  [130] sub ..................................... <charToNum("a") + me.pSprList.count - 1>
+  [131] pusharglist 1 ........................... <charToNum("a") + me.pSprList.count - 1>
+  [133] extcall 451 ............................. <numToChar(charToNum("a") + me.pSprList.count - 1)>
+  [136] setprop 1881 ............................ pAnimLayer = numToChar(charToNum("a") + me.pSprList.count - 1)
+  [139] pushint8 1 .............................. <1>
+  [141] pusharglistnoret 1 ...................... <1>
+  [143] extcall 31 .............................. return 1
+  [145] ret
 end
 
 on updateStuffdata me, tValue
   [  0] getparam 1 .............................. <tValue>
-  [  2] setprop 11 .............................. pState = tValue
-  [  4] ret
+  [  2] setprop 1175 ............................ pState = tValue
+  [  5] ret
 end
 
 on setAnimation me, tValue
   [  0] pushint8 1 .............................. <1>
-  [  2] setprop 28 .............................. pAnimate = 1
-  [  4] getmovieprop 13 ......................... <the milliSeconds>
-  [  6] setprop 12 .............................. pAnimStartTime = the milliSeconds
-  [  8] pushint8 1 .............................. <1>
-  [ 10] pusharglistnoret 1 ...................... <1>
-  [ 12] extcall 21 .............................. return 1
-  [ 14] ret
+  [  2] setprop 1883 ............................ pAnimate = 1
+  [  5] getmovieprop 500 ........................ <the milliSeconds>
+  [  8] setprop 1880 ............................ pAnimStartTime = the milliSeconds
+  [ 11] pushint8 1 .............................. <1>
+  [ 13] pusharglistnoret 1 ...................... <1>
+  [ 15] extcall 31 .............................. return 1
+  [ 17] ret
 end
 
 on update me
-  [  0] getprop 11 .............................. <pState>
-  [  2] pushint8 2 .............................. <2>
-  [  4] lt ...................................... <pState < 2>
-  [  5] jmpifz [ 17] ............................ if pState < 2 then / else
-  [  8] pushint8 1 .............................. <1>
-  [ 10] pusharglistnoret 1 ...................... <1>
-  [ 12] extcall 21 .............................. return 1
-  [ 14] jmp [231]
-  [ 17] getprop 28 .............................. <pAnimate>
-  [ 19] pushint8 1 .............................. <1>
-  [ 21] nteq .................................... <pAnimate <> 1>
-  [ 22] jmpifz [ 34] ............................ if pAnimate <> 1 then / else
-  [ 25] pushint8 1 .............................. <1>
-  [ 27] pusharglistnoret 1 ...................... <1>
-  [ 29] extcall 21 .............................. return 1
-  [ 31] jmp [231]
-  [ 34] getprop 7 ............................... <pFrameCounter>
-  [ 36] pushint8 1 .............................. <1>
-  [ 38] add ..................................... <pFrameCounter + 1>
-  [ 39] setprop 7 ............................... pFrameCounter = pFrameCounter + 1
-  [ 41] getprop 7 ............................... <pFrameCounter>
-  [ 43] getprop 5 ............................... <pMaxSkipFrames>
-  [ 45] gt ...................................... <pFrameCounter > pMaxSkipFrames>
-  [ 46] jmpifz [231] ............................ if pFrameCounter > pMaxSkipFrames then
-  [ 49] pushzero ................................ <0>
-  [ 50] setprop 7 ............................... pFrameCounter = 0
-  [ 52] getprop 6 ............................... <pAnimFrame>
-  [ 54] pushint8 1 .............................. <1>
-  [ 56] add ..................................... <pAnimFrame + 1>
-  [ 57] setprop 6 ............................... pAnimFrame = pAnimFrame + 1
-  [ 59] getprop 6 ............................... <pAnimFrame>
-  [ 61] pushint8 2 .............................. <2>
-  [ 63] gt ...................................... <pAnimFrame > 2>
-  [ 64] jmpifz [ 70] ............................ if pAnimFrame > 2 then
-  [ 67] pushzero ................................ <0>
-  [ 68] setprop 6 ............................... pAnimFrame = 0
-  [ 70] getparam 0 .............................. <me>
-  [ 72] pushsymb 15 ............................. <#pSprList>
-  [ 74] pusharglist 2 ........................... <me, #pSprList>
-  [ 76] objcall 14 .............................. <me.pSprList.count>
-  [ 78] pushzero ................................ <0>
-  [ 79] eq ...................................... <me.pSprList.count = 0>
-  [ 80] jmpifz [ 89] ............................ if me.pSprList.count = 0 then
-  [ 83] pushint8 1 .............................. <1>
-  [ 85] pusharglistnoret 1 ...................... <1>
-  [ 87] extcall 21 .............................. return 1
-  [ 89] pushcons 1 .............................. <"_">
-  [ 91] setmovieprop 29 ......................... the itemDelimiter = "_"
-  [ 93] getparam 0 .............................. <me>
-  [ 95] pushsymb 15 ............................. <#pSprList>
-  [ 97] getparam 0 .............................. <me>
-  [ 99] pushsymb 15 ............................. <#pSprList>
-  [101] pusharglist 2 ........................... <me, #pSprList>
-  [103] objcall 14 .............................. <me.pSprList.count>
-  [105] pusharglist 3 ........................... <me, #pSprList, me.pSprList.count>
-  [107] objcall 17 .............................. <me.pSprList[me.pSprList.count]>
-  [109] getchainedprop 30 ....................... <me.pSprList[me.pSprList.count].member>
-  [111] getobjprop 31 ........................... <me.pSprList[me.pSprList.count].member.name>
-  [113] setlocal 0 .............................. tMemName = me.pSprList[me.pSprList.count].member.name
-  [115] getlocal 0 .............................. <tMemName>
-  [117] pushsymb 32 ............................. <#item>
-  [119] pushint8 1 .............................. <1>
-  [121] getlocal 0 .............................. <tMemName>
-  [123] pushsymb 32 ............................. <#item>
-  [125] pusharglist 2 ........................... <tMemName, #item>
-  [127] objcall 14 .............................. <tMemName.item.count>
-  [129] pushint8 6 .............................. <6>
-  [131] sub ..................................... <tMemName.item.count - 6>
-  [132] pusharglist 4 ........................... <tMemName, #item, 1, tMemName.item.count - 6>
-  [134] objcall 33 .............................. <tMemName.item[1..tMemName.item.count - 6]>
-  [136] setlocal 1 .............................. tClass = tMemName.item[1..tMemName.item.count - 6]
-  [138] getlocal 1 .............................. <tClass>
-  [140] pushcons 1 .............................. <"_">
-  [142] joinstr ................................. <tClass & "_">
-  [143] getprop 24 .............................. <pAnimLayer>
-  [145] joinstr ................................. <tClass & "_" & pAnimLayer>
-  [146] pushcons 2 .............................. <"_0_1_1_">
-  [148] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_">
-  [149] getparam 0 .............................. <me>
-  [151] pushsymb 34 ............................. <#pDirection>
-  [153] pushint8 1 .............................. <1>
-  [155] pusharglist 3 ........................... <me, #pDirection, 1>
-  [157] objcall 33 .............................. <me.pDirection[1]>
-  [159] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1]>
-  [160] pushcons 1 .............................. <"_">
-  [162] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1] & "_">
-  [163] getprop 6 ............................... <pAnimFrame>
-  [165] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1] & "_" & pAnimFrame>
-  [166] setlocal 2 .............................. tNewName = tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1] & "_" & pAnimFrame
-  [168] getlocal 2 .............................. <tNewName>
-  [170] pusharglist 1 ........................... <tNewName>
-  [172] extcall 35 .............................. <memberExists(tNewName)>
-  [174] jmpifz [209] ............................ if memberExists(tNewName) then
-  [177] getparam 0 .............................. <me>
-  [179] pushsymb 15 ............................. <#pSprList>
-  [181] getparam 0 .............................. <me>
-  [183] pushsymb 15 ............................. <#pSprList>
-  [185] pusharglist 2 ........................... <me, #pSprList>
-  [187] objcall 14 .............................. <me.pSprList.count>
-  [189] pusharglist 3 ........................... <me, #pSprList, me.pSprList.count>
-  [191] objcall 17 .............................. <me.pSprList[me.pSprList.count]>
-  [193] getlocal 2 .............................. <tNewName>
-  [195] pusharglist 1 ........................... <tNewName>
-  [197] extcall 37 .............................. <getmemnum(tNewName)>
-  [199] pusharglist 1 ........................... <getmemnum(tNewName)>
-  [201] extcall 36 .............................. <abs(getmemnum(tNewName))>
-  [203] pusharglist 1 ........................... <abs(getmemnum(tNewName))>
-  [205] extcall 30 .............................. <member(abs(getmemnum(tNewName)))>
-  [207] setobjprop 30 ........................... me.pSprList[me.pSprList.count].member = member(abs(getmemnum(tNewName)))
-  [209] getprop 11 .............................. <pState>
-  [211] pushint8 2 .............................. <2>
-  [213] eq ...................................... <pState = 2>
-  [214] jmpifz [231] ............................ if pState = 2 then
-  [217] getmovieprop 13 ......................... <the milliSeconds>
-  [219] getprop 12 .............................. <pAnimStartTime>
-  [221] sub ..................................... <the milliSeconds - pAnimStartTime>
-  [222] getprop 4 ............................... <pAnimationTime>
-  [224] gt ...................................... <(the milliSeconds - pAnimStartTime) > pAnimationTime>
-  [225] jmpifz [231] ............................ if (the milliSeconds - pAnimStartTime) > pAnimationTime then
-  [228] pushzero ................................ <0>
-  [229] setprop 28 .............................. pAnimate = 0
-  [231] ret
+  [  0] getprop 1175 ............................ <pState>
+  [  3] pushint8 2 .............................. <2>
+  [  5] lt ...................................... <pState < 2>
+  [  6] jmpifz [ 18] ............................ if pState < 2 then / else
+  [  9] pushint8 1 .............................. <1>
+  [ 11] pusharglistnoret 1 ...................... <1>
+  [ 13] extcall 31 .............................. return 1
+  [ 15] jmp [249]
+  [ 18] getprop 1883 ............................ <pAnimate>
+  [ 21] pushint8 1 .............................. <1>
+  [ 23] nteq .................................... <pAnimate <> 1>
+  [ 24] jmpifz [ 36] ............................ if pAnimate <> 1 then / else
+  [ 27] pushint8 1 .............................. <1>
+  [ 29] pusharglistnoret 1 ...................... <1>
+  [ 31] extcall 31 .............................. return 1
+  [ 33] jmp [249]
+  [ 36] getprop 1864 ............................ <pFrameCounter>
+  [ 39] pushint8 1 .............................. <1>
+  [ 41] add ..................................... <pFrameCounter + 1>
+  [ 42] setprop 1864 ............................ pFrameCounter = pFrameCounter + 1
+  [ 45] getprop 1864 ............................ <pFrameCounter>
+  [ 48] getprop 1879 ............................ <pMaxSkipFrames>
+  [ 51] gt ...................................... <pFrameCounter > pMaxSkipFrames>
+  [ 52] jmpifz [249] ............................ if pFrameCounter > pMaxSkipFrames then
+  [ 55] pushzero ................................ <0>
+  [ 56] setprop 1864 ............................ pFrameCounter = 0
+  [ 59] getprop 1387 ............................ <pAnimFrame>
+  [ 62] pushint8 1 .............................. <1>
+  [ 64] add ..................................... <pAnimFrame + 1>
+  [ 65] setprop 1387 ............................ pAnimFrame = pAnimFrame + 1
+  [ 68] getprop 1387 ............................ <pAnimFrame>
+  [ 71] pushint8 2 .............................. <2>
+  [ 73] gt ...................................... <pAnimFrame > 2>
+  [ 74] jmpifz [ 81] ............................ if pAnimFrame > 2 then
+  [ 77] pushzero ................................ <0>
+  [ 78] setprop 1387 ............................ pAnimFrame = 0
+  [ 81] getparam 0 .............................. <me>
+  [ 83] pushsymb 18 ............................. <#pSprList>
+  [ 85] pusharglist 2 ........................... <me, #pSprList>
+  [ 87] objcall 33 .............................. <me.pSprList.count>
+  [ 89] pushzero ................................ <0>
+  [ 90] eq ...................................... <me.pSprList.count = 0>
+  [ 91] jmpifz [100] ............................ if me.pSprList.count = 0 then
+  [ 94] pushint8 1 .............................. <1>
+  [ 96] pusharglistnoret 1 ...................... <1>
+  [ 98] extcall 31 .............................. return 1
+  [100] pushcons 1 .............................. <"_">
+  [102] setmovieprop 99 ......................... the itemDelimiter = "_"
+  [104] getparam 0 .............................. <me>
+  [106] pushsymb 18 ............................. <#pSprList>
+  [108] getparam 0 .............................. <me>
+  [110] pushsymb 18 ............................. <#pSprList>
+  [112] pusharglist 2 ........................... <me, #pSprList>
+  [114] objcall 33 .............................. <me.pSprList.count>
+  [116] pusharglist 3 ........................... <me, #pSprList, me.pSprList.count>
+  [118] objcall 101 ............................. <me.pSprList[me.pSprList.count]>
+  [120] getchainedprop 64 ....................... <me.pSprList[me.pSprList.count].member>
+  [122] getobjprop 58 ........................... <me.pSprList[me.pSprList.count].member.name>
+  [124] setlocal 0 .............................. tMemName = me.pSprList[me.pSprList.count].member.name
+  [126] getlocal 0 .............................. <tMemName>
+  [128] pushsymb 103 ............................ <#item>
+  [130] pushint8 1 .............................. <1>
+  [132] getlocal 0 .............................. <tMemName>
+  [134] pushsymb 103 ............................ <#item>
+  [136] pusharglist 2 ........................... <tMemName, #item>
+  [138] objcall 33 .............................. <tMemName.item.count>
+  [140] pushint8 6 .............................. <6>
+  [142] sub ..................................... <tMemName.item.count - 6>
+  [143] pusharglist 4 ........................... <tMemName, #item, 1, tMemName.item.count - 6>
+  [145] objcall 68 .............................. <tMemName.item[1..tMemName.item.count - 6]>
+  [147] setlocal 1 .............................. tClass = tMemName.item[1..tMemName.item.count - 6]
+  [149] getlocal 1 .............................. <tClass>
+  [151] pushcons 1 .............................. <"_">
+  [153] joinstr ................................. <tClass & "_">
+  [154] getprop 1881 ............................ <pAnimLayer>
+  [157] joinstr ................................. <tClass & "_" & pAnimLayer>
+  [158] pushcons 2 .............................. <"_0_1_1_">
+  [160] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_">
+  [161] getparam 0 .............................. <me>
+  [163] pushsymb 28 ............................. <#pDirection>
+  [165] pushint8 1 .............................. <1>
+  [167] pusharglist 3 ........................... <me, #pDirection, 1>
+  [169] objcall 68 .............................. <me.pDirection[1]>
+  [171] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1]>
+  [172] pushcons 1 .............................. <"_">
+  [174] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1] & "_">
+  [175] getprop 1387 ............................ <pAnimFrame>
+  [178] joinstr ................................. <tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1] & "_" & pAnimFrame>
+  [179] setlocal 2 .............................. tNewName = tClass & "_" & pAnimLayer & "_0_1_1_" & me.pDirection[1] & "_" & pAnimFrame
+  [181] getlocal 2 .............................. <tNewName>
+  [183] pusharglist 1 ........................... <tNewName>
+  [185] extcall 62 .............................. <memberExists(tNewName)>
+  [187] jmpifz [222] ............................ if memberExists(tNewName) then
+  [190] getparam 0 .............................. <me>
+  [192] pushsymb 18 ............................. <#pSprList>
+  [194] getparam 0 .............................. <me>
+  [196] pushsymb 18 ............................. <#pSprList>
+  [198] pusharglist 2 ........................... <me, #pSprList>
+  [200] objcall 33 .............................. <me.pSprList.count>
+  [202] pusharglist 3 ........................... <me, #pSprList, me.pSprList.count>
+  [204] objcall 101 ............................. <me.pSprList[me.pSprList.count]>
+  [206] getlocal 2 .............................. <tNewName>
+  [208] pusharglist 1 ........................... <tNewName>
+  [210] extcall 65 .............................. <getmemnum(tNewName)>
+  [212] pusharglist 1 ........................... <getmemnum(tNewName)>
+  [214] extcall 77 .............................. <abs(getmemnum(tNewName))>
+  [216] pusharglist 1 ........................... <abs(getmemnum(tNewName))>
+  [218] extcall 64 .............................. <member(abs(getmemnum(tNewName)))>
+  [220] setobjprop 64 ........................... me.pSprList[me.pSprList.count].member = member(abs(getmemnum(tNewName)))
+  [222] getprop 1175 ............................ <pState>
+  [225] pushint8 2 .............................. <2>
+  [227] eq ...................................... <pState = 2>
+  [228] jmpifz [249] ............................ if pState = 2 then
+  [231] getmovieprop 500 ........................ <the milliSeconds>
+  [234] getprop 1880 ............................ <pAnimStartTime>
+  [237] sub ..................................... <the milliSeconds - pAnimStartTime>
+  [238] getprop 1878 ............................ <pAnimationTime>
+  [241] gt ...................................... <(the milliSeconds - pAnimStartTime) > pAnimationTime>
+  [242] jmpifz [249] ............................ if (the milliSeconds - pAnimStartTime) > pAnimationTime then
+  [245] pushzero ................................ <0>
+  [246] setprop 1883 ............................ pAnimate = 0
+  [249] ret
 end

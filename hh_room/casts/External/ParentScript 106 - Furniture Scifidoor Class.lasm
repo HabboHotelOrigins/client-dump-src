@@ -3,68 +3,68 @@ property pChanges, pActive, pLastActive, pScifiDoorSpeed, pScifiDoorLocs, pScifi
 on construct me
   [  0] pushint8 1 .............................. <1>
   [  2] inv ..................................... <-1>
-  [  3] setprop 1897 ............................ pLastActive = -1
+  [  3] setprop 1901 ............................ pLastActive = -1
   [  6] pushint8 7 .............................. <7>
-  [  8] setprop 1898 ............................ pScifiDoorSpeed = 7
+  [  8] setprop 1902 ............................ pScifiDoorSpeed = 7
   [ 11] pushcons 0 .............................. <0.40000000000000002>
   [ 13] pushint8 60 ............................. <60>
   [ 15] mul ..................................... <0.40000000000000002 * 60>
-  [ 16] setprop 1899 ............................ pScifiDoorTimeOut = 0.40000000000000002 * 60
+  [ 16] setprop 1903 ............................ pScifiDoorTimeOut = 0.40000000000000002 * 60
   [ 19] pushzero ................................ <0>
   [ 20] pushzero ................................ <0>
   [ 21] pushzero ................................ <0>
   [ 22] pusharglist 3 ........................... <[0, 0, 0]>
   [ 24] pushlist ................................ <[0, 0, 0]>
-  [ 25] setprop 1900 ............................ pScifiDoorLocs = [0, 0, 0]
+  [ 25] setprop 1904 ............................ pScifiDoorLocs = [0, 0, 0]
   [ 28] pushzero ................................ <0>
-  [ 29] setprop 1901 ............................ pScifiDoorTimer = 0
+  [ 29] setprop 1905 ............................ pScifiDoorTimer = 0
   [ 32] pushzero ................................ <0>
-  [ 33] setprop 1902 ............................ pDoubleClick = 0
+  [ 33] setprop 1906 ............................ pDoubleClick = 0
   [ 36] getparam 0 .............................. <me>
-  [ 38] getobjprop 977 .......................... <me.pXFactor>
-  [ 41] pushint8 32 ............................. <32>
-  [ 43] eq ...................................... <me.pXFactor = 32>
-  [ 44] jmpifz [ 58] ............................ if me.pXFactor = 32 then / else
-  [ 47] pushfloat32 0.5 ......................... <0.5>
-  [ 52] setprop 1887 ............................ pSizeMultiplier = 0.5
-  [ 55] jmp [ 66]
-  [ 58] pushfloat32 1.0 ......................... <1.0>
-  [ 63] setprop 1887 ............................ pSizeMultiplier = 1.0
-  [ 66] ret
+  [ 38] getobjprop 50 ........................... <me.pXFactor>
+  [ 40] pushint8 32 ............................. <32>
+  [ 42] eq ...................................... <me.pXFactor = 32>
+  [ 43] jmpifz [ 57] ............................ if me.pXFactor = 32 then / else
+  [ 46] pushfloat32 0.5 ......................... <0.5>
+  [ 51] setprop 1891 ............................ pSizeMultiplier = 0.5
+  [ 54] jmp [ 65]
+  [ 57] pushfloat32 1.0 ......................... <1.0>
+  [ 62] setprop 1891 ............................ pSizeMultiplier = 1.0
+  [ 65] ret
 end
 
 on prepareForMove me
   [  0] pushint8 1 .............................. <1>
-  [  2] setprop 1237 ............................ pChanges = 1
+  [  2] setprop 1264 ............................ pChanges = 1
   [  5] getparam 0 .............................. <me>
   [  7] pusharglistnoret 1 ...................... <me>
-  [  9] objcall 3 ............................... me.update()
-  [ 11] ret
+  [  9] objcall 634 ............................. me.update()
+  [ 12] ret
 end
 
 on prepare me, tdata
   [  0] getparam 1 .............................. <tdata>
-  [  2] pushsymb 826 ............................ <#stuffdata>
+  [  2] pushsymb 880 ............................ <#stuffdata>
   [  5] pusharglist 2 ........................... <tdata, #stuffdata>
-  [  7] objcall 9 ............................... <tdata[#stuffdata]>
+  [  7] objcall 34 .............................. <tdata[#stuffdata]>
   [  9] pushcons 1 .............................. <"O">
   [ 11] eq ...................................... <tdata[#stuffdata] = "O">
   [ 12] jmpifz [ 25] ............................ if tdata[#stuffdata] = "O" then / else
   [ 15] getparam 0 .............................. <me>
   [ 17] pusharglistnoret 1 ...................... <me>
-  [ 19] objcall 1727 ............................ me.setOn()
+  [ 19] objcall 1723 ............................ me.setOn()
   [ 22] jmp [ 32]
   [ 25] getparam 0 .............................. <me>
   [ 27] pusharglistnoret 1 ...................... <me>
-  [ 29] objcall 1728 ............................ me.setOff()
+  [ 29] objcall 1724 ............................ me.setOff()
   [ 32] pushint8 34 ............................. <34>
   [ 34] get 7 ................................... <the timer>
-  [ 36] setprop 1901 ............................ pScifiDoorTimer = the timer
+  [ 36] setprop 1905 ............................ pScifiDoorTimer = the timer
   [ 39] pushint8 1 .............................. <1>
-  [ 41] setprop 1237 ............................ pChanges = 1
+  [ 41] setprop 1264 ............................ pChanges = 1
   [ 44] pushint8 1 .............................. <1>
   [ 46] pusharglistnoret 1 ...................... <1>
-  [ 48] extcall 21 .............................. return 1
+  [ 48] extcall 31 .............................. return 1
   [ 50] ret
 end
 
@@ -75,471 +75,471 @@ on updateStuffdata me, tValue
   [  5] jmpifz [ 18] ............................ if tValue = "O" then / else
   [  8] getparam 0 .............................. <me>
   [ 10] pusharglistnoret 1 ...................... <me>
-  [ 12] objcall 1727 ............................ me.setOn()
+  [ 12] objcall 1723 ............................ me.setOn()
   [ 15] jmp [ 25]
   [ 18] getparam 0 .............................. <me>
   [ 20] pusharglistnoret 1 ...................... <me>
-  [ 22] objcall 1728 ............................ me.setOff()
+  [ 22] objcall 1724 ............................ me.setOff()
   [ 25] pushint8 34 ............................. <34>
   [ 27] get 7 ................................... <the timer>
-  [ 29] setprop 1901 ............................ pScifiDoorTimer = the timer
+  [ 29] setprop 1905 ............................ pScifiDoorTimer = the timer
   [ 32] pushint8 1 .............................. <1>
-  [ 34] setprop 1237 ............................ pChanges = 1
+  [ 34] setprop 1264 ............................ pChanges = 1
   [ 37] pushzero ................................ <0>
-  [ 38] setprop 1902 ............................ pDoubleClick = 0
+  [ 38] setprop 1906 ............................ pDoubleClick = 0
   [ 41] ret
 end
 
 on update me
-  [  0] getprop 1237 ............................ <pChanges>
+  [  0] getprop 1264 ............................ <pChanges>
   [  3] not ..................................... <not pChanges>
   [  4] jmpifz [ 12] ............................ if not pChanges then
   [  7] pushzero ................................ <0>
   [  8] pusharglistnoret 1 ...................... <0>
-  [ 10] extcall 21 .............................. return 0
+  [ 10] extcall 31 .............................. return 0
   [ 12] getparam 0 .............................. <me>
-  [ 14] pushsymb 15 ............................. <#pSprList>
+  [ 14] pushsymb 18 ............................. <#pSprList>
   [ 16] pusharglist 2 ........................... <me, #pSprList>
-  [ 18] objcall 14 .............................. <me.pSprList.count>
+  [ 18] objcall 33 .............................. <me.pSprList.count>
   [ 20] pushint8 4 .............................. <4>
   [ 22] lt ...................................... <me.pSprList.count < 4>
   [ 23] jmpifz [ 31] ............................ if me.pSprList.count < 4 then
   [ 26] pushzero ................................ <0>
   [ 27] pusharglistnoret 1 ...................... <0>
-  [ 29] extcall 21 .............................. return 0
+  [ 29] extcall 31 .............................. return 0
   [ 31] getparam 0 .............................. <me>
   [ 33] pusharglist 1 ........................... <me>
-  [ 35] objcall 1894 ............................ <me.updateScifiDoor()>
+  [ 35] objcall 1898 ............................ <me.updateScifiDoor()>
   [ 38] pusharglistnoret 1 ...................... <me.updateScifiDoor()>
-  [ 40] extcall 21 .............................. return me.updateScifiDoor()
+  [ 40] extcall 31 .............................. return me.updateScifiDoor()
   [ 42] ret
 end
 
 on updateScifiDoor me
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 15 ............................. <#pSprList>
+  [  2] pushsymb 18 ............................. <#pSprList>
   [  4] pushint8 4 .............................. <4>
   [  6] pusharglist 3 ........................... <me, #pSprList, 4>
-  [  8] objcall 33 .............................. <me.pSprList[4]>
+  [  8] objcall 68 .............................. <me.pSprList[4]>
   [ 10] setlocal 0 .............................. tTopSp = me.pSprList[4]
   [ 12] getparam 0 .............................. <me>
-  [ 14] pushsymb 15 ............................. <#pSprList>
+  [ 14] pushsymb 18 ............................. <#pSprList>
   [ 16] pushint8 2 .............................. <2>
   [ 18] pusharglist 3 ........................... <me, #pSprList, 2>
-  [ 20] objcall 33 .............................. <me.pSprList[2]>
+  [ 20] objcall 68 .............................. <me.pSprList[2]>
   [ 22] setlocal 1 .............................. tMidSp1 = me.pSprList[2]
   [ 24] getparam 0 .............................. <me>
-  [ 26] pushsymb 15 ............................. <#pSprList>
+  [ 26] pushsymb 18 ............................. <#pSprList>
   [ 28] pushint8 3 .............................. <3>
   [ 30] pusharglist 3 ........................... <me, #pSprList, 3>
-  [ 32] objcall 33 .............................. <me.pSprList[3]>
+  [ 32] objcall 68 .............................. <me.pSprList[3]>
   [ 34] setlocal 2 .............................. tMidSp2 = me.pSprList[3]
-  [ 36] getprop 1897 ............................ <pLastActive>
+  [ 36] getprop 1901 ............................ <pLastActive>
   [ 39] pushzero ................................ <0>
   [ 40] eq ...................................... <pLastActive = 0>
-  [ 41] getprop 1006 ............................ <pActive>
+  [ 41] getprop 1045 ............................ <pActive>
   [ 44] pushzero ................................ <0>
   [ 45] eq ...................................... <pActive = 0>
   [ 46] and ..................................... <(pLastActive = 0) and (pActive = 0)>
-  [ 47] jmpifz [ 71] ............................ if (pLastActive = 0) and (pActive = 0) then
+  [ 47] jmpifz [ 68] ............................ if (pLastActive = 0) and (pActive = 0) then
   [ 50] getlocal 0 .............................. <tTopSp>
-  [ 52] getobjprop 500 .......................... <tTopSp.locV>
-  [ 55] getlocal 1 .............................. <tMidSp1>
-  [ 57] getobjprop 500 .......................... <tMidSp1.locV>
-  [ 60] getlocal 2 .............................. <tMidSp2>
-  [ 62] getobjprop 500 .......................... <tMidSp2.locV>
-  [ 65] pusharglist 3 ........................... <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
-  [ 67] pushlist ................................ <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
-  [ 68] setprop 1900 ............................ pScifiDoorLocs = [tTopSp.locV, tMidSp1.locV, tMidSp2.locV]
-  [ 71] getprop 1006 ............................ <pActive>
-  [ 74] pushzero ................................ <0>
-  [ 75] eq ...................................... <pActive = 0>
-  [ 76] getprop 1897 ............................ <pLastActive>
-  [ 79] pushint8 1 .............................. <1>
-  [ 81] inv ..................................... <-1>
-  [ 82] eq ...................................... <pLastActive = -1>
-  [ 83] and ..................................... <(pActive = 0) and (pLastActive = -1)>
-  [ 84] jmpifz [122] ............................ if (pActive = 0) and (pLastActive = -1) then
-  [ 87] getlocal 0 .............................. <tTopSp>
-  [ 89] getobjprop 500 .......................... <tTopSp.locV>
-  [ 92] getlocal 1 .............................. <tMidSp1>
-  [ 94] getobjprop 500 .......................... <tMidSp1.locV>
-  [ 97] getlocal 2 .............................. <tMidSp2>
-  [ 99] getobjprop 500 .......................... <tMidSp2.locV>
-  [102] pusharglist 3 ........................... <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
-  [104] pushlist ................................ <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
-  [105] setprop 1900 ............................ pScifiDoorLocs = [tTopSp.locV, tMidSp1.locV, tMidSp2.locV]
-  [108] pushzero ................................ <0>
-  [109] setprop 1897 ............................ pLastActive = 0
-  [112] pushzero ................................ <0>
-  [113] setprop 1237 ............................ pChanges = 0
-  [116] pushint8 1 .............................. <1>
-  [118] pusharglistnoret 1 ...................... <1>
-  [120] extcall 21 .............................. return 1
-  [122] getprop 1897 ............................ <pLastActive>
+  [ 52] getobjprop 113 .......................... <tTopSp.locV>
+  [ 54] getlocal 1 .............................. <tMidSp1>
+  [ 56] getobjprop 113 .......................... <tMidSp1.locV>
+  [ 58] getlocal 2 .............................. <tMidSp2>
+  [ 60] getobjprop 113 .......................... <tMidSp2.locV>
+  [ 62] pusharglist 3 ........................... <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
+  [ 64] pushlist ................................ <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
+  [ 65] setprop 1904 ............................ pScifiDoorLocs = [tTopSp.locV, tMidSp1.locV, tMidSp2.locV]
+  [ 68] getprop 1045 ............................ <pActive>
+  [ 71] pushzero ................................ <0>
+  [ 72] eq ...................................... <pActive = 0>
+  [ 73] getprop 1901 ............................ <pLastActive>
+  [ 76] pushint8 1 .............................. <1>
+  [ 78] inv ..................................... <-1>
+  [ 79] eq ...................................... <pLastActive = -1>
+  [ 80] and ..................................... <(pActive = 0) and (pLastActive = -1)>
+  [ 81] jmpifz [116] ............................ if (pActive = 0) and (pLastActive = -1) then
+  [ 84] getlocal 0 .............................. <tTopSp>
+  [ 86] getobjprop 113 .......................... <tTopSp.locV>
+  [ 88] getlocal 1 .............................. <tMidSp1>
+  [ 90] getobjprop 113 .......................... <tMidSp1.locV>
+  [ 92] getlocal 2 .............................. <tMidSp2>
+  [ 94] getobjprop 113 .......................... <tMidSp2.locV>
+  [ 96] pusharglist 3 ........................... <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
+  [ 98] pushlist ................................ <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
+  [ 99] setprop 1904 ............................ pScifiDoorLocs = [tTopSp.locV, tMidSp1.locV, tMidSp2.locV]
+  [102] pushzero ................................ <0>
+  [103] setprop 1901 ............................ pLastActive = 0
+  [106] pushzero ................................ <0>
+  [107] setprop 1264 ............................ pChanges = 0
+  [110] pushint8 1 .............................. <1>
+  [112] pusharglistnoret 1 ...................... <1>
+  [114] extcall 31 .............................. return 1
+  [116] getprop 1901 ............................ <pLastActive>
+  [119] pushint8 1 .............................. <1>
+  [121] eq ...................................... <pLastActive = 1>
+  [122] getprop 1045 ............................ <pActive>
   [125] pushint8 1 .............................. <1>
-  [127] eq ...................................... <pLastActive = 1>
-  [128] getprop 1006 ............................ <pActive>
-  [131] pushint8 1 .............................. <1>
-  [133] eq ...................................... <pActive = 1>
-  [134] and ..................................... <(pLastActive = 1) and (pActive = 1)>
-  [135] getprop 1897 ............................ <pLastActive>
-  [138] pushint8 1 .............................. <1>
-  [140] inv ..................................... <-1>
-  [141] eq ...................................... <pLastActive = -1>
-  [142] or ...................................... <((pLastActive = 1) and (pActive = 1)) or (pLastActive = -1)>
-  [143] jmpifz [180] ............................ if ((pLastActive = 1) and (pActive = 1)) or (pLastActive = -1) then
-  [146] getlocal 0 .............................. <tTopSp>
-  [148] getobjprop 500 .......................... <tTopSp.locV>
-  [151] getlocal 1 .............................. <tMidSp1>
-  [153] getobjprop 500 .......................... <tMidSp1.locV>
-  [156] getlocal 2 .............................. <tMidSp2>
-  [158] getobjprop 500 .......................... <tMidSp2.locV>
-  [161] pusharglist 3 ........................... <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
-  [163] pushlist ................................ <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
-  [164] setprop 1900 ............................ pScifiDoorLocs = [tTopSp.locV, tMidSp1.locV, tMidSp2.locV]
-  [167] getparam 0 .............................. <me>
-  [169] pushcons 2 .............................. <"down">
-  [171] pusharglist 2 ........................... <me, "down">
-  [173] objcall 1895 ............................ <me.SetScifiDoor("down")>
-  [176] pusharglistnoret 1 ...................... <me.SetScifiDoor("down")>
-  [178] extcall 21 .............................. return me.SetScifiDoor("down")
-  [180] pushint8 34 ............................. <34>
-  [182] get 7 ................................... <the timer>
-  [184] getparam 0 .............................. <me>
-  [186] getobjprop 1901 ......................... <me.pScifiDoorTimer>
-  [189] sub ..................................... <the timer - me.pScifiDoorTimer>
-  [190] setlocal 3 .............................. tDoorTimer = the timer - me.pScifiDoorTimer
-  [192] getprop 1006 ............................ <pActive>
-  [195] jmpifz [272] ............................ if pActive then / else
-  [198] getlocal 0 .............................. <tTopSp>
-  [200] getlocal 0 .............................. <tTopSp>
-  [202] getobjprop 500 .......................... <tTopSp.locV>
-  [205] getprop 1898 ............................ <pScifiDoorSpeed>
-  [208] add ..................................... <tTopSp.locV + pScifiDoorSpeed>
-  [209] setobjprop 500 .......................... tTopSp.locV = tTopSp.locV + pScifiDoorSpeed
-  [212] getparam 0 .............................. <me>
-  [214] getlocal 1 .............................. <tMidSp1>
-  [216] getprop 1898 ............................ <pScifiDoorSpeed>
-  [219] inv ..................................... <-pScifiDoorSpeed>
-  [220] pusharglistnoret 3 ...................... <me, tMidSp1, -pScifiDoorSpeed>
-  [222] objcall 1896 ............................ me.moveTopLine(tMidSp1, -pScifiDoorSpeed)
-  [225] getparam 0 .............................. <me>
-  [227] getlocal 2 .............................. <tMidSp2>
-  [229] getprop 1898 ............................ <pScifiDoorSpeed>
-  [232] inv ..................................... <-pScifiDoorSpeed>
-  [233] pusharglistnoret 3 ...................... <me, tMidSp2, -pScifiDoorSpeed>
-  [235] objcall 1896 ............................ me.moveTopLine(tMidSp2, -pScifiDoorSpeed)
-  [238] getlocal 1 .............................. <tMidSp1>
-  [240] getobjprop 291 .......................... <tMidSp1.height>
-  [243] pushint8 11 ............................. <11>
-  [245] getprop 1887 ............................ <pSizeMultiplier>
-  [248] mul ..................................... <11 * pSizeMultiplier>
-  [249] lteq .................................... <tMidSp1.height <= (11 * pSizeMultiplier)>
-  [250] getlocal 3 .............................. <tDoorTimer>
-  [252] getprop 1899 ............................ <pScifiDoorTimeOut>
-  [255] gt ...................................... <tDoorTimer > pScifiDoorTimeOut>
-  [256] or ...................................... <(tMidSp1.height <= (11 * pSizeMultiplier)) or (tDoorTimer > pScifiDoorTimeOut)>
-  [257] jmpifz [269] ............................ if (tMidSp1.height <= (11 * pSizeMultiplier)) or (tDoorTimer > pScifiDoorTimeOut) then
-  [260] getparam 0 .............................. <me>
-  [262] pushcons 2 .............................. <"down">
-  [264] pusharglistnoret 2 ...................... <me, "down">
-  [266] objcall 1895 ............................ me.SetScifiDoor("down")
-  [269] jmp [385]
-  [272] getlocal 3 .............................. <tDoorTimer>
-  [274] getprop 1899 ............................ <pScifiDoorTimeOut>
-  [277] gt ...................................... <tDoorTimer > pScifiDoorTimeOut>
-  [278] jmpifz [294] ............................ if tDoorTimer > pScifiDoorTimeOut then
-  [281] getparam 0 .............................. <me>
-  [283] pushcons 3 .............................. <"up">
-  [285] pusharglist 2 ........................... <me, "up">
-  [287] objcall 1895 ............................ <me.SetScifiDoor("up")>
-  [290] pusharglistnoret 1 ...................... <me.SetScifiDoor("up")>
-  [292] extcall 21 .............................. return me.SetScifiDoor("up")
-  [294] getprop 1887 ............................ <pSizeMultiplier>
-  [297] pushfloat32 1.0 ......................... <1.0>
-  [302] eq ...................................... <pSizeMultiplier = 1.0>
-  [303] jmpifz [323] ............................ if pSizeMultiplier = 1.0 then / else
-  [306] getlocal 0 .............................. <tTopSp>
-  [308] getlocal 0 .............................. <tTopSp>
-  [310] getobjprop 500 .......................... <tTopSp.locV>
-  [313] getprop 1898 ............................ <pScifiDoorSpeed>
-  [316] sub ..................................... <tTopSp.locV - pScifiDoorSpeed>
-  [317] setobjprop 500 .......................... tTopSp.locV = tTopSp.locV - pScifiDoorSpeed
-  [320] jmp [337]
-  [323] getlocal 0 .............................. <tTopSp>
-  [325] getlocal 0 .............................. <tTopSp>
-  [327] getobjprop 500 .......................... <tTopSp.locV>
-  [330] getprop 1898 ............................ <pScifiDoorSpeed>
-  [333] sub ..................................... <tTopSp.locV - pScifiDoorSpeed>
-  [334] setobjprop 500 .......................... tTopSp.locV = tTopSp.locV - pScifiDoorSpeed
-  [337] getparam 0 .............................. <me>
-  [339] getlocal 1 .............................. <tMidSp1>
-  [341] getprop 1898 ............................ <pScifiDoorSpeed>
-  [344] pusharglistnoret 3 ...................... <me, tMidSp1, pScifiDoorSpeed>
-  [346] objcall 1896 ............................ me.moveTopLine(tMidSp1, pScifiDoorSpeed)
-  [349] getparam 0 .............................. <me>
-  [351] getlocal 2 .............................. <tMidSp2>
-  [353] getprop 1898 ............................ <pScifiDoorSpeed>
-  [356] pusharglistnoret 3 ...................... <me, tMidSp2, pScifiDoorSpeed>
-  [358] objcall 1896 ............................ me.moveTopLine(tMidSp2, pScifiDoorSpeed)
-  [361] getlocal 1 .............................. <tMidSp1>
-  [363] getobjprop 291 .......................... <tMidSp1.height>
-  [366] pushint8 65 ............................. <65>
-  [368] getprop 1887 ............................ <pSizeMultiplier>
-  [371] mul ..................................... <65 * pSizeMultiplier>
-  [372] gt ...................................... <tMidSp1.height > (65 * pSizeMultiplier)>
-  [373] jmpifz [385] ............................ if tMidSp1.height > (65 * pSizeMultiplier) then
-  [376] getparam 0 .............................. <me>
-  [378] pushcons 3 .............................. <"up">
-  [380] pusharglistnoret 2 ...................... <me, "up">
-  [382] objcall 1895 ............................ me.SetScifiDoor("up")
-  [385] pushint8 1 .............................. <1>
-  [387] pusharglistnoret 1 ...................... <1>
-  [389] extcall 21 .............................. return 1
-  [391] ret
+  [127] eq ...................................... <pActive = 1>
+  [128] and ..................................... <(pLastActive = 1) and (pActive = 1)>
+  [129] getprop 1901 ............................ <pLastActive>
+  [132] pushint8 1 .............................. <1>
+  [134] inv ..................................... <-1>
+  [135] eq ...................................... <pLastActive = -1>
+  [136] or ...................................... <((pLastActive = 1) and (pActive = 1)) or (pLastActive = -1)>
+  [137] jmpifz [171] ............................ if ((pLastActive = 1) and (pActive = 1)) or (pLastActive = -1) then
+  [140] getlocal 0 .............................. <tTopSp>
+  [142] getobjprop 113 .......................... <tTopSp.locV>
+  [144] getlocal 1 .............................. <tMidSp1>
+  [146] getobjprop 113 .......................... <tMidSp1.locV>
+  [148] getlocal 2 .............................. <tMidSp2>
+  [150] getobjprop 113 .......................... <tMidSp2.locV>
+  [152] pusharglist 3 ........................... <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
+  [154] pushlist ................................ <[tTopSp.locV, tMidSp1.locV, tMidSp2.locV]>
+  [155] setprop 1904 ............................ pScifiDoorLocs = [tTopSp.locV, tMidSp1.locV, tMidSp2.locV]
+  [158] getparam 0 .............................. <me>
+  [160] pushcons 2 .............................. <"down">
+  [162] pusharglist 2 ........................... <me, "down">
+  [164] objcall 1899 ............................ <me.SetScifiDoor("down")>
+  [167] pusharglistnoret 1 ...................... <me.SetScifiDoor("down")>
+  [169] extcall 31 .............................. return me.SetScifiDoor("down")
+  [171] pushint8 34 ............................. <34>
+  [173] get 7 ................................... <the timer>
+  [175] getparam 0 .............................. <me>
+  [177] getobjprop 1905 ......................... <me.pScifiDoorTimer>
+  [180] sub ..................................... <the timer - me.pScifiDoorTimer>
+  [181] setlocal 3 .............................. tDoorTimer = the timer - me.pScifiDoorTimer
+  [183] getprop 1045 ............................ <pActive>
+  [186] jmpifz [260] ............................ if pActive then / else
+  [189] getlocal 0 .............................. <tTopSp>
+  [191] getlocal 0 .............................. <tTopSp>
+  [193] getobjprop 113 .......................... <tTopSp.locV>
+  [195] getprop 1902 ............................ <pScifiDoorSpeed>
+  [198] add ..................................... <tTopSp.locV + pScifiDoorSpeed>
+  [199] setobjprop 113 .......................... tTopSp.locV = tTopSp.locV + pScifiDoorSpeed
+  [201] getparam 0 .............................. <me>
+  [203] getlocal 1 .............................. <tMidSp1>
+  [205] getprop 1902 ............................ <pScifiDoorSpeed>
+  [208] inv ..................................... <-pScifiDoorSpeed>
+  [209] pusharglistnoret 3 ...................... <me, tMidSp1, -pScifiDoorSpeed>
+  [211] objcall 1900 ............................ me.moveTopLine(tMidSp1, -pScifiDoorSpeed)
+  [214] getparam 0 .............................. <me>
+  [216] getlocal 2 .............................. <tMidSp2>
+  [218] getprop 1902 ............................ <pScifiDoorSpeed>
+  [221] inv ..................................... <-pScifiDoorSpeed>
+  [222] pusharglistnoret 3 ...................... <me, tMidSp2, -pScifiDoorSpeed>
+  [224] objcall 1900 ............................ me.moveTopLine(tMidSp2, -pScifiDoorSpeed)
+  [227] getlocal 1 .............................. <tMidSp1>
+  [229] getobjprop 81 ........................... <tMidSp1.height>
+  [231] pushint8 11 ............................. <11>
+  [233] getprop 1891 ............................ <pSizeMultiplier>
+  [236] mul ..................................... <11 * pSizeMultiplier>
+  [237] lteq .................................... <tMidSp1.height <= (11 * pSizeMultiplier)>
+  [238] getlocal 3 .............................. <tDoorTimer>
+  [240] getprop 1903 ............................ <pScifiDoorTimeOut>
+  [243] gt ...................................... <tDoorTimer > pScifiDoorTimeOut>
+  [244] or ...................................... <(tMidSp1.height <= (11 * pSizeMultiplier)) or (tDoorTimer > pScifiDoorTimeOut)>
+  [245] jmpifz [257] ............................ if (tMidSp1.height <= (11 * pSizeMultiplier)) or (tDoorTimer > pScifiDoorTimeOut) then
+  [248] getparam 0 .............................. <me>
+  [250] pushcons 2 .............................. <"down">
+  [252] pusharglistnoret 2 ...................... <me, "down">
+  [254] objcall 1899 ............................ me.SetScifiDoor("down")
+  [257] jmp [368]
+  [260] getlocal 3 .............................. <tDoorTimer>
+  [262] getprop 1903 ............................ <pScifiDoorTimeOut>
+  [265] gt ...................................... <tDoorTimer > pScifiDoorTimeOut>
+  [266] jmpifz [282] ............................ if tDoorTimer > pScifiDoorTimeOut then
+  [269] getparam 0 .............................. <me>
+  [271] pushcons 3 .............................. <"up">
+  [273] pusharglist 2 ........................... <me, "up">
+  [275] objcall 1899 ............................ <me.SetScifiDoor("up")>
+  [278] pusharglistnoret 1 ...................... <me.SetScifiDoor("up")>
+  [280] extcall 31 .............................. return me.SetScifiDoor("up")
+  [282] getprop 1891 ............................ <pSizeMultiplier>
+  [285] pushfloat32 1.0 ......................... <1.0>
+  [290] eq ...................................... <pSizeMultiplier = 1.0>
+  [291] jmpifz [309] ............................ if pSizeMultiplier = 1.0 then / else
+  [294] getlocal 0 .............................. <tTopSp>
+  [296] getlocal 0 .............................. <tTopSp>
+  [298] getobjprop 113 .......................... <tTopSp.locV>
+  [300] getprop 1902 ............................ <pScifiDoorSpeed>
+  [303] sub ..................................... <tTopSp.locV - pScifiDoorSpeed>
+  [304] setobjprop 113 .......................... tTopSp.locV = tTopSp.locV - pScifiDoorSpeed
+  [306] jmp [321]
+  [309] getlocal 0 .............................. <tTopSp>
+  [311] getlocal 0 .............................. <tTopSp>
+  [313] getobjprop 113 .......................... <tTopSp.locV>
+  [315] getprop 1902 ............................ <pScifiDoorSpeed>
+  [318] sub ..................................... <tTopSp.locV - pScifiDoorSpeed>
+  [319] setobjprop 113 .......................... tTopSp.locV = tTopSp.locV - pScifiDoorSpeed
+  [321] getparam 0 .............................. <me>
+  [323] getlocal 1 .............................. <tMidSp1>
+  [325] getprop 1902 ............................ <pScifiDoorSpeed>
+  [328] pusharglistnoret 3 ...................... <me, tMidSp1, pScifiDoorSpeed>
+  [330] objcall 1900 ............................ me.moveTopLine(tMidSp1, pScifiDoorSpeed)
+  [333] getparam 0 .............................. <me>
+  [335] getlocal 2 .............................. <tMidSp2>
+  [337] getprop 1902 ............................ <pScifiDoorSpeed>
+  [340] pusharglistnoret 3 ...................... <me, tMidSp2, pScifiDoorSpeed>
+  [342] objcall 1900 ............................ me.moveTopLine(tMidSp2, pScifiDoorSpeed)
+  [345] getlocal 1 .............................. <tMidSp1>
+  [347] getobjprop 81 ........................... <tMidSp1.height>
+  [349] pushint8 65 ............................. <65>
+  [351] getprop 1891 ............................ <pSizeMultiplier>
+  [354] mul ..................................... <65 * pSizeMultiplier>
+  [355] gt ...................................... <tMidSp1.height > (65 * pSizeMultiplier)>
+  [356] jmpifz [368] ............................ if tMidSp1.height > (65 * pSizeMultiplier) then
+  [359] getparam 0 .............................. <me>
+  [361] pushcons 3 .............................. <"up">
+  [363] pusharglistnoret 2 ...................... <me, "up">
+  [365] objcall 1899 ............................ me.SetScifiDoor("up")
+  [368] pushint8 1 .............................. <1>
+  [370] pusharglistnoret 1 ...................... <1>
+  [372] extcall 31 .............................. return 1
+  [374] ret
 end
 
 on SetScifiDoor me, tdir
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 15 ............................. <#pSprList>
+  [  2] pushsymb 18 ............................. <#pSprList>
   [  4] pushint8 4 .............................. <4>
   [  6] pusharglist 3 ........................... <me, #pSprList, 4>
-  [  8] objcall 33 .............................. <me.pSprList[4]>
+  [  8] objcall 68 .............................. <me.pSprList[4]>
   [ 10] setlocal 0 .............................. tTopSp = me.pSprList[4]
   [ 12] getparam 0 .............................. <me>
-  [ 14] pushsymb 15 ............................. <#pSprList>
+  [ 14] pushsymb 18 ............................. <#pSprList>
   [ 16] pushint8 2 .............................. <2>
   [ 18] pusharglist 3 ........................... <me, #pSprList, 2>
-  [ 20] objcall 33 .............................. <me.pSprList[2]>
+  [ 20] objcall 68 .............................. <me.pSprList[2]>
   [ 22] setlocal 1 .............................. tMidSp1 = me.pSprList[2]
   [ 24] getparam 0 .............................. <me>
-  [ 26] pushsymb 15 ............................. <#pSprList>
+  [ 26] pushsymb 18 ............................. <#pSprList>
   [ 28] pushint8 3 .............................. <3>
   [ 30] pusharglist 3 ........................... <me, #pSprList, 3>
-  [ 32] objcall 33 .............................. <me.pSprList[3]>
+  [ 32] objcall 68 .............................. <me.pSprList[3]>
   [ 34] setlocal 2 .............................. tMidSp2 = me.pSprList[3]
   [ 36] getparam 1 .............................. <tdir>
   [ 38] pushcons 3 .............................. <"up">
   [ 40] eq ...................................... <tdir = "up">
-  [ 41] jmpifz [111] ............................ if tdir = "up" then / else
+  [ 41] jmpifz [106] ............................ if tdir = "up" then / else
   [ 44] getlocal 0 .............................. <tTopSp>
-  [ 46] getprop 1900 ............................ <pScifiDoorLocs>
+  [ 46] getprop 1904 ............................ <pScifiDoorLocs>
   [ 49] pushint8 1 .............................. <1>
   [ 51] pusharglist 2 ........................... <pScifiDoorLocs, 1>
-  [ 53] objcall 9 ............................... <pScifiDoorLocs[1]>
-  [ 55] setobjprop 500 .......................... tTopSp.locV = pScifiDoorLocs[1]
-  [ 58] getlocal 1 .............................. <tMidSp1>
-  [ 60] pushint8 65 ............................. <65>
-  [ 62] getprop 1887 ............................ <pSizeMultiplier>
-  [ 65] mul ..................................... <65 * pSizeMultiplier>
-  [ 66] setobjprop 291 .......................... tMidSp1.height = 65 * pSizeMultiplier
-  [ 69] getlocal 2 .............................. <tMidSp2>
-  [ 71] pushint8 64 ............................. <64>
-  [ 73] getprop 1887 ............................ <pSizeMultiplier>
-  [ 76] mul ..................................... <64 * pSizeMultiplier>
-  [ 77] setobjprop 291 .......................... tMidSp2.height = 64 * pSizeMultiplier
-  [ 80] getlocal 1 .............................. <tMidSp1>
-  [ 82] getprop 1900 ............................ <pScifiDoorLocs>
-  [ 85] pushint8 2 .............................. <2>
-  [ 87] pusharglist 2 ........................... <pScifiDoorLocs, 2>
-  [ 89] objcall 9 ............................... <pScifiDoorLocs[2]>
-  [ 91] setobjprop 500 .......................... tMidSp1.locV = pScifiDoorLocs[2]
-  [ 94] getlocal 2 .............................. <tMidSp2>
-  [ 96] getprop 1900 ............................ <pScifiDoorLocs>
-  [ 99] pushint8 3 .............................. <3>
-  [101] pusharglist 2 ........................... <pScifiDoorLocs, 3>
-  [103] objcall 9 ............................... <pScifiDoorLocs[3]>
-  [105] setobjprop 500 .......................... tMidSp2.locV = pScifiDoorLocs[3]
-  [108] jmp [252]
-  [111] getprop 1887 ............................ <pSizeMultiplier>
-  [114] pushfloat32 1.0 ......................... <1.0>
-  [119] eq ...................................... <pSizeMultiplier = 1.0>
-  [120] jmpifz [157] ............................ if pSizeMultiplier = 1.0 then / else
-  [123] getlocal 0 .............................. <tTopSp>
-  [125] getprop 1900 ............................ <pScifiDoorLocs>
-  [128] pushint8 1 .............................. <1>
-  [130] pusharglist 2 ........................... <pScifiDoorLocs, 1>
-  [132] objcall 9 ............................... <pScifiDoorLocs[1]>
-  [134] pushint8 57 ............................. <57>
-  [136] add ..................................... <pScifiDoorLocs[1] + 57>
-  [137] setobjprop 500 .......................... tTopSp.locV = pScifiDoorLocs[1] + 57
-  [140] getlocal 1 .............................. <tMidSp1>
-  [142] pushint8 8 .............................. <8>
-  [144] setobjprop 291 .......................... tMidSp1.height = 8
-  [147] getlocal 2 .............................. <tMidSp2>
-  [149] pushint8 7 .............................. <7>
-  [151] setobjprop 291 .......................... tMidSp2.height = 7
-  [154] jmp [188]
-  [157] getlocal 0 .............................. <tTopSp>
-  [159] getprop 1900 ............................ <pScifiDoorLocs>
-  [162] pushint8 1 .............................. <1>
-  [164] pusharglist 2 ........................... <pScifiDoorLocs, 1>
-  [166] objcall 9 ............................... <pScifiDoorLocs[1]>
-  [168] pushint8 27 ............................. <27>
-  [170] add ..................................... <pScifiDoorLocs[1] + 27>
-  [171] setobjprop 500 .......................... tTopSp.locV = pScifiDoorLocs[1] + 27
-  [174] getlocal 1 .............................. <tMidSp1>
-  [176] pushint8 2 .............................. <2>
-  [178] setobjprop 291 .......................... tMidSp1.height = 2
-  [181] getlocal 2 .............................. <tMidSp2>
-  [183] pushint8 2 .............................. <2>
-  [185] setobjprop 291 .......................... tMidSp2.height = 2
-  [188] getlocal 1 .............................. <tMidSp1>
-  [190] pushint8 8 .............................. <8>
-  [192] getprop 1887 ............................ <pSizeMultiplier>
-  [195] mul ..................................... <8 * pSizeMultiplier>
-  [196] setobjprop 291 .......................... tMidSp1.height = 8 * pSizeMultiplier
-  [199] getlocal 2 .............................. <tMidSp2>
-  [201] pushint8 7 .............................. <7>
-  [203] getprop 1887 ............................ <pSizeMultiplier>
-  [206] mul ..................................... <7 * pSizeMultiplier>
-  [207] setobjprop 291 .......................... tMidSp2.height = 7 * pSizeMultiplier
-  [210] getlocal 1 .............................. <tMidSp1>
-  [212] getprop 1900 ............................ <pScifiDoorLocs>
-  [215] pushint8 2 .............................. <2>
-  [217] pusharglist 2 ........................... <pScifiDoorLocs, 2>
-  [219] objcall 9 ............................... <pScifiDoorLocs[2]>
-  [221] pushint8 2 .............................. <2>
-  [223] getprop 1887 ............................ <pSizeMultiplier>
-  [226] mul ..................................... <2 * pSizeMultiplier>
-  [227] sub ..................................... <pScifiDoorLocs[2] - (2 * pSizeMultiplier)>
-  [228] setobjprop 500 .......................... tMidSp1.locV = pScifiDoorLocs[2] - (2 * pSizeMultiplier)
-  [231] getlocal 2 .............................. <tMidSp2>
-  [233] getprop 1900 ............................ <pScifiDoorLocs>
-  [236] pushint8 3 .............................. <3>
-  [238] pusharglist 2 ........................... <pScifiDoorLocs, 3>
-  [240] objcall 9 ............................... <pScifiDoorLocs[3]>
-  [242] pushint8 5 .............................. <5>
-  [244] getprop 1887 ............................ <pSizeMultiplier>
-  [247] mul ..................................... <5 * pSizeMultiplier>
-  [248] add ..................................... <pScifiDoorLocs[3] + (5 * pSizeMultiplier)>
-  [249] setobjprop 500 .......................... tMidSp2.locV = pScifiDoorLocs[3] + (5 * pSizeMultiplier)
-  [252] pushzero ................................ <0>
-  [253] setprop 1237 ............................ pChanges = 0
-  [256] getprop 1006 ............................ <pActive>
-  [259] setprop 1897 ............................ pLastActive = pActive
-  [262] pushint8 1 .............................. <1>
-  [264] pusharglistnoret 1 ...................... <1>
-  [266] extcall 21 .............................. return 1
-  [268] ret
+  [ 53] objcall 34 .............................. <pScifiDoorLocs[1]>
+  [ 55] setobjprop 113 .......................... tTopSp.locV = pScifiDoorLocs[1]
+  [ 57] getlocal 1 .............................. <tMidSp1>
+  [ 59] pushint8 65 ............................. <65>
+  [ 61] getprop 1891 ............................ <pSizeMultiplier>
+  [ 64] mul ..................................... <65 * pSizeMultiplier>
+  [ 65] setobjprop 81 ........................... tMidSp1.height = 65 * pSizeMultiplier
+  [ 67] getlocal 2 .............................. <tMidSp2>
+  [ 69] pushint8 64 ............................. <64>
+  [ 71] getprop 1891 ............................ <pSizeMultiplier>
+  [ 74] mul ..................................... <64 * pSizeMultiplier>
+  [ 75] setobjprop 81 ........................... tMidSp2.height = 64 * pSizeMultiplier
+  [ 77] getlocal 1 .............................. <tMidSp1>
+  [ 79] getprop 1904 ............................ <pScifiDoorLocs>
+  [ 82] pushint8 2 .............................. <2>
+  [ 84] pusharglist 2 ........................... <pScifiDoorLocs, 2>
+  [ 86] objcall 34 .............................. <pScifiDoorLocs[2]>
+  [ 88] setobjprop 113 .......................... tMidSp1.locV = pScifiDoorLocs[2]
+  [ 90] getlocal 2 .............................. <tMidSp2>
+  [ 92] getprop 1904 ............................ <pScifiDoorLocs>
+  [ 95] pushint8 3 .............................. <3>
+  [ 97] pusharglist 2 ........................... <pScifiDoorLocs, 3>
+  [ 99] objcall 34 .............................. <pScifiDoorLocs[3]>
+  [101] setobjprop 113 .......................... tMidSp2.locV = pScifiDoorLocs[3]
+  [103] jmp [237]
+  [106] getprop 1891 ............................ <pSizeMultiplier>
+  [109] pushfloat32 1.0 ......................... <1.0>
+  [114] eq ...................................... <pSizeMultiplier = 1.0>
+  [115] jmpifz [149] ............................ if pSizeMultiplier = 1.0 then / else
+  [118] getlocal 0 .............................. <tTopSp>
+  [120] getprop 1904 ............................ <pScifiDoorLocs>
+  [123] pushint8 1 .............................. <1>
+  [125] pusharglist 2 ........................... <pScifiDoorLocs, 1>
+  [127] objcall 34 .............................. <pScifiDoorLocs[1]>
+  [129] pushint8 57 ............................. <57>
+  [131] add ..................................... <pScifiDoorLocs[1] + 57>
+  [132] setobjprop 113 .......................... tTopSp.locV = pScifiDoorLocs[1] + 57
+  [134] getlocal 1 .............................. <tMidSp1>
+  [136] pushint8 8 .............................. <8>
+  [138] setobjprop 81 ........................... tMidSp1.height = 8
+  [140] getlocal 2 .............................. <tMidSp2>
+  [142] pushint8 7 .............................. <7>
+  [144] setobjprop 81 ........................... tMidSp2.height = 7
+  [146] jmp [177]
+  [149] getlocal 0 .............................. <tTopSp>
+  [151] getprop 1904 ............................ <pScifiDoorLocs>
+  [154] pushint8 1 .............................. <1>
+  [156] pusharglist 2 ........................... <pScifiDoorLocs, 1>
+  [158] objcall 34 .............................. <pScifiDoorLocs[1]>
+  [160] pushint8 27 ............................. <27>
+  [162] add ..................................... <pScifiDoorLocs[1] + 27>
+  [163] setobjprop 113 .......................... tTopSp.locV = pScifiDoorLocs[1] + 27
+  [165] getlocal 1 .............................. <tMidSp1>
+  [167] pushint8 2 .............................. <2>
+  [169] setobjprop 81 ........................... tMidSp1.height = 2
+  [171] getlocal 2 .............................. <tMidSp2>
+  [173] pushint8 2 .............................. <2>
+  [175] setobjprop 81 ........................... tMidSp2.height = 2
+  [177] getlocal 1 .............................. <tMidSp1>
+  [179] pushint8 8 .............................. <8>
+  [181] getprop 1891 ............................ <pSizeMultiplier>
+  [184] mul ..................................... <8 * pSizeMultiplier>
+  [185] setobjprop 81 ........................... tMidSp1.height = 8 * pSizeMultiplier
+  [187] getlocal 2 .............................. <tMidSp2>
+  [189] pushint8 7 .............................. <7>
+  [191] getprop 1891 ............................ <pSizeMultiplier>
+  [194] mul ..................................... <7 * pSizeMultiplier>
+  [195] setobjprop 81 ........................... tMidSp2.height = 7 * pSizeMultiplier
+  [197] getlocal 1 .............................. <tMidSp1>
+  [199] getprop 1904 ............................ <pScifiDoorLocs>
+  [202] pushint8 2 .............................. <2>
+  [204] pusharglist 2 ........................... <pScifiDoorLocs, 2>
+  [206] objcall 34 .............................. <pScifiDoorLocs[2]>
+  [208] pushint8 2 .............................. <2>
+  [210] getprop 1891 ............................ <pSizeMultiplier>
+  [213] mul ..................................... <2 * pSizeMultiplier>
+  [214] sub ..................................... <pScifiDoorLocs[2] - (2 * pSizeMultiplier)>
+  [215] setobjprop 113 .......................... tMidSp1.locV = pScifiDoorLocs[2] - (2 * pSizeMultiplier)
+  [217] getlocal 2 .............................. <tMidSp2>
+  [219] getprop 1904 ............................ <pScifiDoorLocs>
+  [222] pushint8 3 .............................. <3>
+  [224] pusharglist 2 ........................... <pScifiDoorLocs, 3>
+  [226] objcall 34 .............................. <pScifiDoorLocs[3]>
+  [228] pushint8 5 .............................. <5>
+  [230] getprop 1891 ............................ <pSizeMultiplier>
+  [233] mul ..................................... <5 * pSizeMultiplier>
+  [234] add ..................................... <pScifiDoorLocs[3] + (5 * pSizeMultiplier)>
+  [235] setobjprop 113 .......................... tMidSp2.locV = pScifiDoorLocs[3] + (5 * pSizeMultiplier)
+  [237] pushzero ................................ <0>
+  [238] setprop 1264 ............................ pChanges = 0
+  [241] getprop 1045 ............................ <pActive>
+  [244] setprop 1901 ............................ pLastActive = pActive
+  [247] pushint8 1 .............................. <1>
+  [249] pusharglistnoret 1 ...................... <1>
+  [251] extcall 31 .............................. return 1
+  [253] ret
 end
 
 on moveTopLine me, tSpr, tAmount
   [  0] getparam 1 .............................. <tSpr>
-  [  2] getobjprop 1907 ......................... <tSpr.bottom>
+  [  2] getobjprop 1911 ......................... <tSpr.bottom>
   [  5] setlocal 0 .............................. tBot = tSpr.bottom
   [  7] getparam 1 .............................. <tSpr>
   [  9] getparam 1 .............................. <tSpr>
-  [ 11] getobjprop 291 .......................... <tSpr.height>
-  [ 14] getparam 2 .............................. <tAmount>
-  [ 16] add ..................................... <tSpr.height + tAmount>
-  [ 17] setobjprop 291 .......................... tSpr.height = tSpr.height + tAmount
-  [ 20] getlocal 0 .............................. <tBot>
-  [ 22] getparam 1 .............................. <tSpr>
-  [ 24] getobjprop 1907 ......................... <tSpr.bottom>
-  [ 27] gt ...................................... <tBot > tSpr.bottom>
-  [ 28] jmpifz [ 44] ............................ if tBot > tSpr.bottom then
+  [ 11] getobjprop 81 ........................... <tSpr.height>
+  [ 13] getparam 2 .............................. <tAmount>
+  [ 15] add ..................................... <tSpr.height + tAmount>
+  [ 16] setobjprop 81 ........................... tSpr.height = tSpr.height + tAmount
+  [ 18] getlocal 0 .............................. <tBot>
+  [ 20] getparam 1 .............................. <tSpr>
+  [ 22] getobjprop 1911 ......................... <tSpr.bottom>
+  [ 25] gt ...................................... <tBot > tSpr.bottom>
+  [ 26] jmpifz [ 40] ............................ if tBot > tSpr.bottom then
+  [ 29] getparam 1 .............................. <tSpr>
   [ 31] getparam 1 .............................. <tSpr>
-  [ 33] getparam 1 .............................. <tSpr>
-  [ 35] getobjprop 500 .......................... <tSpr.locV>
-  [ 38] pushint8 1 .............................. <1>
-  [ 40] add ..................................... <tSpr.locV + 1>
-  [ 41] setobjprop 500 .......................... tSpr.locV = tSpr.locV + 1
-  [ 44] getlocal 0 .............................. <tBot>
-  [ 46] getparam 1 .............................. <tSpr>
-  [ 48] getobjprop 1907 ......................... <tSpr.bottom>
-  [ 51] lt ...................................... <tBot < tSpr.bottom>
-  [ 52] jmpifz [ 68] ............................ if tBot < tSpr.bottom then
-  [ 55] getparam 1 .............................. <tSpr>
-  [ 57] getparam 1 .............................. <tSpr>
-  [ 59] getobjprop 500 .......................... <tSpr.locV>
+  [ 33] getobjprop 113 .......................... <tSpr.locV>
+  [ 35] pushint8 1 .............................. <1>
+  [ 37] add ..................................... <tSpr.locV + 1>
+  [ 38] setobjprop 113 .......................... tSpr.locV = tSpr.locV + 1
+  [ 40] getlocal 0 .............................. <tBot>
+  [ 42] getparam 1 .............................. <tSpr>
+  [ 44] getobjprop 1911 ......................... <tSpr.bottom>
+  [ 47] lt ...................................... <tBot < tSpr.bottom>
+  [ 48] jmpifz [ 62] ............................ if tBot < tSpr.bottom then
+  [ 51] getparam 1 .............................. <tSpr>
+  [ 53] getparam 1 .............................. <tSpr>
+  [ 55] getobjprop 113 .......................... <tSpr.locV>
+  [ 57] pushint8 1 .............................. <1>
+  [ 59] sub ..................................... <tSpr.locV - 1>
+  [ 60] setobjprop 113 .......................... tSpr.locV = tSpr.locV - 1
   [ 62] pushint8 1 .............................. <1>
-  [ 64] sub ..................................... <tSpr.locV - 1>
-  [ 65] setobjprop 500 .......................... tSpr.locV = tSpr.locV - 1
-  [ 68] pushint8 1 .............................. <1>
-  [ 70] pusharglistnoret 1 ...................... <1>
-  [ 72] extcall 21 .............................. return 1
-  [ 74] ret
+  [ 64] pusharglistnoret 1 ...................... <1>
+  [ 66] extcall 31 .............................. return 1
+  [ 68] ret
 end
 
 on setOn me
   [  0] pushint8 1 .............................. <1>
-  [  2] setprop 1006 ............................ pActive = 1
+  [  2] setprop 1045 ............................ pActive = 1
   [  5] ret
 end
 
 on setOff me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1006 ............................ pActive = 0
+  [  1] setprop 1045 ............................ pActive = 0
   [  4] ret
 end
 
 on select me
   [  0] pusharglist 0 ........................... <>
-  [  2] thebuiltin 1634 ......................... <the doubleClick>
-  [  5] jmpifz [ 90] ............................ if the doubleClick then / else
-  [  8] getprop 1237 ............................ <pChanges>
+  [  2] thebuiltin 1630 ......................... <the doubleClick>
+  [  5] jmpifz [ 86] ............................ if the doubleClick then / else
+  [  8] getprop 1264 ............................ <pChanges>
   [ 11] jmpifz [ 19] ............................ if pChanges then
   [ 14] pushzero ................................ <0>
   [ 15] pusharglistnoret 1 ...................... <0>
-  [ 17] extcall 21 .............................. return 0
+  [ 17] extcall 31 .............................. return 0
   [ 19] pushint8 1 .............................. <1>
-  [ 21] setprop 1902 ............................ pDoubleClick = 1
-  [ 24] getprop 1006 ............................ <pActive>
+  [ 21] setprop 1906 ............................ pDoubleClick = 1
+  [ 24] getprop 1045 ............................ <pActive>
   [ 27] jmpifz [ 37] ............................ if pActive then / else
   [ 30] pushcons 4 .............................. <"C">
   [ 32] setlocal 0 .............................. tStr = "C"
   [ 34] jmp [ 41]
   [ 37] pushcons 1 .............................. <"O">
   [ 39] setlocal 0 .............................. tStr = "O"
-  [ 41] pushsymb 949 ............................ <#room>
-  [ 44] pusharglist 1 ........................... <#room>
-  [ 46] extcall 260 ............................. <getThread(#room)>
-  [ 49] pusharglist 1 ........................... <getThread(#room)>
-  [ 51] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 53] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 55] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 58] pushcons 5 .............................. <"SETSTUFFDATA">
-  [ 60] pushsymb 453 ............................ <#string>
-  [ 63] getparam 0 .............................. <me>
-  [ 65] pusharglist 1 ........................... <me>
-  [ 67] objcall 156 ............................. <me.getID()>
-  [ 69] pusharglist 1 ........................... <me.getID()>
-  [ 71] extcall 453 ............................. <string(me.getID())>
-  [ 74] pushsymb 453 ............................ <#string>
-  [ 77] getlocal 0 .............................. <tStr>
-  [ 79] pusharglist 4 ........................... <[#string: string(me.getID()), #string: tStr]>
-  [ 81] pushproplist ............................ <[#string: string(me.getID()), #string: tStr]>
-  [ 82] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "SETSTUFFDATA", [#string: string(me.getID()), #string: tStr]>
-  [ 84] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: tStr])
-  [ 87] jmp [145]
-  [ 90] getprop 1902 ............................ <pDoubleClick>
-  [ 93] not ..................................... <not pDoubleClick>
-  [ 94] getprop 1237 ............................ <pChanges>
-  [ 97] not ..................................... <not pChanges>
-  [ 98] and ..................................... <not pDoubleClick and not pChanges>
-  [ 99] jmpifz [145] ............................ if not pDoubleClick and not pChanges then
-  [102] pushsymb 949 ............................ <#room>
-  [105] pusharglist 1 ........................... <#room>
-  [107] extcall 260 ............................. <getThread(#room)>
-  [110] pusharglist 1 ........................... <getThread(#room)>
-  [112] objcall 207 ............................. <getThread(#room).getComponent()>
-  [114] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [116] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [119] pushcons 6 .............................. <"MOVE">
-  [121] pushsymb 462 ............................ <#short>
+  [ 41] pushsymb 52 ............................. <#room>
+  [ 43] pusharglist 1 ........................... <#room>
+  [ 45] extcall 51 .............................. <getThread(#room)>
+  [ 47] pusharglist 1 ........................... <getThread(#room)>
+  [ 49] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 51] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 53] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 55] pushcons 5 .............................. <"SETSTUFFDATA">
+  [ 57] pushsymb 519 ............................ <#string>
+  [ 60] getparam 0 .............................. <me>
+  [ 62] pusharglist 1 ........................... <me>
+  [ 64] objcall 75 .............................. <me.getID()>
+  [ 66] pusharglist 1 ........................... <me.getID()>
+  [ 68] extcall 519 ............................. <string(me.getID())>
+  [ 71] pushsymb 519 ............................ <#string>
+  [ 74] getlocal 0 .............................. <tStr>
+  [ 76] pusharglist 4 ........................... <[#string: string(me.getID()), #string: tStr]>
+  [ 78] pushproplist ............................ <[#string: string(me.getID()), #string: tStr]>
+  [ 79] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "SETSTUFFDATA", [#string: string(me.getID()), #string: tStr]>
+  [ 81] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: tStr])
+  [ 83] jmp [135]
+  [ 86] getprop 1906 ............................ <pDoubleClick>
+  [ 89] not ..................................... <not pDoubleClick>
+  [ 90] getprop 1264 ............................ <pChanges>
+  [ 93] not ..................................... <not pChanges>
+  [ 94] and ..................................... <not pDoubleClick and not pChanges>
+  [ 95] jmpifz [135] ............................ if not pDoubleClick and not pChanges then
+  [ 98] pushsymb 52 ............................. <#room>
+  [100] pusharglist 1 ........................... <#room>
+  [102] extcall 51 .............................. <getThread(#room)>
+  [104] pusharglist 1 ........................... <getThread(#room)>
+  [106] objcall 115 ............................. <getThread(#room).getComponent()>
+  [108] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [110] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [112] pushcons 6 .............................. <"MOVE">
+  [114] pushsymb 526 ............................ <#short>
+  [117] getparam 0 .............................. <me>
+  [119] getobjprop 19 ........................... <me.pLocX>
+  [121] pushsymb 526 ............................ <#short>
   [124] getparam 0 .............................. <me>
-  [126] getobjprop 494 .......................... <me.pLocX>
-  [129] pushsymb 462 ............................ <#short>
-  [132] getparam 0 .............................. <me>
-  [134] getobjprop 496 .......................... <me.pLocY>
-  [137] pusharglist 4 ........................... <[#short: me.pLocX, #short: me.pLocY]>
-  [139] pushproplist ............................ <[#short: me.pLocX, #short: me.pLocY]>
-  [140] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX, #short: me.pLocY]>
-  [142] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX, #short: me.pLocY])
-  [145] pushint8 1 .............................. <1>
-  [147] pusharglistnoret 1 ...................... <1>
-  [149] extcall 21 .............................. return 1
-  [151] ret
+  [126] getobjprop 20 ........................... <me.pLocY>
+  [128] pusharglist 4 ........................... <[#short: me.pLocX, #short: me.pLocY]>
+  [130] pushproplist ............................ <[#short: me.pLocX, #short: me.pLocY]>
+  [131] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "MOVE", [#short: me.pLocX, #short: me.pLocY]>
+  [133] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("MOVE", [#short: me.pLocX, #short: me.pLocY])
+  [135] pushint8 1 .............................. <1>
+  [137] pusharglistnoret 1 ...................... <1>
+  [139] extcall 31 .............................. return 1
+  [141] ret
 end

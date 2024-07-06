@@ -3,155 +3,155 @@ property pPulseState, pSprite, pMember, pStopLoc, pStartloc, pProps
 on construct me
   [  0] pushcons 0 .............................. <"bb2_pwrupbubble.pulse">
   [  2] pusharglist 1 ........................... <"bb2_pwrupbubble.pulse">
-  [  4] extcall 238 ............................. <getmemnum("bb2_pwrupbubble.pulse")>
+  [  4] extcall 175 ............................. <getmemnum("bb2_pwrupbubble.pulse")>
   [  6] pusharglist 1 ........................... <getmemnum("bb2_pwrupbubble.pulse")>
-  [  8] extcall 91 .............................. <member(getmemnum("bb2_pwrupbubble.pulse"))>
-  [ 10] setprop 43 .............................. pMember = member(getmemnum("bb2_pwrupbubble.pulse"))
+  [  8] extcall 171 ............................. <member(getmemnum("bb2_pwrupbubble.pulse"))>
+  [ 10] setprop 213 ............................. pMember = member(getmemnum("bb2_pwrupbubble.pulse"))
   [ 12] pusharglist 0 ........................... <[:]>
   [ 14] pushproplist ............................ <[:]>
-  [ 15] setprop 661 ............................. pProps = [:]
+  [ 15] setprop 1123 ............................ pProps = [:]
   [ 18] pushint8 1 .............................. <1>
   [ 20] pusharglistnoret 1 ...................... <1>
-  [ 22] extcall 28 .............................. return 1
+  [ 22] extcall 13 .............................. return 1
   [ 24] ret
 end
 
 on deconstruct me
   [  0] pusharglist 0 ........................... <[:]>
   [  2] pushproplist ............................ <[:]>
-  [  3] setprop 661 ............................. pProps = [:]
+  [  3] setprop 1123 ............................ pProps = [:]
   [  6] pushint8 1 .............................. <1>
   [  8] pusharglistnoret 1 ...................... <1>
-  [ 10] extcall 28 .............................. return 1
+  [ 10] extcall 13 .............................. return 1
   [ 12] ret
 end
 
 on definePulse me
-  [  0] pushsymb 663 ............................ <#Opening>
-  [  3] setprop 662 ............................. pPulseState = #Opening
+  [  0] pushsymb 1125 ........................... <#Opening>
+  [  3] setprop 1124 ............................ pPulseState = #Opening
   [  6] getparam 0 .............................. <me>
-  [  8] pushsymb 470 ............................ <#sprite>
+  [  8] pushsymb 424 ............................ <#sprite>
   [ 11] pusharglist 2 ........................... <me, #sprite>
-  [ 13] objcall 306 ............................. <me.GET(#sprite)>
-  [ 16] pusharglist 1 ........................... <me.GET(#sprite)>
-  [ 18] extcall 470 ............................. <sprite(me.GET(#sprite))>
-  [ 21] setprop 98 .............................. pSprite = sprite(me.GET(#sprite))
-  [ 23] getparam 0 .............................. <me>
-  [ 25] pushsymb 609 ............................ <#humanLoc>
-  [ 28] pusharglist 2 ........................... <me, #humanLoc>
-  [ 30] objcall 306 ............................. <me.GET(#humanLoc)>
-  [ 33] pushzero ................................ <0>
-  [ 34] pushint8 20 ............................. <20>
-  [ 36] inv ..................................... <-20>
-  [ 37] pusharglist 2 ........................... <0, -20>
-  [ 39] extcall 96 .............................. <point(0, -20)>
-  [ 41] add ..................................... <me.GET(#humanLoc) + point(0, -20)>
-  [ 42] setprop 664 ............................. pStartloc = me.GET(#humanLoc) + point(0, -20)
-  [ 45] getparam 0 .............................. <me>
-  [ 47] pushsymb 610 ............................ <#stoploc>
-  [ 50] pusharglist 2 ........................... <me, #stoploc>
-  [ 52] objcall 306 ............................. <me.GET(#stoploc)>
-  [ 55] setprop 665 ............................. pStopLoc = me.GET(#stoploc)
-  [ 58] getprop 98 .............................. <pSprite>
-  [ 60] getprop 664 ............................. <pStartloc>
-  [ 63] setobjprop 112 .......................... pSprite.loc = pStartloc
-  [ 65] getprop 98 .............................. <pSprite>
-  [ 67] getprop 43 .............................. <pMember>
-  [ 69] setobjprop 91 ........................... pSprite.member = pMember
-  [ 71] getprop 98 .............................. <pSprite>
-  [ 73] getparam 0 .............................. <me>
-  [ 75] pushsymb 611 ............................ <#balloonColor>
-  [ 78] pusharglist 2 ........................... <me, #balloonColor>
-  [ 80] objcall 306 ............................. <me.GET(#balloonColor)>
-  [ 83] setobjprop 130 .......................... pSprite.color = me.GET(#balloonColor)
-  [ 85] pushint8 1 .............................. <1>
-  [ 87] pusharglistnoret 1 ...................... <1>
-  [ 89] extcall 28 .............................. return 1
-  [ 91] ret
+  [ 13] objcall 155 ............................. <me.get(#sprite)>
+  [ 15] pusharglist 1 ........................... <me.get(#sprite)>
+  [ 17] extcall 424 ............................. <sprite(me.get(#sprite))>
+  [ 20] setprop 46 .............................. pSprite = sprite(me.get(#sprite))
+  [ 22] getparam 0 .............................. <me>
+  [ 24] pushsymb 1127 ........................... <#humanLoc>
+  [ 27] pusharglist 2 ........................... <me, #humanLoc>
+  [ 29] objcall 155 ............................. <me.get(#humanLoc)>
+  [ 31] pushzero ................................ <0>
+  [ 32] pushint8 20 ............................. <20>
+  [ 34] inv ..................................... <-20>
+  [ 35] pusharglist 2 ........................... <0, -20>
+  [ 37] extcall 322 ............................. <point(0, -20)>
+  [ 40] add ..................................... <me.get(#humanLoc) + point(0, -20)>
+  [ 41] setprop 1126 ............................ pStartloc = me.get(#humanLoc) + point(0, -20)
+  [ 44] getparam 0 .............................. <me>
+  [ 46] pushsymb 1129 ........................... <#stoploc>
+  [ 49] pusharglist 2 ........................... <me, #stoploc>
+  [ 51] objcall 155 ............................. <me.get(#stoploc)>
+  [ 53] setprop 1128 ............................ pStopLoc = me.get(#stoploc)
+  [ 56] getprop 46 .............................. <pSprite>
+  [ 58] getprop 1126 ............................ <pStartloc>
+  [ 61] setobjprop 336 .......................... pSprite.loc = pStartloc
+  [ 64] getprop 46 .............................. <pSprite>
+  [ 66] getprop 213 ............................. <pMember>
+  [ 68] setobjprop 171 .......................... pSprite.member = pMember
+  [ 70] getprop 46 .............................. <pSprite>
+  [ 72] getparam 0 .............................. <me>
+  [ 74] pushsymb 1130 ........................... <#balloonColor>
+  [ 77] pusharglist 2 ........................... <me, #balloonColor>
+  [ 79] objcall 155 ............................. <me.get(#balloonColor)>
+  [ 81] setobjprop 349 .......................... pSprite.color = me.get(#balloonColor)
+  [ 84] pushint8 1 .............................. <1>
+  [ 86] pusharglistnoret 1 ...................... <1>
+  [ 88] extcall 13 .............................. return 1
+  [ 90] ret
 end
 
 on removePulse me
-  [  0] getprop 98 .............................. <pSprite>
+  [  0] getprop 46 .............................. <pSprite>
   [  2] pusharglist 1 ........................... <pSprite>
-  [  4] extcall 122 ............................. <voidp(pSprite)>
-  [  6] jmpifz [ 14] ............................ if voidp(pSprite) then
-  [  9] pushzero ................................ <0>
-  [ 10] pusharglistnoret 1 ...................... <0>
-  [ 12] extcall 28 .............................. return 0
-  [ 14] getprop 98 .............................. <pSprite>
-  [ 16] pushint16 1000 .......................... <1000>
-  [ 19] inv ..................................... <-1000>
-  [ 20] setobjprop 110 .......................... pSprite.locV = -1000
-  [ 22] pushsymb 666 ............................ <#hide>
-  [ 25] setprop 662 ............................. pPulseState = #hide
-  [ 28] pushint8 1 .............................. <1>
-  [ 30] pusharglistnoret 1 ...................... <1>
-  [ 32] extcall 28 .............................. return 1
-  [ 34] ret
+  [  4] extcall 345 ............................. <voidp(pSprite)>
+  [  7] jmpifz [ 15] ............................ if voidp(pSprite) then
+  [ 10] pushzero ................................ <0>
+  [ 11] pusharglistnoret 1 ...................... <0>
+  [ 13] extcall 13 .............................. return 0
+  [ 15] getprop 46 .............................. <pSprite>
+  [ 17] pushint16 1000 .......................... <1000>
+  [ 20] inv ..................................... <-1000>
+  [ 21] setobjprop 335 .......................... pSprite.locV = -1000
+  [ 24] pushsymb 405 ............................ <#hide>
+  [ 27] setprop 1124 ............................ pPulseState = #hide
+  [ 30] pushint8 1 .............................. <1>
+  [ 32] pusharglistnoret 1 ...................... <1>
+  [ 34] extcall 13 .............................. return 1
+  [ 36] ret
 end
 
 on OpeningBalloon me, tLocV
-  [  0] getprop 662 ............................. <pPulseState>
-  [  3] pushsymb 663 ............................ <#Opening>
+  [  0] getprop 1124 ............................ <pPulseState>
+  [  3] pushsymb 1125 ........................... <#Opening>
   [  6] nteq .................................... <pPulseState <> #Opening>
   [  7] jmpifz [ 15] ............................ if pPulseState <> #Opening then
   [ 10] pushzero ................................ <0>
   [ 11] pusharglistnoret 1 ...................... <0>
-  [ 13] extcall 28 .............................. return 0
-  [ 15] getprop 664 ............................. <pStartloc>
-  [ 18] getobjprop 110 .......................... <pStartloc.locV>
-  [ 20] getparam 1 .............................. <tLocV>
-  [ 22] add ..................................... <pStartloc.locV + tLocV>
-  [ 23] getprop 665 ............................. <pStopLoc>
-  [ 26] getobjprop 110 .......................... <pStopLoc.locV>
-  [ 28] lteq .................................... <(pStartloc.locV + tLocV) <= pStopLoc.locV>
-  [ 29] jmpifz [ 49] ............................ if (pStartloc.locV + tLocV) <= pStopLoc.locV then / else
-  [ 32] pushsymb 667 ............................ <#ready>
-  [ 35] setprop 662 ............................. pPulseState = #ready
-  [ 38] getprop 98 .............................. <pSprite>
-  [ 40] pushint16 1000 .......................... <1000>
-  [ 43] inv ..................................... <-1000>
-  [ 44] setobjprop 110 .......................... pSprite.locV = -1000
-  [ 46] jmp [ 70]
-  [ 49] getprop 664 ............................. <pStartloc>
-  [ 52] pushzero ................................ <0>
-  [ 53] getparam 1 .............................. <tLocV>
-  [ 55] pusharglist 2 ........................... <0, tLocV>
-  [ 57] extcall 96 .............................. <point(0, tLocV)>
-  [ 59] add ..................................... <pStartloc + point(0, tLocV)>
-  [ 60] setprop 664 ............................. pStartloc = pStartloc + point(0, tLocV)
-  [ 63] getprop 98 .............................. <pSprite>
-  [ 65] getprop 664 ............................. <pStartloc>
-  [ 68] setobjprop 112 .......................... pSprite.loc = pStartloc
-  [ 70] ret
+  [ 13] extcall 13 .............................. return 0
+  [ 15] getprop 1126 ............................ <pStartloc>
+  [ 18] getobjprop 335 .......................... <pStartloc.locV>
+  [ 21] getparam 1 .............................. <tLocV>
+  [ 23] add ..................................... <pStartloc.locV + tLocV>
+  [ 24] getprop 1128 ............................ <pStopLoc>
+  [ 27] getobjprop 335 .......................... <pStopLoc.locV>
+  [ 30] lteq .................................... <(pStartloc.locV + tLocV) <= pStopLoc.locV>
+  [ 31] jmpifz [ 52] ............................ if (pStartloc.locV + tLocV) <= pStopLoc.locV then / else
+  [ 34] pushsymb 1131 ........................... <#ready>
+  [ 37] setprop 1124 ............................ pPulseState = #ready
+  [ 40] getprop 46 .............................. <pSprite>
+  [ 42] pushint16 1000 .......................... <1000>
+  [ 45] inv ..................................... <-1000>
+  [ 46] setobjprop 335 .......................... pSprite.locV = -1000
+  [ 49] jmp [ 75]
+  [ 52] getprop 1126 ............................ <pStartloc>
+  [ 55] pushzero ................................ <0>
+  [ 56] getparam 1 .............................. <tLocV>
+  [ 58] pusharglist 2 ........................... <0, tLocV>
+  [ 60] extcall 322 ............................. <point(0, tLocV)>
+  [ 63] add ..................................... <pStartloc + point(0, tLocV)>
+  [ 64] setprop 1126 ............................ pStartloc = pStartloc + point(0, tLocV)
+  [ 67] getprop 46 .............................. <pSprite>
+  [ 69] getprop 1126 ............................ <pStartloc>
+  [ 72] setobjprop 336 .......................... pSprite.loc = pStartloc
+  [ 75] ret
 end
 
 on set me, tKey, tValue
-  [  0] getprop 661 ............................. <pProps>
+  [  0] getprop 1123 ............................ <pProps>
   [  3] getparam 1 .............................. <tKey>
   [  5] getparam 2 .............................. <tValue>
   [  7] pusharglistnoret 3 ...................... <pProps, tKey, tValue>
-  [  9] objcall 123 ............................. pProps[tKey] = tValue
+  [  9] objcall 21 .............................. pProps[tKey] = tValue
   [ 11] pushint8 1 .............................. <1>
   [ 13] pusharglistnoret 1 ...................... <1>
-  [ 15] extcall 28 .............................. return 1
+  [ 15] extcall 13 .............................. return 1
   [ 17] ret
 end
 
-on GET me, tKey
-  [  0] getprop 661 ............................. <pProps>
+on get me, tKey
+  [  0] getprop 1123 ............................ <pProps>
   [  3] getparam 1 .............................. <tKey>
   [  5] pusharglist 2 ........................... <pProps, tKey>
-  [  7] objcall 31 .............................. <pProps[tKey]>
+  [  7] objcall 18 .............................. <pProps[tKey]>
   [  9] setlocal 0 .............................. tValue = pProps[tKey]
   [ 11] getlocal 0 .............................. <tValue>
   [ 13] pusharglist 1 ........................... <tValue>
-  [ 15] extcall 122 ............................. <voidp(tValue)>
-  [ 17] jmpifz [ 23] ............................ if voidp(tValue) then
-  [ 20] pushzero ................................ <0>
-  [ 21] setlocal 0 .............................. tValue = 0
-  [ 23] getlocal 0 .............................. <tValue>
-  [ 25] pusharglistnoret 1 ...................... <tValue>
-  [ 27] extcall 28 .............................. return tValue
-  [ 29] ret
+  [ 15] extcall 345 ............................. <voidp(tValue)>
+  [ 18] jmpifz [ 24] ............................ if voidp(tValue) then
+  [ 21] pushzero ................................ <0>
+  [ 22] setlocal 0 .............................. tValue = 0
+  [ 24] getlocal 0 .............................. <tValue>
+  [ 26] pusharglistnoret 1 ...................... <tValue>
+  [ 28] extcall 13 .............................. return tValue
+  [ 30] ret
 end

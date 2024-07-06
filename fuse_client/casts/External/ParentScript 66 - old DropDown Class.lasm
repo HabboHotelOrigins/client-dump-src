@@ -207,11 +207,11 @@ on define me, tProps
   [463] pushint8 1 .............................. <1>
   [465] setprop 495 ............................. pSelectedItemNum = 1
   [468] getprop 489 ............................. <pTextlist>
-  [471] setprop 1578 ............................ pMenuItems = pTextlist
+  [471] setprop 1575 ............................ pMenuItems = pTextlist
   [474] getprop 489 ............................. <pTextlist>
   [477] pusharglist 1 ........................... <pTextlist>
   [479] objcall 22 .............................. <pTextlist.count()>
-  [481] setprop 1579 ............................ pNumberOfMenuItems = pTextlist.count()
+  [481] setprop 1576 ............................ pNumberOfMenuItems = pTextlist.count()
   [484] getparam 0 .............................. <me>
   [486] pusharglist 0 ........................... <>
   [488] extcall 32 .............................. <VOID>
@@ -219,7 +219,7 @@ on define me, tProps
   [493] pusharglistnoret 3 ...................... <me, VOID, #up>
   [495] objcall 450 ............................. me.UpdateImageObjects(VOID, #up)
   [498] getparam 0 .............................. <me>
-  [500] getprop 1578 ............................ <pMenuItems>
+  [500] getprop 1575 ............................ <pMenuItems>
   [503] pushint8 1 .............................. <1>
   [505] pushsymb 496 ............................ <#up>
   [508] pusharglist 4 ........................... <me, pMenuItems, 1, #up>
@@ -238,7 +238,7 @@ on define me, tProps
   [541] getobjprop 43 ........................... <me.pimage.height>
   [543] setlocal 3 .............................. pheight = me.pimage.height
   [545] getparam 0 .............................. <me>
-  [547] getprop 1578 ............................ <pMenuItems>
+  [547] getprop 1575 ............................ <pMenuItems>
   [550] pushint8 1 .............................. <1>
   [552] pusharglist 2 ........................... <pMenuItems, 1>
   [554] objcall 54 .............................. <pMenuItems[1]>
@@ -390,7 +390,7 @@ on setSelection me, tSelNumOrStr
   [  2] pusharglist 1 ........................... <tSelNumOrStr>
   [  4] extcall 38 .............................. <stringp(tSelNumOrStr)>
   [  6] jmpifz [ 43] ............................ if stringp(tSelNumOrStr) then / else
-  [  9] getprop 1578 ............................ <pMenuItems>
+  [  9] getprop 1575 ............................ <pMenuItems>
   [ 12] getparam 1 .............................. <tSelNumOrStr>
   [ 14] pusharglist 2 ........................... <pMenuItems, tSelNumOrStr>
   [ 16] objcall 519 ............................. <pMenuItems.getPos(tSelNumOrStr)>
@@ -411,14 +411,14 @@ on setSelection me, tSelNumOrStr
   [ 49] pushzero ................................ <0>
   [ 50] gt ...................................... <tSelNum > 0>
   [ 51] getlocal 0 .............................. <tSelNum>
-  [ 53] getprop 1579 ............................ <pNumberOfMenuItems>
+  [ 53] getprop 1576 ............................ <pNumberOfMenuItems>
   [ 56] lteq .................................... <tSelNum <= pNumberOfMenuItems>
   [ 57] and ..................................... <(tSelNum > 0) and (tSelNum <= pNumberOfMenuItems)>
   [ 58] jmpifz [127] ............................ if (tSelNum > 0) and (tSelNum <= pNumberOfMenuItems) then / else
   [ 61] getlocal 0 .............................. <tSelNum>
   [ 63] setprop 495 ............................. pSelectedItemNum = tSelNum
   [ 66] getparam 0 .............................. <me>
-  [ 68] getprop 1578 ............................ <pMenuItems>
+  [ 68] getprop 1575 ............................ <pMenuItems>
   [ 71] getprop 495 ............................. <pSelectedItemNum>
   [ 74] pusharglist 2 ........................... <pMenuItems, pSelectedItemNum>
   [ 76] objcall 54 .............................. <pMenuItems[pSelectedItemNum]>
@@ -636,14 +636,14 @@ on mouseUp me
   [ 51] pushzero ................................ <0>
   [ 52] gt ...................................... <pRollOverItem > 0>
   [ 53] getprop 548 ............................. <pRollOverItem>
-  [ 56] getprop 1579 ............................ <pNumberOfMenuItems>
+  [ 56] getprop 1576 ............................ <pNumberOfMenuItems>
   [ 59] lteq .................................... <pRollOverItem <= pNumberOfMenuItems>
   [ 60] and ..................................... <(pRollOverItem > 0) and (pRollOverItem <= pNumberOfMenuItems)>
   [ 61] jmpifz [159] ............................ if (pRollOverItem > 0) and (pRollOverItem <= pNumberOfMenuItems) then
   [ 64] getprop 548 ............................. <pRollOverItem>
   [ 67] setprop 495 ............................. pSelectedItemNum = pRollOverItem
   [ 70] getparam 0 .............................. <me>
-  [ 72] getprop 1578 ............................ <pMenuItems>
+  [ 72] getprop 1575 ............................ <pMenuItems>
   [ 75] getprop 495 ............................. <pSelectedItemNum>
   [ 78] pusharglist 2 ........................... <pMenuItems, pSelectedItemNum>
   [ 80] objcall 54 .............................. <pMenuItems[pSelectedItemNum]>
@@ -665,7 +665,7 @@ on mouseUp me
   [117] pusharglistnoret 1 ...................... <me>
   [119] objcall 449 ............................. me.render()
   [122] pusharglistnoret 0 ...................... <>
-  [124] extcall 1580 ............................ updateStage()
+  [124] extcall 1577 ............................ updateStage()
   [127] getprop 473 ............................. <pTextKeys>
   [130] getprop 495 ............................. <pSelectedItemNum>
   [133] pusharglist 2 ........................... <pTextKeys, pSelectedItemNum>
@@ -736,12 +736,12 @@ on mouseWithin me
   [ 56] nteq .................................... <pRollOverItem <> pLastRollOver>
   [ 57] jmpifz [301] ............................ if pRollOverItem <> pLastRollOver then
   [ 60] getprop 548 ............................. <pRollOverItem>
-  [ 63] getprop 1579 ............................ <pNumberOfMenuItems>
+  [ 63] getprop 1576 ............................ <pNumberOfMenuItems>
   [ 66] gt ...................................... <pRollOverItem > pNumberOfMenuItems>
   [ 67] jmpifz [ 76] ............................ if pRollOverItem > pNumberOfMenuItems then
-  [ 70] getprop 1579 ............................ <pNumberOfMenuItems>
+  [ 70] getprop 1576 ............................ <pNumberOfMenuItems>
   [ 73] setprop 548 ............................. pRollOverItem = pNumberOfMenuItems
-  [ 76] getprop 1579 ............................ <pNumberOfMenuItems>
+  [ 76] getprop 1576 ............................ <pNumberOfMenuItems>
   [ 79] getprop 548 ............................. <pRollOverItem>
   [ 82] eq ...................................... <pNumberOfMenuItems = pRollOverItem>
   [ 83] jmpifz [ 94] ............................ if pNumberOfMenuItems = pRollOverItem then / else
@@ -1988,7 +1988,7 @@ on setActiveItemTo me, tItem
   [ 39] objcall 824 ............................. <pTextKeys.findPos(tItem)>
   [ 42] setprop 495 ............................. pSelectedItemNum = pTextKeys.findPos(tItem)
   [ 45] getparam 0 .............................. <me>
-  [ 47] getprop 1578 ............................ <pMenuItems>
+  [ 47] getprop 1575 ............................ <pMenuItems>
   [ 50] getprop 495 ............................. <pSelectedItemNum>
   [ 53] pusharglist 2 ........................... <pMenuItems, pSelectedItemNum>
   [ 55] objcall 54 .............................. <pMenuItems[pSelectedItemNum]>

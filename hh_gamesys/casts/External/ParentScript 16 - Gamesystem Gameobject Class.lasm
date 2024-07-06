@@ -1,0 +1,458 @@
+property pObjectId, pKilled, pGameSystem, pGameObjectSyncValues, pGameObjectLocation, pGameObjectNextTarget, pGameObjectFinalTarget
+
+on setObjectId me, tid
+  [  0] pusharglist 0 ........................... <[:]>
+  [  2] pushproplist ............................ <[:]>
+  [  3] setprop 522 ............................. pGameObjectSyncValues = [:]
+  [  6] getparam 1 .............................. <tid>
+  [  8] setprop 523 ............................. pObjectId = tid
+  [ 11] ret
+end
+
+on getObjectId me
+  [  0] getprop 523 ............................. <pObjectId>
+  [  3] pusharglistnoret 1 ...................... <pObjectId>
+  [  5] extcall 53 .............................. return pObjectId
+  [  7] ret
+end
+
+on setGameObjectProperty me, tProp, tValue
+  [  0] getparam 1 .............................. <tProp>
+  [  2] pusharglist 1 ........................... <tProp>
+  [  4] extcall 199 ............................. <listp(tProp)>
+  [  6] jmpifz [ 61] ............................ if listp(tProp) then
+  [  9] pushint8 1 .............................. <1>
+  [ 11] setlocal 0
+  [ 13] getlocal 0
+  [ 15] getparam 1 .............................. <tProp>
+  [ 17] getobjprop 143 .......................... <tProp.count>
+  [ 19] lteq
+  [ 20] jmpifz [ 55] ............................ repeat with i = 1 to tProp.count
+  [ 23] getparam 0 .............................. <me>
+  [ 25] getparam 1 .............................. <tProp>
+  [ 27] getlocal 0 .............................. <i>
+  [ 29] pusharglist 2 ........................... <tProp, i>
+  [ 31] objcall 245 ............................. <tProp.getPropAt(i)>
+  [ 33] getparam 1 .............................. <tProp>
+  [ 35] getlocal 0 .............................. <i>
+  [ 37] pusharglist 2 ........................... <tProp, i>
+  [ 39] objcall 99 .............................. <tProp[i]>
+  [ 41] pusharglistnoret 3 ...................... <me, tProp.getPropAt(i), tProp[i]>
+  [ 43] objcall 514 ............................. me.setGameObjectProperty(tProp.getPropAt(i), tProp[i])
+  [ 46] pushint8 1
+  [ 48] getlocal 0
+  [ 50] add
+  [ 51] setlocal 0
+  [ 53] endrepeat [ 13]
+  [ 55] pushint8 1 .............................. <1>
+  [ 57] pusharglistnoret 1 ...................... <1>
+  [ 59] extcall 53 .............................. return 1
+  [ 61] getparam 0 .............................. <me>
+  [ 63] getparam 1 .............................. <tProp>
+  [ 65] getparam 2 .............................. <tValue>
+  [ 67] pusharglist 3 ........................... <me, tProp, tValue>
+  [ 69] objcall 142 ............................. <me.setaProp(tProp, tValue)>
+  [ 71] pusharglistnoret 1 ...................... <me.setaProp(tProp, tValue)>
+  [ 73] extcall 53 .............................. return me.setaProp(tProp, tValue)
+  [ 75] ret
+end
+
+on getGameObjectProperty me, tProp
+  [  0] getprop 522 ............................. <pGameObjectSyncValues>
+  [  3] pusharglist 0 ........................... <>
+  [  5] extcall 61 .............................. <VOID>
+  [  7] eq ...................................... <pGameObjectSyncValues = VOID>
+  [  8] jmpifz [ 17] ............................ if pGameObjectSyncValues = VOID then
+  [ 11] pusharglist 0 ........................... <[:]>
+  [ 13] pushproplist ............................ <[:]>
+  [ 14] setprop 522 ............................. pGameObjectSyncValues = [:]
+  [ 17] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 20] getparam 1 .............................. <tProp>
+  [ 22] pusharglist 2 ........................... <pGameObjectSyncValues, tProp>
+  [ 24] objcall 281 ............................. <pGameObjectSyncValues.findPos(tProp)>
+  [ 27] pushzero ................................ <0>
+  [ 28] gt ...................................... <pGameObjectSyncValues.findPos(tProp) > 0>
+  [ 29] jmpifz [ 48] ............................ if pGameObjectSyncValues.findPos(tProp) > 0 then / else
+  [ 32] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 35] getparam 1 .............................. <tProp>
+  [ 37] pusharglist 2 ........................... <pGameObjectSyncValues, tProp>
+  [ 39] objcall 99 .............................. <pGameObjectSyncValues[tProp]>
+  [ 41] pusharglistnoret 1 ...................... <pGameObjectSyncValues[tProp]>
+  [ 43] extcall 53 .............................. return pGameObjectSyncValues[tProp]
+  [ 45] jmp [ 61]
+  [ 48] getparam 0 .............................. <me>
+  [ 50] getparam 1 .............................. <tProp>
+  [ 52] pusharglist 2 ........................... <me, tProp>
+  [ 54] objcall 472 ............................. <me.getaProp(tProp)>
+  [ 57] pusharglistnoret 1 ...................... <me.getaProp(tProp)>
+  [ 59] extcall 53 .............................. return me.getaProp(tProp)
+  [ 61] ret
+end
+
+on getActive me
+  [  0] getprop 524 ............................. <pKilled>
+  [  3] not ..................................... <not pKilled>
+  [  4] pusharglistnoret 1 ...................... <not pKilled>
+  [  6] extcall 53 .............................. return not pKilled
+  [  8] ret
+end
+
+on setLocation me, tX, tY, tZ
+  [  0] getprop 477 ............................. <pGameObjectLocation>
+  [  3] getparam 1 .............................. <tX>
+  [  5] getparam 2 .............................. <tY>
+  [  7] getparam 3 .............................. <tZ>
+  [  9] pusharglist 4 ........................... <pGameObjectLocation, tX, tY, tZ>
+  [ 11] objcall 483 ............................. <pGameObjectLocation.setLocation(tX, tY, tZ)>
+  [ 14] pusharglistnoret 1 ...................... <pGameObjectLocation.setLocation(tX, tY, tZ)>
+  [ 16] extcall 53 .............................. return pGameObjectLocation.setLocation(tX, tY, tZ)
+  [ 18] ret
+end
+
+on setGameSystemReference me, tObject
+  [  0] getparam 1 .............................. <tObject>
+  [  2] setprop 525 ............................. pGameSystem = tObject
+  [  5] ret
+end
+
+on setGameObjectSyncProperty me, tList, tdata
+  [  0] getprop 522 ............................. <pGameObjectSyncValues>
+  [  3] pusharglist 0 ........................... <>
+  [  5] extcall 61 .............................. <VOID>
+  [  7] eq ...................................... <pGameObjectSyncValues = VOID>
+  [  8] jmpifz [ 17] ............................ if pGameObjectSyncValues = VOID then
+  [ 11] pusharglist 0 ........................... <[:]>
+  [ 13] pushproplist ............................ <[:]>
+  [ 14] setprop 522 ............................. pGameObjectSyncValues = [:]
+  [ 17] getparam 1 .............................. <tList>
+  [ 19] pusharglist 1 ........................... <tList>
+  [ 21] extcall 199 ............................. <listp(tList)>
+  [ 23] jmpifz [ 77] ............................ if listp(tList) then / else
+  [ 26] pushint8 1 .............................. <1>
+  [ 28] setlocal 0
+  [ 30] getlocal 0
+  [ 32] getparam 1 .............................. <tList>
+  [ 34] getobjprop 143 .......................... <tList.count>
+  [ 36] lteq
+  [ 37] jmpifz [ 74] ............................ repeat with i = 1 to tList.count
+  [ 40] getparam 0 .............................. <me>
+  [ 42] getchainedprop 522 ...................... <me.pGameObjectSyncValues>
+  [ 45] getparam 1 .............................. <tList>
+  [ 47] getlocal 0 .............................. <i>
+  [ 49] pusharglist 2 ........................... <tList, i>
+  [ 51] objcall 245 ............................. <tList.getPropAt(i)>
+  [ 53] getparam 1 .............................. <tList>
+  [ 55] getlocal 0 .............................. <i>
+  [ 57] pusharglist 2 ........................... <tList, i>
+  [ 59] objcall 99 .............................. <tList[i]>
+  [ 61] pusharglistnoret 3 ...................... <me.pGameObjectSyncValues, tList.getPropAt(i), tList[i]>
+  [ 63] objcall 142 ............................. me.pGameObjectSyncValues.setaProp(tList.getPropAt(i), tList[i])
+  [ 65] pushint8 1
+  [ 67] getlocal 0
+  [ 69] add
+  [ 70] setlocal 0
+  [ 72] endrepeat [ 30]
+  [ 74] jmp [ 90]
+  [ 77] getparam 0 .............................. <me>
+  [ 79] getchainedprop 522 ...................... <me.pGameObjectSyncValues>
+  [ 82] getparam 1 .............................. <tList>
+  [ 84] getparam 2 .............................. <tdata>
+  [ 86] pusharglistnoret 3 ...................... <me.pGameObjectSyncValues, tList, tdata>
+  [ 88] objcall 142 ............................. me.pGameObjectSyncValues.setaProp(tList, tdata)
+  [ 90] pushint8 1 .............................. <1>
+  [ 92] pusharglistnoret 1 ...................... <1>
+  [ 94] extcall 53 .............................. return 1
+  [ 96] ret
+end
+
+on executeGameObjectEvent me, tEvent, tdata
+  [  0] getparam 1 .............................. <tEvent>
+  [  2] peek 0 .................................. case tEvent of
+  [  4] pushsymb 526 ............................ <#set_target>
+  [  7] eq
+  [  8] jmpifz [ 39] ............................ (case) #set_target:
+  [ 11] getparam 0 .............................. <me>
+  [ 13] getchainedprop 479 ...................... <me.pGameObjectFinalTarget>
+  [ 16] getparam 2 .............................. <tdata>
+  [ 18] getobjprop 395 .......................... <tdata.x>
+  [ 21] getparam 2 .............................. <tdata>
+  [ 23] getobjprop 396 .......................... <tdata.y>
+  [ 26] getparam 2 .............................. <tdata>
+  [ 28] getobjprop 476 .......................... <tdata.z>
+  [ 31] pusharglistnoret 4 ...................... <me.pGameObjectFinalTarget, tdata.x, tdata.y, tdata.z>
+  [ 33] objcall 527 ............................. me.pGameObjectFinalTarget.setLoc(tdata.x, tdata.y, tdata.z)
+  [ 36] jmp [ 89]
+  [ 39] peek 0
+  [ 41] pushsymb 528 ............................ <#set_target_tile>
+  [ 44] eq
+  [ 45] jmpifz [ 76] ............................ (case) #set_target_tile:
+  [ 48] getparam 0 .............................. <me>
+  [ 50] getchainedprop 479 ...................... <me.pGameObjectFinalTarget>
+  [ 53] getparam 2 .............................. <tdata>
+  [ 55] getobjprop 395 .......................... <tdata.x>
+  [ 58] getparam 2 .............................. <tdata>
+  [ 60] getobjprop 396 .......................... <tdata.y>
+  [ 63] getparam 2 .............................. <tdata>
+  [ 65] getobjprop 476 .......................... <tdata.z>
+  [ 68] pusharglistnoret 4 ...................... <me.pGameObjectFinalTarget, tdata.x, tdata.y, tdata.z>
+  [ 70] objcall 441 ............................. me.pGameObjectFinalTarget.setTileLoc(tdata.x, tdata.y, tdata.z)
+  [ 73] jmp [ 89] ............................... (case) otherwise:
+  [ 76] pushcons 0 .............................. <"* Standard UNDEFINED EVENT:">
+  [ 78] getparam 1 .............................. <tEvent>
+  [ 80] joinpadstr .............................. <"* Standard UNDEFINED EVENT:" && tEvent>
+  [ 81] getparam 2 .............................. <tdata>
+  [ 83] joinpadstr .............................. <"* Standard UNDEFINED EVENT:" && tEvent && tdata>
+  [ 84] pusharglistnoret 1 ...................... <"* Standard UNDEFINED EVENT:" && tEvent && tdata>
+  [ 86] extcall 470 ............................. put "* Standard UNDEFINED EVENT:" && tEvent && tdata
+  [ 89] pop 1 ................................... end case
+  [ 91] ret
+end
+
+on addChecksum me
+  [  0] pushzero ................................ <0>
+  [  1] setlocal 0 .............................. tCheckSum = 0
+  [  3] pushint8 1 .............................. <1>
+  [  5] setlocal 1 .............................. tCounter = 1
+  [  7] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 10] pusharglist 0 ........................... <>
+  [ 12] extcall 61 .............................. <VOID>
+  [ 14] eq ...................................... <pGameObjectSyncValues = VOID>
+  [ 15] jmpifz [ 24] ............................ if pGameObjectSyncValues = VOID then
+  [ 18] pusharglist 0 ........................... <[:]>
+  [ 20] pushproplist ............................ <[:]>
+  [ 21] setprop 522 ............................. pGameObjectSyncValues = [:]
+  [ 24] pushint8 1 .............................. <1>
+  [ 26] setlocal 2
+  [ 28] getlocal 2
+  [ 30] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 33] getobjprop 143 .......................... <pGameObjectSyncValues.count>
+  [ 35] lteq
+  [ 36] jmpifz [ 93] ............................ repeat with i = 1 to pGameObjectSyncValues.count
+  [ 39] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 42] getlocal 2 .............................. <i>
+  [ 44] pusharglist 2 ........................... <pGameObjectSyncValues, i>
+  [ 46] objcall 99 .............................. <pGameObjectSyncValues[i]>
+  [ 48] pusharglist 1 ........................... <pGameObjectSyncValues[i]>
+  [ 50] extcall 282 ............................. <ilk(pGameObjectSyncValues[i])>
+  [ 53] pushsymb 277 ............................ <#integer>
+  [ 56] eq ...................................... <ilk(pGameObjectSyncValues[i]) = #integer>
+  [ 57] jmpifz [ 84] ............................ if ilk(pGameObjectSyncValues[i]) = #integer then
+  [ 60] getlocal 0 .............................. <tCheckSum>
+  [ 62] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 65] getlocal 2 .............................. <i>
+  [ 67] pusharglist 2 ........................... <pGameObjectSyncValues, i>
+  [ 69] objcall 99 .............................. <pGameObjectSyncValues[i]>
+  [ 71] getlocal 1 .............................. <tCounter>
+  [ 73] mul ..................................... <pGameObjectSyncValues[i] * tCounter>
+  [ 74] add ..................................... <tCheckSum + (pGameObjectSyncValues[i] * tCounter)>
+  [ 75] setlocal 0 .............................. tCheckSum = tCheckSum + (pGameObjectSyncValues[i] * tCounter)
+  [ 77] getlocal 1 .............................. <tCounter>
+  [ 79] pushint8 1 .............................. <1>
+  [ 81] add ..................................... <tCounter + 1>
+  [ 82] setlocal 1 .............................. tCounter = tCounter + 1
+  [ 84] pushint8 1
+  [ 86] getlocal 2
+  [ 88] add
+  [ 89] setlocal 2
+  [ 91] endrepeat [ 28]
+  [ 93] getlocal 0 .............................. <tCheckSum>
+  [ 95] pusharglistnoret 1 ...................... <tCheckSum>
+  [ 97] extcall 53 .............................. return tCheckSum
+  [ 99] ret
+end
+
+on define me
+  [  0] pushint8 1 .............................. <1>
+  [  2] pusharglistnoret 1 ...................... <1>
+  [  4] extcall 53 .............................. return 1
+  [  6] ret
+end
+
+on gameObjectRefreshLocation me
+  [  0] pushzero ................................ <0>
+  [  1] pusharglistnoret 1 ...................... <0>
+  [  3] extcall 53 .............................. return 0
+  [  5] ret
+end
+
+on gameObjectNewMoveTarget me
+  [  0] pushzero ................................ <0>
+  [  1] pusharglistnoret 1 ...................... <0>
+  [  3] extcall 53 .............................. return 0
+  [  5] ret
+end
+
+on calculateFrameMovement me
+  [  0] pushzero ................................ <0>
+  [  1] pusharglistnoret 1 ...................... <0>
+  [  3] extcall 53 .............................. return 0
+  [  5] ret
+end
+
+on getLocation me
+  [  0] getprop 477 ............................. <pGameObjectLocation>
+  [  3] pusharglistnoret 1 ...................... <pGameObjectLocation>
+  [  5] extcall 53 .............................. return pGameObjectLocation
+  [  7] ret
+end
+
+on getNextTarget me
+  [  0] getprop 478 ............................. <pGameObjectNextTarget>
+  [  3] pusharglistnoret 1 ...................... <pGameObjectNextTarget>
+  [  5] extcall 53 .............................. return pGameObjectNextTarget
+  [  7] ret
+end
+
+on getFinalTarget me
+  [  0] getprop 479 ............................. <pGameObjectFinalTarget>
+  [  3] pusharglistnoret 1 ...................... <pGameObjectFinalTarget>
+  [  5] extcall 53 .............................. return pGameObjectFinalTarget
+  [  7] ret
+end
+
+on resetTargets me
+  [  0] getprop 478 ............................. <pGameObjectNextTarget>
+  [  3] getprop 477 ............................. <pGameObjectLocation>
+  [  6] getobjprop 395 .......................... <pGameObjectLocation.x>
+  [  9] getprop 477 ............................. <pGameObjectLocation>
+  [ 12] getobjprop 396 .......................... <pGameObjectLocation.y>
+  [ 15] getprop 477 ............................. <pGameObjectLocation>
+  [ 18] getobjprop 476 .......................... <pGameObjectLocation.z>
+  [ 21] pusharglistnoret 4 ...................... <pGameObjectNextTarget, pGameObjectLocation.x, pGameObjectLocation.y, pGameObjectLocation.z>
+  [ 23] objcall 527 ............................. pGameObjectNextTarget.setLoc(pGameObjectLocation.x, pGameObjectLocation.y, pGameObjectLocation.z)
+  [ 26] getprop 479 ............................. <pGameObjectFinalTarget>
+  [ 29] getprop 477 ............................. <pGameObjectLocation>
+  [ 32] getobjprop 395 .......................... <pGameObjectLocation.x>
+  [ 35] getprop 477 ............................. <pGameObjectLocation>
+  [ 38] getobjprop 396 .......................... <pGameObjectLocation.y>
+  [ 41] getprop 477 ............................. <pGameObjectLocation>
+  [ 44] getobjprop 476 .......................... <pGameObjectLocation.z>
+  [ 47] pusharglistnoret 4 ...................... <pGameObjectFinalTarget, pGameObjectLocation.x, pGameObjectLocation.y, pGameObjectLocation.z>
+  [ 49] objcall 527 ............................. pGameObjectFinalTarget.setLoc(pGameObjectLocation.x, pGameObjectLocation.y, pGameObjectLocation.z)
+  [ 52] ret
+end
+
+on existsFinalTarget me
+  [  0] getprop 479 ............................. <pGameObjectFinalTarget>
+  [  3] pusharglist 1 ........................... <pGameObjectFinalTarget>
+  [  5] extcall 55 .............................. <objectp(pGameObjectFinalTarget)>
+  [  7] not ..................................... <not objectp(pGameObjectFinalTarget)>
+  [  8] jmpifz [ 16] ............................ if not objectp(pGameObjectFinalTarget) then
+  [ 11] pushzero ................................ <0>
+  [ 12] pusharglistnoret 1 ...................... <0>
+  [ 14] extcall 53 .............................. return 0
+  [ 16] getprop 477 ............................. <pGameObjectLocation>
+  [ 19] pusharglist 1 ........................... <pGameObjectLocation>
+  [ 21] extcall 55 .............................. <objectp(pGameObjectLocation)>
+  [ 23] not ..................................... <not objectp(pGameObjectLocation)>
+  [ 24] jmpifz [ 32] ............................ if not objectp(pGameObjectLocation) then
+  [ 27] pushzero ................................ <0>
+  [ 28] pusharglistnoret 1 ...................... <0>
+  [ 30] extcall 53 .............................. return 0
+  [ 32] getprop 477 ............................. <pGameObjectLocation>
+  [ 35] pusharglist 1 ........................... <pGameObjectLocation>
+  [ 37] objcall 502 ............................. <pGameObjectLocation.getLocation()>
+  [ 40] getprop 479 ............................. <pGameObjectFinalTarget>
+  [ 43] pusharglist 1 ........................... <pGameObjectFinalTarget>
+  [ 45] objcall 502 ............................. <pGameObjectFinalTarget.getLocation()>
+  [ 48] nteq .................................... <pGameObjectLocation.getLocation() <> pGameObjectFinalTarget.getLocation()>
+  [ 49] pusharglistnoret 1 ...................... <pGameObjectLocation.getLocation() <> pGameObjectFinalTarget.getLocation()>
+  [ 51] extcall 53 .............................. return pGameObjectLocation.getLocation() <> pGameObjectFinalTarget.getLocation()
+  [ 53] ret
+end
+
+on existsNextTarget me
+  [  0] getprop 478 ............................. <pGameObjectNextTarget>
+  [  3] pusharglist 1 ........................... <pGameObjectNextTarget>
+  [  5] extcall 55 .............................. <objectp(pGameObjectNextTarget)>
+  [  7] not ..................................... <not objectp(pGameObjectNextTarget)>
+  [  8] jmpifz [ 16] ............................ if not objectp(pGameObjectNextTarget) then
+  [ 11] pushzero ................................ <0>
+  [ 12] pusharglistnoret 1 ...................... <0>
+  [ 14] extcall 53 .............................. return 0
+  [ 16] getprop 477 ............................. <pGameObjectLocation>
+  [ 19] pusharglist 1 ........................... <pGameObjectLocation>
+  [ 21] extcall 55 .............................. <objectp(pGameObjectLocation)>
+  [ 23] not ..................................... <not objectp(pGameObjectLocation)>
+  [ 24] jmpifz [ 32] ............................ if not objectp(pGameObjectLocation) then
+  [ 27] pushzero ................................ <0>
+  [ 28] pusharglistnoret 1 ...................... <0>
+  [ 30] extcall 53 .............................. return 0
+  [ 32] getprop 477 ............................. <pGameObjectLocation>
+  [ 35] pusharglist 1 ........................... <pGameObjectLocation>
+  [ 37] objcall 502 ............................. <pGameObjectLocation.getLocation()>
+  [ 40] getprop 478 ............................. <pGameObjectNextTarget>
+  [ 43] pusharglist 1 ........................... <pGameObjectNextTarget>
+  [ 45] objcall 502 ............................. <pGameObjectNextTarget.getLocation()>
+  [ 48] nteq .................................... <pGameObjectLocation.getLocation() <> pGameObjectNextTarget.getLocation()>
+  [ 49] pusharglistnoret 1 ...................... <pGameObjectLocation.getLocation() <> pGameObjectNextTarget.getLocation()>
+  [ 51] extcall 53 .............................. return pGameObjectLocation.getLocation() <> pGameObjectNextTarget.getLocation()
+  [ 53] ret
+end
+
+on dump me
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. tDumpList = []
+  [  5] getprop 522 ............................. <pGameObjectSyncValues>
+  [  8] pusharglist 0 ........................... <>
+  [ 10] extcall 61 .............................. <VOID>
+  [ 12] eq ...................................... <pGameObjectSyncValues = VOID>
+  [ 13] jmpifz [ 22] ............................ if pGameObjectSyncValues = VOID then
+  [ 16] pusharglist 0 ........................... <[:]>
+  [ 18] pushproplist ............................ <[:]>
+  [ 19] setprop 522 ............................. pGameObjectSyncValues = [:]
+  [ 22] pushint8 1 .............................. <1>
+  [ 24] setlocal 1
+  [ 26] getlocal 1
+  [ 28] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 31] getobjprop 143 .......................... <pGameObjectSyncValues.count>
+  [ 33] lteq
+  [ 34] jmpifz [ 96] ............................ repeat with i = 1 to pGameObjectSyncValues.count
+  [ 37] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 40] getlocal 1 .............................. <i>
+  [ 42] pusharglist 2 ........................... <pGameObjectSyncValues, i>
+  [ 44] objcall 99 .............................. <pGameObjectSyncValues[i]>
+  [ 46] pusharglist 1 ........................... <pGameObjectSyncValues[i]>
+  [ 48] extcall 282 ............................. <ilk(pGameObjectSyncValues[i])>
+  [ 51] pushsymb 277 ............................ <#integer>
+  [ 54] eq ...................................... <ilk(pGameObjectSyncValues[i]) = #integer>
+  [ 55] jmpifz [ 87] ............................ if ilk(pGameObjectSyncValues[i]) = #integer then
+  [ 58] getlocal 0 .............................. <tDumpList>
+  [ 60] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 63] getlocal 1 .............................. <i>
+  [ 65] pusharglist 2 ........................... <pGameObjectSyncValues, i>
+  [ 67] objcall 245 ............................. <pGameObjectSyncValues.getPropAt(i)>
+  [ 69] pushcons 1 .............................. <":">
+  [ 71] joinstr ................................. <pGameObjectSyncValues.getPropAt(i) & ":">
+  [ 72] getprop 522 ............................. <pGameObjectSyncValues>
+  [ 75] getlocal 1 .............................. <i>
+  [ 77] pusharglist 2 ........................... <pGameObjectSyncValues, i>
+  [ 79] objcall 99 .............................. <pGameObjectSyncValues[i]>
+  [ 81] joinpadstr .............................. <pGameObjectSyncValues.getPropAt(i) & ":" && pGameObjectSyncValues[i]>
+  [ 82] pusharglistnoret 2 ...................... <tDumpList, pGameObjectSyncValues.getPropAt(i) & ":" && pGameObjectSyncValues[i]>
+  [ 84] objcall 341 ............................. tDumpList.add(pGameObjectSyncValues.getPropAt(i) & ":" && pGameObjectSyncValues[i])
+  [ 87] pushint8 1
+  [ 89] getlocal 1
+  [ 91] add
+  [ 92] setlocal 1
+  [ 94] endrepeat [ 26]
+  [ 96] getlocal 0 .............................. <tDumpList>
+  [ 98] pusharglistnoret 1 ...................... <tDumpList>
+  [100] extcall 53 .............................. return tDumpList
+  [102] ret
+end
+
+on getGameSystem me
+  [  0] getprop 525 ............................. <pGameSystem>
+  [  3] pusharglistnoret 1 ...................... <pGameSystem>
+  [  5] extcall 53 .............................. return pGameSystem
+  [  7] ret
+end
+
+on Remove me
+  [  0] getparam 0 .............................. <me>
+  [  2] pushint8 1 .............................. <1>
+  [  4] setobjprop 524 .......................... me.pKilled = 1
+  [  7] ret
+end

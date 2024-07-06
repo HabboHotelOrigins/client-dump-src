@@ -4,7 +4,7 @@ on prepare me
   [  0] getparam 0 .............................. <me>
   [  2] getobjprop 1137 ......................... <me.pType>
   [  5] getparam 0 .............................. <me>
-  [  7] pushsymb 1493 ........................... <#pProps>
+  [  7] pushsymb 1490 ........................... <#pProps>
   [ 10] pushsymb 457 ............................ <#model>
   [ 13] pusharglist 3 ........................... <me, #pProps, #model>
   [ 15] objcall 290 ............................. <me.pProps[#model]>
@@ -30,55 +30,55 @@ on prepare me
   [ 56] extcall 25 .............................. return 0
   [ 58] getparam 0 .............................. <me>
   [ 60] getparam 0 .............................. <me>
-  [ 62] pushsymb 1493 ........................... <#pProps>
+  [ 62] pushsymb 1490 ........................... <#pProps>
   [ 65] pushsymb 42 ............................. <#width>
   [ 67] pusharglist 3 ........................... <me, #pProps, #width>
   [ 69] objcall 290 ............................. <me.pProps[#width]>
   [ 72] setobjprop 475 .......................... me.pOrigWidth = me.pProps[#width]
   [ 75] getparam 0 .............................. <me>
   [ 77] getparam 0 .............................. <me>
-  [ 79] pushsymb 1493 ........................... <#pProps>
+  [ 79] pushsymb 1490 ........................... <#pProps>
   [ 82] pushsymb 481 ............................ <#maxwidth>
   [ 85] pusharglist 3 ........................... <me, #pProps, #maxwidth>
   [ 87] objcall 290 ............................. <me.pProps[#maxwidth]>
   [ 90] setobjprop 480 .......................... me.pMaxWidth = me.pProps[#maxwidth]
   [ 93] getparam 0 .............................. <me>
   [ 95] getparam 0 .............................. <me>
-  [ 97] pushsymb 1493 ........................... <#pProps>
+  [ 97] pushsymb 1490 ........................... <#pProps>
   [100] pushsymb 483 ............................ <#fixedsize>
   [103] pusharglist 3 ........................... <me, #pProps, #fixedsize>
   [105] objcall 290 ............................. <me.pProps[#fixedsize]>
   [108] setobjprop 482 .......................... me.pFixedSize = me.pProps[#fixedsize]
   [111] getparam 0 .............................. <me>
   [113] getparam 0 .............................. <me>
-  [115] pushsymb 1493 ........................... <#pProps>
+  [115] pushsymb 1490 ........................... <#pProps>
   [118] pushsymb 472 ............................ <#alignment>
   [121] pusharglist 3 ........................... <me, #pProps, #alignment>
   [123] objcall 290 ............................. <me.pProps[#alignment]>
   [126] setobjprop 471 .......................... me.pAlignment = me.pProps[#alignment]
   [129] getparam 0 .............................. <me>
   [131] getparam 0 .............................. <me>
-  [133] pushsymb 1493 ........................... <#pProps>
+  [133] pushsymb 1490 ........................... <#pProps>
   [136] pushsymb 517 ............................ <#key>
   [139] pusharglist 3 ........................... <me, #pProps, #key>
   [141] objcall 290 ............................. <me.pProps[#key]>
   [144] pusharglist 1 ........................... <me.pProps[#key]>
   [146] extcall 259 ............................. <getText(me.pProps[#key])>
-  [149] setobjprop 1548 ......................... me.pButtonText = getText(me.pProps[#key])
+  [149] setobjprop 1545 ......................... me.pButtonText = getText(me.pProps[#key])
   [152] getparam 0 .............................. <me>
   [154] getparam 0 .............................. <me>
-  [156] pushsymb 1493 ........................... <#pProps>
+  [156] pushsymb 1490 ........................... <#pProps>
   [159] pushsymb 503 ............................ <#blend>
   [162] pusharglist 3 ........................... <me, #pProps, #blend>
   [164] objcall 290 ............................. <me.pProps[#blend]>
-  [167] setobjprop 1549 ......................... me.pBlend = me.pProps[#blend]
+  [167] setobjprop 1546 ......................... me.pBlend = me.pProps[#blend]
   [170] getparam 0 .............................. <me>
   [172] pusharglist 0 ........................... <[:]>
   [174] pushproplist ............................ <[:]>
-  [175] setobjprop 1550 ......................... me.pCachedImgs = [:]
+  [175] setobjprop 1547 ......................... me.pCachedImgs = [:]
   [178] getparam 0 .............................. <me>
-  [180] pushsymb 1493 ........................... <#pProps>
-  [183] pushsymb 1567 ........................... <#icon>
+  [180] pushsymb 1490 ........................... <#pProps>
+  [183] pushsymb 1564 ........................... <#icon>
   [186] pusharglist 3 ........................... <me, #pProps, #icon>
   [188] objcall 290 ............................. <me.pProps[#icon]>
   [191] pusharglist 1 ........................... <me.pProps[#icon]>
@@ -86,8 +86,8 @@ on prepare me
   [195] not ..................................... <not voidp(me.pProps[#icon])>
   [196] jmpifz [242] ............................ if not voidp(me.pProps[#icon]) then
   [199] getparam 0 .............................. <me>
-  [201] pushsymb 1493 ........................... <#pProps>
-  [204] pushsymb 1567 ........................... <#icon>
+  [201] pushsymb 1490 ........................... <#pProps>
+  [204] pushsymb 1564 ........................... <#icon>
   [207] pusharglist 3 ........................... <me, #pProps, #icon>
   [209] objcall 290 ............................. <me.pProps[#icon]>
   [212] pusharglist 1 ........................... <me.pProps[#icon]>
@@ -103,7 +103,7 @@ on prepare me
   [231] getchainedprop 502 ...................... <member(tMemNum).image>
   [234] pusharglist 1 ........................... <member(tMemNum).image>
   [236] objcall 554 ............................. <member(tMemNum).image.duplicate()>
-  [239] setprop 1568 ............................ pIconImg = member(tMemNum).image.duplicate()
+  [239] setprop 1565 ............................ pIconImg = member(tMemNum).image.duplicate()
   [242] getparam 0 .............................. <me>
   [244] getobjprop 480 .......................... <me.pMaxWidth>
   [247] pusharglist 1 ........................... <me.pMaxWidth>
@@ -130,10 +130,10 @@ on prepare me
   [296] getparam 0 .............................. <me>
   [298] getparam 0 .............................. <me>
   [300] getparam 0 .............................. <me>
-  [302] getobjprop 1548 ......................... <me.pButtonText>
+  [302] getobjprop 1545 ......................... <me.pButtonText>
   [305] pushsymb 496 ............................ <#up>
   [308] pusharglist 3 ........................... <me, me.pButtonText, #up>
-  [310] objcall 1546 ............................ <me.createButtonImg(me.pButtonText, #up)>
+  [310] objcall 1543 ............................ <me.createButtonImg(me.pButtonText, #up)>
   [313] setobjprop 498 .......................... me.pimage = me.createButtonImg(me.pButtonText, #up)
   [316] getparam 0 .............................. <me>
   [318] getchainedprop 35 ....................... <me.pSprite>
@@ -158,7 +158,7 @@ on prepare me
   [364] getparam 0 .............................. <me>
   [366] getchainedprop 498 ...................... <me.pimage>
   [369] getobjprop 43 ........................... <me.pimage.height>
-  [371] setobjprop 504 .......................... me.pheight = me.pimage.height
+  [371] setobjprop 505 .......................... me.pheight = me.pimage.height
   [374] getparam 0 .............................. <me>
   [376] getparam 0 .............................. <me>
   [378] getchainedprop 35 ....................... <me.pSprite>
@@ -177,7 +177,7 @@ on prepare me
   [409] getparam 0 .............................. <me>
   [411] getchainedprop 35 ....................... <me.pSprite>
   [413] getparam 0 .............................. <me>
-  [415] getobjprop 504 .......................... <me.pheight>
+  [415] getobjprop 505 .......................... <me.pheight>
   [418] setobjprop 43 ........................... me.pSprite.height = me.pheight
   [420] pushint8 1 .............................. <1>
   [422] pusharglistnoret 1 ...................... <1>
@@ -187,7 +187,7 @@ end
 
 on createButtonImg me, tText, tstate
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 1550 ........................... <#pCachedImgs>
+  [  2] pushsymb 1547 ........................... <#pCachedImgs>
   [  5] getparam 2 .............................. <tstate>
   [  7] pusharglist 3 ........................... <me, #pCachedImgs, tstate>
   [  9] objcall 290 ............................. <me.pCachedImgs[tstate]>
@@ -196,7 +196,7 @@ on createButtonImg me, tText, tstate
   [ 16] not ..................................... <not voidp(me.pCachedImgs[tstate])>
   [ 17] jmpifz [ 36] ............................ if not voidp(me.pCachedImgs[tstate]) then
   [ 20] getparam 0 .............................. <me>
-  [ 22] pushsymb 1550 ........................... <#pCachedImgs>
+  [ 22] pushsymb 1547 ........................... <#pCachedImgs>
   [ 25] getparam 2 .............................. <tstate>
   [ 27] pusharglist 3 ........................... <me, #pCachedImgs, tstate>
   [ 29] objcall 290 ............................. <me.pCachedImgs[tstate]>
@@ -359,13 +359,13 @@ on createButtonImg me, tText, tstate
   [375] setlocal 12 ............................. tOptImgWidth = 0
   [377] getparam 0 .............................. <me>
   [379] pushsymb 458 ............................ <#pProp>
-  [382] pushsymb 1567 ........................... <#icon>
+  [382] pushsymb 1564 ........................... <#icon>
   [385] pusharglist 3 ........................... <me, #pProp, #icon>
   [387] objcall 290 ............................. <me.pProp[#icon]>
   [390] pusharglist 1 ........................... <me.pProp[#icon]>
   [392] extcall 20 .............................. <voidp(me.pProp[#icon])>
   [394] not ..................................... <not voidp(me.pProp[#icon])>
-  [395] getprop 1568 ............................ <pIconImg>
+  [395] getprop 1565 ............................ <pIconImg>
   [398] pusharglist 1 ........................... <pIconImg>
   [400] extcall 20 .............................. <voidp(pIconImg)>
   [402] not ..................................... <not voidp(pIconImg)>
@@ -373,10 +373,10 @@ on createButtonImg me, tText, tstate
   [404] jmpifz [480] ............................ if not voidp(me.pProp[#icon]) and not voidp(pIconImg) then
   [407] getparam 0 .............................. <me>
   [409] pushsymb 458 ............................ <#pProp>
-  [412] pushsymb 1567 ........................... <#icon>
+  [412] pushsymb 1564 ........................... <#icon>
   [415] pusharglist 3 ........................... <me, #pProp, #icon>
   [417] objcall 288 ............................. <me.pProp[#icon]>
-  [420] pushsymb 1569 ........................... <#props>
+  [420] pushsymb 1566 ........................... <#props>
   [423] pusharglist 2 ........................... <me.pProp[#icon], #props>
   [425] objcall 54 .............................. <me.pProp[#icon][#props]>
   [427] pushint8 1 .............................. <1>
@@ -385,10 +385,10 @@ on createButtonImg me, tText, tstate
   [433] setlocal 13 ............................. tAlignment = me.pProp[#icon][#props].getPropAt(1)
   [435] getparam 0 .............................. <me>
   [437] pushsymb 458 ............................ <#pProp>
-  [440] pushsymb 1567 ........................... <#icon>
+  [440] pushsymb 1564 ........................... <#icon>
   [443] pusharglist 3 ........................... <me, #pProp, #icon>
   [445] objcall 288 ............................. <me.pProp[#icon]>
-  [448] pushsymb 1569 ........................... <#props>
+  [448] pushsymb 1566 ........................... <#props>
   [451] pusharglist 2 ........................... <me.pProp[#icon], #props>
   [453] objcall 54 .............................. <me.pProp[#icon][#props]>
   [455] getlocal 13 ............................. <tAlignment>
@@ -398,7 +398,7 @@ on createButtonImg me, tText, tstate
   [464] pusharglist 2 ........................... <me.pProp[#icon][#props][tAlignment], #marginH>
   [466] objcall 54 .............................. <me.pProp[#icon][#props][tAlignment][#marginH]>
   [468] setlocal 14 ............................. tOptImgMargH = me.pProp[#icon][#props][tAlignment][#marginH]
-  [470] getprop 1568 ............................ <pIconImg>
+  [470] getprop 1565 ............................ <pIconImg>
   [473] getobjprop 42 ........................... <pIconImg.width>
   [475] getlocal 14 ............................. <tOptImgMargH>
   [477] add ..................................... <pIconImg.width + tOptImgMargH>
@@ -419,12 +419,12 @@ on createButtonImg me, tText, tstate
   [506] pusharglist 2 ........................... <me.pOrigWidth - (tMarginH * 2), 5>
   [508] extcall 510 ............................. <point(me.pOrigWidth - (tMarginH * 2), 5)>
   [511] pusharglist 2 ........................... <tTextMem, point(me.pOrigWidth - (tMarginH * 2), 5)>
-  [513] objcall 1570 ............................ <tTextMem.locToCharPos(point(me.pOrigWidth - (tMarginH * 2), 5))>
+  [513] objcall 1567 ............................ <tTextMem.locToCharPos(point(me.pOrigWidth - (tMarginH * 2), 5))>
   [516] setlocal 15 ............................. tCharPosH = tTextMem.locToCharPos(point(me.pOrigWidth - (tMarginH * 2), 5))
   [518] getparam 0 .............................. <me>
   [520] getlocal 1 .............................. <tTextMem>
   [522] pusharglist 2 ........................... <me, tTextMem>
-  [524] objcall 1547 ............................ <me.getTextWidth(tTextMem)>
+  [524] objcall 1544 ............................ <me.getTextWidth(tTextMem)>
   [527] setlocal 16 ............................. tTextWidth = me.getTextWidth(tTextMem)
   [529] getlocal 1 .............................. <tTextMem>
   [531] pushzero ................................ <0>
@@ -445,7 +445,7 @@ on createButtonImg me, tText, tstate
   [564] getparam 0 .............................. <me>
   [566] getlocal 1 .............................. <tTextMem>
   [568] pusharglist 2 ........................... <me, tTextMem>
-  [570] objcall 1547 ............................ <me.getTextWidth(tTextMem)>
+  [570] objcall 1544 ............................ <me.getTextWidth(tTextMem)>
   [573] setlocal 16 ............................. tTextWidth = me.getTextWidth(tTextMem)
   [575] getlocal 16 ............................. <tTextWidth>
   [577] getlocal 10 ............................. <tMarginH>
@@ -487,7 +487,7 @@ on createButtonImg me, tText, tstate
   [644] setlocal 18 ............................. tWidth = tTextWidth + (tMarginH * 2) + tOptImgWidth
   [646] getlocal 18 ............................. <tWidth>
   [648] getparam 0 .............................. <me>
-  [650] pushsymb 1551 ........................... <#pButtonImg>
+  [650] pushsymb 1548 ........................... <#pButtonImg>
   [653] pushsymb 466 ............................ <#left>
   [656] pusharglist 3 ........................... <me, #pButtonImg, #left>
   [658] objcall 288 ............................. <me.pButtonImg[#left]>
@@ -536,7 +536,7 @@ on createButtonImg me, tText, tstate
   [746] jmpifz [771] ............................ (case) #left:
   [749] getlocal 23 ............................. <tEndPointX>
   [751] getparam 0 .............................. <me>
-  [753] getchainedprop 1551 ..................... <me.pButtonImg>
+  [753] getchainedprop 1548 ..................... <me.pButtonImg>
   [756] getlocal 24 ............................. <i>
   [758] pusharglist 2 ........................... <me.pButtonImg, i>
   [760] objcall 290 ............................. <me.pButtonImg.getProp(i)>
@@ -552,14 +552,14 @@ on createButtonImg me, tText, tstate
   [782] getlocal 18 ............................. <tWidth>
   [784] add ..................................... <tEndPointX + tWidth>
   [785] getparam 0 .............................. <me>
-  [787] getchainedprop 1551 ..................... <me.pButtonImg>
+  [787] getchainedprop 1548 ..................... <me.pButtonImg>
   [790] pushsymb 466 ............................ <#left>
   [793] pusharglist 2 ........................... <me.pButtonImg, #left>
   [795] objcall 290 ............................. <me.pButtonImg.getProp(#left)>
   [798] getobjprop 42 ........................... <me.pButtonImg.getProp(#left).width>
   [800] sub ..................................... <tEndPointX + tWidth - me.pButtonImg.getProp(#left).width>
   [801] getparam 0 .............................. <me>
-  [803] getchainedprop 1551 ..................... <me.pButtonImg>
+  [803] getchainedprop 1548 ..................... <me.pButtonImg>
   [806] pushsymb 509 ............................ <#right>
   [809] pusharglist 2 ........................... <me.pButtonImg, #right>
   [811] objcall 290 ............................. <me.pButtonImg.getProp(#right)>
@@ -573,7 +573,7 @@ on createButtonImg me, tText, tstate
   [828] jmpifz [850] ............................ (case) #right:
   [831] getlocal 23 ............................. <tEndPointX>
   [833] getparam 0 .............................. <me>
-  [835] getchainedprop 1551 ..................... <me.pButtonImg>
+  [835] getchainedprop 1548 ..................... <me.pButtonImg>
   [838] getlocal 24 ............................. <i>
   [840] pusharglist 2 ........................... <me.pButtonImg, i>
   [842] objcall 290 ............................. <me.pButtonImg.getProp(i)>
@@ -590,13 +590,13 @@ on createButtonImg me, tText, tstate
   [865] setlocal 25 ............................. tDstRect = rect(tStartPointX, tStartPointY, tEndPointX, tEndPointY)
   [867] getlocal 19 ............................. <tNewImg>
   [869] getparam 0 .............................. <me>
-  [871] getchainedprop 1551 ..................... <me.pButtonImg>
+  [871] getchainedprop 1548 ..................... <me.pButtonImg>
   [874] getlocal 24 ............................. <i>
   [876] pusharglist 2 ........................... <me.pButtonImg, i>
   [878] objcall 290 ............................. <me.pButtonImg.getProp(i)>
   [881] getlocal 25 ............................. <tDstRect>
   [883] getparam 0 .............................. <me>
-  [885] getchainedprop 1551 ..................... <me.pButtonImg>
+  [885] getchainedprop 1548 ..................... <me.pButtonImg>
   [888] getlocal 24 ............................. <i>
   [890] pusharglist 2 ........................... <me.pButtonImg, i>
   [892] objcall 290 ............................. <me.pButtonImg.getProp(i)>
@@ -609,13 +609,13 @@ on createButtonImg me, tText, tstate
   [908] pop 3
   [910] getparam 0 .............................. <me>
   [912] pushsymb 458 ............................ <#pProp>
-  [915] pushsymb 1567 ........................... <#icon>
+  [915] pushsymb 1564 ........................... <#icon>
   [918] pusharglist 3 ........................... <me, #pProp, #icon>
   [920] objcall 290 ............................. <me.pProp[#icon]>
   [923] pusharglist 1 ........................... <me.pProp[#icon]>
   [925] extcall 20 .............................. <voidp(me.pProp[#icon])>
   [927] not ..................................... <not voidp(me.pProp[#icon])>
-  [928] getprop 1568 ............................ <pIconImg>
+  [928] getprop 1565 ............................ <pIconImg>
   [931] pusharglist 1 ........................... <pIconImg>
   [933] extcall 20 .............................. <voidp(pIconImg)>
   [935] not ..................................... <not voidp(pIconImg)>
@@ -623,25 +623,25 @@ on createButtonImg me, tText, tstate
   [937] jmpifz [1239] ........................... if not voidp(me.pProp[#icon]) and not voidp(pIconImg) then
   [940] getparam 0 .............................. <me>
   [942] pushsymb 458 ............................ <#pProp>
-  [945] pushsymb 1567 ........................... <#icon>
+  [945] pushsymb 1564 ........................... <#icon>
   [948] pusharglist 3 ........................... <me, #pProp, #icon>
   [950] objcall 288 ............................. <me.pProp[#icon]>
-  [953] pushsymb 1569 ........................... <#props>
+  [953] pushsymb 1566 ........................... <#props>
   [956] pusharglist 2 ........................... <me.pProp[#icon], #props>
   [958] objcall 54 .............................. <me.pProp[#icon][#props]>
   [960] pushint8 1 .............................. <1>
   [962] pusharglist 2 ........................... <me.pProp[#icon][#props], 1>
   [964] objcall 23 .............................. <me.pProp[#icon][#props].getPropAt(1)>
   [966] setlocal 13 ............................. tAlignment = me.pProp[#icon][#props].getPropAt(1)
-  [968] getprop 1568 ............................ <pIconImg>
+  [968] getprop 1565 ............................ <pIconImg>
   [971] getobjprop 557 .......................... <pIconImg.rect>
   [974] setlocal 26 ............................. tOptImgRect = pIconImg.rect
   [976] getparam 0 .............................. <me>
   [978] pushsymb 458 ............................ <#pProp>
-  [981] pushsymb 1567 ........................... <#icon>
+  [981] pushsymb 1564 ........................... <#icon>
   [984] pusharglist 3 ........................... <me, #pProp, #icon>
   [986] objcall 288 ............................. <me.pProp[#icon]>
-  [989] pushsymb 1569 ........................... <#props>
+  [989] pushsymb 1566 ........................... <#props>
   [992] pusharglist 2 ........................... <me.pProp[#icon], #props>
   [994] objcall 54 .............................. <me.pProp[#icon][#props]>
   [996] getlocal 13 ............................. <tAlignment>
@@ -720,11 +720,11 @@ on createButtonImg me, tText, tstate
   [1139] pusharglist 4 .......................... <tNewImg.width / 2, 0, tNewImg.width / 2, 0>
   [1141] extcall 557 ............................ <rect(tNewImg.width / 2, 0, tNewImg.width / 2, 0)>
   [1144] add .................................... <tOptImgRect + rect(tNewImg.width / 2, 0, tNewImg.width / 2, 0)>
-  [1145] getprop 1568 ........................... <pIconImg>
+  [1145] getprop 1565 ........................... <pIconImg>
   [1148] pushint8 2 ............................. <2>
   [1150] div .................................... <pIconImg / 2>
   [1151] pushzero ............................... <0>
-  [1152] getprop 1568 ........................... <pIconImg>
+  [1152] getprop 1565 ........................... <pIconImg>
   [1155] pushint8 2 ............................. <2>
   [1157] div .................................... <pIconImg / 2>
   [1158] pushzero ............................... <0>
@@ -735,10 +735,10 @@ on createButtonImg me, tText, tstate
   [1167] pop 1 .................................. end case
   [1169] getparam 0 ............................. <me>
   [1171] pushsymb 458 ........................... <#pProp>
-  [1174] pushsymb 1567 .......................... <#icon>
+  [1174] pushsymb 1564 .......................... <#icon>
   [1177] pusharglist 3 .......................... <me, #pProp, #icon>
   [1179] objcall 288 ............................ <me.pProp[#icon]>
-  [1182] pushsymb 1569 .......................... <#props>
+  [1182] pushsymb 1566 .......................... <#props>
   [1185] pusharglist 2 .......................... <me.pProp[#icon], #props>
   [1187] objcall 54 ............................. <me.pProp[#icon][#props]>
   [1189] getlocal 13 ............................ <tAlignment>
@@ -755,7 +755,7 @@ on createButtonImg me, tText, tstate
   [1213] pushint8 36 ............................ <36>
   [1215] setlocal 28 ............................ tInk = 36
   [1217] getlocal 19 ............................ <tNewImg>
-  [1219] getprop 1568 ........................... <pIconImg>
+  [1219] getprop 1565 ........................... <pIconImg>
   [1222] getlocal 25 ............................ <tDstRect>
   [1224] getlocal 26 ............................ <tOptImgRect>
   [1226] pushsymb 562 ........................... <#ink>
@@ -784,14 +784,14 @@ on createButtonImg me, tText, tstate
   [1275] jmpifz [1323] .......................... (case) #left:
   [1278] getlocal 25 ............................ <tDstRect>
   [1280] getparam 0 ............................. <me>
-  [1282] getchainedprop 1551 .................... <me.pButtonImg>
+  [1282] getchainedprop 1548 .................... <me.pButtonImg>
   [1285] pushsymb 466 ........................... <#left>
   [1288] pusharglist 2 .......................... <me.pButtonImg, #left>
   [1290] objcall 290 ............................ <me.pButtonImg.getProp(#left)>
   [1293] getobjprop 42 .......................... <me.pButtonImg.getProp(#left).width>
   [1295] pushzero ............................... <0>
   [1296] getparam 0 ............................. <me>
-  [1298] getchainedprop 1551 .................... <me.pButtonImg>
+  [1298] getchainedprop 1548 .................... <me.pButtonImg>
   [1301] pushsymb 466 ........................... <#left>
   [1304] pusharglist 2 .......................... <me.pButtonImg, #left>
   [1306] objcall 290 ............................ <me.pButtonImg.getProp(#left)>
@@ -849,7 +849,7 @@ on createButtonImg me, tText, tstate
   [1405] add .................................... <tDstRect + rect(tNewImg.width, 0, tNewImg.width, 0)>
   [1406] getlocal 16 ............................ <tTextWidth>
   [1408] getparam 0 ............................. <me>
-  [1410] getchainedprop 1551 .................... <me.pButtonImg>
+  [1410] getchainedprop 1548 .................... <me.pButtonImg>
   [1413] pushsymb 509 ........................... <#right>
   [1416] pusharglist 2 .......................... <me.pButtonImg, #right>
   [1418] objcall 290 ............................ <me.pButtonImg.getProp(#right)>
@@ -858,7 +858,7 @@ on createButtonImg me, tText, tstate
   [1424] pushzero ............................... <0>
   [1425] getlocal 16 ............................ <tTextWidth>
   [1427] getparam 0 ............................. <me>
-  [1429] getchainedprop 1551 .................... <me.pButtonImg>
+  [1429] getchainedprop 1548 .................... <me.pButtonImg>
   [1432] pushsymb 509 ........................... <#right>
   [1435] pusharglist 2 .......................... <me.pButtonImg, #right>
   [1437] objcall 290 ............................ <me.pButtonImg.getProp(#right)>
@@ -878,7 +878,7 @@ on createButtonImg me, tText, tstate
   [1465] pusharglistnoret 4 ..................... <tNewImg, tTextImg, tDstRect, tTextImg.rect>
   [1467] objcall 558 ............................ tNewImg.copyPixels(tTextImg, tDstRect, tTextImg.rect)
   [1470] getparam 0 ............................. <me>
-  [1472] pushsymb 1550 .......................... <#pCachedImgs>
+  [1472] pushsymb 1547 .......................... <#pCachedImgs>
   [1475] getparam 2 ............................. <tstate>
   [1477] getlocal 19 ............................ <tNewImg>
   [1479] pusharglistnoret 4 ..................... <me, #pCachedImgs, tstate, tNewImg>

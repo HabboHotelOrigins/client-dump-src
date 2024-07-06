@@ -1,0 +1,104 @@
+property pMemName, pMember, pProps
+
+on define me, tMemName, tPriority, tProps
+  [  0] getparam 1 .............................. <tMemName>
+  [  2] setprop 903 ............................. pMemName = tMemName
+  [  5] getparam 1 .............................. <tMemName>
+  [  7] pusharglist 1 ........................... <tMemName>
+  [  9] extcall 56 .............................. <getmemnum(tMemName)>
+  [ 11] pusharglist 1 ........................... <getmemnum(tMemName)>
+  [ 13] extcall 99 .............................. <member(getmemnum(tMemName))>
+  [ 15] setprop 570 ............................. pMember = member(getmemnum(tMemName))
+  [ 18] getprop 570 ............................. <pMember>
+  [ 21] getobjprop 140 .......................... <pMember.type>
+  [ 23] pushsymb 802 ............................ <#sound>
+  [ 26] nteq .................................... <pMember.type <> #sound>
+  [ 27] jmpifz [ 51] ............................ if pMember.type <> #sound then
+  [ 30] getparam 0 .............................. <me>
+  [ 32] pushcons 0 .............................. <"Sound member not found or not a sound:">
+  [ 34] getparam 1 .............................. <tMemName>
+  [ 36] joinpadstr .............................. <"Sound member not found or not a sound:" && tMemName>
+  [ 37] pushsymb 356 ............................ <#define>
+  [ 40] pushsymb 856 ............................ <#minor>
+  [ 43] pusharglist 4 ........................... <me, "Sound member not found or not a sound:" && tMemName, #define, #minor>
+  [ 45] extcall 106 ............................. <error(me, "Sound member not found or not a sound:" && tMemName, #define, #minor)>
+  [ 47] pusharglistnoret 1 ...................... <error(me, "Sound member not found or not a sound:" && tMemName, #define, #minor)>
+  [ 49] extcall 44 .............................. return error(me, "Sound member not found or not a sound:" && tMemName, #define, #minor)
+  [ 51] getparam 2 .............................. <tPriority>
+  [ 53] setlocal 0 .............................. pPriority = tPriority
+  [ 55] getparam 3 .............................. <tProps>
+  [ 57] pusharglist 1 ........................... <tProps>
+  [ 59] extcall 66 .............................. <listp(tProps)>
+  [ 61] jmpifz [ 72] ............................ if listp(tProps) then / else
+  [ 64] getparam 3 .............................. <tProps>
+  [ 66] setprop 899 ............................. pProps = tProps
+  [ 69] jmp [ 78]
+  [ 72] pusharglist 0 ........................... <[:]>
+  [ 74] pushproplist ............................ <[:]>
+  [ 75] setprop 899 ............................. pProps = [:]
+  [ 78] getprop 899 ............................. <pProps>
+  [ 81] pushsymb 891 ............................ <#volume>
+  [ 84] pusharglist 2 ........................... <pProps, #volume>
+  [ 86] objcall 313 ............................. <pProps.findPos(#volume)>
+  [ 89] pushzero ................................ <0>
+  [ 90] eq ...................................... <pProps.findPos(#volume) = 0>
+  [ 91] jmpifz [107] ............................ if pProps.findPos(#volume) = 0 then
+  [ 94] getprop 899 ............................. <pProps>
+  [ 97] pushsymb 891 ............................ <#volume>
+  [100] pushint16 255 ........................... <255>
+  [103] pusharglistnoret 3 ...................... <pProps, #volume, 255>
+  [105] objcall 142 ............................. pProps[#volume] = 255
+  [107] pushint8 1 .............................. <1>
+  [109] pusharglistnoret 1 ...................... <1>
+  [111] extcall 44 .............................. return 1
+  [113] ret
+end
+
+on getProperty me, tProp
+  [  0] getparam 1 .............................. <tProp>
+  [  2] pusharglist 0 ........................... <>
+  [  4] extcall 30 .............................. <VOID>
+  [  6] eq ...................................... <tProp = VOID>
+  [  7] jmpifz [ 15] ............................ if tProp = VOID then
+  [ 10] pushzero ................................ <0>
+  [ 11] pusharglistnoret 1 ...................... <0>
+  [ 13] extcall 44 .............................. return 0
+  [ 15] getprop 899 ............................. <pProps>
+  [ 18] pusharglist 1 ........................... <pProps>
+  [ 20] extcall 66 .............................. <listp(pProps)>
+  [ 22] not ..................................... <not listp(pProps)>
+  [ 23] jmpifz [ 31] ............................ if not listp(pProps) then
+  [ 26] pushzero ................................ <0>
+  [ 27] pusharglistnoret 1 ...................... <0>
+  [ 29] extcall 44 .............................. return 0
+  [ 31] getprop 899 ............................. <pProps>
+  [ 34] getparam 1 .............................. <tProp>
+  [ 36] pusharglist 2 ........................... <pProps, tProp>
+  [ 38] objcall 96 .............................. <pProps[tProp]>
+  [ 40] pusharglistnoret 1 ...................... <pProps[tProp]>
+  [ 42] extcall 44 .............................. return pProps[tProp]
+  [ 44] ret
+end
+
+on getMember me
+  [  0] getprop 570 ............................. <pMember>
+  [  3] pusharglistnoret 1 ...................... <pMember>
+  [  5] extcall 44 .............................. return pMember
+  [  7] ret
+end
+
+on dump me
+  [  0] pushcons 1 .............................. <"member:">
+  [  2] getprop 903 ............................. <pMemName>
+  [  5] joinpadstr .............................. <"member:" && pMemName>
+  [  6] getprop 570 ............................. <pMember>
+  [  9] joinpadstr .............................. <"member:" && pMemName && pMember>
+  [ 10] pusharglistnoret 1 ...................... <"member:" && pMemName && pMember>
+  [ 12] extcall 329 ............................. put "member:" && pMemName && pMember
+  [ 15] pushcons 2 .............................. <"props:">
+  [ 17] getprop 899 ............................. <pProps>
+  [ 20] joinpadstr .............................. <"props:" && pProps>
+  [ 21] pusharglistnoret 1 ...................... <"props:" && pProps>
+  [ 23] extcall 329 ............................. put "props:" && pProps
+  [ 26] ret
+end

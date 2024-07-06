@@ -2,37 +2,37 @@ property pChanges, pRolling, pRollDir, pRollingDirection, pRollingStartTime, pRo
 
 on prepare me, tdata
   [  0] getparam 1 .............................. <tdata>
-  [  2] pushsymb 826 ............................ <#stuffdata>
+  [  2] pushsymb 880 ............................ <#stuffdata>
   [  5] pusharglist 2 ........................... <tdata, #stuffdata>
-  [  7] objcall 1732 ............................ <tdata.findPos(#stuffdata)>
-  [ 10] jmpifz [ 49] ............................ if tdata.findPos(#stuffdata) then
+  [  7] objcall 1728 ............................ <tdata.findPos(#stuffdata)>
+  [ 10] jmpifz [ 48] ............................ if tdata.findPos(#stuffdata) then
   [ 13] getparam 1 .............................. <tdata>
-  [ 15] pushsymb 826 ............................ <#stuffdata>
+  [ 15] pushsymb 880 ............................ <#stuffdata>
   [ 18] pusharglist 2 ........................... <tdata, #stuffdata>
-  [ 20] objcall 9 ............................... <tdata[#stuffdata]>
+  [ 20] objcall 34 .............................. <tdata[#stuffdata]>
   [ 22] pusharglist 1 ........................... <tdata[#stuffdata]>
-  [ 24] extcall 451 ............................. <integer(tdata[#stuffdata])>
-  [ 27] setprop 1733 ............................ pRollDir = integer(tdata[#stuffdata])
-  [ 30] getprop 1733 ............................ <pRollDir>
-  [ 33] pushzero ................................ <0>
-  [ 34] lt ...................................... <pRollDir < 0>
-  [ 35] getprop 1733 ............................ <pRollDir>
-  [ 38] pushint8 7 .............................. <7>
-  [ 40] gt ...................................... <pRollDir > 7>
-  [ 41] or ...................................... <(pRollDir < 0) or (pRollDir > 7)>
-  [ 42] jmpifz [ 49] ............................ if (pRollDir < 0) or (pRollDir > 7) then
-  [ 45] pushzero ................................ <0>
-  [ 46] setprop 1733 ............................ pRollDir = 0
-  [ 49] pushint8 1 .............................. <1>
-  [ 51] setprop 1237 ............................ pChanges = 1
-  [ 54] pushzero ................................ <0>
-  [ 55] setprop 1734 ............................ pRolling = 0
-  [ 58] getparam 0 .............................. <me>
-  [ 60] pusharglistnoret 1 ...................... <me>
-  [ 62] objcall 3 ............................... me.update()
+  [ 24] extcall 102 ............................. <integer(tdata[#stuffdata])>
+  [ 26] setprop 1729 ............................ pRollDir = integer(tdata[#stuffdata])
+  [ 29] getprop 1729 ............................ <pRollDir>
+  [ 32] pushzero ................................ <0>
+  [ 33] lt ...................................... <pRollDir < 0>
+  [ 34] getprop 1729 ............................ <pRollDir>
+  [ 37] pushint8 7 .............................. <7>
+  [ 39] gt ...................................... <pRollDir > 7>
+  [ 40] or ...................................... <(pRollDir < 0) or (pRollDir > 7)>
+  [ 41] jmpifz [ 48] ............................ if (pRollDir < 0) or (pRollDir > 7) then
+  [ 44] pushzero ................................ <0>
+  [ 45] setprop 1729 ............................ pRollDir = 0
+  [ 48] pushint8 1 .............................. <1>
+  [ 50] setprop 1264 ............................ pChanges = 1
+  [ 53] pushzero ................................ <0>
+  [ 54] setprop 1730 ............................ pRolling = 0
+  [ 57] getparam 0 .............................. <me>
+  [ 59] pusharglistnoret 1 ...................... <me>
+  [ 61] objcall 634 ............................. me.update()
   [ 64] pushint8 1 .............................. <1>
   [ 66] pusharglistnoret 1 ...................... <1>
-  [ 68] extcall 21 .............................. return 1
+  [ 68] extcall 31 .............................. return 1
   [ 70] ret
 end
 
@@ -42,211 +42,211 @@ on diceThrown me, tValue
   [  3] gteq .................................... <tValue >= 0>
   [  4] jmpifz [ 25] ............................ if tValue >= 0 then / else
   [  7] getparam 1 .............................. <tValue>
-  [  9] setprop 1733 ............................ pRollDir = tValue
+  [  9] setprop 1729 ............................ pRollDir = tValue
   [ 12] pushint8 1 .............................. <1>
-  [ 14] setprop 1734 ............................ pRolling = 1
+  [ 14] setprop 1730 ............................ pRolling = 1
   [ 17] pushint8 1 .............................. <1>
-  [ 19] setprop 1237 ............................ pChanges = 1
+  [ 19] setprop 1264 ............................ pChanges = 1
   [ 22] jmp [ 32]
   [ 25] getparam 0 .............................. <me>
   [ 27] pusharglistnoret 1 ...................... <me>
-  [ 29] objcall 1731 ............................ me.startRolling()
+  [ 29] objcall 1727 ............................ me.startRolling()
   [ 32] pushint8 1 .............................. <1>
   [ 34] pusharglistnoret 1 ...................... <1>
-  [ 36] extcall 21 .............................. return 1
+  [ 36] extcall 31 .............................. return 1
   [ 38] ret
 end
 
 on update me
-  [  0] getprop 1237 ............................ <pChanges>
+  [  0] getprop 1264 ............................ <pChanges>
   [  3] not ..................................... <not pChanges>
   [  4] jmpifz [ 11] ............................ if not pChanges then
   [  7] pusharglistnoret 0 ...................... <>
-  [  9] extcall 21 .............................. return 
+  [  9] extcall 31 .............................. return 
   [ 11] getparam 0 .............................. <me>
-  [ 13] pushsymb 15 ............................. <#pSprList>
+  [ 13] pushsymb 18 ............................. <#pSprList>
   [ 15] pusharglist 2 ........................... <me, #pSprList>
-  [ 17] objcall 14 .............................. <me.pSprList.count>
+  [ 17] objcall 33 .............................. <me.pSprList.count>
   [ 19] pushint8 1 .............................. <1>
   [ 21] lt ...................................... <me.pSprList.count < 1>
   [ 22] jmpifz [ 29] ............................ if me.pSprList.count < 1 then
   [ 25] pusharglistnoret 0 ...................... <>
-  [ 27] extcall 21 .............................. return 
-  [ 29] getprop 1734 ............................ <pRolling>
-  [ 32] jmpifz [ 67] ............................ if pRolling then / else
+  [ 27] extcall 31 .............................. return 
+  [ 29] getprop 1730 ............................ <pRolling>
+  [ 32] jmpifz [ 66] ............................ if pRolling then / else
   [ 35] getparam 0 .............................. <me>
   [ 37] pusharglistnoret 1 ...................... <me>
-  [ 39] objcall 1730 ............................ me.roll()
+  [ 39] objcall 1726 ............................ me.roll()
   [ 42] getparam 0 .............................. <me>
   [ 44] pusharglistnoret 1 ...................... <me>
-  [ 46] objcall 1427 ............................ me.solveMembers()
-  [ 49] getparam 0 .............................. <me>
+  [ 46] objcall 10 .............................. me.solveMembers()
+  [ 48] getparam 0 .............................. <me>
+  [ 50] pushzero ................................ <0>
   [ 51] pushzero ................................ <0>
   [ 52] pushzero ................................ <0>
-  [ 53] pushzero ................................ <0>
-  [ 54] pusharglistnoret 4 ...................... <me, 0, 0, 0>
-  [ 56] objcall 1123 ............................ me.moveBy(0, 0, 0)
-  [ 59] pushint8 1 .............................. <1>
-  [ 61] setprop 1237 ............................ pChanges = 1
-  [ 64] jmp [116]
-  [ 67] getparam 0 .............................. <me>
-  [ 69] pushsymb 34 ............................. <#pDirection>
-  [ 71] pushint8 1 .............................. <1>
-  [ 73] getprop 1733 ............................ <pRollDir>
-  [ 76] pusharglistnoret 4 ...................... <me, #pDirection, 1, pRollDir>
-  [ 78] objcall 1393 ............................ me.pDirection[1] = pRollDir
-  [ 81] getparam 0 .............................. <me>
-  [ 83] pushsymb 34 ............................. <#pDirection>
-  [ 85] pushint8 2 .............................. <2>
-  [ 87] getprop 1733 ............................ <pRollDir>
-  [ 90] pusharglistnoret 4 ...................... <me, #pDirection, 2, pRollDir>
-  [ 92] objcall 1393 ............................ me.pDirection[2] = pRollDir
-  [ 95] getparam 0 .............................. <me>
-  [ 97] pusharglistnoret 1 ...................... <me>
-  [ 99] objcall 1427 ............................ me.solveMembers()
-  [102] getparam 0 .............................. <me>
+  [ 53] pusharglistnoret 4 ...................... <me, 0, 0, 0>
+  [ 55] objcall 1152 ............................ me.moveBy(0, 0, 0)
+  [ 58] pushint8 1 .............................. <1>
+  [ 60] setprop 1264 ............................ pChanges = 1
+  [ 63] jmp [114]
+  [ 66] getparam 0 .............................. <me>
+  [ 68] pushsymb 28 ............................. <#pDirection>
+  [ 70] pushint8 1 .............................. <1>
+  [ 72] getprop 1729 ............................ <pRollDir>
+  [ 75] pusharglistnoret 4 ...................... <me, #pDirection, 1, pRollDir>
+  [ 77] objcall 1416 ............................ me.pDirection[1] = pRollDir
+  [ 80] getparam 0 .............................. <me>
+  [ 82] pushsymb 28 ............................. <#pDirection>
+  [ 84] pushint8 2 .............................. <2>
+  [ 86] getprop 1729 ............................ <pRollDir>
+  [ 89] pusharglistnoret 4 ...................... <me, #pDirection, 2, pRollDir>
+  [ 91] objcall 1416 ............................ me.pDirection[2] = pRollDir
+  [ 94] getparam 0 .............................. <me>
+  [ 96] pusharglistnoret 1 ...................... <me>
+  [ 98] objcall 10 .............................. me.solveMembers()
+  [100] getparam 0 .............................. <me>
+  [102] pushzero ................................ <0>
+  [103] pushzero ................................ <0>
   [104] pushzero ................................ <0>
-  [105] pushzero ................................ <0>
-  [106] pushzero ................................ <0>
-  [107] pusharglistnoret 4 ...................... <me, 0, 0, 0>
-  [109] objcall 1123 ............................ me.moveBy(0, 0, 0)
-  [112] pushzero ................................ <0>
-  [113] setprop 1237 ............................ pChanges = 0
-  [116] pushint8 1 .............................. <1>
-  [118] pusharglistnoret 1 ...................... <1>
-  [120] extcall 21 .............................. return 1
-  [122] ret
+  [105] pusharglistnoret 4 ...................... <me, 0, 0, 0>
+  [107] objcall 1152 ............................ me.moveBy(0, 0, 0)
+  [110] pushzero ................................ <0>
+  [111] setprop 1264 ............................ pChanges = 0
+  [114] pushint8 1 .............................. <1>
+  [116] pusharglistnoret 1 ...................... <1>
+  [118] extcall 31 .............................. return 1
+  [120] ret
 end
 
 on roll me
-  [  0] getprop 1734 ............................ <pRolling>
-  [  3] getmovieprop 13 ......................... <the milliSeconds>
-  [  5] getprop 1735 ............................ <pRollingStartTime>
-  [  8] sub ..................................... <the milliSeconds - pRollingStartTime>
-  [  9] pushint16 3300 .......................... <3300>
-  [ 12] lt ...................................... <(the milliSeconds - pRollingStartTime) < 3300>
-  [ 13] and ..................................... <pRolling and ((the milliSeconds - pRollingStartTime) < 3300)>
-  [ 14] getprop 1733 ............................ <pRollDir>
-  [ 17] pusharglist 1 ........................... <pRollDir>
-  [ 19] extcall 10 .............................. <voidp(pRollDir)>
-  [ 21] or ...................................... <(pRolling and ((the milliSeconds - pRollingStartTime) < 3300)) or voidp(pRollDir)>
-  [ 22] jmpifz [136] ............................ if (pRolling and ((the milliSeconds - pRollingStartTime) < 3300)) or voidp(pRollDir) then / else
-  [ 25] getmovieprop 13 ......................... <the milliSeconds>
-  [ 27] getprop 1735 ............................ <pRollingStartTime>
-  [ 30] sub ..................................... <the milliSeconds - pRollingStartTime>
-  [ 31] setlocal 0 .............................. tTime = the milliSeconds - pRollingStartTime
-  [ 33] getlocal 0 .............................. <tTime>
-  [ 35] pushfloat32 1.0 ......................... <1.0>
-  [ 40] mul ..................................... <tTime * 1.0>
-  [ 41] pushfloat32 3200.0 ...................... <3200.0>
-  [ 46] div ..................................... <tTime * 1.0 / 3200.0>
-  [ 47] pushcons 0 .............................. <3.14158999999999988>
-  [ 49] mul ..................................... <tTime * 1.0 / 3200.0 * 3.14158999999999988>
-  [ 50] pushfloat32 0.5 ......................... <0.5>
-  [ 55] mul ..................................... <tTime * 1.0 / 3200.0 * 3.14158999999999988 * 0.5>
-  [ 56] setlocal 1 .............................. f = tTime * 1.0 / 3200.0 * 3.14158999999999988 * 0.5
-  [ 58] getprop 1736 ............................ <pRollAnimDir>
-  [ 61] getlocal 1 .............................. <f>
-  [ 63] pusharglist 1 ........................... <f>
-  [ 65] extcall 1737 ............................ <cos(f)>
-  [ 68] getprop 1738 ............................ <pRollingDirection>
-  [ 71] pusharglist 1 ........................... <pRollingDirection>
-  [ 73] extcall 616 ............................. <float(pRollingDirection)>
-  [ 76] mul ..................................... <cos(f) * float(pRollingDirection)>
-  [ 77] add ..................................... <pRollAnimDir + (cos(f) * float(pRollingDirection))>
-  [ 78] setprop 1736 ............................ pRollAnimDir = pRollAnimDir + (cos(f) * float(pRollingDirection))
-  [ 81] getparam 0 .............................. <me>
-  [ 83] pushsymb 34 ............................. <#pDirection>
-  [ 85] pushint8 1 .............................. <1>
-  [ 87] getprop 1736 ............................ <pRollAnimDir>
-  [ 90] pusharglist 1 ........................... <pRollAnimDir>
-  [ 92] extcall 451 ............................. <integer(pRollAnimDir)>
-  [ 95] pushint8 8 .............................. <8>
-  [ 97] mod ..................................... <integer(pRollAnimDir) mod 8>
-  [ 98] pusharglist 1 ........................... <integer(pRollAnimDir) mod 8>
-  [100] extcall 36 .............................. <abs(integer(pRollAnimDir) mod 8)>
-  [102] pusharglistnoret 4 ...................... <me, #pDirection, 1, abs(integer(pRollAnimDir) mod 8)>
-  [104] objcall 1393 ............................ me.pDirection[1] = abs(integer(pRollAnimDir) mod 8)
-  [107] getparam 0 .............................. <me>
-  [109] pushsymb 34 ............................. <#pDirection>
-  [111] pushint8 2 .............................. <2>
-  [113] getprop 1736 ............................ <pRollAnimDir>
-  [116] pusharglist 1 ........................... <pRollAnimDir>
-  [118] extcall 451 ............................. <integer(pRollAnimDir)>
+  [  0] getprop 1730 ............................ <pRolling>
+  [  3] getmovieprop 500 ........................ <the milliSeconds>
+  [  6] getprop 1731 ............................ <pRollingStartTime>
+  [  9] sub ..................................... <the milliSeconds - pRollingStartTime>
+  [ 10] pushint16 3300 .......................... <3300>
+  [ 13] lt ...................................... <(the milliSeconds - pRollingStartTime) < 3300>
+  [ 14] and ..................................... <pRolling and ((the milliSeconds - pRollingStartTime) < 3300)>
+  [ 15] getprop 1729 ............................ <pRollDir>
+  [ 18] pusharglist 1 ........................... <pRollDir>
+  [ 20] extcall 120 ............................. <voidp(pRollDir)>
+  [ 22] or ...................................... <(pRolling and ((the milliSeconds - pRollingStartTime) < 3300)) or voidp(pRollDir)>
+  [ 23] jmpifz [136] ............................ if (pRolling and ((the milliSeconds - pRollingStartTime) < 3300)) or voidp(pRollDir) then / else
+  [ 26] getmovieprop 500 ........................ <the milliSeconds>
+  [ 29] getprop 1731 ............................ <pRollingStartTime>
+  [ 32] sub ..................................... <the milliSeconds - pRollingStartTime>
+  [ 33] setlocal 0 .............................. tTime = the milliSeconds - pRollingStartTime
+  [ 35] getlocal 0 .............................. <tTime>
+  [ 37] pushfloat32 1.0 ......................... <1.0>
+  [ 42] mul ..................................... <tTime * 1.0>
+  [ 43] pushfloat32 3200.0 ...................... <3200.0>
+  [ 48] div ..................................... <tTime * 1.0 / 3200.0>
+  [ 49] pushcons 0 .............................. <3.14158999999999988>
+  [ 51] mul ..................................... <tTime * 1.0 / 3200.0 * 3.14158999999999988>
+  [ 52] pushfloat32 0.5 ......................... <0.5>
+  [ 57] mul ..................................... <tTime * 1.0 / 3200.0 * 3.14158999999999988 * 0.5>
+  [ 58] setlocal 1 .............................. f = tTime * 1.0 / 3200.0 * 3.14158999999999988 * 0.5
+  [ 60] getprop 1732 ............................ <pRollAnimDir>
+  [ 63] getlocal 1 .............................. <f>
+  [ 65] pusharglist 1 ........................... <f>
+  [ 67] extcall 1733 ............................ <cos(f)>
+  [ 70] getprop 1734 ............................ <pRollingDirection>
+  [ 73] pusharglist 1 ........................... <pRollingDirection>
+  [ 75] extcall 669 ............................. <float(pRollingDirection)>
+  [ 78] mul ..................................... <cos(f) * float(pRollingDirection)>
+  [ 79] add ..................................... <pRollAnimDir + (cos(f) * float(pRollingDirection))>
+  [ 80] setprop 1732 ............................ pRollAnimDir = pRollAnimDir + (cos(f) * float(pRollingDirection))
+  [ 83] getparam 0 .............................. <me>
+  [ 85] pushsymb 28 ............................. <#pDirection>
+  [ 87] pushint8 1 .............................. <1>
+  [ 89] getprop 1732 ............................ <pRollAnimDir>
+  [ 92] pusharglist 1 ........................... <pRollAnimDir>
+  [ 94] extcall 102 ............................. <integer(pRollAnimDir)>
+  [ 96] pushint8 8 .............................. <8>
+  [ 98] mod ..................................... <integer(pRollAnimDir) mod 8>
+  [ 99] pusharglist 1 ........................... <integer(pRollAnimDir) mod 8>
+  [101] extcall 77 .............................. <abs(integer(pRollAnimDir) mod 8)>
+  [103] pusharglistnoret 4 ...................... <me, #pDirection, 1, abs(integer(pRollAnimDir) mod 8)>
+  [105] objcall 1416 ............................ me.pDirection[1] = abs(integer(pRollAnimDir) mod 8)
+  [108] getparam 0 .............................. <me>
+  [110] pushsymb 28 ............................. <#pDirection>
+  [112] pushint8 2 .............................. <2>
+  [114] getprop 1732 ............................ <pRollAnimDir>
+  [117] pusharglist 1 ........................... <pRollAnimDir>
+  [119] extcall 102 ............................. <integer(pRollAnimDir)>
   [121] pushint8 8 .............................. <8>
   [123] mod ..................................... <integer(pRollAnimDir) mod 8>
   [124] pusharglist 1 ........................... <integer(pRollAnimDir) mod 8>
-  [126] extcall 36 .............................. <abs(integer(pRollAnimDir) mod 8)>
+  [126] extcall 77 .............................. <abs(integer(pRollAnimDir) mod 8)>
   [128] pusharglistnoret 4 ...................... <me, #pDirection, 2, abs(integer(pRollAnimDir) mod 8)>
-  [130] objcall 1393 ............................ me.pDirection[2] = abs(integer(pRollAnimDir) mod 8)
+  [130] objcall 1416 ............................ me.pDirection[2] = abs(integer(pRollAnimDir) mod 8)
   [133] jmp [145]
   [136] pushzero ................................ <0>
-  [137] setprop 1734 ............................ pRolling = 0
+  [137] setprop 1730 ............................ pRolling = 0
   [140] pushint8 1 .............................. <1>
-  [142] setprop 1237 ............................ pChanges = 1
+  [142] setprop 1264 ............................ pChanges = 1
   [145] pushint8 1 .............................. <1>
   [147] pusharglistnoret 1 ...................... <1>
-  [149] extcall 21 .............................. return 1
+  [149] extcall 31 .............................. return 1
   [151] ret
 end
 
 on startRolling me
   [  0] pusharglist 0 ........................... <>
-  [  2] extcall 159 ............................. <VOID>
-  [  4] setprop 1733 ............................ pRollDir = VOID
-  [  7] getmovieprop 13 ......................... <the milliSeconds>
-  [  9] setprop 1735 ............................ pRollingStartTime = the milliSeconds
-  [ 12] getparam 0 .............................. <me>
-  [ 14] pushsymb 34 ............................. <#pDirection>
-  [ 16] pushint8 1 .............................. <1>
-  [ 18] pusharglist 3 ........................... <me, #pDirection, 1>
-  [ 20] objcall 33 .............................. <me.pDirection[1]>
-  [ 22] setprop 1736 ............................ pRollAnimDir = me.pDirection[1]
-  [ 25] pushint8 2 .............................. <2>
-  [ 27] pusharglist 1 ........................... <2>
-  [ 29] extcall 185 ............................. <random(2)>
-  [ 31] pushint8 1 .............................. <1>
-  [ 33] eq ...................................... <random(2) = 1>
-  [ 34] jmpifz [ 45] ............................ if random(2) = 1 then / else
-  [ 37] pushint8 1 .............................. <1>
-  [ 39] setprop 1738 ............................ pRollingDirection = 1
-  [ 42] jmp [ 51]
-  [ 45] pushint8 1 .............................. <1>
-  [ 47] inv ..................................... <-1>
-  [ 48] setprop 1738 ............................ pRollingDirection = -1
-  [ 51] pushint8 1 .............................. <1>
-  [ 53] setprop 1734 ............................ pRolling = 1
-  [ 56] pushint8 1 .............................. <1>
-  [ 58] setprop 1237 ............................ pChanges = 1
-  [ 61] pushint8 1 .............................. <1>
-  [ 63] pusharglistnoret 1 ...................... <1>
-  [ 65] extcall 21 .............................. return 1
-  [ 67] ret
+  [  2] extcall 30 .............................. <VOID>
+  [  4] setprop 1729 ............................ pRollDir = VOID
+  [  7] getmovieprop 500 ........................ <the milliSeconds>
+  [ 10] setprop 1731 ............................ pRollingStartTime = the milliSeconds
+  [ 13] getparam 0 .............................. <me>
+  [ 15] pushsymb 28 ............................. <#pDirection>
+  [ 17] pushint8 1 .............................. <1>
+  [ 19] pusharglist 3 ........................... <me, #pDirection, 1>
+  [ 21] objcall 68 .............................. <me.pDirection[1]>
+  [ 23] setprop 1732 ............................ pRollAnimDir = me.pDirection[1]
+  [ 26] pushint8 2 .............................. <2>
+  [ 28] pusharglist 1 ........................... <2>
+  [ 30] extcall 285 ............................. <random(2)>
+  [ 33] pushint8 1 .............................. <1>
+  [ 35] eq ...................................... <random(2) = 1>
+  [ 36] jmpifz [ 47] ............................ if random(2) = 1 then / else
+  [ 39] pushint8 1 .............................. <1>
+  [ 41] setprop 1734 ............................ pRollingDirection = 1
+  [ 44] jmp [ 53]
+  [ 47] pushint8 1 .............................. <1>
+  [ 49] inv ..................................... <-1>
+  [ 50] setprop 1734 ............................ pRollingDirection = -1
+  [ 53] pushint8 1 .............................. <1>
+  [ 55] setprop 1730 ............................ pRolling = 1
+  [ 58] pushint8 1 .............................. <1>
+  [ 60] setprop 1264 ............................ pChanges = 1
+  [ 63] pushint8 1 .............................. <1>
+  [ 65] pusharglistnoret 1 ...................... <1>
+  [ 67] extcall 31 .............................. return 1
+  [ 69] ret
 end
 
 on select me
   [  0] pusharglist 0 ........................... <>
-  [  2] thebuiltin 1634 ......................... <the doubleClick>
-  [  5] getprop 1734 ............................ <pRolling>
+  [  2] thebuiltin 1630 ......................... <the doubleClick>
+  [  5] getprop 1730 ............................ <pRolling>
   [  8] pushzero ................................ <0>
   [  9] eq ...................................... <pRolling = 0>
   [ 10] and ..................................... <the doubleClick and (pRolling = 0)>
-  [ 11] jmpifz [ 44] ............................ if the doubleClick and (pRolling = 0) then
-  [ 14] pushsymb 949 ............................ <#room>
-  [ 17] pusharglist 1 ........................... <#room>
-  [ 19] extcall 260 ............................. <getThread(#room)>
-  [ 22] pusharglist 1 ........................... <getThread(#room)>
-  [ 24] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 26] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 28] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 31] pushcons 1 .............................. <"THROW_DICE">
-  [ 33] getparam 0 .............................. <me>
-  [ 35] pusharglist 1 ........................... <me>
-  [ 37] objcall 156 ............................. <me.getID()>
-  [ 39] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "THROW_DICE", me.getID()>
-  [ 41] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("THROW_DICE", me.getID())
-  [ 44] pushint8 1 .............................. <1>
-  [ 46] pusharglistnoret 1 ...................... <1>
-  [ 48] extcall 21 .............................. return 1
-  [ 50] ret
+  [ 11] jmpifz [ 40] ............................ if the doubleClick and (pRolling = 0) then
+  [ 14] pushsymb 52 ............................. <#room>
+  [ 16] pusharglist 1 ........................... <#room>
+  [ 18] extcall 51 .............................. <getThread(#room)>
+  [ 20] pusharglist 1 ........................... <getThread(#room)>
+  [ 22] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 24] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 26] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 28] pushcons 1 .............................. <"THROW_DICE">
+  [ 30] getparam 0 .............................. <me>
+  [ 32] pusharglist 1 ........................... <me>
+  [ 34] objcall 75 .............................. <me.getID()>
+  [ 36] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "THROW_DICE", me.getID()>
+  [ 38] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("THROW_DICE", me.getID())
+  [ 40] pushint8 1 .............................. <1>
+  [ 42] pusharglistnoret 1 ...................... <1>
+  [ 44] extcall 31 .............................. return 1
+  [ 46] ret
 end

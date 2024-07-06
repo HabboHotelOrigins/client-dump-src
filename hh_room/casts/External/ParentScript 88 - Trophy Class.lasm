@@ -2,188 +2,188 @@ property pName, pMsg, pDate, pWindowName, pPlateObjID
 
 on prepare me, tdata
   [  0] pushcons 0 .............................. <"trophy_plate">
-  [  2] setprop 1854 ............................ pPlateObjID = "trophy_plate"
+  [  2] setprop 1851 ............................ pPlateObjID = "trophy_plate"
   [  5] pushcons 1 .............................. <EMPTY>
-  [  7] setprop 1221 ............................ pName = EMPTY
-  [ 10] pushcons 1 .............................. <EMPTY>
-  [ 12] setprop 1855 ............................ pMsg = EMPTY
-  [ 15] pushcons 1 .............................. <EMPTY>
-  [ 17] setprop 1856 ............................ pDate = EMPTY
-  [ 20] pushcons 2 .............................. <"plate_gold.window">
-  [ 22] setprop 1857 ............................ pWindowName = "plate_gold.window"
-  [ 25] getparam 1 .............................. <tdata>
-  [ 27] getobjprop 248 .......................... <tdata.ilk>
-  [ 29] pushsymb 1449 ........................... <#propList>
-  [ 32] nteq .................................... <tdata.ilk <> #propList>
-  [ 33] jmpifz [ 50] ............................ if tdata.ilk <> #propList then
-  [ 36] getparam 0 .............................. <me>
-  [ 38] pushcons 3 .............................. <"Incorrect data">
-  [ 40] pushsymb 0 .............................. <#prepare>
-  [ 42] pusharglist 3 ........................... <me, "Incorrect data", #prepare>
-  [ 44] extcall 161 ............................. <error(me, "Incorrect data", #prepare)>
-  [ 46] pusharglistnoret 1 ...................... <error(me, "Incorrect data", #prepare)>
-  [ 48] extcall 21 .............................. return error(me, "Incorrect data", #prepare)
-  [ 50] getparam 1 .............................. <tdata>
-  [ 52] pushsymb 826 ............................ <#stuffdata>
-  [ 55] pusharglist 2 ........................... <tdata, #stuffdata>
-  [ 57] objcall 9 ............................... <tdata[#stuffdata]>
-  [ 59] pusharglist 1 ........................... <tdata[#stuffdata]>
-  [ 61] extcall 10 .............................. <voidp(tdata[#stuffdata])>
-  [ 63] jmpifz [ 75] ............................ if voidp(tdata[#stuffdata]) then / else
-  [ 66] pushint8 1 .............................. <1>
-  [ 68] pusharglistnoret 1 ...................... <1>
-  [ 70] extcall 21 .............................. return 1
-  [ 72] jmp [320]
-  [ 75] getparam 1 .............................. <tdata>
-  [ 77] pushsymb 826 ............................ <#stuffdata>
-  [ 80] pusharglist 2 ........................... <tdata, #stuffdata>
-  [ 82] objcall 9 ............................... <tdata[#stuffdata]>
-  [ 84] setlocal 0 .............................. tTemp = tdata[#stuffdata]
-  [ 86] getmovieprop 29 ......................... <the itemDelimiter>
-  [ 88] setlocal 1 .............................. tDelim = the itemDelimiter
-  [ 90] pushcons 4 .............................. <TAB>
-  [ 92] setmovieprop 29 ......................... the itemDelimiter = TAB
-  [ 94] getlocal 0 .............................. <tTemp>
-  [ 96] pushsymb 32 ............................. <#item>
-  [ 98] pusharglist 2 ........................... <tTemp, #item>
-  [100] objcall 14 .............................. <tTemp.item.count>
-  [102] pushint8 2 .............................. <2>
-  [104] gt ...................................... <tTemp.item.count > 2>
-  [105] jmpifz [173] ............................ if tTemp.item.count > 2 then / else
-  [108] getlocal 0 .............................. <tTemp>
-  [110] pushsymb 32 ............................. <#item>
-  [112] pushint8 1 .............................. <1>
-  [114] pusharglist 3 ........................... <tTemp, #item, 1>
-  [116] objcall 33 .............................. <tTemp.item[1]>
-  [118] setprop 1221 ............................ pName = tTemp.item[1]
-  [121] getlocal 0 .............................. <tTemp>
-  [123] pushsymb 32 ............................. <#item>
-  [125] pushint8 2 .............................. <2>
-  [127] pusharglist 3 ........................... <tTemp, #item, 2>
-  [129] objcall 33 .............................. <tTemp.item[2]>
-  [131] setprop 1856 ............................ pDate = tTemp.item[2]
-  [134] getlocal 0 .............................. <tTemp>
-  [136] pushsymb 32 ............................. <#item>
-  [138] pushint8 3 .............................. <3>
-  [140] getlocal 0 .............................. <tTemp>
-  [142] pushsymb 32 ............................. <#item>
-  [144] pusharglist 2 ........................... <tTemp, #item>
-  [146] objcall 14 .............................. <tTemp.item.count>
-  [148] pusharglist 4 ........................... <tTemp, #item, 3, tTemp.item.count>
-  [150] objcall 33 .............................. <tTemp.item[3..tTemp.item.count]>
-  [152] setprop 1855 ............................ pMsg = tTemp.item[3..tTemp.item.count]
-  [155] getprop 1855 ............................ <pMsg>
-  [158] pushcons 5 .............................. <"\\r">
-  [160] pushcons 6 .............................. <RETURN>
-  [162] pusharglist 3 ........................... <pMsg, "\\r", RETURN>
-  [164] extcall 348 ............................. <replaceChunks(pMsg, "\\r", RETURN)>
-  [167] setprop 1855 ............................ pMsg = replaceChunks(pMsg, "\\r", RETURN)
-  [170] jmp [241]
-  [173] getlocal 0 .............................. <tTemp>
-  [175] pushsymb 32 ............................. <#item>
-  [177] pusharglist 2 ........................... <tTemp, #item>
-  [179] objcall 14 .............................. <tTemp.item.count>
-  [181] pushint8 2 .............................. <2>
-  [183] eq ...................................... <tTemp.item.count = 2>
-  [184] jmpifz [216] ............................ if tTemp.item.count = 2 then / else
-  [187] getlocal 0 .............................. <tTemp>
-  [189] pushsymb 32 ............................. <#item>
-  [191] pushint8 1 .............................. <1>
-  [193] pusharglist 3 ........................... <tTemp, #item, 1>
-  [195] objcall 33 .............................. <tTemp.item[1]>
-  [197] setprop 1221 ............................ pName = tTemp.item[1]
-  [200] getlocal 0 .............................. <tTemp>
-  [202] pushsymb 32 ............................. <#item>
-  [204] pushint8 2 .............................. <2>
-  [206] pusharglist 3 ........................... <tTemp, #item, 2>
-  [208] objcall 33 .............................. <tTemp.item[2]>
-  [210] setprop 1856 ............................ pDate = tTemp.item[2]
-  [213] jmp [241]
-  [216] pushcons 1 .............................. <EMPTY>
-  [218] setprop 1221 ............................ pName = EMPTY
-  [221] pushcons 1 .............................. <EMPTY>
-  [223] setprop 1856 ............................ pDate = EMPTY
-  [226] pushcons 1 .............................. <EMPTY>
-  [228] setprop 1855 ............................ pMsg = EMPTY
-  [231] getparam 0 .............................. <me>
-  [233] pushcons 7 .............................. <"Name and date missing">
-  [235] pushsymb 0 .............................. <#prepare>
-  [237] pusharglistnoret 3 ...................... <me, "Name and date missing", #prepare>
-  [239] extcall 161 ............................. error(me, "Name and date missing", #prepare)
-  [241] getlocal 1 .............................. <tDelim>
-  [243] setmovieprop 29 ......................... the itemDelimiter = tDelim
-  [245] getparam 0 .............................. <me>
-  [247] getchainedprop 1428 ..................... <me.pPartColors>
-  [250] getobjprop 248 .......................... <me.pPartColors.ilk>
-  [252] pushsymb 249 ............................ <#list>
-  [254] eq ...................................... <me.pPartColors.ilk = #list>
-  [255] jmpifz [320] ............................ if me.pPartColors.ilk = #list then
-  [258] getparam 0 .............................. <me>
-  [260] pushsymb 1428 ........................... <#pPartColors>
-  [263] pusharglist 2 ........................... <me, #pPartColors>
-  [265] objcall 14 .............................. <me.pPartColors.count>
-  [267] pushint8 5 .............................. <5>
-  [269] eq ...................................... <me.pPartColors.count = 5>
-  [270] jmpifz [320] ............................ if me.pPartColors.count = 5 then
-  [273] getparam 0 .............................. <me>
-  [275] pushsymb 1428 ........................... <#pPartColors>
-  [278] pushint8 3 .............................. <3>
-  [280] pusharglist 3 ........................... <me, #pPartColors, 3>
-  [282] objcall 33 .............................. <me.pPartColors[3]>
-  [284] pushcons 8 .............................. <"#ffffff">
-  [286] eq ...................................... <me.pPartColors[3] = "#ffffff">
-  [287] jmpifz [298] ............................ if me.pPartColors[3] = "#ffffff" then / else
-  [290] pushcons 9 .............................. <"plate_silver.window">
-  [292] setprop 1857 ............................ pWindowName = "plate_silver.window"
-  [295] jmp [320]
-  [298] getparam 0 .............................. <me>
-  [300] pushsymb 1428 ........................... <#pPartColors>
-  [303] pushint8 3 .............................. <3>
-  [305] pusharglist 3 ........................... <me, #pPartColors, 3>
-  [307] objcall 33 .............................. <me.pPartColors[3]>
-  [309] pushcons 10 ............................. <"#996600">
-  [311] eq ...................................... <me.pPartColors[3] = "#996600">
-  [312] jmpifz [320] ............................ if me.pPartColors[3] = "#996600" then
-  [315] pushcons 11 ............................. <"plate_bronze.window">
-  [317] setprop 1857 ............................ pWindowName = "plate_bronze.window"
-  [320] pushint8 1 .............................. <1>
-  [322] pusharglistnoret 1 ...................... <1>
-  [324] extcall 21 .............................. return 1
-  [326] ret
+  [  7] setprop 15 .............................. pName = EMPTY
+  [  9] pushcons 1 .............................. <EMPTY>
+  [ 11] setprop 1852 ............................ pMsg = EMPTY
+  [ 14] pushcons 1 .............................. <EMPTY>
+  [ 16] setprop 1853 ............................ pDate = EMPTY
+  [ 19] pushcons 2 .............................. <"plate_gold.window">
+  [ 21] setprop 1854 ............................ pWindowName = "plate_gold.window"
+  [ 24] getparam 1 .............................. <tdata>
+  [ 26] getobjprop 127 .......................... <tdata.ilk>
+  [ 28] pushsymb 128 ............................ <#propList>
+  [ 30] nteq .................................... <tdata.ilk <> #propList>
+  [ 31] jmpifz [ 49] ............................ if tdata.ilk <> #propList then
+  [ 34] getparam 0 .............................. <me>
+  [ 36] pushcons 3 .............................. <"Incorrect data">
+  [ 38] pushsymb 559 ............................ <#prepare>
+  [ 41] pusharglist 3 ........................... <me, "Incorrect data", #prepare>
+  [ 43] extcall 72 .............................. <error(me, "Incorrect data", #prepare)>
+  [ 45] pusharglistnoret 1 ...................... <error(me, "Incorrect data", #prepare)>
+  [ 47] extcall 31 .............................. return error(me, "Incorrect data", #prepare)
+  [ 49] getparam 1 .............................. <tdata>
+  [ 51] pushsymb 880 ............................ <#stuffdata>
+  [ 54] pusharglist 2 ........................... <tdata, #stuffdata>
+  [ 56] objcall 34 .............................. <tdata[#stuffdata]>
+  [ 58] pusharglist 1 ........................... <tdata[#stuffdata]>
+  [ 60] extcall 120 ............................. <voidp(tdata[#stuffdata])>
+  [ 62] jmpifz [ 74] ............................ if voidp(tdata[#stuffdata]) then / else
+  [ 65] pushint8 1 .............................. <1>
+  [ 67] pusharglistnoret 1 ...................... <1>
+  [ 69] extcall 31 .............................. return 1
+  [ 71] jmp [317]
+  [ 74] getparam 1 .............................. <tdata>
+  [ 76] pushsymb 880 ............................ <#stuffdata>
+  [ 79] pusharglist 2 ........................... <tdata, #stuffdata>
+  [ 81] objcall 34 .............................. <tdata[#stuffdata]>
+  [ 83] setlocal 0 .............................. tTemp = tdata[#stuffdata]
+  [ 85] getmovieprop 99 ......................... <the itemDelimiter>
+  [ 87] setlocal 1 .............................. tDelim = the itemDelimiter
+  [ 89] pushcons 4 .............................. <TAB>
+  [ 91] setmovieprop 99 ......................... the itemDelimiter = TAB
+  [ 93] getlocal 0 .............................. <tTemp>
+  [ 95] pushsymb 103 ............................ <#item>
+  [ 97] pusharglist 2 ........................... <tTemp, #item>
+  [ 99] objcall 33 .............................. <tTemp.item.count>
+  [101] pushint8 2 .............................. <2>
+  [103] gt ...................................... <tTemp.item.count > 2>
+  [104] jmpifz [171] ............................ if tTemp.item.count > 2 then / else
+  [107] getlocal 0 .............................. <tTemp>
+  [109] pushsymb 103 ............................ <#item>
+  [111] pushint8 1 .............................. <1>
+  [113] pusharglist 3 ........................... <tTemp, #item, 1>
+  [115] objcall 68 .............................. <tTemp.item[1]>
+  [117] setprop 15 .............................. pName = tTemp.item[1]
+  [119] getlocal 0 .............................. <tTemp>
+  [121] pushsymb 103 ............................ <#item>
+  [123] pushint8 2 .............................. <2>
+  [125] pusharglist 3 ........................... <tTemp, #item, 2>
+  [127] objcall 68 .............................. <tTemp.item[2]>
+  [129] setprop 1853 ............................ pDate = tTemp.item[2]
+  [132] getlocal 0 .............................. <tTemp>
+  [134] pushsymb 103 ............................ <#item>
+  [136] pushint8 3 .............................. <3>
+  [138] getlocal 0 .............................. <tTemp>
+  [140] pushsymb 103 ............................ <#item>
+  [142] pusharglist 2 ........................... <tTemp, #item>
+  [144] objcall 33 .............................. <tTemp.item.count>
+  [146] pusharglist 4 ........................... <tTemp, #item, 3, tTemp.item.count>
+  [148] objcall 68 .............................. <tTemp.item[3..tTemp.item.count]>
+  [150] setprop 1852 ............................ pMsg = tTemp.item[3..tTemp.item.count]
+  [153] getprop 1852 ............................ <pMsg>
+  [156] pushcons 5 .............................. <"\\r">
+  [158] pushcons 6 .............................. <RETURN>
+  [160] pusharglist 3 ........................... <pMsg, "\\r", RETURN>
+  [162] extcall 424 ............................. <replaceChunks(pMsg, "\\r", RETURN)>
+  [165] setprop 1852 ............................ pMsg = replaceChunks(pMsg, "\\r", RETURN)
+  [168] jmp [238]
+  [171] getlocal 0 .............................. <tTemp>
+  [173] pushsymb 103 ............................ <#item>
+  [175] pusharglist 2 ........................... <tTemp, #item>
+  [177] objcall 33 .............................. <tTemp.item.count>
+  [179] pushint8 2 .............................. <2>
+  [181] eq ...................................... <tTemp.item.count = 2>
+  [182] jmpifz [213] ............................ if tTemp.item.count = 2 then / else
+  [185] getlocal 0 .............................. <tTemp>
+  [187] pushsymb 103 ............................ <#item>
+  [189] pushint8 1 .............................. <1>
+  [191] pusharglist 3 ........................... <tTemp, #item, 1>
+  [193] objcall 68 .............................. <tTemp.item[1]>
+  [195] setprop 15 .............................. pName = tTemp.item[1]
+  [197] getlocal 0 .............................. <tTemp>
+  [199] pushsymb 103 ............................ <#item>
+  [201] pushint8 2 .............................. <2>
+  [203] pusharglist 3 ........................... <tTemp, #item, 2>
+  [205] objcall 68 .............................. <tTemp.item[2]>
+  [207] setprop 1853 ............................ pDate = tTemp.item[2]
+  [210] jmp [238]
+  [213] pushcons 1 .............................. <EMPTY>
+  [215] setprop 15 .............................. pName = EMPTY
+  [217] pushcons 1 .............................. <EMPTY>
+  [219] setprop 1853 ............................ pDate = EMPTY
+  [222] pushcons 1 .............................. <EMPTY>
+  [224] setprop 1852 ............................ pMsg = EMPTY
+  [227] getparam 0 .............................. <me>
+  [229] pushcons 7 .............................. <"Name and date missing">
+  [231] pushsymb 559 ............................ <#prepare>
+  [234] pusharglistnoret 3 ...................... <me, "Name and date missing", #prepare>
+  [236] extcall 72 .............................. error(me, "Name and date missing", #prepare)
+  [238] getlocal 1 .............................. <tDelim>
+  [240] setmovieprop 99 ......................... the itemDelimiter = tDelim
+  [242] getparam 0 .............................. <me>
+  [244] getchainedprop 1450 ..................... <me.pPartColors>
+  [247] getobjprop 127 .......................... <me.pPartColors.ilk>
+  [249] pushsymb 116 ............................ <#list>
+  [251] eq ...................................... <me.pPartColors.ilk = #list>
+  [252] jmpifz [317] ............................ if me.pPartColors.ilk = #list then
+  [255] getparam 0 .............................. <me>
+  [257] pushsymb 1450 ........................... <#pPartColors>
+  [260] pusharglist 2 ........................... <me, #pPartColors>
+  [262] objcall 33 .............................. <me.pPartColors.count>
+  [264] pushint8 5 .............................. <5>
+  [266] eq ...................................... <me.pPartColors.count = 5>
+  [267] jmpifz [317] ............................ if me.pPartColors.count = 5 then
+  [270] getparam 0 .............................. <me>
+  [272] pushsymb 1450 ........................... <#pPartColors>
+  [275] pushint8 3 .............................. <3>
+  [277] pusharglist 3 ........................... <me, #pPartColors, 3>
+  [279] objcall 68 .............................. <me.pPartColors[3]>
+  [281] pushcons 8 .............................. <"#ffffff">
+  [283] eq ...................................... <me.pPartColors[3] = "#ffffff">
+  [284] jmpifz [295] ............................ if me.pPartColors[3] = "#ffffff" then / else
+  [287] pushcons 9 .............................. <"plate_silver.window">
+  [289] setprop 1854 ............................ pWindowName = "plate_silver.window"
+  [292] jmp [317]
+  [295] getparam 0 .............................. <me>
+  [297] pushsymb 1450 ........................... <#pPartColors>
+  [300] pushint8 3 .............................. <3>
+  [302] pusharglist 3 ........................... <me, #pPartColors, 3>
+  [304] objcall 68 .............................. <me.pPartColors[3]>
+  [306] pushcons 10 ............................. <"#996600">
+  [308] eq ...................................... <me.pPartColors[3] = "#996600">
+  [309] jmpifz [317] ............................ if me.pPartColors[3] = "#996600" then
+  [312] pushcons 11 ............................. <"plate_bronze.window">
+  [314] setprop 1854 ............................ pWindowName = "plate_bronze.window"
+  [317] pushint8 1 .............................. <1>
+  [319] pusharglistnoret 1 ...................... <1>
+  [321] extcall 31 .............................. return 1
+  [323] ret
 end
 
 on select me
   [  0] pusharglist 0 ........................... <>
-  [  2] thebuiltin 1634 ......................... <the doubleClick>
-  [  5] jmpifz [ 68] ............................ if the doubleClick then
-  [  8] getprop 1854 ............................ <pPlateObjID>
+  [  2] thebuiltin 1630 ......................... <the doubleClick>
+  [  5] jmpifz [ 69] ............................ if the doubleClick then
+  [  8] getprop 1851 ............................ <pPlateObjID>
   [ 11] pusharglist 1 ........................... <pPlateObjID>
-  [ 13] extcall 297 ............................. <objectExists(pPlateObjID)>
+  [ 13] extcall 377 ............................. <objectExists(pPlateObjID)>
   [ 16] not ..................................... <not objectExists(pPlateObjID)>
-  [ 17] jmpifz [ 34] ............................ if not objectExists(pPlateObjID) then / else
-  [ 20] getprop 1854 ............................ <pPlateObjID>
+  [ 17] jmpifz [ 35] ............................ if not objectExists(pPlateObjID) then / else
+  [ 20] getprop 1851 ............................ <pPlateObjID>
   [ 23] pushcons 12 ............................. <"Plate Class">
   [ 25] pusharglist 2 ........................... <pPlateObjID, "Plate Class">
-  [ 27] extcall 150 ............................. <createObject(pPlateObjID, "Plate Class")>
-  [ 29] setlocal 0 .............................. tObj = createObject(pPlateObjID, "Plate Class")
-  [ 31] jmp [ 43]
-  [ 34] getprop 1854 ............................ <pPlateObjID>
-  [ 37] pusharglist 1 ........................... <pPlateObjID>
-  [ 39] extcall 153 ............................. <getObject(pPlateObjID)>
-  [ 41] setlocal 0 .............................. tObj = getObject(pPlateObjID)
-  [ 43] getlocal 0 .............................. <tObj>
-  [ 45] pushzero ................................ <0>
-  [ 46] nteq .................................... <tObj <> 0>
-  [ 47] jmpifz [ 68] ............................ if tObj <> 0 then
-  [ 50] getlocal 0 .............................. <tObj>
-  [ 52] getprop 1221 ............................ <pName>
-  [ 55] getprop 1856 ............................ <pDate>
-  [ 58] getprop 1855 ............................ <pMsg>
-  [ 61] getprop 1857 ............................ <pWindowName>
+  [ 27] extcall 260 ............................. <createObject(pPlateObjID, "Plate Class")>
+  [ 30] setlocal 0 .............................. tObj = createObject(pPlateObjID, "Plate Class")
+  [ 32] jmp [ 44]
+  [ 35] getprop 1851 ............................ <pPlateObjID>
+  [ 38] pusharglist 1 ........................... <pPlateObjID>
+  [ 40] extcall 130 ............................. <getObject(pPlateObjID)>
+  [ 42] setlocal 0 .............................. tObj = getObject(pPlateObjID)
+  [ 44] getlocal 0 .............................. <tObj>
+  [ 46] pushzero ................................ <0>
+  [ 47] nteq .................................... <tObj <> 0>
+  [ 48] jmpifz [ 69] ............................ if tObj <> 0 then
+  [ 51] getlocal 0 .............................. <tObj>
+  [ 53] getprop 15 .............................. <pName>
+  [ 55] getprop 1853 ............................ <pDate>
+  [ 58] getprop 1852 ............................ <pMsg>
+  [ 61] getprop 1854 ............................ <pWindowName>
   [ 64] pusharglistnoret 5 ...................... <tObj, pName, pDate, pMsg, pWindowName>
-  [ 66] objcall 250 ............................. tObj.show(pName, pDate, pMsg, pWindowName)
-  [ 68] pushint8 1 .............................. <1>
-  [ 70] pusharglistnoret 1 ...................... <1>
-  [ 72] extcall 21 .............................. return 1
-  [ 74] ret
+  [ 66] objcall 340 ............................. tObj.show(pName, pDate, pMsg, pWindowName)
+  [ 69] pushint8 1 .............................. <1>
+  [ 71] pusharglistnoret 1 ...................... <1>
+  [ 73] extcall 31 .............................. return 1
+  [ 75] ret
 end

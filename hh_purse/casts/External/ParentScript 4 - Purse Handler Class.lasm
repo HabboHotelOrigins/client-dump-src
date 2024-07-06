@@ -323,25 +323,25 @@ on handle_purse me, tMsg
   [628] endrepeat [592]
   [630] pop 1
   [632] pushsymb 274 ............................ <#alert>
-  [635] pushsymb 275 ............................ <#msg>
+  [635] pushsymb 275 ............................ <#Msg>
   [638] getlocal 10 ............................. <tResultStr>
-  [640] pusharglist 2 ........................... <[#msg: tResultStr]>
-  [642] pushproplist ............................ <[#msg: tResultStr]>
-  [643] pusharglist 2 ........................... <#alert, [#msg: tResultStr]>
-  [645] extcall 265 ............................. <executeMessage(#alert, [#msg: tResultStr])>
-  [648] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: tResultStr])>
-  [650] extcall 62 .............................. return executeMessage(#alert, [#msg: tResultStr])
+  [640] pusharglist 2 ........................... <[#Msg: tResultStr]>
+  [642] pushproplist ............................ <[#Msg: tResultStr]>
+  [643] pusharglist 2 ........................... <#alert, [#Msg: tResultStr]>
+  [645] extcall 265 ............................. <executeMessage(#alert, [#Msg: tResultStr])>
+  [648] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: tResultStr])>
+  [650] extcall 62 .............................. return executeMessage(#alert, [#Msg: tResultStr])
   [652] jmp [677]
   [655] pop 1
   [657] pushsymb 274 ............................ <#alert>
-  [660] pushsymb 275 ............................ <#msg>
+  [660] pushsymb 275 ............................ <#Msg>
   [663] pushcons 13 ............................. <"purse_vouchers_success">
-  [665] pusharglist 2 ........................... <[#msg: "purse_vouchers_success"]>
-  [667] pushproplist ............................ <[#msg: "purse_vouchers_success"]>
-  [668] pusharglist 2 ........................... <#alert, [#msg: "purse_vouchers_success"]>
-  [670] extcall 265 ............................. <executeMessage(#alert, [#msg: "purse_vouchers_success"])>
-  [673] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: "purse_vouchers_success"])>
-  [675] extcall 62 .............................. return executeMessage(#alert, [#msg: "purse_vouchers_success"])
+  [665] pusharglist 2 ........................... <[#Msg: "purse_vouchers_success"]>
+  [667] pushproplist ............................ <[#Msg: "purse_vouchers_success"]>
+  [668] pusharglist 2 ........................... <#alert, [#Msg: "purse_vouchers_success"]>
+  [670] extcall 265 ............................. <executeMessage(#alert, [#Msg: "purse_vouchers_success"])>
+  [673] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: "purse_vouchers_success"])>
+  [675] extcall 62 .............................. return executeMessage(#alert, [#Msg: "purse_vouchers_success"])
   [677] jmp [768]
   [680] peek 0
   [682] pushint16 213 ........................... <213>
@@ -372,16 +372,16 @@ on handle_purse me, tMsg
   [740] setmovieprop 268 ........................ the itemDelimiter = tDelim
   [743] pop 1
   [745] pushsymb 274 ............................ <#alert>
-  [748] pushsymb 275 ............................ <#msg>
+  [748] pushsymb 275 ............................ <#Msg>
   [751] pushcons 14 ............................. <"purse_vouchers_error">
   [753] getlocal 12 ............................. <tErrorCode>
   [755] joinstr ................................. <"purse_vouchers_error" & tErrorCode>
-  [756] pusharglist 2 ........................... <[#msg: "purse_vouchers_error" & tErrorCode]>
-  [758] pushproplist ............................ <[#msg: "purse_vouchers_error" & tErrorCode]>
-  [759] pusharglist 2 ........................... <#alert, [#msg: "purse_vouchers_error" & tErrorCode]>
-  [761] extcall 265 ............................. <executeMessage(#alert, [#msg: "purse_vouchers_error" & tErrorCode])>
-  [764] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: "purse_vouchers_error" & tErrorCode])>
-  [766] extcall 62 .............................. return executeMessage(#alert, [#msg: "purse_vouchers_error" & tErrorCode])
+  [756] pusharglist 2 ........................... <[#Msg: "purse_vouchers_error" & tErrorCode]>
+  [758] pushproplist ............................ <[#Msg: "purse_vouchers_error" & tErrorCode]>
+  [759] pusharglist 2 ........................... <#alert, [#Msg: "purse_vouchers_error" & tErrorCode]>
+  [761] extcall 265 ............................. <executeMessage(#alert, [#Msg: "purse_vouchers_error" & tErrorCode])>
+  [764] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: "purse_vouchers_error" & tErrorCode])>
+  [766] extcall 62 .............................. return executeMessage(#alert, [#Msg: "purse_vouchers_error" & tErrorCode])
   [768] pop 1 ................................... end case
   [770] ret
 end

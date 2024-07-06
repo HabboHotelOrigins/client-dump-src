@@ -2,136 +2,136 @@ property pVisualizer, pShadowWrapper, pRenderDisabled
 
 on construct me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1932 ............................ pRenderDisabled = 0
+  [  1] setprop 1936 ............................ pRenderDisabled = 0
   [  4] pushint8 1 .............................. <1>
   [  6] pusharglistnoret 1 ...................... <1>
-  [  8] extcall 21 .............................. return 1
+  [  8] extcall 31 .............................. return 1
   [ 10] ret
 end
 
 on deconstruct me
   [  0] pushint8 1 .............................. <1>
   [  2] pusharglistnoret 1 ...................... <1>
-  [  4] extcall 21 .............................. return 1
+  [  4] extcall 31 .............................. return 1
   [  6] ret
 end
 
 on define me, tWrapID
-  [  0] pushsymb 949 ............................ <#room>
-  [  3] pusharglist 1 ........................... <#room>
-  [  5] extcall 260 ............................. <getThread(#room)>
-  [  8] pusharglist 1 ........................... <getThread(#room)>
-  [ 10] objcall 597 ............................. <getThread(#room).getInterface()>
-  [ 13] pusharglist 1 ........................... <getThread(#room).getInterface()>
-  [ 15] objcall 68 .............................. <getThread(#room).getInterface().getRoomVisualizer()>
-  [ 17] setprop 1933 ............................ pVisualizer = getThread(#room).getInterface().getRoomVisualizer()
-  [ 20] getprop 1933 ............................ <pVisualizer>
-  [ 23] getparam 1 .............................. <tWrapID>
-  [ 25] pusharglist 2 ........................... <pVisualizer, tWrapID>
-  [ 27] objcall 1935 ............................ <pVisualizer.createWrapper(tWrapID)>
-  [ 30] setprop 1934 ............................ pShadowWrapper = pVisualizer.createWrapper(tWrapID)
-  [ 33] pusharglist 0 ........................... <[:]>
-  [ 35] pushproplist ............................ <[:]>
-  [ 36] setlocal 0 .............................. tProps = [:]
-  [ 38] getlocal 0 .............................. <tProps>
-  [ 40] pushsymb 386 ............................ <#id>
-  [ 43] getparam 1 .............................. <tWrapID>
-  [ 45] pusharglistnoret 3 ...................... <tProps, #id, tWrapID>
-  [ 47] objcall 173 ............................. tProps[#id] = tWrapID
-  [ 49] getlocal 0 .............................. <tProps>
-  [ 51] pushsymb 174 ............................ <#offsetx>
-  [ 53] pushzero ................................ <0>
-  [ 54] pusharglistnoret 3 ...................... <tProps, #offsetx, 0>
-  [ 56] objcall 173 ............................. tProps[#offsetx] = 0
-  [ 58] getlocal 0 .............................. <tProps>
-  [ 60] pushsymb 175 ............................ <#offsety>
-  [ 62] pushzero ................................ <0>
-  [ 63] pusharglistnoret 3 ...................... <tProps, #offsety, 0>
-  [ 65] objcall 173 ............................. tProps[#offsety] = 0
-  [ 67] getlocal 0 .............................. <tProps>
-  [ 69] pushsymb 168 ............................ <#locZ>
-  [ 71] getprop 1933 ............................ <pVisualizer>
-  [ 74] pushsymb 168 ............................ <#locZ>
-  [ 76] pusharglist 2 ........................... <pVisualizer, #locZ>
-  [ 78] objcall 77 .............................. <pVisualizer.getProperty(#locZ)>
-  [ 80] pushint16 9000 .......................... <9000>
-  [ 83] sub ..................................... <pVisualizer.getProperty(#locZ) - 9000>
-  [ 84] pusharglistnoret 3 ...................... <tProps, #locZ, pVisualizer.getProperty(#locZ) - 9000>
-  [ 86] objcall 173 ............................. tProps[#locZ] = pVisualizer.getProperty(#locZ) - 9000
-  [ 88] getlocal 0 .............................. <tProps>
-  [ 90] pushsymb 1936 ........................... <#typeDef>
-  [ 93] pushsymb 1937 ........................... <#other>
-  [ 96] pusharglistnoret 3 ...................... <tProps, #typeDef, #other>
-  [ 98] objcall 173 ............................. tProps[#typeDef] = #other
-  [100] getprop 1934 ............................ <pShadowWrapper>
-  [103] getlocal 0 .............................. <tProps>
-  [105] pusharglistnoret 2 ...................... <pShadowWrapper, tProps>
-  [107] objcall 176 ............................. pShadowWrapper.define(tProps)
-  [109] getprop 1934 ............................ <pShadowWrapper>
-  [112] pushsymb 362 ............................ <#blend>
-  [115] pushint8 30 ............................. <30>
-  [117] pusharglistnoret 3 ...................... <pShadowWrapper, #blend, 30>
-  [119] objcall 78 .............................. pShadowWrapper.setProperty(#blend, 30)
-  [121] getprop 1934 ............................ <pShadowWrapper>
-  [124] pushsymb 419 ............................ <#ink>
-  [127] pushint8 41 ............................. <41>
-  [129] pusharglistnoret 3 ...................... <pShadowWrapper, #ink, 41>
-  [131] objcall 78 .............................. pShadowWrapper.setProperty(#ink, 41)
-  [133] getprop 1934 ............................ <pShadowWrapper>
-  [136] pushsymb 1647 ........................... <#palette>
-  [139] pushsymb 1938 ........................... <#grayscale>
-  [142] pusharglistnoret 3 ...................... <pShadowWrapper, #palette, #grayscale>
-  [144] objcall 78 .............................. pShadowWrapper.setProperty(#palette, #grayscale)
-  [146] pushint8 1 .............................. <1>
-  [148] pusharglistnoret 1 ...................... <1>
-  [150] extcall 21 .............................. return 1
-  [152] ret
+  [  0] pushsymb 52 ............................. <#room>
+  [  2] pusharglist 1 ........................... <#room>
+  [  4] extcall 51 .............................. <getThread(#room)>
+  [  6] pusharglist 1 ........................... <getThread(#room)>
+  [  8] objcall 53 .............................. <getThread(#room).getInterface()>
+  [ 10] pusharglist 1 ........................... <getThread(#room).getInterface()>
+  [ 12] objcall 119 ............................. <getThread(#room).getInterface().getRoomVisualizer()>
+  [ 14] setprop 1937 ............................ pVisualizer = getThread(#room).getInterface().getRoomVisualizer()
+  [ 17] getprop 1937 ............................ <pVisualizer>
+  [ 20] getparam 1 .............................. <tWrapID>
+  [ 22] pusharglist 2 ........................... <pVisualizer, tWrapID>
+  [ 24] objcall 1939 ............................ <pVisualizer.createWrapper(tWrapID)>
+  [ 27] setprop 1938 ............................ pShadowWrapper = pVisualizer.createWrapper(tWrapID)
+  [ 30] pusharglist 0 ........................... <[:]>
+  [ 32] pushproplist ............................ <[:]>
+  [ 33] setlocal 0 .............................. tProps = [:]
+  [ 35] getlocal 0 .............................. <tProps>
+  [ 37] pushsymb 459 ............................ <#id>
+  [ 40] getparam 1 .............................. <tWrapID>
+  [ 42] pusharglistnoret 3 ...................... <tProps, #id, tWrapID>
+  [ 44] objcall 59 .............................. tProps[#id] = tWrapID
+  [ 46] getlocal 0 .............................. <tProps>
+  [ 48] pushsymb 278 ............................ <#offsetx>
+  [ 51] pushzero ................................ <0>
+  [ 52] pusharglistnoret 3 ...................... <tProps, #offsetx, 0>
+  [ 54] objcall 59 .............................. tProps[#offsetx] = 0
+  [ 56] getlocal 0 .............................. <tProps>
+  [ 58] pushsymb 279 ............................ <#offsety>
+  [ 61] pushzero ................................ <0>
+  [ 62] pusharglistnoret 3 ...................... <tProps, #offsety, 0>
+  [ 64] objcall 59 .............................. tProps[#offsety] = 0
+  [ 66] getlocal 0 .............................. <tProps>
+  [ 68] pushsymb 129 ............................ <#locZ>
+  [ 70] getprop 1937 ............................ <pVisualizer>
+  [ 73] pushsymb 129 ............................ <#locZ>
+  [ 75] pusharglist 2 ........................... <pVisualizer, #locZ>
+  [ 77] objcall 124 ............................. <pVisualizer.getProperty(#locZ)>
+  [ 79] pushint16 9000 .......................... <9000>
+  [ 82] sub ..................................... <pVisualizer.getProperty(#locZ) - 9000>
+  [ 83] pusharglistnoret 3 ...................... <tProps, #locZ, pVisualizer.getProperty(#locZ) - 9000>
+  [ 85] objcall 59 .............................. tProps[#locZ] = pVisualizer.getProperty(#locZ) - 9000
+  [ 87] getlocal 0 .............................. <tProps>
+  [ 89] pushsymb 1940 ........................... <#typeDef>
+  [ 92] pushsymb 1941 ........................... <#other>
+  [ 95] pusharglistnoret 3 ...................... <tProps, #typeDef, #other>
+  [ 97] objcall 59 .............................. tProps[#typeDef] = #other
+  [ 99] getprop 1938 ............................ <pShadowWrapper>
+  [102] getlocal 0 .............................. <tProps>
+  [104] pusharglistnoret 2 ...................... <pShadowWrapper, tProps>
+  [106] objcall 2 ............................... pShadowWrapper.define(tProps)
+  [108] getprop 1938 ............................ <pShadowWrapper>
+  [111] pushsymb 436 ............................ <#blend>
+  [114] pushint8 30 ............................. <30>
+  [116] pusharglistnoret 3 ...................... <pShadowWrapper, #blend, 30>
+  [118] objcall 191 ............................. pShadowWrapper.setProperty(#blend, 30)
+  [120] getprop 1938 ............................ <pShadowWrapper>
+  [123] pushsymb 93 ............................. <#ink>
+  [125] pushint8 41 ............................. <41>
+  [127] pusharglistnoret 3 ...................... <pShadowWrapper, #ink, 41>
+  [129] objcall 191 ............................. pShadowWrapper.setProperty(#ink, 41)
+  [131] getprop 1938 ............................ <pShadowWrapper>
+  [134] pushsymb 1643 ........................... <#palette>
+  [137] pushsymb 1942 ........................... <#grayscale>
+  [140] pusharglistnoret 3 ...................... <pShadowWrapper, #palette, #grayscale>
+  [142] objcall 191 ............................. pShadowWrapper.setProperty(#palette, #grayscale)
+  [144] pushint8 1 .............................. <1>
+  [146] pusharglistnoret 1 ...................... <1>
+  [148] extcall 31 .............................. return 1
+  [150] ret
 end
 
 on addShadow me, tProps
   [  0] getparam 1 .............................. <tProps>
-  [  2] pushsymb 30 ............................. <#member>
+  [  2] pushsymb 64 ............................. <#member>
   [  4] pusharglist 2 ........................... <tProps, #member>
-  [  6] objcall 9 ............................... <tProps[#member]>
+  [  6] objcall 34 .............................. <tProps[#member]>
   [  8] setlocal 0 .............................. tmember = tProps[#member]
   [ 10] getlocal 0 .............................. <tmember>
   [ 12] pusharglist 1 ........................... <tmember>
-  [ 14] extcall 35 .............................. <memberExists(tmember)>
-  [ 16] jmpifz [ 44] ............................ if memberExists(tmember) then / else
-  [ 19] getprop 1934 ............................ <pShadowWrapper>
+  [ 14] extcall 62 .............................. <memberExists(tmember)>
+  [ 16] jmpifz [ 43] ............................ if memberExists(tmember) then / else
+  [ 19] getprop 1938 ............................ <pShadowWrapper>
   [ 22] getparam 1 .............................. <tProps>
   [ 24] pusharglistnoret 2 ...................... <pShadowWrapper, tProps>
-  [ 26] objcall 1940 ............................ pShadowWrapper.addPart(tProps)
-  [ 29] getprop 1934 ............................ <pShadowWrapper>
-  [ 32] pushsymb 419 ............................ <#ink>
-  [ 35] pushint8 36 ............................. <36>
-  [ 37] pusharglistnoret 3 ...................... <pShadowWrapper, #ink, 36>
-  [ 39] objcall 78 .............................. pShadowWrapper.setProperty(#ink, 36)
-  [ 41] jmp [ 57]
-  [ 44] getparam 1 .............................. <tProps>
-  [ 46] pushsymb 30 ............................. <#member>
-  [ 48] pusharglist 2 ........................... <tProps, #member>
-  [ 50] objcall 9 ............................... <tProps[#member]>
-  [ 52] pusharglistnoret 1 ...................... <tProps[#member]>
-  [ 54] extcall 503 ............................. put tProps[#member]
-  [ 57] ret
+  [ 26] objcall 1944 ............................ pShadowWrapper.addPart(tProps)
+  [ 29] getprop 1938 ............................ <pShadowWrapper>
+  [ 32] pushsymb 93 ............................. <#ink>
+  [ 34] pushint8 36 ............................. <36>
+  [ 36] pusharglistnoret 3 ...................... <pShadowWrapper, #ink, 36>
+  [ 38] objcall 191 ............................. pShadowWrapper.setProperty(#ink, 36)
+  [ 40] jmp [ 56]
+  [ 43] getparam 1 .............................. <tProps>
+  [ 45] pushsymb 64 ............................. <#member>
+  [ 47] pusharglist 2 ........................... <tProps, #member>
+  [ 49] objcall 34 .............................. <tProps[#member]>
+  [ 51] pusharglistnoret 1 ...................... <tProps[#member]>
+  [ 53] extcall 555 ............................. put tProps[#member]
+  [ 56] ret
 end
 
 on removeShadow me, tid
-  [  0] getprop 1932 ............................ <pRenderDisabled>
+  [  0] getprop 1936 ............................ <pRenderDisabled>
   [  3] jmpifz [ 11] ............................ if pRenderDisabled then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
-  [  9] extcall 21 .............................. return 0
-  [ 11] getprop 1934 ............................ <pShadowWrapper>
+  [  9] extcall 31 .............................. return 0
+  [ 11] getprop 1938 ............................ <pShadowWrapper>
   [ 14] pusharglist 1 ........................... <pShadowWrapper>
-  [ 16] extcall 10 .............................. <voidp(pShadowWrapper)>
+  [ 16] extcall 120 ............................. <voidp(pShadowWrapper)>
   [ 18] not ..................................... <not voidp(pShadowWrapper)>
   [ 19] jmpifz [ 32] ............................ if not voidp(pShadowWrapper) then
-  [ 22] getprop 1934 ............................ <pShadowWrapper>
+  [ 22] getprop 1938 ............................ <pShadowWrapper>
   [ 25] getparam 1 .............................. <tid>
   [ 27] pusharglistnoret 2 ...................... <pShadowWrapper, tid>
-  [ 29] objcall 1941 ............................ pShadowWrapper.removePart(tid)
+  [ 29] objcall 1945 ............................ pShadowWrapper.removePart(tid)
   [ 32] ret
 end
 
@@ -139,21 +139,21 @@ on disableRender me, tDisable
   [  0] getparam 1 .............................. <tDisable>
   [  2] jmpifz [ 13] ............................ if tDisable then / else
   [  5] pushint8 1 .............................. <1>
-  [  7] setprop 1932 ............................ pRenderDisabled = 1
+  [  7] setprop 1936 ............................ pRenderDisabled = 1
   [ 10] jmp [ 17]
   [ 13] pushzero ................................ <0>
-  [ 14] setprop 1932 ............................ pRenderDisabled = 0
+  [ 14] setprop 1936 ............................ pRenderDisabled = 0
   [ 17] ret
 end
 
 on render me
-  [  0] getprop 1932 ............................ <pRenderDisabled>
+  [  0] getprop 1936 ............................ <pRenderDisabled>
   [  3] jmpifz [ 11] ............................ if pRenderDisabled then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
-  [  9] extcall 21 .............................. return 0
-  [ 11] getprop 1934 ............................ <pShadowWrapper>
+  [  9] extcall 31 .............................. return 0
+  [ 11] getprop 1938 ............................ <pShadowWrapper>
   [ 14] pusharglistnoret 1 ...................... <pShadowWrapper>
-  [ 16] objcall 1943 ............................ pShadowWrapper.updateWrap()
+  [ 16] objcall 1947 ............................ pShadowWrapper.updateWrap()
   [ 19] ret
 end

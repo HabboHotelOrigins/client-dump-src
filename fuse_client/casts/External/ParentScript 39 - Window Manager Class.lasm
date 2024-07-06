@@ -862,10 +862,10 @@ on registerWindowEvent me, tTitle, tSprID, tEvent
   [ 19] pusharglistnoret 3 ...................... <pLastEventData, #sprite, tSprID>
   [ 21] objcall 24 .............................. pLastEventData[#sprite] = tSprID
   [ 23] getprop 986 ............................. <pLastEventData>
-  [ 26] pushsymb 1014 ........................... <#event>
+  [ 26] pushsymb 1014 ........................... <#Event>
   [ 29] getparam 3 .............................. <tEvent>
-  [ 31] pusharglistnoret 3 ...................... <pLastEventData, #event, tEvent>
-  [ 33] objcall 24 .............................. pLastEventData[#event] = tEvent
+  [ 31] pusharglistnoret 3 ...................... <pLastEventData, #Event, tEvent>
+  [ 33] objcall 24 .............................. pLastEventData[#Event] = tEvent
   [ 35] ret
 end
 
@@ -884,11 +884,11 @@ on getLastEvent me
   [ 23] pushcons 15 ............................. <"-">
   [ 25] joinstr ................................. <pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-">
   [ 26] getprop 986 ............................. <pLastEventData>
-  [ 29] pushsymb 1014 ........................... <#event>
-  [ 32] pusharglist 2 ........................... <pLastEventData, #event>
-  [ 34] objcall 54 .............................. <pLastEventData[#event]>
-  [ 36] joinstr ................................. <pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-" & pLastEventData[#event]>
-  [ 37] pusharglistnoret 1 ...................... <pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-" & pLastEventData[#event]>
-  [ 39] extcall 25 .............................. return pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-" & pLastEventData[#event]
+  [ 29] pushsymb 1014 ........................... <#Event>
+  [ 32] pusharglist 2 ........................... <pLastEventData, #Event>
+  [ 34] objcall 54 .............................. <pLastEventData[#Event]>
+  [ 36] joinstr ................................. <pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-" & pLastEventData[#Event]>
+  [ 37] pusharglistnoret 1 ...................... <pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-" & pLastEventData[#Event]>
+  [ 39] extcall 25 .............................. return pLastEventData[#title] & "-" & pLastEventData[#sprite] & "-" & pLastEventData[#Event]
   [ 41] ret
 end

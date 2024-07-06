@@ -1,0 +1,270 @@
+property pSampleList, pSongPlayer
+
+on construct me
+  [  0] pusharglist 0 ........................... <[:]>
+  [  2] pushproplist ............................ <[:]>
+  [  3] setprop 800 ............................. pSampleList = [:]
+  [  6] pushcons 0 .............................. <"song player">
+  [  8] setprop 801 ............................. pSongPlayer = "song player"
+  [ 11] getprop 801 ............................. <pSongPlayer>
+  [ 14] pushcons 1 .............................. <"Song Player Class">
+  [ 16] pusharglistnoret 2 ...................... <pSongPlayer, "Song Player Class">
+  [ 18] extcall 496 ............................. createObject(pSongPlayer, "Song Player Class")
+  [ 21] pusharglistnoret 0 ...................... <>
+  [ 23] extcall 44 .............................. return 
+  [ 25] ret
+end
+
+on deconstruct me
+  [  0] getprop 801 ............................. <pSongPlayer>
+  [  3] pusharglist 1 ........................... <pSongPlayer>
+  [  5] extcall 495 ............................. <objectExists(pSongPlayer)>
+  [  8] jmpifz [ 19] ............................ if objectExists(pSongPlayer) then
+  [ 11] getprop 801 ............................. <pSongPlayer>
+  [ 14] pusharglistnoret 1 ...................... <pSongPlayer>
+  [ 16] extcall 270 ............................. removeObject(pSongPlayer)
+  [ 19] pusharglistnoret 0 ...................... <>
+  [ 21] extcall 44 .............................. return 
+  [ 23] ret
+end
+
+on preloadSounds me, tSampleList
+  [  0] pushint8 1 .............................. <1>
+  [  2] setlocal 0
+  [  4] getlocal 0
+  [  6] getparam 1 .............................. <tSampleList>
+  [  8] getobjprop 78 ........................... <tSampleList.count>
+  [ 10] lteq
+  [ 11] jmpifz [ 95] ............................ repeat with i = 1 to tSampleList.count
+  [ 14] getparam 1 .............................. <tSampleList>
+  [ 16] getlocal 0 .............................. <i>
+  [ 18] pusharglist 2 ........................... <tSampleList, i>
+  [ 20] objcall 96 .............................. <tSampleList[i]>
+  [ 22] setlocal 1 .............................. tItem = tSampleList[i]
+  [ 24] getlocal 1 .............................. <tItem>
+  [ 26] pusharglist 1 ........................... <tItem>
+  [ 28] extcall 49 .............................. <ilk(tItem)>
+  [ 30] pushsymb 300 ............................ <#propList>
+  [ 33] eq ...................................... <ilk(tItem) = #propList>
+  [ 34] jmpifz [ 65] ............................ if ilk(tItem) = #propList then
+  [ 37] getparam 0 .............................. <me>
+  [ 39] getlocal 1 .............................. <tItem>
+  [ 41] pushsymb 802 ............................ <#sound>
+  [ 44] pusharglist 2 ........................... <tItem, #sound>
+  [ 46] objcall 96 .............................. <tItem[#sound]>
+  [ 48] getlocal 1 .............................. <tItem>
+  [ 50] pushsymb 803 ............................ <#parent>
+  [ 53] pusharglist 2 ........................... <tItem, #parent>
+  [ 55] objcall 96 .............................. <tItem[#parent]>
+  [ 57] pusharglistnoret 3 ...................... <me, tItem[#sound], tItem[#parent]>
+  [ 59] objcall 798 ............................. me.startSampleDownload(tItem[#sound], tItem[#parent])
+  [ 62] jmp [ 86] ............................... next repeat
+  [ 65] getlocal 1 .............................. <tItem>
+  [ 67] pusharglist 1 ........................... <tItem>
+  [ 69] extcall 49 .............................. <ilk(tItem)>
+  [ 71] pushsymb 147 ............................ <#string>
+  [ 73] eq ...................................... <ilk(tItem) = #string>
+  [ 74] jmpifz [ 86] ............................ if ilk(tItem) = #string then
+  [ 77] getparam 0 .............................. <me>
+  [ 79] getlocal 1 .............................. <tItem>
+  [ 81] pusharglistnoret 2 ...................... <me, tItem>
+  [ 83] objcall 798 ............................. me.startSampleDownload(tItem)
+  [ 86] pushint8 1
+  [ 88] getlocal 0
+  [ 90] add
+  [ 91] setlocal 0
+  [ 93] endrepeat [  4]
+  [ 95] ret
+end
+
+on getSampleLoadingStatus me, tMemName
+  [  0] getparam 1 .............................. <tMemName>
+  [  2] pusharglist 1 ........................... <tMemName>
+  [  4] extcall 127 ............................. <memberExists(tMemName)>
+  [  6] jmpifz [ 15] ............................ if memberExists(tMemName) then
+  [  9] pushint8 1 .............................. <1>
+  [ 11] pusharglistnoret 1 ...................... <1>
+  [ 13] extcall 44 .............................. return 1
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 44 .............................. return 0
+  [ 20] ret
+end
+
+on getSampleLength me, tMemName
+  [  0] getparam 1 .............................. <tMemName>
+  [  2] pusharglist 1 ........................... <tMemName>
+  [  4] extcall 128 ............................. <getMember(tMemName)>
+  [  6] pusharglist 0 ........................... <>
+  [  8] extcall 30 .............................. <VOID>
+  [ 10] eq ...................................... <getMember(tMemName) = VOID>
+  [ 11] jmpifz [ 19] ............................ if getMember(tMemName) = VOID then
+  [ 14] pushzero ................................ <0>
+  [ 15] pusharglistnoret 1 ...................... <0>
+  [ 17] extcall 44 .............................. return 0
+  [ 19] getparam 1 .............................. <tMemName>
+  [ 21] pusharglist 1 ........................... <tMemName>
+  [ 23] extcall 128 ............................. <getMember(tMemName)>
+  [ 25] getobjprop 140 .......................... <getMember(tMemName).type>
+  [ 27] pushsymb 802 ............................ <#sound>
+  [ 30] nteq .................................... <getMember(tMemName).type <> #sound>
+  [ 31] jmpifz [ 39] ............................ if getMember(tMemName).type <> #sound then
+  [ 34] pushzero ................................ <0>
+  [ 35] pusharglistnoret 1 ...................... <0>
+  [ 37] extcall 44 .............................. return 0
+  [ 39] getparam 1 .............................. <tMemName>
+  [ 41] pusharglist 1 ........................... <tMemName>
+  [ 43] extcall 128 ............................. <getMember(tMemName)>
+  [ 45] getobjprop 805 .......................... <getMember(tMemName).duration>
+  [ 48] setlocal 0 .............................. tLength = getMember(tMemName).duration
+  [ 50] getlocal 0 .............................. <tLength>
+  [ 52] pusharglistnoret 1 ...................... <tLength>
+  [ 54] extcall 44 .............................. return tLength
+  [ 56] ret
+end
+
+on startSamplePreview me, tMemberName
+  [  0] getprop 801 ............................. <pSongPlayer>
+  [  3] pusharglist 1 ........................... <pSongPlayer>
+  [  5] extcall 67 .............................. <getObject(pSongPlayer)>
+  [  7] pushsymb 100 ............................ <#name>
+  [  9] getparam 1 .............................. <tMemberName>
+  [ 11] pusharglist 2 ........................... <[#name: tMemberName]>
+  [ 13] pushproplist ............................ <[#name: tMemberName]>
+  [ 14] pusharglist 2 ........................... <getObject(pSongPlayer), [#name: tMemberName]>
+  [ 16] objcall 794 ............................. <getObject(pSongPlayer).startSamplePreview([#name: tMemberName])>
+  [ 19] pusharglistnoret 1 ...................... <getObject(pSongPlayer).startSamplePreview([#name: tMemberName])>
+  [ 21] extcall 44 .............................. return getObject(pSongPlayer).startSamplePreview([#name: tMemberName])
+  [ 23] ret
+end
+
+on stopSamplePreview me
+  [  0] getprop 801 ............................. <pSongPlayer>
+  [  3] pusharglist 1 ........................... <pSongPlayer>
+  [  5] extcall 67 .............................. <getObject(pSongPlayer)>
+  [  7] pusharglist 1 ........................... <getObject(pSongPlayer)>
+  [  9] objcall 795 ............................. <getObject(pSongPlayer).stopSamplePreview()>
+  [ 12] pusharglistnoret 1 ...................... <getObject(pSongPlayer).stopSamplePreview()>
+  [ 14] extcall 44 .............................. return getObject(pSongPlayer).stopSamplePreview()
+  [ 16] ret
+end
+
+on playSong me, tSongData
+  [  0] getprop 801 ............................. <pSongPlayer>
+  [  3] pusharglist 1 ........................... <pSongPlayer>
+  [  5] extcall 67 .............................. <getObject(pSongPlayer)>
+  [  7] getparam 1 .............................. <tSongData>
+  [  9] pusharglist 2 ........................... <getObject(pSongPlayer), tSongData>
+  [ 11] objcall 807 ............................. <getObject(pSongPlayer).startSong(tSongData)>
+  [ 14] pusharglistnoret 1 ...................... <getObject(pSongPlayer).startSong(tSongData)>
+  [ 16] extcall 44 .............................. return getObject(pSongPlayer).startSong(tSongData)
+  [ 18] ret
+end
+
+on stopSong me
+  [  0] getprop 801 ............................. <pSongPlayer>
+  [  3] pusharglist 1 ........................... <pSongPlayer>
+  [  5] extcall 67 .............................. <getObject(pSongPlayer)>
+  [  7] pusharglist 1 ........................... <getObject(pSongPlayer)>
+  [  9] objcall 797 ............................. <getObject(pSongPlayer).stopSong()>
+  [ 12] pusharglistnoret 1 ...................... <getObject(pSongPlayer).stopSong()>
+  [ 14] extcall 44 .............................. return getObject(pSongPlayer).stopSong()
+  [ 16] ret
+end
+
+on startSampleDownload me, tMemberName, tParentId
+  [  0] getparam 1 .............................. <tMemberName>
+  [  2] pusharglist 1 ........................... <tMemberName>
+  [  4] extcall 127 ............................. <memberExists(tMemberName)>
+  [  6] jmpifz [ 53] ............................ if memberExists(tMemberName) then / else
+  [  9] getprop 800 ............................. <pSampleList>
+  [ 12] getparam 1 .............................. <tMemberName>
+  [ 14] pusharglist 2 ........................... <pSampleList, tMemberName>
+  [ 16] objcall 235 ............................. <pSampleList.getaProp(tMemberName)>
+  [ 18] pusharglist 0 ........................... <>
+  [ 20] extcall 30 .............................. <VOID>
+  [ 22] eq ...................................... <pSampleList.getaProp(tMemberName) = VOID>
+  [ 23] jmpifz [ 50] ............................ if pSampleList.getaProp(tMemberName) = VOID then / else
+  [ 26] pushsymb 809 ............................ <#status>
+  [ 29] pushcons 2 .............................. <"ready">
+  [ 31] pusharglist 2 ........................... <[#status: "ready"]>
+  [ 33] pushproplist ............................ <[#status: "ready"]>
+  [ 34] setlocal 0 .............................. tSample = [#status: "ready"]
+  [ 36] getprop 800 ............................. <pSampleList>
+  [ 39] getparam 1 .............................. <tMemberName>
+  [ 41] getlocal 0 .............................. <tSample>
+  [ 43] pusharglistnoret 3 ...................... <pSampleList, tMemberName, tSample>
+  [ 45] objcall 213 ............................. pSampleList.addProp(tMemberName, tSample)
+  [ 47] jmp [ 50]
+  [ 50] jmp [164]
+  [ 53] getprop 800 ............................. <pSampleList>
+  [ 56] getparam 1 .............................. <tMemberName>
+  [ 58] pusharglist 2 ........................... <pSampleList, tMemberName>
+  [ 60] objcall 235 ............................. <pSampleList.getaProp(tMemberName)>
+  [ 62] pusharglist 0 ........................... <>
+  [ 64] extcall 30 .............................. <VOID>
+  [ 66] eq ...................................... <pSampleList.getaProp(tMemberName) = VOID>
+  [ 67] jmpifz [164] ............................ if pSampleList.getaProp(tMemberName) = VOID then
+  [ 70] pushsymb 811 ............................ <#dynamicdownloader>
+  [ 73] pusharglist 1 ........................... <#dynamicdownloader>
+  [ 75] extcall 810 ............................. <threadExists(#dynamicdownloader)>
+  [ 78] jmpifz [146] ............................ if threadExists(#dynamicdownloader) then / else
+  [ 81] pushsymb 811 ............................ <#dynamicdownloader>
+  [ 84] pusharglist 1 ........................... <#dynamicdownloader>
+  [ 86] extcall 631 ............................. <getThread(#dynamicdownloader)>
+  [ 89] pusharglist 1 ........................... <getThread(#dynamicdownloader)>
+  [ 91] objcall 76 .............................. <getThread(#dynamicdownloader).getComponent()>
+  [ 93] getparam 1 .............................. <tMemberName>
+  [ 95] pushsymb 802 ............................ <#sound>
+  [ 98] getparam 0 .............................. <me>
+  [100] pusharglist 1 ........................... <me>
+  [102] objcall 42 .............................. <me.getID()>
+  [104] pushsymb 799 ............................ <#soundDownloadCompleted>
+  [107] pusharglist 0 ........................... <>
+  [109] extcall 30 .............................. <VOID>
+  [111] pusharglist 0 ........................... <>
+  [113] extcall 30 .............................. <VOID>
+  [115] getparam 2 .............................. <tParentId>
+  [117] pusharglistnoret 8 ...................... <getThread(#dynamicdownloader).getComponent(), tMemberName, #sound, me.getID(), #soundDownloadCompleted, VOID, VOID, tParentId>
+  [119] objcall 812 ............................. getThread(#dynamicdownloader).getComponent().downloadCastDynamically(tMemberName, #sound, me.getID(), #soundDownloadCompleted, VOID, VOID, tParentId)
+  [122] pushsymb 809 ............................ <#status>
+  [125] pushcons 3 .............................. <"loading">
+  [127] pusharglist 2 ........................... <[#status: "loading"]>
+  [129] pushproplist ............................ <[#status: "loading"]>
+  [130] setlocal 0 .............................. tSample = [#status: "loading"]
+  [132] getprop 800 ............................. <pSampleList>
+  [135] getparam 1 .............................. <tMemberName>
+  [137] getlocal 0 .............................. <tSample>
+  [139] pusharglistnoret 3 ...................... <pSampleList, tMemberName, tSample>
+  [141] objcall 213 ............................. pSampleList.addProp(tMemberName, tSample)
+  [143] jmp [164]
+  [146] getparam 0 .............................. <me>
+  [148] pushcons 4 .............................. <"Dynamic downloader does not exist, cannot download sound.">
+  [150] pushsymb 798 ............................ <#startSampleDownload>
+  [153] pushsymb 782 ............................ <#major>
+  [156] pusharglist 4 ........................... <me, "Dynamic downloader does not exist, cannot download sound.", #startSampleDownload, #major>
+  [158] extcall 106 ............................. <error(me, "Dynamic downloader does not exist, cannot download sound.", #startSampleDownload, #major)>
+  [160] pusharglistnoret 1 ...................... <error(me, "Dynamic downloader does not exist, cannot download sound.", #startSampleDownload, #major)>
+  [162] extcall 44 .............................. return error(me, "Dynamic downloader does not exist, cannot download sound.", #startSampleDownload, #major)
+  [164] pushint8 1 .............................. <1>
+  [166] pusharglistnoret 1 ...................... <1>
+  [168] extcall 44 .............................. return 1
+  [170] ret
+end
+
+on soundDownloadCompleted me, tName, tParam2
+  [  0] getprop 800 ............................. <pSampleList>
+  [  3] getparam 1 .............................. <tName>
+  [  5] pusharglist 2 ........................... <pSampleList, tName>
+  [  7] objcall 235 ............................. <pSampleList.getaProp(tName)>
+  [  9] setlocal 0 .............................. tSample = pSampleList.getaProp(tName)
+  [ 11] getlocal 0 .............................. <tSample>
+  [ 13] pusharglist 1 ........................... <tSample>
+  [ 15] extcall 71 .............................. <voidp(tSample)>
+  [ 17] not ..................................... <not voidp(tSample)>
+  [ 18] jmpifz [ 28] ............................ if not voidp(tSample) then
+  [ 21] getlocal 0 .............................. <tSample>
+  [ 23] pushcons 2 .............................. <"ready">
+  [ 25] setobjprop 809 .......................... tSample.status = "ready"
+  [ 28] ret
+end

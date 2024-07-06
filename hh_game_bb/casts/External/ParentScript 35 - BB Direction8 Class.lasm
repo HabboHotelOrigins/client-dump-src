@@ -4,120 +4,120 @@ on defineLine me, tStartX, tStartY, tTargetX, tTargetY
   [  0] getparam 3 .............................. <tTargetX>
   [  2] getparam 1 .............................. <tStartX>
   [  4] sub ..................................... <tTargetX - tStartX>
-  [  5] setprop 908 ............................. pVectorX = tTargetX - tStartX
+  [  5] setprop 986 ............................. pVectorX = tTargetX - tStartX
   [  8] getparam 4 .............................. <tTargetY>
   [ 10] getparam 2 .............................. <tStartY>
   [ 12] sub ..................................... <tTargetY - tStartY>
-  [ 13] setprop 909 ............................. pVectorY = tTargetY - tStartY
-  [ 16] getprop 908 ............................. <pVectorX>
+  [ 13] setprop 987 ............................. pVectorY = tTargetY - tStartY
+  [ 16] getprop 986 ............................. <pVectorX>
   [ 19] pushzero ................................ <0>
   [ 20] nteq .................................... <pVectorX <> 0>
   [ 21] jmpifz [ 39] ............................ if pVectorX <> 0 then
-  [ 24] getprop 908 ............................. <pVectorX>
-  [ 27] getprop 908 ............................. <pVectorX>
+  [ 24] getprop 986 ............................. <pVectorX>
+  [ 27] getprop 986 ............................. <pVectorX>
   [ 30] pusharglist 1 ........................... <pVectorX>
-  [ 32] extcall 910 ............................. <abs(pVectorX)>
+  [ 32] extcall 975 ............................. <abs(pVectorX)>
   [ 35] div ..................................... <pVectorX / abs(pVectorX)>
-  [ 36] setprop 908 ............................. pVectorX = pVectorX / abs(pVectorX)
-  [ 39] getprop 909 ............................. <pVectorY>
+  [ 36] setprop 986 ............................. pVectorX = pVectorX / abs(pVectorX)
+  [ 39] getprop 987 ............................. <pVectorY>
   [ 42] pushzero ................................ <0>
   [ 43] nteq .................................... <pVectorY <> 0>
   [ 44] jmpifz [ 62] ............................ if pVectorY <> 0 then
-  [ 47] getprop 909 ............................. <pVectorY>
-  [ 50] getprop 909 ............................. <pVectorY>
+  [ 47] getprop 987 ............................. <pVectorY>
+  [ 50] getprop 987 ............................. <pVectorY>
   [ 53] pusharglist 1 ........................... <pVectorY>
-  [ 55] extcall 910 ............................. <abs(pVectorY)>
+  [ 55] extcall 975 ............................. <abs(pVectorY)>
   [ 58] div ..................................... <pVectorY / abs(pVectorY)>
-  [ 59] setprop 909 ............................. pVectorY = pVectorY / abs(pVectorY)
+  [ 59] setprop 987 ............................. pVectorY = pVectorY / abs(pVectorY)
   [ 62] getparam 0 .............................. <me>
-  [ 64] getprop 908 ............................. <pVectorX>
-  [ 67] getprop 909 ............................. <pVectorY>
+  [ 64] getprop 986 ............................. <pVectorX>
+  [ 67] getprop 987 ............................. <pVectorY>
   [ 70] pusharglist 3 ........................... <me, pVectorX, pVectorY>
-  [ 72] objcall 906 ............................. <me.getAngleFromComponents(pVectorX, pVectorY)>
-  [ 75] setprop 51 .............................. pDirection = me.getAngleFromComponents(pVectorX, pVectorY)
-  [ 77] pushint8 1 .............................. <1>
-  [ 79] pusharglistnoret 1 ...................... <1>
-  [ 81] extcall 28 .............................. return 1
-  [ 83] ret
+  [ 72] objcall 983 ............................. <me.getAngleFromComponents(pVectorX, pVectorY)>
+  [ 75] setprop 257 ............................. pDirection = me.getAngleFromComponents(pVectorX, pVectorY)
+  [ 78] pushint8 1 .............................. <1>
+  [ 80] pusharglistnoret 1 ...................... <1>
+  [ 82] extcall 13 .............................. return 1
+  [ 84] ret
 end
 
 on defineDirection me, tDirection
   [  0] getparam 1 .............................. <tDirection>
-  [  2] setprop 51 .............................. pDirection = tDirection
-  [  4] getparam 0 .............................. <me>
-  [  6] getparam 1 .............................. <tDirection>
-  [  8] pusharglist 2 ........................... <me, tDirection>
-  [ 10] objcall 907 ............................. <me.getComponentsFromAngle(tDirection)>
-  [ 13] setlocal 0 .............................. tVector = me.getComponentsFromAngle(tDirection)
-  [ 15] getlocal 0 .............................. <tVector>
-  [ 17] pushint8 1 .............................. <1>
-  [ 19] pusharglist 2 ........................... <tVector, 1>
-  [ 21] objcall 31 .............................. <tVector[1]>
-  [ 23] setprop 908 ............................. pVectorX = tVector[1]
-  [ 26] getlocal 0 .............................. <tVector>
-  [ 28] pushint8 2 .............................. <2>
-  [ 30] pusharglist 2 ........................... <tVector, 2>
-  [ 32] objcall 31 .............................. <tVector[2]>
-  [ 34] setprop 909 ............................. pVectorY = tVector[2]
-  [ 37] pushint8 1 .............................. <1>
-  [ 39] pusharglistnoret 1 ...................... <1>
-  [ 41] extcall 28 .............................. return 1
-  [ 43] ret
+  [  2] setprop 257 ............................. pDirection = tDirection
+  [  5] getparam 0 .............................. <me>
+  [  7] getparam 1 .............................. <tDirection>
+  [  9] pusharglist 2 ........................... <me, tDirection>
+  [ 11] objcall 992 ............................. <me.getComponentsFromAngle(tDirection)>
+  [ 14] setlocal 0 .............................. tVector = me.getComponentsFromAngle(tDirection)
+  [ 16] getlocal 0 .............................. <tVector>
+  [ 18] pushint8 1 .............................. <1>
+  [ 20] pusharglist 2 ........................... <tVector, 1>
+  [ 22] objcall 18 .............................. <tVector[1]>
+  [ 24] setprop 986 ............................. pVectorX = tVector[1]
+  [ 27] getlocal 0 .............................. <tVector>
+  [ 29] pushint8 2 .............................. <2>
+  [ 31] pusharglist 2 ........................... <tVector, 2>
+  [ 33] objcall 18 .............................. <tVector[2]>
+  [ 35] setprop 987 ............................. pVectorY = tVector[2]
+  [ 38] pushint8 1 .............................. <1>
+  [ 40] pusharglistnoret 1 ...................... <1>
+  [ 42] extcall 13 .............................. return 1
+  [ 44] ret
 end
 
 on getDirection me
-  [  0] getprop 51 .............................. <pDirection>
-  [  2] pusharglistnoret 1 ...................... <pDirection>
-  [  4] extcall 28 .............................. return pDirection
-  [  6] ret
+  [  0] getprop 257 ............................. <pDirection>
+  [  3] pusharglistnoret 1 ...................... <pDirection>
+  [  5] extcall 13 .............................. return pDirection
+  [  7] ret
 end
 
 on getUnitVectorXComponent me
-  [  0] getprop 908 ............................. <pVectorX>
+  [  0] getprop 986 ............................. <pVectorX>
   [  3] pusharglistnoret 1 ...................... <pVectorX>
-  [  5] extcall 28 .............................. return pVectorX
+  [  5] extcall 13 .............................. return pVectorX
   [  7] ret
 end
 
 on getUnitVectorYComponent me
-  [  0] getprop 909 ............................. <pVectorY>
+  [  0] getprop 987 ............................. <pVectorY>
   [  3] pusharglistnoret 1 ...................... <pVectorY>
-  [  5] extcall 28 .............................. return pVectorY
+  [  5] extcall 13 .............................. return pVectorY
   [  7] ret
 end
 
 on rotateDirection45Degrees me, tClockwise
   [  0] getparam 1 .............................. <tClockwise>
-  [  2] jmpifz [ 26] ............................ if tClockwise then / else
-  [  5] getprop 51 .............................. <pDirection>
-  [  7] pushint8 1 .............................. <1>
-  [  9] add ..................................... <pDirection + 1>
-  [ 10] setlocal 0 .............................. tDirection = pDirection + 1
-  [ 12] getlocal 0 .............................. <tDirection>
-  [ 14] pushint8 8 .............................. <8>
-  [ 16] eq ...................................... <tDirection = 8>
-  [ 17] jmpifz [ 23] ............................ if tDirection = 8 then
-  [ 20] pushzero ................................ <0>
-  [ 21] setlocal 0 .............................. tDirection = 0
-  [ 23] jmp [ 46]
-  [ 26] getprop 51 .............................. <pDirection>
-  [ 28] pushint8 1 .............................. <1>
-  [ 30] sub ..................................... <pDirection - 1>
-  [ 31] setlocal 0 .............................. tDirection = pDirection - 1
-  [ 33] getlocal 0 .............................. <tDirection>
-  [ 35] pushint8 1 .............................. <1>
-  [ 37] inv ..................................... <-1>
-  [ 38] eq ...................................... <tDirection = -1>
-  [ 39] jmpifz [ 46] ............................ if tDirection = -1 then
-  [ 42] pushint8 7 .............................. <7>
-  [ 44] setlocal 0 .............................. tDirection = 7
-  [ 46] getparam 0 .............................. <me>
-  [ 48] getlocal 0 .............................. <tDirection>
-  [ 50] pusharglist 2 ........................... <me, tDirection>
-  [ 52] objcall 905 ............................. <me.defineDirection(tDirection)>
-  [ 55] pusharglistnoret 1 ...................... <me.defineDirection(tDirection)>
-  [ 57] extcall 28 .............................. return me.defineDirection(tDirection)
-  [ 59] ret
+  [  2] jmpifz [ 27] ............................ if tClockwise then / else
+  [  5] getprop 257 ............................. <pDirection>
+  [  8] pushint8 1 .............................. <1>
+  [ 10] add ..................................... <pDirection + 1>
+  [ 11] setlocal 0 .............................. tDirection = pDirection + 1
+  [ 13] getlocal 0 .............................. <tDirection>
+  [ 15] pushint8 8 .............................. <8>
+  [ 17] eq ...................................... <tDirection = 8>
+  [ 18] jmpifz [ 24] ............................ if tDirection = 8 then
+  [ 21] pushzero ................................ <0>
+  [ 22] setlocal 0 .............................. tDirection = 0
+  [ 24] jmp [ 48]
+  [ 27] getprop 257 ............................. <pDirection>
+  [ 30] pushint8 1 .............................. <1>
+  [ 32] sub ..................................... <pDirection - 1>
+  [ 33] setlocal 0 .............................. tDirection = pDirection - 1
+  [ 35] getlocal 0 .............................. <tDirection>
+  [ 37] pushint8 1 .............................. <1>
+  [ 39] inv ..................................... <-1>
+  [ 40] eq ...................................... <tDirection = -1>
+  [ 41] jmpifz [ 48] ............................ if tDirection = -1 then
+  [ 44] pushint8 7 .............................. <7>
+  [ 46] setlocal 0 .............................. tDirection = 7
+  [ 48] getparam 0 .............................. <me>
+  [ 50] getlocal 0 .............................. <tDirection>
+  [ 52] pusharglist 2 ........................... <me, tDirection>
+  [ 54] objcall 991 ............................. <me.defineDirection(tDirection)>
+  [ 57] pusharglistnoret 1 ...................... <me.defineDirection(tDirection)>
+  [ 59] extcall 13 .............................. return me.defineDirection(tDirection)
+  [ 61] ret
 end
 
 on getAngleFromComponents me, tVectorX, tVectorY
@@ -140,7 +140,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [ 28] pop 2
   [ 30] pushint8 7 .............................. <7>
   [ 32] pusharglistnoret 1 ...................... <7>
-  [ 34] extcall 28 .............................. return 7
+  [ 34] extcall 13 .............................. return 7
   [ 36] jmp [ 79]
   [ 39] peek 0
   [ 41] getparam 2 .............................. <tVectorY>
@@ -151,7 +151,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [ 49] pop 2
   [ 51] pushint8 6 .............................. <6>
   [ 53] pusharglistnoret 1 ...................... <6>
-  [ 55] extcall 28 .............................. return 6
+  [ 55] extcall 13 .............................. return 6
   [ 57] jmp [ 79]
   [ 60] peek 0
   [ 62] getparam 2 .............................. <tVectorY>
@@ -162,7 +162,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [ 71] pop 2
   [ 73] pushint8 5 .............................. <5>
   [ 75] pusharglistnoret 1 ...................... <5>
-  [ 77] extcall 28 .............................. return 5
+  [ 77] extcall 13 .............................. return 5
   [ 79] pop 1 ................................... end case
   [ 81] jmp [242]
   [ 84] peek 0
@@ -182,7 +182,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [108] pop 2
   [110] pushzero ................................ <0>
   [111] pusharglistnoret 1 ...................... <0>
-  [113] extcall 28 .............................. return 0
+  [113] extcall 13 .............................. return 0
   [115] jmp [159]
   [118] peek 0
   [120] getparam 2 .............................. <tVectorY>
@@ -194,7 +194,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [130] pushint8 1 .............................. <1>
   [132] inv ..................................... <-1>
   [133] pusharglistnoret 1 ...................... <-1>
-  [135] extcall 28 .............................. return -1
+  [135] extcall 13 .............................. return -1
   [137] jmp [159]
   [140] peek 0
   [142] getparam 2 .............................. <tVectorY>
@@ -205,7 +205,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [151] pop 2
   [153] pushint8 4 .............................. <4>
   [155] pusharglistnoret 1 ...................... <4>
-  [157] extcall 28 .............................. return 4
+  [157] extcall 13 .............................. return 4
   [159] pop 1 ................................... end case
   [161] jmp [242]
   [164] peek 0
@@ -225,7 +225,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [189] pop 2
   [191] pushint8 1 .............................. <1>
   [193] pusharglistnoret 1 ...................... <1>
-  [195] extcall 28 .............................. return 1
+  [195] extcall 13 .............................. return 1
   [197] jmp [240]
   [200] peek 0
   [202] getparam 2 .............................. <tVectorY>
@@ -236,7 +236,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [210] pop 2
   [212] pushint8 2 .............................. <2>
   [214] pusharglistnoret 1 ...................... <2>
-  [216] extcall 28 .............................. return 2
+  [216] extcall 13 .............................. return 2
   [218] jmp [240]
   [221] peek 0
   [223] getparam 2 .............................. <tVectorY>
@@ -247,7 +247,7 @@ on getAngleFromComponents me, tVectorX, tVectorY
   [232] pop 2
   [234] pushint8 3 .............................. <3>
   [236] pusharglistnoret 1 ...................... <3>
-  [238] extcall 28 .............................. return 3
+  [238] extcall 13 .............................. return 3
   [240] pop 1 ................................... end case
   [242] pop 1 ................................... end case
   [244] ret
@@ -266,7 +266,7 @@ on getComponentsFromAngle me, tAngle
   [ 15] pusharglist 2 ........................... <[0, -1]>
   [ 17] pushlist ................................ <[0, -1]>
   [ 18] pusharglistnoret 1 ...................... <[0, -1]>
-  [ 20] extcall 28 .............................. return [0, -1]
+  [ 20] extcall 13 .............................. return [0, -1]
   [ 22] jmp [192]
   [ 25] peek 0
   [ 27] pushint8 1 .............................. <1>
@@ -279,7 +279,7 @@ on getComponentsFromAngle me, tAngle
   [ 40] pusharglist 2 ........................... <[1, -1]>
   [ 42] pushlist ................................ <[1, -1]>
   [ 43] pusharglistnoret 1 ...................... <[1, -1]>
-  [ 45] extcall 28 .............................. return [1, -1]
+  [ 45] extcall 13 .............................. return [1, -1]
   [ 47] jmp [192]
   [ 50] peek 0
   [ 52] pushint8 2 .............................. <2>
@@ -291,7 +291,7 @@ on getComponentsFromAngle me, tAngle
   [ 63] pusharglist 2 ........................... <[1, 0]>
   [ 65] pushlist ................................ <[1, 0]>
   [ 66] pusharglistnoret 1 ...................... <[1, 0]>
-  [ 68] extcall 28 .............................. return [1, 0]
+  [ 68] extcall 13 .............................. return [1, 0]
   [ 70] jmp [192]
   [ 73] peek 0
   [ 75] pushint8 3 .............................. <3>
@@ -303,7 +303,7 @@ on getComponentsFromAngle me, tAngle
   [ 87] pusharglist 2 ........................... <[1, 1]>
   [ 89] pushlist ................................ <[1, 1]>
   [ 90] pusharglistnoret 1 ...................... <[1, 1]>
-  [ 92] extcall 28 .............................. return [1, 1]
+  [ 92] extcall 13 .............................. return [1, 1]
   [ 94] jmp [192]
   [ 97] peek 0
   [ 99] pushint8 4 .............................. <4>
@@ -315,7 +315,7 @@ on getComponentsFromAngle me, tAngle
   [110] pusharglist 2 ........................... <[0, 1]>
   [112] pushlist ................................ <[0, 1]>
   [113] pusharglistnoret 1 ...................... <[0, 1]>
-  [115] extcall 28 .............................. return [0, 1]
+  [115] extcall 13 .............................. return [0, 1]
   [117] jmp [192]
   [120] peek 0
   [122] pushint8 5 .............................. <5>
@@ -328,7 +328,7 @@ on getComponentsFromAngle me, tAngle
   [135] pusharglist 2 ........................... <[-1, 1]>
   [137] pushlist ................................ <[-1, 1]>
   [138] pusharglistnoret 1 ...................... <[-1, 1]>
-  [140] extcall 28 .............................. return [-1, 1]
+  [140] extcall 13 .............................. return [-1, 1]
   [142] jmp [192]
   [145] peek 0
   [147] pushint8 6 .............................. <6>
@@ -341,7 +341,7 @@ on getComponentsFromAngle me, tAngle
   [159] pusharglist 2 ........................... <[-1, 0]>
   [161] pushlist ................................ <[-1, 0]>
   [162] pusharglistnoret 1 ...................... <[-1, 0]>
-  [164] extcall 28 .............................. return [-1, 0]
+  [164] extcall 13 .............................. return [-1, 0]
   [166] jmp [192]
   [169] peek 0
   [171] pushint8 7 .............................. <7>
@@ -355,7 +355,7 @@ on getComponentsFromAngle me, tAngle
   [185] pusharglist 2 ........................... <[-1, -1]>
   [187] pushlist ................................ <[-1, -1]>
   [188] pusharglistnoret 1 ...................... <[-1, -1]>
-  [190] extcall 28 .............................. return [-1, -1]
+  [190] extcall 13 .............................. return [-1, -1]
   [192] pop 1 ................................... end case
   [194] ret
 end

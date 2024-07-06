@@ -475,7 +475,17 @@ end
 on handle_updateitem me, tMsg
   tItem = me.getComponent().getItemObject(tMsg.content.word[1])
   if objectp(tItem) then
-    tItem.updateColor(the last word in the content of tMsg)
+    if tItem.getClass() = "post.it" then
+      tItem.updateColor(the last word in the content of tMsg)
+      return 1
+    else
+      if tItem.getClass() = "post.it" then
+        return 1
+      else
+        tItem.updatePosition(tMsg.content.word[4], tMsg.content.word[5], tMsg.content.word[6])
+        executeMessage(#itemObjectsUpdated)
+      end if
+    end if
   end if
 end
 
@@ -987,6 +997,7 @@ on regMsgList me, tBool
   tCmds.setaProp("STOP", 88)
   tCmds.setaProp("USEITEM", 89)
   tCmds.setaProp("PLACESTUFF", 90)
+  tCmds.setaProp("MOVEITEM", 91)
   tCmds.setaProp("DANCE", 93)
   tCmds.setaProp("WAVE", 94)
   tCmds.setaProp("KICKUSER", 95)

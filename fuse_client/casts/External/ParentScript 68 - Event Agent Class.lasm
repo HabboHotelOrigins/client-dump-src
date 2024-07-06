@@ -3,7 +3,7 @@ property pSprite, pEventList
 on construct me
   [  0] pusharglist 0 ........................... <[:]>
   [  2] pushproplist ............................ <[:]>
-  [  3] setprop 1650 ............................ pEventList = [:]
+  [  3] setprop 1647 ............................ pEventList = [:]
   [  6] getparam 0 .............................. <me>
   [  8] pusharglist 1 ........................... <me>
   [ 10] objcall 3 ............................... <me.getID()>
@@ -79,7 +79,7 @@ on deconstruct me
 end
 
 on registerEvent me, tObj, tEvent, tMethod
-  [  0] getprop 1650 ............................ <pEventList>
+  [  0] getprop 1647 ............................ <pEventList>
   [  3] getparam 2 .............................. <tEvent>
   [  5] getparam 1 .............................. <tObj>
   [  7] getparam 3 .............................. <tMethod>
@@ -88,7 +88,7 @@ on registerEvent me, tObj, tEvent, tMethod
   [ 12] pusharglistnoret 3 ...................... <pEventList, tEvent, [tObj, tMethod]>
   [ 14] objcall 24 .............................. pEventList[tEvent] = [tObj, tMethod]
   [ 16] getprop 35 .............................. <pSprite>
-  [ 18] pushsymb 1649 ........................... <#eventProcDefault>
+  [ 18] pushsymb 1646 ........................... <#eventProcDefault>
   [ 21] getparam 0 .............................. <me>
   [ 23] pusharglist 1 ........................... <me>
   [ 25] objcall 3 ............................... <me.getID()>
@@ -109,11 +109,11 @@ on registerEvent me, tObj, tEvent, tMethod
 end
 
 on unregisterEvent me, tEvent
-  [  0] getprop 1650 ............................ <pEventList>
+  [  0] getprop 1647 ............................ <pEventList>
   [  3] getparam 1 .............................. <tEvent>
   [  5] pusharglistnoret 2 ...................... <pEventList, tEvent>
   [  7] objcall 661 ............................. pEventList.deleteProp(tEvent)
-  [ 10] getprop 1650 ............................ <pEventList>
+  [ 10] getprop 1647 ............................ <pEventList>
   [ 13] getobjprop 22 ........................... <pEventList.count>
   [ 15] pushzero ................................ <0>
   [ 16] eq ...................................... <pEventList.count = 0>
@@ -157,7 +157,7 @@ on prepare me
 end
 
 on eventProcDefault me, tEvent, tSprID, tParam
-  [  0] getprop 1650 ............................ <pEventList>
+  [  0] getprop 1647 ............................ <pEventList>
   [  3] getparam 1 .............................. <tEvent>
   [  5] pusharglist 2 ........................... <pEventList, tEvent>
   [  7] objcall 54 .............................. <pEventList[tEvent]>

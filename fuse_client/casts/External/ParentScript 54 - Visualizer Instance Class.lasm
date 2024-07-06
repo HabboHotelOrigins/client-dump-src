@@ -17,7 +17,7 @@ on construct me
   [ 27] pushzero ................................ <0>
   [ 28] setprop 499 ............................. pwidth = 0
   [ 31] pushzero ................................ <0>
-  [ 32] setprop 504 ............................. pheight = 0
+  [ 32] setprop 505 ............................. pheight = 0
   [ 35] pushint8 1 .............................. <1>
   [ 37] setprop 1366 ............................ pVisible = 1
   [ 40] pusharglist 0 ........................... <[]>
@@ -340,7 +340,7 @@ on moveBy me, tOffX, tOffY
   [107] sub ..................................... <pBoundary[3] - pLocX - pwidth>
   [108] setparam 1 .............................. tOffX = pBoundary[3] - pLocX - pwidth
   [110] getprop 469 ............................. <pLocY>
-  [113] getprop 504 ............................. <pheight>
+  [113] getprop 505 ............................. <pheight>
   [116] add ..................................... <pLocY + pheight>
   [117] getparam 2 .............................. <tOffY>
   [119] add ..................................... <pLocY + pheight + tOffY>
@@ -356,7 +356,7 @@ on moveBy me, tOffX, tOffY
   [140] objcall 54 .............................. <pBoundary[4]>
   [142] getprop 469 ............................. <pLocY>
   [145] sub ..................................... <pBoundary[4] - pLocY>
-  [146] getprop 504 ............................. <pheight>
+  [146] getprop 505 ............................. <pheight>
   [149] sub ..................................... <pBoundary[4] - pLocY - pheight>
   [150] setparam 2 .............................. tOffY = pBoundary[4] - pLocY - pheight
   [152] getprop 467 ............................. <pLocX>
@@ -713,7 +713,7 @@ on getProperty me, tProp
   [131] eq
   [132] jmpifz [147] ............................ (case) #height:
   [135] pop 1
-  [137] getprop 504 ............................. <pheight>
+  [137] getprop 505 ............................. <pheight>
   [140] pusharglistnoret 1 ...................... <pheight>
   [142] extcall 25 .............................. return pheight
   [144] jmp [295]
@@ -1398,7 +1398,7 @@ on Refresh me
   [274] setprop 499 ............................. pwidth = tRect.width
   [277] getlocal 0 .............................. <tRect>
   [279] getobjprop 43 ........................... <tRect.height>
-  [281] setprop 504 ............................. pheight = tRect.height
+  [281] setprop 505 ............................. pheight = tRect.height
   [284] getprop 1368 ............................ <pSpriteData>
   [287] getobjprop 22 ........................... <pSpriteData.count>
   [289] pushzero ................................ <0>

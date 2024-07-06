@@ -1,43 +1,43 @@
 on getInfo me
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 1255 ........................... <#pInfoStruct>
-  [  5] pushsymb 290 ............................ <#image>
-  [  8] pushint8 1 .............................. <1>
-  [ 10] pushint8 1 .............................. <1>
-  [ 12] pushint8 8 .............................. <8>
-  [ 14] pusharglist 3 ........................... <1, 1, 8>
-  [ 16] extcall 290 ............................. <image(1, 1, 8)>
-  [ 19] pusharglistnoret 4 ...................... <me, #pInfoStruct, #image, image(1, 1, 8)>
-  [ 21] objcall 1393 ............................ me.pInfoStruct[#image] = image(1, 1, 8)
-  [ 24] getparam 0 .............................. <me>
-  [ 26] getobjprop 1255 ......................... <me.pInfoStruct>
-  [ 29] pusharglistnoret 1 ...................... <me.pInfoStruct>
-  [ 31] extcall 21 .............................. return me.pInfoStruct
-  [ 33] ret
+  [  2] pushsymb 1282 ........................... <#pInfoStruct>
+  [  5] pushsymb 63 ............................. <#image>
+  [  7] pushint8 1 .............................. <1>
+  [  9] pushint8 1 .............................. <1>
+  [ 11] pushint8 8 .............................. <8>
+  [ 13] pusharglist 3 ........................... <1, 1, 8>
+  [ 15] extcall 63 .............................. <image(1, 1, 8)>
+  [ 17] pusharglistnoret 4 ...................... <me, #pInfoStruct, #image, image(1, 1, 8)>
+  [ 19] objcall 1416 ............................ me.pInfoStruct[#image] = image(1, 1, 8)
+  [ 22] getparam 0 .............................. <me>
+  [ 24] getobjprop 1282 ......................... <me.pInfoStruct>
+  [ 27] pusharglistnoret 1 ...................... <me.pInfoStruct>
+  [ 29] extcall 31 .............................. return me.pInfoStruct
+  [ 31] ret
 end
 
 on action_taked me
   [  0] getparam 0 .............................. <me>
   [  2] pushint8 1 .............................. <1>
-  [  4] setobjprop 1241 ......................... me.pCarrying = 1
-  [  7] pushsymb 1333 ........................... <#doHandWorkRight>
+  [  4] setobjprop 1268 ......................... me.pCarrying = 1
+  [  7] pushsymb 1355 ........................... <#doHandWorkRight>
   [ 10] getparam 0 .............................. <me>
-  [ 12] getobjprop 1222 ......................... <me.pPartList>
+  [ 12] getobjprop 1249 ......................... <me.pPartList>
   [ 15] pushcons 0 .............................. <"crr">
   [ 17] pusharglistnoret 3 ...................... <#doHandWorkRight, me.pPartList, "crr">
-  [ 19] extcall 178 ............................. call(#doHandWorkRight, me.pPartList, "crr")
-  [ 21] ret
+  [ 19] extcall 281 ............................. call(#doHandWorkRight, me.pPartList, "crr")
+  [ 22] ret
 end
 
 on action_gived me
   [  0] getparam 0 .............................. <me>
   [  2] pushint8 1 .............................. <1>
-  [  4] setobjprop 1241 ......................... me.pCarrying = 1
-  [  7] pushsymb 1333 ........................... <#doHandWorkRight>
+  [  4] setobjprop 1268 ......................... me.pCarrying = 1
+  [  7] pushsymb 1355 ........................... <#doHandWorkRight>
   [ 10] getparam 0 .............................. <me>
-  [ 12] getobjprop 1222 ......................... <me.pPartList>
+  [ 12] getobjprop 1249 ......................... <me.pPartList>
   [ 15] pushcons 0 .............................. <"crr">
   [ 17] pusharglistnoret 3 ...................... <#doHandWorkRight, me.pPartList, "crr">
-  [ 19] extcall 178 ............................. call(#doHandWorkRight, me.pPartList, "crr")
-  [ 21] ret
+  [ 19] extcall 281 ............................. call(#doHandWorkRight, me.pPartList, "crr")
+  [ 22] ret
 end

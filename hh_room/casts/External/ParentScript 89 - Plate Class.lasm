@@ -2,536 +2,536 @@ property pPlateID, pFrameCounter, pStarProps, pNumberOfStars
 
 on construct me
   [  0] pushcons 0 .............................. <"trophyplate">
-  [  2] setprop 1862 ............................ pPlateID = "trophyplate"
+  [  2] setprop 1859 ............................ pPlateID = "trophyplate"
   [  5] pusharglist 0 ........................... <[:]>
   [  7] pushproplist ............................ <[:]>
-  [  8] setprop 1863 ............................ pStarProps = [:]
+  [  8] setprop 1860 ............................ pStarProps = [:]
   [ 11] pushint8 3 .............................. <3>
-  [ 13] setprop 1864 ............................ pNumberOfStars = 3
+  [ 13] setprop 1861 ............................ pNumberOfStars = 3
   [ 16] ret
 end
 
 on deconstruct me
-  [  0] pushsymb 491 ............................ <#leaveRoom>
+  [  0] pushsymb 552 ............................ <#leaveRoom>
   [  3] getparam 0 .............................. <me>
   [  5] pusharglist 1 ........................... <me>
-  [  7] objcall 156 ............................. <me.getID()>
+  [  7] objcall 75 .............................. <me.getID()>
   [  9] pusharglistnoret 2 ...................... <#leaveRoom, me.getID()>
-  [ 11] extcall 158 ............................. unregisterMessage(#leaveRoom, me.getID())
-  [ 13] pushsymb 578 ............................ <#changeRoom>
-  [ 16] getparam 0 .............................. <me>
-  [ 18] pusharglist 1 ........................... <me>
-  [ 20] objcall 156 ............................. <me.getID()>
-  [ 22] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
-  [ 24] extcall 158 ............................. unregisterMessage(#changeRoom, me.getID())
-  [ 26] getparam 0 .............................. <me>
-  [ 28] pusharglist 1 ........................... <me>
-  [ 30] objcall 156 ............................. <me.getID()>
-  [ 32] pusharglistnoret 1 ...................... <me.getID()>
-  [ 34] extcall 199 ............................. removeUpdate(me.getID())
-  [ 36] getparam 0 .............................. <me>
-  [ 38] pusharglistnoret 1 ...................... <me>
-  [ 40] objcall 1860 ............................ me.hideStars()
-  [ 43] pushint8 1 .............................. <1>
-  [ 45] pusharglistnoret 1 ...................... <1>
-  [ 47] extcall 21 .............................. return 1
-  [ 49] ret
+  [ 11] extcall 266 ............................. unregisterMessage(#leaveRoom, me.getID())
+  [ 14] pushsymb 631 ............................ <#changeRoom>
+  [ 17] getparam 0 .............................. <me>
+  [ 19] pusharglist 1 ........................... <me>
+  [ 21] objcall 75 .............................. <me.getID()>
+  [ 23] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
+  [ 25] extcall 266 ............................. unregisterMessage(#changeRoom, me.getID())
+  [ 28] getparam 0 .............................. <me>
+  [ 30] pusharglist 1 ........................... <me>
+  [ 32] objcall 75 .............................. <me.getID()>
+  [ 34] pusharglistnoret 1 ...................... <me.getID()>
+  [ 36] extcall 298 ............................. removeUpdate(me.getID())
+  [ 39] getparam 0 .............................. <me>
+  [ 41] pusharglistnoret 1 ...................... <me>
+  [ 43] objcall 1857 ............................ me.hideStars()
+  [ 46] pushint8 1 .............................. <1>
+  [ 48] pusharglistnoret 1 ...................... <1>
+  [ 50] extcall 31 .............................. return 1
+  [ 52] ret
 end
 
 on hidePlate me
-  [  0] getprop 1862 ............................ <pPlateID>
+  [  0] getprop 1859 ............................ <pPlateID>
   [  3] pusharglist 1 ........................... <pPlateID>
-  [  5] extcall 162 ............................. <windowExists(pPlateID)>
-  [  7] jmpifz [ 17] ............................ if windowExists(pPlateID) then
-  [ 10] getprop 1862 ............................ <pPlateID>
-  [ 13] pusharglistnoret 1 ...................... <pPlateID>
-  [ 15] extcall 232 ............................. removeWindow(pPlateID)
-  [ 17] getparam 0 .............................. <me>
-  [ 19] pusharglist 1 ........................... <me>
-  [ 21] objcall 156 ............................. <me.getID()>
-  [ 23] pusharglist 1 ........................... <me.getID()>
-  [ 25] extcall 160 ............................. <removeObject(me.getID())>
-  [ 27] pusharglistnoret 1 ...................... <removeObject(me.getID())>
-  [ 29] extcall 21 .............................. return removeObject(me.getID())
-  [ 31] ret
+  [  5] extcall 268 ............................. <windowExists(pPlateID)>
+  [  8] jmpifz [ 19] ............................ if windowExists(pPlateID) then
+  [ 11] getprop 1859 ............................ <pPlateID>
+  [ 14] pusharglistnoret 1 ...................... <pPlateID>
+  [ 16] extcall 327 ............................. removeWindow(pPlateID)
+  [ 19] getparam 0 .............................. <me>
+  [ 21] pusharglist 1 ........................... <me>
+  [ 23] objcall 75 .............................. <me.getID()>
+  [ 25] pusharglist 1 ........................... <me.getID()>
+  [ 27] extcall 267 ............................. <removeObject(me.getID())>
+  [ 30] pusharglistnoret 1 ...................... <removeObject(me.getID())>
+  [ 32] extcall 31 .............................. return removeObject(me.getID())
+  [ 34] ret
 end
 
 on show me, tName, tDate, tMsg, tWindowName
-  [  0] getprop 1862 ............................ <pPlateID>
+  [  0] getprop 1859 ............................ <pPlateID>
   [  3] pusharglist 1 ........................... <pPlateID>
-  [  5] extcall 162 ............................. <windowExists(pPlateID)>
-  [  7] jmpifz [ 17] ............................ if windowExists(pPlateID) then
-  [ 10] getprop 1862 ............................ <pPlateID>
-  [ 13] pusharglistnoret 1 ...................... <pPlateID>
-  [ 15] extcall 232 ............................. removeWindow(pPlateID)
-  [ 17] getprop 1862 ............................ <pPlateID>
-  [ 20] getparam 4 .............................. <tWindowName>
-  [ 22] pusharglist 2 ........................... <pPlateID, tWindowName>
-  [ 24] extcall 203 ............................. <createWindow(pPlateID, tWindowName)>
-  [ 26] not ..................................... <not createWindow(pPlateID, tWindowName)>
-  [ 27] jmpifz [ 47] ............................ if not createWindow(pPlateID, tWindowName) then / else
-  [ 30] getparam 0 .............................. <me>
-  [ 32] pushcons 1 .............................. <"Failed to open trophy plate window!!!">
-  [ 34] pushsymb 250 ............................ <#show>
-  [ 36] pusharglist 3 ........................... <me, "Failed to open trophy plate window!!!", #show>
-  [ 38] extcall 161 ............................. <error(me, "Failed to open trophy plate window!!!", #show)>
-  [ 40] pusharglistnoret 1 ...................... <error(me, "Failed to open trophy plate window!!!", #show)>
-  [ 42] extcall 21 .............................. return error(me, "Failed to open trophy plate window!!!", #show)
-  [ 44] jmp [303]
-  [ 47] getprop 1862 ............................ <pPlateID>
-  [ 50] pusharglist 1 ........................... <pPlateID>
-  [ 52] extcall 204 ............................. <getWindow(pPlateID)>
-  [ 54] setlocal 0 .............................. tWndObj = getWindow(pPlateID)
-  [ 56] getlocal 0 .............................. <tWndObj>
-  [ 58] pusharglistnoret 1 ...................... <tWndObj>
-  [ 60] objcall 301 ............................. tWndObj.center()
-  [ 63] pushcons 2 .............................. <"dedication_text_1">
-  [ 65] pushcons 3 .............................. <"dedication_text_2">
-  [ 67] pusharglist 2 ........................... <["dedication_text_1", "dedication_text_2"]>
-  [ 69] pushlist ................................ <["dedication_text_1", "dedication_text_2"]>
-  [ 70] peek 0
-  [ 72] pusharglist 1
-  [ 74] extcall 14
-  [ 76] pushint8 1
-  [ 78] peek 0
-  [ 80] peek 2
-  [ 82] lteq
-  [ 83] jmpifz [127] ............................ repeat with tElemID in ["dedication_text_1", "dedication_text_2"]
-  [ 86] peek 2
-  [ 88] peek 1
-  [ 90] pusharglist 2
-  [ 92] extcall 9
-  [ 94] setlocal 1
-  [ 96] getlocal 0 .............................. <tWndObj>
-  [ 98] getlocal 1 .............................. <tElemID>
-  [100] pusharglist 2 ........................... <tWndObj, tElemID>
-  [102] objcall 325 ............................. <tWndObj.elementExists(tElemID)>
-  [105] jmpifz [122] ............................ if tWndObj.elementExists(tElemID) then
-  [108] getlocal 0 .............................. <tWndObj>
-  [110] getlocal 1 .............................. <tElemID>
-  [112] pusharglist 2 ........................... <tWndObj, tElemID>
-  [114] objcall 222 ............................. <tWndObj.getElement(tElemID)>
-  [116] getparam 3 .............................. <tMsg>
-  [118] pusharglistnoret 2 ...................... <tWndObj.getElement(tElemID), tMsg>
-  [120] objcall 223 ............................. tWndObj.getElement(tElemID).setText(tMsg)
-  [122] pushint8 1
-  [124] add
-  [125] endrepeat [ 78]
-  [127] pop 3
-  [129] pushcons 4 .............................. <"plate_name_1">
-  [131] pushcons 5 .............................. <"plate_name_2">
-  [133] pusharglist 2 ........................... <["plate_name_1", "plate_name_2"]>
-  [135] pushlist ................................ <["plate_name_1", "plate_name_2"]>
-  [136] peek 0
-  [138] pusharglist 1
-  [140] extcall 14
-  [142] pushint8 1
-  [144] peek 0
-  [146] peek 2
-  [148] lteq
-  [149] jmpifz [193] ............................ repeat with tElemID in ["plate_name_1", "plate_name_2"]
-  [152] peek 2
-  [154] peek 1
-  [156] pusharglist 2
-  [158] extcall 9
-  [160] setlocal 1
-  [162] getlocal 0 .............................. <tWndObj>
-  [164] getlocal 1 .............................. <tElemID>
-  [166] pusharglist 2 ........................... <tWndObj, tElemID>
-  [168] objcall 325 ............................. <tWndObj.elementExists(tElemID)>
-  [171] jmpifz [188] ............................ if tWndObj.elementExists(tElemID) then
-  [174] getlocal 0 .............................. <tWndObj>
-  [176] getlocal 1 .............................. <tElemID>
-  [178] pusharglist 2 ........................... <tWndObj, tElemID>
-  [180] objcall 222 ............................. <tWndObj.getElement(tElemID)>
-  [182] getparam 1 .............................. <tName>
-  [184] pusharglistnoret 2 ...................... <tWndObj.getElement(tElemID), tName>
-  [186] objcall 223 ............................. tWndObj.getElement(tElemID).setText(tName)
-  [188] pushint8 1
-  [190] add
-  [191] endrepeat [144]
-  [193] pop 3
-  [195] pushcons 6 .............................. <"plate_date_1">
-  [197] pushcons 7 .............................. <"plate_date_2">
-  [199] pusharglist 2 ........................... <["plate_date_1", "plate_date_2"]>
-  [201] pushlist ................................ <["plate_date_1", "plate_date_2"]>
-  [202] peek 0
-  [204] pusharglist 1
-  [206] extcall 14
-  [208] pushint8 1
-  [210] peek 0
-  [212] peek 2
-  [214] lteq
-  [215] jmpifz [259] ............................ repeat with tElemID in ["plate_date_1", "plate_date_2"]
-  [218] peek 2
-  [220] peek 1
-  [222] pusharglist 2
-  [224] extcall 9
-  [226] setlocal 1
-  [228] getlocal 0 .............................. <tWndObj>
-  [230] getlocal 1 .............................. <tElemID>
-  [232] pusharglist 2 ........................... <tWndObj, tElemID>
-  [234] objcall 325 ............................. <tWndObj.elementExists(tElemID)>
-  [237] jmpifz [254] ............................ if tWndObj.elementExists(tElemID) then
-  [240] getlocal 0 .............................. <tWndObj>
-  [242] getlocal 1 .............................. <tElemID>
-  [244] pusharglist 2 ........................... <tWndObj, tElemID>
-  [246] objcall 222 ............................. <tWndObj.getElement(tElemID)>
-  [248] getparam 2 .............................. <tDate>
-  [250] pusharglistnoret 2 ...................... <tWndObj.getElement(tElemID), tDate>
-  [252] objcall 223 ............................. tWndObj.getElement(tElemID).setText(tDate)
-  [254] pushint8 1
-  [256] add
-  [257] endrepeat [210]
-  [259] pop 3
-  [261] pushsymb 491 ............................ <#leaveRoom>
-  [264] getparam 0 .............................. <me>
-  [266] pusharglist 1 ........................... <me>
-  [268] objcall 156 ............................. <me.getID()>
-  [270] pushsymb 1858 ........................... <#hidePlate>
-  [273] pusharglistnoret 3 ...................... <#leaveRoom, me.getID(), #hidePlate>
-  [275] extcall 155 ............................. registerMessage(#leaveRoom, me.getID(), #hidePlate)
-  [277] pushsymb 578 ............................ <#changeRoom>
-  [280] getparam 0 .............................. <me>
-  [282] pusharglist 1 ........................... <me>
-  [284] objcall 156 ............................. <me.getID()>
-  [286] pushsymb 1858 ........................... <#hidePlate>
-  [289] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #hidePlate>
-  [291] extcall 155 ............................. registerMessage(#changeRoom, me.getID(), #hidePlate)
-  [293] getparam 0 .............................. <me>
-  [295] pusharglist 1 ........................... <me>
-  [297] objcall 156 ............................. <me.getID()>
-  [299] pusharglistnoret 1 ...................... <me.getID()>
-  [301] extcall 183 ............................. receiveUpdate(me.getID())
-  [303] pushint8 1 .............................. <1>
-  [305] pusharglistnoret 1 ...................... <1>
-  [307] extcall 21 .............................. return 1
-  [309] ret
+  [  5] extcall 268 ............................. <windowExists(pPlateID)>
+  [  8] jmpifz [ 19] ............................ if windowExists(pPlateID) then
+  [ 11] getprop 1859 ............................ <pPlateID>
+  [ 14] pusharglistnoret 1 ...................... <pPlateID>
+  [ 16] extcall 327 ............................. removeWindow(pPlateID)
+  [ 19] getprop 1859 ............................ <pPlateID>
+  [ 22] getparam 4 .............................. <tWindowName>
+  [ 24] pusharglist 2 ........................... <pPlateID, tWindowName>
+  [ 26] extcall 302 ............................. <createWindow(pPlateID, tWindowName)>
+  [ 29] not ..................................... <not createWindow(pPlateID, tWindowName)>
+  [ 30] jmpifz [ 51] ............................ if not createWindow(pPlateID, tWindowName) then / else
+  [ 33] getparam 0 .............................. <me>
+  [ 35] pushcons 1 .............................. <"Failed to open trophy plate window!!!">
+  [ 37] pushsymb 340 ............................ <#show>
+  [ 40] pusharglist 3 ........................... <me, "Failed to open trophy plate window!!!", #show>
+  [ 42] extcall 72 .............................. <error(me, "Failed to open trophy plate window!!!", #show)>
+  [ 44] pusharglistnoret 1 ...................... <error(me, "Failed to open trophy plate window!!!", #show)>
+  [ 46] extcall 31 .............................. return error(me, "Failed to open trophy plate window!!!", #show)
+  [ 48] jmp [317]
+  [ 51] getprop 1859 ............................ <pPlateID>
+  [ 54] pusharglist 1 ........................... <pPlateID>
+  [ 56] extcall 303 ............................. <getWindow(pPlateID)>
+  [ 59] setlocal 0 .............................. tWndObj = getWindow(pPlateID)
+  [ 61] getlocal 0 .............................. <tWndObj>
+  [ 63] pusharglistnoret 1 ...................... <tWndObj>
+  [ 65] objcall 381 ............................. tWndObj.center()
+  [ 68] pushcons 2 .............................. <"dedication_text_1">
+  [ 70] pushcons 3 .............................. <"dedication_text_2">
+  [ 72] pusharglist 2 ........................... <["dedication_text_1", "dedication_text_2"]>
+  [ 74] pushlist ................................ <["dedication_text_1", "dedication_text_2"]>
+  [ 75] peek 0
+  [ 77] pusharglist 1
+  [ 79] extcall 33
+  [ 81] pushint8 1
+  [ 83] peek 0
+  [ 85] peek 2
+  [ 87] lteq
+  [ 88] jmpifz [134] ............................ repeat with tElemID in ["dedication_text_1", "dedication_text_2"]
+  [ 91] peek 2
+  [ 93] peek 1
+  [ 95] pusharglist 2
+  [ 97] extcall 34
+  [ 99] setlocal 1
+  [101] getlocal 0 .............................. <tWndObj>
+  [103] getlocal 1 .............................. <tElemID>
+  [105] pusharglist 2 ........................... <tWndObj, tElemID>
+  [107] objcall 402 ............................. <tWndObj.elementExists(tElemID)>
+  [110] jmpifz [129] ............................ if tWndObj.elementExists(tElemID) then
+  [113] getlocal 0 .............................. <tWndObj>
+  [115] getlocal 1 .............................. <tElemID>
+  [117] pusharglist 2 ........................... <tWndObj, tElemID>
+  [119] objcall 317 ............................. <tWndObj.getElement(tElemID)>
+  [122] getparam 3 .............................. <tMsg>
+  [124] pusharglistnoret 2 ...................... <tWndObj.getElement(tElemID), tMsg>
+  [126] objcall 318 ............................. tWndObj.getElement(tElemID).setText(tMsg)
+  [129] pushint8 1
+  [131] add
+  [132] endrepeat [ 83]
+  [134] pop 3
+  [136] pushcons 4 .............................. <"plate_name_1">
+  [138] pushcons 5 .............................. <"plate_name_2">
+  [140] pusharglist 2 ........................... <["plate_name_1", "plate_name_2"]>
+  [142] pushlist ................................ <["plate_name_1", "plate_name_2"]>
+  [143] peek 0
+  [145] pusharglist 1
+  [147] extcall 33
+  [149] pushint8 1
+  [151] peek 0
+  [153] peek 2
+  [155] lteq
+  [156] jmpifz [202] ............................ repeat with tElemID in ["plate_name_1", "plate_name_2"]
+  [159] peek 2
+  [161] peek 1
+  [163] pusharglist 2
+  [165] extcall 34
+  [167] setlocal 1
+  [169] getlocal 0 .............................. <tWndObj>
+  [171] getlocal 1 .............................. <tElemID>
+  [173] pusharglist 2 ........................... <tWndObj, tElemID>
+  [175] objcall 402 ............................. <tWndObj.elementExists(tElemID)>
+  [178] jmpifz [197] ............................ if tWndObj.elementExists(tElemID) then
+  [181] getlocal 0 .............................. <tWndObj>
+  [183] getlocal 1 .............................. <tElemID>
+  [185] pusharglist 2 ........................... <tWndObj, tElemID>
+  [187] objcall 317 ............................. <tWndObj.getElement(tElemID)>
+  [190] getparam 1 .............................. <tName>
+  [192] pusharglistnoret 2 ...................... <tWndObj.getElement(tElemID), tName>
+  [194] objcall 318 ............................. tWndObj.getElement(tElemID).setText(tName)
+  [197] pushint8 1
+  [199] add
+  [200] endrepeat [151]
+  [202] pop 3
+  [204] pushcons 6 .............................. <"plate_date_1">
+  [206] pushcons 7 .............................. <"plate_date_2">
+  [208] pusharglist 2 ........................... <["plate_date_1", "plate_date_2"]>
+  [210] pushlist ................................ <["plate_date_1", "plate_date_2"]>
+  [211] peek 0
+  [213] pusharglist 1
+  [215] extcall 33
+  [217] pushint8 1
+  [219] peek 0
+  [221] peek 2
+  [223] lteq
+  [224] jmpifz [270] ............................ repeat with tElemID in ["plate_date_1", "plate_date_2"]
+  [227] peek 2
+  [229] peek 1
+  [231] pusharglist 2
+  [233] extcall 34
+  [235] setlocal 1
+  [237] getlocal 0 .............................. <tWndObj>
+  [239] getlocal 1 .............................. <tElemID>
+  [241] pusharglist 2 ........................... <tWndObj, tElemID>
+  [243] objcall 402 ............................. <tWndObj.elementExists(tElemID)>
+  [246] jmpifz [265] ............................ if tWndObj.elementExists(tElemID) then
+  [249] getlocal 0 .............................. <tWndObj>
+  [251] getlocal 1 .............................. <tElemID>
+  [253] pusharglist 2 ........................... <tWndObj, tElemID>
+  [255] objcall 317 ............................. <tWndObj.getElement(tElemID)>
+  [258] getparam 2 .............................. <tDate>
+  [260] pusharglistnoret 2 ...................... <tWndObj.getElement(tElemID), tDate>
+  [262] objcall 318 ............................. tWndObj.getElement(tElemID).setText(tDate)
+  [265] pushint8 1
+  [267] add
+  [268] endrepeat [219]
+  [270] pop 3
+  [272] pushsymb 552 ............................ <#leaveRoom>
+  [275] getparam 0 .............................. <me>
+  [277] pusharglist 1 ........................... <me>
+  [279] objcall 75 .............................. <me.getID()>
+  [281] pushsymb 1855 ........................... <#hidePlate>
+  [284] pusharglistnoret 3 ...................... <#leaveRoom, me.getID(), #hidePlate>
+  [286] extcall 264 ............................. registerMessage(#leaveRoom, me.getID(), #hidePlate)
+  [289] pushsymb 631 ............................ <#changeRoom>
+  [292] getparam 0 .............................. <me>
+  [294] pusharglist 1 ........................... <me>
+  [296] objcall 75 .............................. <me.getID()>
+  [298] pushsymb 1855 ........................... <#hidePlate>
+  [301] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #hidePlate>
+  [303] extcall 264 ............................. registerMessage(#changeRoom, me.getID(), #hidePlate)
+  [306] getparam 0 .............................. <me>
+  [308] pusharglist 1 ........................... <me>
+  [310] objcall 75 .............................. <me.getID()>
+  [312] pusharglistnoret 1 ...................... <me.getID()>
+  [314] extcall 283 ............................. receiveUpdate(me.getID())
+  [317] pushint8 1 .............................. <1>
+  [319] pusharglistnoret 1 ...................... <1>
+  [321] extcall 31 .............................. return 1
+  [323] ret
 end
 
 on showStars me
   [  0] pusharglist 0 ........................... <[:]>
   [  2] pushproplist ............................ <[:]>
-  [  3] setprop 1863 ............................ pStarProps = [:]
+  [  3] setprop 1860 ............................ pStarProps = [:]
   [  6] pushint8 1 .............................. <1>
   [  8] setlocal 0
   [ 10] getlocal 0
-  [ 12] getprop 1864 ............................ <pNumberOfStars>
+  [ 12] getprop 1861 ............................ <pNumberOfStars>
   [ 15] lteq
-  [ 16] jmpifz [130] ............................ repeat with f = 1 to pNumberOfStars
+  [ 16] jmpifz [131] ............................ repeat with f = 1 to pNumberOfStars
   [ 19] getparam 0 .............................. <me>
   [ 21] pusharglist 1 ........................... <me>
-  [ 23] objcall 156 ............................. <me.getID()>
+  [ 23] objcall 75 .............................. <me.getID()>
   [ 25] pusharglist 1 ........................... <me.getID()>
-  [ 27] extcall 358 ............................. <reserveSprite(me.getID())>
-  [ 30] setlocal 1 .............................. tSprNum = reserveSprite(me.getID())
-  [ 32] getlocal 1 .............................. <tSprNum>
-  [ 34] pushzero ................................ <0>
-  [ 35] gt ...................................... <tSprNum > 0>
-  [ 36] jmpifz [121] ............................ if tSprNum > 0 then
-  [ 39] getprop 1863 ............................ <pStarProps>
-  [ 42] getlocal 0 .............................. <f>
-  [ 44] pushcons 8 .............................. <"sprite">
-  [ 46] getlocal 1 .............................. <tSprNum>
-  [ 48] pushcons 9 .............................. <"frame">
-  [ 50] pushint8 1 .............................. <1>
-  [ 52] pushcons 10 ............................. <"loc">
-  [ 54] pushint8 10 ............................. <10>
-  [ 56] inv ..................................... <-10>
-  [ 57] pushint8 10 ............................. <10>
-  [ 59] inv ..................................... <-10>
-  [ 60] pusharglist 2 ........................... <-10, -10>
-  [ 62] extcall 293 ............................. <point(-10, -10)>
-  [ 65] pusharglist 6 ........................... <["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)]>
-  [ 67] pushproplist ............................ <["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)]>
-  [ 68] pusharglistnoret 3 ...................... <pStarProps, f, ["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)]>
-  [ 70] objcall 690 ............................. pStarProps.addProp(f, ["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)])
-  [ 73] getlocal 1 .............................. <tSprNum>
-  [ 75] pusharglist 1 ........................... <tSprNum>
-  [ 77] extcall 182 ............................. <sprite(tSprNum)>
-  [ 79] pushint8 8 .............................. <8>
-  [ 81] setobjprop 419 .......................... sprite(tSprNum).ink = 8
-  [ 84] getlocal 1 .............................. <tSprNum>
-  [ 86] pusharglist 1 ........................... <tSprNum>
-  [ 88] extcall 182 ............................. <sprite(tSprNum)>
-  [ 90] getprop 1862 ............................ <pPlateID>
-  [ 93] pusharglist 1 ........................... <pPlateID>
-  [ 95] extcall 204 ............................. <getWindow(pPlateID)>
-  [ 97] pushsymb 168 ............................ <#locZ>
-  [ 99] pusharglist 2 ........................... <getWindow(pPlateID), #locZ>
-  [101] objcall 77 .............................. <getWindow(pPlateID).getProperty(#locZ)>
-  [103] getprop 1862 ............................ <pPlateID>
-  [106] pusharglist 1 ........................... <pPlateID>
-  [108] extcall 204 ............................. <getWindow(pPlateID)>
-  [110] pushsymb 177 ............................ <#spriteList>
-  [112] pusharglist 2 ........................... <getWindow(pPlateID), #spriteList>
-  [114] objcall 77 .............................. <getWindow(pPlateID).getProperty(#spriteList)>
-  [116] getobjprop 14 ........................... <getWindow(pPlateID).getProperty(#spriteList).count>
-  [118] add ..................................... <getWindow(pPlateID).getProperty(#locZ) + getWindow(pPlateID).getProperty(#spriteList).count>
-  [119] setobjprop 168 .......................... sprite(tSprNum).locZ = getWindow(pPlateID).getProperty(#locZ) + getWindow(pPlateID).getProperty(#spriteList).count
-  [121] pushint8 1
-  [123] getlocal 0
-  [125] add
-  [126] setlocal 0
-  [128] endrepeat [ 10]
-  [130] ret
+  [ 27] extcall 74 .............................. <reserveSprite(me.getID())>
+  [ 29] setlocal 1 .............................. tSprNum = reserveSprite(me.getID())
+  [ 31] getlocal 1 .............................. <tSprNum>
+  [ 33] pushzero ................................ <0>
+  [ 34] gt ...................................... <tSprNum > 0>
+  [ 35] jmpifz [122] ............................ if tSprNum > 0 then
+  [ 38] getprop 1860 ............................ <pStarProps>
+  [ 41] getlocal 0 .............................. <f>
+  [ 43] pushcons 8 .............................. <"sprite">
+  [ 45] getlocal 1 .............................. <tSprNum>
+  [ 47] pushcons 9 .............................. <"frame">
+  [ 49] pushint8 1 .............................. <1>
+  [ 51] pushcons 10 ............................. <"loc">
+  [ 53] pushint8 10 ............................. <10>
+  [ 55] inv ..................................... <-10>
+  [ 56] pushint8 10 ............................. <10>
+  [ 58] inv ..................................... <-10>
+  [ 59] pusharglist 2 ........................... <-10, -10>
+  [ 61] extcall 375 ............................. <point(-10, -10)>
+  [ 64] pusharglist 6 ........................... <["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)]>
+  [ 66] pushproplist ............................ <["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)]>
+  [ 67] pusharglistnoret 3 ...................... <pStarProps, f, ["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)]>
+  [ 69] objcall 744 ............................. pStarProps.addProp(f, ["sprite": tSprNum, "frame": 1, "loc": point(-10, -10)])
+  [ 72] getlocal 1 .............................. <tSprNum>
+  [ 74] pusharglist 1 ........................... <tSprNum>
+  [ 76] extcall 73 .............................. <sprite(tSprNum)>
+  [ 78] pushint8 8 .............................. <8>
+  [ 80] setobjprop 93 ........................... sprite(tSprNum).ink = 8
+  [ 82] getlocal 1 .............................. <tSprNum>
+  [ 84] pusharglist 1 ........................... <tSprNum>
+  [ 86] extcall 73 .............................. <sprite(tSprNum)>
+  [ 88] getprop 1859 ............................ <pPlateID>
+  [ 91] pusharglist 1 ........................... <pPlateID>
+  [ 93] extcall 303 ............................. <getWindow(pPlateID)>
+  [ 96] pushsymb 129 ............................ <#locZ>
+  [ 98] pusharglist 2 ........................... <getWindow(pPlateID), #locZ>
+  [100] objcall 124 ............................. <getWindow(pPlateID).getProperty(#locZ)>
+  [102] getprop 1859 ............................ <pPlateID>
+  [105] pusharglist 1 ........................... <pPlateID>
+  [107] extcall 303 ............................. <getWindow(pPlateID)>
+  [110] pushsymb 280 ............................ <#spriteList>
+  [113] pusharglist 2 ........................... <getWindow(pPlateID), #spriteList>
+  [115] objcall 124 ............................. <getWindow(pPlateID).getProperty(#spriteList)>
+  [117] getobjprop 33 ........................... <getWindow(pPlateID).getProperty(#spriteList).count>
+  [119] add ..................................... <getWindow(pPlateID).getProperty(#locZ) + getWindow(pPlateID).getProperty(#spriteList).count>
+  [120] setobjprop 129 .......................... sprite(tSprNum).locZ = getWindow(pPlateID).getProperty(#locZ) + getWindow(pPlateID).getProperty(#spriteList).count
+  [122] pushint8 1
+  [124] getlocal 0
+  [126] add
+  [127] setlocal 0
+  [129] endrepeat [ 10]
+  [131] ret
 end
 
 on hideStars me
-  [  0] getprop 1863 ............................ <pStarProps>
-  [  3] getobjprop 248 .......................... <pStarProps.ilk>
-  [  5] pushsymb 1449 ........................... <#propList>
-  [  8] eq ...................................... <pStarProps.ilk = #propList>
-  [  9] jmpifz [ 93] ............................ if pStarProps.ilk = #propList then
-  [ 12] getprop 1863 ............................ <pStarProps>
-  [ 15] getobjprop 14 ........................... <pStarProps.count>
-  [ 17] pushzero ................................ <0>
-  [ 18] gt ...................................... <pStarProps.count > 0>
-  [ 19] jmpifz [ 93] ............................ if pStarProps.count > 0 then
-  [ 22] pushint8 1 .............................. <1>
-  [ 24] setlocal 0
-  [ 26] getlocal 0
-  [ 28] getprop 1863 ............................ <pStarProps>
-  [ 31] getobjprop 14 ........................... <pStarProps.count>
-  [ 33] lteq
-  [ 34] jmpifz [ 93] ............................ repeat with f = 1 to pStarProps.count
-  [ 37] getprop 1863 ............................ <pStarProps>
-  [ 40] getlocal 0 .............................. <f>
-  [ 42] pusharglist 2 ........................... <pStarProps, f>
-  [ 44] objcall 9 ............................... <pStarProps[f]>
-  [ 46] pushcons 8 .............................. <"sprite">
-  [ 48] pusharglist 2 ........................... <pStarProps[f], "sprite">
-  [ 50] objcall 9 ............................... <pStarProps[f]["sprite"]>
-  [ 52] pusharglist 1 ........................... <pStarProps[f]["sprite"]>
-  [ 54] extcall 10 .............................. <voidp(pStarProps[f]["sprite"])>
-  [ 56] not ..................................... <not voidp(pStarProps[f]["sprite"])>
-  [ 57] jmpifz [ 84] ............................ if not voidp(pStarProps[f]["sprite"]) then
-  [ 60] getprop 1863 ............................ <pStarProps>
-  [ 63] getlocal 0 .............................. <f>
-  [ 65] pusharglist 2 ........................... <pStarProps, f>
-  [ 67] objcall 9 ............................... <pStarProps[f]>
-  [ 69] pushcons 8 .............................. <"sprite">
-  [ 71] pusharglist 2 ........................... <pStarProps[f], "sprite">
-  [ 73] objcall 9 ............................... <pStarProps[f]["sprite"]>
-  [ 75] setlocal 1 .............................. tSpr = pStarProps[f]["sprite"]
-  [ 77] getlocal 1 .............................. <tSpr>
-  [ 79] pusharglistnoret 1 ...................... <tSpr>
-  [ 81] extcall 367 ............................. releaseSprite(tSpr)
-  [ 84] pushint8 1
-  [ 86] getlocal 0
-  [ 88] add
-  [ 89] setlocal 0
-  [ 91] endrepeat [ 26]
-  [ 93] pusharglist 0 ........................... <[:]>
-  [ 95] pushproplist ............................ <[:]>
-  [ 96] setprop 1863 ............................ pStarProps = [:]
-  [ 99] ret
+  [  0] getprop 1860 ............................ <pStarProps>
+  [  3] getobjprop 127 .......................... <pStarProps.ilk>
+  [  5] pushsymb 128 ............................ <#propList>
+  [  7] eq ...................................... <pStarProps.ilk = #propList>
+  [  8] jmpifz [ 91] ............................ if pStarProps.ilk = #propList then
+  [ 11] getprop 1860 ............................ <pStarProps>
+  [ 14] getobjprop 33 ........................... <pStarProps.count>
+  [ 16] pushzero ................................ <0>
+  [ 17] gt ...................................... <pStarProps.count > 0>
+  [ 18] jmpifz [ 91] ............................ if pStarProps.count > 0 then
+  [ 21] pushint8 1 .............................. <1>
+  [ 23] setlocal 0
+  [ 25] getlocal 0
+  [ 27] getprop 1860 ............................ <pStarProps>
+  [ 30] getobjprop 33 ........................... <pStarProps.count>
+  [ 32] lteq
+  [ 33] jmpifz [ 91] ............................ repeat with f = 1 to pStarProps.count
+  [ 36] getprop 1860 ............................ <pStarProps>
+  [ 39] getlocal 0 .............................. <f>
+  [ 41] pusharglist 2 ........................... <pStarProps, f>
+  [ 43] objcall 34 .............................. <pStarProps[f]>
+  [ 45] pushcons 8 .............................. <"sprite">
+  [ 47] pusharglist 2 ........................... <pStarProps[f], "sprite">
+  [ 49] objcall 34 .............................. <pStarProps[f]["sprite"]>
+  [ 51] pusharglist 1 ........................... <pStarProps[f]["sprite"]>
+  [ 53] extcall 120 ............................. <voidp(pStarProps[f]["sprite"])>
+  [ 55] not ..................................... <not voidp(pStarProps[f]["sprite"])>
+  [ 56] jmpifz [ 82] ............................ if not voidp(pStarProps[f]["sprite"]) then
+  [ 59] getprop 1860 ............................ <pStarProps>
+  [ 62] getlocal 0 .............................. <f>
+  [ 64] pusharglist 2 ........................... <pStarProps, f>
+  [ 66] objcall 34 .............................. <pStarProps[f]>
+  [ 68] pushcons 8 .............................. <"sprite">
+  [ 70] pusharglist 2 ........................... <pStarProps[f], "sprite">
+  [ 72] objcall 34 .............................. <pStarProps[f]["sprite"]>
+  [ 74] setlocal 1 .............................. tSpr = pStarProps[f]["sprite"]
+  [ 76] getlocal 1 .............................. <tSpr>
+  [ 78] pusharglistnoret 1 ...................... <tSpr>
+  [ 80] extcall 35 .............................. releaseSprite(tSpr)
+  [ 82] pushint8 1
+  [ 84] getlocal 0
+  [ 86] add
+  [ 87] setlocal 0
+  [ 89] endrepeat [ 25]
+  [ 91] pusharglist 0 ........................... <[:]>
+  [ 93] pushproplist ............................ <[:]>
+  [ 94] setprop 1860 ............................ pStarProps = [:]
+  [ 97] ret
 end
 
 on update me
-  [  0] getprop 1862 ............................ <pPlateID>
+  [  0] getprop 1859 ............................ <pPlateID>
   [  3] pusharglist 1 ........................... <pPlateID>
-  [  5] extcall 162 ............................. <windowExists(pPlateID)>
-  [  7] jmpifz [127] ............................ if windowExists(pPlateID) then / else
-  [ 10] getprop 7 ............................... <pFrameCounter>
-  [ 12] pushint8 1 .............................. <1>
-  [ 14] gt ...................................... <pFrameCounter > 1>
-  [ 15] jmpifz [117] ............................ if pFrameCounter > 1 then / else
-  [ 18] getprop 1863 ............................ <pStarProps>
-  [ 21] getobjprop 14 ........................... <pStarProps.count>
-  [ 23] pushzero ................................ <0>
-  [ 24] eq ...................................... <pStarProps.count = 0>
-  [ 25] jmpifz [ 34] ............................ if pStarProps.count = 0 then
-  [ 28] getparam 0 .............................. <me>
-  [ 30] pusharglistnoret 1 ...................... <me>
-  [ 32] localcall 4 ............................. showStars(me)
-  [ 34] getprop 1862 ............................ <pPlateID>
-  [ 37] pusharglist 1 ........................... <pPlateID>
-  [ 39] extcall 204 ............................. <getWindow(pPlateID)>
-  [ 41] setlocal 0 .............................. tWndObj = getWindow(pPlateID)
-  [ 43] getlocal 0 .............................. <tWndObj>
-  [ 45] pushsymb 166 ............................ <#locX>
-  [ 47] pusharglist 2 ........................... <tWndObj, #locX>
-  [ 49] objcall 77 .............................. <tWndObj.getProperty(#locX)>
-  [ 51] pushint8 10 ............................. <10>
-  [ 53] add ..................................... <tWndObj.getProperty(#locX) + 10>
-  [ 54] setlocal 1 .............................. tminX = tWndObj.getProperty(#locX) + 10
-  [ 56] getlocal 0 .............................. <tWndObj>
-  [ 58] pushsymb 252 ............................ <#width>
-  [ 60] pusharglist 2 ........................... <tWndObj, #width>
-  [ 62] objcall 77 .............................. <tWndObj.getProperty(#width)>
-  [ 64] pushint8 10 ............................. <10>
-  [ 66] sub ..................................... <tWndObj.getProperty(#width) - 10>
-  [ 67] setlocal 2 .............................. tMaxX = tWndObj.getProperty(#width) - 10
-  [ 69] getlocal 0 .............................. <tWndObj>
-  [ 71] pushsymb 167 ............................ <#locY>
-  [ 73] pusharglist 2 ........................... <tWndObj, #locY>
-  [ 75] objcall 77 .............................. <tWndObj.getProperty(#locY)>
-  [ 77] pushint8 10 ............................. <10>
-  [ 79] add ..................................... <tWndObj.getProperty(#locY) + 10>
-  [ 80] setlocal 3 .............................. tMinY = tWndObj.getProperty(#locY) + 10
-  [ 82] getlocal 0 .............................. <tWndObj>
-  [ 84] pushsymb 291 ............................ <#height>
-  [ 87] pusharglist 2 ........................... <tWndObj, #height>
-  [ 89] objcall 77 .............................. <tWndObj.getProperty(#height)>
-  [ 91] pushint8 10 ............................. <10>
-  [ 93] sub ..................................... <tWndObj.getProperty(#height) - 10>
-  [ 94] setlocal 4 .............................. tMaxY = tWndObj.getProperty(#height) - 10
-  [ 96] getparam 0 .............................. <me>
-  [ 98] getlocal 1 .............................. <tminX>
-  [100] getlocal 2 .............................. <tMaxX>
-  [102] getlocal 3 .............................. <tMinY>
-  [104] getlocal 4 .............................. <tMaxY>
-  [106] pusharglistnoret 5 ...................... <me, tminX, tMaxX, tMinY, tMaxY>
-  [108] objcall 1861 ............................ me.animateStars(tminX, tMaxX, tMinY, tMaxY)
-  [111] pushzero ................................ <0>
-  [112] setprop 7 ............................... pFrameCounter = 0
-  [114] jmp [124]
-  [117] getprop 7 ............................... <pFrameCounter>
-  [119] pushint8 1 .............................. <1>
-  [121] add ..................................... <pFrameCounter + 1>
-  [122] setprop 7 ............................... pFrameCounter = pFrameCounter + 1
-  [124] jmp [133]
-  [127] getparam 0 .............................. <me>
-  [129] pusharglistnoret 1 ...................... <me>
-  [131] objcall 43 .............................. me.deconstruct()
-  [133] ret
+  [  5] extcall 268 ............................. <windowExists(pPlateID)>
+  [  8] jmpifz [134] ............................ if windowExists(pPlateID) then / else
+  [ 11] getprop 1864 ............................ <pFrameCounter>
+  [ 14] pushint8 1 .............................. <1>
+  [ 16] gt ...................................... <pFrameCounter > 1>
+  [ 17] jmpifz [122] ............................ if pFrameCounter > 1 then / else
+  [ 20] getprop 1860 ............................ <pStarProps>
+  [ 23] getobjprop 33 ........................... <pStarProps.count>
+  [ 25] pushzero ................................ <0>
+  [ 26] eq ...................................... <pStarProps.count = 0>
+  [ 27] jmpifz [ 36] ............................ if pStarProps.count = 0 then
+  [ 30] getparam 0 .............................. <me>
+  [ 32] pusharglistnoret 1 ...................... <me>
+  [ 34] localcall 4 ............................. showStars(me)
+  [ 36] getprop 1859 ............................ <pPlateID>
+  [ 39] pusharglist 1 ........................... <pPlateID>
+  [ 41] extcall 303 ............................. <getWindow(pPlateID)>
+  [ 44] setlocal 0 .............................. tWndObj = getWindow(pPlateID)
+  [ 46] getlocal 0 .............................. <tWndObj>
+  [ 48] pushsymb 272 ............................ <#locX>
+  [ 51] pusharglist 2 ........................... <tWndObj, #locX>
+  [ 53] objcall 124 ............................. <tWndObj.getProperty(#locX)>
+  [ 55] pushint8 10 ............................. <10>
+  [ 57] add ..................................... <tWndObj.getProperty(#locX) + 10>
+  [ 58] setlocal 1 .............................. tminX = tWndObj.getProperty(#locX) + 10
+  [ 60] getlocal 0 .............................. <tWndObj>
+  [ 62] pushsymb 80 ............................. <#width>
+  [ 64] pusharglist 2 ........................... <tWndObj, #width>
+  [ 66] objcall 124 ............................. <tWndObj.getProperty(#width)>
+  [ 68] pushint8 10 ............................. <10>
+  [ 70] sub ..................................... <tWndObj.getProperty(#width) - 10>
+  [ 71] setlocal 2 .............................. tMaxX = tWndObj.getProperty(#width) - 10
+  [ 73] getlocal 0 .............................. <tWndObj>
+  [ 75] pushsymb 273 ............................ <#locY>
+  [ 78] pusharglist 2 ........................... <tWndObj, #locY>
+  [ 80] objcall 124 ............................. <tWndObj.getProperty(#locY)>
+  [ 82] pushint8 10 ............................. <10>
+  [ 84] add ..................................... <tWndObj.getProperty(#locY) + 10>
+  [ 85] setlocal 3 .............................. tMinY = tWndObj.getProperty(#locY) + 10
+  [ 87] getlocal 0 .............................. <tWndObj>
+  [ 89] pushsymb 81 ............................. <#height>
+  [ 91] pusharglist 2 ........................... <tWndObj, #height>
+  [ 93] objcall 124 ............................. <tWndObj.getProperty(#height)>
+  [ 95] pushint8 10 ............................. <10>
+  [ 97] sub ..................................... <tWndObj.getProperty(#height) - 10>
+  [ 98] setlocal 4 .............................. tMaxY = tWndObj.getProperty(#height) - 10
+  [100] getparam 0 .............................. <me>
+  [102] getlocal 1 .............................. <tminX>
+  [104] getlocal 2 .............................. <tMaxX>
+  [106] getlocal 3 .............................. <tMinY>
+  [108] getlocal 4 .............................. <tMaxY>
+  [110] pusharglistnoret 5 ...................... <me, tminX, tMaxX, tMinY, tMaxY>
+  [112] objcall 1858 ............................ me.animateStars(tminX, tMaxX, tMinY, tMaxY)
+  [115] pushzero ................................ <0>
+  [116] setprop 1864 ............................ pFrameCounter = 0
+  [119] jmp [131]
+  [122] getprop 1864 ............................ <pFrameCounter>
+  [125] pushint8 1 .............................. <1>
+  [127] add ..................................... <pFrameCounter + 1>
+  [128] setprop 1864 ............................ pFrameCounter = pFrameCounter + 1
+  [131] jmp [140]
+  [134] getparam 0 .............................. <me>
+  [136] pusharglistnoret 1 ...................... <me>
+  [138] objcall 1 ............................... me.deconstruct()
+  [140] ret
 end
 
 on animateStars me, tminX, tMaxX, tMinY, tMaxY
-  [  0] getprop 1863 ............................ <pStarProps>
-  [  3] getobjprop 248 .......................... <pStarProps.ilk>
-  [  5] pushsymb 1449 ........................... <#propList>
-  [  8] eq ...................................... <pStarProps.ilk = #propList>
-  [  9] jmpifz [275] ............................ if pStarProps.ilk = #propList then
-  [ 12] getprop 1863 ............................ <pStarProps>
-  [ 15] getobjprop 14 ........................... <pStarProps.count>
-  [ 17] pushzero ................................ <0>
-  [ 18] gt ...................................... <pStarProps.count > 0>
-  [ 19] jmpifz [275] ............................ if pStarProps.count > 0 then
-  [ 22] pushint8 1 .............................. <1>
-  [ 24] setlocal 0
-  [ 26] getlocal 0
-  [ 28] getprop 1863 ............................ <pStarProps>
-  [ 31] getobjprop 14 ........................... <pStarProps.count>
-  [ 33] lteq
-  [ 34] jmpifz [275] ............................ repeat with f = 1 to pStarProps.count
-  [ 37] getprop 1863 ............................ <pStarProps>
-  [ 40] getlocal 0 .............................. <f>
-  [ 42] pusharglist 2 ........................... <pStarProps, f>
-  [ 44] objcall 9 ............................... <pStarProps[f]>
-  [ 46] pushcons 8 .............................. <"sprite">
-  [ 48] pusharglist 2 ........................... <pStarProps[f], "sprite">
-  [ 50] objcall 9 ............................... <pStarProps[f]["sprite"]>
-  [ 52] pusharglist 1 ........................... <pStarProps[f]["sprite"]>
-  [ 54] extcall 182 ............................. <sprite(pStarProps[f]["sprite"])>
-  [ 56] setlocal 1 .............................. tSpr = sprite(pStarProps[f]["sprite"])
-  [ 58] getprop 1863 ............................ <pStarProps>
-  [ 61] getlocal 0 .............................. <f>
-  [ 63] pusharglist 2 ........................... <pStarProps, f>
-  [ 65] objcall 9 ............................... <pStarProps[f]>
-  [ 67] pushcons 9 .............................. <"frame">
-  [ 69] pusharglist 2 ........................... <pStarProps[f], "frame">
-  [ 71] objcall 9 ............................... <pStarProps[f]["frame"]>
-  [ 73] setlocal 2 .............................. tFrame = pStarProps[f]["frame"]
-  [ 75] getlocal 2 .............................. <tFrame>
-  [ 77] pushint8 1 .............................. <1>
-  [ 79] eq ...................................... <tFrame = 1>
-  [ 80] jmpifz [139] ............................ if tFrame = 1 then
-  [ 83] getprop 1863 ............................ <pStarProps>
-  [ 86] getlocal 0 .............................. <f>
-  [ 88] pusharglist 2 ........................... <pStarProps, f>
-  [ 90] objcall 9 ............................... <pStarProps[f]>
-  [ 92] pushcons 10 ............................. <"loc">
-  [ 94] getparam 1 .............................. <tminX>
-  [ 96] getparam 2 .............................. <tMaxX>
-  [ 98] pusharglist 1 ........................... <tMaxX>
-  [100] extcall 185 ............................. <random(tMaxX)>
+  [  0] getprop 1860 ............................ <pStarProps>
+  [  3] getobjprop 127 .......................... <pStarProps.ilk>
+  [  5] pushsymb 128 ............................ <#propList>
+  [  7] eq ...................................... <pStarProps.ilk = #propList>
+  [  8] jmpifz [278] ............................ if pStarProps.ilk = #propList then
+  [ 11] getprop 1860 ............................ <pStarProps>
+  [ 14] getobjprop 33 ........................... <pStarProps.count>
+  [ 16] pushzero ................................ <0>
+  [ 17] gt ...................................... <pStarProps.count > 0>
+  [ 18] jmpifz [278] ............................ if pStarProps.count > 0 then
+  [ 21] pushint8 1 .............................. <1>
+  [ 23] setlocal 0
+  [ 25] getlocal 0
+  [ 27] getprop 1860 ............................ <pStarProps>
+  [ 30] getobjprop 33 ........................... <pStarProps.count>
+  [ 32] lteq
+  [ 33] jmpifz [278] ............................ repeat with f = 1 to pStarProps.count
+  [ 36] getprop 1860 ............................ <pStarProps>
+  [ 39] getlocal 0 .............................. <f>
+  [ 41] pusharglist 2 ........................... <pStarProps, f>
+  [ 43] objcall 34 .............................. <pStarProps[f]>
+  [ 45] pushcons 8 .............................. <"sprite">
+  [ 47] pusharglist 2 ........................... <pStarProps[f], "sprite">
+  [ 49] objcall 34 .............................. <pStarProps[f]["sprite"]>
+  [ 51] pusharglist 1 ........................... <pStarProps[f]["sprite"]>
+  [ 53] extcall 73 .............................. <sprite(pStarProps[f]["sprite"])>
+  [ 55] setlocal 1 .............................. tSpr = sprite(pStarProps[f]["sprite"])
+  [ 57] getprop 1860 ............................ <pStarProps>
+  [ 60] getlocal 0 .............................. <f>
+  [ 62] pusharglist 2 ........................... <pStarProps, f>
+  [ 64] objcall 34 .............................. <pStarProps[f]>
+  [ 66] pushcons 9 .............................. <"frame">
+  [ 68] pusharglist 2 ........................... <pStarProps[f], "frame">
+  [ 70] objcall 34 .............................. <pStarProps[f]["frame"]>
+  [ 72] setlocal 2 .............................. tFrame = pStarProps[f]["frame"]
+  [ 74] getlocal 2 .............................. <tFrame>
+  [ 76] pushint8 1 .............................. <1>
+  [ 78] eq ...................................... <tFrame = 1>
+  [ 79] jmpifz [141] ............................ if tFrame = 1 then
+  [ 82] getprop 1860 ............................ <pStarProps>
+  [ 85] getlocal 0 .............................. <f>
+  [ 87] pusharglist 2 ........................... <pStarProps, f>
+  [ 89] objcall 34 .............................. <pStarProps[f]>
+  [ 91] pushcons 10 ............................. <"loc">
+  [ 93] getparam 1 .............................. <tminX>
+  [ 95] getparam 2 .............................. <tMaxX>
+  [ 97] pusharglist 1 ........................... <tMaxX>
+  [ 99] extcall 285 ............................. <random(tMaxX)>
   [102] add ..................................... <tminX + random(tMaxX)>
   [103] getparam 3 .............................. <tMinY>
   [105] getparam 4 .............................. <tMaxY>
   [107] pusharglist 1 ........................... <tMaxY>
-  [109] extcall 185 ............................. <random(tMaxY)>
-  [111] add ..................................... <tMinY + random(tMaxY)>
-  [112] pusharglist 2 ........................... <tminX + random(tMaxX), tMinY + random(tMaxY)>
-  [114] extcall 293 ............................. <point(tminX + random(tMaxX), tMinY + random(tMaxY))>
-  [117] pusharglistnoret 3 ...................... <pStarProps[f], "loc", point(tminX + random(tMaxX), tMinY + random(tMaxY))>
-  [119] objcall 173 ............................. pStarProps[f]["loc"] = point(tminX + random(tMaxX), tMinY + random(tMaxY))
-  [121] getlocal 1 .............................. <tSpr>
-  [123] pusharglist 1 ........................... <tSpr>
-  [125] extcall 182 ............................. <sprite(tSpr)>
-  [127] pushint8 40 ............................. <40>
-  [129] pushint8 40 ............................. <40>
-  [131] pusharglist 1 ........................... <40>
-  [133] extcall 185 ............................. <random(40)>
-  [135] add ..................................... <40 + random(40)>
-  [136] setobjprop 362 .......................... sprite(tSpr).blend = 40 + random(40)
-  [139] getlocal 2 .............................. <tFrame>
-  [141] pushint8 9 .............................. <9>
-  [143] gt ...................................... <tFrame > 9>
-  [144] jmpifz [189] ............................ if tFrame > 9 then
-  [147] getlocal 1 .............................. <tSpr>
-  [149] pusharglist 1 ........................... <tSpr>
-  [151] extcall 182 ............................. <sprite(tSpr)>
-  [153] pushzero ................................ <0>
-  [154] setobjprop 362 .......................... sprite(tSpr).blend = 0
-  [157] pushint8 10 ............................. <10>
-  [159] pusharglist 1 ........................... <10>
-  [161] extcall 185 ............................. <random(10)>
-  [163] pushint8 1 .............................. <1>
-  [165] eq ...................................... <random(10) = 1>
-  [166] jmpifz [186] ............................ if random(10) = 1 then
-  [169] getprop 1863 ............................ <pStarProps>
-  [172] getlocal 0 .............................. <f>
-  [174] pusharglist 2 ........................... <pStarProps, f>
-  [176] objcall 9 ............................... <pStarProps[f]>
-  [178] pushcons 9 .............................. <"frame">
-  [180] pushint8 1 .............................. <1>
-  [182] pusharglistnoret 3 ...................... <pStarProps[f], "frame", 1>
-  [184] objcall 173 ............................. pStarProps[f]["frame"] = 1
-  [186] jmp [266] ............................... next repeat
-  [189] getlocal 1 .............................. <tSpr>
-  [191] pusharglist 1 ........................... <tSpr>
-  [193] extcall 182 ............................. <sprite(tSpr)>
-  [195] getprop 1863 ............................ <pStarProps>
-  [198] getlocal 0 .............................. <f>
-  [200] pusharglist 2 ........................... <pStarProps, f>
-  [202] objcall 9 ............................... <pStarProps[f]>
-  [204] pushcons 10 ............................. <"loc">
-  [206] pusharglist 2 ........................... <pStarProps[f], "loc">
-  [208] objcall 9 ............................... <pStarProps[f]["loc"]>
-  [210] setobjprop 361 .......................... sprite(tSpr).loc = pStarProps[f]["loc"]
-  [213] pushcons 11 ............................. <"starblink">
-  [215] getlocal 2 .............................. <tFrame>
-  [217] joinstr ................................. <"starblink" & tFrame>
-  [218] pusharglist 1 ........................... <"starblink" & tFrame>
-  [220] extcall 35 .............................. <memberExists("starblink" & tFrame)>
-  [222] jmpifz [246] ............................ if memberExists("starblink" & tFrame) then
-  [225] getlocal 1 .............................. <tSpr>
-  [227] pusharglist 1 ........................... <tSpr>
-  [229] extcall 182 ............................. <sprite(tSpr)>
-  [231] pushcons 11 ............................. <"starblink">
-  [233] getlocal 2 .............................. <tFrame>
-  [235] joinstr ................................. <"starblink" & tFrame>
-  [236] pusharglist 1 ........................... <"starblink" & tFrame>
-  [238] extcall 37 .............................. <getmemnum("starblink" & tFrame)>
-  [240] pusharglist 1 ........................... <getmemnum("starblink" & tFrame)>
-  [242] extcall 30 .............................. <member(getmemnum("starblink" & tFrame))>
-  [244] setobjprop 30 ........................... sprite(tSpr).member = member(getmemnum("starblink" & tFrame))
-  [246] getprop 1863 ............................ <pStarProps>
-  [249] getlocal 0 .............................. <f>
-  [251] pusharglist 2 ........................... <pStarProps, f>
-  [253] objcall 9 ............................... <pStarProps[f]>
-  [255] pushcons 9 .............................. <"frame">
-  [257] getlocal 2 .............................. <tFrame>
-  [259] pushint8 1 .............................. <1>
-  [261] add ..................................... <tFrame + 1>
-  [262] pusharglistnoret 3 ...................... <pStarProps[f], "frame", tFrame + 1>
-  [264] objcall 173 ............................. pStarProps[f]["frame"] = tFrame + 1
-  [266] pushint8 1
-  [268] getlocal 0
-  [270] add
-  [271] setlocal 0
-  [273] endrepeat [ 26]
-  [275] ret
+  [109] extcall 285 ............................. <random(tMaxY)>
+  [112] add ..................................... <tMinY + random(tMaxY)>
+  [113] pusharglist 2 ........................... <tminX + random(tMaxX), tMinY + random(tMaxY)>
+  [115] extcall 375 ............................. <point(tminX + random(tMaxX), tMinY + random(tMaxY))>
+  [118] pusharglistnoret 3 ...................... <pStarProps[f], "loc", point(tminX + random(tMaxX), tMinY + random(tMaxY))>
+  [120] objcall 59 .............................. pStarProps[f]["loc"] = point(tminX + random(tMaxX), tMinY + random(tMaxY))
+  [122] getlocal 1 .............................. <tSpr>
+  [124] pusharglist 1 ........................... <tSpr>
+  [126] extcall 73 .............................. <sprite(tSpr)>
+  [128] pushint8 40 ............................. <40>
+  [130] pushint8 40 ............................. <40>
+  [132] pusharglist 1 ........................... <40>
+  [134] extcall 285 ............................. <random(40)>
+  [137] add ..................................... <40 + random(40)>
+  [138] setobjprop 436 .......................... sprite(tSpr).blend = 40 + random(40)
+  [141] getlocal 2 .............................. <tFrame>
+  [143] pushint8 9 .............................. <9>
+  [145] gt ...................................... <tFrame > 9>
+  [146] jmpifz [192] ............................ if tFrame > 9 then
+  [149] getlocal 1 .............................. <tSpr>
+  [151] pusharglist 1 ........................... <tSpr>
+  [153] extcall 73 .............................. <sprite(tSpr)>
+  [155] pushzero ................................ <0>
+  [156] setobjprop 436 .......................... sprite(tSpr).blend = 0
+  [159] pushint8 10 ............................. <10>
+  [161] pusharglist 1 ........................... <10>
+  [163] extcall 285 ............................. <random(10)>
+  [166] pushint8 1 .............................. <1>
+  [168] eq ...................................... <random(10) = 1>
+  [169] jmpifz [189] ............................ if random(10) = 1 then
+  [172] getprop 1860 ............................ <pStarProps>
+  [175] getlocal 0 .............................. <f>
+  [177] pusharglist 2 ........................... <pStarProps, f>
+  [179] objcall 34 .............................. <pStarProps[f]>
+  [181] pushcons 9 .............................. <"frame">
+  [183] pushint8 1 .............................. <1>
+  [185] pusharglistnoret 3 ...................... <pStarProps[f], "frame", 1>
+  [187] objcall 59 .............................. pStarProps[f]["frame"] = 1
+  [189] jmp [269] ............................... next repeat
+  [192] getlocal 1 .............................. <tSpr>
+  [194] pusharglist 1 ........................... <tSpr>
+  [196] extcall 73 .............................. <sprite(tSpr)>
+  [198] getprop 1860 ............................ <pStarProps>
+  [201] getlocal 0 .............................. <f>
+  [203] pusharglist 2 ........................... <pStarProps, f>
+  [205] objcall 34 .............................. <pStarProps[f]>
+  [207] pushcons 10 ............................. <"loc">
+  [209] pusharglist 2 ........................... <pStarProps[f], "loc">
+  [211] objcall 34 .............................. <pStarProps[f]["loc"]>
+  [213] setobjprop 435 .......................... sprite(tSpr).loc = pStarProps[f]["loc"]
+  [216] pushcons 11 ............................. <"starblink">
+  [218] getlocal 2 .............................. <tFrame>
+  [220] joinstr ................................. <"starblink" & tFrame>
+  [221] pusharglist 1 ........................... <"starblink" & tFrame>
+  [223] extcall 62 .............................. <memberExists("starblink" & tFrame)>
+  [225] jmpifz [249] ............................ if memberExists("starblink" & tFrame) then
+  [228] getlocal 1 .............................. <tSpr>
+  [230] pusharglist 1 ........................... <tSpr>
+  [232] extcall 73 .............................. <sprite(tSpr)>
+  [234] pushcons 11 ............................. <"starblink">
+  [236] getlocal 2 .............................. <tFrame>
+  [238] joinstr ................................. <"starblink" & tFrame>
+  [239] pusharglist 1 ........................... <"starblink" & tFrame>
+  [241] extcall 65 .............................. <getmemnum("starblink" & tFrame)>
+  [243] pusharglist 1 ........................... <getmemnum("starblink" & tFrame)>
+  [245] extcall 64 .............................. <member(getmemnum("starblink" & tFrame))>
+  [247] setobjprop 64 ........................... sprite(tSpr).member = member(getmemnum("starblink" & tFrame))
+  [249] getprop 1860 ............................ <pStarProps>
+  [252] getlocal 0 .............................. <f>
+  [254] pusharglist 2 ........................... <pStarProps, f>
+  [256] objcall 34 .............................. <pStarProps[f]>
+  [258] pushcons 9 .............................. <"frame">
+  [260] getlocal 2 .............................. <tFrame>
+  [262] pushint8 1 .............................. <1>
+  [264] add ..................................... <tFrame + 1>
+  [265] pusharglistnoret 3 ...................... <pStarProps[f], "frame", tFrame + 1>
+  [267] objcall 59 .............................. pStarProps[f]["frame"] = tFrame + 1
+  [269] pushint8 1
+  [271] getlocal 0
+  [273] add
+  [274] setlocal 0
+  [276] endrepeat [ 25]
+  [278] ret
 end

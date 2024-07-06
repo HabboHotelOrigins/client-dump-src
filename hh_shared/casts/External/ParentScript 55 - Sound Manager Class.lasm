@@ -1,0 +1,603 @@
+property pChannelCount, pChannelList, pMuted, pUpdateInterval
+
+on construct me
+  [  0] pushzero ................................ <0>
+  [  1] setprop 888 ............................. pMuted = 0
+  [  4] pushint8 5 .............................. <5>
+  [  6] setprop 908 ............................. pChannelCount = 5
+  [  9] pusharglist 0 ........................... <[]>
+  [ 11] pushlist ................................ <[]>
+  [ 12] setprop 909 ............................. pChannelList = []
+  [ 15] pushzero ................................ <0>
+  [ 16] setprop 910 ............................. pUpdateInterval = 0
+  [ 19] pushint8 1 .............................. <1>
+  [ 21] setlocal 0
+  [ 23] getlocal 0
+  [ 25] getprop 908 ............................. <pChannelCount>
+  [ 28] lteq
+  [ 29] jmpifz [ 74] ............................ repeat with i = 1 to pChannelCount
+  [ 32] pushsymb 511 ............................ <#temp>
+  [ 35] pushcons 0 .............................. <"Sound Channel Class">
+  [ 37] pusharglist 2 ........................... <#temp, "Sound Channel Class">
+  [ 39] extcall 496 ............................. <createObject(#temp, "Sound Channel Class")>
+  [ 42] setlocal 1 .............................. tObject = createObject(#temp, "Sound Channel Class")
+  [ 44] getlocal 1 .............................. <tObject>
+  [ 46] getlocal 0 .............................. <i>
+  [ 48] pusharglist 2 ........................... <tObject, i>
+  [ 50] objcall 356 ............................. <tObject.define(i)>
+  [ 53] jmpifz [ 65] ............................ if tObject.define(i) then
+  [ 56] getprop 909 ............................. <pChannelList>
+  [ 59] getlocal 1 .............................. <tObject>
+  [ 61] pusharglistnoret 2 ...................... <pChannelList, tObject>
+  [ 63] objcall 132 ............................. pChannelList.add(tObject)
+  [ 65] pushint8 1
+  [ 67] getlocal 0
+  [ 69] add
+  [ 70] setlocal 0
+  [ 72] endrepeat [ 23]
+  [ 74] pushsymb 911 ............................ <#set_all_sounds>
+  [ 77] getparam 0 .............................. <me>
+  [ 79] pusharglist 1 ........................... <me>
+  [ 81] objcall 42 .............................. <me.getID()>
+  [ 83] pushsymb 861 ............................ <#setSoundState>
+  [ 86] pusharglistnoret 3 ...................... <#set_all_sounds, me.getID(), #setSoundState>
+  [ 88] extcall 40 .............................. registerMessage(#set_all_sounds, me.getID(), #setSoundState)
+  [ 90] ret
+end
+
+on deconstruct me
+  [  0] pushsymb 911 ............................ <#set_all_sounds>
+  [  3] getparam 0 .............................. <me>
+  [  5] pusharglist 1 ........................... <me>
+  [  7] objcall 42 .............................. <me.getID()>
+  [  9] pusharglistnoret 2 ...................... <#set_all_sounds, me.getID()>
+  [ 11] extcall 53 .............................. unregisterMessage(#set_all_sounds, me.getID())
+  [ 13] pushint8 1 .............................. <1>
+  [ 15] setlocal 0
+  [ 17] getlocal 0
+  [ 19] getprop 908 ............................. <pChannelCount>
+  [ 22] lteq
+  [ 23] jmpifz [ 60] ............................ repeat with i = 1 to pChannelCount
+  [ 26] getparam 0 .............................. <me>
+  [ 28] getlocal 0 .............................. <i>
+  [ 30] pusharglist 2 ........................... <me, i>
+  [ 32] objcall 905 ............................. <me.getChannel(i)>
+  [ 35] setlocal 1 .............................. tObject = me.getChannel(i)
+  [ 37] getlocal 1 .............................. <tObject>
+  [ 39] pushzero ................................ <0>
+  [ 40] nteq .................................... <tObject <> 0>
+  [ 41] jmpifz [ 51] ............................ if tObject <> 0 then
+  [ 44] getlocal 1 .............................. <tObject>
+  [ 46] pusharglistnoret 1 ...................... <tObject>
+  [ 48] objcall 375 ............................. tObject.reset()
+  [ 51] pushint8 1
+  [ 53] getlocal 0
+  [ 55] add
+  [ 56] setlocal 0
+  [ 58] endrepeat [ 17]
+  [ 60] pusharglist 0 ........................... <>
+  [ 62] extcall 30 .............................. <VOID>
+  [ 64] setprop 909 ............................. pChannelList = VOID
+  [ 67] pusharglist 0 ........................... <>
+  [ 69] extcall 30 .............................. <VOID>
+  [ 71] setprop 908 ............................. pChannelCount = VOID
+  [ 74] pushint8 1 .............................. <1>
+  [ 76] pusharglistnoret 1 ...................... <1>
+  [ 78] extcall 44 .............................. return 1
+  [ 80] ret
+end
+
+on getProperty me, tPropID
+  [  0] getparam 1 .............................. <tPropID>
+  [  2] peek 0 .................................. case tPropID of
+  [  4] pushsymb 913 ............................ <#channelCount>
+  [  7] eq
+  [  8] jmpifz [ 25] ............................ (case) #channelCount:
+  [ 11] pop 1
+  [ 13] getprop 909 ............................. <pChannelList>
+  [ 16] getobjprop 78 ........................... <pChannelList.count>
+  [ 18] pusharglistnoret 1 ...................... <pChannelList.count>
+  [ 20] extcall 44 .............................. return pChannelList.count
+  [ 22] jmp [ 32] ............................... (case) otherwise:
+  [ 25] pop 1
+  [ 27] pushzero ................................ <0>
+  [ 28] pusharglistnoret 1 ...................... <0>
+  [ 30] extcall 44 .............................. return 0
+  [ 32] pop 1 ................................... end case
+  [ 34] ret
+end
+
+on setProperty me, tPropID, tValue
+  [  0] getparam 1 .............................. <tPropID>
+  [  2] jmp [ 12] ............................... case tPropID of / otherwise:
+  [  5] pop 1
+  [  7] pushzero ................................ <0>
+  [  8] pusharglistnoret 1 ...................... <0>
+  [ 10] extcall 44 .............................. return 0
+  [ 12] pop 1 ................................... end case
+  [ 14] ret
+end
+
+on getChannel me, tNum
+  [  0] getparam 1 .............................. <tNum>
+  [  2] pushzero ................................ <0>
+  [  3] lt ...................................... <tNum < 0>
+  [  4] getparam 1 .............................. <tNum>
+  [  6] getprop 909 ............................. <pChannelList>
+  [  9] getobjprop 78 ........................... <pChannelList.count>
+  [ 11] gt ...................................... <tNum > pChannelList.count>
+  [ 12] or ...................................... <(tNum < 0) or (tNum > pChannelList.count)>
+  [ 13] jmpifz [ 21] ............................ if (tNum < 0) or (tNum > pChannelList.count) then
+  [ 16] pushzero ................................ <0>
+  [ 17] pusharglistnoret 1 ...................... <0>
+  [ 19] extcall 44 .............................. return 0
+  [ 21] getprop 909 ............................. <pChannelList>
+  [ 24] getparam 1 .............................. <tNum>
+  [ 26] pusharglist 2 ........................... <pChannelList, tNum>
+  [ 28] objcall 96 .............................. <pChannelList[tNum]>
+  [ 30] pusharglistnoret 1 ...................... <pChannelList[tNum]>
+  [ 32] extcall 44 .............................. return pChannelList[tNum]
+  [ 34] ret
+end
+
+on print me, tCount
+  [  0] getparam 1 .............................. <tCount>
+  [  2] pusharglist 1 ........................... <tCount>
+  [  4] extcall 109 ............................. <integerp(tCount)>
+  [  6] jmpifz [  9] ............................ if integerp(tCount) then
+  [  9] ret
+end
+
+on play me, tMemName, tPriority, tProps
+  [  0] getparam 0 .............................. <me>
+  [  2] getparam 1 .............................. <tMemName>
+  [  4] getparam 2 .............................. <tPriority>
+  [  6] getparam 3 .............................. <tProps>
+  [  8] pusharglist 4 ........................... <me, tMemName, tPriority, tProps>
+  [ 10] objcall 907 ............................. <me.createSoundInstance(tMemName, tPriority, tProps)>
+  [ 13] setlocal 0 .............................. tObject = me.createSoundInstance(tMemName, tPriority, tProps)
+  [ 15] getparam 2 .............................. <tPriority>
+  [ 17] peek 0 .................................. case tPriority of
+  [ 19] pushsymb 172 ............................ <#pass>
+  [ 21] nteq
+  [ 22] jmpifz [ 35] ............................ (case) #pass, ...
+  [ 25] peek 0
+  [ 27] pusharglist 0 ........................... <>
+  [ 29] extcall 30 .............................. <VOID>
+  [ 31] eq
+  [ 32] jmpifz [110] ............................ (case) ..., VOID:
+  [ 35] pushint8 1 .............................. <1>
+  [ 37] setlocal 1
+  [ 39] getlocal 1
+  [ 41] getprop 908 ............................. <pChannelCount>
+  [ 44] lteq
+  [ 45] jmpifz [100] ............................ repeat with i = 1 to pChannelCount
+  [ 48] getprop 909 ............................. <pChannelList>
+  [ 51] getlocal 1 .............................. <i>
+  [ 53] pusharglist 2 ........................... <pChannelList, i>
+  [ 55] objcall 96 .............................. <pChannelList[i]>
+  [ 57] pusharglist 1 ........................... <pChannelList[i]>
+  [ 59] objcall 881 ............................. <pChannelList[i].getTimeRemaining()>
+  [ 62] setlocal 2 .............................. tStatus = pChannelList[i].getTimeRemaining()
+  [ 64] getlocal 2 .............................. <tStatus>
+  [ 66] pushzero ................................ <0>
+  [ 67] eq ...................................... <tStatus = 0>
+  [ 68] jmpifz [ 91] ............................ if tStatus = 0 then
+  [ 71] getprop 909 ............................. <pChannelList>
+  [ 74] getlocal 1 .............................. <i>
+  [ 76] pusharglist 2 ........................... <pChannelList, i>
+  [ 78] objcall 96 .............................. <pChannelList[i]>
+  [ 80] getlocal 0 .............................. <tObject>
+  [ 82] pusharglist 2 ........................... <pChannelList[i], tObject>
+  [ 84] objcall 873 ............................. <pChannelList[i].play(tObject)>
+  [ 87] pusharglistnoret 1 ...................... <pChannelList[i].play(tObject)>
+  [ 89] extcall 44 .............................. return pChannelList[i].play(tObject)
+  [ 91] pushint8 1
+  [ 93] getlocal 1
+  [ 95] add
+  [ 96] setlocal 1
+  [ 98] endrepeat [ 39]
+  [100] pop 1
+  [102] pushzero ................................ <0>
+  [103] pusharglistnoret 1 ...................... <0>
+  [105] extcall 44 .............................. return 0
+  [107] jmp [429]
+  [110] peek 0
+  [112] pushsymb 915 ............................ <#cut>
+  [115] eq
+  [116] jmpifz [271] ............................ (case) #cut:
+  [119] pusharglist 0 ........................... <[:]>
+  [121] pushproplist ............................ <[:]>
+  [122] setlocal 3 .............................. tStatusList = [:]
+  [124] pushint8 1 .............................. <1>
+  [126] setlocal 1
+  [128] getlocal 1
+  [130] getprop 908 ............................. <pChannelCount>
+  [133] lteq
+  [134] jmpifz [217] ............................ repeat with i = 1 to pChannelCount
+  [137] getprop 909 ............................. <pChannelList>
+  [140] getlocal 1 .............................. <i>
+  [142] pusharglist 2 ........................... <pChannelList, i>
+  [144] objcall 96 .............................. <pChannelList[i]>
+  [146] pusharglist 1 ........................... <pChannelList[i]>
+  [148] objcall 881 ............................. <pChannelList[i].getTimeRemaining()>
+  [151] setlocal 2 .............................. tStatus = pChannelList[i].getTimeRemaining()
+  [153] getlocal 2 .............................. <tStatus>
+  [155] pushzero ................................ <0>
+  [156] eq ...................................... <tStatus = 0>
+  [157] jmpifz [180] ............................ if tStatus = 0 then
+  [160] getprop 909 ............................. <pChannelList>
+  [163] getlocal 1 .............................. <i>
+  [165] pusharglist 2 ........................... <pChannelList, i>
+  [167] objcall 96 .............................. <pChannelList[i]>
+  [169] getlocal 0 .............................. <tObject>
+  [171] pusharglist 2 ........................... <pChannelList[i], tObject>
+  [173] objcall 873 ............................. <pChannelList[i].play(tObject)>
+  [176] pusharglistnoret 1 ...................... <pChannelList[i].play(tObject)>
+  [178] extcall 44 .............................. return pChannelList[i].play(tObject)
+  [180] getprop 909 ............................. <pChannelList>
+  [183] getlocal 1 .............................. <i>
+  [185] pusharglist 2 ........................... <pChannelList, i>
+  [187] objcall 96 .............................. <pChannelList[i]>
+  [189] pusharglist 1 ........................... <pChannelList[i]>
+  [191] objcall 883 ............................. <pChannelList[i].getIsReserved()>
+  [194] not ..................................... <not pChannelList[i].getIsReserved()>
+  [195] jmpifz [208] ............................ if not pChannelList[i].getIsReserved() then
+  [198] getlocal 3 .............................. <tStatusList>
+  [200] getlocal 2 .............................. <tStatus>
+  [202] getlocal 1 .............................. <i>
+  [204] pusharglistnoret 3 ...................... <tStatusList, tStatus, i>
+  [206] objcall 213 ............................. tStatusList.addProp(tStatus, i)
+  [208] pushint8 1
+  [210] getlocal 1
+  [212] add
+  [213] setlocal 1
+  [215] endrepeat [128]
+  [217] getlocal 3 .............................. <tStatusList>
+  [219] getobjprop 78 ........................... <tStatusList.count>
+  [221] pushzero ................................ <0>
+  [222] eq ...................................... <tStatusList.count = 0>
+  [223] jmpifz [233] ............................ if tStatusList.count = 0 then
+  [226] pop 1
+  [228] pushzero ................................ <0>
+  [229] pusharglistnoret 1 ...................... <0>
+  [231] extcall 44 .............................. return 0
+  [233] getlocal 3 .............................. <tStatusList>
+  [235] pusharglistnoret 1 ...................... <tStatusList>
+  [237] objcall 711 ............................. tStatusList.sort()
+  [240] pop 1
+  [242] getprop 909 ............................. <pChannelList>
+  [245] getlocal 3 .............................. <tStatusList>
+  [247] pushint8 1 .............................. <1>
+  [249] pusharglist 2 ........................... <tStatusList, 1>
+  [251] objcall 96 .............................. <tStatusList[1]>
+  [253] pusharglist 2 ........................... <pChannelList, tStatusList[1]>
+  [255] objcall 96 .............................. <pChannelList[tStatusList[1]]>
+  [257] getlocal 0 .............................. <tObject>
+  [259] pusharglist 2 ........................... <pChannelList[tStatusList[1]], tObject>
+  [261] objcall 873 ............................. <pChannelList[tStatusList[1]].play(tObject)>
+  [264] pusharglistnoret 1 ...................... <pChannelList[tStatusList[1]].play(tObject)>
+  [266] extcall 44 .............................. return pChannelList[tStatusList[1]].play(tObject)
+  [268] jmp [429]
+  [271] peek 0
+  [273] pushsymb 877 ............................ <#queue>
+  [276] eq
+  [277] jmpifz [429] ............................ (case) #queue:
+  [280] pusharglist 0 ........................... <[:]>
+  [282] pushproplist ............................ <[:]>
+  [283] setlocal 3 .............................. tStatusList = [:]
+  [285] pushint8 1 .............................. <1>
+  [287] setlocal 1
+  [289] getlocal 1
+  [291] getprop 908 ............................. <pChannelCount>
+  [294] lteq
+  [295] jmpifz [378] ............................ repeat with i = 1 to pChannelCount
+  [298] getprop 909 ............................. <pChannelList>
+  [301] getlocal 1 .............................. <i>
+  [303] pusharglist 2 ........................... <pChannelList, i>
+  [305] objcall 96 .............................. <pChannelList[i]>
+  [307] pusharglist 1 ........................... <pChannelList[i]>
+  [309] objcall 881 ............................. <pChannelList[i].getTimeRemaining()>
+  [312] setlocal 2 .............................. tStatus = pChannelList[i].getTimeRemaining()
+  [314] getlocal 2 .............................. <tStatus>
+  [316] pushzero ................................ <0>
+  [317] eq ...................................... <tStatus = 0>
+  [318] jmpifz [341] ............................ if tStatus = 0 then
+  [321] getprop 909 ............................. <pChannelList>
+  [324] getlocal 1 .............................. <i>
+  [326] pusharglist 2 ........................... <pChannelList, i>
+  [328] objcall 96 .............................. <pChannelList[i]>
+  [330] getlocal 0 .............................. <tObject>
+  [332] pusharglist 2 ........................... <pChannelList[i], tObject>
+  [334] objcall 873 ............................. <pChannelList[i].play(tObject)>
+  [337] pusharglistnoret 1 ...................... <pChannelList[i].play(tObject)>
+  [339] extcall 44 .............................. return pChannelList[i].play(tObject)
+  [341] getprop 909 ............................. <pChannelList>
+  [344] getlocal 1 .............................. <i>
+  [346] pusharglist 2 ........................... <pChannelList, i>
+  [348] objcall 96 .............................. <pChannelList[i]>
+  [350] pusharglist 1 ........................... <pChannelList[i]>
+  [352] objcall 883 ............................. <pChannelList[i].getIsReserved()>
+  [355] not ..................................... <not pChannelList[i].getIsReserved()>
+  [356] jmpifz [369] ............................ if not pChannelList[i].getIsReserved() then
+  [359] getlocal 3 .............................. <tStatusList>
+  [361] getlocal 2 .............................. <tStatus>
+  [363] getlocal 1 .............................. <i>
+  [365] pusharglistnoret 3 ...................... <tStatusList, tStatus, i>
+  [367] objcall 213 ............................. tStatusList.addProp(tStatus, i)
+  [369] pushint8 1
+  [371] getlocal 1
+  [373] add
+  [374] setlocal 1
+  [376] endrepeat [289]
+  [378] getlocal 3 .............................. <tStatusList>
+  [380] getobjprop 78 ........................... <tStatusList.count>
+  [382] pushzero ................................ <0>
+  [383] eq ...................................... <tStatusList.count = 0>
+  [384] jmpifz [394] ............................ if tStatusList.count = 0 then
+  [387] pop 1
+  [389] pushzero ................................ <0>
+  [390] pusharglistnoret 1 ...................... <0>
+  [392] extcall 44 .............................. return 0
+  [394] getlocal 3 .............................. <tStatusList>
+  [396] pusharglistnoret 1 ...................... <tStatusList>
+  [398] objcall 711 ............................. tStatusList.sort()
+  [401] pop 1
+  [403] getprop 909 ............................. <pChannelList>
+  [406] getlocal 3 .............................. <tStatusList>
+  [408] pushint8 1 .............................. <1>
+  [410] pusharglist 2 ........................... <tStatusList, 1>
+  [412] objcall 96 .............................. <tStatusList[1]>
+  [414] pusharglist 2 ........................... <pChannelList, tStatusList[1]>
+  [416] objcall 96 .............................. <pChannelList[tStatusList[1]]>
+  [418] getlocal 0 .............................. <tObject>
+  [420] pusharglist 2 ........................... <pChannelList[tStatusList[1]], tObject>
+  [422] objcall 877 ............................. <pChannelList[tStatusList[1]].queue(tObject)>
+  [425] pusharglistnoret 1 ...................... <pChannelList[tStatusList[1]].queue(tObject)>
+  [427] extcall 44 .............................. return pChannelList[tStatusList[1]].queue(tObject)
+  [429] pop 1 ................................... end case
+  [431] pusharglist 0 ........................... <>
+  [433] extcall 30 .............................. <VOID>
+  [435] setlocal 0 .............................. tObject = VOID
+  [437] pushzero ................................ <0>
+  [438] pusharglistnoret 1 ...................... <0>
+  [440] extcall 44 .............................. return 0
+  [442] ret
+end
+
+on playInChannel me, tMemName, tChannelNum
+  [  0] getparam 0 .............................. <me>
+  [  2] getparam 2 .............................. <tChannelNum>
+  [  4] pusharglist 2 ........................... <me, tChannelNum>
+  [  6] objcall 905 ............................. <me.getChannel(tChannelNum)>
+  [  9] setlocal 0 .............................. tChannel = me.getChannel(tChannelNum)
+  [ 11] getlocal 0 .............................. <tChannel>
+  [ 13] pushzero ................................ <0>
+  [ 14] eq ...................................... <tChannel = 0>
+  [ 15] jmpifz [ 41] ............................ if tChannel = 0 then
+  [ 18] pusharglist 0 ........................... <>
+  [ 20] extcall 30 .............................. <VOID>
+  [ 22] pushcons 1 .............................. <"Invalid sound channel:">
+  [ 24] getparam 2 .............................. <tChannelNum>
+  [ 26] joinpadstr .............................. <"Invalid sound channel:" && tChannelNum>
+  [ 27] pushsymb 875 ............................ <#playInChannel>
+  [ 30] pushsymb 856 ............................ <#minor>
+  [ 33] pusharglist 4 ........................... <VOID, "Invalid sound channel:" && tChannelNum, #playInChannel, #minor>
+  [ 35] extcall 106 ............................. <error(VOID, "Invalid sound channel:" && tChannelNum, #playInChannel, #minor)>
+  [ 37] pusharglistnoret 1 ...................... <error(VOID, "Invalid sound channel:" && tChannelNum, #playInChannel, #minor)>
+  [ 39] extcall 44 .............................. return error(VOID, "Invalid sound channel:" && tChannelNum, #playInChannel, #minor)
+  [ 41] getparam 0 .............................. <me>
+  [ 43] getparam 1 .............................. <tMemName>
+  [ 45] pusharglist 0 ........................... <>
+  [ 47] extcall 30 .............................. <VOID>
+  [ 49] pusharglist 0 ........................... <>
+  [ 51] extcall 30 .............................. <VOID>
+  [ 53] pusharglist 4 ........................... <me, tMemName, VOID, VOID>
+  [ 55] objcall 907 ............................. <me.createSoundInstance(tMemName, VOID, VOID)>
+  [ 58] setlocal 1 .............................. tObject = me.createSoundInstance(tMemName, VOID, VOID)
+  [ 60] getlocal 0 .............................. <tChannel>
+  [ 62] pusharglistnoret 1 ...................... <tChannel>
+  [ 64] objcall 375 ............................. tChannel.reset()
+  [ 67] getlocal 0 .............................. <tChannel>
+  [ 69] getlocal 1 .............................. <tObject>
+  [ 71] pusharglist 2 ........................... <tChannel, tObject>
+  [ 73] objcall 873 ............................. <tChannel.play(tObject)>
+  [ 76] pusharglistnoret 1 ...................... <tChannel.play(tObject)>
+  [ 78] extcall 44 .............................. return tChannel.play(tObject)
+  [ 80] ret
+end
+
+on queue me, tMemName, tChannelNum, tProps
+  [  0] getparam 0 .............................. <me>
+  [  2] getparam 2 .............................. <tChannelNum>
+  [  4] pusharglist 2 ........................... <me, tChannelNum>
+  [  6] objcall 905 ............................. <me.getChannel(tChannelNum)>
+  [  9] setlocal 0 .............................. tChannel = me.getChannel(tChannelNum)
+  [ 11] getlocal 0 .............................. <tChannel>
+  [ 13] pushzero ................................ <0>
+  [ 14] eq ...................................... <tChannel = 0>
+  [ 15] jmpifz [ 41] ............................ if tChannel = 0 then
+  [ 18] pusharglist 0 ........................... <>
+  [ 20] extcall 30 .............................. <VOID>
+  [ 22] pushcons 1 .............................. <"Invalid sound channel:">
+  [ 24] getparam 2 .............................. <tChannelNum>
+  [ 26] joinpadstr .............................. <"Invalid sound channel:" && tChannelNum>
+  [ 27] pushsymb 877 ............................ <#queue>
+  [ 30] pushsymb 856 ............................ <#minor>
+  [ 33] pusharglist 4 ........................... <VOID, "Invalid sound channel:" && tChannelNum, #queue, #minor>
+  [ 35] extcall 106 ............................. <error(VOID, "Invalid sound channel:" && tChannelNum, #queue, #minor)>
+  [ 37] pusharglistnoret 1 ...................... <error(VOID, "Invalid sound channel:" && tChannelNum, #queue, #minor)>
+  [ 39] extcall 44 .............................. return error(VOID, "Invalid sound channel:" && tChannelNum, #queue, #minor)
+  [ 41] getparam 0 .............................. <me>
+  [ 43] getparam 1 .............................. <tMemName>
+  [ 45] pusharglist 0 ........................... <>
+  [ 47] extcall 30 .............................. <VOID>
+  [ 49] getparam 3 .............................. <tProps>
+  [ 51] pusharglist 4 ........................... <me, tMemName, VOID, tProps>
+  [ 53] objcall 907 ............................. <me.createSoundInstance(tMemName, VOID, tProps)>
+  [ 56] setlocal 1 .............................. tObject = me.createSoundInstance(tMemName, VOID, tProps)
+  [ 58] getlocal 0 .............................. <tChannel>
+  [ 60] getlocal 1 .............................. <tObject>
+  [ 62] pusharglist 2 ........................... <tChannel, tObject>
+  [ 64] objcall 877 ............................. <tChannel.queue(tObject)>
+  [ 67] setlocal 2 .............................. tRetVal = tChannel.queue(tObject)
+  [ 69] getlocal 2 .............................. <tRetVal>
+  [ 71] jmpifz [ 81] ............................ if tRetVal then
+  [ 74] getlocal 0 .............................. <tChannel>
+  [ 76] pusharglistnoret 1 ...................... <tChannel>
+  [ 78] objcall 882 ............................. tChannel.setReserved()
+  [ 81] ret
+end
+
+on stopChannel me, tNum
+  [  0] getparam 1 .............................. <tNum>
+  [  2] pusharglist 0 ........................... <>
+  [  4] extcall 30 .............................. <VOID>
+  [  6] eq ...................................... <tNum = VOID>
+  [  7] jmpifz [ 15] ............................ if tNum = VOID then
+  [ 10] pushzero ................................ <0>
+  [ 11] pusharglistnoret 1 ...................... <0>
+  [ 13] extcall 44 .............................. return 0
+  [ 15] getparam 1 .............................. <tNum>
+  [ 17] pushint8 1 .............................. <1>
+  [ 19] lt ...................................... <tNum < 1>
+  [ 20] getparam 1 .............................. <tNum>
+  [ 22] getprop 909 ............................. <pChannelList>
+  [ 25] getobjprop 78 ........................... <pChannelList.count>
+  [ 27] gt ...................................... <tNum > pChannelList.count>
+  [ 28] or ...................................... <(tNum < 1) or (tNum > pChannelList.count)>
+  [ 29] jmpifz [ 37] ............................ if (tNum < 1) or (tNum > pChannelList.count) then
+  [ 32] pushzero ................................ <0>
+  [ 33] pusharglistnoret 1 ...................... <0>
+  [ 35] extcall 44 .............................. return 0
+  [ 37] getprop 909 ............................. <pChannelList>
+  [ 40] getparam 1 .............................. <tNum>
+  [ 42] pusharglist 2 ........................... <pChannelList, tNum>
+  [ 44] objcall 96 .............................. <pChannelList[tNum]>
+  [ 46] pusharglist 1 ........................... <pChannelList[tNum]>
+  [ 48] objcall 375 ............................. <pChannelList[tNum].reset()>
+  [ 51] pusharglistnoret 1 ...................... <pChannelList[tNum].reset()>
+  [ 53] extcall 44 .............................. return pChannelList[tNum].reset()
+  [ 55] ret
+end
+
+on playChannel me, tNum
+  [  0] getparam 1 .............................. <tNum>
+  [  2] pusharglist 0 ........................... <>
+  [  4] extcall 30 .............................. <VOID>
+  [  6] eq ...................................... <tNum = VOID>
+  [  7] jmpifz [ 15] ............................ if tNum = VOID then
+  [ 10] pushzero ................................ <0>
+  [ 11] pusharglistnoret 1 ...................... <0>
+  [ 13] extcall 44 .............................. return 0
+  [ 15] getparam 1 .............................. <tNum>
+  [ 17] pushint8 1 .............................. <1>
+  [ 19] lt ...................................... <tNum < 1>
+  [ 20] getparam 1 .............................. <tNum>
+  [ 22] getprop 909 ............................. <pChannelList>
+  [ 25] getobjprop 78 ........................... <pChannelList.count>
+  [ 27] gt ...................................... <tNum > pChannelList.count>
+  [ 28] or ...................................... <(tNum < 1) or (tNum > pChannelList.count)>
+  [ 29] jmpifz [ 37] ............................ if (tNum < 1) or (tNum > pChannelList.count) then
+  [ 32] pushzero ................................ <0>
+  [ 33] pusharglistnoret 1 ...................... <0>
+  [ 35] extcall 44 .............................. return 0
+  [ 37] getprop 909 ............................. <pChannelList>
+  [ 40] getparam 1 .............................. <tNum>
+  [ 42] pusharglist 2 ........................... <pChannelList, tNum>
+  [ 44] objcall 96 .............................. <pChannelList[tNum]>
+  [ 46] pusharglist 1 ........................... <pChannelList[tNum]>
+  [ 48] objcall 880 ............................. <pChannelList[tNum].startPlaying()>
+  [ 51] pusharglistnoret 1 ...................... <pChannelList[tNum].startPlaying()>
+  [ 53] extcall 44 .............................. return pChannelList[tNum].startPlaying()
+  [ 55] ret
+end
+
+on stopAllSounds me
+  [  0] pushint8 1 .............................. <1>
+  [  2] setlocal 0
+  [  4] getlocal 0
+  [  6] getprop 908 ............................. <pChannelCount>
+  [  9] lteq
+  [ 10] jmpifz [ 36] ............................ repeat with i = 1 to pChannelCount
+  [ 13] getprop 909 ............................. <pChannelList>
+  [ 16] getlocal 0 .............................. <i>
+  [ 18] pusharglist 2 ........................... <pChannelList, i>
+  [ 20] objcall 96 .............................. <pChannelList[i]>
+  [ 22] pusharglistnoret 1 ...................... <pChannelList[i]>
+  [ 24] objcall 375 ............................. pChannelList[i].reset()
+  [ 27] pushint8 1
+  [ 29] getlocal 0
+  [ 31] add
+  [ 32] setlocal 0
+  [ 34] endrepeat [  4]
+  [ 36] pushint8 1 .............................. <1>
+  [ 38] pusharglistnoret 1 ...................... <1>
+  [ 40] extcall 44 .............................. return 1
+  [ 42] ret
+end
+
+on setSoundState me, tValue
+  [  0] getparam 1 .............................. <tValue>
+  [  2] jmpifz [ 12] ............................ if tValue then / else
+  [  5] pushzero ................................ <0>
+  [  6] setprop 888 ............................. pMuted = 0
+  [  9] jmp [ 17]
+  [ 12] pushint8 1 .............................. <1>
+  [ 14] setprop 888 ............................. pMuted = 1
+  [ 17] pushint8 1 .............................. <1>
+  [ 19] setlocal 0
+  [ 21] getlocal 0
+  [ 23] getprop 908 ............................. <pChannelCount>
+  [ 26] lteq
+  [ 27] jmpifz [ 55] ............................ repeat with i = 1 to pChannelCount
+  [ 30] getprop 909 ............................. <pChannelList>
+  [ 33] getlocal 0 .............................. <i>
+  [ 35] pusharglist 2 ........................... <pChannelList, i>
+  [ 37] objcall 96 .............................. <pChannelList[i]>
+  [ 39] getparam 1 .............................. <tValue>
+  [ 41] pusharglistnoret 2 ...................... <pChannelList[i], tValue>
+  [ 43] objcall 861 ............................. pChannelList[i].setSoundState(tValue)
+  [ 46] pushint8 1
+  [ 48] getlocal 0
+  [ 50] add
+  [ 51] setlocal 0
+  [ 53] endrepeat [ 21]
+  [ 55] pushint8 1 .............................. <1>
+  [ 57] pusharglistnoret 1 ...................... <1>
+  [ 59] extcall 44 .............................. return 1
+  [ 61] ret
+end
+
+on getSoundState me
+  [  0] getprop 888 ............................. <pMuted>
+  [  3] not ..................................... <not pMuted>
+  [  4] pusharglistnoret 1 ...................... <not pMuted>
+  [  6] extcall 44 .............................. return not pMuted
+  [  8] ret
+end
+
+on createSoundInstance me, tMemName, tPriority, tProps
+  [  0] pushsymb 511 ............................ <#temp>
+  [  3] pushcons 2 .............................. <"Sound Instance Class">
+  [  5] pusharglist 2 ........................... <#temp, "Sound Instance Class">
+  [  7] extcall 496 ............................. <createObject(#temp, "Sound Instance Class")>
+  [ 10] setlocal 0 .............................. tObject = createObject(#temp, "Sound Instance Class")
+  [ 12] getlocal 0 .............................. <tObject>
+  [ 14] pushzero ................................ <0>
+  [ 15] eq ...................................... <tObject = 0>
+  [ 16] jmpifz [ 24] ............................ if tObject = 0 then
+  [ 19] pushzero ................................ <0>
+  [ 20] pusharglistnoret 1 ...................... <0>
+  [ 22] extcall 44 .............................. return 0
+  [ 24] getlocal 0 .............................. <tObject>
+  [ 26] getparam 1 .............................. <tMemName>
+  [ 28] getparam 2 .............................. <tPriority>
+  [ 30] getparam 3 .............................. <tProps>
+  [ 32] pusharglistnoret 4 ...................... <tObject, tMemName, tPriority, tProps>
+  [ 34] objcall 356 ............................. tObject.define(tMemName, tPriority, tProps)
+  [ 37] getlocal 0 .............................. <tObject>
+  [ 39] pusharglistnoret 1 ...................... <tObject>
+  [ 41] extcall 44 .............................. return tObject
+  [ 43] ret
+end

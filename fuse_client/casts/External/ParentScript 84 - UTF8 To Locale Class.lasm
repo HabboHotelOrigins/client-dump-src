@@ -3,12 +3,12 @@ property pUnicodeValues, pLocaleValues, pLocaleFormat
 on construct me
   [  0] pusharglist 0 ........................... <[:]>
   [  2] pushproplist ............................ <[:]>
-  [  3] setprop 1842 ............................ pUnicodeValues = [:]
+  [  3] setprop 1839 ............................ pUnicodeValues = [:]
   [  6] pusharglist 0 ........................... <[:]>
   [  8] pushproplist ............................ <[:]>
-  [  9] setprop 1843 ............................ pLocaleValues = [:]
+  [  9] setprop 1840 ............................ pLocaleValues = [:]
   [ 12] pushcons 0 .............................. <EMPTY>
-  [ 14] setprop 1844 ............................ pLocaleFormat = EMPTY
+  [ 14] setprop 1841 ............................ pLocaleFormat = EMPTY
   [ 17] ret
 end
 
@@ -32,31 +32,31 @@ on defineLocale me, tLocaleFormat
   [ 31] pusharglistnoret 1 ...................... <error(me, "Invalid locale format:" && tLocaleFormat, #defineLocale, #major)>
   [ 33] extcall 25 .............................. return error(me, "Invalid locale format:" && tLocaleFormat, #defineLocale, #major)
   [ 35] getparam 1 .............................. <tLocaleFormat>
-  [ 37] setprop 1844 ............................ pLocaleFormat = tLocaleFormat
+  [ 37] setprop 1841 ............................ pLocaleFormat = tLocaleFormat
   [ 40] getparam 0 .............................. <me>
   [ 42] getparam 1 .............................. <tLocaleFormat>
   [ 44] pusharglist 2 ........................... <me, tLocaleFormat>
-  [ 46] objcall 1840 ............................ <me.createCharacterConversionArrays(tLocaleFormat)>
+  [ 46] objcall 1837 ............................ <me.createCharacterConversionArrays(tLocaleFormat)>
   [ 49] setlocal 0 .............................. tResult = me.createCharacterConversionArrays(tLocaleFormat)
   [ 51] getlocal 0 .............................. <tResult>
   [ 53] pushcons 4 .............................. <"unicode_values">
   [ 55] pusharglist 2 ........................... <tResult, "unicode_values">
   [ 57] objcall 54 .............................. <tResult["unicode_values"]>
-  [ 59] setprop 1842 ............................ pUnicodeValues = tResult["unicode_values"]
+  [ 59] setprop 1839 ............................ pUnicodeValues = tResult["unicode_values"]
   [ 62] getlocal 0 .............................. <tResult>
   [ 64] pushcons 5 .............................. <"locale_values">
   [ 66] pusharglist 2 ........................... <tResult, "locale_values">
   [ 68] objcall 54 .............................. <tResult["locale_values"]>
-  [ 70] setprop 1843 ............................ pLocaleValues = tResult["locale_values"]
+  [ 70] setprop 1840 ............................ pLocaleValues = tResult["locale_values"]
   [ 73] ret
 end
 
 on convertToUnicode me, tStr
-  [  0] getprop 1842 ............................ <pUnicodeValues>
+  [  0] getprop 1839 ............................ <pUnicodeValues>
   [  3] getobjprop 22 ........................... <pUnicodeValues.count>
   [  5] pushzero ................................ <0>
   [  6] eq ...................................... <pUnicodeValues.count = 0>
-  [  7] getprop 1843 ............................ <pLocaleValues>
+  [  7] getprop 1840 ............................ <pLocaleValues>
   [ 10] getobjprop 22 ........................... <pLocaleValues.count>
   [ 12] pushzero ................................ <0>
   [ 13] eq ...................................... <pLocaleValues.count = 0>
@@ -99,11 +99,11 @@ on convertToUnicode me, tStr
   [ 87] setlocal 4 .............................. tUnicodeValue = tValue
   [ 89] jmp [114]
   [ 92] getlocal 5 .............................. <tIndex>
-  [ 94] getprop 1842 ............................ <pUnicodeValues>
+  [ 94] getprop 1839 ............................ <pUnicodeValues>
   [ 97] getobjprop 22 ........................... <pUnicodeValues.count>
   [ 99] lteq .................................... <tIndex <= pUnicodeValues.count>
   [100] jmpifz [114] ............................ if tIndex <= pUnicodeValues.count then
-  [103] getprop 1842 ............................ <pUnicodeValues>
+  [103] getprop 1839 ............................ <pUnicodeValues>
   [106] getlocal 5 .............................. <tIndex>
   [108] pusharglist 2 ........................... <pUnicodeValues, tIndex>
   [110] objcall 54 .............................. <pUnicodeValues[tIndex]>
@@ -129,11 +129,11 @@ on convertToUnicode me, tStr
 end
 
 on convertFromUnicode me, tUnicodeData
-  [  0] getprop 1842 ............................ <pUnicodeValues>
+  [  0] getprop 1839 ............................ <pUnicodeValues>
   [  3] getobjprop 22 ........................... <pUnicodeValues.count>
   [  5] pushzero ................................ <0>
   [  6] eq ...................................... <pUnicodeValues.count = 0>
-  [  7] getprop 1843 ............................ <pLocaleValues>
+  [  7] getprop 1840 ............................ <pLocaleValues>
   [ 10] getobjprop 22 ........................... <pLocaleValues.count>
   [ 12] pushzero ................................ <0>
   [ 13] eq ...................................... <pLocaleValues.count = 0>
@@ -170,11 +170,11 @@ on convertFromUnicode me, tUnicodeData
   [ 72] setlocal 3 .............................. tLocaleValue = tUnicodeValue
   [ 74] jmp [ 99]
   [ 77] getlocal 4 .............................. <tIndex>
-  [ 79] getprop 1843 ............................ <pLocaleValues>
+  [ 79] getprop 1840 ............................ <pLocaleValues>
   [ 82] getobjprop 22 ........................... <pLocaleValues.count>
   [ 84] lteq .................................... <tIndex <= pLocaleValues.count>
   [ 85] jmpifz [ 99] ............................ if tIndex <= pLocaleValues.count then
-  [ 88] getprop 1843 ............................ <pLocaleValues>
+  [ 88] getprop 1840 ............................ <pLocaleValues>
   [ 91] getlocal 4 .............................. <tIndex>
   [ 93] pusharglist 2 ........................... <pLocaleValues, tIndex>
   [ 95] objcall 54 .............................. <pLocaleValues[tIndex]>
@@ -202,7 +202,7 @@ on convertFromUnicode me, tUnicodeData
 end
 
 on generateStringFromUTF8 me, tUTF8Data
-  [  0] getprop 1844 ............................ <pLocaleFormat>
+  [  0] getprop 1841 ............................ <pLocaleFormat>
   [  3] pushcons 2 .............................. <"windows-1251">
   [  5] eq ...................................... <pLocaleFormat = "windows-1251">
   [  6] jmpifz [ 17] ............................ if pLocaleFormat = "windows-1251" then
@@ -449,12 +449,12 @@ on createCharacterConversionArrays me, tEncodingFormat
   [313] getparam 0 .............................. <me>
   [315] getlocal 14 ............................. <tValueUnicode>
   [317] pusharglist 2 ........................... <me, tValueUnicode>
-  [319] objcall 1841 ............................ <me.hexToInt(tValueUnicode)>
+  [319] objcall 1838 ............................ <me.hexToInt(tValueUnicode)>
   [322] setlocal 14 ............................. tValueUnicode = me.hexToInt(tValueUnicode)
   [324] getparam 0 .............................. <me>
   [326] getlocal 13 ............................. <tValueLocale>
   [328] pusharglist 2 ........................... <me, tValueLocale>
-  [330] objcall 1841 ............................ <me.hexToInt(tValueLocale)>
+  [330] objcall 1838 ............................ <me.hexToInt(tValueLocale)>
   [333] setlocal 13 ............................. tValueLocale = me.hexToInt(tValueLocale)
   [335] getlocal 0 .............................. <tUnicodeValues>
   [337] getlocal 13 ............................. <tValueLocale>

@@ -2,74 +2,74 @@ property STATE_NORMAL, STATE_STUNNED, STATE_TURBO_BOOST, STATE_HIGH_JUMPS, STATE
 
 on construct me
   [  0] pushzero ................................ <0>
-  [  1] setprop 323 ............................. pDirBody = 0
-  [  4] pushsymb 60 ............................. <#x>
-  [  6] pushint8 1 .............................. <1>
-  [  8] inv ..................................... <-1>
-  [  9] pushsymb 61 ............................. <#y>
-  [ 11] pushint8 1 .............................. <1>
-  [ 13] inv ..................................... <-1>
-  [ 14] pushsymb 62 ............................. <#z>
-  [ 16] pushint8 1 .............................. <1>
-  [ 18] inv ..................................... <-1>
-  [ 19] pusharglist 6 ........................... <[#x: -1, #y: -1, #z: -1]>
-  [ 21] pushproplist ............................ <[#x: -1, #y: -1, #z: -1]>
-  [ 22] setprop 324 ............................. pLocation = [#x: -1, #y: -1, #z: -1]
-  [ 25] pushsymb 60 ............................. <#x>
-  [ 27] pushint8 1 .............................. <1>
-  [ 29] inv ..................................... <-1>
-  [ 30] pushsymb 61 ............................. <#y>
-  [ 32] pushint8 1 .............................. <1>
-  [ 34] inv ..................................... <-1>
-  [ 35] pusharglist 4 ........................... <[#x: -1, #y: -1]>
-  [ 37] pushproplist ............................ <[#x: -1, #y: -1]>
-  [ 38] setprop 325 ............................. pTargetLocation = [#x: -1, #y: -1]
-  [ 41] pushsymb 60 ............................. <#x>
-  [ 43] pushint8 1 .............................. <1>
-  [ 45] inv ..................................... <-1>
-  [ 46] pushsymb 61 ............................. <#y>
-  [ 48] pushint8 1 .............................. <1>
-  [ 50] inv ..................................... <-1>
-  [ 51] pusharglist 4 ........................... <[#x: -1, #y: -1]>
-  [ 53] pushproplist ............................ <[#x: -1, #y: -1]>
-  [ 54] setprop 326 ............................. pExpectedLocation = [#x: -1, #y: -1]
-  [ 57] pushzero ................................ <0>
-  [ 58] setprop 327 ............................. STATE_NORMAL = 0
-  [ 61] pushint8 1 .............................. <1>
-  [ 63] setprop 328 ............................. STATE_STUNNED = 1
-  [ 66] pushint8 2 .............................. <2>
-  [ 68] setprop 329 ............................. STATE_TURBO_BOOST = 2
-  [ 71] pushint8 3 .............................. <3>
-  [ 73] setprop 330 ............................. STATE_HIGH_JUMPS = 3
-  [ 76] pushint8 4 .............................. <4>
-  [ 78] setprop 331 ............................. STATE_CLEANING_TILES = 4
-  [ 81] pushint8 5 .............................. <5>
-  [ 83] setprop 332 ............................. STATE_COLORING_FOR_OPPONENT = 5
-  [ 86] pushint8 6 .............................. <6>
-  [ 88] setprop 333 ............................. STATE_CLIMBING_INTO_CANNON = 6
-  [ 91] pushint8 7 .............................. <7>
-  [ 93] setprop 334 ............................. STATE_FLYING_THROUGH_AIR = 7
-  [ 96] pushint8 8 .............................. <8>
-  [ 98] setprop 335 ............................. STATE_BALL_BROKEN = 8
-  [101] pusharglist 0 ........................... <[]>
-  [103] pushlist ................................ <[]>
-  [104] setprop 25 .............................. pActiveEffects = []
-  [106] pushsymb 125 ............................ <#temp>
-  [108] pushcons 0 .............................. <"BB Direction8 Class">
-  [110] pusharglist 2 ........................... <#temp, "BB Direction8 Class">
-  [112] extcall 124 ............................. <createObject(#temp, "BB Direction8 Class")>
-  [114] setprop 336 ............................. pDirObject = createObject(#temp, "BB Direction8 Class")
-  [117] pushint8 1 .............................. <1>
-  [119] pusharglistnoret 1 ...................... <1>
-  [121] extcall 28 .............................. return 1
-  [123] ret
+  [  1] setprop 58 .............................. pDirBody = 0
+  [  3] pushsymb 10 ............................. <#x>
+  [  5] pushint8 1 .............................. <1>
+  [  7] inv ..................................... <-1>
+  [  8] pushsymb 11 ............................. <#y>
+  [ 10] pushint8 1 .............................. <1>
+  [ 12] inv ..................................... <-1>
+  [ 13] pushsymb 12 ............................. <#z>
+  [ 15] pushint8 1 .............................. <1>
+  [ 17] inv ..................................... <-1>
+  [ 18] pusharglist 6 ........................... <[#x: -1, #y: -1, #z: -1]>
+  [ 20] pushproplist ............................ <[#x: -1, #y: -1, #z: -1]>
+  [ 21] setprop 9 ............................... pLocation = [#x: -1, #y: -1, #z: -1]
+  [ 23] pushsymb 10 ............................. <#x>
+  [ 25] pushint8 1 .............................. <1>
+  [ 27] inv ..................................... <-1>
+  [ 28] pushsymb 11 ............................. <#y>
+  [ 30] pushint8 1 .............................. <1>
+  [ 32] inv ..................................... <-1>
+  [ 33] pusharglist 4 ........................... <[#x: -1, #y: -1]>
+  [ 35] pushproplist ............................ <[#x: -1, #y: -1]>
+  [ 36] setprop 59 .............................. pTargetLocation = [#x: -1, #y: -1]
+  [ 38] pushsymb 10 ............................. <#x>
+  [ 40] pushint8 1 .............................. <1>
+  [ 42] inv ..................................... <-1>
+  [ 43] pushsymb 11 ............................. <#y>
+  [ 45] pushint8 1 .............................. <1>
+  [ 47] inv ..................................... <-1>
+  [ 48] pusharglist 4 ........................... <[#x: -1, #y: -1]>
+  [ 50] pushproplist ............................ <[#x: -1, #y: -1]>
+  [ 51] setprop 60 .............................. pExpectedLocation = [#x: -1, #y: -1]
+  [ 53] pushzero ................................ <0>
+  [ 54] setprop 61 .............................. STATE_NORMAL = 0
+  [ 56] pushint8 1 .............................. <1>
+  [ 58] setprop 62 .............................. STATE_STUNNED = 1
+  [ 60] pushint8 2 .............................. <2>
+  [ 62] setprop 63 .............................. STATE_TURBO_BOOST = 2
+  [ 64] pushint8 3 .............................. <3>
+  [ 66] setprop 64 .............................. STATE_HIGH_JUMPS = 3
+  [ 68] pushint8 4 .............................. <4>
+  [ 70] setprop 956 ............................. STATE_CLEANING_TILES = 4
+  [ 73] pushint8 5 .............................. <5>
+  [ 75] setprop 955 ............................. STATE_COLORING_FOR_OPPONENT = 5
+  [ 78] pushint8 6 .............................. <6>
+  [ 80] setprop 954 ............................. STATE_CLIMBING_INTO_CANNON = 6
+  [ 83] pushint8 7 .............................. <7>
+  [ 85] setprop 953 ............................. STATE_FLYING_THROUGH_AIR = 7
+  [ 88] pushint8 8 .............................. <8>
+  [ 90] setprop 1012 ............................ STATE_BALL_BROKEN = 8
+  [ 93] pusharglist 0 ........................... <[]>
+  [ 95] pushlist ................................ <[]>
+  [ 96] setprop 50 .............................. pActiveEffects = []
+  [ 98] pushsymb 39 ............................. <#temp>
+  [100] pushcons 0 .............................. <"BB Direction8 Class">
+  [102] pusharglist 2 ........................... <#temp, "BB Direction8 Class">
+  [104] extcall 38 .............................. <createObject(#temp, "BB Direction8 Class")>
+  [106] setprop 1000 ............................ pDirObject = createObject(#temp, "BB Direction8 Class")
+  [109] pushint8 1 .............................. <1>
+  [111] pusharglistnoret 1 ...................... <1>
+  [113] extcall 13 .............................. return 1
+  [115] ret
 end
 
 on deconstruct me
-  [  0] getprop 25 .............................. <pActiveEffects>
+  [  0] getprop 50 .............................. <pActiveEffects>
   [  2] peek 0
   [  4] pusharglist 1
-  [  6] extcall 30
+  [  6] extcall 20
   [  8] pushint8 1
   [ 10] peek 0
   [ 12] peek 2
@@ -78,7 +78,7 @@ on deconstruct me
   [ 18] peek 2
   [ 20] peek 1
   [ 22] pusharglist 2
-  [ 24] extcall 31
+  [ 24] extcall 18
   [ 26] setlocal 0
   [ 28] getlocal 0 .............................. <tEffect>
   [ 30] pusharglistnoret 1 ...................... <tEffect>
@@ -89,97 +89,97 @@ on deconstruct me
   [ 39] pop 3
   [ 41] pusharglist 0 ........................... <[]>
   [ 43] pushlist ................................ <[]>
-  [ 44] setprop 25 .............................. pActiveEffects = []
+  [ 44] setprop 50 .............................. pActiveEffects = []
   [ 46] pusharglist 0 ........................... <>
-  [ 48] extcall 116 ............................. <VOID>
-  [ 50] setprop 336 ............................. pDirObject = VOID
+  [ 48] extcall 43 .............................. <VOID>
+  [ 50] setprop 1000 ............................ pDirObject = VOID
   [ 53] getparam 0 .............................. <me>
   [ 55] pusharglistnoret 1 ...................... <me>
-  [ 57] objcall 315 ............................. me.removeRoomObject()
-  [ 60] pushint8 1 .............................. <1>
-  [ 62] pusharglistnoret 1 ...................... <1>
-  [ 64] extcall 28 .............................. return 1
-  [ 66] ret
+  [ 57] objcall 5 ............................... me.removeRoomObject()
+  [ 59] pushint8 1 .............................. <1>
+  [ 61] pusharglistnoret 1 ...................... <1>
+  [ 63] extcall 13 .............................. return 1
+  [ 65] ret
 end
 
 on define me, tGameObject
   [  0] getparam 1 .............................. <tGameObject>
   [  2] pusharglist 1 ........................... <tGameObject>
-  [  4] objcall 74 .............................. <tGameObject.duplicate()>
+  [  4] objcall 15 .............................. <tGameObject.duplicate()>
   [  6] setparam 1 .............................. tGameObject = tGameObject.duplicate()
   [  8] getparam 0 .............................. <me>
   [ 10] getparam 1 .............................. <tGameObject>
   [ 12] pusharglistnoret 2 ...................... <me, tGameObject>
-  [ 14] objcall 214 ............................. me.setGameObjectProperty(tGameObject)
+  [ 14] objcall 16 .............................. me.setGameObjectProperty(tGameObject)
   [ 16] getparam 0 .............................. <me>
   [ 18] getparam 1 .............................. <tGameObject>
   [ 20] pusharglistnoret 2 ...................... <me, tGameObject>
-  [ 22] objcall 314 ............................. me.createRoomObject(tGameObject)
-  [ 25] getprop 324 ............................. <pLocation>
-  [ 28] pushsymb 60 ............................. <#x>
-  [ 30] getparam 1 .............................. <tGameObject>
-  [ 32] pushsymb 60 ............................. <#x>
-  [ 34] pusharglist 2 ........................... <tGameObject, #x>
-  [ 36] objcall 31 .............................. <tGameObject[#x]>
-  [ 38] pusharglistnoret 3 ...................... <pLocation, #x, tGameObject[#x]>
-  [ 40] objcall 123 ............................. pLocation[#x] = tGameObject[#x]
-  [ 42] getprop 324 ............................. <pLocation>
-  [ 45] pushsymb 61 ............................. <#y>
-  [ 47] getparam 1 .............................. <tGameObject>
-  [ 49] pushsymb 61 ............................. <#y>
-  [ 51] pusharglist 2 ........................... <tGameObject, #y>
-  [ 53] objcall 31 .............................. <tGameObject[#y]>
-  [ 55] pusharglistnoret 3 ...................... <pLocation, #y, tGameObject[#y]>
-  [ 57] objcall 123 ............................. pLocation[#y] = tGameObject[#y]
-  [ 59] getprop 324 ............................. <pLocation>
-  [ 62] pushsymb 62 ............................. <#z>
-  [ 64] getparam 1 .............................. <tGameObject>
-  [ 66] pushsymb 62 ............................. <#z>
-  [ 68] pusharglist 2 ........................... <tGameObject, #z>
-  [ 70] objcall 31 .............................. <tGameObject[#z]>
-  [ 72] pusharglistnoret 3 ...................... <pLocation, #z, tGameObject[#z]>
-  [ 74] objcall 123 ............................. pLocation[#z] = tGameObject[#z]
-  [ 76] pushint8 1 .............................. <1>
-  [ 78] pusharglistnoret 1 ...................... <1>
-  [ 80] extcall 28 .............................. return 1
-  [ 82] ret
+  [ 22] objcall 4 ............................... me.createRoomObject(tGameObject)
+  [ 24] getprop 9 ............................... <pLocation>
+  [ 26] pushsymb 10 ............................. <#x>
+  [ 28] getparam 1 .............................. <tGameObject>
+  [ 30] pushsymb 10 ............................. <#x>
+  [ 32] pusharglist 2 ........................... <tGameObject, #x>
+  [ 34] objcall 18 .............................. <tGameObject[#x]>
+  [ 36] pusharglistnoret 3 ...................... <pLocation, #x, tGameObject[#x]>
+  [ 38] objcall 21 .............................. pLocation[#x] = tGameObject[#x]
+  [ 40] getprop 9 ............................... <pLocation>
+  [ 42] pushsymb 11 ............................. <#y>
+  [ 44] getparam 1 .............................. <tGameObject>
+  [ 46] pushsymb 11 ............................. <#y>
+  [ 48] pusharglist 2 ........................... <tGameObject, #y>
+  [ 50] objcall 18 .............................. <tGameObject[#y]>
+  [ 52] pusharglistnoret 3 ...................... <pLocation, #y, tGameObject[#y]>
+  [ 54] objcall 21 .............................. pLocation[#y] = tGameObject[#y]
+  [ 56] getprop 9 ............................... <pLocation>
+  [ 58] pushsymb 12 ............................. <#z>
+  [ 60] getparam 1 .............................. <tGameObject>
+  [ 62] pushsymb 12 ............................. <#z>
+  [ 64] pusharglist 2 ........................... <tGameObject, #z>
+  [ 66] objcall 18 .............................. <tGameObject[#z]>
+  [ 68] pusharglistnoret 3 ...................... <pLocation, #z, tGameObject[#z]>
+  [ 70] objcall 21 .............................. pLocation[#z] = tGameObject[#z]
+  [ 72] pushint8 1 .............................. <1>
+  [ 74] pusharglistnoret 1 ...................... <1>
+  [ 76] extcall 13 .............................. return 1
+  [ 78] ret
 end
 
 on update me
-  [  0] getprop 25 .............................. <pActiveEffects>
-  [  2] getobjprop 30 ........................... <pActiveEffects.count>
+  [  0] getprop 50 .............................. <pActiveEffects>
+  [  2] getobjprop 20 ........................... <pActiveEffects.count>
   [  4] pushzero ................................ <0>
   [  5] eq ...................................... <pActiveEffects.count = 0>
   [  6] jmpifz [ 15] ............................ if pActiveEffects.count = 0 then
   [  9] pushint8 1 .............................. <1>
   [ 11] pusharglistnoret 1 ...................... <1>
-  [ 13] extcall 28 .............................. return 1
+  [ 13] extcall 13 .............................. return 1
   [ 15] pushint8 1 .............................. <1>
   [ 17] setlocal 0
   [ 19] getlocal 0
-  [ 21] getprop 25 .............................. <pActiveEffects>
-  [ 23] getobjprop 30 ........................... <pActiveEffects.count>
+  [ 21] getprop 50 .............................. <pActiveEffects>
+  [ 23] getobjprop 20 ........................... <pActiveEffects.count>
   [ 25] lteq
   [ 26] jmpifz [ 78] ............................ repeat with i = 1 to pActiveEffects.count
-  [ 29] getprop 25 .............................. <pActiveEffects>
+  [ 29] getprop 50 .............................. <pActiveEffects>
   [ 31] getlocal 0 .............................. <i>
   [ 33] pusharglist 2 ........................... <pActiveEffects, i>
-  [ 35] objcall 31 .............................. <pActiveEffects[i]>
+  [ 35] objcall 18 .............................. <pActiveEffects[i]>
   [ 37] setlocal 1 .............................. tEffect = pActiveEffects[i]
   [ 39] getlocal 1 .............................. <tEffect>
-  [ 41] getobjprop 85 ........................... <tEffect.pActive>
+  [ 41] getobjprop 66 ........................... <tEffect.pActive>
   [ 43] jmpifz [ 55] ............................ if tEffect.pActive then
   [ 46] getlocal 1 .............................. <tEffect>
   [ 48] pusharglistnoret 1 ...................... <tEffect>
-  [ 50] objcall 6 ............................... tEffect.update()
+  [ 50] objcall 51 .............................. tEffect.update()
   [ 52] jmp [ 69] ............................... next repeat
   [ 55] getlocal 1 .............................. <tEffect>
   [ 57] pusharglistnoret 1 ...................... <tEffect>
   [ 59] objcall 1 ............................... tEffect.deconstruct()
-  [ 61] getprop 25 .............................. <pActiveEffects>
+  [ 61] getprop 50 .............................. <pActiveEffects>
   [ 63] getlocal 0 .............................. <i>
   [ 65] pusharglistnoret 2 ...................... <pActiveEffects, i>
-  [ 67] objcall 86 .............................. pActiveEffects.deleteAt(i)
+  [ 67] objcall 67 .............................. pActiveEffects.deleteAt(i)
   [ 69] pushint8 1
   [ 71] getlocal 0
   [ 73] add
@@ -187,1026 +187,1026 @@ on update me
   [ 76] endrepeat [ 19]
   [ 78] pushint8 1 .............................. <1>
   [ 80] pusharglistnoret 1 ...................... <1>
-  [ 82] extcall 28 .............................. return 1
+  [ 82] extcall 13 .............................. return 1
   [ 84] ret
 end
 
 on executeGameObjectEvent me, tEvent, tdata
-  [  0] getprop 337 ............................. <pDump>
-  [  3] jmpifz [ 30] ............................ if pDump then
-  [  6] pushcons 1 .............................. <"* executeGameObjectEvent on">
-  [  8] getparam 0 .............................. <me>
-  [ 10] pusharglist 1 ........................... <me>
-  [ 12] objcall 338 ............................. <me.getObjectId()>
-  [ 15] joinpadstr .............................. <"* executeGameObjectEvent on" && me.getObjectId()>
-  [ 16] pushcons 2 .............................. <":">
-  [ 18] joinstr ................................. <"* executeGameObjectEvent on" && me.getObjectId() & ":">
-  [ 19] getparam 1 .............................. <tEvent>
-  [ 21] joinpadstr .............................. <"* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent>
-  [ 22] getparam 2 .............................. <tdata>
-  [ 24] joinpadstr .............................. <"* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent && tdata>
-  [ 25] pusharglistnoret 1 ...................... <"* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent && tdata>
-  [ 27] extcall 339 ............................. put "* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent && tdata
-  [ 30] getparam 1 .............................. <tEvent>
-  [ 32] peek 0 .................................. case tEvent of
-  [ 34] pushsymb 218 ............................ <#gameobject_update>
-  [ 36] eq
-  [ 37] jmpifz [ 52] ............................ (case) #gameobject_update:
-  [ 40] getparam 0 .............................. <me>
-  [ 42] getparam 2 .............................. <tdata>
-  [ 44] pusharglistnoret 2 ...................... <me, tdata>
-  [ 46] objcall 318 ............................. me.updateRoomObject(tdata)
-  [ 49] jmp [223]
-  [ 52] peek 0
-  [ 54] pushsymb 225 ............................ <#set_target_custom>
-  [ 56] eq
-  [ 57] jmpifz [ 72] ............................ (case) #set_target_custom:
-  [ 60] getparam 0 .............................. <me>
-  [ 62] getparam 2 .............................. <tdata>
-  [ 64] pusharglistnoret 2 ...................... <me, tdata>
-  [ 66] objcall 317 ............................. me.updateRoomObjectGoal(tdata)
-  [ 69] jmp [223]
-  [ 72] peek 0
-  [ 74] pushsymb 221 ............................ <#activate_powerup>
-  [ 76] eq
-  [ 77] jmpifz [161] ............................ (case) #activate_powerup:
-  [ 80] getparam 0 .............................. <me>
-  [ 82] getparam 2 .............................. <tdata>
-  [ 84] pusharglistnoret 2 ...................... <me, tdata>
-  [ 86] objcall 321 ............................. me.startPowerupActivateAnimation(tdata)
-  [ 89] getparam 2 .............................. <tdata>
-  [ 91] pushsymb 206 ............................ <#powerupType>
-  [ 93] pusharglist 2 ........................... <tdata, #powerupType>
-  [ 95] objcall 31 .............................. <tdata[#powerupType]>
-  [ 97] pushint8 7 .............................. <7>
-  [ 99] eq ...................................... <tdata[#powerupType] = 7>
-  [100] jmpifz [158] ............................ if tdata[#powerupType] = 7 then
-  [103] getparam 0 .............................. <me>
-  [105] pushsymb 60 ............................. <#x>
-  [107] getprop 324 ............................. <pLocation>
-  [110] pushsymb 60 ............................. <#x>
-  [112] pusharglist 2 ........................... <pLocation, #x>
-  [114] objcall 31 .............................. <pLocation[#x]>
-  [116] pushsymb 61 ............................. <#y>
-  [118] getprop 324 ............................. <pLocation>
-  [121] pushsymb 61 ............................. <#y>
-  [123] pusharglist 2 ........................... <pLocation, #y>
-  [125] objcall 31 .............................. <pLocation[#y]>
-  [127] pushsymb 62 ............................. <#z>
-  [129] getprop 324 ............................. <pLocation>
-  [132] pushsymb 62 ............................. <#z>
-  [134] pusharglist 2 ........................... <pLocation, #z>
-  [136] objcall 31 .............................. <pLocation[#z]>
-  [138] pushsymb 340 ............................ <#state>
-  [141] getprop 328 ............................. <STATE_STUNNED>
-  [144] pushsymb 341 ............................ <#dirBody>
-  [147] getprop 323 ............................. <pDirBody>
-  [150] pusharglist 10 .......................... <[#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody]>
-  [152] pushproplist ............................ <[#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody]>
-  [153] pusharglistnoret 2 ...................... <me, [#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody]>
-  [155] objcall 318 ............................. me.updateRoomObject([#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody])
-  [158] jmp [223]
+  [  0] getprop 32 .............................. <pDump>
+  [  2] jmpifz [ 27] ............................ if pDump then
+  [  5] pushcons 1 .............................. <"* executeGameObjectEvent on">
+  [  7] getparam 0 .............................. <me>
+  [  9] pusharglist 1 ........................... <me>
+  [ 11] objcall 33 .............................. <me.getObjectId()>
+  [ 13] joinpadstr .............................. <"* executeGameObjectEvent on" && me.getObjectId()>
+  [ 14] pushcons 2 .............................. <":">
+  [ 16] joinstr ................................. <"* executeGameObjectEvent on" && me.getObjectId() & ":">
+  [ 17] getparam 1 .............................. <tEvent>
+  [ 19] joinpadstr .............................. <"* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent>
+  [ 20] getparam 2 .............................. <tdata>
+  [ 22] joinpadstr .............................. <"* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent && tdata>
+  [ 23] pusharglistnoret 1 ...................... <"* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent && tdata>
+  [ 25] extcall 34 .............................. put "* executeGameObjectEvent on" && me.getObjectId() & ":" && tEvent && tdata
+  [ 27] getparam 1 .............................. <tEvent>
+  [ 29] peek 0 .................................. case tEvent of
+  [ 31] pushsymb 952 ............................ <#gameobject_update>
+  [ 34] eq
+  [ 35] jmpifz [ 50] ............................ (case) #gameobject_update:
+  [ 38] getparam 0 .............................. <me>
+  [ 40] getparam 2 .............................. <tdata>
+  [ 42] pusharglistnoret 2 ...................... <me, tdata>
+  [ 44] objcall 949 ............................. me.updateRoomObject(tdata)
+  [ 47] jmp [214]
+  [ 50] peek 0
+  [ 52] pushsymb 70 ............................. <#set_target_custom>
+  [ 54] eq
+  [ 55] jmpifz [ 69] ............................ (case) #set_target_custom:
+  [ 58] getparam 0 .............................. <me>
+  [ 60] getparam 2 .............................. <tdata>
+  [ 62] pusharglistnoret 2 ...................... <me, tdata>
+  [ 64] objcall 55 .............................. me.updateRoomObjectGoal(tdata)
+  [ 66] jmp [214]
+  [ 69] peek 0
+  [ 71] pushsymb 1077 ........................... <#activate_powerup>
+  [ 74] eq
+  [ 75] jmpifz [153] ............................ (case) #activate_powerup:
+  [ 78] getparam 0 .............................. <me>
+  [ 80] getparam 2 .............................. <tdata>
+  [ 82] pusharglistnoret 2 ...................... <me, tdata>
+  [ 84] objcall 1095 ............................ me.startPowerupActivateAnimation(tdata)
+  [ 87] getparam 2 .............................. <tdata>
+  [ 89] pushsymb 17 ............................. <#powerupType>
+  [ 91] pusharglist 2 ........................... <tdata, #powerupType>
+  [ 93] objcall 18 .............................. <tdata[#powerupType]>
+  [ 95] pushint8 7 .............................. <7>
+  [ 97] eq ...................................... <tdata[#powerupType] = 7>
+  [ 98] jmpifz [150] ............................ if tdata[#powerupType] = 7 then
+  [101] getparam 0 .............................. <me>
+  [103] pushsymb 10 ............................. <#x>
+  [105] getprop 9 ............................... <pLocation>
+  [107] pushsymb 10 ............................. <#x>
+  [109] pusharglist 2 ........................... <pLocation, #x>
+  [111] objcall 18 .............................. <pLocation[#x]>
+  [113] pushsymb 11 ............................. <#y>
+  [115] getprop 9 ............................... <pLocation>
+  [117] pushsymb 11 ............................. <#y>
+  [119] pusharglist 2 ........................... <pLocation, #y>
+  [121] objcall 18 .............................. <pLocation[#y]>
+  [123] pushsymb 12 ............................. <#z>
+  [125] getprop 9 ............................... <pLocation>
+  [127] pushsymb 12 ............................. <#z>
+  [129] pusharglist 2 ........................... <pLocation, #z>
+  [131] objcall 18 .............................. <pLocation[#z]>
+  [133] pushsymb 396 ............................ <#state>
+  [136] getprop 62 .............................. <STATE_STUNNED>
+  [138] pushsymb 83 ............................. <#dirBody>
+  [140] getprop 58 .............................. <pDirBody>
+  [142] pusharglist 10 .......................... <[#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody]>
+  [144] pushproplist ............................ <[#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody]>
+  [145] pusharglistnoret 2 ...................... <me, [#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody]>
+  [147] objcall 949 ............................. me.updateRoomObject([#x: pLocation[#x], #y: pLocation[#y], #z: pLocation[#z], #state: STATE_STUNNED, #dirBody: pDirBody])
+  [150] jmp [214]
+  [153] peek 0
+  [155] pushsymb 145 ............................ <#gamereset>
+  [157] nteq
+  [158] jmpifz [170] ............................ (case) #gamereset, ...
   [161] peek 0
-  [163] pushsymb 249 ............................ <#gamereset>
-  [165] nteq
-  [166] jmpifz [177] ............................ (case) #gamereset, ...
-  [169] peek 0
-  [171] pushsymb 207 ............................ <#gameend>
-  [173] eq
-  [174] jmpifz [210] ............................ (case) ..., #gameend:
-  [177] getprop 325 ............................. <pTargetLocation>
-  [180] pushsymb 60 ............................. <#x>
-  [182] pushint8 1 .............................. <1>
-  [184] inv ..................................... <-1>
-  [185] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
-  [187] objcall 123 ............................. pTargetLocation[#x] = -1
-  [189] getprop 326 ............................. <pExpectedLocation>
-  [192] pushsymb 60 ............................. <#x>
-  [194] pushint8 1 .............................. <1>
-  [196] inv ..................................... <-1>
-  [197] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
-  [199] objcall 123 ............................. pExpectedLocation[#x] = -1
-  [201] getparam 0 .............................. <me>
-  [203] pusharglistnoret 1 ...................... <me>
-  [205] objcall 15 .............................. me.clearEffectAnimation()
-  [207] jmp [223] ............................... (case) otherwise:
-  [210] pushcons 3 .............................. <"* Gameobject: UNDEFINED EVENT:">
-  [212] getparam 1 .............................. <tEvent>
-  [214] joinpadstr .............................. <"* Gameobject: UNDEFINED EVENT:" && tEvent>
-  [215] getparam 2 .............................. <tdata>
-  [217] joinpadstr .............................. <"* Gameobject: UNDEFINED EVENT:" && tEvent && tdata>
-  [218] pusharglistnoret 1 ...................... <"* Gameobject: UNDEFINED EVENT:" && tEvent && tdata>
-  [220] extcall 339 ............................. put "* Gameobject: UNDEFINED EVENT:" && tEvent && tdata
-  [223] pop 1 ................................... end case
-  [225] ret
+  [163] pushsymb 449 ............................ <#gameend>
+  [166] eq
+  [167] jmpifz [202] ............................ (case) ..., #gameend:
+  [170] getprop 59 .............................. <pTargetLocation>
+  [172] pushsymb 10 ............................. <#x>
+  [174] pushint8 1 .............................. <1>
+  [176] inv ..................................... <-1>
+  [177] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
+  [179] objcall 21 .............................. pTargetLocation[#x] = -1
+  [181] getprop 60 .............................. <pExpectedLocation>
+  [183] pushsymb 10 ............................. <#x>
+  [185] pushint8 1 .............................. <1>
+  [187] inv ..................................... <-1>
+  [188] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
+  [190] objcall 21 .............................. pExpectedLocation[#x] = -1
+  [192] getparam 0 .............................. <me>
+  [194] pusharglistnoret 1 ...................... <me>
+  [196] objcall 946 ............................. me.clearEffectAnimation()
+  [199] jmp [214] ............................... (case) otherwise:
+  [202] pushcons 3 .............................. <"* Gameobject: UNDEFINED EVENT:">
+  [204] getparam 1 .............................. <tEvent>
+  [206] joinpadstr .............................. <"* Gameobject: UNDEFINED EVENT:" && tEvent>
+  [207] getparam 2 .............................. <tdata>
+  [209] joinpadstr .............................. <"* Gameobject: UNDEFINED EVENT:" && tEvent && tdata>
+  [210] pusharglistnoret 1 ...................... <"* Gameobject: UNDEFINED EVENT:" && tEvent && tdata>
+  [212] extcall 34 .............................. put "* Gameobject: UNDEFINED EVENT:" && tEvent && tdata
+  [214] pop 1 ................................... end case
+  [216] ret
 end
 
 on createRoomObject me, tDataStruct
-  [  0] pushsymb 125 ............................ <#temp>
+  [  0] pushsymb 39 ............................. <#temp>
   [  2] pushcons 4 .............................. <"bb_gamesystem.roomobject.player.wrapper.class">
   [  4] pusharglist 1 ........................... <"bb_gamesystem.roomobject.player.wrapper.class">
-  [  6] extcall 344 ............................. <getClassVariable("bb_gamesystem.roomobject.player.wrapper.class")>
-  [  9] pusharglist 2 ........................... <#temp, getClassVariable("bb_gamesystem.roomobject.player.wrapper.class")>
-  [ 11] extcall 124 ............................. <createObject(#temp, getClassVariable("bb_gamesystem.roomobject.player.wrapper.class"))>
-  [ 13] setprop 343 ............................. pRoomObject = createObject(#temp, getClassVariable("bb_gamesystem.roomobject.player.wrapper.class"))
-  [ 16] getprop 343 ............................. <pRoomObject>
-  [ 19] pushzero ................................ <0>
-  [ 20] eq ...................................... <pRoomObject = 0>
-  [ 21] jmpifz [ 39] ............................ if pRoomObject = 0 then
-  [ 24] getparam 0 .............................. <me>
-  [ 26] pushcons 5 .............................. <"Cannot create roomobject wrapper!">
-  [ 28] pushsymb 314 ............................ <#createRoomObject>
-  [ 31] pusharglist 3 ........................... <me, "Cannot create roomobject wrapper!", #createRoomObject>
-  [ 33] extcall 173 ............................. <error(me, "Cannot create roomobject wrapper!", #createRoomObject)>
-  [ 35] pusharglistnoret 1 ...................... <error(me, "Cannot create roomobject wrapper!", #createRoomObject)>
-  [ 37] extcall 28 .............................. return error(me, "Cannot create roomobject wrapper!", #createRoomObject)
-  [ 39] getprop 343 ............................. <pRoomObject>
-  [ 42] getparam 1 .............................. <tDataStruct>
-  [ 44] pusharglist 2 ........................... <pRoomObject, tDataStruct>
-  [ 46] objcall 135 ............................. <pRoomObject.define(tDataStruct)>
-  [ 48] pusharglistnoret 1 ...................... <pRoomObject.define(tDataStruct)>
-  [ 50] extcall 28 .............................. return pRoomObject.define(tDataStruct)
-  [ 52] ret
+  [  6] extcall 40 .............................. <getClassVariable("bb_gamesystem.roomobject.player.wrapper.class")>
+  [  8] pusharglist 2 ........................... <#temp, getClassVariable("bb_gamesystem.roomobject.player.wrapper.class")>
+  [ 10] extcall 38 .............................. <createObject(#temp, getClassVariable("bb_gamesystem.roomobject.player.wrapper.class"))>
+  [ 12] setprop 37 .............................. pRoomObject = createObject(#temp, getClassVariable("bb_gamesystem.roomobject.player.wrapper.class"))
+  [ 14] getprop 37 .............................. <pRoomObject>
+  [ 16] pushzero ................................ <0>
+  [ 17] eq ...................................... <pRoomObject = 0>
+  [ 18] jmpifz [ 35] ............................ if pRoomObject = 0 then
+  [ 21] getparam 0 .............................. <me>
+  [ 23] pushcons 5 .............................. <"Cannot create roomobject wrapper!">
+  [ 25] pushsymb 4 .............................. <#createRoomObject>
+  [ 27] pusharglist 3 ........................... <me, "Cannot create roomobject wrapper!", #createRoomObject>
+  [ 29] extcall 19 .............................. <error(me, "Cannot create roomobject wrapper!", #createRoomObject)>
+  [ 31] pusharglistnoret 1 ...................... <error(me, "Cannot create roomobject wrapper!", #createRoomObject)>
+  [ 33] extcall 13 .............................. return error(me, "Cannot create roomobject wrapper!", #createRoomObject)
+  [ 35] getprop 37 .............................. <pRoomObject>
+  [ 37] getparam 1 .............................. <tDataStruct>
+  [ 39] pusharglist 2 ........................... <pRoomObject, tDataStruct>
+  [ 41] objcall 2 ............................... <pRoomObject.define(tDataStruct)>
+  [ 43] pusharglistnoret 1 ...................... <pRoomObject.define(tDataStruct)>
+  [ 45] extcall 13 .............................. return pRoomObject.define(tDataStruct)
+  [ 47] ret
 end
 
 on removeRoomObject me
-  [  0] getprop 343 ............................. <pRoomObject>
-  [  3] pusharglistnoret 1 ...................... <pRoomObject>
-  [  5] objcall 1 ............................... pRoomObject.deconstruct()
-  [  7] pusharglist 0 ........................... <>
-  [  9] extcall 116 ............................. <VOID>
-  [ 11] setprop 343 ............................. pRoomObject = VOID
-  [ 14] pushint8 1 .............................. <1>
-  [ 16] pusharglistnoret 1 ...................... <1>
-  [ 18] extcall 28 .............................. return 1
-  [ 20] ret
+  [  0] getprop 37 .............................. <pRoomObject>
+  [  2] pusharglistnoret 1 ...................... <pRoomObject>
+  [  4] objcall 1 ............................... pRoomObject.deconstruct()
+  [  6] pusharglist 0 ........................... <>
+  [  8] extcall 43 .............................. <VOID>
+  [ 10] setprop 37 .............................. pRoomObject = VOID
+  [ 12] pushint8 1 .............................. <1>
+  [ 14] pusharglistnoret 1 ...................... <1>
+  [ 16] extcall 13 .............................. return 1
+  [ 18] ret
 end
 
 on roomObjectAction me, tAction, tdata
-  [  0] getprop 343 ............................. <pRoomObject>
-  [  3] pusharglist 1 ........................... <pRoomObject>
-  [  5] extcall 26 .............................. <objectp(pRoomObject)>
-  [  7] not ..................................... <not objectp(pRoomObject)>
-  [  8] jmpifz [ 26] ............................ if not objectp(pRoomObject) then
-  [ 11] getparam 0 .............................. <me>
-  [ 13] pushcons 6 .............................. <"Roomobject wrapper missing!">
-  [ 15] pushsymb 346 ............................ <#getRoomObject>
-  [ 18] pusharglist 3 ........................... <me, "Roomobject wrapper missing!", #getRoomObject>
-  [ 20] extcall 173 ............................. <error(me, "Roomobject wrapper missing!", #getRoomObject)>
-  [ 22] pusharglistnoret 1 ...................... <error(me, "Roomobject wrapper missing!", #getRoomObject)>
-  [ 24] extcall 28 .............................. return error(me, "Roomobject wrapper missing!", #getRoomObject)
-  [ 26] pushsymb 2 .............................. <#roomObjectAction>
-  [ 28] getprop 343 ............................. <pRoomObject>
-  [ 31] getparam 1 .............................. <tAction>
-  [ 33] getparam 2 .............................. <tdata>
-  [ 35] pusharglistnoret 4 ...................... <#roomObjectAction, pRoomObject, tAction, tdata>
-  [ 37] extcall 103 ............................. call(#roomObjectAction, pRoomObject, tAction, tdata)
-  [ 39] pushint8 1 .............................. <1>
-  [ 41] pusharglistnoret 1 ...................... <1>
-  [ 43] extcall 28 .............................. return 1
-  [ 45] ret
+  [  0] getprop 37 .............................. <pRoomObject>
+  [  2] pusharglist 1 ........................... <pRoomObject>
+  [  4] extcall 42 .............................. <objectp(pRoomObject)>
+  [  6] not ..................................... <not objectp(pRoomObject)>
+  [  7] jmpifz [ 24] ............................ if not objectp(pRoomObject) then
+  [ 10] getparam 0 .............................. <me>
+  [ 12] pushcons 6 .............................. <"Roomobject wrapper missing!">
+  [ 14] pushsymb 45 ............................. <#getRoomObject>
+  [ 16] pusharglist 3 ........................... <me, "Roomobject wrapper missing!", #getRoomObject>
+  [ 18] extcall 19 .............................. <error(me, "Roomobject wrapper missing!", #getRoomObject)>
+  [ 20] pusharglistnoret 1 ...................... <error(me, "Roomobject wrapper missing!", #getRoomObject)>
+  [ 22] extcall 13 .............................. return error(me, "Roomobject wrapper missing!", #getRoomObject)
+  [ 24] pushsymb 1001 ........................... <#roomObjectAction>
+  [ 27] getprop 37 .............................. <pRoomObject>
+  [ 29] getparam 1 .............................. <tAction>
+  [ 31] getparam 2 .............................. <tdata>
+  [ 33] pusharglistnoret 4 ...................... <#roomObjectAction, pRoomObject, tAction, tdata>
+  [ 35] extcall 267 ............................. call(#roomObjectAction, pRoomObject, tAction, tdata)
+  [ 38] pushint8 1 .............................. <1>
+  [ 40] pusharglistnoret 1 ...................... <1>
+  [ 42] extcall 13 .............................. return 1
+  [ 44] ret
 end
 
 on getRoomObjectImage me
-  [  0] getprop 343 ............................. <pRoomObject>
-  [  3] pusharglist 1 ........................... <pRoomObject>
-  [  5] extcall 26 .............................. <objectp(pRoomObject)>
-  [  7] not ..................................... <not objectp(pRoomObject)>
-  [  8] jmpifz [ 16] ............................ if not objectp(pRoomObject) then
-  [ 11] pushzero ................................ <0>
-  [ 12] pusharglistnoret 1 ...................... <0>
-  [ 14] extcall 28 .............................. return 0
-  [ 16] getprop 343 ............................. <pRoomObject>
-  [ 19] pusharglist 1 ........................... <pRoomObject>
-  [ 21] objcall 12 .............................. <pRoomObject.getPicture()>
-  [ 23] pusharglistnoret 1 ...................... <pRoomObject.getPicture()>
-  [ 25] extcall 28 .............................. return pRoomObject.getPicture()
-  [ 27] ret
+  [  0] getprop 37 .............................. <pRoomObject>
+  [  2] pusharglist 1 ........................... <pRoomObject>
+  [  4] extcall 42 .............................. <objectp(pRoomObject)>
+  [  6] not ..................................... <not objectp(pRoomObject)>
+  [  7] jmpifz [ 15] ............................ if not objectp(pRoomObject) then
+  [ 10] pushzero ................................ <0>
+  [ 11] pusharglistnoret 1 ...................... <0>
+  [ 13] extcall 13 .............................. return 0
+  [ 15] getprop 37 .............................. <pRoomObject>
+  [ 17] pusharglist 1 ........................... <pRoomObject>
+  [ 19] objcall 80 .............................. <pRoomObject.getPicture()>
+  [ 21] pusharglistnoret 1 ...................... <pRoomObject.getPicture()>
+  [ 23] extcall 13 .............................. return pRoomObject.getPicture()
+  [ 25] ret
 end
 
 on updateRoomObjectGoal me, tdata
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 298 ............................. <me.checkStateAllowsMoving()>
+  [  4] objcall 957 ............................. <me.checkStateAllowsMoving()>
   [  7] not ..................................... <not me.checkStateAllowsMoving()>
   [  8] jmpifz [ 17] ............................ if not me.checkStateAllowsMoving() then
   [ 11] pushint8 1 .............................. <1>
   [ 13] pusharglistnoret 1 ...................... <1>
-  [ 15] extcall 28 .............................. return 1
-  [ 17] getprop 325 ............................. <pTargetLocation>
-  [ 20] pushsymb 60 ............................. <#x>
-  [ 22] getparam 1 .............................. <tdata>
-  [ 24] pushsymb 347 ............................ <#goalx>
-  [ 27] pusharglist 2 ........................... <tdata, #goalx>
-  [ 29] objcall 31 .............................. <tdata[#goalx]>
-  [ 31] pusharglistnoret 3 ...................... <pTargetLocation, #x, tdata[#goalx]>
-  [ 33] objcall 123 ............................. pTargetLocation[#x] = tdata[#goalx]
-  [ 35] getprop 325 ............................. <pTargetLocation>
-  [ 38] pushsymb 61 ............................. <#y>
-  [ 40] getparam 1 .............................. <tdata>
-  [ 42] pushsymb 348 ............................ <#goaly>
-  [ 45] pusharglist 2 ........................... <tdata, #goaly>
-  [ 47] objcall 31 .............................. <tdata[#goaly]>
-  [ 49] pusharglistnoret 3 ...................... <pTargetLocation, #y, tdata[#goaly]>
-  [ 51] objcall 123 ............................. pTargetLocation[#y] = tdata[#goaly]
-  [ 53] getparam 0 .............................. <me>
-  [ 55] pusharglist 1 ........................... <me>
-  [ 57] objcall 201 ............................. <me.getGameSystem()>
-  [ 59] setlocal 0 .............................. tGameSystem = me.getGameSystem()
-  [ 61] getlocal 0 .............................. <tGameSystem>
-  [ 63] pushzero ................................ <0>
-  [ 64] eq ...................................... <tGameSystem = 0>
-  [ 65] jmpifz [ 73] ............................ if tGameSystem = 0 then
-  [ 68] pushzero ................................ <0>
-  [ 69] pusharglistnoret 1 ...................... <0>
-  [ 71] extcall 28 .............................. return 0
-  [ 73] getparam 1 .............................. <tdata>
-  [ 75] pushsymb 60 ............................. <#x>
-  [ 77] getprop 324 ............................. <pLocation>
-  [ 80] pushsymb 60 ............................. <#x>
-  [ 82] pusharglist 2 ........................... <pLocation, #x>
-  [ 84] objcall 31 .............................. <pLocation[#x]>
-  [ 86] pusharglistnoret 3 ...................... <tdata, #x, pLocation[#x]>
-  [ 88] objcall 123 ............................. tdata[#x] = pLocation[#x]
-  [ 90] getparam 1 .............................. <tdata>
-  [ 92] pushsymb 61 ............................. <#y>
-  [ 94] getprop 324 ............................. <pLocation>
-  [ 97] pushsymb 61 ............................. <#y>
-  [ 99] pusharglist 2 ........................... <pLocation, #y>
-  [101] objcall 31 .............................. <pLocation[#y]>
-  [103] pusharglistnoret 3 ...................... <tdata, #y, pLocation[#y]>
-  [105] objcall 123 ............................. tdata[#y] = pLocation[#y]
-  [107] getparam 1 .............................. <tdata>
-  [109] pushsymb 62 ............................. <#z>
-  [111] getprop 324 ............................. <pLocation>
-  [114] pushsymb 62 ............................. <#z>
-  [116] pusharglist 2 ........................... <pLocation, #z>
-  [118] objcall 31 .............................. <pLocation[#z]>
-  [120] pusharglistnoret 3 ...................... <tdata, #z, pLocation[#z]>
-  [122] objcall 123 ............................. tdata[#z] = pLocation[#z]
-  [124] getparam 1 .............................. <tdata>
-  [126] pushsymb 341 ............................ <#dirBody>
-  [129] getprop 323 ............................. <pDirBody>
-  [132] pusharglistnoret 3 ...................... <tdata, #dirBody, pDirBody>
-  [134] objcall 123 ............................. tdata[#dirBody] = pDirBody
-  [136] getprop 326 ............................. <pExpectedLocation>
-  [139] pushsymb 60 ............................. <#x>
-  [141] pushint8 1 .............................. <1>
-  [143] inv ..................................... <-1>
-  [144] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
-  [146] objcall 123 ............................. pExpectedLocation[#x] = -1
-  [148] getparam 0 .............................. <me>
-  [150] getparam 1 .............................. <tdata>
-  [152] pusharglist 2 ........................... <me, tdata>
-  [154] objcall 319 ............................. <me.updateRoomObjectLocation(tdata)>
-  [157] pusharglistnoret 1 ...................... <me.updateRoomObjectLocation(tdata)>
-  [159] extcall 28 .............................. return me.updateRoomObjectLocation(tdata)
-  [161] ret
+  [ 15] extcall 13 .............................. return 1
+  [ 17] getprop 59 .............................. <pTargetLocation>
+  [ 19] pushsymb 10 ............................. <#x>
+  [ 21] getparam 1 .............................. <tdata>
+  [ 23] pushsymb 81 ............................. <#goalx>
+  [ 25] pusharglist 2 ........................... <tdata, #goalx>
+  [ 27] objcall 18 .............................. <tdata[#goalx]>
+  [ 29] pusharglistnoret 3 ...................... <pTargetLocation, #x, tdata[#goalx]>
+  [ 31] objcall 21 .............................. pTargetLocation[#x] = tdata[#goalx]
+  [ 33] getprop 59 .............................. <pTargetLocation>
+  [ 35] pushsymb 11 ............................. <#y>
+  [ 37] getparam 1 .............................. <tdata>
+  [ 39] pushsymb 82 ............................. <#goaly>
+  [ 41] pusharglist 2 ........................... <tdata, #goaly>
+  [ 43] objcall 18 .............................. <tdata[#goaly]>
+  [ 45] pusharglistnoret 3 ...................... <pTargetLocation, #y, tdata[#goaly]>
+  [ 47] objcall 21 .............................. pTargetLocation[#y] = tdata[#goaly]
+  [ 49] getparam 0 .............................. <me>
+  [ 51] pusharglist 1 ........................... <me>
+  [ 53] objcall 24 .............................. <me.getGameSystem()>
+  [ 55] setlocal 0 .............................. tGameSystem = me.getGameSystem()
+  [ 57] getlocal 0 .............................. <tGameSystem>
+  [ 59] pushzero ................................ <0>
+  [ 60] eq ...................................... <tGameSystem = 0>
+  [ 61] jmpifz [ 69] ............................ if tGameSystem = 0 then
+  [ 64] pushzero ................................ <0>
+  [ 65] pusharglistnoret 1 ...................... <0>
+  [ 67] extcall 13 .............................. return 0
+  [ 69] getparam 1 .............................. <tdata>
+  [ 71] pushsymb 10 ............................. <#x>
+  [ 73] getprop 9 ............................... <pLocation>
+  [ 75] pushsymb 10 ............................. <#x>
+  [ 77] pusharglist 2 ........................... <pLocation, #x>
+  [ 79] objcall 18 .............................. <pLocation[#x]>
+  [ 81] pusharglistnoret 3 ...................... <tdata, #x, pLocation[#x]>
+  [ 83] objcall 21 .............................. tdata[#x] = pLocation[#x]
+  [ 85] getparam 1 .............................. <tdata>
+  [ 87] pushsymb 11 ............................. <#y>
+  [ 89] getprop 9 ............................... <pLocation>
+  [ 91] pushsymb 11 ............................. <#y>
+  [ 93] pusharglist 2 ........................... <pLocation, #y>
+  [ 95] objcall 18 .............................. <pLocation[#y]>
+  [ 97] pusharglistnoret 3 ...................... <tdata, #y, pLocation[#y]>
+  [ 99] objcall 21 .............................. tdata[#y] = pLocation[#y]
+  [101] getparam 1 .............................. <tdata>
+  [103] pushsymb 12 ............................. <#z>
+  [105] getprop 9 ............................... <pLocation>
+  [107] pushsymb 12 ............................. <#z>
+  [109] pusharglist 2 ........................... <pLocation, #z>
+  [111] objcall 18 .............................. <pLocation[#z]>
+  [113] pusharglistnoret 3 ...................... <tdata, #z, pLocation[#z]>
+  [115] objcall 21 .............................. tdata[#z] = pLocation[#z]
+  [117] getparam 1 .............................. <tdata>
+  [119] pushsymb 83 ............................. <#dirBody>
+  [121] getprop 58 .............................. <pDirBody>
+  [123] pusharglistnoret 3 ...................... <tdata, #dirBody, pDirBody>
+  [125] objcall 21 .............................. tdata[#dirBody] = pDirBody
+  [127] getprop 60 .............................. <pExpectedLocation>
+  [129] pushsymb 10 ............................. <#x>
+  [131] pushint8 1 .............................. <1>
+  [133] inv ..................................... <-1>
+  [134] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
+  [136] objcall 21 .............................. pExpectedLocation[#x] = -1
+  [138] getparam 0 .............................. <me>
+  [140] getparam 1 .............................. <tdata>
+  [142] pusharglist 2 ........................... <me, tdata>
+  [144] objcall 56 .............................. <me.updateRoomObjectLocation(tdata)>
+  [146] pusharglistnoret 1 ...................... <me.updateRoomObjectLocation(tdata)>
+  [148] extcall 13 .............................. return me.updateRoomObjectLocation(tdata)
+  [150] ret
 end
 
 on checkStateAllowsMoving me, tstate
   [  0] getparam 1 .............................. <tstate>
   [  2] pusharglist 0 ........................... <>
-  [  4] extcall 116 ............................. <VOID>
+  [  4] extcall 43 .............................. <VOID>
   [  6] eq ...................................... <tstate = VOID>
   [  7] jmpifz [ 22] ............................ if tstate = VOID then
   [ 10] getparam 0 .............................. <me>
-  [ 12] pushsymb 340 ............................ <#state>
+  [ 12] pushsymb 396 ............................ <#state>
   [ 15] pusharglist 2 ........................... <me, #state>
-  [ 17] objcall 349 ............................. <me.getGameObjectProperty(#state)>
+  [ 17] objcall 932 ............................. <me.getGameObjectProperty(#state)>
   [ 20] setparam 1 .............................. tstate = me.getGameObjectProperty(#state)
   [ 22] getparam 1 .............................. <tstate>
   [ 24] peek 0 .................................. case tstate of
-  [ 26] getprop 328 ............................. <STATE_STUNNED>
-  [ 29] nteq
-  [ 30] jmpifz [ 60] ............................ (case) STATE_STUNNED, ...
-  [ 33] peek 0
-  [ 35] getprop 333 ............................. <STATE_CLIMBING_INTO_CANNON>
-  [ 38] nteq
-  [ 39] jmpifz [ 60] ............................ (case) ..., STATE_CLIMBING_INTO_CANNON, ...
-  [ 42] peek 0
-  [ 44] getprop 334 ............................. <STATE_FLYING_THROUGH_AIR>
-  [ 47] nteq
-  [ 48] jmpifz [ 60] ............................ (case) ..., STATE_FLYING_THROUGH_AIR, ...
-  [ 51] peek 0
-  [ 53] getprop 335 ............................. <STATE_BALL_BROKEN>
-  [ 56] eq
-  [ 57] jmpifz [ 70] ............................ (case) ..., STATE_BALL_BROKEN:
-  [ 60] pop 1
-  [ 62] pushzero ................................ <0>
-  [ 63] pusharglistnoret 1 ...................... <0>
-  [ 65] extcall 28 .............................. return 0
-  [ 67] jmp [ 78] ............................... (case) otherwise:
-  [ 70] pop 1
-  [ 72] pushint8 1 .............................. <1>
-  [ 74] pusharglistnoret 1 ...................... <1>
-  [ 76] extcall 28 .............................. return 1
-  [ 78] pop 1 ................................... end case
-  [ 80] ret
+  [ 26] getprop 62 .............................. <STATE_STUNNED>
+  [ 28] nteq
+  [ 29] jmpifz [ 59] ............................ (case) STATE_STUNNED, ...
+  [ 32] peek 0
+  [ 34] getprop 954 ............................. <STATE_CLIMBING_INTO_CANNON>
+  [ 37] nteq
+  [ 38] jmpifz [ 59] ............................ (case) ..., STATE_CLIMBING_INTO_CANNON, ...
+  [ 41] peek 0
+  [ 43] getprop 953 ............................. <STATE_FLYING_THROUGH_AIR>
+  [ 46] nteq
+  [ 47] jmpifz [ 59] ............................ (case) ..., STATE_FLYING_THROUGH_AIR, ...
+  [ 50] peek 0
+  [ 52] getprop 1012 ............................ <STATE_BALL_BROKEN>
+  [ 55] eq
+  [ 56] jmpifz [ 69] ............................ (case) ..., STATE_BALL_BROKEN:
+  [ 59] pop 1
+  [ 61] pushzero ................................ <0>
+  [ 62] pusharglistnoret 1 ...................... <0>
+  [ 64] extcall 13 .............................. return 0
+  [ 66] jmp [ 77] ............................... (case) otherwise:
+  [ 69] pop 1
+  [ 71] pushint8 1 .............................. <1>
+  [ 73] pusharglistnoret 1 ...................... <1>
+  [ 75] extcall 13 .............................. return 1
+  [ 77] pop 1 ................................... end case
+  [ 79] ret
 end
 
 on updateRoomObject me, tdata
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 340 ............................ <#state>
+  [  2] pushsymb 396 ............................ <#state>
   [  5] pusharglist 2 ........................... <me, #state>
-  [  7] objcall 349 ............................. <me.getGameObjectProperty(#state)>
+  [  7] objcall 932 ............................. <me.getGameObjectProperty(#state)>
   [ 10] setlocal 0 .............................. tOldState = me.getGameObjectProperty(#state)
   [ 12] getparam 1 .............................. <tdata>
-  [ 14] pushsymb 340 ............................ <#state>
+  [ 14] pushsymb 396 ............................ <#state>
   [ 17] pusharglist 2 ........................... <tdata, #state>
-  [ 19] objcall 31 .............................. <tdata[#state]>
+  [ 19] objcall 18 .............................. <tdata[#state]>
   [ 21] getlocal 0 .............................. <tOldState>
   [ 23] nteq .................................... <tdata[#state] <> tOldState>
-  [ 24] jmpifz [617] ............................ if tdata[#state] <> tOldState then
+  [ 24] jmpifz [647] ............................ if tdata[#state] <> tOldState then
   [ 27] getparam 0 .............................. <me>
-  [ 29] pushsymb 340 ............................ <#state>
+  [ 29] pushsymb 396 ............................ <#state>
   [ 32] getparam 1 .............................. <tdata>
-  [ 34] pushsymb 340 ............................ <#state>
+  [ 34] pushsymb 396 ............................ <#state>
   [ 37] pusharglist 2 ........................... <tdata, #state>
-  [ 39] objcall 31 .............................. <tdata[#state]>
+  [ 39] objcall 18 .............................. <tdata[#state]>
   [ 41] pusharglist 2 ........................... <[#state: tdata[#state]]>
   [ 43] pushproplist ............................ <[#state: tdata[#state]]>
   [ 44] pusharglistnoret 2 ...................... <me, [#state: tdata[#state]]>
-  [ 46] objcall 350 ............................. me.setGameObjectSyncProperty([#state: tdata[#state]])
+  [ 46] objcall 963 ............................. me.setGameObjectSyncProperty([#state: tdata[#state]])
   [ 49] getlocal 0 .............................. <tOldState>
-  [ 51] getprop 335 ............................. <STATE_BALL_BROKEN>
+  [ 51] getprop 1012 ............................ <STATE_BALL_BROKEN>
   [ 54] eq ...................................... <tOldState = STATE_BALL_BROKEN>
-  [ 55] jmpifz [ 68] ............................ if tOldState = STATE_BALL_BROKEN then
+  [ 55] jmpifz [ 70] ............................ if tOldState = STATE_BALL_BROKEN then
   [ 58] getparam 0 .............................. <me>
-  [ 60] pushsymb 39 ............................. <#set_ball>
-  [ 62] pushint8 1 .............................. <1>
-  [ 64] pusharglistnoret 3 ...................... <me, #set_ball, 1>
-  [ 66] objcall 2 ............................... me.roomObjectAction(#set_ball, 1)
-  [ 68] getparam 1 .............................. <tdata>
-  [ 70] pushsymb 340 ............................ <#state>
-  [ 73] pusharglist 2 ........................... <tdata, #state>
-  [ 75] objcall 31 .............................. <tdata[#state]>
-  [ 77] peek 0 .................................. case tdata[#state] of
-  [ 79] getprop 327 ............................. <STATE_NORMAL>
-  [ 82] eq
-  [ 83] jmpifz [120] ............................ (case) STATE_NORMAL:
-  [ 86] getparam 0 .............................. <me>
-  [ 88] pusharglistnoret 1 ...................... <me>
-  [ 90] objcall 15 .............................. me.clearEffectAnimation()
-  [ 92] getparam 0 .............................. <me>
-  [ 94] pushsymb 36 ............................. <#reset_ball_color>
-  [ 96] pusharglistnoret 2 ...................... <me, #reset_ball_color>
-  [ 98] objcall 2 ............................... me.roomObjectAction(#reset_ball_color)
-  [100] getparam 0 .............................. <me>
-  [102] pushsymb 38 ............................. <#set_bounce_state>
-  [104] getparam 1 .............................. <tdata>
-  [106] pushsymb 340 ............................ <#state>
-  [109] pusharglist 2 ........................... <tdata, #state>
-  [111] objcall 31 .............................. <tdata[#state]>
-  [113] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
-  [115] objcall 2 ............................... me.roomObjectAction(#set_bounce_state, tdata[#state])
-  [117] jmp [615]
-  [120] peek 0
-  [122] getprop 330 ............................. <STATE_HIGH_JUMPS>
-  [125] eq
-  [126] jmpifz [149] ............................ (case) STATE_HIGH_JUMPS:
-  [129] getparam 0 .............................. <me>
-  [131] pushsymb 38 ............................. <#set_bounce_state>
-  [133] getparam 1 .............................. <tdata>
-  [135] pushsymb 340 ............................ <#state>
-  [138] pusharglist 2 ........................... <tdata, #state>
-  [140] objcall 31 .............................. <tdata[#state]>
-  [142] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
-  [144] objcall 2 ............................... me.roomObjectAction(#set_bounce_state, tdata[#state])
-  [146] jmp [615]
-  [149] peek 0
-  [151] getprop 331 ............................. <STATE_CLEANING_TILES>
-  [154] eq
-  [155] jmpifz [178] ............................ (case) STATE_CLEANING_TILES:
-  [158] getparam 0 .............................. <me>
-  [160] pushsymb 38 ............................. <#set_bounce_state>
-  [162] getparam 1 .............................. <tdata>
-  [164] pushsymb 340 ............................ <#state>
-  [167] pusharglist 2 ........................... <tdata, #state>
-  [169] objcall 31 .............................. <tdata[#state]>
-  [171] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
-  [173] objcall 2 ............................... me.roomObjectAction(#set_bounce_state, tdata[#state])
-  [175] jmp [615]
-  [178] peek 0
-  [180] getprop 328 ............................. <STATE_STUNNED>
-  [183] eq
-  [184] jmpifz [282] ............................ (case) STATE_STUNNED:
-  [187] getprop 325 ............................. <pTargetLocation>
-  [190] pushsymb 60 ............................. <#x>
-  [192] pushint8 1 .............................. <1>
-  [194] inv ..................................... <-1>
-  [195] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
-  [197] objcall 123 ............................. pTargetLocation[#x] = -1
-  [199] getprop 326 ............................. <pExpectedLocation>
-  [202] pushsymb 60 ............................. <#x>
-  [204] pushint8 1 .............................. <1>
-  [206] inv ..................................... <-1>
-  [207] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
-  [209] objcall 123 ............................. pExpectedLocation[#x] = -1
-  [211] getparam 0 .............................. <me>
-  [213] pushsymb 49 ............................. <#loop>
-  [215] pushcons 7 .............................. <"bb2_stunned_">
-  [217] pushsymb 50 ............................. <#ink>
-  [219] pushint8 8 .............................. <8>
-  [221] pusharglist 2 ........................... <[#ink: 8]>
-  [223] pushproplist ............................ <[#ink: 8]>
-  [224] pusharglistnoret 4 ...................... <me, #loop, "bb2_stunned_", [#ink: 8]>
-  [226] objcall 17 .............................. me.createEffect(#loop, "bb2_stunned_", [#ink: 8])
-  [228] getparam 0 .............................. <me>
-  [230] pushsymb 38 ............................. <#set_bounce_state>
-  [232] getparam 1 .............................. <tdata>
-  [234] pushsymb 340 ............................ <#state>
-  [237] pusharglist 2 ........................... <tdata, #state>
-  [239] objcall 31 .............................. <tdata[#state]>
-  [241] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
-  [243] objcall 2 ............................... me.roomObjectAction(#set_bounce_state, tdata[#state])
-  [245] getparam 0 .............................. <me>
-  [247] pushsymb 197 ............................ <#id>
-  [249] pusharglist 2 ........................... <me, #id>
-  [251] objcall 349 ............................. <me.getGameObjectProperty(#id)>
-  [254] getparam 0 .............................. <me>
-  [256] pusharglist 1 ........................... <me>
-  [258] objcall 322 ............................. <me.getOwnGameIndex()>
-  [261] eq ...................................... <me.getGameObjectProperty(#id) = me.getOwnGameIndex()>
-  [262] jmpifz [279] ............................ if me.getGameObjectProperty(#id) = me.getOwnGameIndex() then
-  [265] getparam 0 .............................. <me>
-  [267] pusharglist 1 ........................... <me>
-  [269] objcall 201 ............................. <me.getGameSystem()>
-  [271] pushsymb 199 ............................ <#soundeffect>
-  [273] pushcons 8 .............................. <"SFX-10-stunned">
-  [275] pusharglistnoret 3 ...................... <me.getGameSystem(), #soundeffect, "SFX-10-stunned">
-  [277] objcall 200 ............................. me.getGameSystem().sendGameSystemEvent(#soundeffect, "SFX-10-stunned")
-  [279] jmp [615]
-  [282] peek 0
-  [284] getprop 333 ............................. <STATE_CLIMBING_INTO_CANNON>
-  [287] nteq
-  [288] jmpifz [300] ............................ (case) STATE_CLIMBING_INTO_CANNON, ...
-  [291] peek 0
-  [293] getprop 334 ............................. <STATE_FLYING_THROUGH_AIR>
-  [296] eq
-  [297] jmpifz [362] ............................ (case) ..., STATE_FLYING_THROUGH_AIR:
-  [300] getparam 0 .............................. <me>
-  [302] pushsymb 38 ............................. <#set_bounce_state>
-  [304] getparam 1 .............................. <tdata>
-  [306] pushsymb 340 ............................ <#state>
-  [309] pusharglist 2 ........................... <tdata, #state>
-  [311] objcall 31 .............................. <tdata[#state]>
-  [313] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
-  [315] objcall 2 ............................... me.roomObjectAction(#set_bounce_state, tdata[#state])
-  [317] getprop 325 ............................. <pTargetLocation>
-  [320] pushsymb 60 ............................. <#x>
-  [322] pushint8 1 .............................. <1>
-  [324] inv ..................................... <-1>
-  [325] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
-  [327] objcall 123 ............................. pTargetLocation[#x] = -1
-  [329] getprop 326 ............................. <pExpectedLocation>
-  [332] pushsymb 60 ............................. <#x>
-  [334] pushint8 1 .............................. <1>
-  [336] inv ..................................... <-1>
-  [337] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
-  [339] objcall 123 ............................. pExpectedLocation[#x] = -1
-  [341] getparam 0 .............................. <me>
-  [343] pushsymb 48 ............................. <#fly_into>
-  [345] getparam 1 .............................. <tdata>
-  [347] pusharglistnoret 3 ...................... <me, #fly_into, tdata>
-  [349] objcall 2 ............................... me.roomObjectAction(#fly_into, tdata)
-  [351] pop 1
-  [353] pushint8 1 .............................. <1>
-  [355] pusharglistnoret 1 ...................... <1>
-  [357] extcall 28 .............................. return 1
-  [359] jmp [615]
-  [362] peek 0
-  [364] getprop 332 ............................. <STATE_COLORING_FOR_OPPONENT>
-  [367] eq
-  [368] jmpifz [479] ............................ (case) STATE_COLORING_FOR_OPPONENT:
-  [371] getparam 0 .............................. <me>
-  [373] pusharglistnoret 1 ...................... <me>
-  [375] objcall 15 .............................. me.clearEffectAnimation()
-  [377] getparam 0 .............................. <me>
-  [379] pushsymb 38 ............................. <#set_bounce_state>
-  [381] getparam 1 .............................. <tdata>
-  [383] pushsymb 340 ............................ <#state>
-  [386] pusharglist 2 ........................... <tdata, #state>
-  [388] objcall 31 .............................. <tdata[#state]>
-  [390] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
-  [392] objcall 2 ............................... me.roomObjectAction(#set_bounce_state, tdata[#state])
-  [394] getparam 0 .............................. <me>
-  [396] pushsymb 80 ............................. <#once>
-  [398] pushcons 9 .............................. <"bb2_efct_pu_harlequin_">
-  [400] pushsymb 50 ............................. <#ink>
-  [402] pushint8 33 ............................. <33>
-  [404] pusharglist 2 ........................... <[#ink: 33]>
-  [406] pushproplist ............................ <[#ink: 33]>
-  [407] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_harlequin_", [#ink: 33]>
-  [409] objcall 17 .............................. me.createEffect(#once, "bb2_efct_pu_harlequin_", [#ink: 33])
-  [411] getparam 1 .............................. <tdata>
-  [413] pushsymb 351 ............................ <#coloringForOpponentTeamId>
-  [416] pusharglist 2 ........................... <tdata, #coloringForOpponentTeamId>
-  [418] objcall 31 .............................. <tdata[#coloringForOpponentTeamId]>
-  [420] setlocal 1 .............................. tOpponentId = tdata[#coloringForOpponentTeamId]
-  [422] getparam 0 .............................. <me>
-  [424] pusharglist 1 ........................... <me>
-  [426] objcall 201 ............................. <me.getGameSystem()>
-  [428] getlocal 1 .............................. <tOpponentId>
-  [430] pusharglist 2 ........................... <me.getGameSystem(), tOpponentId>
-  [432] objcall 213 ............................. <me.getGameSystem().getGameObject(tOpponentId)>
-  [434] setlocal 2 .............................. tGameObject = me.getGameSystem().getGameObject(tOpponentId)
-  [436] getlocal 2 .............................. <tGameObject>
-  [438] pushzero ................................ <0>
-  [439] nteq .................................... <tGameObject <> 0>
-  [440] jmpifz [476] ............................ if tGameObject <> 0 then
-  [443] getlocal 2 .............................. <tGameObject>
-  [445] pushsymb 257 ............................ <#teamId>
-  [448] pusharglist 2 ........................... <tGameObject, #teamId>
-  [450] objcall 349 ............................. <tGameObject.getGameObjectProperty(#teamId)>
-  [453] setlocal 3 .............................. tTeamId = tGameObject.getGameObjectProperty(#teamId)
-  [455] getparam 1 .............................. <tdata>
-  [457] pushsymb 35 ............................. <#opponentTeamId>
-  [459] getlocal 3 .............................. <tTeamId>
-  [461] pusharglistnoret 3 ...................... <tdata, #opponentTeamId, tTeamId>
-  [463] objcall 352 ............................. tdata.addProp(#opponentTeamId, tTeamId)
-  [466] getparam 0 .............................. <me>
-  [468] pushsymb 33 ............................. <#set_ball_color>
-  [470] getparam 1 .............................. <tdata>
-  [472] pusharglistnoret 3 ...................... <me, #set_ball_color, tdata>
-  [474] objcall 2 ............................... me.roomObjectAction(#set_ball_color, tdata)
-  [476] jmp [615]
-  [479] peek 0
-  [481] getprop 335 ............................. <STATE_BALL_BROKEN>
-  [484] eq
-  [485] jmpifz [615] ............................ (case) STATE_BALL_BROKEN:
-  [488] getparam 0 .............................. <me>
-  [490] pushsymb 38 ............................. <#set_bounce_state>
-  [492] getparam 1 .............................. <tdata>
-  [494] pushsymb 340 ............................ <#state>
-  [497] pusharglist 2 ........................... <tdata, #state>
-  [499] objcall 31 .............................. <tdata[#state]>
-  [501] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
-  [503] objcall 2 ............................... me.roomObjectAction(#set_bounce_state, tdata[#state])
-  [505] getparam 0 .............................. <me>
-  [507] pushsymb 80 ............................. <#once>
-  [509] pushcons 9 .............................. <"bb2_efct_pu_harlequin_">
-  [511] pushsymb 50 ............................. <#ink>
-  [513] pushint8 33 ............................. <33>
-  [515] pusharglist 2 ........................... <[#ink: 33]>
-  [517] pushproplist ............................ <[#ink: 33]>
-  [518] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_harlequin_", [#ink: 33]>
-  [520] objcall 17 .............................. me.createEffect(#once, "bb2_efct_pu_harlequin_", [#ink: 33])
-  [522] getparam 0 .............................. <me>
-  [524] pushsymb 49 ............................. <#loop>
-  [526] pushcons 7 .............................. <"bb2_stunned_">
-  [528] pushsymb 112 ............................ <#loc>
-  [530] pushzero ................................ <0>
-  [531] pushint8 13 ............................. <13>
-  [533] pusharglist 2 ........................... <0, 13>
-  [535] extcall 96 .............................. <point(0, 13)>
-  [537] pushsymb 50 ............................. <#ink>
-  [539] pushint8 8 .............................. <8>
-  [541] pusharglist 4 ........................... <[#loc: point(0, 13), #ink: 8]>
-  [543] pushproplist ............................ <[#loc: point(0, 13), #ink: 8]>
-  [544] pusharglistnoret 4 ...................... <me, #loop, "bb2_stunned_", [#loc: point(0, 13), #ink: 8]>
-  [546] objcall 17 .............................. me.createEffect(#loop, "bb2_stunned_", [#loc: point(0, 13), #ink: 8])
-  [548] getprop 325 ............................. <pTargetLocation>
-  [551] pushsymb 60 ............................. <#x>
-  [553] pushint8 1 .............................. <1>
-  [555] inv ..................................... <-1>
-  [556] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
-  [558] objcall 123 ............................. pTargetLocation[#x] = -1
-  [560] getprop 326 ............................. <pExpectedLocation>
-  [563] pushsymb 60 ............................. <#x>
-  [565] pushint8 1 .............................. <1>
-  [567] inv ..................................... <-1>
-  [568] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
-  [570] objcall 123 ............................. pExpectedLocation[#x] = -1
-  [572] getparam 0 .............................. <me>
-  [574] pushsymb 39 ............................. <#set_ball>
-  [576] pushzero ................................ <0>
-  [577] pusharglistnoret 3 ...................... <me, #set_ball, 0>
-  [579] objcall 2 ............................... me.roomObjectAction(#set_ball, 0)
-  [581] getparam 0 .............................. <me>
-  [583] pushsymb 197 ............................ <#id>
-  [585] pusharglist 2 ........................... <me, #id>
-  [587] objcall 349 ............................. <me.getGameObjectProperty(#id)>
-  [590] getparam 0 .............................. <me>
-  [592] pusharglist 1 ........................... <me>
-  [594] objcall 322 ............................. <me.getOwnGameIndex()>
-  [597] eq ...................................... <me.getGameObjectProperty(#id) = me.getOwnGameIndex()>
-  [598] jmpifz [615] ............................ if me.getGameObjectProperty(#id) = me.getOwnGameIndex() then
-  [601] getparam 0 .............................. <me>
-  [603] pusharglist 1 ........................... <me>
-  [605] objcall 201 ............................. <me.getGameSystem()>
-  [607] pushsymb 199 ............................ <#soundeffect>
-  [609] pushcons 8 .............................. <"SFX-10-stunned">
-  [611] pusharglistnoret 3 ...................... <me.getGameSystem(), #soundeffect, "SFX-10-stunned">
-  [613] objcall 200 ............................. me.getGameSystem().sendGameSystemEvent(#soundeffect, "SFX-10-stunned")
-  [615] pop 1 ................................... end case
-  [617] getparam 0 .............................. <me>
-  [619] getparam 1 .............................. <tdata>
-  [621] pusharglist 2 ........................... <me, tdata>
-  [623] objcall 319 ............................. <me.updateRoomObjectLocation(tdata)>
-  [626] pusharglistnoret 1 ...................... <me.updateRoomObjectLocation(tdata)>
-  [628] extcall 28 .............................. return me.updateRoomObjectLocation(tdata)
-  [630] ret
+  [ 60] pushsymb 1024 ........................... <#set_ball>
+  [ 63] pushint8 1 .............................. <1>
+  [ 65] pusharglistnoret 3 ...................... <me, #set_ball, 1>
+  [ 67] objcall 1001 ............................ me.roomObjectAction(#set_ball, 1)
+  [ 70] getparam 1 .............................. <tdata>
+  [ 72] pushsymb 396 ............................ <#state>
+  [ 75] pusharglist 2 ........................... <tdata, #state>
+  [ 77] objcall 18 .............................. <tdata[#state]>
+  [ 79] peek 0 .................................. case tdata[#state] of
+  [ 81] getprop 61 .............................. <STATE_NORMAL>
+  [ 83] eq
+  [ 84] jmpifz [126] ............................ (case) STATE_NORMAL:
+  [ 87] getparam 0 .............................. <me>
+  [ 89] pusharglistnoret 1 ...................... <me>
+  [ 91] objcall 946 ............................. me.clearEffectAnimation()
+  [ 94] getparam 0 .............................. <me>
+  [ 96] pushsymb 1017 ........................... <#reset_ball_color>
+  [ 99] pusharglistnoret 2 ...................... <me, #reset_ball_color>
+  [101] objcall 1001 ............................ me.roomObjectAction(#reset_ball_color)
+  [104] getparam 0 .............................. <me>
+  [106] pushsymb 1014 ........................... <#set_bounce_state>
+  [109] getparam 1 .............................. <tdata>
+  [111] pushsymb 396 ............................ <#state>
+  [114] pusharglist 2 ........................... <tdata, #state>
+  [116] objcall 18 .............................. <tdata[#state]>
+  [118] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
+  [120] objcall 1001 ............................ me.roomObjectAction(#set_bounce_state, tdata[#state])
+  [123] jmp [645]
+  [126] peek 0
+  [128] getprop 64 .............................. <STATE_HIGH_JUMPS>
+  [130] eq
+  [131] jmpifz [156] ............................ (case) STATE_HIGH_JUMPS:
+  [134] getparam 0 .............................. <me>
+  [136] pushsymb 1014 ........................... <#set_bounce_state>
+  [139] getparam 1 .............................. <tdata>
+  [141] pushsymb 396 ............................ <#state>
+  [144] pusharglist 2 ........................... <tdata, #state>
+  [146] objcall 18 .............................. <tdata[#state]>
+  [148] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
+  [150] objcall 1001 ............................ me.roomObjectAction(#set_bounce_state, tdata[#state])
+  [153] jmp [645]
+  [156] peek 0
+  [158] getprop 956 ............................. <STATE_CLEANING_TILES>
+  [161] eq
+  [162] jmpifz [187] ............................ (case) STATE_CLEANING_TILES:
+  [165] getparam 0 .............................. <me>
+  [167] pushsymb 1014 ........................... <#set_bounce_state>
+  [170] getparam 1 .............................. <tdata>
+  [172] pushsymb 396 ............................ <#state>
+  [175] pusharglist 2 ........................... <tdata, #state>
+  [177] objcall 18 .............................. <tdata[#state]>
+  [179] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
+  [181] objcall 1001 ............................ me.roomObjectAction(#set_bounce_state, tdata[#state])
+  [184] jmp [645]
+  [187] peek 0
+  [189] getprop 62 .............................. <STATE_STUNNED>
+  [191] eq
+  [192] jmpifz [294] ............................ (case) STATE_STUNNED:
+  [195] getprop 59 .............................. <pTargetLocation>
+  [197] pushsymb 10 ............................. <#x>
+  [199] pushint8 1 .............................. <1>
+  [201] inv ..................................... <-1>
+  [202] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
+  [204] objcall 21 .............................. pTargetLocation[#x] = -1
+  [206] getprop 60 .............................. <pExpectedLocation>
+  [208] pushsymb 10 ............................. <#x>
+  [210] pushint8 1 .............................. <1>
+  [212] inv ..................................... <-1>
+  [213] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
+  [215] objcall 21 .............................. pExpectedLocation[#x] = -1
+  [217] getparam 0 .............................. <me>
+  [219] pushsymb 944 ............................ <#loop>
+  [222] pushcons 7 .............................. <"bb2_stunned_">
+  [224] pushsymb 197 ............................ <#ink>
+  [226] pushint8 8 .............................. <8>
+  [228] pusharglist 2 ........................... <[#ink: 8]>
+  [230] pushproplist ............................ <[#ink: 8]>
+  [231] pusharglistnoret 4 ...................... <me, #loop, "bb2_stunned_", [#ink: 8]>
+  [233] objcall 935 ............................. me.createEffect(#loop, "bb2_stunned_", [#ink: 8])
+  [236] getparam 0 .............................. <me>
+  [238] pushsymb 1014 ........................... <#set_bounce_state>
+  [241] getparam 1 .............................. <tdata>
+  [243] pushsymb 396 ............................ <#state>
+  [246] pusharglist 2 ........................... <tdata, #state>
+  [248] objcall 18 .............................. <tdata[#state]>
+  [250] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
+  [252] objcall 1001 ............................ me.roomObjectAction(#set_bounce_state, tdata[#state])
+  [255] getparam 0 .............................. <me>
+  [257] pushsymb 88 ............................. <#id>
+  [259] pusharglist 2 ........................... <me, #id>
+  [261] objcall 932 ............................. <me.getGameObjectProperty(#id)>
+  [264] getparam 0 .............................. <me>
+  [266] pusharglist 1 ........................... <me>
+  [268] objcall 1336 ............................ <me.getOwnGameIndex()>
+  [271] eq ...................................... <me.getGameObjectProperty(#id) = me.getOwnGameIndex()>
+  [272] jmpifz [291] ............................ if me.getGameObjectProperty(#id) = me.getOwnGameIndex() then
+  [275] getparam 0 .............................. <me>
+  [277] pusharglist 1 ........................... <me>
+  [279] objcall 24 .............................. <me.getGameSystem()>
+  [281] pushsymb 1329 ........................... <#soundeffect>
+  [284] pushcons 8 .............................. <"SFX-10-stunned">
+  [286] pusharglistnoret 3 ...................... <me.getGameSystem(), #soundeffect, "SFX-10-stunned">
+  [288] objcall 600 ............................. me.getGameSystem().sendGameSystemEvent(#soundeffect, "SFX-10-stunned")
+  [291] jmp [645]
+  [294] peek 0
+  [296] getprop 954 ............................. <STATE_CLIMBING_INTO_CANNON>
+  [299] nteq
+  [300] jmpifz [312] ............................ (case) STATE_CLIMBING_INTO_CANNON, ...
+  [303] peek 0
+  [305] getprop 953 ............................. <STATE_FLYING_THROUGH_AIR>
+  [308] eq
+  [309] jmpifz [376] ............................ (case) ..., STATE_FLYING_THROUGH_AIR:
+  [312] getparam 0 .............................. <me>
+  [314] pushsymb 1014 ........................... <#set_bounce_state>
+  [317] getparam 1 .............................. <tdata>
+  [319] pushsymb 396 ............................ <#state>
+  [322] pusharglist 2 ........................... <tdata, #state>
+  [324] objcall 18 .............................. <tdata[#state]>
+  [326] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
+  [328] objcall 1001 ............................ me.roomObjectAction(#set_bounce_state, tdata[#state])
+  [331] getprop 59 .............................. <pTargetLocation>
+  [333] pushsymb 10 ............................. <#x>
+  [335] pushint8 1 .............................. <1>
+  [337] inv ..................................... <-1>
+  [338] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
+  [340] objcall 21 .............................. pTargetLocation[#x] = -1
+  [342] getprop 60 .............................. <pExpectedLocation>
+  [344] pushsymb 10 ............................. <#x>
+  [346] pushint8 1 .............................. <1>
+  [348] inv ..................................... <-1>
+  [349] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
+  [351] objcall 21 .............................. pExpectedLocation[#x] = -1
+  [353] getparam 0 .............................. <me>
+  [355] pushsymb 1256 ........................... <#fly_into>
+  [358] getparam 1 .............................. <tdata>
+  [360] pusharglistnoret 3 ...................... <me, #fly_into, tdata>
+  [362] objcall 1001 ............................ me.roomObjectAction(#fly_into, tdata)
+  [365] pop 1
+  [367] pushint8 1 .............................. <1>
+  [369] pusharglistnoret 1 ...................... <1>
+  [371] extcall 13 .............................. return 1
+  [373] jmp [645]
+  [376] peek 0
+  [378] getprop 955 ............................. <STATE_COLORING_FOR_OPPONENT>
+  [381] eq
+  [382] jmpifz [499] ............................ (case) STATE_COLORING_FOR_OPPONENT:
+  [385] getparam 0 .............................. <me>
+  [387] pusharglistnoret 1 ...................... <me>
+  [389] objcall 946 ............................. me.clearEffectAnimation()
+  [392] getparam 0 .............................. <me>
+  [394] pushsymb 1014 ........................... <#set_bounce_state>
+  [397] getparam 1 .............................. <tdata>
+  [399] pushsymb 396 ............................ <#state>
+  [402] pusharglist 2 ........................... <tdata, #state>
+  [404] objcall 18 .............................. <tdata[#state]>
+  [406] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
+  [408] objcall 1001 ............................ me.roomObjectAction(#set_bounce_state, tdata[#state])
+  [411] getparam 0 .............................. <me>
+  [413] pushsymb 945 ............................ <#once>
+  [416] pushcons 9 .............................. <"bb2_efct_pu_harlequin_">
+  [418] pushsymb 197 ............................ <#ink>
+  [420] pushint8 33 ............................. <33>
+  [422] pusharglist 2 ........................... <[#ink: 33]>
+  [424] pushproplist ............................ <[#ink: 33]>
+  [425] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_harlequin_", [#ink: 33]>
+  [427] objcall 935 ............................. me.createEffect(#once, "bb2_efct_pu_harlequin_", [#ink: 33])
+  [430] getparam 1 .............................. <tdata>
+  [432] pushsymb 654 ............................ <#coloringForOpponentTeamId>
+  [435] pusharglist 2 ........................... <tdata, #coloringForOpponentTeamId>
+  [437] objcall 18 .............................. <tdata[#coloringForOpponentTeamId]>
+  [439] setlocal 1 .............................. tOpponentId = tdata[#coloringForOpponentTeamId]
+  [441] getparam 0 .............................. <me>
+  [443] pusharglist 1 ........................... <me>
+  [445] objcall 24 .............................. <me.getGameSystem()>
+  [447] getlocal 1 .............................. <tOpponentId>
+  [449] pusharglist 2 ........................... <me.getGameSystem(), tOpponentId>
+  [451] objcall 130 ............................. <me.getGameSystem().getGameObject(tOpponentId)>
+  [453] setlocal 2 .............................. tGameObject = me.getGameSystem().getGameObject(tOpponentId)
+  [455] getlocal 2 .............................. <tGameObject>
+  [457] pushzero ................................ <0>
+  [458] nteq .................................... <tGameObject <> 0>
+  [459] jmpifz [496] ............................ if tGameObject <> 0 then
+  [462] getlocal 2 .............................. <tGameObject>
+  [464] pushsymb 195 ............................ <#teamId>
+  [466] pusharglist 2 ........................... <tGameObject, #teamId>
+  [468] objcall 932 ............................. <tGameObject.getGameObjectProperty(#teamId)>
+  [471] setlocal 3 .............................. tTeamId = tGameObject.getGameObjectProperty(#teamId)
+  [473] getparam 1 .............................. <tdata>
+  [475] pushsymb 1020 ........................... <#opponentTeamId>
+  [478] getlocal 3 .............................. <tTeamId>
+  [480] pusharglistnoret 3 ...................... <tdata, #opponentTeamId, tTeamId>
+  [482] objcall 23 .............................. tdata.addProp(#opponentTeamId, tTeamId)
+  [484] getparam 0 .............................. <me>
+  [486] pushsymb 1018 ........................... <#set_ball_color>
+  [489] getparam 1 .............................. <tdata>
+  [491] pusharglistnoret 3 ...................... <me, #set_ball_color, tdata>
+  [493] objcall 1001 ............................ me.roomObjectAction(#set_ball_color, tdata)
+  [496] jmp [645]
+  [499] peek 0
+  [501] getprop 1012 ............................ <STATE_BALL_BROKEN>
+  [504] eq
+  [505] jmpifz [645] ............................ (case) STATE_BALL_BROKEN:
+  [508] getparam 0 .............................. <me>
+  [510] pushsymb 1014 ........................... <#set_bounce_state>
+  [513] getparam 1 .............................. <tdata>
+  [515] pushsymb 396 ............................ <#state>
+  [518] pusharglist 2 ........................... <tdata, #state>
+  [520] objcall 18 .............................. <tdata[#state]>
+  [522] pusharglistnoret 3 ...................... <me, #set_bounce_state, tdata[#state]>
+  [524] objcall 1001 ............................ me.roomObjectAction(#set_bounce_state, tdata[#state])
+  [527] getparam 0 .............................. <me>
+  [529] pushsymb 945 ............................ <#once>
+  [532] pushcons 9 .............................. <"bb2_efct_pu_harlequin_">
+  [534] pushsymb 197 ............................ <#ink>
+  [536] pushint8 33 ............................. <33>
+  [538] pusharglist 2 ........................... <[#ink: 33]>
+  [540] pushproplist ............................ <[#ink: 33]>
+  [541] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_harlequin_", [#ink: 33]>
+  [543] objcall 935 ............................. me.createEffect(#once, "bb2_efct_pu_harlequin_", [#ink: 33])
+  [546] getparam 0 .............................. <me>
+  [548] pushsymb 944 ............................ <#loop>
+  [551] pushcons 7 .............................. <"bb2_stunned_">
+  [553] pushsymb 336 ............................ <#loc>
+  [556] pushzero ................................ <0>
+  [557] pushint8 13 ............................. <13>
+  [559] pusharglist 2 ........................... <0, 13>
+  [561] extcall 322 ............................. <point(0, 13)>
+  [564] pushsymb 197 ............................ <#ink>
+  [566] pushint8 8 .............................. <8>
+  [568] pusharglist 4 ........................... <[#loc: point(0, 13), #ink: 8]>
+  [570] pushproplist ............................ <[#loc: point(0, 13), #ink: 8]>
+  [571] pusharglistnoret 4 ...................... <me, #loop, "bb2_stunned_", [#loc: point(0, 13), #ink: 8]>
+  [573] objcall 935 ............................. me.createEffect(#loop, "bb2_stunned_", [#loc: point(0, 13), #ink: 8])
+  [576] getprop 59 .............................. <pTargetLocation>
+  [578] pushsymb 10 ............................. <#x>
+  [580] pushint8 1 .............................. <1>
+  [582] inv ..................................... <-1>
+  [583] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
+  [585] objcall 21 .............................. pTargetLocation[#x] = -1
+  [587] getprop 60 .............................. <pExpectedLocation>
+  [589] pushsymb 10 ............................. <#x>
+  [591] pushint8 1 .............................. <1>
+  [593] inv ..................................... <-1>
+  [594] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
+  [596] objcall 21 .............................. pExpectedLocation[#x] = -1
+  [598] getparam 0 .............................. <me>
+  [600] pushsymb 1024 ........................... <#set_ball>
+  [603] pushzero ................................ <0>
+  [604] pusharglistnoret 3 ...................... <me, #set_ball, 0>
+  [606] objcall 1001 ............................ me.roomObjectAction(#set_ball, 0)
+  [609] getparam 0 .............................. <me>
+  [611] pushsymb 88 ............................. <#id>
+  [613] pusharglist 2 ........................... <me, #id>
+  [615] objcall 932 ............................. <me.getGameObjectProperty(#id)>
+  [618] getparam 0 .............................. <me>
+  [620] pusharglist 1 ........................... <me>
+  [622] objcall 1336 ............................ <me.getOwnGameIndex()>
+  [625] eq ...................................... <me.getGameObjectProperty(#id) = me.getOwnGameIndex()>
+  [626] jmpifz [645] ............................ if me.getGameObjectProperty(#id) = me.getOwnGameIndex() then
+  [629] getparam 0 .............................. <me>
+  [631] pusharglist 1 ........................... <me>
+  [633] objcall 24 .............................. <me.getGameSystem()>
+  [635] pushsymb 1329 ........................... <#soundeffect>
+  [638] pushcons 8 .............................. <"SFX-10-stunned">
+  [640] pusharglistnoret 3 ...................... <me.getGameSystem(), #soundeffect, "SFX-10-stunned">
+  [642] objcall 600 ............................. me.getGameSystem().sendGameSystemEvent(#soundeffect, "SFX-10-stunned")
+  [645] pop 1 ................................... end case
+  [647] getparam 0 .............................. <me>
+  [649] getparam 1 .............................. <tdata>
+  [651] pusharglist 2 ........................... <me, tdata>
+  [653] objcall 56 .............................. <me.updateRoomObjectLocation(tdata)>
+  [655] pusharglistnoret 1 ...................... <me.updateRoomObjectLocation(tdata)>
+  [657] extcall 13 .............................. return me.updateRoomObjectLocation(tdata)
+  [659] ret
 end
 
 on updateRoomObjectLocation me, tuser
   [  0] getparam 1 .............................. <tuser>
-  [  2] pushsymb 60 ............................. <#x>
+  [  2] pushsymb 10 ............................. <#x>
   [  4] pusharglist 2 ........................... <tuser, #x>
-  [  6] objcall 31 .............................. <tuser[#x]>
-  [  8] getprop 325 ............................. <pTargetLocation>
-  [ 11] pushsymb 60 ............................. <#x>
-  [ 13] pusharglist 2 ........................... <pTargetLocation, #x>
-  [ 15] objcall 31 .............................. <pTargetLocation[#x]>
-  [ 17] eq ...................................... <tuser[#x] = pTargetLocation[#x]>
-  [ 18] getparam 1 .............................. <tuser>
-  [ 20] pushsymb 61 ............................. <#y>
-  [ 22] pusharglist 2 ........................... <tuser, #y>
-  [ 24] objcall 31 .............................. <tuser[#y]>
-  [ 26] getprop 325 ............................. <pTargetLocation>
-  [ 29] pushsymb 61 ............................. <#y>
-  [ 31] pusharglist 2 ........................... <pTargetLocation, #y>
-  [ 33] objcall 31 .............................. <pTargetLocation[#y]>
-  [ 35] eq ...................................... <tuser[#y] = pTargetLocation[#y]>
-  [ 36] and ..................................... <(tuser[#x] = pTargetLocation[#x]) and (tuser[#y] = pTargetLocation[#y])>
-  [ 37] jmpifz [ 67] ............................ if (tuser[#x] = pTargetLocation[#x]) and (tuser[#y] = pTargetLocation[#y]) then / else
-  [ 40] getprop 325 ............................. <pTargetLocation>
-  [ 43] pushsymb 60 ............................. <#x>
-  [ 45] pushint8 1 .............................. <1>
-  [ 47] inv ..................................... <-1>
-  [ 48] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
-  [ 50] objcall 123 ............................. pTargetLocation[#x] = -1
-  [ 52] getprop 326 ............................. <pExpectedLocation>
-  [ 55] pushsymb 60 ............................. <#x>
-  [ 57] pushint8 1 .............................. <1>
-  [ 59] inv ..................................... <-1>
-  [ 60] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
-  [ 62] objcall 123 ............................. pExpectedLocation[#x] = -1
-  [ 64] jmp [ 92]
-  [ 67] getparam 0 .............................. <me>
-  [ 69] getparam 1 .............................. <tuser>
-  [ 71] pushsymb 60 ............................. <#x>
-  [ 73] pusharglist 2 ........................... <tuser, #x>
-  [ 75] objcall 31 .............................. <tuser[#x]>
-  [ 77] getparam 1 .............................. <tuser>
-  [ 79] pushsymb 61 ............................. <#y>
-  [ 81] pusharglist 2 ........................... <tuser, #y>
-  [ 83] objcall 31 .............................. <tuser[#y]>
-  [ 85] pusharglist 3 ........................... <me, tuser[#x], tuser[#y]>
-  [ 87] objcall 320 ............................. <me.solveNextTile(tuser[#x], tuser[#y])>
-  [ 90] setlocal 0 .............................. tNextLoc = me.solveNextTile(tuser[#x], tuser[#y])
-  [ 92] getlocal 0 .............................. <tNextLoc>
-  [ 94] pushzero ................................ <0>
-  [ 95] eq ...................................... <tNextLoc = 0>
-  [ 96] jmpifz [113] ............................ if tNextLoc = 0 then / else
-  [ 99] getparam 1 .............................. <tuser>
-  [101] pushsymb 341 ............................ <#dirBody>
-  [104] pusharglist 2 ........................... <tuser, #dirBody>
-  [106] objcall 31 .............................. <tuser[#dirBody]>
-  [108] setlocal 1 .............................. tDirBody = tuser[#dirBody]
-  [110] jmp [131]
-  [113] getparam 1 .............................. <tuser>
-  [115] pushsymb 341 ............................ <#dirBody>
-  [118] getlocal 0 .............................. <tNextLoc>
-  [120] pushsymb 341 ............................ <#dirBody>
-  [123] pusharglist 2 ........................... <tNextLoc, #dirBody>
-  [125] objcall 31 .............................. <tNextLoc[#dirBody]>
-  [127] pusharglistnoret 3 ...................... <tuser, #dirBody, tNextLoc[#dirBody]>
-  [129] objcall 123 ............................. tuser[#dirBody] = tNextLoc[#dirBody]
-  [131] getparam 1 .............................. <tuser>
-  [133] pushsymb 341 ............................ <#dirBody>
-  [136] pusharglist 2 ........................... <tuser, #dirBody>
-  [138] objcall 31 .............................. <tuser[#dirBody]>
-  [140] setprop 323 ............................. pDirBody = tuser[#dirBody]
-  [143] getprop 324 ............................. <pLocation>
-  [146] pushsymb 60 ............................. <#x>
-  [148] getparam 1 .............................. <tuser>
-  [150] pushsymb 60 ............................. <#x>
-  [152] pusharglist 2 ........................... <tuser, #x>
-  [154] objcall 31 .............................. <tuser[#x]>
-  [156] pusharglistnoret 3 ...................... <pLocation, #x, tuser[#x]>
-  [158] objcall 123 ............................. pLocation[#x] = tuser[#x]
-  [160] getprop 324 ............................. <pLocation>
-  [163] pushsymb 61 ............................. <#y>
-  [165] getparam 1 .............................. <tuser>
-  [167] pushsymb 61 ............................. <#y>
-  [169] pusharglist 2 ........................... <tuser, #y>
-  [171] objcall 31 .............................. <tuser[#y]>
-  [173] pusharglistnoret 3 ...................... <pLocation, #y, tuser[#y]>
-  [175] objcall 123 ............................. pLocation[#y] = tuser[#y]
-  [177] getprop 324 ............................. <pLocation>
-  [180] pushsymb 62 ............................. <#z>
-  [182] getparam 1 .............................. <tuser>
-  [184] pushsymb 62 ............................. <#z>
-  [186] pusharglist 2 ........................... <tuser, #z>
-  [188] objcall 31 .............................. <tuser[#z]>
-  [190] pusharglistnoret 3 ...................... <pLocation, #z, tuser[#z]>
-  [192] objcall 123 ............................. pLocation[#z] = tuser[#z]
-  [194] getprop 343 ............................. <pRoomObject>
-  [197] pusharglist 1 ........................... <pRoomObject>
-  [199] extcall 26 .............................. <objectp(pRoomObject)>
-  [201] not ..................................... <not objectp(pRoomObject)>
-  [202] jmpifz [220] ............................ if not objectp(pRoomObject) then
-  [205] getparam 0 .............................. <me>
-  [207] pushcons 10 ............................. <"Room object wrapper missing">
-  [209] pushsymb 319 ............................ <#updateRoomObjectLocation>
-  [212] pusharglist 3 ........................... <me, "Room object wrapper missing", #updateRoomObjectLocation>
-  [214] extcall 173 ............................. <error(me, "Room object wrapper missing", #updateRoomObjectLocation)>
-  [216] pusharglistnoret 1 ...................... <error(me, "Room object wrapper missing", #updateRoomObjectLocation)>
-  [218] extcall 28 .............................. return error(me, "Room object wrapper missing", #updateRoomObjectLocation)
-  [220] getprop 343 ............................. <pRoomObject>
-  [223] getparam 1 .............................. <tuser>
-  [225] pusharglistnoret 2 ...................... <pRoomObject, tuser>
-  [227] objcall 169 ............................. pRoomObject.setLocation(tuser)
-  [229] getparam 0 .............................. <me>
-  [231] getparam 1 .............................. <tuser>
-  [233] pusharglistnoret 2 ...................... <me, tuser>
-  [235] objcall 16 .............................. me.setEffectAnimationLocations(tuser)
-  [237] getprop 326 ............................. <pExpectedLocation>
-  [240] pushsymb 60 ............................. <#x>
-  [242] pusharglist 2 ........................... <pExpectedLocation, #x>
-  [244] objcall 31 .............................. <pExpectedLocation[#x]>
-  [246] pushint8 1 .............................. <1>
-  [248] inv ..................................... <-1>
-  [249] gt ...................................... <pExpectedLocation[#x] > -1>
-  [250] jmpifz [316] ............................ if pExpectedLocation[#x] > -1 then
-  [253] getparam 1 .............................. <tuser>
-  [255] pushsymb 60 ............................. <#x>
-  [257] pusharglist 2 ........................... <tuser, #x>
-  [259] objcall 31 .............................. <tuser[#x]>
-  [261] getprop 326 ............................. <pExpectedLocation>
-  [264] pushsymb 60 ............................. <#x>
-  [266] pusharglist 2 ........................... <pExpectedLocation, #x>
-  [268] objcall 31 .............................. <pExpectedLocation[#x]>
-  [270] nteq .................................... <tuser[#x] <> pExpectedLocation[#x]>
-  [271] getparam 1 .............................. <tuser>
-  [273] pushsymb 61 ............................. <#y>
-  [275] pusharglist 2 ........................... <tuser, #y>
-  [277] objcall 31 .............................. <tuser[#y]>
-  [279] getprop 326 ............................. <pExpectedLocation>
-  [282] pushsymb 61 ............................. <#y>
-  [284] pusharglist 2 ........................... <pExpectedLocation, #y>
-  [286] objcall 31 .............................. <pExpectedLocation[#y]>
-  [288] nteq .................................... <tuser[#y] <> pExpectedLocation[#y]>
-  [289] or ...................................... <(tuser[#x] <> pExpectedLocation[#x]) or (tuser[#y] <> pExpectedLocation[#y])>
-  [290] getlocal 0 .............................. <tNextLoc>
-  [292] pushzero ................................ <0>
-  [293] nteq .................................... <tNextLoc <> 0>
-  [294] and ..................................... <((tuser[#x] <> pExpectedLocation[#x]) or (tuser[#y] <> pExpectedLocation[#y])) and (tNextLoc <> 0)>
-  [295] jmpifz [316] ............................ if ((tuser[#x] <> pExpectedLocation[#x]) or (tuser[#y] <> pExpectedLocation[#y])) and (tNextLoc <> 0) then
-  [298] getprop 325 ............................. <pTargetLocation>
-  [301] pushsymb 60 ............................. <#x>
-  [303] pushint8 1 .............................. <1>
-  [305] inv ..................................... <-1>
-  [306] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
-  [308] objcall 123 ............................. pTargetLocation[#x] = -1
-  [310] pushint8 1 .............................. <1>
-  [312] pusharglistnoret 1 ...................... <1>
-  [314] extcall 28 .............................. return 1
-  [316] getlocal 0 .............................. <tNextLoc>
-  [318] pushzero ................................ <0>
-  [319] nteq .................................... <tNextLoc <> 0>
-  [320] jmpifz [357] ............................ if tNextLoc <> 0 then
-  [323] getprop 326 ............................. <pExpectedLocation>
-  [326] pushsymb 60 ............................. <#x>
-  [328] getlocal 0 .............................. <tNextLoc>
-  [330] pushsymb 60 ............................. <#x>
-  [332] pusharglist 2 ........................... <tNextLoc, #x>
-  [334] objcall 31 .............................. <tNextLoc[#x]>
-  [336] pusharglistnoret 3 ...................... <pExpectedLocation, #x, tNextLoc[#x]>
-  [338] objcall 123 ............................. pExpectedLocation[#x] = tNextLoc[#x]
-  [340] getprop 326 ............................. <pExpectedLocation>
-  [343] pushsymb 61 ............................. <#y>
-  [345] getlocal 0 .............................. <tNextLoc>
-  [347] pushsymb 61 ............................. <#y>
-  [349] pusharglist 2 ........................... <tNextLoc, #y>
-  [351] objcall 31 .............................. <tNextLoc[#y]>
-  [353] pusharglistnoret 3 ...................... <pExpectedLocation, #y, tNextLoc[#y]>
-  [355] objcall 123 ............................. pExpectedLocation[#y] = tNextLoc[#y]
-  [357] getprop 343 ............................. <pRoomObject>
-  [360] getparam 1 .............................. <tuser>
-  [362] getlocal 0 .............................. <tNextLoc>
-  [364] pusharglistnoret 3 ...................... <pRoomObject, tuser, tNextLoc>
-  [366] objcall 355 ............................. pRoomObject.setTarget(tuser, tNextLoc)
-  [369] pushint8 1 .............................. <1>
-  [371] pusharglistnoret 1 ...................... <1>
-  [373] extcall 28 .............................. return 1
-  [375] ret
+  [  6] objcall 18 .............................. <tuser[#x]>
+  [  8] getprop 59 .............................. <pTargetLocation>
+  [ 10] pushsymb 10 ............................. <#x>
+  [ 12] pusharglist 2 ........................... <pTargetLocation, #x>
+  [ 14] objcall 18 .............................. <pTargetLocation[#x]>
+  [ 16] eq ...................................... <tuser[#x] = pTargetLocation[#x]>
+  [ 17] getparam 1 .............................. <tuser>
+  [ 19] pushsymb 11 ............................. <#y>
+  [ 21] pusharglist 2 ........................... <tuser, #y>
+  [ 23] objcall 18 .............................. <tuser[#y]>
+  [ 25] getprop 59 .............................. <pTargetLocation>
+  [ 27] pushsymb 11 ............................. <#y>
+  [ 29] pusharglist 2 ........................... <pTargetLocation, #y>
+  [ 31] objcall 18 .............................. <pTargetLocation[#y]>
+  [ 33] eq ...................................... <tuser[#y] = pTargetLocation[#y]>
+  [ 34] and ..................................... <(tuser[#x] = pTargetLocation[#x]) and (tuser[#y] = pTargetLocation[#y])>
+  [ 35] jmpifz [ 63] ............................ if (tuser[#x] = pTargetLocation[#x]) and (tuser[#y] = pTargetLocation[#y]) then / else
+  [ 38] getprop 59 .............................. <pTargetLocation>
+  [ 40] pushsymb 10 ............................. <#x>
+  [ 42] pushint8 1 .............................. <1>
+  [ 44] inv ..................................... <-1>
+  [ 45] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
+  [ 47] objcall 21 .............................. pTargetLocation[#x] = -1
+  [ 49] getprop 60 .............................. <pExpectedLocation>
+  [ 51] pushsymb 10 ............................. <#x>
+  [ 53] pushint8 1 .............................. <1>
+  [ 55] inv ..................................... <-1>
+  [ 56] pusharglistnoret 3 ...................... <pExpectedLocation, #x, -1>
+  [ 58] objcall 21 .............................. pExpectedLocation[#x] = -1
+  [ 60] jmp [ 87]
+  [ 63] getparam 0 .............................. <me>
+  [ 65] getparam 1 .............................. <tuser>
+  [ 67] pushsymb 10 ............................. <#x>
+  [ 69] pusharglist 2 ........................... <tuser, #x>
+  [ 71] objcall 18 .............................. <tuser[#x]>
+  [ 73] getparam 1 .............................. <tuser>
+  [ 75] pushsymb 11 ............................. <#y>
+  [ 77] pusharglist 2 ........................... <tuser, #y>
+  [ 79] objcall 18 .............................. <tuser[#y]>
+  [ 81] pusharglist 3 ........................... <me, tuser[#x], tuser[#y]>
+  [ 83] objcall 57 .............................. <me.solveNextTile(tuser[#x], tuser[#y])>
+  [ 85] setlocal 0 .............................. tNextLoc = me.solveNextTile(tuser[#x], tuser[#y])
+  [ 87] getlocal 0 .............................. <tNextLoc>
+  [ 89] pushzero ................................ <0>
+  [ 90] eq ...................................... <tNextLoc = 0>
+  [ 91] jmpifz [107] ............................ if tNextLoc = 0 then / else
+  [ 94] getparam 1 .............................. <tuser>
+  [ 96] pushsymb 83 ............................. <#dirBody>
+  [ 98] pusharglist 2 ........................... <tuser, #dirBody>
+  [100] objcall 18 .............................. <tuser[#dirBody]>
+  [102] setlocal 1 .............................. tDirBody = tuser[#dirBody]
+  [104] jmp [123]
+  [107] getparam 1 .............................. <tuser>
+  [109] pushsymb 83 ............................. <#dirBody>
+  [111] getlocal 0 .............................. <tNextLoc>
+  [113] pushsymb 83 ............................. <#dirBody>
+  [115] pusharglist 2 ........................... <tNextLoc, #dirBody>
+  [117] objcall 18 .............................. <tNextLoc[#dirBody]>
+  [119] pusharglistnoret 3 ...................... <tuser, #dirBody, tNextLoc[#dirBody]>
+  [121] objcall 21 .............................. tuser[#dirBody] = tNextLoc[#dirBody]
+  [123] getparam 1 .............................. <tuser>
+  [125] pushsymb 83 ............................. <#dirBody>
+  [127] pusharglist 2 ........................... <tuser, #dirBody>
+  [129] objcall 18 .............................. <tuser[#dirBody]>
+  [131] setprop 58 .............................. pDirBody = tuser[#dirBody]
+  [133] getprop 9 ............................... <pLocation>
+  [135] pushsymb 10 ............................. <#x>
+  [137] getparam 1 .............................. <tuser>
+  [139] pushsymb 10 ............................. <#x>
+  [141] pusharglist 2 ........................... <tuser, #x>
+  [143] objcall 18 .............................. <tuser[#x]>
+  [145] pusharglistnoret 3 ...................... <pLocation, #x, tuser[#x]>
+  [147] objcall 21 .............................. pLocation[#x] = tuser[#x]
+  [149] getprop 9 ............................... <pLocation>
+  [151] pushsymb 11 ............................. <#y>
+  [153] getparam 1 .............................. <tuser>
+  [155] pushsymb 11 ............................. <#y>
+  [157] pusharglist 2 ........................... <tuser, #y>
+  [159] objcall 18 .............................. <tuser[#y]>
+  [161] pusharglistnoret 3 ...................... <pLocation, #y, tuser[#y]>
+  [163] objcall 21 .............................. pLocation[#y] = tuser[#y]
+  [165] getprop 9 ............................... <pLocation>
+  [167] pushsymb 12 ............................. <#z>
+  [169] getparam 1 .............................. <tuser>
+  [171] pushsymb 12 ............................. <#z>
+  [173] pusharglist 2 ........................... <tuser, #z>
+  [175] objcall 18 .............................. <tuser[#z]>
+  [177] pusharglistnoret 3 ...................... <pLocation, #z, tuser[#z]>
+  [179] objcall 21 .............................. pLocation[#z] = tuser[#z]
+  [181] getprop 37 .............................. <pRoomObject>
+  [183] pusharglist 1 ........................... <pRoomObject>
+  [185] extcall 42 .............................. <objectp(pRoomObject)>
+  [187] not ..................................... <not objectp(pRoomObject)>
+  [188] jmpifz [205] ............................ if not objectp(pRoomObject) then
+  [191] getparam 0 .............................. <me>
+  [193] pushcons 10 ............................. <"Room object wrapper missing">
+  [195] pushsymb 56 ............................. <#updateRoomObjectLocation>
+  [197] pusharglist 3 ........................... <me, "Room object wrapper missing", #updateRoomObjectLocation>
+  [199] extcall 19 .............................. <error(me, "Room object wrapper missing", #updateRoomObjectLocation)>
+  [201] pusharglistnoret 1 ...................... <error(me, "Room object wrapper missing", #updateRoomObjectLocation)>
+  [203] extcall 13 .............................. return error(me, "Room object wrapper missing", #updateRoomObjectLocation)
+  [205] getprop 37 .............................. <pRoomObject>
+  [207] getparam 1 .............................. <tuser>
+  [209] pusharglistnoret 2 ...................... <pRoomObject, tuser>
+  [211] objcall 89 .............................. pRoomObject.setLocation(tuser)
+  [213] getparam 0 .............................. <me>
+  [215] getparam 1 .............................. <tuser>
+  [217] pusharglistnoret 2 ...................... <me, tuser>
+  [219] objcall 1231 ............................ me.setEffectAnimationLocations(tuser)
+  [222] getprop 60 .............................. <pExpectedLocation>
+  [224] pushsymb 10 ............................. <#x>
+  [226] pusharglist 2 ........................... <pExpectedLocation, #x>
+  [228] objcall 18 .............................. <pExpectedLocation[#x]>
+  [230] pushint8 1 .............................. <1>
+  [232] inv ..................................... <-1>
+  [233] gt ...................................... <pExpectedLocation[#x] > -1>
+  [234] jmpifz [297] ............................ if pExpectedLocation[#x] > -1 then
+  [237] getparam 1 .............................. <tuser>
+  [239] pushsymb 10 ............................. <#x>
+  [241] pusharglist 2 ........................... <tuser, #x>
+  [243] objcall 18 .............................. <tuser[#x]>
+  [245] getprop 60 .............................. <pExpectedLocation>
+  [247] pushsymb 10 ............................. <#x>
+  [249] pusharglist 2 ........................... <pExpectedLocation, #x>
+  [251] objcall 18 .............................. <pExpectedLocation[#x]>
+  [253] nteq .................................... <tuser[#x] <> pExpectedLocation[#x]>
+  [254] getparam 1 .............................. <tuser>
+  [256] pushsymb 11 ............................. <#y>
+  [258] pusharglist 2 ........................... <tuser, #y>
+  [260] objcall 18 .............................. <tuser[#y]>
+  [262] getprop 60 .............................. <pExpectedLocation>
+  [264] pushsymb 11 ............................. <#y>
+  [266] pusharglist 2 ........................... <pExpectedLocation, #y>
+  [268] objcall 18 .............................. <pExpectedLocation[#y]>
+  [270] nteq .................................... <tuser[#y] <> pExpectedLocation[#y]>
+  [271] or ...................................... <(tuser[#x] <> pExpectedLocation[#x]) or (tuser[#y] <> pExpectedLocation[#y])>
+  [272] getlocal 0 .............................. <tNextLoc>
+  [274] pushzero ................................ <0>
+  [275] nteq .................................... <tNextLoc <> 0>
+  [276] and ..................................... <((tuser[#x] <> pExpectedLocation[#x]) or (tuser[#y] <> pExpectedLocation[#y])) and (tNextLoc <> 0)>
+  [277] jmpifz [297] ............................ if ((tuser[#x] <> pExpectedLocation[#x]) or (tuser[#y] <> pExpectedLocation[#y])) and (tNextLoc <> 0) then
+  [280] getprop 59 .............................. <pTargetLocation>
+  [282] pushsymb 10 ............................. <#x>
+  [284] pushint8 1 .............................. <1>
+  [286] inv ..................................... <-1>
+  [287] pusharglistnoret 3 ...................... <pTargetLocation, #x, -1>
+  [289] objcall 21 .............................. pTargetLocation[#x] = -1
+  [291] pushint8 1 .............................. <1>
+  [293] pusharglistnoret 1 ...................... <1>
+  [295] extcall 13 .............................. return 1
+  [297] getlocal 0 .............................. <tNextLoc>
+  [299] pushzero ................................ <0>
+  [300] nteq .................................... <tNextLoc <> 0>
+  [301] jmpifz [336] ............................ if tNextLoc <> 0 then
+  [304] getprop 60 .............................. <pExpectedLocation>
+  [306] pushsymb 10 ............................. <#x>
+  [308] getlocal 0 .............................. <tNextLoc>
+  [310] pushsymb 10 ............................. <#x>
+  [312] pusharglist 2 ........................... <tNextLoc, #x>
+  [314] objcall 18 .............................. <tNextLoc[#x]>
+  [316] pusharglistnoret 3 ...................... <pExpectedLocation, #x, tNextLoc[#x]>
+  [318] objcall 21 .............................. pExpectedLocation[#x] = tNextLoc[#x]
+  [320] getprop 60 .............................. <pExpectedLocation>
+  [322] pushsymb 11 ............................. <#y>
+  [324] getlocal 0 .............................. <tNextLoc>
+  [326] pushsymb 11 ............................. <#y>
+  [328] pusharglist 2 ........................... <tNextLoc, #y>
+  [330] objcall 18 .............................. <tNextLoc[#y]>
+  [332] pusharglistnoret 3 ...................... <pExpectedLocation, #y, tNextLoc[#y]>
+  [334] objcall 21 .............................. pExpectedLocation[#y] = tNextLoc[#y]
+  [336] getprop 37 .............................. <pRoomObject>
+  [338] getparam 1 .............................. <tuser>
+  [340] getlocal 0 .............................. <tNextLoc>
+  [342] pusharglistnoret 3 ...................... <pRoomObject, tuser, tNextLoc>
+  [344] objcall 90 .............................. pRoomObject.setTarget(tuser, tNextLoc)
+  [346] pushint8 1 .............................. <1>
+  [348] pusharglistnoret 1 ...................... <1>
+  [350] extcall 13 .............................. return 1
+  [352] ret
 end
 
 on solveNextTile me, tCurrentLocX, tCurrentLocY
-  [  0] getprop 325 ............................. <pTargetLocation>
-  [  3] pushsymb 60 ............................. <#x>
-  [  5] pusharglist 2 ........................... <pTargetLocation, #x>
-  [  7] objcall 31 .............................. <pTargetLocation[#x]>
-  [  9] pushint8 1 .............................. <1>
-  [ 11] inv ..................................... <-1>
-  [ 12] eq ...................................... <pTargetLocation[#x] = -1>
-  [ 13] jmpifz [ 21] ............................ if pTargetLocation[#x] = -1 then
-  [ 16] pushzero ................................ <0>
-  [ 17] pusharglistnoret 1 ...................... <0>
-  [ 19] extcall 28 .............................. return 0
-  [ 21] getparam 0 .............................. <me>
-  [ 23] pusharglist 1 ........................... <me>
-  [ 25] objcall 201 ............................. <me.getGameSystem()>
-  [ 27] setlocal 0 .............................. tGameSystem = me.getGameSystem()
-  [ 29] getlocal 0 .............................. <tGameSystem>
-  [ 31] pushzero ................................ <0>
-  [ 32] eq ...................................... <tGameSystem = 0>
-  [ 33] jmpifz [ 41] ............................ if tGameSystem = 0 then
-  [ 36] pushzero ................................ <0>
-  [ 37] pusharglistnoret 1 ...................... <0>
-  [ 39] extcall 28 .............................. return 0
-  [ 41] getprop 325 ............................. <pTargetLocation>
-  [ 44] pushsymb 60 ............................. <#x>
-  [ 46] pusharglist 2 ........................... <pTargetLocation, #x>
-  [ 48] objcall 31 .............................. <pTargetLocation[#x]>
-  [ 50] setlocal 1 .............................. tGoalX = pTargetLocation[#x]
-  [ 52] getprop 325 ............................. <pTargetLocation>
-  [ 55] pushsymb 61 ............................. <#y>
-  [ 57] pusharglist 2 ........................... <pTargetLocation, #y>
-  [ 59] objcall 31 .............................. <pTargetLocation[#y]>
-  [ 61] setlocal 2 .............................. tGoalY = pTargetLocation[#y]
-  [ 63] getprop 336 ............................. <pDirObject>
-  [ 66] getparam 1 .............................. <tCurrentLocX>
-  [ 68] getparam 2 .............................. <tCurrentLocY>
-  [ 70] getlocal 1 .............................. <tGoalX>
-  [ 72] getlocal 2 .............................. <tGoalY>
-  [ 74] pusharglistnoret 5 ...................... <pDirObject, tCurrentLocX, tCurrentLocY, tGoalX, tGoalY>
-  [ 76] objcall 358 ............................. pDirObject.defineLine(tCurrentLocX, tCurrentLocY, tGoalX, tGoalY)
-  [ 79] getparam 1 .............................. <tCurrentLocX>
-  [ 81] getprop 336 ............................. <pDirObject>
-  [ 84] pusharglist 1 ........................... <pDirObject>
-  [ 86] objcall 359 ............................. <pDirObject.getUnitVectorXComponent()>
-  [ 89] add ..................................... <tCurrentLocX + pDirObject.getUnitVectorXComponent()>
-  [ 90] setlocal 3 .............................. tNextX = tCurrentLocX + pDirObject.getUnitVectorXComponent()
-  [ 92] getparam 2 .............................. <tCurrentLocY>
-  [ 94] getprop 336 ............................. <pDirObject>
-  [ 97] pusharglist 1 ........................... <pDirObject>
-  [ 99] objcall 360 ............................. <pDirObject.getUnitVectorYComponent()>
-  [102] add ..................................... <tCurrentLocY + pDirObject.getUnitVectorYComponent()>
-  [103] setlocal 4 .............................. tNextY = tCurrentLocY + pDirObject.getUnitVectorYComponent()
-  [105] getlocal 0 .............................. <tGameSystem>
-  [107] pusharglist 1 ........................... <tGameSystem>
-  [109] objcall 262 ............................. <tGameSystem.getWorld()>
-  [112] getlocal 3 .............................. <tNextX>
-  [114] getlocal 4 .............................. <tNextY>
-  [116] pusharglist 3 ........................... <tGameSystem.getWorld(), tNextX, tNextY>
-  [118] objcall 263 ............................. <tGameSystem.getWorld().getTile(tNextX, tNextY)>
-  [121] setlocal 5 .............................. tNextTile = tGameSystem.getWorld().getTile(tNextX, tNextY)
-  [123] getlocal 5 .............................. <tNextTile>
-  [125] pushzero ................................ <0>
-  [126] nteq .................................... <tNextTile <> 0>
-  [127] jmpifz [187] ............................ if tNextTile <> 0 then
-  [130] getlocal 5 .............................. <tNextTile>
-  [132] getlocal 3 .............................. <tNextX>
-  [134] getlocal 4 .............................. <tNextY>
-  [136] pusharglist 3 ........................... <tNextTile, tNextX, tNextY>
-  [138] objcall 264 ............................. <tNextTile.getType(tNextX, tNextY)>
-  [141] setlocal 6 .............................. tNextZ = tNextTile.getType(tNextX, tNextY)
-  [143] getlocal 6 .............................. <tNextZ>
-  [145] pusharglist 1 ........................... <tNextZ>
-  [147] extcall 181 ............................. <integer(tNextZ)>
-  [149] pusharglist 1 ........................... <integer(tNextZ)>
-  [151] extcall 265 ............................. <integerp(integer(tNextZ))>
-  [154] jmpifz [187] ............................ if integerp(integer(tNextZ)) then
-  [157] pushsymb 60 ............................. <#x>
-  [159] getlocal 3 .............................. <tNextX>
-  [161] pushsymb 61 ............................. <#y>
-  [163] getlocal 4 .............................. <tNextY>
-  [165] pushsymb 62 ............................. <#z>
-  [167] getlocal 6 .............................. <tNextZ>
-  [169] pushsymb 341 ............................ <#dirBody>
-  [172] getprop 336 ............................. <pDirObject>
-  [175] pusharglist 1 ........................... <pDirObject>
-  [177] objcall 361 ............................. <pDirObject.getDirection()>
-  [180] pusharglist 8 ........................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [182] pushproplist ............................ <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [183] pusharglistnoret 1 ...................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [185] extcall 28 .............................. return [#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]
-  [187] getprop 336 ............................. <pDirObject>
-  [190] pushint8 1 .............................. <1>
-  [192] pusharglistnoret 2 ...................... <pDirObject, 1>
-  [194] objcall 362 ............................. pDirObject.rotateDirection45Degrees(1)
-  [197] getparam 1 .............................. <tCurrentLocX>
-  [199] getprop 336 ............................. <pDirObject>
-  [202] pusharglist 1 ........................... <pDirObject>
-  [204] objcall 359 ............................. <pDirObject.getUnitVectorXComponent()>
-  [207] add ..................................... <tCurrentLocX + pDirObject.getUnitVectorXComponent()>
-  [208] setlocal 3 .............................. tNextX = tCurrentLocX + pDirObject.getUnitVectorXComponent()
-  [210] getparam 2 .............................. <tCurrentLocY>
-  [212] getprop 336 ............................. <pDirObject>
-  [215] pusharglist 1 ........................... <pDirObject>
-  [217] objcall 360 ............................. <pDirObject.getUnitVectorYComponent()>
-  [220] add ..................................... <tCurrentLocY + pDirObject.getUnitVectorYComponent()>
-  [221] setlocal 4 .............................. tNextY = tCurrentLocY + pDirObject.getUnitVectorYComponent()
-  [223] getlocal 0 .............................. <tGameSystem>
-  [225] pusharglist 1 ........................... <tGameSystem>
-  [227] objcall 262 ............................. <tGameSystem.getWorld()>
-  [230] getlocal 3 .............................. <tNextX>
-  [232] getlocal 4 .............................. <tNextY>
-  [234] pusharglist 3 ........................... <tGameSystem.getWorld(), tNextX, tNextY>
-  [236] objcall 263 ............................. <tGameSystem.getWorld().getTile(tNextX, tNextY)>
-  [239] setlocal 5 .............................. tNextTile = tGameSystem.getWorld().getTile(tNextX, tNextY)
-  [241] getlocal 5 .............................. <tNextTile>
-  [243] pushzero ................................ <0>
-  [244] nteq .................................... <tNextTile <> 0>
-  [245] jmpifz [305] ............................ if tNextTile <> 0 then
-  [248] getlocal 5 .............................. <tNextTile>
-  [250] getlocal 3 .............................. <tNextX>
-  [252] getlocal 4 .............................. <tNextY>
-  [254] pusharglist 3 ........................... <tNextTile, tNextX, tNextY>
-  [256] objcall 264 ............................. <tNextTile.getType(tNextX, tNextY)>
-  [259] setlocal 6 .............................. tNextZ = tNextTile.getType(tNextX, tNextY)
-  [261] getlocal 6 .............................. <tNextZ>
-  [263] pusharglist 1 ........................... <tNextZ>
-  [265] extcall 181 ............................. <integer(tNextZ)>
-  [267] pusharglist 1 ........................... <integer(tNextZ)>
-  [269] extcall 265 ............................. <integerp(integer(tNextZ))>
-  [272] jmpifz [305] ............................ if integerp(integer(tNextZ)) then
-  [275] pushsymb 60 ............................. <#x>
-  [277] getlocal 3 .............................. <tNextX>
-  [279] pushsymb 61 ............................. <#y>
-  [281] getlocal 4 .............................. <tNextY>
-  [283] pushsymb 62 ............................. <#z>
-  [285] getlocal 6 .............................. <tNextZ>
-  [287] pushsymb 341 ............................ <#dirBody>
-  [290] getprop 336 ............................. <pDirObject>
-  [293] pusharglist 1 ........................... <pDirObject>
-  [295] objcall 361 ............................. <pDirObject.getDirection()>
-  [298] pusharglist 8 ........................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [300] pushproplist ............................ <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [301] pusharglistnoret 1 ...................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [303] extcall 28 .............................. return [#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]
-  [305] getprop 336 ............................. <pDirObject>
-  [308] pushzero ................................ <0>
-  [309] pusharglistnoret 2 ...................... <pDirObject, 0>
-  [311] objcall 362 ............................. pDirObject.rotateDirection45Degrees(0)
-  [314] getprop 336 ............................. <pDirObject>
-  [317] pushzero ................................ <0>
-  [318] pusharglistnoret 2 ...................... <pDirObject, 0>
-  [320] objcall 362 ............................. pDirObject.rotateDirection45Degrees(0)
-  [323] getparam 1 .............................. <tCurrentLocX>
-  [325] getprop 336 ............................. <pDirObject>
+  [  0] getprop 59 .............................. <pTargetLocation>
+  [  2] pushsymb 10 ............................. <#x>
+  [  4] pusharglist 2 ........................... <pTargetLocation, #x>
+  [  6] objcall 18 .............................. <pTargetLocation[#x]>
+  [  8] pushint8 1 .............................. <1>
+  [ 10] inv ..................................... <-1>
+  [ 11] eq ...................................... <pTargetLocation[#x] = -1>
+  [ 12] jmpifz [ 20] ............................ if pTargetLocation[#x] = -1 then
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 13 .............................. return 0
+  [ 20] getparam 0 .............................. <me>
+  [ 22] pusharglist 1 ........................... <me>
+  [ 24] objcall 24 .............................. <me.getGameSystem()>
+  [ 26] setlocal 0 .............................. tGameSystem = me.getGameSystem()
+  [ 28] getlocal 0 .............................. <tGameSystem>
+  [ 30] pushzero ................................ <0>
+  [ 31] eq ...................................... <tGameSystem = 0>
+  [ 32] jmpifz [ 40] ............................ if tGameSystem = 0 then
+  [ 35] pushzero ................................ <0>
+  [ 36] pusharglistnoret 1 ...................... <0>
+  [ 38] extcall 13 .............................. return 0
+  [ 40] getprop 59 .............................. <pTargetLocation>
+  [ 42] pushsymb 10 ............................. <#x>
+  [ 44] pusharglist 2 ........................... <pTargetLocation, #x>
+  [ 46] objcall 18 .............................. <pTargetLocation[#x]>
+  [ 48] setlocal 1 .............................. tGoalX = pTargetLocation[#x]
+  [ 50] getprop 59 .............................. <pTargetLocation>
+  [ 52] pushsymb 11 ............................. <#y>
+  [ 54] pusharglist 2 ........................... <pTargetLocation, #y>
+  [ 56] objcall 18 .............................. <pTargetLocation[#y]>
+  [ 58] setlocal 2 .............................. tGoalY = pTargetLocation[#y]
+  [ 60] getprop 1000 ............................ <pDirObject>
+  [ 63] getparam 1 .............................. <tCurrentLocX>
+  [ 65] getparam 2 .............................. <tCurrentLocY>
+  [ 67] getlocal 1 .............................. <tGoalX>
+  [ 69] getlocal 2 .............................. <tGoalY>
+  [ 71] pusharglistnoret 5 ...................... <pDirObject, tCurrentLocX, tCurrentLocY, tGoalX, tGoalY>
+  [ 73] objcall 998 ............................. pDirObject.defineLine(tCurrentLocX, tCurrentLocY, tGoalX, tGoalY)
+  [ 76] getparam 1 .............................. <tCurrentLocX>
+  [ 78] getprop 1000 ............................ <pDirObject>
+  [ 81] pusharglist 1 ........................... <pDirObject>
+  [ 83] objcall 984 ............................. <pDirObject.getUnitVectorXComponent()>
+  [ 86] add ..................................... <tCurrentLocX + pDirObject.getUnitVectorXComponent()>
+  [ 87] setlocal 3 .............................. tNextX = tCurrentLocX + pDirObject.getUnitVectorXComponent()
+  [ 89] getparam 2 .............................. <tCurrentLocY>
+  [ 91] getprop 1000 ............................ <pDirObject>
+  [ 94] pusharglist 1 ........................... <pDirObject>
+  [ 96] objcall 985 ............................. <pDirObject.getUnitVectorYComponent()>
+  [ 99] add ..................................... <tCurrentLocY + pDirObject.getUnitVectorYComponent()>
+  [100] setlocal 4 .............................. tNextY = tCurrentLocY + pDirObject.getUnitVectorYComponent()
+  [102] getlocal 0 .............................. <tGameSystem>
+  [104] pusharglist 1 ........................... <tGameSystem>
+  [106] objcall 48 .............................. <tGameSystem.getWorld()>
+  [108] getlocal 3 .............................. <tNextX>
+  [110] getlocal 4 .............................. <tNextY>
+  [112] pusharglist 3 ........................... <tGameSystem.getWorld(), tNextX, tNextY>
+  [114] objcall 94 .............................. <tGameSystem.getWorld().getTile(tNextX, tNextY)>
+  [116] setlocal 5 .............................. tNextTile = tGameSystem.getWorld().getTile(tNextX, tNextY)
+  [118] getlocal 5 .............................. <tNextTile>
+  [120] pushzero ................................ <0>
+  [121] nteq .................................... <tNextTile <> 0>
+  [122] jmpifz [179] ............................ if tNextTile <> 0 then
+  [125] getlocal 5 .............................. <tNextTile>
+  [127] getlocal 3 .............................. <tNextX>
+  [129] getlocal 4 .............................. <tNextY>
+  [131] pusharglist 3 ........................... <tNextTile, tNextX, tNextY>
+  [133] objcall 96 .............................. <tNextTile.getType(tNextX, tNextY)>
+  [135] setlocal 6 .............................. tNextZ = tNextTile.getType(tNextX, tNextY)
+  [137] getlocal 6 .............................. <tNextZ>
+  [139] pusharglist 1 ........................... <tNextZ>
+  [141] extcall 95 .............................. <integer(tNextZ)>
+  [143] pusharglist 1 ........................... <integer(tNextZ)>
+  [145] extcall 97 .............................. <integerp(integer(tNextZ))>
+  [147] jmpifz [179] ............................ if integerp(integer(tNextZ)) then
+  [150] pushsymb 10 ............................. <#x>
+  [152] getlocal 3 .............................. <tNextX>
+  [154] pushsymb 11 ............................. <#y>
+  [156] getlocal 4 .............................. <tNextY>
+  [158] pushsymb 12 ............................. <#z>
+  [160] getlocal 6 .............................. <tNextZ>
+  [162] pushsymb 83 ............................. <#dirBody>
+  [164] getprop 1000 ............................ <pDirObject>
+  [167] pusharglist 1 ........................... <pDirObject>
+  [169] objcall 982 ............................. <pDirObject.getDirection()>
+  [172] pusharglist 8 ........................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [174] pushproplist ............................ <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [175] pusharglistnoret 1 ...................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [177] extcall 13 .............................. return [#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]
+  [179] getprop 1000 ............................ <pDirObject>
+  [182] pushint8 1 .............................. <1>
+  [184] pusharglistnoret 2 ...................... <pDirObject, 1>
+  [186] objcall 989 ............................. pDirObject.rotateDirection45Degrees(1)
+  [189] getparam 1 .............................. <tCurrentLocX>
+  [191] getprop 1000 ............................ <pDirObject>
+  [194] pusharglist 1 ........................... <pDirObject>
+  [196] objcall 984 ............................. <pDirObject.getUnitVectorXComponent()>
+  [199] add ..................................... <tCurrentLocX + pDirObject.getUnitVectorXComponent()>
+  [200] setlocal 3 .............................. tNextX = tCurrentLocX + pDirObject.getUnitVectorXComponent()
+  [202] getparam 2 .............................. <tCurrentLocY>
+  [204] getprop 1000 ............................ <pDirObject>
+  [207] pusharglist 1 ........................... <pDirObject>
+  [209] objcall 985 ............................. <pDirObject.getUnitVectorYComponent()>
+  [212] add ..................................... <tCurrentLocY + pDirObject.getUnitVectorYComponent()>
+  [213] setlocal 4 .............................. tNextY = tCurrentLocY + pDirObject.getUnitVectorYComponent()
+  [215] getlocal 0 .............................. <tGameSystem>
+  [217] pusharglist 1 ........................... <tGameSystem>
+  [219] objcall 48 .............................. <tGameSystem.getWorld()>
+  [221] getlocal 3 .............................. <tNextX>
+  [223] getlocal 4 .............................. <tNextY>
+  [225] pusharglist 3 ........................... <tGameSystem.getWorld(), tNextX, tNextY>
+  [227] objcall 94 .............................. <tGameSystem.getWorld().getTile(tNextX, tNextY)>
+  [229] setlocal 5 .............................. tNextTile = tGameSystem.getWorld().getTile(tNextX, tNextY)
+  [231] getlocal 5 .............................. <tNextTile>
+  [233] pushzero ................................ <0>
+  [234] nteq .................................... <tNextTile <> 0>
+  [235] jmpifz [292] ............................ if tNextTile <> 0 then
+  [238] getlocal 5 .............................. <tNextTile>
+  [240] getlocal 3 .............................. <tNextX>
+  [242] getlocal 4 .............................. <tNextY>
+  [244] pusharglist 3 ........................... <tNextTile, tNextX, tNextY>
+  [246] objcall 96 .............................. <tNextTile.getType(tNextX, tNextY)>
+  [248] setlocal 6 .............................. tNextZ = tNextTile.getType(tNextX, tNextY)
+  [250] getlocal 6 .............................. <tNextZ>
+  [252] pusharglist 1 ........................... <tNextZ>
+  [254] extcall 95 .............................. <integer(tNextZ)>
+  [256] pusharglist 1 ........................... <integer(tNextZ)>
+  [258] extcall 97 .............................. <integerp(integer(tNextZ))>
+  [260] jmpifz [292] ............................ if integerp(integer(tNextZ)) then
+  [263] pushsymb 10 ............................. <#x>
+  [265] getlocal 3 .............................. <tNextX>
+  [267] pushsymb 11 ............................. <#y>
+  [269] getlocal 4 .............................. <tNextY>
+  [271] pushsymb 12 ............................. <#z>
+  [273] getlocal 6 .............................. <tNextZ>
+  [275] pushsymb 83 ............................. <#dirBody>
+  [277] getprop 1000 ............................ <pDirObject>
+  [280] pusharglist 1 ........................... <pDirObject>
+  [282] objcall 982 ............................. <pDirObject.getDirection()>
+  [285] pusharglist 8 ........................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [287] pushproplist ............................ <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [288] pusharglistnoret 1 ...................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [290] extcall 13 .............................. return [#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]
+  [292] getprop 1000 ............................ <pDirObject>
+  [295] pushzero ................................ <0>
+  [296] pusharglistnoret 2 ...................... <pDirObject, 0>
+  [298] objcall 989 ............................. pDirObject.rotateDirection45Degrees(0)
+  [301] getprop 1000 ............................ <pDirObject>
+  [304] pushzero ................................ <0>
+  [305] pusharglistnoret 2 ...................... <pDirObject, 0>
+  [307] objcall 989 ............................. pDirObject.rotateDirection45Degrees(0)
+  [310] getparam 1 .............................. <tCurrentLocX>
+  [312] getprop 1000 ............................ <pDirObject>
+  [315] pusharglist 1 ........................... <pDirObject>
+  [317] objcall 984 ............................. <pDirObject.getUnitVectorXComponent()>
+  [320] add ..................................... <tCurrentLocX + pDirObject.getUnitVectorXComponent()>
+  [321] setlocal 3 .............................. tNextX = tCurrentLocX + pDirObject.getUnitVectorXComponent()
+  [323] getparam 2 .............................. <tCurrentLocY>
+  [325] getprop 1000 ............................ <pDirObject>
   [328] pusharglist 1 ........................... <pDirObject>
-  [330] objcall 359 ............................. <pDirObject.getUnitVectorXComponent()>
-  [333] add ..................................... <tCurrentLocX + pDirObject.getUnitVectorXComponent()>
-  [334] setlocal 3 .............................. tNextX = tCurrentLocX + pDirObject.getUnitVectorXComponent()
-  [336] getparam 2 .............................. <tCurrentLocY>
-  [338] getprop 336 ............................. <pDirObject>
-  [341] pusharglist 1 ........................... <pDirObject>
-  [343] objcall 360 ............................. <pDirObject.getUnitVectorYComponent()>
-  [346] add ..................................... <tCurrentLocY + pDirObject.getUnitVectorYComponent()>
-  [347] setlocal 4 .............................. tNextY = tCurrentLocY + pDirObject.getUnitVectorYComponent()
-  [349] getlocal 0 .............................. <tGameSystem>
-  [351] pusharglist 1 ........................... <tGameSystem>
-  [353] objcall 262 ............................. <tGameSystem.getWorld()>
-  [356] getlocal 3 .............................. <tNextX>
-  [358] getlocal 4 .............................. <tNextY>
-  [360] pusharglist 3 ........................... <tGameSystem.getWorld(), tNextX, tNextY>
-  [362] objcall 263 ............................. <tGameSystem.getWorld().getTile(tNextX, tNextY)>
-  [365] setlocal 5 .............................. tNextTile = tGameSystem.getWorld().getTile(tNextX, tNextY)
-  [367] getlocal 5 .............................. <tNextTile>
-  [369] pushzero ................................ <0>
-  [370] nteq .................................... <tNextTile <> 0>
-  [371] jmpifz [431] ............................ if tNextTile <> 0 then
-  [374] getlocal 5 .............................. <tNextTile>
-  [376] getlocal 3 .............................. <tNextX>
-  [378] getlocal 4 .............................. <tNextY>
-  [380] pusharglist 3 ........................... <tNextTile, tNextX, tNextY>
-  [382] objcall 264 ............................. <tNextTile.getType(tNextX, tNextY)>
-  [385] setlocal 6 .............................. tNextZ = tNextTile.getType(tNextX, tNextY)
-  [387] getlocal 6 .............................. <tNextZ>
-  [389] pusharglist 1 ........................... <tNextZ>
-  [391] extcall 181 ............................. <integer(tNextZ)>
-  [393] pusharglist 1 ........................... <integer(tNextZ)>
-  [395] extcall 265 ............................. <integerp(integer(tNextZ))>
-  [398] jmpifz [431] ............................ if integerp(integer(tNextZ)) then
-  [401] pushsymb 60 ............................. <#x>
-  [403] getlocal 3 .............................. <tNextX>
-  [405] pushsymb 61 ............................. <#y>
-  [407] getlocal 4 .............................. <tNextY>
-  [409] pushsymb 62 ............................. <#z>
-  [411] getlocal 6 .............................. <tNextZ>
-  [413] pushsymb 341 ............................ <#dirBody>
-  [416] getprop 336 ............................. <pDirObject>
-  [419] pusharglist 1 ........................... <pDirObject>
-  [421] objcall 361 ............................. <pDirObject.getDirection()>
-  [424] pusharglist 8 ........................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [426] pushproplist ............................ <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [427] pusharglistnoret 1 ...................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
-  [429] extcall 28 .............................. return [#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]
-  [431] pushzero ................................ <0>
-  [432] pusharglistnoret 1 ...................... <0>
-  [434] extcall 28 .............................. return 0
-  [436] ret
+  [330] objcall 985 ............................. <pDirObject.getUnitVectorYComponent()>
+  [333] add ..................................... <tCurrentLocY + pDirObject.getUnitVectorYComponent()>
+  [334] setlocal 4 .............................. tNextY = tCurrentLocY + pDirObject.getUnitVectorYComponent()
+  [336] getlocal 0 .............................. <tGameSystem>
+  [338] pusharglist 1 ........................... <tGameSystem>
+  [340] objcall 48 .............................. <tGameSystem.getWorld()>
+  [342] getlocal 3 .............................. <tNextX>
+  [344] getlocal 4 .............................. <tNextY>
+  [346] pusharglist 3 ........................... <tGameSystem.getWorld(), tNextX, tNextY>
+  [348] objcall 94 .............................. <tGameSystem.getWorld().getTile(tNextX, tNextY)>
+  [350] setlocal 5 .............................. tNextTile = tGameSystem.getWorld().getTile(tNextX, tNextY)
+  [352] getlocal 5 .............................. <tNextTile>
+  [354] pushzero ................................ <0>
+  [355] nteq .................................... <tNextTile <> 0>
+  [356] jmpifz [413] ............................ if tNextTile <> 0 then
+  [359] getlocal 5 .............................. <tNextTile>
+  [361] getlocal 3 .............................. <tNextX>
+  [363] getlocal 4 .............................. <tNextY>
+  [365] pusharglist 3 ........................... <tNextTile, tNextX, tNextY>
+  [367] objcall 96 .............................. <tNextTile.getType(tNextX, tNextY)>
+  [369] setlocal 6 .............................. tNextZ = tNextTile.getType(tNextX, tNextY)
+  [371] getlocal 6 .............................. <tNextZ>
+  [373] pusharglist 1 ........................... <tNextZ>
+  [375] extcall 95 .............................. <integer(tNextZ)>
+  [377] pusharglist 1 ........................... <integer(tNextZ)>
+  [379] extcall 97 .............................. <integerp(integer(tNextZ))>
+  [381] jmpifz [413] ............................ if integerp(integer(tNextZ)) then
+  [384] pushsymb 10 ............................. <#x>
+  [386] getlocal 3 .............................. <tNextX>
+  [388] pushsymb 11 ............................. <#y>
+  [390] getlocal 4 .............................. <tNextY>
+  [392] pushsymb 12 ............................. <#z>
+  [394] getlocal 6 .............................. <tNextZ>
+  [396] pushsymb 83 ............................. <#dirBody>
+  [398] getprop 1000 ............................ <pDirObject>
+  [401] pusharglist 1 ........................... <pDirObject>
+  [403] objcall 982 ............................. <pDirObject.getDirection()>
+  [406] pusharglist 8 ........................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [408] pushproplist ............................ <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [409] pusharglistnoret 1 ...................... <[#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]>
+  [411] extcall 13 .............................. return [#x: tNextX, #y: tNextY, #z: tNextZ, #dirBody: pDirObject.getDirection()]
+  [413] pushzero ................................ <0>
+  [414] pusharglistnoret 1 ...................... <0>
+  [416] extcall 13 .............................. return 0
+  [418] ret
 end
 
 on clearEffectAnimation me
-  [  0] getprop 25 .............................. <pActiveEffects>
+  [  0] getprop 50 .............................. <pActiveEffects>
   [  2] peek 0
   [  4] pusharglist 1
-  [  6] extcall 30
+  [  6] extcall 20
   [  8] pushint8 1
   [ 10] peek 0
   [ 12] peek 2
@@ -1215,11 +1215,11 @@ on clearEffectAnimation me
   [ 18] peek 2
   [ 20] peek 1
   [ 22] pusharglist 2
-  [ 24] extcall 31
+  [ 24] extcall 18
   [ 26] setlocal 0
   [ 28] getlocal 0 .............................. <tEffect>
   [ 30] pushzero ................................ <0>
-  [ 31] setobjprop 85 ........................... tEffect.pActive = 0
+  [ 31] setobjprop 66 ........................... tEffect.pActive = 0
   [ 33] pushint8 1
   [ 35] add
   [ 36] endrepeat [ 10]
@@ -1229,39 +1229,39 @@ end
 
 on setEffectAnimationLocations me, tlocation
   [  0] getparam 1 .............................. <tlocation>
-  [  2] pushsymb 60 ............................. <#x>
+  [  2] pushsymb 10 ............................. <#x>
   [  4] pusharglist 2 ........................... <tlocation, #x>
-  [  6] objcall 31 .............................. <tlocation[#x]>
+  [  6] objcall 18 .............................. <tlocation[#x]>
   [  8] setlocal 0 .............................. tX = tlocation[#x]
   [ 10] getparam 1 .............................. <tlocation>
-  [ 12] pushsymb 61 ............................. <#y>
+  [ 12] pushsymb 11 ............................. <#y>
   [ 14] pusharglist 2 ........................... <tlocation, #y>
-  [ 16] objcall 31 .............................. <tlocation[#y]>
+  [ 16] objcall 18 .............................. <tlocation[#y]>
   [ 18] setlocal 1 .............................. tY = tlocation[#y]
   [ 20] getparam 1 .............................. <tlocation>
-  [ 22] pushsymb 62 ............................. <#z>
+  [ 22] pushsymb 12 ............................. <#z>
   [ 24] pusharglist 2 ........................... <tlocation, #z>
-  [ 26] objcall 31 .............................. <tlocation[#z]>
+  [ 26] objcall 18 .............................. <tlocation[#z]>
   [ 28] setlocal 2 .............................. tZ = tlocation[#z]
   [ 30] pushint8 1 .............................. <1>
-  [ 32] getprop 25 .............................. <pActiveEffects>
-  [ 34] getobjprop 30 ........................... <pActiveEffects.count>
+  [ 32] getprop 50 .............................. <pActiveEffects>
+  [ 34] getobjprop 20 ........................... <pActiveEffects.count>
   [ 36] add ..................................... <1 + pActiveEffects.count>
   [ 37] setlocal 3 .............................. tlocz = 1 + pActiveEffects.count
-  [ 39] pushsymb 167 ............................ <#room_interface>
+  [ 39] pushsymb 156 ............................ <#room_interface>
   [ 41] pusharglist 1 ........................... <#room_interface>
-  [ 43] extcall 166 ............................. <getObject(#room_interface)>
+  [ 43] extcall 153 ............................. <getObject(#room_interface)>
   [ 45] pushzero ................................ <0>
   [ 46] eq ...................................... <getObject(#room_interface) = 0>
   [ 47] jmpifz [ 55] ............................ if getObject(#room_interface) = 0 then
   [ 50] pushzero ................................ <0>
   [ 51] pusharglistnoret 1 ...................... <0>
-  [ 53] extcall 28 .............................. return 0
-  [ 55] pushsymb 167 ............................ <#room_interface>
+  [ 53] extcall 13 .............................. return 0
+  [ 55] pushsymb 156 ............................ <#room_interface>
   [ 57] pusharglist 1 ........................... <#room_interface>
-  [ 59] extcall 166 ............................. <getObject(#room_interface)>
+  [ 59] extcall 153 ............................. <getObject(#room_interface)>
   [ 61] pusharglist 1 ........................... <getObject(#room_interface)>
-  [ 63] objcall 168 ............................. <getObject(#room_interface).getGeometry()>
+  [ 63] objcall 169 ............................. <getObject(#room_interface).getGeometry()>
   [ 65] setlocal 4 .............................. pGeometry = getObject(#room_interface).getGeometry()
   [ 67] getlocal 4 .............................. <pGeometry>
   [ 69] pushzero ................................ <0>
@@ -1269,18 +1269,18 @@ on setEffectAnimationLocations me, tlocation
   [ 71] jmpifz [ 79] ............................ if pGeometry = 0 then
   [ 74] pushzero ................................ <0>
   [ 75] pusharglistnoret 1 ...................... <0>
-  [ 77] extcall 28 .............................. return 0
+  [ 77] extcall 13 .............................. return 0
   [ 79] getlocal 4 .............................. <pGeometry>
   [ 81] getlocal 0 .............................. <tX>
   [ 83] getlocal 1 .............................. <tY>
   [ 85] getlocal 2 .............................. <tZ>
   [ 87] pusharglist 4 ........................... <pGeometry, tX, tY, tZ>
-  [ 89] objcall 58 .............................. <pGeometry.getScreenCoordinate(tX, tY, tZ)>
+  [ 89] objcall 202 ............................. <pGeometry.getScreenCoordinate(tX, tY, tZ)>
   [ 91] setlocal 5 .............................. tScreenLoc = pGeometry.getScreenCoordinate(tX, tY, tZ)
-  [ 93] getprop 25 .............................. <pActiveEffects>
+  [ 93] getprop 50 .............................. <pActiveEffects>
   [ 95] peek 0
   [ 97] pusharglist 1
-  [ 99] extcall 30
+  [ 99] extcall 20
   [101] pushint8 1
   [103] peek 0
   [105] peek 2
@@ -1289,193 +1289,193 @@ on setEffectAnimationLocations me, tlocation
   [111] peek 2
   [113] peek 1
   [115] pusharglist 2
-  [117] extcall 31
+  [117] extcall 18
   [119] setlocal 6
   [121] getlocal 6 .............................. <tEffect>
   [123] getlocal 5 .............................. <tScreenLoc>
   [125] pusharglistnoret 2 ...................... <tEffect, tScreenLoc>
-  [127] objcall 169 ............................. tEffect.setLocation(tScreenLoc)
+  [127] objcall 89 .............................. tEffect.setLocation(tScreenLoc)
   [129] pushint8 1
   [131] add
   [132] endrepeat [103]
   [134] pop 3
   [136] pushint8 1 .............................. <1>
   [138] pusharglistnoret 1 ...................... <1>
-  [140] extcall 28 .............................. return 1
+  [140] extcall 13 .............................. return 1
   [142] ret
 end
 
 on startPowerupActivateAnimation me, tdata
   [  0] getparam 1 .............................. <tdata>
-  [  2] pushsymb 206 ............................ <#powerupType>
+  [  2] pushsymb 17 ............................. <#powerupType>
   [  4] pusharglist 2 ........................... <tdata, #powerupType>
-  [  6] objcall 31 .............................. <tdata[#powerupType]>
+  [  6] objcall 18 .............................. <tdata[#powerupType]>
   [  8] peek 0 .................................. case tdata[#powerupType] of
   [ 10] pushint8 1 .............................. <1>
   [ 12] eq
-  [ 13] jmpifz [ 36] ............................ (case) 1:
+  [ 13] jmpifz [ 38] ............................ (case) 1:
   [ 16] getparam 0 .............................. <me>
-  [ 18] pushsymb 80 ............................. <#once>
-  [ 20] pushcons 11 ............................. <"bb2_efct_pu_lghtbulb_">
-  [ 22] pushsymb 50 ............................. <#ink>
-  [ 24] pushint8 33 ............................. <33>
-  [ 26] pusharglist 2 ........................... <[#ink: 33]>
-  [ 28] pushproplist ............................ <[#ink: 33]>
-  [ 29] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_lghtbulb_", [#ink: 33]>
-  [ 31] objcall 17 .............................. me.createEffect(#once, "bb2_efct_pu_lghtbulb_", [#ink: 33])
-  [ 33] jmp [119]
-  [ 36] peek 0
-  [ 38] pushint8 3 .............................. <3>
-  [ 40] eq
-  [ 41] jmpifz [ 74] ............................ (case) 3:
-  [ 44] getparam 0 .............................. <me>
-  [ 46] pushsymb 371 ............................ <#once_slow>
-  [ 49] pushcons 12 ............................. <"bb2_efct_pu_flashlght_">
-  [ 51] pushsymb 50 ............................. <#ink>
-  [ 53] pushint8 33 ............................. <33>
-  [ 55] pusharglist 2 ........................... <[#ink: 33]>
-  [ 57] pushproplist ............................ <[#ink: 33]>
-  [ 58] getparam 1 .............................. <tdata>
-  [ 60] pushsymb 372 ............................ <#effectdirection>
-  [ 63] pusharglist 2 ........................... <tdata, #effectdirection>
-  [ 65] objcall 31 .............................. <tdata[#effectdirection]>
-  [ 67] pusharglistnoret 5 ...................... <me, #once_slow, "bb2_efct_pu_flashlght_", [#ink: 33], tdata[#effectdirection]>
-  [ 69] objcall 17 .............................. me.createEffect(#once_slow, "bb2_efct_pu_flashlght_", [#ink: 33], tdata[#effectdirection])
-  [ 71] jmp [119]
-  [ 74] peek 0
-  [ 76] pushint8 7 .............................. <7>
-  [ 78] eq
-  [ 79] jmpifz [102] ............................ (case) 7:
-  [ 82] getparam 0 .............................. <me>
-  [ 84] pushsymb 80 ............................. <#once>
-  [ 86] pushcons 11 ............................. <"bb2_efct_pu_lghtbulb_">
-  [ 88] pushsymb 50 ............................. <#ink>
-  [ 90] pushint8 35 ............................. <35>
-  [ 92] pusharglist 2 ........................... <[#ink: 35]>
-  [ 94] pushproplist ............................ <[#ink: 35]>
-  [ 95] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_lghtbulb_", [#ink: 35]>
-  [ 97] objcall 17 .............................. me.createEffect(#once, "bb2_efct_pu_lghtbulb_", [#ink: 35])
-  [ 99] jmp [119] ............................... (case) otherwise:
-  [102] getparam 0 .............................. <me>
-  [104] pushsymb 80 ............................. <#once>
-  [106] pushcons 13 ............................. <"bb2_pickup_">
-  [108] pushsymb 50 ............................. <#ink>
-  [110] pushint8 33 ............................. <33>
-  [112] pusharglist 2 ........................... <[#ink: 33]>
-  [114] pushproplist ............................ <[#ink: 33]>
-  [115] pusharglistnoret 4 ...................... <me, #once, "bb2_pickup_", [#ink: 33]>
-  [117] objcall 17 .............................. me.createEffect(#once, "bb2_pickup_", [#ink: 33])
-  [119] pop 1 ................................... end case
-  [121] pushint8 1 .............................. <1>
-  [123] pusharglistnoret 1 ...................... <1>
-  [125] extcall 28 .............................. return 1
-  [127] ret
+  [ 18] pushsymb 945 ............................ <#once>
+  [ 21] pushcons 11 ............................. <"bb2_efct_pu_lghtbulb_">
+  [ 23] pushsymb 197 ............................ <#ink>
+  [ 25] pushint8 33 ............................. <33>
+  [ 27] pusharglist 2 ........................... <[#ink: 33]>
+  [ 29] pushproplist ............................ <[#ink: 33]>
+  [ 30] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_lghtbulb_", [#ink: 33]>
+  [ 32] objcall 935 ............................. me.createEffect(#once, "bb2_efct_pu_lghtbulb_", [#ink: 33])
+  [ 35] jmp [126]
+  [ 38] peek 0
+  [ 40] pushint8 3 .............................. <3>
+  [ 42] eq
+  [ 43] jmpifz [ 77] ............................ (case) 3:
+  [ 46] getparam 0 .............................. <me>
+  [ 48] pushsymb 971 ............................ <#once_slow>
+  [ 51] pushcons 12 ............................. <"bb2_efct_pu_flashlght_">
+  [ 53] pushsymb 197 ............................ <#ink>
+  [ 55] pushint8 33 ............................. <33>
+  [ 57] pusharglist 2 ........................... <[#ink: 33]>
+  [ 59] pushproplist ............................ <[#ink: 33]>
+  [ 60] getparam 1 .............................. <tdata>
+  [ 62] pushsymb 967 ............................ <#effectdirection>
+  [ 65] pusharglist 2 ........................... <tdata, #effectdirection>
+  [ 67] objcall 18 .............................. <tdata[#effectdirection]>
+  [ 69] pusharglistnoret 5 ...................... <me, #once_slow, "bb2_efct_pu_flashlght_", [#ink: 33], tdata[#effectdirection]>
+  [ 71] objcall 935 ............................. me.createEffect(#once_slow, "bb2_efct_pu_flashlght_", [#ink: 33], tdata[#effectdirection])
+  [ 74] jmp [126]
+  [ 77] peek 0
+  [ 79] pushint8 7 .............................. <7>
+  [ 81] eq
+  [ 82] jmpifz [107] ............................ (case) 7:
+  [ 85] getparam 0 .............................. <me>
+  [ 87] pushsymb 945 ............................ <#once>
+  [ 90] pushcons 11 ............................. <"bb2_efct_pu_lghtbulb_">
+  [ 92] pushsymb 197 ............................ <#ink>
+  [ 94] pushint8 35 ............................. <35>
+  [ 96] pusharglist 2 ........................... <[#ink: 35]>
+  [ 98] pushproplist ............................ <[#ink: 35]>
+  [ 99] pusharglistnoret 4 ...................... <me, #once, "bb2_efct_pu_lghtbulb_", [#ink: 35]>
+  [101] objcall 935 ............................. me.createEffect(#once, "bb2_efct_pu_lghtbulb_", [#ink: 35])
+  [104] jmp [126] ............................... (case) otherwise:
+  [107] getparam 0 .............................. <me>
+  [109] pushsymb 945 ............................ <#once>
+  [112] pushcons 13 ............................. <"bb2_pickup_">
+  [114] pushsymb 197 ............................ <#ink>
+  [116] pushint8 33 ............................. <33>
+  [118] pusharglist 2 ........................... <[#ink: 33]>
+  [120] pushproplist ............................ <[#ink: 33]>
+  [121] pusharglistnoret 4 ...................... <me, #once, "bb2_pickup_", [#ink: 33]>
+  [123] objcall 935 ............................. me.createEffect(#once, "bb2_pickup_", [#ink: 33])
+  [126] pop 1 ................................... end case
+  [128] pushint8 1 .............................. <1>
+  [130] pusharglistnoret 1 ...................... <1>
+  [132] extcall 13 .............................. return 1
+  [134] ret
 end
 
-on createEffect me, tMode, tEffectID, tProps, tDirection
-  [  0] getprop 324 ............................. <pLocation>
-  [  3] pushsymb 60 ............................. <#x>
-  [  5] pusharglist 2 ........................... <pLocation, #x>
-  [  7] objcall 31 .............................. <pLocation[#x]>
-  [  9] setlocal 0 .............................. tX = pLocation[#x]
-  [ 11] getprop 324 ............................. <pLocation>
-  [ 14] pushsymb 61 ............................. <#y>
-  [ 16] pusharglist 2 ........................... <pLocation, #y>
-  [ 18] objcall 31 .............................. <pLocation[#y]>
-  [ 20] setlocal 1 .............................. tY = pLocation[#y]
-  [ 22] getprop 324 ............................. <pLocation>
-  [ 25] pushsymb 62 ............................. <#z>
-  [ 27] pusharglist 2 ........................... <pLocation, #z>
-  [ 29] objcall 31 .............................. <pLocation[#z]>
-  [ 31] setlocal 2 .............................. tZ = pLocation[#z]
-  [ 33] pushint8 1 .............................. <1>
-  [ 35] getprop 25 .............................. <pActiveEffects>
-  [ 37] getobjprop 30 ........................... <pActiveEffects.count>
-  [ 39] add ..................................... <1 + pActiveEffects.count>
-  [ 40] setlocal 3 .............................. tlocz = 1 + pActiveEffects.count
-  [ 42] pushsymb 167 ............................ <#room_interface>
-  [ 44] pusharglist 1 ........................... <#room_interface>
-  [ 46] extcall 166 ............................. <getObject(#room_interface)>
-  [ 48] pushzero ................................ <0>
-  [ 49] eq ...................................... <getObject(#room_interface) = 0>
-  [ 50] jmpifz [ 58] ............................ if getObject(#room_interface) = 0 then
-  [ 53] pushzero ................................ <0>
-  [ 54] pusharglistnoret 1 ...................... <0>
-  [ 56] extcall 28 .............................. return 0
-  [ 58] pushsymb 167 ............................ <#room_interface>
-  [ 60] pusharglist 1 ........................... <#room_interface>
-  [ 62] extcall 166 ............................. <getObject(#room_interface)>
-  [ 64] pusharglist 1 ........................... <getObject(#room_interface)>
-  [ 66] objcall 168 ............................. <getObject(#room_interface).getGeometry()>
-  [ 68] setlocal 4 .............................. pGeometry = getObject(#room_interface).getGeometry()
-  [ 70] getlocal 4 .............................. <pGeometry>
-  [ 72] pushzero ................................ <0>
-  [ 73] eq ...................................... <pGeometry = 0>
-  [ 74] jmpifz [ 82] ............................ if pGeometry = 0 then
-  [ 77] pushzero ................................ <0>
-  [ 78] pusharglistnoret 1 ...................... <0>
-  [ 80] extcall 28 .............................. return 0
-  [ 82] getlocal 4 .............................. <pGeometry>
-  [ 84] getlocal 0 .............................. <tX>
-  [ 86] getlocal 1 .............................. <tY>
-  [ 88] getlocal 2 .............................. <tZ>
-  [ 90] pusharglist 4 ........................... <pGeometry, tX, tY, tZ>
-  [ 92] objcall 58 .............................. <pGeometry.getScreenCoordinate(tX, tY, tZ)>
-  [ 94] setlocal 5 .............................. tScreenLoc = pGeometry.getScreenCoordinate(tX, tY, tZ)
-  [ 96] pushsymb 125 ............................ <#temp>
-  [ 98] pushcons 14 ............................. <"BB Effect Animation Class">
-  [100] pusharglist 2 ........................... <#temp, "BB Effect Animation Class">
-  [102] extcall 124 ............................. <createObject(#temp, "BB Effect Animation Class")>
-  [104] setlocal 6 .............................. tEffect = createObject(#temp, "BB Effect Animation Class")
-  [106] getlocal 6 .............................. <tEffect>
-  [108] pushzero ................................ <0>
-  [109] eq ...................................... <tEffect = 0>
-  [110] jmpifz [127] ............................ if tEffect = 0 then
-  [113] getparam 0 .............................. <me>
-  [115] pushcons 15 ............................. <"Unable to create effect object!">
-  [117] pushsymb 17 ............................. <#createEffect>
-  [119] pusharglist 3 ........................... <me, "Unable to create effect object!", #createEffect>
-  [121] extcall 173 ............................. <error(me, "Unable to create effect object!", #createEffect)>
-  [123] pusharglistnoret 1 ...................... <error(me, "Unable to create effect object!", #createEffect)>
-  [125] extcall 28 .............................. return error(me, "Unable to create effect object!", #createEffect)
-  [127] getlocal 6 .............................. <tEffect>
-  [129] getparam 1 .............................. <tMode>
-  [131] getlocal 5 .............................. <tScreenLoc>
-  [133] getlocal 3 .............................. <tlocz>
-  [135] getparam 2 .............................. <tEffectID>
-  [137] getparam 3 .............................. <tProps>
-  [139] getparam 4 .............................. <tDirection>
-  [141] pusharglistnoret 7 ...................... <tEffect, tMode, tScreenLoc, tlocz, tEffectID, tProps, tDirection>
-  [143] objcall 135 ............................. tEffect.define(tMode, tScreenLoc, tlocz, tEffectID, tProps, tDirection)
-  [145] getprop 25 .............................. <pActiveEffects>
-  [147] getlocal 6 .............................. <tEffect>
-  [149] pusharglistnoret 2 ...................... <pActiveEffects, tEffect>
-  [151] objcall 174 ............................. pActiveEffects.append(tEffect)
-  [153] pushint8 1 .............................. <1>
-  [155] pusharglistnoret 1 ...................... <1>
-  [157] extcall 28 .............................. return 1
-  [159] ret
+on createEffect me, tMode, tEffectId, tProps, tDirection
+  [  0] getprop 9 ............................... <pLocation>
+  [  2] pushsymb 10 ............................. <#x>
+  [  4] pusharglist 2 ........................... <pLocation, #x>
+  [  6] objcall 18 .............................. <pLocation[#x]>
+  [  8] setlocal 0 .............................. tX = pLocation[#x]
+  [ 10] getprop 9 ............................... <pLocation>
+  [ 12] pushsymb 11 ............................. <#y>
+  [ 14] pusharglist 2 ........................... <pLocation, #y>
+  [ 16] objcall 18 .............................. <pLocation[#y]>
+  [ 18] setlocal 1 .............................. tY = pLocation[#y]
+  [ 20] getprop 9 ............................... <pLocation>
+  [ 22] pushsymb 12 ............................. <#z>
+  [ 24] pusharglist 2 ........................... <pLocation, #z>
+  [ 26] objcall 18 .............................. <pLocation[#z]>
+  [ 28] setlocal 2 .............................. tZ = pLocation[#z]
+  [ 30] pushint8 1 .............................. <1>
+  [ 32] getprop 50 .............................. <pActiveEffects>
+  [ 34] getobjprop 20 ........................... <pActiveEffects.count>
+  [ 36] add ..................................... <1 + pActiveEffects.count>
+  [ 37] setlocal 3 .............................. tlocz = 1 + pActiveEffects.count
+  [ 39] pushsymb 156 ............................ <#room_interface>
+  [ 41] pusharglist 1 ........................... <#room_interface>
+  [ 43] extcall 153 ............................. <getObject(#room_interface)>
+  [ 45] pushzero ................................ <0>
+  [ 46] eq ...................................... <getObject(#room_interface) = 0>
+  [ 47] jmpifz [ 55] ............................ if getObject(#room_interface) = 0 then
+  [ 50] pushzero ................................ <0>
+  [ 51] pusharglistnoret 1 ...................... <0>
+  [ 53] extcall 13 .............................. return 0
+  [ 55] pushsymb 156 ............................ <#room_interface>
+  [ 57] pusharglist 1 ........................... <#room_interface>
+  [ 59] extcall 153 ............................. <getObject(#room_interface)>
+  [ 61] pusharglist 1 ........................... <getObject(#room_interface)>
+  [ 63] objcall 169 ............................. <getObject(#room_interface).getGeometry()>
+  [ 65] setlocal 4 .............................. pGeometry = getObject(#room_interface).getGeometry()
+  [ 67] getlocal 4 .............................. <pGeometry>
+  [ 69] pushzero ................................ <0>
+  [ 70] eq ...................................... <pGeometry = 0>
+  [ 71] jmpifz [ 79] ............................ if pGeometry = 0 then
+  [ 74] pushzero ................................ <0>
+  [ 75] pusharglistnoret 1 ...................... <0>
+  [ 77] extcall 13 .............................. return 0
+  [ 79] getlocal 4 .............................. <pGeometry>
+  [ 81] getlocal 0 .............................. <tX>
+  [ 83] getlocal 1 .............................. <tY>
+  [ 85] getlocal 2 .............................. <tZ>
+  [ 87] pusharglist 4 ........................... <pGeometry, tX, tY, tZ>
+  [ 89] objcall 202 ............................. <pGeometry.getScreenCoordinate(tX, tY, tZ)>
+  [ 91] setlocal 5 .............................. tScreenLoc = pGeometry.getScreenCoordinate(tX, tY, tZ)
+  [ 93] pushsymb 39 ............................. <#temp>
+  [ 95] pushcons 14 ............................. <"BB Effect Animation Class">
+  [ 97] pusharglist 2 ........................... <#temp, "BB Effect Animation Class">
+  [ 99] extcall 38 .............................. <createObject(#temp, "BB Effect Animation Class")>
+  [101] setlocal 6 .............................. tEffect = createObject(#temp, "BB Effect Animation Class")
+  [103] getlocal 6 .............................. <tEffect>
+  [105] pushzero ................................ <0>
+  [106] eq ...................................... <tEffect = 0>
+  [107] jmpifz [125] ............................ if tEffect = 0 then
+  [110] getparam 0 .............................. <me>
+  [112] pushcons 15 ............................. <"Unable to create effect object!">
+  [114] pushsymb 935 ............................ <#createEffect>
+  [117] pusharglist 3 ........................... <me, "Unable to create effect object!", #createEffect>
+  [119] extcall 19 .............................. <error(me, "Unable to create effect object!", #createEffect)>
+  [121] pusharglistnoret 1 ...................... <error(me, "Unable to create effect object!", #createEffect)>
+  [123] extcall 13 .............................. return error(me, "Unable to create effect object!", #createEffect)
+  [125] getlocal 6 .............................. <tEffect>
+  [127] getparam 1 .............................. <tMode>
+  [129] getlocal 5 .............................. <tScreenLoc>
+  [131] getlocal 3 .............................. <tlocz>
+  [133] getparam 2 .............................. <tEffectId>
+  [135] getparam 3 .............................. <tProps>
+  [137] getparam 4 .............................. <tDirection>
+  [139] pusharglistnoret 7 ...................... <tEffect, tMode, tScreenLoc, tlocz, tEffectId, tProps, tDirection>
+  [141] objcall 2 ............................... tEffect.define(tMode, tScreenLoc, tlocz, tEffectId, tProps, tDirection)
+  [143] getprop 50 .............................. <pActiveEffects>
+  [145] getlocal 6 .............................. <tEffect>
+  [147] pusharglistnoret 2 ...................... <pActiveEffects, tEffect>
+  [149] objcall 362 ............................. pActiveEffects.append(tEffect)
+  [152] pushint8 1 .............................. <1>
+  [154] pusharglistnoret 1 ...................... <1>
+  [156] extcall 13 .............................. return 1
+  [158] ret
 end
 
 on getOwnGameIndex me
-  [  0] pushsymb 304 ............................ <#session>
-  [  3] pusharglist 1 ........................... <#session>
-  [  5] extcall 166 ............................. <getObject(#session)>
-  [  7] setlocal 0 .............................. tSession = getObject(#session)
-  [  9] getlocal 0 .............................. <tSession>
-  [ 11] pushcons 16 ............................. <"user_game_index">
-  [ 13] pusharglist 2 ........................... <tSession, "user_game_index">
-  [ 15] objcall 305 ............................. <tSession.exists("user_game_index")>
-  [ 18] not ..................................... <not tSession.exists("user_game_index")>
-  [ 19] jmpifz [ 27] ............................ if not tSession.exists("user_game_index") then
-  [ 22] pushzero ................................ <0>
-  [ 23] pusharglistnoret 1 ...................... <0>
-  [ 25] extcall 28 .............................. return 0
-  [ 27] getlocal 0 .............................. <tSession>
-  [ 29] pushcons 16 ............................. <"user_game_index">
-  [ 31] pusharglist 2 ........................... <tSession, "user_game_index">
-  [ 33] objcall 306 ............................. <tSession.GET("user_game_index")>
-  [ 36] pusharglistnoret 1 ...................... <tSession.GET("user_game_index")>
-  [ 38] extcall 28 .............................. return tSession.GET("user_game_index")
-  [ 40] ret
+  [  0] pushsymb 154 ............................ <#session>
+  [  2] pusharglist 1 ........................... <#session>
+  [  4] extcall 153 ............................. <getObject(#session)>
+  [  6] setlocal 0 .............................. tSession = getObject(#session)
+  [  8] getlocal 0 .............................. <tSession>
+  [ 10] pushcons 16 ............................. <"user_game_index">
+  [ 12] pusharglist 2 ........................... <tSession, "user_game_index">
+  [ 14] objcall 256 ............................. <tSession.exists("user_game_index")>
+  [ 17] not ..................................... <not tSession.exists("user_game_index")>
+  [ 18] jmpifz [ 26] ............................ if not tSession.exists("user_game_index") then
+  [ 21] pushzero ................................ <0>
+  [ 22] pusharglistnoret 1 ...................... <0>
+  [ 24] extcall 13 .............................. return 0
+  [ 26] getlocal 0 .............................. <tSession>
+  [ 28] pushcons 16 ............................. <"user_game_index">
+  [ 30] pusharglist 2 ........................... <tSession, "user_game_index">
+  [ 32] objcall 155 ............................. <tSession.get("user_game_index")>
+  [ 34] pusharglistnoret 1 ...................... <tSession.get("user_game_index")>
+  [ 36] extcall 13 .............................. return tSession.get("user_game_index")
+  [ 38] ret
 end

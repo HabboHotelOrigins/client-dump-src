@@ -3,224 +3,224 @@ property pArrowSpr, pSize, pLastLoc, pLastDir, pUserId, pCounter, pAnimFlag, pAn
 on construct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 156 ............................. <me.getID()>
+  [  4] objcall 75 .............................. <me.getID()>
   [  6] pusharglist 1 ........................... <me.getID()>
-  [  8] extcall 358 ............................. <reserveSprite(me.getID())>
-  [ 11] pusharglist 1 ........................... <reserveSprite(me.getID())>
-  [ 13] extcall 182 ............................. <sprite(reserveSprite(me.getID()))>
-  [ 15] setprop 1491 ............................ pArrowSpr = sprite(reserveSprite(me.getID()))
-  [ 18] getprop 1491 ............................ <pArrowSpr>
-  [ 21] pushint8 8 .............................. <8>
-  [ 23] setobjprop 419 .......................... pArrowSpr.ink = 8
-  [ 26] getprop 1491 ............................ <pArrowSpr>
-  [ 29] pushzero ................................ <0>
-  [ 30] setobjprop 251 .......................... pArrowSpr.visible = 0
-  [ 32] pusharglist 0 ........................... <>
-  [ 34] extcall 159 ............................. <VOID>
-  [ 36] setprop 995 ............................. pLastLoc = VOID
-  [ 39] pusharglist 0 ........................... <>
-  [ 41] extcall 159 ............................. <VOID>
-  [ 43] setprop 1279 ............................ pLastDir = VOID
-  [ 46] pushcons 0 .............................. <EMPTY>
-  [ 48] setprop 1492 ............................ pUserId = EMPTY
-  [ 51] pushzero ................................ <0>
-  [ 52] setprop 1493 ............................ pAnimFlag = 0
-  [ 55] pushzero ................................ <0>
-  [ 56] setprop 1494 ............................ pAnimCntr = 0
-  [ 59] pushint8 1 .............................. <1>
-  [ 61] pusharglistnoret 1 ...................... <1>
-  [ 63] extcall 21 .............................. return 1
-  [ 65] ret
+  [  8] extcall 74 .............................. <reserveSprite(me.getID())>
+  [ 10] pusharglist 1 ........................... <reserveSprite(me.getID())>
+  [ 12] extcall 73 .............................. <sprite(reserveSprite(me.getID()))>
+  [ 14] setprop 1486 ............................ pArrowSpr = sprite(reserveSprite(me.getID()))
+  [ 17] getprop 1486 ............................ <pArrowSpr>
+  [ 20] pushint8 8 .............................. <8>
+  [ 22] setobjprop 93 ........................... pArrowSpr.ink = 8
+  [ 24] getprop 1486 ............................ <pArrowSpr>
+  [ 27] pushzero ................................ <0>
+  [ 28] setobjprop 341 .......................... pArrowSpr.visible = 0
+  [ 31] pusharglist 0 ........................... <>
+  [ 33] extcall 30 .............................. <VOID>
+  [ 35] setprop 1035 ............................ pLastLoc = VOID
+  [ 38] pusharglist 0 ........................... <>
+  [ 40] extcall 30 .............................. <VOID>
+  [ 42] setprop 1301 ............................ pLastDir = VOID
+  [ 45] pushcons 0 .............................. <EMPTY>
+  [ 47] setprop 1487 ............................ pUserId = EMPTY
+  [ 50] pushzero ................................ <0>
+  [ 51] setprop 1488 ............................ pAnimFlag = 0
+  [ 54] pushzero ................................ <0>
+  [ 55] setprop 1489 ............................ pAnimCntr = 0
+  [ 58] pushint8 1 .............................. <1>
+  [ 60] pusharglistnoret 1 ...................... <1>
+  [ 62] extcall 31 .............................. return 1
+  [ 64] ret
 end
 
 on deconstruct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 156 ............................. <me.getID()>
+  [  4] objcall 75 .............................. <me.getID()>
   [  6] pusharglistnoret 1 ...................... <me.getID()>
-  [  8] extcall 199 ............................. removeUpdate(me.getID())
-  [ 10] getprop 1491 ............................ <pArrowSpr>
-  [ 13] getobjprop 18 ........................... <pArrowSpr.spriteNum>
-  [ 15] pusharglistnoret 1 ...................... <pArrowSpr.spriteNum>
-  [ 17] extcall 367 ............................. releaseSprite(pArrowSpr.spriteNum)
+  [  8] extcall 298 ............................. removeUpdate(me.getID())
+  [ 11] getprop 1486 ............................ <pArrowSpr>
+  [ 14] getobjprop 36 ........................... <pArrowSpr.spriteNum>
+  [ 16] pusharglistnoret 1 ...................... <pArrowSpr.spriteNum>
+  [ 18] extcall 35 .............................. releaseSprite(pArrowSpr.spriteNum)
   [ 20] pushint8 1 .............................. <1>
   [ 22] pusharglistnoret 1 ...................... <1>
-  [ 24] extcall 21 .............................. return 1
+  [ 24] extcall 31 .............................. return 1
   [ 26] ret
 end
 
 on Init me
-  [  0] pushsymb 949 ............................ <#room>
-  [  3] pusharglist 1 ........................... <#room>
-  [  5] extcall 260 ............................. <getThread(#room)>
-  [  8] pusharglist 1 ........................... <getThread(#room)>
-  [ 10] objcall 597 ............................. <getThread(#room).getInterface()>
-  [ 13] pusharglist 1 ........................... <getThread(#room).getInterface()>
-  [ 15] objcall 69 .............................. <getThread(#room).getInterface().getGeometry()>
-  [ 17] getobjprop 977 .......................... <getThread(#room).getInterface().getGeometry().pXFactor>
-  [ 20] setlocal 0 .............................. tXFactor = getThread(#room).getInterface().getGeometry().pXFactor
-  [ 22] getprop 1491 ............................ <pArrowSpr>
-  [ 25] pushcons 1 .............................. <"window.default.locz">
-  [ 27] pusharglist 1 ........................... <"window.default.locz">
-  [ 29] extcall 1481 ............................ <getIntVariable("window.default.locz")>
-  [ 32] pushint16 2020 .......................... <2020>
-  [ 35] sub ..................................... <getIntVariable("window.default.locz") - 2020>
-  [ 36] setobjprop 168 .......................... pArrowSpr.locZ = getIntVariable("window.default.locz") - 2020
-  [ 38] getprop 1491 ............................ <pArrowSpr>
-  [ 41] pushzero ................................ <0>
-  [ 42] setobjprop 251 .......................... pArrowSpr.visible = 0
-  [ 44] getlocal 0 .............................. <tXFactor>
-  [ 46] pusharglist 1 ........................... <tXFactor>
-  [ 48] extcall 451 ............................. <integer(tXFactor)>
-  [ 51] pushint8 32 ............................. <32>
-  [ 53] gt ...................................... <integer(tXFactor) > 32>
-  [ 54] jmpifz [ 65] ............................ if integer(tXFactor) > 32 then / else
-  [ 57] pushcons 2 .............................. <"h">
-  [ 59] setprop 1495 ............................ pSize = "h"
-  [ 62] jmp [ 70]
-  [ 65] pushcons 3 .............................. <"sh">
-  [ 67] setprop 1495 ............................ pSize = "sh"
-  [ 70] ret
+  [  0] pushsymb 52 ............................. <#room>
+  [  2] pusharglist 1 ........................... <#room>
+  [  4] extcall 51 .............................. <getThread(#room)>
+  [  6] pusharglist 1 ........................... <getThread(#room)>
+  [  8] objcall 53 .............................. <getThread(#room).getInterface()>
+  [ 10] pusharglist 1 ........................... <getThread(#room).getInterface()>
+  [ 12] objcall 54 .............................. <getThread(#room).getInterface().getGeometry()>
+  [ 14] getobjprop 50 ........................... <getThread(#room).getInterface().getGeometry().pXFactor>
+  [ 16] setlocal 0 .............................. tXFactor = getThread(#room).getInterface().getGeometry().pXFactor
+  [ 18] getprop 1486 ............................ <pArrowSpr>
+  [ 21] pushcons 1 .............................. <"window.default.locz">
+  [ 23] pusharglist 1 ........................... <"window.default.locz">
+  [ 25] extcall 140 ............................. <getIntVariable("window.default.locz")>
+  [ 27] pushint16 2020 .......................... <2020>
+  [ 30] sub ..................................... <getIntVariable("window.default.locz") - 2020>
+  [ 31] setobjprop 129 .......................... pArrowSpr.locZ = getIntVariable("window.default.locz") - 2020
+  [ 33] getprop 1486 ............................ <pArrowSpr>
+  [ 36] pushzero ................................ <0>
+  [ 37] setobjprop 341 .......................... pArrowSpr.visible = 0
+  [ 40] getlocal 0 .............................. <tXFactor>
+  [ 42] pusharglist 1 ........................... <tXFactor>
+  [ 44] extcall 102 ............................. <integer(tXFactor)>
+  [ 46] pushint8 32 ............................. <32>
+  [ 48] gt ...................................... <integer(tXFactor) > 32>
+  [ 49] jmpifz [ 60] ............................ if integer(tXFactor) > 32 then / else
+  [ 52] pushcons 2 .............................. <"h">
+  [ 54] setprop 1490 ............................ pSize = "h"
+  [ 57] jmp [ 65]
+  [ 60] pushcons 3 .............................. <"sh">
+  [ 62] setprop 1490 ............................ pSize = "sh"
+  [ 65] ret
 end
 
 on show me, tUserID, tAnimFlag
   [  0] getparam 1 .............................. <tUserID>
   [  2] pusharglist 1 ........................... <tUserID>
-  [  4] extcall 313 ............................. <stringp(tUserID)>
+  [  4] extcall 391 ............................. <stringp(tUserID)>
   [  7] jmpifz [ 18] ............................ if stringp(tUserID) then / else
   [ 10] getparam 1 .............................. <tUserID>
-  [ 12] setprop 1492 ............................ pUserId = tUserID
-  [ 15] jmp [ 38]
-  [ 18] pushsymb 949 ............................ <#room>
-  [ 21] pusharglist 1 ........................... <#room>
-  [ 23] extcall 260 ............................. <getThread(#room)>
-  [ 26] pusharglist 1 ........................... <getThread(#room)>
-  [ 28] objcall 597 ............................. <getThread(#room).getInterface()>
-  [ 31] pusharglist 1 ........................... <getThread(#room).getInterface()>
-  [ 33] objcall 76 .............................. <getThread(#room).getInterface().getSelectedObject()>
-  [ 35] setprop 1492 ............................ pUserId = getThread(#room).getInterface().getSelectedObject()
-  [ 38] getprop 1491 ............................ <pArrowSpr>
-  [ 41] pushint16 1000 .......................... <1000>
-  [ 44] inv ..................................... <-1000>
-  [ 45] pushint16 1000 .......................... <1000>
-  [ 48] inv ..................................... <-1000>
-  [ 49] pusharglist 2 ........................... <-1000, -1000>
-  [ 51] extcall 293 ............................. <point(-1000, -1000)>
-  [ 54] setobjprop 361 .......................... pArrowSpr.loc = point(-1000, -1000)
-  [ 57] getprop 1491 ............................ <pArrowSpr>
-  [ 60] pushint8 1 .............................. <1>
-  [ 62] setobjprop 251 .......................... pArrowSpr.visible = 1
-  [ 64] pushzero ................................ <0>
-  [ 65] setprop 1497 ............................ pCounter = 0
-  [ 68] pusharglist 0 ........................... <>
-  [ 70] extcall 159 ............................. <VOID>
-  [ 72] setprop 995 ............................. pLastLoc = VOID
-  [ 75] pusharglist 0 ........................... <>
-  [ 77] extcall 159 ............................. <VOID>
-  [ 79] setprop 1279 ............................ pLastDir = VOID
-  [ 82] pushzero ................................ <0>
-  [ 83] setprop 1494 ............................ pAnimCntr = 0
-  [ 86] getparam 2 .............................. <tAnimFlag>
-  [ 88] pushint8 1 .............................. <1>
-  [ 90] eq ...................................... <tAnimFlag = 1>
-  [ 91] setprop 1493 ............................ pAnimFlag = tAnimFlag = 1
-  [ 94] getparam 0 .............................. <me>
-  [ 96] pusharglist 1 ........................... <me>
-  [ 98] objcall 156 ............................. <me.getID()>
-  [100] pusharglistnoret 1 ...................... <me.getID()>
-  [102] extcall 183 ............................. receiveUpdate(me.getID())
-  [104] pushint8 1 .............................. <1>
-  [106] pusharglistnoret 1 ...................... <1>
-  [108] extcall 21 .............................. return 1
-  [110] ret
+  [ 12] setprop 1487 ............................ pUserId = tUserID
+  [ 15] jmp [ 35]
+  [ 18] pushsymb 52 ............................. <#room>
+  [ 20] pusharglist 1 ........................... <#room>
+  [ 22] extcall 51 .............................. <getThread(#room)>
+  [ 24] pusharglist 1 ........................... <getThread(#room)>
+  [ 26] objcall 53 .............................. <getThread(#room).getInterface()>
+  [ 28] pusharglist 1 ........................... <getThread(#room).getInterface()>
+  [ 30] objcall 190 ............................. <getThread(#room).getInterface().getSelectedObject()>
+  [ 32] setprop 1487 ............................ pUserId = getThread(#room).getInterface().getSelectedObject()
+  [ 35] getprop 1486 ............................ <pArrowSpr>
+  [ 38] pushint16 1000 .......................... <1000>
+  [ 41] inv ..................................... <-1000>
+  [ 42] pushint16 1000 .......................... <1000>
+  [ 45] inv ..................................... <-1000>
+  [ 46] pusharglist 2 ........................... <-1000, -1000>
+  [ 48] extcall 375 ............................. <point(-1000, -1000)>
+  [ 51] setobjprop 435 .......................... pArrowSpr.loc = point(-1000, -1000)
+  [ 54] getprop 1486 ............................ <pArrowSpr>
+  [ 57] pushint8 1 .............................. <1>
+  [ 59] setobjprop 341 .......................... pArrowSpr.visible = 1
+  [ 62] pushzero ................................ <0>
+  [ 63] setprop 1492 ............................ pCounter = 0
+  [ 66] pusharglist 0 ........................... <>
+  [ 68] extcall 30 .............................. <VOID>
+  [ 70] setprop 1035 ............................ pLastLoc = VOID
+  [ 73] pusharglist 0 ........................... <>
+  [ 75] extcall 30 .............................. <VOID>
+  [ 77] setprop 1301 ............................ pLastDir = VOID
+  [ 80] pushzero ................................ <0>
+  [ 81] setprop 1489 ............................ pAnimCntr = 0
+  [ 84] getparam 2 .............................. <tAnimFlag>
+  [ 86] pushint8 1 .............................. <1>
+  [ 88] eq ...................................... <tAnimFlag = 1>
+  [ 89] setprop 1488 ............................ pAnimFlag = tAnimFlag = 1
+  [ 92] getparam 0 .............................. <me>
+  [ 94] pusharglist 1 ........................... <me>
+  [ 96] objcall 75 .............................. <me.getID()>
+  [ 98] pusharglistnoret 1 ...................... <me.getID()>
+  [100] extcall 283 ............................. receiveUpdate(me.getID())
+  [103] pushint8 1 .............................. <1>
+  [105] pusharglistnoret 1 ...................... <1>
+  [107] extcall 31 .............................. return 1
+  [109] ret
 end
 
 on hide me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 156 ............................. <me.getID()>
+  [  4] objcall 75 .............................. <me.getID()>
   [  6] pusharglistnoret 1 ...................... <me.getID()>
-  [  8] extcall 199 ............................. removeUpdate(me.getID())
-  [ 10] getprop 1491 ............................ <pArrowSpr>
-  [ 13] pushint16 1000 .......................... <1000>
-  [ 16] inv ..................................... <-1000>
-  [ 17] pushint16 1000 .......................... <1000>
-  [ 20] inv ..................................... <-1000>
-  [ 21] pusharglist 2 ........................... <-1000, -1000>
-  [ 23] extcall 293 ............................. <point(-1000, -1000)>
-  [ 26] setobjprop 361 .......................... pArrowSpr.loc = point(-1000, -1000)
-  [ 29] getprop 1491 ............................ <pArrowSpr>
-  [ 32] pushzero ................................ <0>
-  [ 33] setobjprop 251 .......................... pArrowSpr.visible = 0
-  [ 35] pushint8 1 .............................. <1>
-  [ 37] pusharglistnoret 1 ...................... <1>
-  [ 39] extcall 21 .............................. return 1
-  [ 41] ret
+  [  8] extcall 298 ............................. removeUpdate(me.getID())
+  [ 11] getprop 1486 ............................ <pArrowSpr>
+  [ 14] pushint16 1000 .......................... <1000>
+  [ 17] inv ..................................... <-1000>
+  [ 18] pushint16 1000 .......................... <1000>
+  [ 21] inv ..................................... <-1000>
+  [ 22] pusharglist 2 ........................... <-1000, -1000>
+  [ 24] extcall 375 ............................. <point(-1000, -1000)>
+  [ 27] setobjprop 435 .......................... pArrowSpr.loc = point(-1000, -1000)
+  [ 30] getprop 1486 ............................ <pArrowSpr>
+  [ 33] pushzero ................................ <0>
+  [ 34] setobjprop 341 .......................... pArrowSpr.visible = 0
+  [ 37] pushint8 1 .............................. <1>
+  [ 39] pusharglistnoret 1 ...................... <1>
+  [ 41] extcall 31 .............................. return 1
+  [ 43] ret
 end
 
 on update me
-  [  0] getprop 1497 ............................ <pCounter>
+  [  0] getprop 1492 ............................ <pCounter>
   [  3] not ..................................... <not pCounter>
-  [  4] setprop 1497 ............................ pCounter = not pCounter
-  [  7] getprop 1497 ............................ <pCounter>
+  [  4] setprop 1492 ............................ pCounter = not pCounter
+  [  7] getprop 1492 ............................ <pCounter>
   [ 10] jmpifz [ 17] ............................ if pCounter then
   [ 13] pusharglistnoret 0 ...................... <>
-  [ 15] extcall 21 .............................. return 
-  [ 17] pushsymb 949 ............................ <#room>
-  [ 20] pusharglist 1 ........................... <#room>
-  [ 22] extcall 260 ............................. <getThread(#room)>
-  [ 25] pusharglist 1 ........................... <getThread(#room)>
-  [ 27] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 29] getprop 1492 ............................ <pUserId>
-  [ 32] pusharglist 2 ........................... <getThread(#room).getComponent(), pUserId>
-  [ 34] objcall 245 ............................. <getThread(#room).getComponent().getUserObject(pUserId)>
-  [ 36] setlocal 0 .............................. tHumanObj = getThread(#room).getComponent().getUserObject(pUserId)
-  [ 38] getlocal 0 .............................. <tHumanObj>
-  [ 40] pushzero ................................ <0>
-  [ 41] eq ...................................... <tHumanObj = 0>
-  [ 42] jmpifz [ 55] ............................ if tHumanObj = 0 then
-  [ 45] getparam 0 .............................. <me>
-  [ 47] pusharglist 1 ........................... <me>
-  [ 49] objcall 224 ............................. <me.hide()>
+  [ 15] extcall 31 .............................. return 
+  [ 17] pushsymb 52 ............................. <#room>
+  [ 19] pusharglist 1 ........................... <#room>
+  [ 21] extcall 51 .............................. <getThread(#room)>
+  [ 23] pusharglist 1 ........................... <getThread(#room)>
+  [ 25] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 27] getprop 1487 ............................ <pUserId>
+  [ 30] pusharglist 2 ........................... <getThread(#room).getComponent(), pUserId>
+  [ 32] objcall 337 ............................. <getThread(#room).getComponent().getUserObject(pUserId)>
+  [ 35] setlocal 0 .............................. tHumanObj = getThread(#room).getComponent().getUserObject(pUserId)
+  [ 37] getlocal 0 .............................. <tHumanObj>
+  [ 39] pushzero ................................ <0>
+  [ 40] eq ...................................... <tHumanObj = 0>
+  [ 41] jmpifz [ 55] ............................ if tHumanObj = 0 then
+  [ 44] getparam 0 .............................. <me>
+  [ 46] pusharglist 1 ........................... <me>
+  [ 48] objcall 319 ............................. <me.hide()>
   [ 51] pusharglistnoret 1 ...................... <me.hide()>
-  [ 53] extcall 21 .............................. return me.hide()
+  [ 53] extcall 31 .............................. return me.hide()
   [ 55] getlocal 0 .............................. <tHumanObj>
   [ 57] pushcons 4 .............................. <"hd">
   [ 59] pusharglist 2 ........................... <tHumanObj, "hd">
-  [ 61] objcall 1189 ............................ <tHumanObj.getPartLocation("hd")>
+  [ 61] objcall 1217 ............................ <tHumanObj.getPartLocation("hd")>
   [ 64] setlocal 1 .............................. tHumanLoc = tHumanObj.getPartLocation("hd")
   [ 66] getlocal 0 .............................. <tHumanObj>
   [ 68] pusharglist 1 ........................... <tHumanObj>
-  [ 70] objcall 1065 ............................ <tHumanObj.getDirection()>
+  [ 70] objcall 1100 ............................ <tHumanObj.getDirection()>
   [ 73] setlocal 2 .............................. tHumanDir = tHumanObj.getDirection()
-  [ 75] getprop 995 ............................. <pLastLoc>
+  [ 75] getprop 1035 ............................ <pLastLoc>
   [ 78] pusharglist 1 ........................... <pLastLoc>
-  [ 80] extcall 10 .............................. <voidp(pLastLoc)>
+  [ 80] extcall 120 ............................. <voidp(pLastLoc)>
   [ 82] jmpifz [ 95] ............................ if voidp(pLastLoc) then
   [ 85] pushzero ................................ <0>
   [ 86] pushzero ................................ <0>
   [ 87] pusharglist 2 ........................... <0, 0>
-  [ 89] extcall 293 ............................. <point(0, 0)>
-  [ 92] setprop 995 ............................. pLastLoc = point(0, 0)
+  [ 89] extcall 375 ............................. <point(0, 0)>
+  [ 92] setprop 1035 ............................ pLastLoc = point(0, 0)
   [ 95] getlocal 2 .............................. <tHumanDir>
-  [ 97] getprop 1279 ............................ <pLastDir>
+  [ 97] getprop 1301 ............................ <pLastDir>
   [100] nteq .................................... <tHumanDir <> pLastDir>
   [101] jmpifz [111] ............................ if tHumanDir <> pLastDir then / else
   [104] pushint8 1 .............................. <1>
   [106] setlocal 3 .............................. tChanges = 1
   [108] jmp [180]
   [111] getlocal 1 .............................. <tHumanLoc>
-  [113] getprop 995 ............................. <pLastLoc>
+  [113] getprop 1035 ............................ <pLastLoc>
   [116] nteq .................................... <tHumanLoc <> pLastLoc>
   [117] jmpifz [180] ............................ if tHumanLoc <> pLastLoc then
   [120] getlocal 1 .............................. <tHumanLoc>
   [122] pushint8 1 .............................. <1>
   [124] pusharglist 2 ........................... <tHumanLoc, 1>
-  [126] objcall 9 ............................... <tHumanLoc[1]>
-  [128] getprop 995 ............................. <pLastLoc>
+  [126] objcall 34 .............................. <tHumanLoc[1]>
+  [128] getprop 1035 ............................ <pLastLoc>
   [131] pushint8 1 .............................. <1>
   [133] pusharglist 2 ........................... <pLastLoc, 1>
-  [135] objcall 9 ............................... <pLastLoc[1]>
+  [135] objcall 34 .............................. <pLastLoc[1]>
   [137] nteq .................................... <tHumanLoc[1] <> pLastLoc[1]>
   [138] jmpifz [148] ............................ if tHumanLoc[1] <> pLastLoc[1] then / else
   [141] pushint8 1 .............................. <1>
@@ -229,25 +229,25 @@ on update me
   [148] getlocal 1 .............................. <tHumanLoc>
   [150] pushint8 2 .............................. <2>
   [152] pusharglist 2 ........................... <tHumanLoc, 2>
-  [154] objcall 9 ............................... <tHumanLoc[2]>
-  [156] getprop 995 ............................. <pLastLoc>
+  [154] objcall 34 .............................. <tHumanLoc[2]>
+  [156] getprop 1035 ............................ <pLastLoc>
   [159] pushint8 2 .............................. <2>
   [161] pusharglist 2 ........................... <pLastLoc, 2>
-  [163] objcall 9 ............................... <pLastLoc[2]>
+  [163] objcall 34 .............................. <pLastLoc[2]>
   [165] sub ..................................... <tHumanLoc[2] - pLastLoc[2]>
   [166] pusharglist 1 ........................... <tHumanLoc[2] - pLastLoc[2]>
-  [168] extcall 36 .............................. <abs(tHumanLoc[2] - pLastLoc[2])>
+  [168] extcall 77 .............................. <abs(tHumanLoc[2] - pLastLoc[2])>
   [170] pushint8 1 .............................. <1>
   [172] gt ...................................... <abs(tHumanLoc[2] - pLastLoc[2]) > 1>
   [173] jmpifz [180] ............................ if abs(tHumanLoc[2] - pLastLoc[2]) > 1 then
   [176] pushint8 1 .............................. <1>
   [178] setlocal 3 .............................. tChanges = 1
   [180] getlocal 3 .............................. <tChanges>
-  [182] jmpifz [330] ............................ if tChanges then
+  [182] jmpifz [328] ............................ if tChanges then
   [185] getlocal 1 .............................. <tHumanLoc>
-  [187] setprop 995 ............................. pLastLoc = tHumanLoc
+  [187] setprop 1035 ............................ pLastLoc = tHumanLoc
   [190] getlocal 2 .............................. <tHumanDir>
-  [192] setprop 1279 ............................ pLastDir = tHumanDir
+  [192] setprop 1301 ............................ pLastDir = tHumanDir
   [195] pushzero ................................ <0>
   [196] pushint8 1 .............................. <1>
   [198] pushint8 2 .............................. <2>
@@ -262,95 +262,95 @@ on update me
   [214] pushint8 1 .............................. <1>
   [216] add ..................................... <tHumanDir + 1>
   [217] pusharglist 2 ........................... <[0, 1, 2, 3, 2, 1, 0, 3], tHumanDir + 1>
-  [219] objcall 9 ............................... <[0, 1, 2, 3, 2, 1, 0, 3][tHumanDir + 1]>
+  [219] objcall 34 .............................. <[0, 1, 2, 3, 2, 1, 0, 3][tHumanDir + 1]>
   [221] setlocal 4 .............................. tdir = [0, 1, 2, 3, 2, 1, 0, 3][tHumanDir + 1]
   [223] getlocal 2 .............................. <tHumanDir>
   [225] pushint8 4 .............................. <4>
   [227] lt ...................................... <tHumanDir < 4>
-  [228] jmpifz [241] ............................ if tHumanDir < 4 then / else
-  [231] getprop 1491 ............................ <pArrowSpr>
+  [228] jmpifz [240] ............................ if tHumanDir < 4 then / else
+  [231] getprop 1486 ............................ <pArrowSpr>
   [234] pushzero ................................ <0>
-  [235] setobjprop 1023 ......................... pArrowSpr.flipH = 0
-  [238] jmp [249]
-  [241] getprop 1491 ............................ <pArrowSpr>
-  [244] pushint8 1 .............................. <1>
-  [246] setobjprop 1023 ......................... pArrowSpr.flipH = 1
-  [249] getprop 1491 ............................ <pArrowSpr>
-  [252] pushcons 5 .............................. <"puppet_hilite_">
-  [254] getprop 1495 ............................ <pSize>
-  [257] joinstr ................................. <"puppet_hilite_" & pSize>
-  [258] pushcons 6 .............................. <"_">
-  [260] joinstr ................................. <"puppet_hilite_" & pSize & "_">
-  [261] getlocal 4 .............................. <tdir>
-  [263] joinstr ................................. <"puppet_hilite_" & pSize & "_" & tdir>
-  [264] pusharglist 1 ........................... <"puppet_hilite_" & pSize & "_" & tdir>
-  [266] extcall 37 .............................. <getmemnum("puppet_hilite_" & pSize & "_" & tdir)>
-  [268] pusharglist 1 ........................... <getmemnum("puppet_hilite_" & pSize & "_" & tdir)>
-  [270] extcall 30 .............................. <member(getmemnum("puppet_hilite_" & pSize & "_" & tdir))>
-  [272] setobjprop 30 ........................... pArrowSpr.member = member(getmemnum("puppet_hilite_" & pSize & "_" & tdir))
-  [274] getprop 1495 ............................ <pSize>
-  [277] pushcons 2 .............................. <"h">
-  [279] eq ...................................... <pSize = "h">
-  [280] jmpifz [290] ............................ if pSize = "h" then / else
-  [283] pushint8 60 ............................. <60>
-  [285] setlocal 5 .............................. tLocV = 60
-  [287] jmp [294]
-  [290] pushint8 40 ............................. <40>
-  [292] setlocal 5 .............................. tLocV = 40
-  [294] getprop 1491 ............................ <pArrowSpr>
-  [297] getlocal 1 .............................. <tHumanLoc>
-  [299] pushint8 1 .............................. <1>
-  [301] pusharglist 2 ........................... <tHumanLoc, 1>
-  [303] objcall 9 ............................... <tHumanLoc[1]>
-  [305] getlocal 1 .............................. <tHumanLoc>
-  [307] pushint8 2 .............................. <2>
-  [309] pusharglist 2 ........................... <tHumanLoc, 2>
-  [311] objcall 9 ............................... <tHumanLoc[2]>
-  [313] getlocal 5 .............................. <tLocV>
-  [315] sub ..................................... <tHumanLoc[2] - tLocV>
-  [316] pusharglist 2 ........................... <tHumanLoc[1], tHumanLoc[2] - tLocV>
-  [318] extcall 293 ............................. <point(tHumanLoc[1], tHumanLoc[2] - tLocV)>
-  [321] setobjprop 361 .......................... pArrowSpr.loc = point(tHumanLoc[1], tHumanLoc[2] - tLocV)
-  [324] pushint8 1 .............................. <1>
-  [326] pusharglistnoret 1 ...................... <1>
-  [328] extcall 21 .............................. return 1
-  [330] getprop 1495 ............................ <pSize>
-  [333] pushcons 2 .............................. <"h">
-  [335] eq ...................................... <pSize = "h">
-  [336] jmpifz [346] ............................ if pSize = "h" then / else
-  [339] pushint8 60 ............................. <60>
-  [341] setlocal 5 .............................. tLocV = 60
-  [343] jmp [350]
-  [346] pushint8 40 ............................. <40>
-  [348] setlocal 5 .............................. tLocV = 40
-  [350] getprop 1493 ............................ <pAnimFlag>
-  [353] jmpifz [410] ............................ if pAnimFlag then
-  [356] getprop 1494 ............................ <pAnimCntr>
-  [359] pushint8 4 .............................. <4>
-  [361] add ..................................... <pAnimCntr + 4>
-  [362] pushint8 32 ............................. <32>
-  [364] mod ..................................... <(pAnimCntr + 4) mod 32>
-  [365] setprop 1494 ............................ pAnimCntr = (pAnimCntr + 4) mod 32
-  [368] getlocal 1 .............................. <tHumanLoc>
-  [370] pushint8 2 .............................. <2>
-  [372] pusharglist 2 ........................... <tHumanLoc, 2>
-  [374] objcall 9 ............................... <tHumanLoc[2]>
-  [376] pushint8 8 .............................. <8>
-  [378] inv ..................................... <-8>
-  [379] getprop 1494 ............................ <pAnimCntr>
-  [382] pusharglist 1 ........................... <pAnimCntr>
-  [384] extcall 616 ............................. <float(pAnimCntr)>
-  [387] pushint8 10 ............................. <10>
-  [389] div ..................................... <float(pAnimCntr) / 10>
-  [390] pusharglist 1 ........................... <float(pAnimCntr) / 10>
-  [392] extcall 1499 ............................ <sin(float(pAnimCntr) / 10)>
-  [395] mul ..................................... <-8 * sin(float(pAnimCntr) / 10)>
-  [396] add ..................................... <tHumanLoc[2] + (-8 * sin(float(pAnimCntr) / 10))>
-  [397] setlocal 6 .............................. tOffY = tHumanLoc[2] + (-8 * sin(float(pAnimCntr) / 10))
-  [399] getprop 1491 ............................ <pArrowSpr>
-  [402] getlocal 6 .............................. <tOffY>
-  [404] getlocal 5 .............................. <tLocV>
-  [406] sub ..................................... <tOffY - tLocV>
-  [407] setobjprop 500 .......................... pArrowSpr.locV = tOffY - tLocV
-  [410] ret
+  [235] setobjprop 78 ........................... pArrowSpr.flipH = 0
+  [237] jmp [247]
+  [240] getprop 1486 ............................ <pArrowSpr>
+  [243] pushint8 1 .............................. <1>
+  [245] setobjprop 78 ........................... pArrowSpr.flipH = 1
+  [247] getprop 1486 ............................ <pArrowSpr>
+  [250] pushcons 5 .............................. <"puppet_hilite_">
+  [252] getprop 1490 ............................ <pSize>
+  [255] joinstr ................................. <"puppet_hilite_" & pSize>
+  [256] pushcons 6 .............................. <"_">
+  [258] joinstr ................................. <"puppet_hilite_" & pSize & "_">
+  [259] getlocal 4 .............................. <tdir>
+  [261] joinstr ................................. <"puppet_hilite_" & pSize & "_" & tdir>
+  [262] pusharglist 1 ........................... <"puppet_hilite_" & pSize & "_" & tdir>
+  [264] extcall 65 .............................. <getmemnum("puppet_hilite_" & pSize & "_" & tdir)>
+  [266] pusharglist 1 ........................... <getmemnum("puppet_hilite_" & pSize & "_" & tdir)>
+  [268] extcall 64 .............................. <member(getmemnum("puppet_hilite_" & pSize & "_" & tdir))>
+  [270] setobjprop 64 ........................... pArrowSpr.member = member(getmemnum("puppet_hilite_" & pSize & "_" & tdir))
+  [272] getprop 1490 ............................ <pSize>
+  [275] pushcons 2 .............................. <"h">
+  [277] eq ...................................... <pSize = "h">
+  [278] jmpifz [288] ............................ if pSize = "h" then / else
+  [281] pushint8 60 ............................. <60>
+  [283] setlocal 5 .............................. tLocV = 60
+  [285] jmp [292]
+  [288] pushint8 40 ............................. <40>
+  [290] setlocal 5 .............................. tLocV = 40
+  [292] getprop 1486 ............................ <pArrowSpr>
+  [295] getlocal 1 .............................. <tHumanLoc>
+  [297] pushint8 1 .............................. <1>
+  [299] pusharglist 2 ........................... <tHumanLoc, 1>
+  [301] objcall 34 .............................. <tHumanLoc[1]>
+  [303] getlocal 1 .............................. <tHumanLoc>
+  [305] pushint8 2 .............................. <2>
+  [307] pusharglist 2 ........................... <tHumanLoc, 2>
+  [309] objcall 34 .............................. <tHumanLoc[2]>
+  [311] getlocal 5 .............................. <tLocV>
+  [313] sub ..................................... <tHumanLoc[2] - tLocV>
+  [314] pusharglist 2 ........................... <tHumanLoc[1], tHumanLoc[2] - tLocV>
+  [316] extcall 375 ............................. <point(tHumanLoc[1], tHumanLoc[2] - tLocV)>
+  [319] setobjprop 435 .......................... pArrowSpr.loc = point(tHumanLoc[1], tHumanLoc[2] - tLocV)
+  [322] pushint8 1 .............................. <1>
+  [324] pusharglistnoret 1 ...................... <1>
+  [326] extcall 31 .............................. return 1
+  [328] getprop 1490 ............................ <pSize>
+  [331] pushcons 2 .............................. <"h">
+  [333] eq ...................................... <pSize = "h">
+  [334] jmpifz [344] ............................ if pSize = "h" then / else
+  [337] pushint8 60 ............................. <60>
+  [339] setlocal 5 .............................. tLocV = 60
+  [341] jmp [348]
+  [344] pushint8 40 ............................. <40>
+  [346] setlocal 5 .............................. tLocV = 40
+  [348] getprop 1488 ............................ <pAnimFlag>
+  [351] jmpifz [407] ............................ if pAnimFlag then
+  [354] getprop 1489 ............................ <pAnimCntr>
+  [357] pushint8 4 .............................. <4>
+  [359] add ..................................... <pAnimCntr + 4>
+  [360] pushint8 32 ............................. <32>
+  [362] mod ..................................... <(pAnimCntr + 4) mod 32>
+  [363] setprop 1489 ............................ pAnimCntr = (pAnimCntr + 4) mod 32
+  [366] getlocal 1 .............................. <tHumanLoc>
+  [368] pushint8 2 .............................. <2>
+  [370] pusharglist 2 ........................... <tHumanLoc, 2>
+  [372] objcall 34 .............................. <tHumanLoc[2]>
+  [374] pushint8 8 .............................. <8>
+  [376] inv ..................................... <-8>
+  [377] getprop 1489 ............................ <pAnimCntr>
+  [380] pusharglist 1 ........................... <pAnimCntr>
+  [382] extcall 669 ............................. <float(pAnimCntr)>
+  [385] pushint8 10 ............................. <10>
+  [387] div ..................................... <float(pAnimCntr) / 10>
+  [388] pusharglist 1 ........................... <float(pAnimCntr) / 10>
+  [390] extcall 1494 ............................ <sin(float(pAnimCntr) / 10)>
+  [393] mul ..................................... <-8 * sin(float(pAnimCntr) / 10)>
+  [394] add ..................................... <tHumanLoc[2] + (-8 * sin(float(pAnimCntr) / 10))>
+  [395] setlocal 6 .............................. tOffY = tHumanLoc[2] + (-8 * sin(float(pAnimCntr) / 10))
+  [397] getprop 1486 ............................ <pArrowSpr>
+  [400] getlocal 6 .............................. <tOffY>
+  [402] getlocal 5 .............................. <tLocV>
+  [404] sub ..................................... <tOffY - tLocV>
+  [405] setobjprop 113 .......................... pArrowSpr.locV = tOffY - tLocV
+  [407] ret
 end

@@ -3,218 +3,218 @@ property pSprite, pMember, pLoc, pProps
 on construct me
   [  0] pusharglist 0 ........................... <[:]>
   [  2] pushproplist ............................ <[:]>
-  [  3] setprop 1587 ............................ pProps = [:]
+  [  3] setprop 1582 ............................ pProps = [:]
   [  6] pushint8 1 .............................. <1>
   [  8] pusharglistnoret 1 ...................... <1>
-  [ 10] extcall 21 .............................. return 1
+  [ 10] extcall 31 .............................. return 1
   [ 12] ret
 end
 
 on deconstruct me
-  [  0] getprop 1264 ............................ <pMember>
+  [  0] getprop 1291 ............................ <pMember>
   [  3] pusharglist 1 ........................... <pMember>
-  [  5] extcall 10 .............................. <voidp(pMember)>
+  [  5] extcall 120 ............................. <voidp(pMember)>
   [  7] not ..................................... <not voidp(pMember)>
   [  8] jmpifz [ 21] ............................ if not voidp(pMember) then
-  [ 11] getprop 1264 ............................ <pMember>
-  [ 14] getobjprop 31 ........................... <pMember.name>
+  [ 11] getprop 1291 ............................ <pMember>
+  [ 14] getobjprop 58 ........................... <pMember.name>
   [ 16] pusharglistnoret 1 ...................... <pMember.name>
-  [ 18] extcall 1116 ............................ removeMember(pMember.name)
-  [ 21] getprop 327 ............................. <pSprite>
+  [ 18] extcall 1145 ............................ removeMember(pMember.name)
+  [ 21] getprop 404 ............................. <pSprite>
   [ 24] pusharglist 1 ........................... <pSprite>
-  [ 26] extcall 248 ............................. <ilk(pSprite)>
-  [ 28] pushsymb 182 ............................ <#sprite>
+  [ 26] extcall 127 ............................. <ilk(pSprite)>
+  [ 28] pushsymb 73 ............................. <#sprite>
   [ 30] eq ...................................... <ilk(pSprite) = #sprite>
-  [ 31] jmpifz [ 43] ............................ if ilk(pSprite) = #sprite then
-  [ 34] getprop 327 ............................. <pSprite>
-  [ 37] getobjprop 18 ........................... <pSprite.spriteNum>
+  [ 31] jmpifz [ 44] ............................ if ilk(pSprite) = #sprite then
+  [ 34] getprop 404 ............................. <pSprite>
+  [ 37] getobjprop 36 ........................... <pSprite.spriteNum>
   [ 39] pusharglistnoret 1 ...................... <pSprite.spriteNum>
-  [ 41] extcall 16 .............................. removeEventBroker(pSprite.spriteNum)
-  [ 43] pusharglist 0 ........................... <>
-  [ 45] extcall 159 ............................. <VOID>
-  [ 47] setprop 327 ............................. pSprite = VOID
-  [ 50] pusharglist 0 ........................... <>
-  [ 52] extcall 159 ............................. <VOID>
-  [ 54] setprop 1264 ............................ pMember = VOID
-  [ 57] pushint8 1 .............................. <1>
-  [ 59] pusharglistnoret 1 ...................... <1>
-  [ 61] extcall 21 .............................. return 1
-  [ 63] ret
+  [ 41] extcall 1583 ............................ removeEventBroker(pSprite.spriteNum)
+  [ 44] pusharglist 0 ........................... <>
+  [ 46] extcall 30 .............................. <VOID>
+  [ 48] setprop 404 ............................. pSprite = VOID
+  [ 51] pusharglist 0 ........................... <>
+  [ 53] extcall 30 .............................. <VOID>
+  [ 55] setprop 1291 ............................ pMember = VOID
+  [ 58] pushint8 1 .............................. <1>
+  [ 60] pusharglistnoret 1 ...................... <1>
+  [ 62] extcall 31 .............................. return 1
+  [ 64] ret
 end
 
 on defineBalloon me
   [  0] getparam 0 .............................. <me>
-  [  2] pushsymb 182 ............................ <#sprite>
+  [  2] pushsymb 73 ............................. <#sprite>
   [  4] pusharglist 2 ........................... <me, #sprite>
-  [  6] objcall 234 ............................. <me.get(#sprite)>
+  [  6] objcall 133 ............................. <me.get(#sprite)>
   [  8] pusharglist 1 ........................... <me.get(#sprite)>
-  [ 10] extcall 182 ............................. <sprite(me.get(#sprite))>
-  [ 12] setprop 327 ............................. pSprite = sprite(me.get(#sprite))
+  [ 10] extcall 73 .............................. <sprite(me.get(#sprite))>
+  [ 12] setprop 404 ............................. pSprite = sprite(me.get(#sprite))
   [ 15] getparam 0 .............................. <me>
-  [ 17] pushsymb 30 ............................. <#member>
+  [ 17] pushsymb 64 ............................. <#member>
   [ 19] pusharglist 2 ........................... <me, #member>
-  [ 21] objcall 234 ............................. <me.get(#member)>
+  [ 21] objcall 133 ............................. <me.get(#member)>
   [ 23] pusharglist 1 ........................... <me.get(#member)>
-  [ 25] extcall 30 .............................. <member(me.get(#member))>
-  [ 27] setprop 1264 ............................ pMember = member(me.get(#member))
+  [ 25] extcall 64 .............................. <member(me.get(#member))>
+  [ 27] setprop 1291 ............................ pMember = member(me.get(#member))
   [ 30] getparam 0 .............................. <me>
-  [ 32] pushsymb 361 ............................ <#loc>
+  [ 32] pushsymb 435 ............................ <#loc>
   [ 35] pusharglist 2 ........................... <me, #loc>
-  [ 37] objcall 234 ............................. <me.get(#loc)>
-  [ 39] setprop 1588 ............................ pLoc = me.get(#loc)
-  [ 42] getprop 327 ............................. <pSprite>
-  [ 45] getprop 1588 ............................ <pLoc>
-  [ 48] setobjprop 361 .......................... pSprite.loc = pLoc
-  [ 51] getprop 327 ............................. <pSprite>
-  [ 54] getprop 1264 ............................ <pMember>
-  [ 57] setobjprop 30 ........................... pSprite.member = pMember
-  [ 59] getprop 327 ............................. <pSprite>
-  [ 62] getobjprop 18 ........................... <pSprite.spriteNum>
+  [ 37] objcall 133 ............................. <me.get(#loc)>
+  [ 39] setprop 1584 ............................ pLoc = me.get(#loc)
+  [ 42] getprop 404 ............................. <pSprite>
+  [ 45] getprop 1584 ............................ <pLoc>
+  [ 48] setobjprop 435 .......................... pSprite.loc = pLoc
+  [ 51] getprop 404 ............................. <pSprite>
+  [ 54] getprop 1291 ............................ <pMember>
+  [ 57] setobjprop 64 ........................... pSprite.member = pMember
+  [ 59] getprop 404 ............................. <pSprite>
+  [ 62] getobjprop 36 ........................... <pSprite.spriteNum>
   [ 64] getparam 0 .............................. <me>
-  [ 66] pushsymb 1581 ........................... <#ownerID>
+  [ 66] pushsymb 1576 ........................... <#ownerID>
   [ 69] pusharglist 2 ........................... <me, #ownerID>
-  [ 71] objcall 234 ............................. <me.get(#ownerID)>
+  [ 71] objcall 133 ............................. <me.get(#ownerID)>
   [ 73] pusharglistnoret 2 ...................... <pSprite.spriteNum, me.get(#ownerID)>
-  [ 75] extcall 363 ............................. setEventBroker(pSprite.spriteNum, me.get(#ownerID))
-  [ 78] pushsymb 949 ............................ <#room>
-  [ 81] pusharglist 1 ........................... <#room>
-  [ 83] extcall 260 ............................. <getThread(#room)>
-  [ 86] pusharglist 1 ........................... <getThread(#room)>
-  [ 88] objcall 597 ............................. <getThread(#room).getInterface()>
-  [ 91] pusharglist 1 ........................... <getThread(#room).getInterface()>
-  [ 93] objcall 156 ............................. <getThread(#room).getInterface().getID()>
-  [ 95] setlocal 0 .............................. tTargetID = getThread(#room).getInterface().getID()
-  [ 97] getprop 327 ............................. <pSprite>
-  [100] pushsymb 110 ............................ <#eventProcUserObj>
-  [102] getlocal 0 .............................. <tTargetID>
-  [104] pushsymb 180 ............................ <#mouseDown>
-  [106] pusharglistnoret 4 ...................... <pSprite, #eventProcUserObj, tTargetID, #mouseDown>
-  [108] objcall 179 ............................. pSprite.registerProcedure(#eventProcUserObj, tTargetID, #mouseDown)
-  [110] getprop 327 ............................. <pSprite>
-  [113] pushsymb 104 ............................ <#eventProcUserRollOver>
-  [115] getlocal 0 .............................. <tTargetID>
-  [117] pushsymb 212 ............................ <#mouseEnter>
-  [119] pusharglistnoret 4 ...................... <pSprite, #eventProcUserRollOver, tTargetID, #mouseEnter>
-  [121] objcall 179 ............................. pSprite.registerProcedure(#eventProcUserRollOver, tTargetID, #mouseEnter)
-  [123] getprop 327 ............................. <pSprite>
-  [126] pushsymb 104 ............................ <#eventProcUserRollOver>
-  [128] getlocal 0 .............................. <tTargetID>
-  [130] pushsymb 213 ............................ <#mouseLeave>
-  [132] pusharglistnoret 4 ...................... <pSprite, #eventProcUserRollOver, tTargetID, #mouseLeave>
-  [134] objcall 179 ............................. pSprite.registerProcedure(#eventProcUserRollOver, tTargetID, #mouseLeave)
-  [136] pushint8 1 .............................. <1>
-  [138] pusharglistnoret 1 ...................... <1>
-  [140] extcall 21 .............................. return 1
-  [142] ret
+  [ 75] extcall 76 .............................. setEventBroker(pSprite.spriteNum, me.get(#ownerID))
+  [ 77] pushsymb 52 ............................. <#room>
+  [ 79] pusharglist 1 ........................... <#room>
+  [ 81] extcall 51 .............................. <getThread(#room)>
+  [ 83] pusharglist 1 ........................... <getThread(#room)>
+  [ 85] objcall 53 .............................. <getThread(#room).getInterface()>
+  [ 87] pusharglist 1 ........................... <getThread(#room).getInterface()>
+  [ 89] objcall 75 .............................. <getThread(#room).getInterface().getID()>
+  [ 91] setlocal 0 .............................. tTargetID = getThread(#room).getInterface().getID()
+  [ 93] getprop 404 ............................. <pSprite>
+  [ 96] pushsymb 222 ............................ <#eventProcUserObj>
+  [ 98] getlocal 0 .............................. <tTargetID>
+  [100] pushsymb 83 ............................. <#mouseDown>
+  [102] pusharglistnoret 4 ...................... <pSprite, #eventProcUserObj, tTargetID, #mouseDown>
+  [104] objcall 84 .............................. pSprite.registerProcedure(#eventProcUserObj, tTargetID, #mouseDown)
+  [106] getprop 404 ............................. <pSprite>
+  [109] pushsymb 217 ............................ <#eventProcUserRollOver>
+  [111] getlocal 0 .............................. <tTargetID>
+  [113] pushsymb 86 ............................. <#mouseEnter>
+  [115] pusharglistnoret 4 ...................... <pSprite, #eventProcUserRollOver, tTargetID, #mouseEnter>
+  [117] objcall 84 .............................. pSprite.registerProcedure(#eventProcUserRollOver, tTargetID, #mouseEnter)
+  [119] getprop 404 ............................. <pSprite>
+  [122] pushsymb 217 ............................ <#eventProcUserRollOver>
+  [124] getlocal 0 .............................. <tTargetID>
+  [126] pushsymb 87 ............................. <#mouseLeave>
+  [128] pusharglistnoret 4 ...................... <pSprite, #eventProcUserRollOver, tTargetID, #mouseLeave>
+  [130] objcall 84 .............................. pSprite.registerProcedure(#eventProcUserRollOver, tTargetID, #mouseLeave)
+  [132] pushint8 1 .............................. <1>
+  [134] pusharglistnoret 1 ...................... <1>
+  [136] extcall 31 .............................. return 1
+  [138] ret
 end
 
 on UpdateBalloonPos me, tLocV
-  [  0] getprop 1588 ............................ <pLoc>
-  [  3] getobjprop 500 .......................... <pLoc.locV>
-  [  6] pushzero ................................ <0>
-  [  7] lt ...................................... <pLoc.locV < 0>
-  [  8] jmpifz [ 16] ............................ if pLoc.locV < 0 then
-  [ 11] pushzero ................................ <0>
-  [ 12] pusharglistnoret 1 ...................... <0>
-  [ 14] extcall 21 .............................. return 0
-  [ 16] getprop 1588 ............................ <pLoc>
-  [ 19] pushzero ................................ <0>
-  [ 20] getparam 1 .............................. <tLocV>
-  [ 22] pusharglist 2 ........................... <0, tLocV>
-  [ 24] extcall 293 ............................. <point(0, tLocV)>
-  [ 27] add ..................................... <pLoc + point(0, tLocV)>
-  [ 28] setprop 1588 ............................ pLoc = pLoc + point(0, tLocV)
-  [ 31] getprop 327 ............................. <pSprite>
-  [ 34] getprop 1588 ............................ <pLoc>
-  [ 37] setobjprop 361 .......................... pSprite.loc = pLoc
-  [ 40] ret
+  [  0] getprop 1584 ............................ <pLoc>
+  [  3] getobjprop 113 .......................... <pLoc.locV>
+  [  5] pushzero ................................ <0>
+  [  6] lt ...................................... <pLoc.locV < 0>
+  [  7] jmpifz [ 15] ............................ if pLoc.locV < 0 then
+  [ 10] pushzero ................................ <0>
+  [ 11] pusharglistnoret 1 ...................... <0>
+  [ 13] extcall 31 .............................. return 0
+  [ 15] getprop 1584 ............................ <pLoc>
+  [ 18] pushzero ................................ <0>
+  [ 19] getparam 1 .............................. <tLocV>
+  [ 21] pusharglist 2 ........................... <0, tLocV>
+  [ 23] extcall 375 ............................. <point(0, tLocV)>
+  [ 26] add ..................................... <pLoc + point(0, tLocV)>
+  [ 27] setprop 1584 ............................ pLoc = pLoc + point(0, tLocV)
+  [ 30] getprop 404 ............................. <pSprite>
+  [ 33] getprop 1584 ............................ <pLoc>
+  [ 36] setobjprop 435 .......................... pSprite.loc = pLoc
+  [ 39] ret
 end
 
 on removeBalloon me
-  [  0] getprop 327 ............................. <pSprite>
+  [  0] getprop 404 ............................. <pSprite>
   [  3] pusharglist 1 ........................... <pSprite>
-  [  5] extcall 10 .............................. <voidp(pSprite)>
+  [  5] extcall 120 ............................. <voidp(pSprite)>
   [  7] jmpifz [ 15] ............................ if voidp(pSprite) then
   [ 10] pushzero ................................ <0>
   [ 11] pusharglistnoret 1 ...................... <0>
-  [ 13] extcall 21 .............................. return 0
-  [ 15] getprop 327 ............................. <pSprite>
+  [ 13] extcall 31 .............................. return 0
+  [ 15] getprop 404 ............................. <pSprite>
   [ 18] pushzero ................................ <0>
   [ 19] pushint16 1000 .......................... <1000>
   [ 22] inv ..................................... <-1000>
   [ 23] pusharglist 2 ........................... <0, -1000>
-  [ 25] extcall 293 ............................. <point(0, -1000)>
-  [ 28] setobjprop 361 .......................... pSprite.loc = point(0, -1000)
-  [ 31] getprop 327 ............................. <pSprite>
-  [ 34] getobjprop 18 ........................... <pSprite.spriteNum>
+  [ 25] extcall 375 ............................. <point(0, -1000)>
+  [ 28] setobjprop 435 .......................... pSprite.loc = point(0, -1000)
+  [ 31] getprop 404 ............................. <pSprite>
+  [ 34] getobjprop 36 ........................... <pSprite.spriteNum>
   [ 36] pusharglistnoret 1 ...................... <pSprite.spriteNum>
-  [ 38] extcall 16 .............................. removeEventBroker(pSprite.spriteNum)
-  [ 40] pushint8 1 .............................. <1>
-  [ 42] pusharglistnoret 1 ...................... <1>
-  [ 44] extcall 21 .............................. return 1
-  [ 46] ret
+  [ 38] extcall 1583 ............................ removeEventBroker(pSprite.spriteNum)
+  [ 41] pushint8 1 .............................. <1>
+  [ 43] pusharglistnoret 1 ...................... <1>
+  [ 45] extcall 31 .............................. return 1
+  [ 47] ret
 end
 
 on hideBalloon me
-  [  0] getprop 327 ............................. <pSprite>
+  [  0] getprop 404 ............................. <pSprite>
   [  3] pusharglist 1 ........................... <pSprite>
-  [  5] extcall 10 .............................. <voidp(pSprite)>
+  [  5] extcall 120 ............................. <voidp(pSprite)>
   [  7] jmpifz [ 15] ............................ if voidp(pSprite) then
   [ 10] pushzero ................................ <0>
   [ 11] pusharglistnoret 1 ...................... <0>
-  [ 13] extcall 21 .............................. return 0
-  [ 15] getprop 327 ............................. <pSprite>
+  [ 13] extcall 31 .............................. return 0
+  [ 15] getprop 404 ............................. <pSprite>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 251 .......................... pSprite.visible = 0
-  [ 21] pushint8 1 .............................. <1>
-  [ 23] pusharglistnoret 1 ...................... <1>
-  [ 25] extcall 21 .............................. return 1
-  [ 27] ret
-end
-
-on showBalloon me
-  [  0] getprop 327 ............................. <pSprite>
-  [  3] pusharglist 1 ........................... <pSprite>
-  [  5] extcall 10 .............................. <voidp(pSprite)>
-  [  7] jmpifz [ 15] ............................ if voidp(pSprite) then
-  [ 10] pushzero ................................ <0>
-  [ 11] pusharglistnoret 1 ...................... <0>
-  [ 13] extcall 21 .............................. return 0
-  [ 15] getprop 327 ............................. <pSprite>
-  [ 18] pushint8 1 .............................. <1>
-  [ 20] setobjprop 251 .......................... pSprite.visible = 1
+  [ 19] setobjprop 341 .......................... pSprite.visible = 0
   [ 22] pushint8 1 .............................. <1>
   [ 24] pusharglistnoret 1 ...................... <1>
-  [ 26] extcall 21 .............................. return 1
+  [ 26] extcall 31 .............................. return 1
   [ 28] ret
 end
 
+on showBalloon me
+  [  0] getprop 404 ............................. <pSprite>
+  [  3] pusharglist 1 ........................... <pSprite>
+  [  5] extcall 120 ............................. <voidp(pSprite)>
+  [  7] jmpifz [ 15] ............................ if voidp(pSprite) then
+  [ 10] pushzero ................................ <0>
+  [ 11] pusharglistnoret 1 ...................... <0>
+  [ 13] extcall 31 .............................. return 0
+  [ 15] getprop 404 ............................. <pSprite>
+  [ 18] pushint8 1 .............................. <1>
+  [ 20] setobjprop 341 .......................... pSprite.visible = 1
+  [ 23] pushint8 1 .............................. <1>
+  [ 25] pusharglistnoret 1 ...................... <1>
+  [ 27] extcall 31 .............................. return 1
+  [ 29] ret
+end
+
 on set me, tKey, tValue
-  [  0] getprop 1587 ............................ <pProps>
+  [  0] getprop 1582 ............................ <pProps>
   [  3] getparam 1 .............................. <tKey>
   [  5] getparam 2 .............................. <tValue>
   [  7] pusharglistnoret 3 ...................... <pProps, tKey, tValue>
-  [  9] objcall 173 ............................. pProps[tKey] = tValue
+  [  9] objcall 59 .............................. pProps[tKey] = tValue
   [ 11] pushint8 1 .............................. <1>
   [ 13] pusharglistnoret 1 ...................... <1>
-  [ 15] extcall 21 .............................. return 1
+  [ 15] extcall 31 .............................. return 1
   [ 17] ret
 end
 
 on get me, tKey
-  [  0] getprop 1587 ............................ <pProps>
+  [  0] getprop 1582 ............................ <pProps>
   [  3] getparam 1 .............................. <tKey>
   [  5] pusharglist 2 ........................... <pProps, tKey>
-  [  7] objcall 9 ............................... <pProps[tKey]>
+  [  7] objcall 34 .............................. <pProps[tKey]>
   [  9] setlocal 0 .............................. tValue = pProps[tKey]
   [ 11] getlocal 0 .............................. <tValue>
   [ 13] pusharglist 1 ........................... <tValue>
-  [ 15] extcall 10 .............................. <voidp(tValue)>
+  [ 15] extcall 120 ............................. <voidp(tValue)>
   [ 17] jmpifz [ 23] ............................ if voidp(tValue) then
   [ 20] pushzero ................................ <0>
   [ 21] setlocal 0 .............................. tValue = 0
   [ 23] getlocal 0 .............................. <tValue>
   [ 25] pusharglistnoret 1 ...................... <tValue>
-  [ 27] extcall 21 .............................. return tValue
+  [ 27] extcall 31 .............................. return tValue
   [ 29] ret
 end

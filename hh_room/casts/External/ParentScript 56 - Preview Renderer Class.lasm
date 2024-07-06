@@ -2,9 +2,9 @@ property pPossibleParts
 
 on construct me
   [  0] pushcons 0 .............................. <"preview_rendered">
-  [  2] pushsymb 321 ............................ <#bitmap>
+  [  2] pushsymb 399 ............................ <#bitmap>
   [  5] pusharglistnoret 2 ...................... <"preview_rendered", #bitmap>
-  [  7] extcall 359 ............................. createMember("preview_rendered", #bitmap)
+  [  7] extcall 433 ............................. createMember("preview_rendered", #bitmap)
   [ 10] pushcons 1 .............................. <"a">
   [ 12] pushcons 2 .............................. <"b">
   [ 14] pushcons 3 .............................. <"c">
@@ -19,37 +19,37 @@ on construct me
   [ 32] pushcons 12 ............................. <"l">
   [ 34] pusharglist 12 .......................... <["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]>
   [ 36] pushlist ................................ <["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]>
-  [ 37] setprop 1717 ............................ pPossibleParts = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
+  [ 37] setprop 1713 ............................ pPossibleParts = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
   [ 40] pushint8 1 .............................. <1>
   [ 42] pusharglistnoret 1 ...................... <1>
-  [ 44] extcall 21 .............................. return 1
+  [ 44] extcall 31 .............................. return 1
   [ 46] ret
 end
 
 on deconstruct me
   [  0] pushcons 0 .............................. <"preview_rendered">
   [  2] pusharglistnoret 1 ...................... <"preview_rendered">
-  [  4] extcall 1116 ............................ removeMember("preview_rendered")
+  [  4] extcall 1145 ............................ removeMember("preview_rendered")
   [  7] pushint8 1 .............................. <1>
   [  9] pusharglistnoret 1 ...................... <1>
-  [ 11] extcall 21 .............................. return 1
+  [ 11] extcall 31 .............................. return 1
   [ 13] ret
 end
 
 on getPreviewMember me, tImage
   [  0] pushcons 0 .............................. <"preview_rendered">
   [  2] pusharglist 1 ........................... <"preview_rendered">
-  [  4] extcall 37 .............................. <getmemnum("preview_rendered")>
+  [  4] extcall 65 .............................. <getmemnum("preview_rendered")>
   [  6] setlocal 0 .............................. tMemNum = getmemnum("preview_rendered")
   [  8] getlocal 0 .............................. <tMemNum>
   [ 10] pusharglist 1 ........................... <tMemNum>
-  [ 12] extcall 30 .............................. <member(tMemNum)>
+  [ 12] extcall 64 .............................. <member(tMemNum)>
   [ 14] getparam 1 .............................. <tImage>
-  [ 16] setobjprop 290 .......................... member(tMemNum).image = tImage
-  [ 19] getlocal 0 .............................. <tMemNum>
-  [ 21] pusharglistnoret 1 ...................... <tMemNum>
-  [ 23] extcall 21 .............................. return tMemNum
-  [ 25] ret
+  [ 16] setobjprop 63 ........................... member(tMemNum).image = tImage
+  [ 18] getlocal 0 .............................. <tMemNum>
+  [ 20] pusharglistnoret 1 ...................... <tMemNum>
+  [ 22] extcall 31 .............................. return tMemNum
+  [ 24] ret
 end
 
 on solveClass me, tClass, tMemStr
@@ -58,64 +58,64 @@ on solveClass me, tClass, tMemStr
   [  4] getlocal 0 .............................. <tName>
   [  6] pushcons 13 ............................. <"*">
   [  8] containsstr ............................. <tName contains "*">
-  [  9] jmpifz [ 64] ............................ if tName contains "*" then / else
+  [  9] jmpifz [ 63] ............................ if tName contains "*" then / else
   [ 12] getlocal 0 .............................. <tName>
   [ 14] pushcons 14 ............................. <"_small">
   [ 16] joinstr ................................. <tName & "_small">
   [ 17] setlocal 1 .............................. tSmallMem = tName & "_small"
   [ 19] getlocal 0 .............................. <tName>
-  [ 21] pushsymb 450 ............................ <#char>
-  [ 24] pushint8 1 .............................. <1>
-  [ 26] pushcons 13 ............................. <"*">
-  [ 28] getlocal 0 .............................. <tName>
-  [ 30] pusharglist 2 ........................... <"*", tName>
-  [ 32] extcall 621 ............................. <offset("*", tName)>
-  [ 35] pushint8 1 .............................. <1>
-  [ 37] sub ..................................... <offset("*", tName) - 1>
-  [ 38] pusharglist 4 ........................... <tName, #char, 1, offset("*", tName) - 1>
-  [ 40] objcall 33 .............................. <tName.char[1..offset("*", tName) - 1]>
-  [ 42] setlocal 0 .............................. tName = tName.char[1..offset("*", tName) - 1]
-  [ 44] getlocal 1 .............................. <tSmallMem>
-  [ 46] pusharglist 1 ........................... <tSmallMem>
-  [ 48] extcall 35 .............................. <memberExists(tSmallMem)>
-  [ 50] not ..................................... <not memberExists(tSmallMem)>
-  [ 51] jmpifz [ 61] ............................ if not memberExists(tSmallMem) then
-  [ 54] getlocal 0 .............................. <tName>
-  [ 56] pushcons 14 ............................. <"_small">
-  [ 58] joinstr ................................. <tName & "_small">
-  [ 59] setlocal 1 .............................. tSmallMem = tName & "_small"
-  [ 61] jmp [ 71]
-  [ 64] getparam 1 .............................. <tClass>
-  [ 66] pushcons 14 ............................. <"_small">
-  [ 68] joinstr ................................. <tClass & "_small">
-  [ 69] setlocal 1 .............................. tSmallMem = tClass & "_small"
-  [ 71] getparam 2 .............................. <tMemStr>
-  [ 73] pusharglist 0 ........................... <>
-  [ 75] extcall 159 ............................. <VOID>
-  [ 77] eq ...................................... <tMemStr = VOID>
-  [ 78] jmpifz [ 85] ............................ if tMemStr = VOID then
-  [ 81] pushcons 15 ............................. <EMPTY>
-  [ 83] setparam 2 .............................. tMemStr = EMPTY
-  [ 85] getlocal 1 .............................. <tSmallMem>
-  [ 87] pusharglist 1 ........................... <tSmallMem>
-  [ 89] extcall 35 .............................. <memberExists(tSmallMem)>
-  [ 91] jmpifz [103] ............................ if memberExists(tSmallMem) then / else
-  [ 94] getlocal 1 .............................. <tSmallMem>
-  [ 96] pusharglistnoret 1 ...................... <tSmallMem>
-  [ 98] extcall 21 .............................. return tSmallMem
-  [100] jmp [127]
-  [103] getparam 2 .............................. <tMemStr>
-  [105] pusharglist 1 ........................... <tMemStr>
-  [107] extcall 35 .............................. <memberExists(tMemStr)>
-  [109] jmpifz [121] ............................ if memberExists(tMemStr) then / else
-  [112] getparam 2 .............................. <tMemStr>
-  [114] pusharglistnoret 1 ...................... <tMemStr>
-  [116] extcall 21 .............................. return tMemStr
-  [118] jmp [127]
-  [121] pushcons 16 ............................. <"no_icon_small">
-  [123] pusharglistnoret 1 ...................... <"no_icon_small">
-  [125] extcall 21 .............................. return "no_icon_small"
-  [127] ret
+  [ 21] pushsymb 66 ............................. <#char>
+  [ 23] pushint8 1 .............................. <1>
+  [ 25] pushcons 13 ............................. <"*">
+  [ 27] getlocal 0 .............................. <tName>
+  [ 29] pusharglist 2 ........................... <"*", tName>
+  [ 31] extcall 674 ............................. <offset("*", tName)>
+  [ 34] pushint8 1 .............................. <1>
+  [ 36] sub ..................................... <offset("*", tName) - 1>
+  [ 37] pusharglist 4 ........................... <tName, #char, 1, offset("*", tName) - 1>
+  [ 39] objcall 68 .............................. <tName.char[1..offset("*", tName) - 1]>
+  [ 41] setlocal 0 .............................. tName = tName.char[1..offset("*", tName) - 1]
+  [ 43] getlocal 1 .............................. <tSmallMem>
+  [ 45] pusharglist 1 ........................... <tSmallMem>
+  [ 47] extcall 62 .............................. <memberExists(tSmallMem)>
+  [ 49] not ..................................... <not memberExists(tSmallMem)>
+  [ 50] jmpifz [ 60] ............................ if not memberExists(tSmallMem) then
+  [ 53] getlocal 0 .............................. <tName>
+  [ 55] pushcons 14 ............................. <"_small">
+  [ 57] joinstr ................................. <tName & "_small">
+  [ 58] setlocal 1 .............................. tSmallMem = tName & "_small"
+  [ 60] jmp [ 70]
+  [ 63] getparam 1 .............................. <tClass>
+  [ 65] pushcons 14 ............................. <"_small">
+  [ 67] joinstr ................................. <tClass & "_small">
+  [ 68] setlocal 1 .............................. tSmallMem = tClass & "_small"
+  [ 70] getparam 2 .............................. <tMemStr>
+  [ 72] pusharglist 0 ........................... <>
+  [ 74] extcall 30 .............................. <VOID>
+  [ 76] eq ...................................... <tMemStr = VOID>
+  [ 77] jmpifz [ 84] ............................ if tMemStr = VOID then
+  [ 80] pushcons 15 ............................. <EMPTY>
+  [ 82] setparam 2 .............................. tMemStr = EMPTY
+  [ 84] getlocal 1 .............................. <tSmallMem>
+  [ 86] pusharglist 1 ........................... <tSmallMem>
+  [ 88] extcall 62 .............................. <memberExists(tSmallMem)>
+  [ 90] jmpifz [102] ............................ if memberExists(tSmallMem) then / else
+  [ 93] getlocal 1 .............................. <tSmallMem>
+  [ 95] pusharglistnoret 1 ...................... <tSmallMem>
+  [ 97] extcall 31 .............................. return tSmallMem
+  [ 99] jmp [126]
+  [102] getparam 2 .............................. <tMemStr>
+  [104] pusharglist 1 ........................... <tMemStr>
+  [106] extcall 62 .............................. <memberExists(tMemStr)>
+  [108] jmpifz [120] ............................ if memberExists(tMemStr) then / else
+  [111] getparam 2 .............................. <tMemStr>
+  [113] pusharglistnoret 1 ...................... <tMemStr>
+  [115] extcall 31 .............................. return tMemStr
+  [117] jmp [126]
+  [120] pushcons 16 ............................. <"no_icon_small">
+  [122] pusharglistnoret 1 ...................... <"no_icon_small">
+  [124] extcall 31 .............................. return "no_icon_small"
+  [126] ret
 end
 
 on solveColorList me, tpartColors
@@ -124,7 +124,7 @@ on solveColorList me, tpartColors
   [  4] eq ...................................... <tpartColors = EMPTY>
   [  5] getparam 1 .............................. <tpartColors>
   [  7] pusharglist 1 ........................... <tpartColors>
-  [  9] extcall 10 .............................. <voidp(tpartColors)>
+  [  9] extcall 120 ............................. <voidp(tpartColors)>
   [ 11] or ...................................... <(tpartColors = EMPTY) or voidp(tpartColors)>
   [ 12] jmpifz [ 19] ............................ if (tpartColors = EMPTY) or voidp(tpartColors) then
   [ 15] pushcons 17 ............................. <"0,0,0">
@@ -132,36 +132,36 @@ on solveColorList me, tpartColors
   [ 19] pusharglist 0 ........................... <[]>
   [ 21] pushlist ................................ <[]>
   [ 22] setlocal 0 .............................. tPartList = []
-  [ 24] getmovieprop 29 ......................... <the itemDelimiter>
+  [ 24] getmovieprop 99 ......................... <the itemDelimiter>
   [ 26] setlocal 1 .............................. tDelim = the itemDelimiter
   [ 28] pushcons 18 ............................. <",">
-  [ 30] setmovieprop 29 ......................... the itemDelimiter = ","
+  [ 30] setmovieprop 99 ......................... the itemDelimiter = ","
   [ 32] pushint8 1 .............................. <1>
   [ 34] setlocal 2
   [ 36] getlocal 2
   [ 38] getparam 1 .............................. <tpartColors>
-  [ 40] pushsymb 32 ............................. <#item>
+  [ 40] pushsymb 103 ............................ <#item>
   [ 42] pusharglist 2 ........................... <tpartColors, #item>
-  [ 44] objcall 14 .............................. <tpartColors.item.count>
+  [ 44] objcall 33 .............................. <tpartColors.item.count>
   [ 46] lteq
   [ 47] jmpifz [ 80] ............................ repeat with i = 1 to tpartColors.item.count
   [ 50] getlocal 0 .............................. <tPartList>
   [ 52] getparam 1 .............................. <tpartColors>
-  [ 54] pushsymb 32 ............................. <#item>
+  [ 54] pushsymb 103 ............................ <#item>
   [ 56] getlocal 2 .............................. <i>
   [ 58] pusharglist 3 ........................... <tpartColors, #item, i>
-  [ 60] objcall 33 .............................. <tpartColors.item[i]>
+  [ 60] objcall 68 .............................. <tpartColors.item[i]>
   [ 62] pusharglist 1 ........................... <tpartColors.item[i]>
-  [ 64] extcall 453 ............................. <string(tpartColors.item[i])>
+  [ 64] extcall 519 ............................. <string(tpartColors.item[i])>
   [ 67] pusharglistnoret 2 ...................... <tPartList, string(tpartColors.item[i])>
-  [ 69] objcall 186 ............................. tPartList.add(string(tpartColors.item[i]))
+  [ 69] objcall 88 .............................. tPartList.add(string(tpartColors.item[i]))
   [ 71] pushint8 1
   [ 73] getlocal 2
   [ 75] add
   [ 76] setlocal 2
   [ 78] endrepeat [ 36]
   [ 80] getlocal 0 .............................. <tPartList>
-  [ 82] getobjprop 14 ........................... <tPartList.count>
+  [ 82] getobjprop 33 ........................... <tPartList.count>
   [ 84] setlocal 3
   [ 86] getlocal 3
   [ 88] pushint8 4 .............................. <4>
@@ -170,35 +170,35 @@ on solveColorList me, tpartColors
   [ 94] getlocal 0 .............................. <tPartList>
   [ 96] pushcons 19 ............................. <"*ffffff">
   [ 98] pusharglistnoret 2 ...................... <tPartList, "*ffffff">
-  [100] objcall 186 ............................. tPartList.add("*ffffff")
+  [100] objcall 88 .............................. tPartList.add("*ffffff")
   [102] pushint8 1
   [104] getlocal 3
   [106] add
   [107] setlocal 3
   [109] endrepeat [ 86]
   [111] getlocal 1 .............................. <tDelim>
-  [113] setmovieprop 29 ......................... the itemDelimiter = tDelim
+  [113] setmovieprop 99 ......................... the itemDelimiter = tDelim
   [115] getlocal 0 .............................. <tPartList>
   [117] pusharglistnoret 1 ...................... <tPartList>
-  [119] extcall 21 .............................. return tPartList
+  [119] extcall 31 .............................. return tPartList
   [121] ret
 end
 
 on renderPreviewImage me, tMemStr, tColorList, tColorListToSolve, tClass
   [  0] getparam 1 .............................. <tMemStr>
   [  2] pusharglist 0 ........................... <>
-  [  4] extcall 159 ............................. <VOID>
+  [  4] extcall 30 .............................. <VOID>
   [  6] eq ...................................... <tMemStr = VOID>
   [  7] jmpifz [ 23] ............................ if tMemStr = VOID then
   [ 10] getparam 0 .............................. <me>
   [ 12] getparam 4 .............................. <tClass>
   [ 14] getparam 1 .............................. <tMemStr>
   [ 16] pusharglist 3 ........................... <me, tClass, tMemStr>
-  [ 18] objcall 1710 ............................ <me.solveClass(tClass, tMemStr)>
+  [ 18] objcall 1706 ............................ <me.solveClass(tClass, tMemStr)>
   [ 21] setparam 1 .............................. tMemStr = me.solveClass(tClass, tMemStr)
   [ 23] getparam 1 .............................. <tMemStr>
   [ 25] pusharglist 1 ........................... <tMemStr>
-  [ 27] extcall 37 .............................. <getmemnum(tMemStr)>
+  [ 27] extcall 65 .............................. <getmemnum(tMemStr)>
   [ 29] pushzero ................................ <0>
   [ 30] eq ...................................... <getmemnum(tMemStr) = 0>
   [ 31] jmpifz [ 47] ............................ if getmemnum(tMemStr) = 0 then
@@ -206,119 +206,119 @@ on renderPreviewImage me, tMemStr, tColorList, tColorListToSolve, tClass
   [ 36] getparam 4 .............................. <tClass>
   [ 38] getparam 1 .............................. <tMemStr>
   [ 40] pusharglist 3 ........................... <me, tClass, tMemStr>
-  [ 42] objcall 1710 ............................ <me.solveClass(tClass, tMemStr)>
+  [ 42] objcall 1706 ............................ <me.solveClass(tClass, tMemStr)>
   [ 45] setparam 1 .............................. tMemStr = me.solveClass(tClass, tMemStr)
   [ 47] getparam 3 .............................. <tColorListToSolve>
   [ 49] pusharglist 0 ........................... <>
-  [ 51] extcall 159 ............................. <VOID>
+  [ 51] extcall 30 .............................. <VOID>
   [ 53] nteq .................................... <tColorListToSolve <> VOID>
   [ 54] jmpifz [ 68] ............................ if tColorListToSolve <> VOID then
   [ 57] getparam 0 .............................. <me>
   [ 59] getparam 3 .............................. <tColorListToSolve>
   [ 61] pusharglist 2 ........................... <me, tColorListToSolve>
-  [ 63] objcall 1711 ............................ <me.solveColorList(tColorListToSolve)>
+  [ 63] objcall 1707 ............................ <me.solveColorList(tColorListToSolve)>
   [ 66] setparam 2 .............................. tColorList = me.solveColorList(tColorListToSolve)
   [ 68] getparam 0 .............................. <me>
   [ 70] getparam 1 .............................. <tMemStr>
   [ 72] pusharglist 2 ........................... <me, tMemStr>
-  [ 74] objcall 1713 ............................ <me.doLayersExist(tMemStr)>
+  [ 74] objcall 1709 ............................ <me.doLayersExist(tMemStr)>
   [ 77] not ..................................... <not me.doLayersExist(tMemStr)>
-  [ 78] jmpifz [144] ............................ if not me.doLayersExist(tMemStr) then
+  [ 78] jmpifz [142] ............................ if not me.doLayersExist(tMemStr) then
   [ 81] getparam 0 .............................. <me>
   [ 83] getparam 1 .............................. <tMemStr>
   [ 85] getparam 2 .............................. <tColorList>
   [ 87] pusharglist 3 ........................... <me, tMemStr, tColorList>
-  [ 89] objcall 1712 ............................ <me.getSmallsColor(tMemStr, tColorList)>
+  [ 89] objcall 1708 ............................ <me.getSmallsColor(tMemStr, tColorList)>
   [ 92] setlocal 0 .............................. tColor = me.getSmallsColor(tMemStr, tColorList)
   [ 94] getlocal 0 .............................. <tColor>
   [ 96] pushzero ................................ <0>
   [ 97] eq ...................................... <tColor = 0>
-  [ 98] jmpifz [118] ............................ if tColor = 0 then
+  [ 98] jmpifz [117] ............................ if tColor = 0 then
   [101] getparam 1 .............................. <tMemStr>
   [103] pusharglist 1 ........................... <tMemStr>
-  [105] extcall 37 .............................. <getmemnum(tMemStr)>
+  [105] extcall 65 .............................. <getmemnum(tMemStr)>
   [107] pusharglist 1 ........................... <getmemnum(tMemStr)>
-  [109] extcall 30 .............................. <member(getmemnum(tMemStr))>
-  [111] getobjprop 290 .......................... <member(getmemnum(tMemStr)).image>
-  [114] pusharglistnoret 1 ...................... <member(getmemnum(tMemStr)).image>
-  [116] extcall 21 .............................. return member(getmemnum(tMemStr)).image
-  [118] getparam 0 .............................. <me>
-  [120] getparam 1 .............................. <tMemStr>
-  [122] pusharglist 1 ........................... <tMemStr>
-  [124] extcall 37 .............................. <getmemnum(tMemStr)>
-  [126] pusharglist 1 ........................... <getmemnum(tMemStr)>
-  [128] extcall 30 .............................. <member(getmemnum(tMemStr))>
-  [130] getobjprop 290 .......................... <member(getmemnum(tMemStr)).image>
-  [133] getlocal 0 .............................. <tColor>
-  [135] pusharglist 3 ........................... <me, member(getmemnum(tMemStr)).image, tColor>
-  [137] objcall 1716 ............................ <me.applyDarkenColor(member(getmemnum(tMemStr)).image, tColor)>
-  [140] pusharglistnoret 1 ...................... <me.applyDarkenColor(member(getmemnum(tMemStr)).image, tColor)>
-  [142] extcall 21 .............................. return me.applyDarkenColor(member(getmemnum(tMemStr)).image, tColor)
-  [144] getparam 1 .............................. <tMemStr>
-  [146] pusharglist 1 ........................... <tMemStr>
-  [148] extcall 37 .............................. <getmemnum(tMemStr)>
-  [150] pusharglist 1 ........................... <getmemnum(tMemStr)>
-  [152] extcall 30 .............................. <member(getmemnum(tMemStr))>
-  [154] setlocal 1 .............................. tMem = member(getmemnum(tMemStr))
-  [156] getlocal 1 .............................. <tMem>
-  [158] getobjprop 252 .......................... <tMem.width>
-  [160] getlocal 1 .............................. <tMem>
-  [162] getobjprop 291 .......................... <tMem.height>
-  [165] pushint8 32 ............................. <32>
-  [167] pusharglist 3 ........................... <tMem.width, tMem.height, 32>
-  [169] extcall 290 ............................. <image(tMem.width, tMem.height, 32)>
-  [172] setlocal 2 .............................. tRendered = image(tMem.width, tMem.height, 32)
-  [174] getlocal 2 .............................. <tRendered>
+  [109] extcall 64 .............................. <member(getmemnum(tMemStr))>
+  [111] getobjprop 63 ........................... <member(getmemnum(tMemStr)).image>
+  [113] pusharglistnoret 1 ...................... <member(getmemnum(tMemStr)).image>
+  [115] extcall 31 .............................. return member(getmemnum(tMemStr)).image
+  [117] getparam 0 .............................. <me>
+  [119] getparam 1 .............................. <tMemStr>
+  [121] pusharglist 1 ........................... <tMemStr>
+  [123] extcall 65 .............................. <getmemnum(tMemStr)>
+  [125] pusharglist 1 ........................... <getmemnum(tMemStr)>
+  [127] extcall 64 .............................. <member(getmemnum(tMemStr))>
+  [129] getobjprop 63 ........................... <member(getmemnum(tMemStr)).image>
+  [131] getlocal 0 .............................. <tColor>
+  [133] pusharglist 3 ........................... <me, member(getmemnum(tMemStr)).image, tColor>
+  [135] objcall 1712 ............................ <me.applyDarkenColor(member(getmemnum(tMemStr)).image, tColor)>
+  [138] pusharglistnoret 1 ...................... <me.applyDarkenColor(member(getmemnum(tMemStr)).image, tColor)>
+  [140] extcall 31 .............................. return me.applyDarkenColor(member(getmemnum(tMemStr)).image, tColor)
+  [142] getparam 1 .............................. <tMemStr>
+  [144] pusharglist 1 ........................... <tMemStr>
+  [146] extcall 65 .............................. <getmemnum(tMemStr)>
+  [148] pusharglist 1 ........................... <getmemnum(tMemStr)>
+  [150] extcall 64 .............................. <member(getmemnum(tMemStr))>
+  [152] setlocal 1 .............................. tMem = member(getmemnum(tMemStr))
+  [154] getlocal 1 .............................. <tMem>
+  [156] getobjprop 80 ........................... <tMem.width>
+  [158] getlocal 1 .............................. <tMem>
+  [160] getobjprop 81 ........................... <tMem.height>
+  [162] pushint8 32 ............................. <32>
+  [164] pusharglist 3 ........................... <tMem.width, tMem.height, 32>
+  [166] extcall 63 .............................. <image(tMem.width, tMem.height, 32)>
+  [168] setlocal 2 .............................. tRendered = image(tMem.width, tMem.height, 32)
+  [170] getlocal 2 .............................. <tRendered>
+  [172] getlocal 1 .............................. <tMem>
+  [174] getobjprop 63 ........................... <tMem.image>
   [176] getlocal 1 .............................. <tMem>
-  [178] getobjprop 290 .......................... <tMem.image>
-  [181] getlocal 1 .............................. <tMem>
-  [183] getobjprop 322 .......................... <tMem.rect>
-  [186] getlocal 1 .............................. <tMem>
-  [188] getobjprop 322 .......................... <tMem.rect>
-  [191] pusharglistnoret 4 ...................... <tRendered, tMem.image, tMem.rect, tMem.rect>
-  [193] objcall 323 ............................. tRendered.copyPixels(tMem.image, tMem.rect, tMem.rect)
-  [196] pushint8 1 .............................. <1>
-  [198] setlocal 3
-  [200] getlocal 3
-  [202] getprop 1717 ............................ <pPossibleParts>
-  [205] getobjprop 14 ........................... <pPossibleParts.count>
-  [207] lteq
-  [208] jmpifz [259] ............................ repeat with i = 1 to pPossibleParts.count
-  [211] getparam 1 .............................. <tMemStr>
-  [213] pushcons 20 ............................. <"_">
-  [215] joinstr ................................. <tMemStr & "_">
-  [216] getprop 1717 ............................ <pPossibleParts>
-  [219] getlocal 3 .............................. <i>
-  [221] pusharglist 2 ........................... <pPossibleParts, i>
-  [223] objcall 9 ............................... <pPossibleParts[i]>
-  [225] joinstr ................................. <tMemStr & "_" & pPossibleParts[i]>
-  [226] pusharglist 1 ........................... <tMemStr & "_" & pPossibleParts[i]>
-  [228] extcall 35 .............................. <memberExists(tMemStr & "_" & pPossibleParts[i])>
-  [230] jmpifz [250] ............................ if memberExists(tMemStr & "_" & pPossibleParts[i]) then
-  [233] getparam 0 .............................. <me>
-  [235] getlocal 2 .............................. <tRendered>
-  [237] getlocal 3 .............................. <i>
-  [239] getparam 1 .............................. <tMemStr>
-  [241] getparam 2 .............................. <tColorList>
-  [243] pusharglist 5 ........................... <me, tRendered, i, tMemStr, tColorList>
-  [245] objcall 1715 ............................ <me.addLayerToImage(tRendered, i, tMemStr, tColorList)>
-  [248] setlocal 2 .............................. tRendered = me.addLayerToImage(tRendered, i, tMemStr, tColorList)
-  [250] pushint8 1
-  [252] getlocal 3
-  [254] add
-  [255] setlocal 3
-  [257] endrepeat [200]
-  [259] getlocal 2 .............................. <tRendered>
-  [261] pusharglistnoret 1 ...................... <tRendered>
-  [263] extcall 21 .............................. return tRendered
-  [265] ret
+  [178] getobjprop 137 .......................... <tMem.rect>
+  [180] getlocal 1 .............................. <tMem>
+  [182] getobjprop 137 .......................... <tMem.rect>
+  [184] pusharglistnoret 4 ...................... <tRendered, tMem.image, tMem.rect, tMem.rect>
+  [186] objcall 400 ............................. tRendered.copyPixels(tMem.image, tMem.rect, tMem.rect)
+  [189] pushint8 1 .............................. <1>
+  [191] setlocal 3
+  [193] getlocal 3
+  [195] getprop 1713 ............................ <pPossibleParts>
+  [198] getobjprop 33 ........................... <pPossibleParts.count>
+  [200] lteq
+  [201] jmpifz [252] ............................ repeat with i = 1 to pPossibleParts.count
+  [204] getparam 1 .............................. <tMemStr>
+  [206] pushcons 20 ............................. <"_">
+  [208] joinstr ................................. <tMemStr & "_">
+  [209] getprop 1713 ............................ <pPossibleParts>
+  [212] getlocal 3 .............................. <i>
+  [214] pusharglist 2 ........................... <pPossibleParts, i>
+  [216] objcall 34 .............................. <pPossibleParts[i]>
+  [218] joinstr ................................. <tMemStr & "_" & pPossibleParts[i]>
+  [219] pusharglist 1 ........................... <tMemStr & "_" & pPossibleParts[i]>
+  [221] extcall 62 .............................. <memberExists(tMemStr & "_" & pPossibleParts[i])>
+  [223] jmpifz [243] ............................ if memberExists(tMemStr & "_" & pPossibleParts[i]) then
+  [226] getparam 0 .............................. <me>
+  [228] getlocal 2 .............................. <tRendered>
+  [230] getlocal 3 .............................. <i>
+  [232] getparam 1 .............................. <tMemStr>
+  [234] getparam 2 .............................. <tColorList>
+  [236] pusharglist 5 ........................... <me, tRendered, i, tMemStr, tColorList>
+  [238] objcall 1711 ............................ <me.addLayerToImage(tRendered, i, tMemStr, tColorList)>
+  [241] setlocal 2 .............................. tRendered = me.addLayerToImage(tRendered, i, tMemStr, tColorList)
+  [243] pushint8 1
+  [245] getlocal 3
+  [247] add
+  [248] setlocal 3
+  [250] endrepeat [193]
+  [252] getlocal 2 .............................. <tRendered>
+  [254] pusharglistnoret 1 ...................... <tRendered>
+  [256] extcall 31 .............................. return tRendered
+  [258] ret
 end
 
 on getSmallsColor me, tMemStr, tColorList
   [  0] getparam 0 .............................. <me>
   [  2] getparam 2 .............................. <tColorList>
   [  4] pusharglist 2 ........................... <me, tColorList>
-  [  6] objcall 1714 ............................ <me.getLastColor(tColorList)>
+  [  6] objcall 1710 ............................ <me.getLastColor(tColorList)>
   [  9] setlocal 0 .............................. tColor = me.getLastColor(tColorList)
   [ 11] getlocal 0 .............................. <tColor>
   [ 13] pushcons 21 ............................. <"ffffff">
@@ -330,10 +330,10 @@ on getSmallsColor me, tMemStr, tColorList
   [ 22] jmpifz [ 30] ............................ if (tColor = "ffffff") or (tMemStr contains "*") then
   [ 25] pushzero ................................ <0>
   [ 26] pusharglistnoret 1 ...................... <0>
-  [ 28] extcall 21 .............................. return 0
+  [ 28] extcall 31 .............................. return 0
   [ 30] getlocal 0 .............................. <tColor>
   [ 32] pusharglistnoret 1 ...................... <tColor>
-  [ 34] extcall 21 .............................. return tColor
+  [ 34] extcall 31 .............................. return tColor
   [ 36] ret
 end
 
@@ -341,24 +341,24 @@ on doLayersExist me, tMemStr
   [  0] pushint8 1 .............................. <1>
   [  2] setlocal 0
   [  4] getlocal 0
-  [  6] getprop 1717 ............................ <pPossibleParts>
-  [  9] getobjprop 14 ........................... <pPossibleParts.count>
+  [  6] getprop 1713 ............................ <pPossibleParts>
+  [  9] getobjprop 33 ........................... <pPossibleParts.count>
   [ 11] lteq
   [ 12] jmpifz [ 52] ............................ repeat with i = 1 to pPossibleParts.count
   [ 15] getparam 1 .............................. <tMemStr>
   [ 17] pushcons 20 ............................. <"_">
   [ 19] joinstr ................................. <tMemStr & "_">
-  [ 20] getprop 1717 ............................ <pPossibleParts>
+  [ 20] getprop 1713 ............................ <pPossibleParts>
   [ 23] getlocal 0 .............................. <i>
   [ 25] pusharglist 2 ........................... <pPossibleParts, i>
-  [ 27] objcall 9 ............................... <pPossibleParts[i]>
+  [ 27] objcall 34 .............................. <pPossibleParts[i]>
   [ 29] joinstr ................................. <tMemStr & "_" & pPossibleParts[i]>
   [ 30] pusharglist 1 ........................... <tMemStr & "_" & pPossibleParts[i]>
-  [ 32] extcall 35 .............................. <memberExists(tMemStr & "_" & pPossibleParts[i])>
+  [ 32] extcall 62 .............................. <memberExists(tMemStr & "_" & pPossibleParts[i])>
   [ 34] jmpifz [ 43] ............................ if memberExists(tMemStr & "_" & pPossibleParts[i]) then
   [ 37] pushint8 1 .............................. <1>
   [ 39] pusharglistnoret 1 ...................... <1>
-  [ 41] extcall 21 .............................. return 1
+  [ 41] extcall 31 .............................. return 1
   [ 43] pushint8 1
   [ 45] getlocal 0
   [ 47] add
@@ -366,7 +366,7 @@ on doLayersExist me, tMemStr
   [ 50] endrepeat [  4]
   [ 52] pushzero ................................ <0>
   [ 53] pusharglistnoret 1 ...................... <0>
-  [ 55] extcall 21 .............................. return 0
+  [ 55] extcall 31 .............................. return 0
   [ 57] ret
 end
 
@@ -374,45 +374,45 @@ on getLastColor me, tColorList
   [  0] pushcons 21 ............................. <"ffffff">
   [  2] setlocal 0 .............................. tColor = "ffffff"
   [  4] getparam 1 .............................. <tColorList>
-  [  6] getobjprop 248 .......................... <tColorList.ilk>
-  [  8] pushsymb 249 ............................ <#list>
+  [  6] getobjprop 127 .......................... <tColorList.ilk>
+  [  8] pushsymb 116 ............................ <#list>
   [ 10] eq ...................................... <tColorList.ilk = #list>
   [ 11] jmpifz [ 93] ............................ if tColorList.ilk = #list then
   [ 14] pushint8 1 .............................. <1>
   [ 16] setlocal 1
   [ 18] getlocal 1
   [ 20] getparam 1 .............................. <tColorList>
-  [ 22] getobjprop 14 ........................... <tColorList.count>
+  [ 22] getobjprop 33 ........................... <tColorList.count>
   [ 24] lteq
   [ 25] jmpifz [ 93] ............................ repeat with i = 1 to tColorList.count
   [ 28] getparam 1 .............................. <tColorList>
   [ 30] getlocal 1 .............................. <i>
   [ 32] pusharglist 2 ........................... <tColorList, i>
-  [ 34] objcall 9 ............................... <tColorList[i]>
+  [ 34] objcall 34 .............................. <tColorList[i]>
   [ 36] pushcons 21 ............................. <"ffffff">
   [ 38] containsstr ............................. <tColorList[i] contains "ffffff">
   [ 39] getparam 1 .............................. <tColorList>
   [ 41] getlocal 1 .............................. <i>
   [ 43] pusharglist 2 ........................... <tColorList, i>
-  [ 45] objcall 9 ............................... <tColorList[i]>
+  [ 45] objcall 34 .............................. <tColorList[i]>
   [ 47] pushcons 22 ............................. <"0">
   [ 49] eq ...................................... <tColorList[i] = "0">
   [ 50] or ...................................... <(tColorList[i] contains "ffffff") or (tColorList[i] = "0")>
   [ 51] getparam 1 .............................. <tColorList>
   [ 53] getlocal 1 .............................. <i>
   [ 55] pusharglist 2 ........................... <tColorList, i>
-  [ 57] objcall 9 ............................... <tColorList[i]>
+  [ 57] objcall 34 .............................. <tColorList[i]>
   [ 59] pushcons 23 ............................. <"null">
   [ 61] eq ...................................... <tColorList[i] = "null">
   [ 62] or ...................................... <(tColorList[i] contains "ffffff") or (tColorList[i] = "0") or (tColorList[i] = "null")>
   [ 63] jmpifz [ 74] ............................ if (tColorList[i] contains "ffffff") or (tColorList[i] = "0") or (tColorList[i] = "null") then
   [ 66] pusharglistnoret 0 ...................... <>
-  [ 68] extcall 303 ............................. nothing()
+  [ 68] extcall 383 ............................. nothing()
   [ 71] jmp [ 84] ............................... next repeat
   [ 74] getparam 1 .............................. <tColorList>
   [ 76] getlocal 1 .............................. <i>
   [ 78] pusharglist 2 ........................... <tColorList, i>
-  [ 80] objcall 9 ............................... <tColorList[i]>
+  [ 80] objcall 34 .............................. <tColorList[i]>
   [ 82] setlocal 0 .............................. tColor = tColorList[i]
   [ 84] pushint8 1
   [ 86] getlocal 1
@@ -421,26 +421,26 @@ on getLastColor me, tColorList
   [ 91] endrepeat [ 18]
   [ 93] getlocal 0 .............................. <tColor>
   [ 95] pusharglistnoret 1 ...................... <tColor>
-  [ 97] extcall 21 .............................. return tColor
+  [ 97] extcall 31 .............................. return tColor
   [ 99] ret
 end
 
 on addLayerToImage me, tImg, tNum, tMemStr, tColorList
-  [  0] getprop 1717 ............................ <pPossibleParts>
+  [  0] getprop 1713 ............................ <pPossibleParts>
   [  3] getparam 2 .............................. <tNum>
   [  5] pusharglist 2 ........................... <pPossibleParts, tNum>
-  [  7] objcall 9 ............................... <pPossibleParts[tNum]>
+  [  7] objcall 34 .............................. <pPossibleParts[tNum]>
   [  9] setlocal 0 .............................. tAbc = pPossibleParts[tNum]
   [ 11] getparam 4 .............................. <tColorList>
   [ 13] pusharglist 0 ........................... <>
-  [ 15] extcall 159 ............................. <VOID>
+  [ 15] extcall 30 .............................. <VOID>
   [ 17] eq ...................................... <tColorList = VOID>
   [ 18] jmpifz [ 26] ............................ if tColorList = VOID then
   [ 21] pusharglist 0 ........................... <[]>
   [ 23] pushlist ................................ <[]>
   [ 24] setparam 4 .............................. tColorList = []
   [ 26] getparam 4 .............................. <tColorList>
-  [ 28] getobjprop 14 ........................... <tColorList.count>
+  [ 28] getobjprop 33 ........................... <tColorList.count>
   [ 30] getparam 2 .............................. <tNum>
   [ 32] lt ...................................... <tColorList.count < tNum>
   [ 33] jmpifz [ 43] ............................ if tColorList.count < tNum then / else
@@ -450,7 +450,7 @@ on addLayerToImage me, tImg, tNum, tMemStr, tColorList
   [ 43] getparam 4 .............................. <tColorList>
   [ 45] getparam 2 .............................. <tNum>
   [ 47] pusharglist 2 ........................... <tColorList, tNum>
-  [ 49] objcall 9 ............................... <tColorList[tNum]>
+  [ 49] objcall 34 .............................. <tColorList[tNum]>
   [ 51] setlocal 1 .............................. tColor = tColorList[tNum]
   [ 53] getparam 3 .............................. <tMemStr>
   [ 55] pushcons 20 ............................. <"_">
@@ -458,115 +458,115 @@ on addLayerToImage me, tImg, tNum, tMemStr, tColorList
   [ 58] getlocal 0 .............................. <tAbc>
   [ 60] joinstr ................................. <tMemStr & "_" & tAbc>
   [ 61] pusharglist 1 ........................... <tMemStr & "_" & tAbc>
-  [ 63] extcall 37 .............................. <getmemnum(tMemStr & "_" & tAbc)>
+  [ 63] extcall 65 .............................. <getmemnum(tMemStr & "_" & tAbc)>
   [ 65] pusharglist 1 ........................... <getmemnum(tMemStr & "_" & tAbc)>
-  [ 67] extcall 30 .............................. <member(getmemnum(tMemStr & "_" & tAbc))>
-  [ 69] getobjprop 290 .......................... <member(getmemnum(tMemStr & "_" & tAbc)).image>
-  [ 72] setlocal 2 .............................. tImg2 = member(getmemnum(tMemStr & "_" & tAbc)).image
-  [ 74] getparam 3 .............................. <tMemStr>
-  [ 76] pushcons 20 ............................. <"_">
-  [ 78] joinstr ................................. <tMemStr & "_">
-  [ 79] getlocal 0 .............................. <tAbc>
-  [ 81] joinstr ................................. <tMemStr & "_" & tAbc>
-  [ 82] pusharglist 1 ........................... <tMemStr & "_" & tAbc>
-  [ 84] extcall 37 .............................. <getmemnum(tMemStr & "_" & tAbc)>
-  [ 86] pusharglist 1 ........................... <getmemnum(tMemStr & "_" & tAbc)>
-  [ 88] extcall 30 .............................. <member(getmemnum(tMemStr & "_" & tAbc))>
-  [ 90] getobjprop 294 .......................... <member(getmemnum(tMemStr & "_" & tAbc)).regPoint>
-  [ 93] getparam 3 .............................. <tMemStr>
-  [ 95] pusharglist 1 ........................... <tMemStr>
-  [ 97] extcall 37 .............................. <getmemnum(tMemStr)>
-  [ 99] pusharglist 1 ........................... <getmemnum(tMemStr)>
-  [101] extcall 30 .............................. <member(getmemnum(tMemStr))>
-  [103] getobjprop 294 .......................... <member(getmemnum(tMemStr)).regPoint>
-  [106] sub ..................................... <member(getmemnum(tMemStr & "_" & tAbc)).regPoint - member(getmemnum(tMemStr)).regPoint>
-  [107] setlocal 3 .............................. tRegp = member(getmemnum(tMemStr & "_" & tAbc)).regPoint - member(getmemnum(tMemStr)).regPoint
-  [109] getlocal 2 .............................. <tImg2>
-  [111] getobjprop 322 .......................... <tImg2.rect>
-  [114] getlocal 3 .............................. <tRegp>
-  [116] pushint8 1 .............................. <1>
-  [118] pusharglist 2 ........................... <tRegp, 1>
-  [120] objcall 9 ............................... <tRegp[1]>
-  [122] getlocal 3 .............................. <tRegp>
-  [124] pushint8 2 .............................. <2>
-  [126] pusharglist 2 ........................... <tRegp, 2>
-  [128] objcall 9 ............................... <tRegp[2]>
-  [130] getlocal 3 .............................. <tRegp>
-  [132] pushint8 1 .............................. <1>
-  [134] pusharglist 2 ........................... <tRegp, 1>
-  [136] objcall 9 ............................... <tRegp[1]>
-  [138] getlocal 3 .............................. <tRegp>
-  [140] pushint8 2 .............................. <2>
-  [142] pusharglist 2 ........................... <tRegp, 2>
-  [144] objcall 9 ............................... <tRegp[2]>
-  [146] pusharglist 4 ........................... <tRegp[1], tRegp[2], tRegp[1], tRegp[2]>
-  [148] extcall 322 ............................. <rect(tRegp[1], tRegp[2], tRegp[1], tRegp[2])>
-  [151] sub ..................................... <tImg2.rect - rect(tRegp[1], tRegp[2], tRegp[1], tRegp[2])>
-  [152] setlocal 4 .............................. tRect = tImg2.rect - rect(tRegp[1], tRegp[2], tRegp[1], tRegp[2])
-  [154] getlocal 2 .............................. <tImg2>
-  [156] pusharglist 1 ........................... <tImg2>
-  [158] objcall 1172 ............................ <tImg2.createMatte()>
-  [161] setlocal 5 .............................. tMatte = tImg2.createMatte()
-  [163] getlocal 1 .............................. <tColor>
-  [165] pusharglist 1 ........................... <tColor>
-  [167] extcall 312 ............................. <rgb(tColor)>
-  [170] setlocal 6 .............................. tColorObj = rgb(tColor)
-  [172] getparam 1 .............................. <tImg>
-  [174] getlocal 2 .............................. <tImg2>
-  [176] getlocal 4 .............................. <tRect>
-  [178] getlocal 2 .............................. <tImg2>
-  [180] getobjprop 322 .......................... <tImg2.rect>
-  [183] pushsymb 419 ............................ <#ink>
-  [186] pushint8 41 ............................. <41>
-  [188] pushsymb 311 ............................ <#bgColor>
-  [191] getlocal 6 .............................. <tColorObj>
-  [193] pushsymb 1171 ........................... <#maskImage>
-  [196] getlocal 5 .............................. <tMatte>
-  [198] pusharglist 6 ........................... <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
-  [200] pushproplist ............................ <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
-  [201] pusharglistnoret 5 ...................... <tImg, tImg2, tRect, tImg2.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
-  [203] objcall 323 ............................. tImg.copyPixels(tImg2, tRect, tImg2.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte])
-  [206] getparam 1 .............................. <tImg>
-  [208] pusharglistnoret 1 ...................... <tImg>
-  [210] extcall 21 .............................. return tImg
-  [212] ret
+  [ 67] extcall 64 .............................. <member(getmemnum(tMemStr & "_" & tAbc))>
+  [ 69] getobjprop 63 ........................... <member(getmemnum(tMemStr & "_" & tAbc)).image>
+  [ 71] setlocal 2 .............................. tImg2 = member(getmemnum(tMemStr & "_" & tAbc)).image
+  [ 73] getparam 3 .............................. <tMemStr>
+  [ 75] pushcons 20 ............................. <"_">
+  [ 77] joinstr ................................. <tMemStr & "_">
+  [ 78] getlocal 0 .............................. <tAbc>
+  [ 80] joinstr ................................. <tMemStr & "_" & tAbc>
+  [ 81] pusharglist 1 ........................... <tMemStr & "_" & tAbc>
+  [ 83] extcall 65 .............................. <getmemnum(tMemStr & "_" & tAbc)>
+  [ 85] pusharglist 1 ........................... <getmemnum(tMemStr & "_" & tAbc)>
+  [ 87] extcall 64 .............................. <member(getmemnum(tMemStr & "_" & tAbc))>
+  [ 89] getobjprop 118 .......................... <member(getmemnum(tMemStr & "_" & tAbc)).regPoint>
+  [ 91] getparam 3 .............................. <tMemStr>
+  [ 93] pusharglist 1 ........................... <tMemStr>
+  [ 95] extcall 65 .............................. <getmemnum(tMemStr)>
+  [ 97] pusharglist 1 ........................... <getmemnum(tMemStr)>
+  [ 99] extcall 64 .............................. <member(getmemnum(tMemStr))>
+  [101] getobjprop 118 .......................... <member(getmemnum(tMemStr)).regPoint>
+  [103] sub ..................................... <member(getmemnum(tMemStr & "_" & tAbc)).regPoint - member(getmemnum(tMemStr)).regPoint>
+  [104] setlocal 3 .............................. tRegp = member(getmemnum(tMemStr & "_" & tAbc)).regPoint - member(getmemnum(tMemStr)).regPoint
+  [106] getlocal 2 .............................. <tImg2>
+  [108] getobjprop 137 .......................... <tImg2.rect>
+  [110] getlocal 3 .............................. <tRegp>
+  [112] pushint8 1 .............................. <1>
+  [114] pusharglist 2 ........................... <tRegp, 1>
+  [116] objcall 34 .............................. <tRegp[1]>
+  [118] getlocal 3 .............................. <tRegp>
+  [120] pushint8 2 .............................. <2>
+  [122] pusharglist 2 ........................... <tRegp, 2>
+  [124] objcall 34 .............................. <tRegp[2]>
+  [126] getlocal 3 .............................. <tRegp>
+  [128] pushint8 1 .............................. <1>
+  [130] pusharglist 2 ........................... <tRegp, 1>
+  [132] objcall 34 .............................. <tRegp[1]>
+  [134] getlocal 3 .............................. <tRegp>
+  [136] pushint8 2 .............................. <2>
+  [138] pusharglist 2 ........................... <tRegp, 2>
+  [140] objcall 34 .............................. <tRegp[2]>
+  [142] pusharglist 4 ........................... <tRegp[1], tRegp[2], tRegp[1], tRegp[2]>
+  [144] extcall 137 ............................. <rect(tRegp[1], tRegp[2], tRegp[1], tRegp[2])>
+  [146] sub ..................................... <tImg2.rect - rect(tRegp[1], tRegp[2], tRegp[1], tRegp[2])>
+  [147] setlocal 4 .............................. tRect = tImg2.rect - rect(tRegp[1], tRegp[2], tRegp[1], tRegp[2])
+  [149] getlocal 2 .............................. <tImg2>
+  [151] pusharglist 1 ........................... <tImg2>
+  [153] objcall 1201 ............................ <tImg2.createMatte()>
+  [156] setlocal 5 .............................. tMatte = tImg2.createMatte()
+  [158] getlocal 1 .............................. <tColor>
+  [160] pusharglist 1 ........................... <tColor>
+  [162] extcall 94 .............................. <rgb(tColor)>
+  [164] setlocal 6 .............................. tColorObj = rgb(tColor)
+  [166] getparam 1 .............................. <tImg>
+  [168] getlocal 2 .............................. <tImg2>
+  [170] getlocal 4 .............................. <tRect>
+  [172] getlocal 2 .............................. <tImg2>
+  [174] getobjprop 137 .......................... <tImg2.rect>
+  [176] pushsymb 93 ............................. <#ink>
+  [178] pushint8 41 ............................. <41>
+  [180] pushsymb 95 ............................. <#bgColor>
+  [182] getlocal 6 .............................. <tColorObj>
+  [184] pushsymb 1200 ........................... <#maskImage>
+  [187] getlocal 5 .............................. <tMatte>
+  [189] pusharglist 6 ........................... <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
+  [191] pushproplist ............................ <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
+  [192] pusharglistnoret 5 ...................... <tImg, tImg2, tRect, tImg2.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
+  [194] objcall 400 ............................. tImg.copyPixels(tImg2, tRect, tImg2.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte])
+  [197] getparam 1 .............................. <tImg>
+  [199] pusharglistnoret 1 ...................... <tImg>
+  [201] extcall 31 .............................. return tImg
+  [203] ret
 end
 
 on applyDarkenColor me, tOrgImg, tColor
   [  0] getparam 2 .............................. <tColor>
   [  2] pusharglist 1 ........................... <tColor>
-  [  4] extcall 312 ............................. <rgb(tColor)>
-  [  7] setlocal 0 .............................. tColorObj = rgb(tColor)
-  [  9] getparam 1 .............................. <tOrgImg>
-  [ 11] getobjprop 252 .......................... <tOrgImg.width>
-  [ 13] getparam 1 .............................. <tOrgImg>
-  [ 15] getobjprop 291 .......................... <tOrgImg.height>
-  [ 18] pushint8 32 ............................. <32>
-  [ 20] pusharglist 3 ........................... <tOrgImg.width, tOrgImg.height, 32>
-  [ 22] extcall 290 ............................. <image(tOrgImg.width, tOrgImg.height, 32)>
-  [ 25] setlocal 1 .............................. tImg = image(tOrgImg.width, tOrgImg.height, 32)
-  [ 27] getparam 1 .............................. <tOrgImg>
-  [ 29] pusharglist 1 ........................... <tOrgImg>
-  [ 31] objcall 1172 ............................ <tOrgImg.createMatte()>
-  [ 34] setlocal 2 .............................. tMatte = tOrgImg.createMatte()
-  [ 36] getlocal 1 .............................. <tImg>
-  [ 38] getparam 1 .............................. <tOrgImg>
-  [ 40] getlocal 1 .............................. <tImg>
-  [ 42] getobjprop 322 .......................... <tImg.rect>
-  [ 45] getlocal 1 .............................. <tImg>
-  [ 47] getobjprop 322 .......................... <tImg.rect>
-  [ 50] pushsymb 419 ............................ <#ink>
-  [ 53] pushint8 41 ............................. <41>
-  [ 55] pushsymb 311 ............................ <#bgColor>
-  [ 58] getlocal 0 .............................. <tColorObj>
-  [ 60] pushsymb 1171 ........................... <#maskImage>
-  [ 63] getlocal 2 .............................. <tMatte>
-  [ 65] pusharglist 6 ........................... <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
-  [ 67] pushproplist ............................ <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
-  [ 68] pusharglistnoret 5 ...................... <tImg, tOrgImg, tImg.rect, tImg.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
-  [ 70] objcall 323 ............................. tImg.copyPixels(tOrgImg, tImg.rect, tImg.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte])
-  [ 73] getlocal 1 .............................. <tImg>
-  [ 75] pusharglistnoret 1 ...................... <tImg>
-  [ 77] extcall 21 .............................. return tImg
-  [ 79] ret
+  [  4] extcall 94 .............................. <rgb(tColor)>
+  [  6] setlocal 0 .............................. tColorObj = rgb(tColor)
+  [  8] getparam 1 .............................. <tOrgImg>
+  [ 10] getobjprop 80 ........................... <tOrgImg.width>
+  [ 12] getparam 1 .............................. <tOrgImg>
+  [ 14] getobjprop 81 ........................... <tOrgImg.height>
+  [ 16] pushint8 32 ............................. <32>
+  [ 18] pusharglist 3 ........................... <tOrgImg.width, tOrgImg.height, 32>
+  [ 20] extcall 63 .............................. <image(tOrgImg.width, tOrgImg.height, 32)>
+  [ 22] setlocal 1 .............................. tImg = image(tOrgImg.width, tOrgImg.height, 32)
+  [ 24] getparam 1 .............................. <tOrgImg>
+  [ 26] pusharglist 1 ........................... <tOrgImg>
+  [ 28] objcall 1201 ............................ <tOrgImg.createMatte()>
+  [ 31] setlocal 2 .............................. tMatte = tOrgImg.createMatte()
+  [ 33] getlocal 1 .............................. <tImg>
+  [ 35] getparam 1 .............................. <tOrgImg>
+  [ 37] getlocal 1 .............................. <tImg>
+  [ 39] getobjprop 137 .......................... <tImg.rect>
+  [ 41] getlocal 1 .............................. <tImg>
+  [ 43] getobjprop 137 .......................... <tImg.rect>
+  [ 45] pushsymb 93 ............................. <#ink>
+  [ 47] pushint8 41 ............................. <41>
+  [ 49] pushsymb 95 ............................. <#bgColor>
+  [ 51] getlocal 0 .............................. <tColorObj>
+  [ 53] pushsymb 1200 ........................... <#maskImage>
+  [ 56] getlocal 2 .............................. <tMatte>
+  [ 58] pusharglist 6 ........................... <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
+  [ 60] pushproplist ............................ <[#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
+  [ 61] pusharglistnoret 5 ...................... <tImg, tOrgImg, tImg.rect, tImg.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte]>
+  [ 63] objcall 400 ............................. tImg.copyPixels(tOrgImg, tImg.rect, tImg.rect, [#ink: 41, #bgColor: tColorObj, #maskImage: tMatte])
+  [ 66] getlocal 1 .............................. <tImg>
+  [ 68] pusharglistnoret 1 ...................... <tImg>
+  [ 70] extcall 31 .............................. return tImg
+  [ 72] ret
 end

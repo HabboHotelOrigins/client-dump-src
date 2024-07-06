@@ -16,12 +16,12 @@ on new me
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
   [ 29] pusharglist 0 ........................... <[]>
   [ 31] pushlist ................................ <[]>
-  [ 32] setprop 1887 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = []
+  [ 32] setprop 1884 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = []
   [ 35] pushzero ................................ <0>
-  [ 36] setprop 1888 ............................ pNegative = 0
+  [ 36] setprop 1885 ............................ pNegative = 0
   [ 39] pushint16 10000 ......................... <10000>
-  [ 42] setprop 1889 ............................ pBase = 10000
-  [ 45] getprop 1889 ............................ <pBase>
+  [ 42] setprop 1886 ............................ pBase = 10000
+  [ 45] getprop 1886 ............................ <pBase>
   [ 48] pusharglist 1 ........................... <pBase>
   [ 50] extcall 595 ............................. <string(pBase)>
   [ 53] getobjprop 293 .......................... <string(pBase).length>
@@ -31,7 +31,7 @@ on new me
   [ 62] pushcons 0 .............................. <"HugeInt15">
   [ 64] pusharglist 1 ........................... <"HugeInt15">
   [ 66] extcall 115 ............................. <script("HugeInt15")>
-  [ 68] setprop 1890 ............................ pScript = script("HugeInt15")
+  [ 68] setprop 1887 ............................ pScript = script("HugeInt15")
   [ 71] getparam 0 .............................. <me>
   [ 73] pusharglistnoret 1 ...................... <me>
   [ 75] extcall 25 .............................. return me
@@ -52,15 +52,15 @@ on neg me
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1888 ............................ <pNegative>
+  [ 29] getprop 1885 ............................ <pNegative>
   [ 32] pushint8 1 .............................. <1>
   [ 34] eq ...................................... <pNegative = 1>
   [ 35] jmpifz [ 45] ............................ if pNegative = 1 then / else
   [ 38] pushzero ................................ <0>
-  [ 39] setprop 1888 ............................ pNegative = 0
+  [ 39] setprop 1885 ............................ pNegative = 0
   [ 42] jmp [ 50]
   [ 45] pushint8 1 .............................. <1>
-  [ 47] setprop 1888 ............................ pNegative = 1
+  [ 47] setprop 1885 ............................ pNegative = 1
   [ 50] ret
 end
 
@@ -80,7 +80,7 @@ on assign me, tdata, tLimit, tUseKey
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
   [ 29] pusharglist 0 ........................... <[]>
   [ 31] pushlist ................................ <[]>
-  [ 32] setprop 1887 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = []
+  [ 32] setprop 1884 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = []
   [ 35] getparam 1 .............................. <tdata>
   [ 37] pusharglist 1 ........................... <tdata>
   [ 39] extcall 490 ............................. <ilk(tdata)>
@@ -96,7 +96,7 @@ on assign me, tdata, tLimit, tUseKey
   [ 63] eq ...................................... <tdata.char[1] = "-">
   [ 64] jmpifz [ 94] ............................ if tdata.char[1] = "-" then / else
   [ 67] pushint8 1 .............................. <1>
-  [ 69] setprop 1888 ............................ pNegative = 1
+  [ 69] setprop 1885 ............................ pNegative = 1
   [ 72] getparam 1 .............................. <tdata>
   [ 74] pushsymb 291 ............................ <#char>
   [ 77] pushint8 2 .............................. <2>
@@ -107,7 +107,7 @@ on assign me, tdata, tLimit, tUseKey
   [ 89] setparam 1 .............................. tdata = tdata.char[2..tdata.length]
   [ 91] jmp [ 98]
   [ 94] pushzero ................................ <0>
-  [ 95] setprop 1888 ............................ pNegative = 0
+  [ 95] setprop 1885 ............................ pNegative = 0
   [ 98] getparam 1 .............................. <tdata>
   [100] getobjprop 293 .......................... <tdata.length>
   [103] setlocal 0 .............................. i = tdata.length
@@ -124,7 +124,7 @@ on assign me, tdata, tLimit, tUseKey
   [126] sub ..................................... <pDigits - 1>
   [127] sub ..................................... <i - (pDigits - 1)>
   [128] pusharglist 2 ........................... <1, i - (pDigits - 1)>
-  [130] extcall 1821 ............................ <max(1, i - (pDigits - 1))>
+  [130] extcall 1818 ............................ <max(1, i - (pDigits - 1))>
   [133] getlocal 0 .............................. <i>
   [135] pusharglist 4 ........................... <tdata, #char, max(1, i - (pDigits - 1)), i>
   [137] objcall 290 ............................. <tdata.char[max(1, i - (pDigits - 1))..i]>
@@ -134,7 +134,7 @@ on assign me, tdata, tLimit, tUseKey
   [146] getobjprop 293 .......................... <tCoef.length>
   [149] sub ..................................... <i - tCoef.length>
   [150] setlocal 0 .............................. i = i - tCoef.length
-  [152] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [152] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [155] getlocal 1 .............................. <tCoef>
   [157] pusharglist 1 ........................... <tCoef>
   [159] extcall 113 ............................. <value(tCoef)>
@@ -149,7 +149,7 @@ on assign me, tdata, tLimit, tUseKey
   [181] eq ...................................... <ilk(tdata) = #list>
   [182] jmpifz [328] ............................ if ilk(tdata) = #list then
   [185] pushzero ................................ <0>
-  [186] setprop 1888 ............................ pNegative = 0
+  [186] setprop 1885 ............................ pNegative = 0
   [189] pushint8 1 .............................. <1>
   [191] setlocal 2 .............................. tZeroes = 1
   [193] getparam 2 .............................. <tLimit>
@@ -164,7 +164,7 @@ on assign me, tdata, tLimit, tUseKey
   [213] getparam 1 .............................. <tdata>
   [215] getobjprop 22 ........................... <tdata.count>
   [217] pusharglist 2 ........................... <tLimit, tdata.count>
-  [219] extcall 1820 ............................ <min(tLimit, tdata.count)>
+  [219] extcall 1817 ............................ <min(tLimit, tdata.count)>
   [222] setparam 2 .............................. tLimit = min(tLimit, tdata.count)
   [224] pushint8 1 .............................. <1>
   [226] setlocal 0
@@ -186,7 +186,7 @@ on assign me, tdata, tLimit, tUseKey
   [254] getparam 3 .............................. <tUseKey>
   [256] not ..................................... <not tUseKey>
   [257] jmpifz [286] ............................ if not tUseKey then / else
-  [260] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [260] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [263] getparam 2 .............................. <tLimit>
   [265] pushint8 1 .............................. <1>
   [267] add ..................................... <tLimit + 1>
@@ -199,7 +199,7 @@ on assign me, tdata, tLimit, tUseKey
   [279] pusharglistnoret 3 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tLimit + 1 - i, tdata[i]>
   [281] objcall 24 .............................. pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tLimit + 1 - i] = tdata[i]
   [283] jmp [316]
-  [286] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [286] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [289] getparam 2 .............................. <tLimit>
   [291] pushint8 1 .............................. <1>
   [293] add ..................................... <tLimit + 1>
@@ -211,7 +211,7 @@ on assign me, tdata, tLimit, tUseKey
   [303] pusharglist 2 ........................... <tdata, i>
   [305] objcall 54 .............................. <tdata[i]>
   [307] pusharglist 2 ........................... <me, tdata[i]>
-  [309] objcall 1886 ............................ <me.decode(tdata[i])>
+  [309] objcall 1883 ............................ <me.decode(tdata[i])>
   [312] pusharglistnoret 3 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tLimit + 1 - i, me.decode(tdata[i])>
   [314] objcall 24 .............................. pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tLimit + 1 - i] = me.decode(tdata[i])
   [316] pushzero ................................ <0>
@@ -239,16 +239,16 @@ on copyFrom me, tValue
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
   [ 29] getparam 1 .............................. <tValue>
-  [ 31] getobjprop 1888 ......................... <tValue.pNegative>
-  [ 34] setprop 1888 ............................ pNegative = tValue.pNegative
+  [ 31] getobjprop 1885 ......................... <tValue.pNegative>
+  [ 34] setprop 1885 ............................ pNegative = tValue.pNegative
   [ 37] getparam 1 .............................. <tValue>
-  [ 39] getchainedprop 1887 ..................... <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 39] getchainedprop 1884 ..................... <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 42] pusharglist 1 ........................... <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 44] objcall 554 ............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.duplicate()>
-  [ 47] setprop 1887 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.duplicate()
+  [ 47] setprop 1884 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.duplicate()
   [ 50] getparam 0 .............................. <me>
   [ 52] pusharglistnoret 1 ...................... <me>
-  [ 54] objcall 1864 ............................ me.trim()
+  [ 54] objcall 1861 ............................ me.trim()
   [ 57] ret
 end
 
@@ -266,21 +266,21 @@ on trim me
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 29] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 32] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 34] setlocal 0
   [ 36] getlocal 0
   [ 38] pushint8 1 .............................. <1>
   [ 40] gteq
   [ 41] jmpifz [ 84] ............................ repeat with i = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count down to 1
-  [ 44] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 44] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 47] getlocal 0 .............................. <i>
   [ 49] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [ 51] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
   [ 53] pushzero ................................ <0>
   [ 54] eq ...................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] = 0>
   [ 55] jmpifz [ 71] ............................ if pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] = 0 then
-  [ 58] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 58] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 61] getlocal 0 .............................. <i>
   [ 63] pusharglistnoret 2 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [ 65] objcall 725 ............................. pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.deleteAt(i)
@@ -292,13 +292,13 @@ on trim me
   [ 79] add
   [ 80] setlocal 0
   [ 82] endrepeat [ 36]
-  [ 84] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 84] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 87] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 89] pushzero ................................ <0>
   [ 90] eq ...................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count = 0>
   [ 91] jmpifz [ 98] ............................ if pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count = 0 then
   [ 94] pushzero ................................ <0>
-  [ 95] setprop 1888 ............................ pNegative = 0
+  [ 95] setprop 1885 ............................ pNegative = 0
   [ 98] ret
 end
 
@@ -316,18 +316,18 @@ on equals me, tValue
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1888 ............................ <pNegative>
+  [ 29] getprop 1885 ............................ <pNegative>
   [ 32] getparam 1 .............................. <tValue>
-  [ 34] getobjprop 1888 ......................... <tValue.pNegative>
+  [ 34] getobjprop 1885 ......................... <tValue.pNegative>
   [ 37] nteq .................................... <pNegative <> tValue.pNegative>
   [ 38] jmpifz [ 46] ............................ if pNegative <> tValue.pNegative then
   [ 41] pushzero ................................ <0>
   [ 42] pusharglistnoret 1 ...................... <0>
   [ 44] extcall 25 .............................. return 0
-  [ 46] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 46] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 49] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 51] getparam 1 .............................. <tValue>
-  [ 53] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 53] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 56] pusharglist 2 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 58] objcall 22 .............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 60] nteq .................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count <> tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
@@ -335,19 +335,19 @@ on equals me, tValue
   [ 64] pushzero ................................ <0>
   [ 65] pusharglistnoret 1 ...................... <0>
   [ 67] extcall 25 .............................. return 0
-  [ 69] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 69] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 72] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 74] setlocal 0
   [ 76] getlocal 0
   [ 78] pushint8 1 .............................. <1>
   [ 80] gteq
   [ 81] jmpifz [123] ............................ repeat with i = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count down to 1
-  [ 84] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 84] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 87] getlocal 0 .............................. <i>
   [ 89] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [ 91] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
   [ 93] getparam 1 .............................. <tValue>
-  [ 95] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 95] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 98] getlocal 0 .............................. <i>
   [100] pusharglist 3 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [102] objcall 290 ............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -384,7 +384,7 @@ on greaterThan me, tValue, tUseSign
   [ 29] getparam 0 .............................. <me>
   [ 31] getparam 1 .............................. <tValue>
   [ 33] pusharglist 2 ........................... <me, tValue>
-  [ 35] objcall 1865 ............................ <me.equals(tValue)>
+  [ 35] objcall 1862 ............................ <me.equals(tValue)>
   [ 38] jmpifz [ 46] ............................ if me.equals(tValue) then
   [ 41] pushzero ................................ <0>
   [ 42] pusharglistnoret 1 ...................... <0>
@@ -397,11 +397,11 @@ on greaterThan me, tValue, tUseSign
   [ 57] setparam 2 .............................. tUseSign = 1
   [ 59] getparam 2 .............................. <tUseSign>
   [ 61] jmpifz [109] ............................ if tUseSign then
-  [ 64] getprop 1888 ............................ <pNegative>
+  [ 64] getprop 1885 ............................ <pNegative>
   [ 67] pushzero ................................ <0>
   [ 68] eq ...................................... <pNegative = 0>
   [ 69] getparam 1 .............................. <tValue>
-  [ 71] getobjprop 1888 ......................... <tValue.pNegative>
+  [ 71] getobjprop 1885 ......................... <tValue.pNegative>
   [ 74] pushint8 1 .............................. <1>
   [ 76] eq ...................................... <tValue.pNegative = 1>
   [ 77] and ..................................... <(pNegative = 0) and (tValue.pNegative = 1)>
@@ -409,11 +409,11 @@ on greaterThan me, tValue, tUseSign
   [ 81] pushint8 1 .............................. <1>
   [ 83] pusharglistnoret 1 ...................... <1>
   [ 85] extcall 25 .............................. return 1
-  [ 87] getprop 1888 ............................ <pNegative>
+  [ 87] getprop 1885 ............................ <pNegative>
   [ 90] pushint8 1 .............................. <1>
   [ 92] eq ...................................... <pNegative = 1>
   [ 93] getparam 1 .............................. <tValue>
-  [ 95] getobjprop 1888 ......................... <tValue.pNegative>
+  [ 95] getobjprop 1885 ......................... <tValue.pNegative>
   [ 98] pushzero ................................ <0>
   [ 99] eq ...................................... <tValue.pNegative = 0>
   [100] and ..................................... <(pNegative = 1) and (tValue.pNegative = 0)>
@@ -421,17 +421,17 @@ on greaterThan me, tValue, tUseSign
   [104] pushzero ................................ <0>
   [105] pusharglistnoret 1 ...................... <0>
   [107] extcall 25 .............................. return 0
-  [109] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [109] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [112] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [114] getparam 1 .............................. <tValue>
-  [116] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [116] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [119] pusharglist 2 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [121] objcall 22 .............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [123] gt ...................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count > tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [124] jmpifz [152] ............................ if pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count > tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count then / else
   [127] getparam 2 .............................. <tUseSign>
   [129] jmpifz [143] ............................ if tUseSign then / else
-  [132] getprop 1888 ............................ <pNegative>
+  [132] getprop 1885 ............................ <pNegative>
   [135] not ..................................... <not pNegative>
   [136] pusharglistnoret 1 ...................... <not pNegative>
   [138] extcall 25 .............................. return not pNegative
@@ -440,36 +440,36 @@ on greaterThan me, tValue, tUseSign
   [145] pusharglistnoret 1 ...................... <1>
   [147] extcall 25 .............................. return 1
   [149] jmp [190]
-  [152] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [152] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [155] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [157] getparam 1 .............................. <tValue>
-  [159] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [159] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [162] pusharglist 2 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [164] objcall 22 .............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [166] lt ...................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count < tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [167] jmpifz [190] ............................ if pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count < tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count then
   [170] getparam 2 .............................. <tUseSign>
   [172] jmpifz [185] ............................ if tUseSign then / else
-  [175] getprop 1888 ............................ <pNegative>
+  [175] getprop 1885 ............................ <pNegative>
   [178] pusharglistnoret 1 ...................... <pNegative>
   [180] extcall 25 .............................. return pNegative
   [182] jmp [190]
   [185] pushzero ................................ <0>
   [186] pusharglistnoret 1 ...................... <0>
   [188] extcall 25 .............................. return 0
-  [190] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [190] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [193] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [195] setlocal 0
   [197] getlocal 0
   [199] pushint8 1 .............................. <1>
   [201] gteq
   [202] jmpifz [309] ............................ repeat with i = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count down to 1
-  [205] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [205] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [208] getlocal 0 .............................. <i>
   [210] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [212] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
   [214] getparam 1 .............................. <tValue>
-  [216] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [216] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [219] getlocal 0 .............................. <i>
   [221] pusharglist 3 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [223] objcall 290 ............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -477,7 +477,7 @@ on greaterThan me, tValue, tUseSign
   [227] jmpifz [255] ............................ if pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] > tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] then
   [230] getparam 2 .............................. <tUseSign>
   [232] jmpifz [246] ............................ if tUseSign then / else
-  [235] getprop 1888 ............................ <pNegative>
+  [235] getprop 1885 ............................ <pNegative>
   [238] not ..................................... <not pNegative>
   [239] pusharglistnoret 1 ...................... <not pNegative>
   [241] extcall 25 .............................. return not pNegative
@@ -486,12 +486,12 @@ on greaterThan me, tValue, tUseSign
   [248] pusharglistnoret 1 ...................... <1>
   [250] extcall 25 .............................. return 1
   [252] jmp [300] ............................... next repeat
-  [255] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [255] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [258] getlocal 0 .............................. <i>
   [260] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [262] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
   [264] getparam 1 .............................. <tValue>
-  [266] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [266] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [269] getlocal 0 .............................. <i>
   [271] pusharglist 3 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [273] objcall 290 ............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -499,7 +499,7 @@ on greaterThan me, tValue, tUseSign
   [277] jmpifz [300] ............................ if pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] < tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] then
   [280] getparam 2 .............................. <tUseSign>
   [282] jmpifz [295] ............................ if tUseSign then
-  [285] getprop 1888 ............................ <pNegative>
+  [285] getprop 1885 ............................ <pNegative>
   [288] pusharglistnoret 1 ...................... <pNegative>
   [290] extcall 25 .............................. return pNegative
   [292] jmp [300] ............................... next repeat
@@ -534,7 +534,7 @@ on lessThan me, tValue, tUseSign
   [ 29] getparam 0 .............................. <me>
   [ 31] getparam 1 .............................. <tValue>
   [ 33] pusharglist 2 ........................... <me, tValue>
-  [ 35] objcall 1865 ............................ <me.equals(tValue)>
+  [ 35] objcall 1862 ............................ <me.equals(tValue)>
   [ 38] jmpifz [ 46] ............................ if me.equals(tValue) then
   [ 41] pushzero ................................ <0>
   [ 42] pusharglistnoret 1 ...................... <0>
@@ -543,7 +543,7 @@ on lessThan me, tValue, tUseSign
   [ 48] getparam 1 .............................. <tValue>
   [ 50] getparam 2 .............................. <tUseSign>
   [ 52] pusharglist 3 ........................... <me, tValue, tUseSign>
-  [ 54] objcall 1866 ............................ <me.greaterThan(tValue, tUseSign)>
+  [ 54] objcall 1863 ............................ <me.greaterThan(tValue, tUseSign)>
   [ 57] not ..................................... <not me.greaterThan(tValue, tUseSign)>
   [ 58] pusharglistnoret 1 ...................... <not me.greaterThan(tValue, tUseSign)>
   [ 60] extcall 25 .............................. return not me.greaterThan(tValue, tUseSign)
@@ -567,11 +567,11 @@ on isZero me
   [ 29] pushint8 1 .............................. <1>
   [ 31] setlocal 0
   [ 33] getlocal 0
-  [ 35] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 35] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 38] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 40] lteq
   [ 41] jmpifz [ 72] ............................ repeat with i = 1 to pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
-  [ 44] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 44] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 47] getlocal 0 .............................. <i>
   [ 49] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [ 51] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -606,17 +606,17 @@ on sum me, tValue
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1890 ............................ <pScript>
+  [ 29] getprop 1887 ............................ <pScript>
   [ 32] pusharglist 1 ........................... <pScript>
   [ 34] extcall 116 ............................. <new(pScript)>
   [ 36] setlocal 0 .............................. tResult = new(pScript)
   [ 38] pushzero ................................ <0>
   [ 39] setlocal 1 .............................. tNeg = 0
-  [ 41] getprop 1888 ............................ <pNegative>
+  [ 41] getprop 1885 ............................ <pNegative>
   [ 44] pushint8 1 .............................. <1>
   [ 46] eq ...................................... <pNegative = 1>
   [ 47] getparam 1 .............................. <tValue>
-  [ 49] getobjprop 1888 ......................... <tValue.pNegative>
+  [ 49] getobjprop 1885 ......................... <tValue.pNegative>
   [ 52] pushint8 1 .............................. <1>
   [ 54] eq ...................................... <tValue.pNegative = 1>
   [ 55] and ..................................... <(pNegative = 1) and (tValue.pNegative = 1)>
@@ -624,62 +624,62 @@ on sum me, tValue
   [ 59] pushint8 1 .............................. <1>
   [ 61] setlocal 1 .............................. tNeg = 1
   [ 63] jmp [147]
-  [ 66] getprop 1888 ............................ <pNegative>
+  [ 66] getprop 1885 ............................ <pNegative>
   [ 69] pushint8 1 .............................. <1>
   [ 71] eq ...................................... <pNegative = 1>
   [ 72] jmpifz [107] ............................ if pNegative = 1 then / else
   [ 75] getlocal 0 .............................. <tResult>
   [ 77] getparam 0 .............................. <me>
   [ 79] pusharglistnoret 2 ...................... <tResult, me>
-  [ 81] objcall 1863 ............................ tResult.copyFrom(me)
+  [ 81] objcall 1860 ............................ tResult.copyFrom(me)
   [ 84] getlocal 0 .............................. <tResult>
   [ 86] pusharglistnoret 1 ...................... <tResult>
-  [ 88] objcall 1861 ............................ tResult.neg()
+  [ 88] objcall 1858 ............................ tResult.neg()
   [ 91] getparam 1 .............................. <tValue>
   [ 93] getlocal 0 .............................. <tResult>
   [ 95] pusharglist 2 ........................... <tValue, tResult>
-  [ 97] objcall 1870 ............................ <tValue.dif(tResult)>
+  [ 97] objcall 1867 ............................ <tValue.dif(tResult)>
   [100] pusharglistnoret 1 ...................... <tValue.dif(tResult)>
   [102] extcall 25 .............................. return tValue.dif(tResult)
   [104] jmp [147]
   [107] getparam 1 .............................. <tValue>
-  [109] getobjprop 1888 ......................... <tValue.pNegative>
+  [109] getobjprop 1885 ......................... <tValue.pNegative>
   [112] pushint8 1 .............................. <1>
   [114] eq ...................................... <tValue.pNegative = 1>
   [115] jmpifz [147] ............................ if tValue.pNegative = 1 then
   [118] getlocal 0 .............................. <tResult>
   [120] getparam 1 .............................. <tValue>
   [122] pusharglistnoret 2 ...................... <tResult, tValue>
-  [124] objcall 1863 ............................ tResult.copyFrom(tValue)
+  [124] objcall 1860 ............................ tResult.copyFrom(tValue)
   [127] getlocal 0 .............................. <tResult>
   [129] pusharglistnoret 1 ...................... <tResult>
-  [131] objcall 1861 ............................ tResult.neg()
+  [131] objcall 1858 ............................ tResult.neg()
   [134] getparam 0 .............................. <me>
   [136] getlocal 0 .............................. <tResult>
   [138] pusharglist 2 ........................... <me, tResult>
-  [140] objcall 1870 ............................ <me.dif(tResult)>
+  [140] objcall 1867 ............................ <me.dif(tResult)>
   [143] pusharglistnoret 1 ...................... <me.dif(tResult)>
   [145] extcall 25 .............................. return me.dif(tResult)
   [147] pushzero ................................ <0>
   [148] setlocal 2 .............................. tCarry = 0
   [150] getparam 0 .............................. <me>
-  [152] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [152] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [155] pusharglist 2 ........................... <me, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [157] objcall 22 .............................. <me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [159] getparam 1 .............................. <tValue>
-  [161] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [161] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [164] pusharglist 2 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [166] objcall 22 .............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [168] pusharglist 2 ........................... <me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
-  [170] extcall 1821 ............................ <max(me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count)>
+  [170] extcall 1818 ............................ <max(me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count)>
   [173] setlocal 3 .............................. tLen = max(me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count)
   [175] getparam 0 .............................. <me>
-  [177] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [177] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [180] pusharglist 2 ........................... <me, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [182] objcall 22 .............................. <me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [184] setlocal 4 .............................. tDataLen = me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
   [186] getparam 1 .............................. <tValue>
-  [188] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [188] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [191] pusharglist 2 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [193] objcall 22 .............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [195] setlocal 5 .............................. tValueDataLen = tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
@@ -698,12 +698,12 @@ on sum me, tValue
   [219] and ..................................... <(i <= tDataLen) and (i <= tValueDataLen)>
   [220] jmpifz [256] ............................ if (i <= tDataLen) and (i <= tValueDataLen) then / else
   [223] getparam 0 .............................. <me>
-  [225] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [225] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [228] getlocal 6 .............................. <i>
   [230] pusharglist 3 ........................... <me, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [232] objcall 290 ............................. <me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
   [235] getparam 1 .............................. <tValue>
-  [237] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [237] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [240] getlocal 6 .............................. <i>
   [242] pusharglist 3 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [244] objcall 290 ............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -717,7 +717,7 @@ on sum me, tValue
   [260] lteq .................................... <i <= tDataLen>
   [261] jmpifz [284] ............................ if i <= tDataLen then / else
   [264] getparam 0 .............................. <me>
-  [266] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [266] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [269] getlocal 6 .............................. <i>
   [271] pusharglist 3 ........................... <me, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [273] objcall 290 ............................. <me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -726,7 +726,7 @@ on sum me, tValue
   [279] setlocal 7 .............................. tCoef = me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] + tCarry
   [281] jmp [301]
   [284] getparam 1 .............................. <tValue>
-  [286] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [286] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [289] getlocal 6 .............................. <i>
   [291] pusharglist 3 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [293] objcall 290 ............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -734,11 +734,11 @@ on sum me, tValue
   [298] add ..................................... <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] + tCarry>
   [299] setlocal 7 .............................. tCoef = tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] + tCarry
   [301] getlocal 7 .............................. <tCoef>
-  [303] getprop 1889 ............................ <pBase>
+  [303] getprop 1886 ............................ <pBase>
   [306] lt ...................................... <tCoef < pBase>
   [307] jmpifz [330] ............................ if tCoef < pBase then
   [310] getlocal 0 .............................. <tResult>
-  [312] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [312] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [315] getlocal 6 .............................. <i>
   [317] getlocal 7 .............................. <tCoef>
   [319] pusharglistnoret 4 ...................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i, tCoef>
@@ -747,10 +747,10 @@ on sum me, tValue
   [325] setlocal 2 .............................. tCarry = 0
   [327] jmp [352] ............................... next repeat
   [330] getlocal 0 .............................. <tResult>
-  [332] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [332] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [335] getlocal 6 .............................. <i>
   [337] getlocal 7 .............................. <tCoef>
-  [339] getprop 1889 ............................ <pBase>
+  [339] getprop 1886 ............................ <pBase>
   [342] sub ..................................... <tCoef - pBase>
   [343] pusharglistnoret 4 ...................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i, tCoef - pBase>
   [345] objcall 891 ............................. tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] = tCoef - pBase
@@ -766,7 +766,7 @@ on sum me, tValue
   [364] gt ...................................... <tCarry > 0>
   [365] jmpifz [385] ............................ if tCarry > 0 then
   [368] getlocal 0 .............................. <tResult>
-  [370] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [370] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [373] getlocal 3 .............................. <tLen>
   [375] pushint8 1 .............................. <1>
   [377] add ..................................... <tLen + 1>
@@ -779,7 +779,7 @@ on sum me, tValue
   [390] jmpifz [400] ............................ if tNeg = 1 then
   [393] getlocal 0 .............................. <tResult>
   [395] pusharglistnoret 1 ...................... <tResult>
-  [397] objcall 1861 ............................ tResult.neg()
+  [397] objcall 1858 ............................ tResult.neg()
   [400] getlocal 0 .............................. <tResult>
   [402] pusharglistnoret 1 ...................... <tResult>
   [404] extcall 25 .............................. return tResult
@@ -800,22 +800,22 @@ on dif me, tValue
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1890 ............................ <pScript>
+  [ 29] getprop 1887 ............................ <pScript>
   [ 32] pusharglist 1 ........................... <pScript>
   [ 34] extcall 116 ............................. <new(pScript)>
   [ 36] setlocal 0 .............................. tResult = new(pScript)
-  [ 38] getprop 1888 ............................ <pNegative>
+  [ 38] getprop 1885 ............................ <pNegative>
   [ 41] getparam 1 .............................. <tValue>
-  [ 43] getobjprop 1888 ......................... <tValue.pNegative>
+  [ 43] getobjprop 1885 ......................... <tValue.pNegative>
   [ 46] eq ...................................... <pNegative = tValue.pNegative>
   [ 47] jmpifz [296] ............................ if pNegative = tValue.pNegative then
-  [ 50] getprop 1888 ............................ <pNegative>
+  [ 50] getprop 1885 ............................ <pNegative>
   [ 53] setlocal 1 .............................. tNeg = pNegative
   [ 55] getparam 0 .............................. <me>
   [ 57] getparam 1 .............................. <tValue>
   [ 59] pushzero ................................ <0>
   [ 60] pusharglist 3 ........................... <me, tValue, 0>
-  [ 62] objcall 1866 ............................ <me.greaterThan(tValue, 0)>
+  [ 62] objcall 1863 ............................ <me.greaterThan(tValue, 0)>
   [ 65] jmpifz [ 79] ............................ if me.greaterThan(tValue, 0) then / else
   [ 68] getparam 0 .............................. <me>
   [ 70] setlocal 2 .............................. tBigger = me
@@ -829,18 +829,18 @@ on dif me, tValue
   [ 87] pushzero ................................ <0>
   [ 88] setlocal 4 .............................. tCarry = 0
   [ 90] getparam 0 .............................. <me>
-  [ 92] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 92] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 95] pusharglist 2 ........................... <me, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 97] objcall 22 .............................. <me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 99] getparam 1 .............................. <tValue>
-  [101] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [101] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [104] pusharglist 2 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [106] objcall 22 .............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [108] pusharglist 2 ........................... <me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
-  [110] extcall 1821 ............................ <max(me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count)>
+  [110] extcall 1818 ............................ <max(me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count)>
   [113] setlocal 5 .............................. tLen = max(me.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count, tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count)
   [115] getlocal 3 .............................. <tSmaller>
-  [117] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [117] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [120] pusharglist 2 ........................... <tSmaller, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [122] objcall 22 .............................. <tSmaller.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [124] setlocal 6 .............................. tSmallerCount = tSmaller.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
@@ -855,12 +855,12 @@ on dif me, tValue
   [142] lteq .................................... <i <= tSmallerCount>
   [143] jmpifz [179] ............................ if i <= tSmallerCount then / else
   [146] getlocal 2 .............................. <tBigger>
-  [148] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [148] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [151] getlocal 7 .............................. <i>
   [153] pusharglist 3 ........................... <tBigger, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [155] objcall 290 ............................. <tBigger.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
   [158] getlocal 3 .............................. <tSmaller>
-  [160] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [160] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [163] getlocal 7 .............................. <i>
   [165] pusharglist 3 ........................... <tSmaller, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [167] objcall 290 ............................. <tSmaller.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -870,7 +870,7 @@ on dif me, tValue
   [174] setlocal 8 .............................. tCoef = tBigger.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] - tSmaller.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] + tCarry
   [176] jmp [196]
   [179] getlocal 2 .............................. <tBigger>
-  [181] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [181] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [184] getlocal 7 .............................. <i>
   [186] pusharglist 3 ........................... <tBigger, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [188] objcall 290 ............................. <tBigger.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -882,7 +882,7 @@ on dif me, tValue
   [199] gteq .................................... <tCoef >= 0>
   [200] jmpifz [223] ............................ if tCoef >= 0 then
   [203] getlocal 0 .............................. <tResult>
-  [205] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [205] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [208] getlocal 7 .............................. <i>
   [210] getlocal 8 .............................. <tCoef>
   [212] pusharglistnoret 4 ...................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i, tCoef>
@@ -891,10 +891,10 @@ on dif me, tValue
   [218] setlocal 4 .............................. tCarry = 0
   [220] jmp [246] ............................... next repeat
   [223] getlocal 0 .............................. <tResult>
-  [225] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [225] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [228] getlocal 7 .............................. <i>
   [230] getlocal 8 .............................. <tCoef>
-  [232] getprop 1889 ............................ <pBase>
+  [232] getprop 1886 ............................ <pBase>
   [235] add ..................................... <tCoef + pBase>
   [236] pusharglistnoret 4 ...................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i, tCoef + pBase>
   [238] objcall 891 ............................. tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] = tCoef + pBase
@@ -908,61 +908,61 @@ on dif me, tValue
   [253] endrepeat [130]
   [255] getlocal 0 .............................. <tResult>
   [257] pusharglistnoret 1 ...................... <tResult>
-  [259] objcall 1864 ............................ tResult.trim()
+  [259] objcall 1861 ............................ tResult.trim()
   [262] getlocal 1 .............................. <tNeg>
   [264] jmpifz [274] ............................ if tNeg then
   [267] getlocal 0 .............................. <tResult>
   [269] pusharglistnoret 1 ...................... <tResult>
-  [271] objcall 1861 ............................ tResult.neg()
-  [274] getprop 1888 ............................ <pNegative>
+  [271] objcall 1858 ............................ tResult.neg()
+  [274] getprop 1885 ............................ <pNegative>
   [277] pushint8 1 .............................. <1>
   [279] eq ...................................... <pNegative = 1>
   [280] jmpifz [290] ............................ if pNegative = 1 then
   [283] getlocal 0 .............................. <tResult>
   [285] pusharglistnoret 1 ...................... <tResult>
-  [287] objcall 1861 ............................ tResult.neg()
+  [287] objcall 1858 ............................ tResult.neg()
   [290] getlocal 0 .............................. <tResult>
   [292] pusharglistnoret 1 ...................... <tResult>
   [294] extcall 25 .............................. return tResult
-  [296] getprop 1888 ............................ <pNegative>
+  [296] getprop 1885 ............................ <pNegative>
   [299] pushint8 1 .............................. <1>
   [301] eq ...................................... <pNegative = 1>
   [302] jmpifz [348] ............................ if pNegative = 1 then / else
   [305] getlocal 0 .............................. <tResult>
   [307] getparam 0 .............................. <me>
   [309] pusharglistnoret 2 ...................... <tResult, me>
-  [311] objcall 1863 ............................ tResult.copyFrom(me)
+  [311] objcall 1860 ............................ tResult.copyFrom(me)
   [314] getlocal 0 .............................. <tResult>
   [316] pusharglistnoret 1 ...................... <tResult>
-  [318] objcall 1861 ............................ tResult.neg()
+  [318] objcall 1858 ............................ tResult.neg()
   [321] getparam 1 .............................. <tValue>
   [323] getlocal 0 .............................. <tResult>
   [325] pusharglist 2 ........................... <tValue, tResult>
-  [327] objcall 1869 ............................ <tValue.sum(tResult)>
+  [327] objcall 1866 ............................ <tValue.sum(tResult)>
   [330] setlocal 0 .............................. tResult = tValue.sum(tResult)
   [332] getlocal 0 .............................. <tResult>
   [334] pusharglistnoret 1 ...................... <tResult>
-  [336] objcall 1861 ............................ tResult.neg()
+  [336] objcall 1858 ............................ tResult.neg()
   [339] getlocal 0 .............................. <tResult>
   [341] pusharglistnoret 1 ...................... <tResult>
   [343] extcall 25 .............................. return tResult
   [345] jmp [392]
   [348] getparam 1 .............................. <tValue>
-  [350] getobjprop 1888 ......................... <tValue.pNegative>
+  [350] getobjprop 1885 ......................... <tValue.pNegative>
   [353] pushint8 1 .............................. <1>
   [355] eq ...................................... <tValue.pNegative = 1>
   [356] jmpifz [392] ............................ if tValue.pNegative = 1 then
   [359] getlocal 0 .............................. <tResult>
   [361] getparam 1 .............................. <tValue>
   [363] pusharglistnoret 2 ...................... <tResult, tValue>
-  [365] objcall 1863 ............................ tResult.copyFrom(tValue)
+  [365] objcall 1860 ............................ tResult.copyFrom(tValue)
   [368] getlocal 0 .............................. <tResult>
   [370] pusharglistnoret 1 ...................... <tResult>
-  [372] objcall 1861 ............................ tResult.neg()
+  [372] objcall 1858 ............................ tResult.neg()
   [375] getparam 0 .............................. <me>
   [377] getlocal 0 .............................. <tResult>
   [379] pusharglist 2 ........................... <me, tResult>
-  [381] objcall 1869 ............................ <me.sum(tResult)>
+  [381] objcall 1866 ............................ <me.sum(tResult)>
   [384] setlocal 0 .............................. tResult = me.sum(tResult)
   [386] getlocal 0 .............................. <tResult>
   [388] pusharglistnoret 1 ...................... <tResult>
@@ -984,15 +984,15 @@ on prod me, tValue
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1890 ............................ <pScript>
+  [ 29] getprop 1887 ............................ <pScript>
   [ 32] pusharglist 1 ........................... <pScript>
   [ 34] extcall 116 ............................. <new(pScript)>
   [ 36] setlocal 0 .............................. tResult = new(pScript)
-  [ 38] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 38] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 41] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 43] setlocal 1 .............................. tDataLen = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
   [ 45] getparam 1 .............................. <tValue>
-  [ 47] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 47] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 50] pusharglist 2 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 52] objcall 22 .............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 54] setlocal 2 .............................. tValueDataLen = tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
@@ -1013,11 +1013,11 @@ on prod me, tValue
   [ 83] lteq
   [ 84] jmpifz [214] ............................ repeat with j = 1 to tValueDataLen
   [ 87] getparam 1 .............................. <tValue>
-  [ 89] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 89] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 92] getlocal 6 .............................. <j>
   [ 94] pusharglist 3 ........................... <tValue, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, j>
   [ 96] objcall 290 ............................. <tValue.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[j]>
-  [ 99] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 99] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [102] getlocal 3 .............................. <i>
   [104] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [106] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -1026,25 +1026,25 @@ on prod me, tValue
   [111] getlocal 7 .............................. <tProd>
   [113] getlocal 4 .............................. <tCarry>
   [115] add ..................................... <tProd + tCarry>
-  [116] getprop 1889 ............................ <pBase>
+  [116] getprop 1886 ............................ <pBase>
   [119] mod ..................................... <(tProd + tCarry) mod pBase>
   [120] setlocal 8 .............................. tCoef = (tProd + tCarry) mod pBase
   [122] getlocal 7 .............................. <tProd>
   [124] getlocal 4 .............................. <tCarry>
   [126] add ..................................... <tProd + tCarry>
-  [127] getprop 1889 ............................ <pBase>
+  [127] getprop 1886 ............................ <pBase>
   [130] div ..................................... <(tProd + tCarry) / pBase>
   [131] setlocal 4 .............................. tCarry = (tProd + tCarry) / pBase
   [133] getlocal 5 .............................. <tIndex>
   [135] getlocal 0 .............................. <tResult>
-  [137] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [137] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [140] pusharglist 2 ........................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [142] objcall 22 .............................. <tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [144] lteq .................................... <tIndex <= tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [145] jmpifz [184] ............................ if tIndex <= tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count then
   [148] getlocal 8 .............................. <tCoef>
   [150] getlocal 0 .............................. <tResult>
-  [152] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [152] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [155] getlocal 5 .............................. <tIndex>
   [157] pusharglist 3 ........................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tIndex>
   [159] objcall 290 ............................. <tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tIndex]>
@@ -1052,16 +1052,16 @@ on prod me, tValue
   [163] setlocal 8 .............................. tCoef = tCoef + tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tIndex]
   [165] getlocal 4 .............................. <tCarry>
   [167] getlocal 8 .............................. <tCoef>
-  [169] getprop 1889 ............................ <pBase>
+  [169] getprop 1886 ............................ <pBase>
   [172] div ..................................... <tCoef / pBase>
   [173] add ..................................... <tCarry + (tCoef / pBase)>
   [174] setlocal 4 .............................. tCarry = tCarry + (tCoef / pBase)
   [176] getlocal 8 .............................. <tCoef>
-  [178] getprop 1889 ............................ <pBase>
+  [178] getprop 1886 ............................ <pBase>
   [181] mod ..................................... <tCoef mod pBase>
   [182] setlocal 8 .............................. tCoef = tCoef mod pBase
   [184] getlocal 0 .............................. <tResult>
-  [186] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [186] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [189] getlocal 5 .............................. <tIndex>
   [191] getlocal 8 .............................. <tCoef>
   [193] pusharglistnoret 4 ...................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tIndex, tCoef>
@@ -1080,7 +1080,7 @@ on prod me, tValue
   [217] gt ...................................... <tCarry > 0>
   [218] jmpifz [235] ............................ if tCarry > 0 then
   [221] getlocal 0 .............................. <tResult>
-  [223] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [223] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [226] getlocal 5 .............................. <tIndex>
   [228] getlocal 4 .............................. <tCarry>
   [230] pusharglistnoret 4 ...................... <tResult, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tIndex, tCarry>
@@ -1090,14 +1090,14 @@ on prod me, tValue
   [239] add
   [240] setlocal 3
   [242] endrepeat [ 60]
-  [244] getprop 1888 ............................ <pNegative>
+  [244] getprop 1885 ............................ <pNegative>
   [247] getparam 1 .............................. <tValue>
-  [249] getobjprop 1888 ......................... <tValue.pNegative>
+  [249] getobjprop 1885 ......................... <tValue.pNegative>
   [252] nteq .................................... <pNegative <> tValue.pNegative>
   [253] jmpifz [263] ............................ if pNegative <> tValue.pNegative then
   [256] getlocal 0 .............................. <tResult>
   [258] pusharglistnoret 1 ...................... <tResult>
-  [260] objcall 1861 ............................ tResult.neg()
+  [260] objcall 1858 ............................ tResult.neg()
   [263] getlocal 0 .............................. <tResult>
   [265] pusharglistnoret 1 ...................... <tResult>
   [267] extcall 25 .............................. return tResult
@@ -1122,7 +1122,7 @@ on mul me, tMultiplier
   [ 31] pushzero ................................ <0>
   [ 32] lt ...................................... <tMultiplier < 0>
   [ 33] getparam 1 .............................. <tMultiplier>
-  [ 35] getprop 1889 ............................ <pBase>
+  [ 35] getprop 1886 ............................ <pBase>
   [ 38] gt ...................................... <tMultiplier > pBase>
   [ 39] or ...................................... <(tMultiplier < 0) or (tMultiplier > pBase)>
   [ 40] jmpifz [ 50] ............................ if (tMultiplier < 0) or (tMultiplier > pBase) then / else
@@ -1135,16 +1135,16 @@ on mul me, tMultiplier
   [ 54] jmpifz [ 71] ............................ if tMultiplier = 0 then
   [ 57] pusharglist 0 ........................... <[]>
   [ 59] pushlist ................................ <[]>
-  [ 60] setprop 1887 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = []
+  [ 60] setprop 1884 ............................ pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = []
   [ 63] pushzero ................................ <0>
-  [ 64] setprop 1888 ............................ pNegative = 0
+  [ 64] setprop 1885 ............................ pNegative = 0
   [ 67] pusharglistnoret 0 ...................... <>
   [ 69] extcall 25 .............................. return 
   [ 71] getparam 1 .............................. <tMultiplier>
-  [ 73] getprop 1889 ............................ <pBase>
+  [ 73] getprop 1886 ............................ <pBase>
   [ 76] eq ...................................... <tMultiplier = pBase>
   [ 77] jmpifz [ 95] ............................ if tMultiplier = pBase then
-  [ 80] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 80] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 83] pushint8 1 .............................. <1>
   [ 85] pushzero ................................ <0>
   [ 86] pusharglistnoret 3 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, 0>
@@ -1156,11 +1156,11 @@ on mul me, tMultiplier
   [ 98] pushint8 1 .............................. <1>
   [100] setlocal 1
   [102] getlocal 1
-  [104] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [104] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [107] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [109] lteq
   [110] jmpifz [166] ............................ repeat with i = 1 to pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
-  [113] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [113] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [116] getlocal 1 .............................. <i>
   [118] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [120] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -1170,14 +1170,14 @@ on mul me, tMultiplier
   [127] add ..................................... <(pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] * tMultiplier) + tCarry>
   [128] setlocal 2 .............................. tResult = (pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] * tMultiplier) + tCarry
   [130] getlocal 2 .............................. <tResult>
-  [132] getprop 1889 ............................ <pBase>
+  [132] getprop 1886 ............................ <pBase>
   [135] mod ..................................... <tResult mod pBase>
   [136] setlocal 3 .............................. tCoef = tResult mod pBase
   [138] getlocal 2 .............................. <tResult>
-  [140] getprop 1889 ............................ <pBase>
+  [140] getprop 1886 ............................ <pBase>
   [143] div ..................................... <tResult / pBase>
   [144] setlocal 0 .............................. tCarry = tResult / pBase
-  [146] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [146] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [149] getlocal 1 .............................. <i>
   [151] getlocal 3 .............................. <tCoef>
   [153] pusharglistnoret 3 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i, tCoef>
@@ -1191,7 +1191,7 @@ on mul me, tMultiplier
   [168] pushzero ................................ <0>
   [169] gt ...................................... <tCarry > 0>
   [170] jmpifz [182] ............................ if tCarry > 0 then
-  [173] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [173] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [176] getlocal 0 .............................. <tCarry>
   [178] pusharglistnoret 2 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tCarry>
   [180] objcall 122 ............................. pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.add(tCarry)
@@ -1231,9 +1231,9 @@ on pow me, tPower
   [ 60] pushint8 2 .............................. <2>
   [ 62] div ..................................... <tPower / 2>
   [ 63] pusharglist 2 ........................... <me, tPower / 2>
-  [ 65] objcall 1873 ............................ <me.pow(tPower / 2)>
+  [ 65] objcall 1870 ............................ <me.pow(tPower / 2)>
   [ 68] pusharglist 1 ........................... <me.pow(tPower / 2)>
-  [ 70] objcall 1874 ............................ <me.pow(tPower / 2).sqr()>
+  [ 70] objcall 1871 ............................ <me.pow(tPower / 2).sqr()>
   [ 73] pusharglistnoret 1 ...................... <me.pow(tPower / 2).sqr()>
   [ 75] extcall 25 .............................. return me.pow(tPower / 2).sqr()
   [ 77] jmp [108]
@@ -1243,11 +1243,11 @@ on pow me, tPower
   [ 86] pushint8 2 .............................. <2>
   [ 88] div ..................................... <tPower / 2>
   [ 89] pusharglist 2 ........................... <me, tPower / 2>
-  [ 91] objcall 1873 ............................ <me.pow(tPower / 2)>
+  [ 91] objcall 1870 ............................ <me.pow(tPower / 2)>
   [ 94] pusharglist 1 ........................... <me.pow(tPower / 2)>
-  [ 96] objcall 1874 ............................ <me.pow(tPower / 2).sqr()>
+  [ 96] objcall 1871 ............................ <me.pow(tPower / 2).sqr()>
   [ 99] pusharglist 2 ........................... <me, me.pow(tPower / 2).sqr()>
-  [101] objcall 1871 ............................ <me.prod(me.pow(tPower / 2).sqr())>
+  [101] objcall 1868 ............................ <me.prod(me.pow(tPower / 2).sqr())>
   [104] pusharglistnoret 1 ...................... <me.prod(me.pow(tPower / 2).sqr())>
   [106] extcall 25 .............................. return me.prod(me.pow(tPower / 2).sqr())
   [108] ret
@@ -1270,7 +1270,7 @@ on sqr me
   [ 29] getparam 0 .............................. <me>
   [ 31] getparam 0 .............................. <me>
   [ 33] pusharglist 2 ........................... <me, me>
-  [ 35] objcall 1871 ............................ <me.prod(me)>
+  [ 35] objcall 1868 ............................ <me.prod(me)>
   [ 38] pusharglistnoret 1 ...................... <me.prod(me)>
   [ 40] extcall 25 .............................. return me.prod(me)
   [ 42] ret
@@ -1297,15 +1297,15 @@ on getIntValue me, tLimit
   [ 38] pushint32 100000000 ..................... <100000000>
   [ 43] setparam 1 .............................. tLimit = 100000000
   [ 45] getparam 1 .............................. <tLimit>
-  [ 47] getprop 1889 ............................ <pBase>
+  [ 47] getprop 1886 ............................ <pBase>
   [ 50] div ..................................... <tLimit / pBase>
   [ 51] pushint8 10 ............................. <10>
   [ 53] mul ..................................... <tLimit / pBase * 10>
   [ 54] setlocal 0 .............................. tLimitLo = tLimit / pBase * 10
-  [ 56] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 56] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 59] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 61] setlocal 1 .............................. tLength = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
-  [ 63] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 63] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 66] getlocal 1 .............................. <tLength>
   [ 68] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tLength>
   [ 70] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tLength]>
@@ -1322,7 +1322,7 @@ on getIntValue me, tLimit
   [ 89] gt ...................................... <tIndex > 0>
   [ 90] and ..................................... <(tInt < tLimit) and (tIndex > 0)>
   [ 91] jmpifz [181] ............................ repeat while (tInt < tLimit) and (tIndex > 0)
-  [ 94] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 94] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 97] getlocal 3 .............................. <tIndex>
   [ 99] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tIndex>
   [101] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tIndex]>
@@ -1332,7 +1332,7 @@ on getIntValue me, tLimit
   [109] lt ...................................... <tInt < tLimitLo>
   [110] jmpifz [127] ............................ if tInt < tLimitLo then / else
   [113] getlocal 2 .............................. <tInt>
-  [115] getprop 1889 ............................ <pBase>
+  [115] getprop 1886 ............................ <pBase>
   [118] mul ..................................... <tInt * pBase>
   [119] getlocal 4 .............................. <tCoef>
   [121] add ..................................... <(tInt * pBase) + tCoef>
@@ -1351,7 +1351,7 @@ on getIntValue me, tLimit
   [146] mul ..................................... <tCoefMultiplier * 10>
   [147] setlocal 5 .............................. tCoefMultiplier = tCoefMultiplier * 10
   [149] endrepeat [131]
-  [151] getprop 1889 ............................ <pBase>
+  [151] getprop 1886 ............................ <pBase>
   [154] getlocal 5 .............................. <tCoefMultiplier>
   [156] div ..................................... <pBase / tCoefMultiplier>
   [157] setlocal 6 .............................. tCoefDivider = pBase / tCoefMultiplier
@@ -1388,19 +1388,19 @@ on getLength me
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 29] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 32] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 34] getprop 907 ............................. <pDigits>
   [ 37] mul ..................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count * pDigits>
   [ 38] setlocal 0 .............................. tLen = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count * pDigits
-  [ 40] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
-  [ 43] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 40] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 43] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 46] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 48] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 50] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count]>
   [ 52] setlocal 1 .............................. tCoef = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count]
   [ 54] getlocal 1 .............................. <tCoef>
-  [ 56] getprop 1889 ............................ <pBase>
+  [ 56] getprop 1886 ............................ <pBase>
   [ 59] pushint8 10 ............................. <10>
   [ 61] div ..................................... <pBase / 10>
   [ 62] gteq .................................... <tCoef >= (pBase / 10)>
@@ -1410,7 +1410,7 @@ on getLength me
   [ 70] extcall 25 .............................. return tLen
   [ 72] jmp [121]
   [ 75] getlocal 1 .............................. <tCoef>
-  [ 77] getprop 1889 ............................ <pBase>
+  [ 77] getprop 1886 ............................ <pBase>
   [ 80] pushint8 100 ............................ <100>
   [ 82] div ..................................... <pBase / 100>
   [ 83] gteq .................................... <tCoef >= (pBase / 100)>
@@ -1422,7 +1422,7 @@ on getLength me
   [ 94] extcall 25 .............................. return tLen - 1
   [ 96] jmp [121]
   [ 99] getlocal 1 .............................. <tCoef>
-  [101] getprop 1889 ............................ <pBase>
+  [101] getprop 1886 ............................ <pBase>
   [104] pushint16 1000 .......................... <1000>
   [107] div ..................................... <pBase / 1000>
   [108] gteq .................................... <tCoef >= (pBase / 1000)>
@@ -1456,7 +1456,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
   [ 29] getparam 1 .............................. <tDivider>
   [ 31] pusharglist 1 ........................... <tDivider>
-  [ 33] objcall 1868 ............................ <tDivider.isZero()>
+  [ 33] objcall 1865 ............................ <tDivider.isZero()>
   [ 36] pushint8 1 .............................. <1>
   [ 38] eq ...................................... <tDivider.isZero() = 1>
   [ 39] jmpifz [ 50] ............................ if tDivider.isZero() = 1 then
@@ -1464,7 +1464,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [ 44] extcall 32 .............................. <VOID>
   [ 46] pusharglistnoret 1 ...................... <VOID>
   [ 48] extcall 25 .............................. return VOID
-  [ 50] getprop 1890 ............................ <pScript>
+  [ 50] getprop 1887 ............................ <pScript>
   [ 53] pusharglist 1 ........................... <pScript>
   [ 55] extcall 116 ............................. <new(pScript)>
   [ 57] setlocal 0 .............................. tResult = new(pScript)
@@ -1472,7 +1472,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [ 61] getparam 1 .............................. <tDivider>
   [ 63] pushzero ................................ <0>
   [ 64] pusharglist 3 ........................... <me, tDivider, 0>
-  [ 66] objcall 1867 ............................ <me.lessThan(tDivider, 0)>
+  [ 66] objcall 1864 ............................ <me.lessThan(tDivider, 0)>
   [ 69] jmpifz [ 95] ............................ if me.lessThan(tDivider, 0) then
   [ 72] getparam 2 .............................. <tReturnModulo>
   [ 74] pushint8 1 .............................. <1>
@@ -1481,34 +1481,34 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [ 80] getlocal 0 .............................. <tResult>
   [ 82] getparam 0 .............................. <me>
   [ 84] pusharglistnoret 2 ...................... <tResult, me>
-  [ 86] objcall 1863 ............................ tResult.copyFrom(me)
+  [ 86] objcall 1860 ............................ tResult.copyFrom(me)
   [ 89] getlocal 0 .............................. <tResult>
   [ 91] pusharglistnoret 1 ...................... <tResult>
   [ 93] extcall 25 .............................. return tResult
-  [ 95] getprop 1890 ............................ <pScript>
+  [ 95] getprop 1887 ............................ <pScript>
   [ 98] pusharglist 1 ........................... <pScript>
   [100] extcall 116 ............................. <new(pScript)>
   [102] setlocal 1 .............................. tTemp = new(pScript)
-  [104] getprop 1890 ............................ <pScript>
+  [104] getprop 1887 ............................ <pScript>
   [107] pusharglist 1 ........................... <pScript>
   [109] extcall 116 ............................. <new(pScript)>
   [111] setlocal 2 .............................. tTemp2 = new(pScript)
-  [113] getprop 1890 ............................ <pScript>
+  [113] getprop 1887 ............................ <pScript>
   [116] pusharglist 1 ........................... <pScript>
   [118] extcall 116 ............................. <new(pScript)>
   [120] setlocal 3 .............................. tRemainder = new(pScript)
-  [122] getprop 1890 ............................ <pScript>
+  [122] getprop 1887 ............................ <pScript>
   [125] pusharglist 1 ........................... <pScript>
   [127] extcall 116 ............................. <new(pScript)>
   [129] setlocal 4 .............................. tRemainderTemp = new(pScript)
   [131] getlocal 3 .............................. <tRemainder>
   [133] getparam 0 .............................. <me>
   [135] pusharglistnoret 2 ...................... <tRemainder, me>
-  [137] objcall 1863 ............................ tRemainder.copyFrom(me)
+  [137] objcall 1860 ............................ tRemainder.copyFrom(me)
   [140] getparam 1 .............................. <tDivider>
   [142] pushint16 10000 ......................... <10000>
   [145] pusharglist 2 ........................... <tDivider, 10000>
-  [147] objcall 1875 ............................ <tDivider.getIntValue(10000)>
+  [147] objcall 1872 ............................ <tDivider.getIntValue(10000)>
   [150] setlocal 5 .............................. tDividerInt = tDivider.getIntValue(10000)
   [152] pusharglist 0 ........................... <[]>
   [154] pushlist ................................ <[]>
@@ -1516,49 +1516,49 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [157] pushzero ................................ <0>
   [158] setlocal 7 .............................. tNegResult = 0
   [160] getlocal 3 .............................. <tRemainder>
-  [162] getobjprop 1888 ......................... <tRemainder.pNegative>
+  [162] getobjprop 1885 ......................... <tRemainder.pNegative>
   [165] jmpifz [179] ............................ if tRemainder.pNegative then
   [168] getlocal 3 .............................. <tRemainder>
   [170] pusharglistnoret 1 ...................... <tRemainder>
-  [172] objcall 1861 ............................ tRemainder.neg()
+  [172] objcall 1858 ............................ tRemainder.neg()
   [175] pushint8 1 .............................. <1>
   [177] setlocal 7 .............................. tNegResult = 1
   [179] getparam 1 .............................. <tDivider>
-  [181] getobjprop 1888 ......................... <tDivider.pNegative>
+  [181] getobjprop 1885 ......................... <tDivider.pNegative>
   [184] jmpifz [199] ............................ if tDivider.pNegative then
   [187] getparam 1 .............................. <tDivider>
   [189] pusharglistnoret 1 ...................... <tDivider>
-  [191] objcall 1861 ............................ tDivider.neg()
+  [191] objcall 1858 ............................ tDivider.neg()
   [194] getlocal 7 .............................. <tNegResult>
   [196] not ..................................... <not tNegResult>
   [197] setlocal 7 .............................. tNegResult = not tNegResult
   [199] getparam 1 .............................. <tDivider>
   [201] pusharglist 1 ........................... <tDivider>
-  [203] objcall 1876 ............................ <tDivider.getLength()>
+  [203] objcall 1873 ............................ <tDivider.getLength()>
   [206] setlocal 8 .............................. tDividerDigits = tDivider.getLength()
   [208] getparam 0 .............................. <me>
   [210] getlocal 5 .............................. <tDividerInt>
   [212] pusharglist 2 ........................... <me, tDividerInt>
-  [214] objcall 1878 ............................ <me.getIntLength(tDividerInt)>
+  [214] objcall 1875 ............................ <me.getIntLength(tDividerInt)>
   [217] setlocal 9 .............................. tDividerIntLength = me.getIntLength(tDividerInt)
   [219] getlocal 3 .............................. <tRemainder>
   [221] getparam 1 .............................. <tDivider>
   [223] pusharglist 2 ........................... <tRemainder, tDivider>
-  [225] objcall 1867 ............................ <tRemainder.lessThan(tDivider)>
+  [225] objcall 1864 ............................ <tRemainder.lessThan(tDivider)>
   [228] not ..................................... <not tRemainder.lessThan(tDivider)>
   [229] jmpifz [1212] ........................... repeat while not tRemainder.lessThan(tDivider)
   [232] getlocal 3 .............................. <tRemainder>
   [234] pusharglist 1 ........................... <tRemainder>
-  [236] objcall 1875 ............................ <tRemainder.getIntValue()>
+  [236] objcall 1872 ............................ <tRemainder.getIntValue()>
   [239] setlocal 10 ............................. tRemainderInt = tRemainder.getIntValue()
   [241] getlocal 3 .............................. <tRemainder>
   [243] pusharglist 1 ........................... <tRemainder>
-  [245] objcall 1876 ............................ <tRemainder.getLength()>
+  [245] objcall 1873 ............................ <tRemainder.getLength()>
   [248] setlocal 11 ............................. tRemainderDigits = tRemainder.getLength()
   [250] getparam 0 .............................. <me>
   [252] getlocal 10 ............................. <tRemainderInt>
   [254] pusharglist 2 ........................... <me, tRemainderInt>
-  [256] objcall 1878 ............................ <me.getIntLength(tRemainderInt)>
+  [256] objcall 1875 ............................ <me.getIntLength(tRemainderInt)>
   [259] setlocal 12 ............................. tRemainderIntLength = me.getIntLength(tRemainderInt)
   [261] getlocal 10 ............................. <tRemainderInt>
   [263] setlocal 13 ............................. tRemainderIntFirstDigits = tRemainderInt
@@ -1590,7 +1590,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [311] jmp [376]
   [314] getlocal 3 .............................. <tRemainder>
   [316] pusharglist 1 ........................... <tRemainder>
-  [318] objcall 1882 ............................ <tRemainder.getString()>
+  [318] objcall 1879 ............................ <tRemainder.getString()>
   [321] pushsymb 291 ............................ <#char>
   [324] pushint8 1 .............................. <1>
   [326] getlocal 8 .............................. <tDividerDigits>
@@ -1600,11 +1600,11 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [335] getlocal 4 .............................. <tRemainderTemp>
   [337] getlocal 16 ............................. <tRemainderStr>
   [339] pusharglistnoret 2 ...................... <tRemainderTemp, tRemainderStr>
-  [341] objcall 1862 ............................ tRemainderTemp.assign(tRemainderStr)
+  [341] objcall 1859 ............................ tRemainderTemp.assign(tRemainderStr)
   [344] getparam 1 .............................. <tDivider>
   [346] getlocal 4 .............................. <tRemainderTemp>
   [348] pusharglist 2 ........................... <tDivider, tRemainderTemp>
-  [350] objcall 1866 ............................ <tDivider.greaterThan(tRemainderTemp)>
+  [350] objcall 1863 ............................ <tDivider.greaterThan(tRemainderTemp)>
   [353] jmpifz [369] ............................ if tDivider.greaterThan(tRemainderTemp) then / else
   [356] getlocal 10 ............................. <tRemainderInt>
   [358] getlocal 5 .............................. <tDividerInt>
@@ -1628,7 +1628,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [391] getparam 0 .............................. <me>
   [393] getlocal 15 ............................. <tFastCoef>
   [395] pusharglist 2 ........................... <me, tFastCoef>
-  [397] objcall 1878 ............................ <me.getIntLength(tFastCoef)>
+  [397] objcall 1875 ............................ <me.getIntLength(tFastCoef)>
   [400] setlocal 19 ............................. tFastCoefLength = me.getIntLength(tFastCoef)
   [402] getlocal 19 ............................. <tFastCoefLength>
   [404] getlocal 9 .............................. <tDividerIntLength>
@@ -1666,17 +1666,17 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [463] getlocal 1 .............................. <tTemp>
   [465] getparam 1 .............................. <tDivider>
   [467] pusharglistnoret 2 ...................... <tTemp, tDivider>
-  [469] objcall 1863 ............................ tTemp.copyFrom(tDivider)
+  [469] objcall 1860 ............................ tTemp.copyFrom(tDivider)
   [472] getlocal 1 .............................. <tTemp>
   [474] getlocal 15 ............................. <tFastCoef>
   [476] pusharglistnoret 2 ...................... <tTemp, tFastCoef>
-  [478] objcall 1872 ............................ tTemp.mul(tFastCoef)
+  [478] objcall 1869 ............................ tTemp.mul(tFastCoef)
   [481] getlocal 3 .............................. <tRemainder>
-  [483] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [483] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [486] pusharglist 2 ........................... <tRemainder, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [488] objcall 22 .............................. <tRemainder.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [490] getlocal 1 .............................. <tTemp>
-  [492] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [492] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [495] pusharglist 2 ........................... <tTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [497] objcall 22 .............................. <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [499] sub ..................................... <tRemainder.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count - tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
@@ -1688,7 +1688,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [510] lteq
   [511] jmpifz [536] ............................ repeat with i = 1 to tAddCount
   [514] getlocal 1 .............................. <tTemp>
-  [516] getchainedprop 1887 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [516] getchainedprop 1884 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [519] pushint8 1 .............................. <1>
   [521] pushzero ................................ <0>
   [522] pusharglistnoret 3 ...................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, 0>
@@ -1701,24 +1701,24 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [536] getlocal 1 .............................. <tTemp>
   [538] getlocal 3 .............................. <tRemainder>
   [540] pusharglist 2 ........................... <tTemp, tRemainder>
-  [542] objcall 1866 ............................ <tTemp.greaterThan(tRemainder)>
+  [542] objcall 1863 ............................ <tTemp.greaterThan(tRemainder)>
   [545] jmpifz [818] ............................ if tTemp.greaterThan(tRemainder) then
   [548] getlocal 1 .............................. <tTemp>
   [550] getparam 1 .............................. <tDivider>
   [552] pusharglistnoret 2 ...................... <tTemp, tDivider>
-  [554] objcall 1863 ............................ tTemp.copyFrom(tDivider)
+  [554] objcall 1860 ............................ tTemp.copyFrom(tDivider)
   [557] getlocal 1 .............................. <tTemp>
   [559] getlocal 15 ............................. <tFastCoef>
   [561] pushint8 1 .............................. <1>
   [563] sub ..................................... <tFastCoef - 1>
   [564] pusharglistnoret 2 ...................... <tTemp, tFastCoef - 1>
-  [566] objcall 1872 ............................ tTemp.mul(tFastCoef - 1)
+  [566] objcall 1869 ............................ tTemp.mul(tFastCoef - 1)
   [569] getlocal 3 .............................. <tRemainder>
-  [571] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [571] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [574] pusharglist 2 ........................... <tRemainder, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [576] objcall 22 .............................. <tRemainder.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [578] getlocal 1 .............................. <tTemp>
-  [580] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [580] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [583] pusharglist 2 ........................... <tTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [585] objcall 22 .............................. <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [587] sub ..................................... <tRemainder.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count - tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
@@ -1730,7 +1730,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [598] lteq
   [599] jmpifz [624] ............................ repeat with i = 1 to tAddCount
   [602] getlocal 1 .............................. <tTemp>
-  [604] getchainedprop 1887 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [604] getchainedprop 1884 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [607] pushint8 1 .............................. <1>
   [609] pushzero ................................ <0>
   [610] pusharglistnoret 3 ...................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, 0>
@@ -1745,7 +1745,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [627] getlocal 1 .............................. <tTemp>
   [629] getlocal 3 .............................. <tRemainder>
   [631] pusharglist 2 ........................... <tTemp, tRemainder>
-  [633] objcall 1866 ............................ <tTemp.greaterThan(tRemainder)>
+  [633] objcall 1863 ............................ <tTemp.greaterThan(tRemainder)>
   [636] not ..................................... <not tTemp.greaterThan(tRemainder)>
   [637] jmpifz [753] ............................ if not tTemp.greaterThan(tRemainder) then / else
   [640] getlocal 21 ............................. <tAddCountNew>
@@ -1762,11 +1762,11 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [662] getlocal 2 .............................. <tTemp2>
   [664] getparam 1 .............................. <tDivider>
   [666] pusharglistnoret 2 ...................... <tTemp2, tDivider>
-  [668] objcall 1863 ............................ tTemp2.copyFrom(tDivider)
+  [668] objcall 1860 ............................ tTemp2.copyFrom(tDivider)
   [671] getlocal 2 .............................. <tTemp2>
   [673] getlocal 15 ............................. <tFastCoef>
   [675] pusharglistnoret 2 ...................... <tTemp2, tFastCoef>
-  [677] objcall 1872 ............................ tTemp2.mul(tFastCoef)
+  [677] objcall 1869 ............................ tTemp2.mul(tFastCoef)
   [680] pushint8 1 .............................. <1>
   [682] setlocal 14
   [684] getlocal 14
@@ -1776,7 +1776,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [691] lteq
   [692] jmpifz [717] ............................ repeat with i = 1 to tAddCount - 1
   [695] getlocal 2 .............................. <tTemp2>
-  [697] getchainedprop 1887 ..................... <tTemp2.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [697] getchainedprop 1884 ..................... <tTemp2.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [700] pushint8 1 .............................. <1>
   [702] pushzero ................................ <0>
   [703] pusharglistnoret 3 ...................... <tTemp2.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, 0>
@@ -1789,7 +1789,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [717] getlocal 2 .............................. <tTemp2>
   [719] getlocal 1 .............................. <tTemp>
   [721] pusharglist 2 ........................... <tTemp2, tTemp>
-  [723] objcall 1866 ............................ <tTemp2.greaterThan(tTemp)>
+  [723] objcall 1863 ............................ <tTemp2.greaterThan(tTemp)>
   [726] jmpifz [739] ............................ if tTemp2.greaterThan(tTemp) then / else
   [729] getlocal 20 ............................. <tAddCount>
   [731] pushint8 1 .............................. <1>
@@ -1813,11 +1813,11 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [766] getlocal 1 .............................. <tTemp>
   [768] getparam 1 .............................. <tDivider>
   [770] pusharglistnoret 2 ...................... <tTemp, tDivider>
-  [772] objcall 1863 ............................ tTemp.copyFrom(tDivider)
+  [772] objcall 1860 ............................ tTemp.copyFrom(tDivider)
   [775] getlocal 1 .............................. <tTemp>
   [777] getlocal 15 ............................. <tFastCoef>
   [779] pusharglistnoret 2 ...................... <tTemp, tFastCoef>
-  [781] objcall 1872 ............................ tTemp.mul(tFastCoef)
+  [781] objcall 1869 ............................ tTemp.mul(tFastCoef)
   [784] pushint8 1 .............................. <1>
   [786] setlocal 14
   [788] getlocal 14
@@ -1825,7 +1825,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [792] lteq
   [793] jmpifz [818] ............................ repeat with i = 1 to tAddCount
   [796] getlocal 1 .............................. <tTemp>
-  [798] getchainedprop 1887 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [798] getchainedprop 1884 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [801] pushint8 1 .............................. <1>
   [803] pushzero ................................ <0>
   [804] pusharglistnoret 3 ...................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, 0>
@@ -1842,11 +1842,11 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [826] getlocal 3 .............................. <tRemainder>
   [828] getlocal 1 .............................. <tTemp>
   [830] pusharglist 2 ........................... <tRemainder, tTemp>
-  [832] objcall 1870 ............................ <tRemainder.dif(tTemp)>
+  [832] objcall 1867 ............................ <tRemainder.dif(tTemp)>
   [835] setlocal 3 .............................. tRemainder = tRemainder.dif(tTemp)
   [837] getlocal 3 .............................. <tRemainder>
   [839] pusharglist 1 ........................... <tRemainder>
-  [841] objcall 1868 ............................ <tRemainder.isZero()>
+  [841] objcall 1865 ............................ <tRemainder.isZero()>
   [844] jmpifz [878] ............................ if tRemainder.isZero() then
   [847] pushint8 1 .............................. <1>
   [849] setlocal 14
@@ -1867,7 +1867,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [878] getlocal 3 .............................. <tRemainder>
   [880] getparam 1 .............................. <tDivider>
   [882] pusharglist 2 ........................... <tRemainder, tDivider>
-  [884] objcall 1867 ............................ <tRemainder.lessThan(tDivider)>
+  [884] objcall 1864 ............................ <tRemainder.lessThan(tDivider)>
   [887] not ..................................... <not tRemainder.lessThan(tDivider)>
   [888] jmpifz [1007] ........................... if not tRemainder.lessThan(tDivider) then
   [891] pushzero ................................ <0>
@@ -1877,7 +1877,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [899] getlocal 1 .............................. <tTemp>
   [901] getparam 1 .............................. <tDivider>
   [903] pusharglistnoret 2 ...................... <tTemp, tDivider>
-  [905] objcall 1863 ............................ tTemp.copyFrom(tDivider)
+  [905] objcall 1860 ............................ tTemp.copyFrom(tDivider)
   [908] pushint8 1 .............................. <1>
   [910] setlocal 14
   [912] getlocal 14
@@ -1889,7 +1889,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [922] lteq
   [923] jmpifz [948] ............................ repeat with i = 1 to tAddCount - tExtraZeroes - 1
   [926] getlocal 1 .............................. <tTemp>
-  [928] getchainedprop 1887 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [928] getchainedprop 1884 ..................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [931] pushint8 1 .............................. <1>
   [933] pushzero ................................ <0>
   [934] pusharglistnoret 3 ...................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, 0>
@@ -1902,7 +1902,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [948] getlocal 1 .............................. <tTemp>
   [950] getlocal 3 .............................. <tRemainder>
   [952] pusharglist 2 ........................... <tTemp, tRemainder>
-  [954] objcall 1866 ............................ <tTemp.greaterThan(tRemainder)>
+  [954] objcall 1863 ............................ <tTemp.greaterThan(tRemainder)>
   [957] not ..................................... <not tTemp.greaterThan(tRemainder)>
   [958] jmpifz [967] ............................ if not tTemp.greaterThan(tRemainder) then
   [961] jmp [976] ............................... exit repeat
@@ -1931,21 +1931,21 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [1007] getlocal 0 ............................. <tResult>
   [1009] getlocal 6 ............................. <tResultData>
   [1011] pusharglistnoret 2 ..................... <tResult, tResultData>
-  [1013] objcall 1862 ........................... tResult.assign(tResultData)
+  [1013] objcall 1859 ........................... tResult.assign(tResultData)
   [1016] getparam 0 ............................. <me>
   [1018] pusharglist 1 .......................... <me>
-  [1020] objcall 1876 ........................... <me.getLength()>
+  [1020] objcall 1873 ........................... <me.getLength()>
   [1023] setlocal 24 ............................ tDigits = me.getLength()
   [1025] getlocal 0 ............................. <tResult>
   [1027] pusharglist 1 .......................... <tResult>
-  [1029] objcall 1876 ........................... <tResult.getLength()>
+  [1029] objcall 1873 ........................... <tResult.getLength()>
   [1032] getlocal 8 ............................. <tDividerDigits>
   [1034] add .................................... <tResult.getLength() + tDividerDigits>
   [1035] getlocal 24 ............................ <tDigits>
   [1037] lt ..................................... <(tResult.getLength() + tDividerDigits) < tDigits>
   [1038] jmpifz [1063] .......................... repeat while (tResult.getLength() + tDividerDigits) < tDigits
   [1041] getlocal 0 ............................. <tResult>
-  [1043] getchainedprop 1887 .................... <tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [1043] getchainedprop 1884 .................... <tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [1046] pushint8 1 ............................. <1>
   [1048] pushzero ............................... <0>
   [1049] pusharglistnoret 3 ..................... <tResult.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, 0>
@@ -1961,7 +1961,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [1069] jmpifz [1209] .......................... if pDigits = 1 then
   [1072] getlocal 0 ............................. <tResult>
   [1074] pusharglist 1 .......................... <tResult>
-  [1076] objcall 1876 ........................... <tResult.getLength()>
+  [1076] objcall 1873 ........................... <tResult.getLength()>
   [1079] getlocal 8 ............................. <tDividerDigits>
   [1081] add .................................... <tResult.getLength() + tDividerDigits>
   [1082] getlocal 24 ............................ <tDigits>
@@ -1970,17 +1970,17 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [1088] getparam 1 ............................. <tDivider>
   [1090] pushint8 1 ............................. <1>
   [1092] pusharglist 2 .......................... <tDivider, 1>
-  [1094] objcall 1875 ........................... <tDivider.getIntValue(1)>
+  [1094] objcall 1872 ........................... <tDivider.getIntValue(1)>
   [1097] setlocal 5 ............................. tDividerInt = tDivider.getIntValue(1)
   [1099] getlocal 0 ............................. <tResult>
   [1101] pushint8 1 ............................. <1>
   [1103] pusharglist 2 .......................... <tResult, 1>
-  [1105] objcall 1875 ........................... <tResult.getIntValue(1)>
+  [1105] objcall 1872 ........................... <tResult.getIntValue(1)>
   [1108] setlocal 25 ............................ tResultInt = tResult.getIntValue(1)
   [1110] getparam 0 ............................. <me>
   [1112] pushint8 1 ............................. <1>
   [1114] pusharglist 2 .......................... <me, 1>
-  [1116] objcall 1875 ........................... <me.getIntValue(1)>
+  [1116] objcall 1872 ........................... <me.getIntValue(1)>
   [1119] setlocal 26 ............................ tValueInt = me.getIntValue(1)
   [1121] pushzero ............................... <0>
   [1122] setlocal 27 ............................ tExtraDigit = 0
@@ -2032,12 +2032,12 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [1212] getlocal 0 ............................. <tResult>
   [1214] getlocal 6 ............................. <tResultData>
   [1216] pusharglistnoret 2 ..................... <tResult, tResultData>
-  [1218] objcall 1862 ........................... tResult.assign(tResultData)
+  [1218] objcall 1859 ........................... tResult.assign(tResultData)
   [1221] getlocal 7 ............................. <tNegResult>
   [1223] jmpifz [1233] .......................... if tNegResult then
   [1226] getlocal 0 ............................. <tResult>
   [1228] pusharglistnoret 1 ..................... <tResult>
-  [1230] objcall 1861 ........................... tResult.neg()
+  [1230] objcall 1858 ........................... tResult.neg()
   [1233] getparam 2 ............................. <tReturnModulo>
   [1235] pushint8 1 ............................. <1>
   [1237] eq ..................................... <tReturnModulo = 1>
@@ -2049,9 +2049,9 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [1249] getparam 0 ............................. <me>
   [1251] getlocal 0 ............................. <tResult>
   [1253] pusharglistnoret 2 ..................... <me, tResult>
-  [1255] objcall 1863 ........................... me.copyFrom(tResult)
+  [1255] objcall 1860 ........................... me.copyFrom(tResult)
   [1258] getlocal 3 ............................. <tRemainder>
-  [1260] pushsymb 1887 .......................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [1260] pushsymb 1884 .......................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [1263] pusharglist 2 .......................... <tRemainder, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [1265] objcall 22 ............................. <tRemainder.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [1267] pushzero ............................... <0>
@@ -2061,7 +2061,7 @@ on div me, tDivider, tReturnModulo, tKeepResult
   [1274] pushzero ............................... <0>
   [1275] pusharglist 1 .......................... <[0]>
   [1277] pushlist ............................... <[0]>
-  [1278] setobjprop 1887 ........................ tRemainder.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = [0]
+  [1278] setobjprop 1884 ........................ tRemainder.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR = [0]
   [1281] getlocal 3 ............................. <tRemainder>
   [1283] pusharglistnoret 1 ..................... <tRemainder>
   [1285] extcall 25 ............................. return tRemainder
@@ -2132,7 +2132,7 @@ on Modulo me, tValue
   [ 31] getparam 1 .............................. <tValue>
   [ 33] pushint8 1 .............................. <1>
   [ 35] pusharglist 3 ........................... <me, tValue, 1>
-  [ 37] objcall 1877 ............................ <me.div(tValue, 1)>
+  [ 37] objcall 1874 ............................ <me.div(tValue, 1)>
   [ 40] pusharglistnoret 1 ...................... <me.div(tValue, 1)>
   [ 42] extcall 25 .............................. return me.div(tValue, 1)
   [ 44] ret
@@ -2152,11 +2152,11 @@ on divBy2 me
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1889 ............................ <pBase>
+  [ 29] getprop 1886 ............................ <pBase>
   [ 32] pushint8 2 .............................. <2>
   [ 34] div ..................................... <pBase / 2>
   [ 35] setlocal 0 .............................. tBasePer2 = pBase / 2
-  [ 37] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 37] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 40] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 42] setlocal 1 .............................. tCount = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
   [ 44] getlocal 1 .............................. <tCount>
@@ -2165,14 +2165,14 @@ on divBy2 me
   [ 48] jmpifz [ 55] ............................ if tCount = 0 then
   [ 51] pusharglistnoret 0 ...................... <>
   [ 53] extcall 25 .............................. return 
-  [ 55] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 55] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 58] pushint8 1 .............................. <1>
   [ 60] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1>
   [ 62] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1]>
   [ 64] pushint8 2 .............................. <2>
   [ 66] div ..................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1] / 2>
   [ 67] setlocal 2 .............................. tCoef = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1] / 2
-  [ 69] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 69] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 72] pushint8 1 .............................. <1>
   [ 74] getlocal 2 .............................. <tCoef>
   [ 76] pusharglistnoret 3 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1, tCoef>
@@ -2183,14 +2183,14 @@ on divBy2 me
   [ 86] getlocal 1 .............................. <tCount>
   [ 88] lteq
   [ 89] jmpifz [175] ............................ repeat with i = 2 to tCount
-  [ 92] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 92] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 95] getlocal 3 .............................. <i>
   [ 97] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [ 99] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
   [101] pushint8 2 .............................. <2>
   [103] div ..................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] / 2>
   [104] setlocal 2 .............................. tCoef = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i] / 2
-  [106] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [106] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [109] getlocal 3 .............................. <i>
   [111] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [113] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -2201,11 +2201,11 @@ on divBy2 me
   [122] pushint8 1 .............................. <1>
   [124] eq ...................................... <tMod = 1>
   [125] jmpifz [155] ............................ if tMod = 1 then
-  [128] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [128] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [131] getlocal 3 .............................. <i>
   [133] pushint8 1 .............................. <1>
   [135] sub ..................................... <i - 1>
-  [136] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [136] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [139] getlocal 3 .............................. <i>
   [141] pushint8 1 .............................. <1>
   [143] sub ..................................... <i - 1>
@@ -2215,7 +2215,7 @@ on divBy2 me
   [150] add ..................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i - 1] + tBasePer2>
   [151] pusharglistnoret 3 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i - 1, pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i - 1] + tBasePer2>
   [153] objcall 24 .............................. pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i - 1] = pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i - 1] + tBasePer2
-  [155] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [155] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [158] getlocal 3 .............................. <i>
   [160] getlocal 2 .............................. <tCoef>
   [162] pusharglistnoret 3 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i, tCoef>
@@ -2225,14 +2225,14 @@ on divBy2 me
   [170] add
   [171] setlocal 3
   [173] endrepeat [ 84]
-  [175] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [175] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [178] getlocal 1 .............................. <tCount>
   [180] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tCount>
   [182] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tCount]>
   [184] pushzero ................................ <0>
   [185] eq ...................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tCount] = 0>
   [186] jmpifz [199] ............................ if pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[tCount] = 0 then
-  [189] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [189] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [192] getlocal 1 .............................. <tCount>
   [194] pusharglistnoret 2 ...................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, tCount>
   [196] objcall 725 ............................. pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.deleteAt(tCount)
@@ -2253,38 +2253,38 @@ on powMod me, tPower, tDivider
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1890 ............................ <pScript>
+  [ 29] getprop 1887 ............................ <pScript>
   [ 32] pusharglist 1 ........................... <pScript>
   [ 34] extcall 116 ............................. <new(pScript)>
   [ 36] setlocal 0 .............................. tPowerTemp = new(pScript)
   [ 38] getlocal 0 .............................. <tPowerTemp>
   [ 40] getparam 1 .............................. <tPower>
   [ 42] pusharglistnoret 2 ...................... <tPowerTemp, tPower>
-  [ 44] objcall 1863 ............................ tPowerTemp.copyFrom(tPower)
-  [ 47] getprop 1890 ............................ <pScript>
+  [ 44] objcall 1860 ............................ tPowerTemp.copyFrom(tPower)
+  [ 47] getprop 1887 ............................ <pScript>
   [ 50] pusharglist 1 ........................... <pScript>
   [ 52] extcall 116 ............................. <new(pScript)>
   [ 54] setlocal 1 .............................. tTemp = new(pScript)
   [ 56] getlocal 1 .............................. <tTemp>
   [ 58] getparam 0 .............................. <me>
   [ 60] pusharglistnoret 2 ...................... <tTemp, me>
-  [ 62] objcall 1863 ............................ tTemp.copyFrom(me)
-  [ 65] getprop 1890 ............................ <pScript>
+  [ 62] objcall 1860 ............................ tTemp.copyFrom(me)
+  [ 65] getprop 1887 ............................ <pScript>
   [ 68] pusharglist 1 ........................... <pScript>
   [ 70] extcall 116 ............................. <new(pScript)>
   [ 72] setlocal 2 .............................. tResult = new(pScript)
   [ 74] getlocal 2 .............................. <tResult>
   [ 76] pushcons 2 .............................. <"1">
   [ 78] pusharglistnoret 2 ...................... <tResult, "1">
-  [ 80] objcall 1862 ............................ tResult.assign("1")
+  [ 80] objcall 1859 ............................ tResult.assign("1")
   [ 83] getlocal 0 .............................. <tPowerTemp>
   [ 85] pusharglist 1 ........................... <tPowerTemp>
-  [ 87] objcall 1868 ............................ <tPowerTemp.isZero()>
+  [ 87] objcall 1865 ............................ <tPowerTemp.isZero()>
   [ 90] pushzero ................................ <0>
   [ 91] eq ...................................... <tPowerTemp.isZero() = 0>
   [ 92] jmpifz [163] ............................ repeat while tPowerTemp.isZero() = 0
   [ 95] getlocal 0 .............................. <tPowerTemp>
-  [ 97] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 97] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [100] pushint8 1 .............................. <1>
   [102] pusharglist 3 ........................... <tPowerTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1>
   [104] objcall 290 ............................. <tPowerTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1]>
@@ -2298,20 +2298,20 @@ on powMod me, tPower, tDivider
   [120] getlocal 2 .............................. <tResult>
   [122] getlocal 1 .............................. <tTemp>
   [124] pusharglist 2 ........................... <tResult, tTemp>
-  [126] objcall 1871 ............................ <tResult.prod(tTemp)>
+  [126] objcall 1868 ............................ <tResult.prod(tTemp)>
   [129] getparam 2 .............................. <tDivider>
   [131] pusharglist 2 ........................... <tResult.prod(tTemp), tDivider>
-  [133] objcall 1879 ............................ <tResult.prod(tTemp).Modulo(tDivider)>
+  [133] objcall 1876 ............................ <tResult.prod(tTemp).Modulo(tDivider)>
   [136] setlocal 2 .............................. tResult = tResult.prod(tTemp).Modulo(tDivider)
   [138] getlocal 0 .............................. <tPowerTemp>
   [140] pusharglistnoret 1 ...................... <tPowerTemp>
-  [142] objcall 1880 ............................ tPowerTemp.divBy2()
+  [142] objcall 1877 ............................ tPowerTemp.divBy2()
   [145] getlocal 1 .............................. <tTemp>
   [147] pusharglist 1 ........................... <tTemp>
-  [149] objcall 1874 ............................ <tTemp.sqr()>
+  [149] objcall 1871 ............................ <tTemp.sqr()>
   [152] getparam 2 .............................. <tDivider>
   [154] pusharglist 2 ........................... <tTemp.sqr(), tDivider>
-  [156] objcall 1879 ............................ <tTemp.sqr().Modulo(tDivider)>
+  [156] objcall 1876 ............................ <tTemp.sqr().Modulo(tDivider)>
   [159] setlocal 1 .............................. tTemp = tTemp.sqr().Modulo(tDivider)
   [161] endrepeat [ 83]
   [163] getlocal 2 .............................. <tResult>
@@ -2334,7 +2334,7 @@ on getString me
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 29] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 32] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 34] pushzero ................................ <0>
   [ 35] eq ...................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count = 0>
@@ -2347,11 +2347,11 @@ on getString me
   [ 49] pushint8 1 .............................. <1>
   [ 51] setlocal 1
   [ 53] getlocal 1
-  [ 55] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 55] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 58] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 60] lteq
   [ 61] jmpifz [128] ............................ repeat with i = 1 to pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
-  [ 64] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 64] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 67] getlocal 1 .............................. <i>
   [ 69] pusharglist 2 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, i>
   [ 71] objcall 54 .............................. <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i]>
@@ -2359,7 +2359,7 @@ on getString me
   [ 75] extcall 595 ............................. <string(pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i])>
   [ 78] setlocal 2 .............................. tValue = string(pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[i])
   [ 80] getlocal 1 .............................. <i>
-  [ 82] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 82] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 85] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 87] lt ...................................... <i < pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 88] jmpifz [112] ............................ if i < pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count then
@@ -2382,7 +2382,7 @@ on getString me
   [123] add
   [124] setlocal 1
   [126] endrepeat [ 53]
-  [128] getprop 1888 ............................ <pNegative>
+  [128] getprop 1885 ............................ <pNegative>
   [131] jmpifz [141] ............................ if pNegative then
   [134] pushcons 1 .............................. <"-">
   [136] getlocal 0 .............................. <tStr>
@@ -2408,7 +2408,7 @@ on getByteArray me
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
   [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 29] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 32] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 34] pushzero ................................ <0>
   [ 35] eq ...................................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count = 0>
@@ -2418,27 +2418,27 @@ on getByteArray me
   [ 42] pushlist ................................ <[0]>
   [ 43] pusharglistnoret 1 ...................... <[0]>
   [ 45] extcall 25 .............................. return [0]
-  [ 47] getprop 1890 ............................ <pScript>
+  [ 47] getprop 1887 ............................ <pScript>
   [ 50] pusharglist 1 ........................... <pScript>
   [ 52] extcall 116 ............................. <new(pScript)>
   [ 54] setlocal 0 .............................. tDivider = new(pScript)
   [ 56] getlocal 0 .............................. <tDivider>
   [ 58] pushcons 5 .............................. <"256">
   [ 60] pusharglistnoret 2 ...................... <tDivider, "256">
-  [ 62] objcall 1862 ............................ tDivider.assign("256")
-  [ 65] getprop 1890 ............................ <pScript>
+  [ 62] objcall 1859 ............................ tDivider.assign("256")
+  [ 65] getprop 1887 ............................ <pScript>
   [ 68] pusharglist 1 ........................... <pScript>
   [ 70] extcall 116 ............................. <new(pScript)>
   [ 72] setlocal 1 .............................. tTemp = new(pScript)
   [ 74] getlocal 1 .............................. <tTemp>
   [ 76] getparam 0 .............................. <me>
   [ 78] pusharglistnoret 2 ...................... <tTemp, me>
-  [ 80] objcall 1863 ............................ tTemp.copyFrom(me)
+  [ 80] objcall 1860 ............................ tTemp.copyFrom(me)
   [ 83] pusharglist 0 ........................... <[]>
   [ 85] pushlist ................................ <[]>
   [ 86] setlocal 2 .............................. tArray = []
   [ 88] getlocal 1 .............................. <tTemp>
-  [ 90] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 90] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 93] pusharglist 2 ........................... <tTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 95] objcall 22 .............................. <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 97] pushint8 1 .............................. <1>
@@ -2449,13 +2449,13 @@ on getByteArray me
   [107] pushint8 1 .............................. <1>
   [109] pushint8 1 .............................. <1>
   [111] pusharglist 4 ........................... <tTemp, tDivider, 1, 1>
-  [113] objcall 1877 ............................ <tTemp.div(tDivider, 1, 1)>
+  [113] objcall 1874 ............................ <tTemp.div(tDivider, 1, 1)>
   [116] setlocal 3 .............................. tRem = tTemp.div(tDivider, 1, 1)
   [118] getlocal 2 .............................. <tArray>
   [120] pushint8 1 .............................. <1>
   [122] getlocal 3 .............................. <tRem>
   [124] pusharglist 1 ........................... <tRem>
-  [126] objcall 1884 ............................ <tRem.getIntArray()>
+  [126] objcall 1881 ............................ <tRem.getIntArray()>
   [129] pushint8 1 .............................. <1>
   [131] pusharglist 2 ........................... <tRem.getIntArray(), 1>
   [133] objcall 54 .............................. <tRem.getIntArray()[1]>
@@ -2463,7 +2463,7 @@ on getByteArray me
   [137] objcall 659 ............................. tArray.addAt(1, tRem.getIntArray()[1])
   [140] endrepeat [ 88]
   [142] getlocal 1 .............................. <tTemp>
-  [144] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [144] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [147] pushint8 1 .............................. <1>
   [149] pusharglist 3 ........................... <tTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1>
   [151] objcall 290 ............................. <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1]>
@@ -2471,7 +2471,7 @@ on getByteArray me
   [157] gt ...................................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1] > 256>
   [158] jmpifz [220] ............................ repeat while tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1] > 256
   [161] getlocal 1 .............................. <tTemp>
-  [163] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [163] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [166] pushint8 1 .............................. <1>
   [168] pusharglist 3 ........................... <tTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1>
   [170] objcall 290 ............................. <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1]>
@@ -2479,10 +2479,10 @@ on getByteArray me
   [176] mod ..................................... <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1] mod 256>
   [177] setlocal 4 .............................. tMod = tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1] mod 256
   [179] getlocal 1 .............................. <tTemp>
-  [181] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [181] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [184] pushint8 1 .............................. <1>
   [186] getlocal 1 .............................. <tTemp>
-  [188] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [188] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [191] pushint8 1 .............................. <1>
   [193] pusharglist 3 ........................... <tTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1>
   [195] objcall 290 ............................. <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1]>
@@ -2499,7 +2499,7 @@ on getByteArray me
   [220] getlocal 2 .............................. <tArray>
   [222] pushint8 1 .............................. <1>
   [224] getlocal 1 .............................. <tTemp>
-  [226] pushsymb 1887 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [226] pushsymb 1884 ........................... <#pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [229] pushint8 1 .............................. <1>
   [231] pusharglist 3 ........................... <tTemp, #pData_NxIhNARqldyJyY2PfT03dK8t9OLUR, 1>
   [233] objcall 290 ............................. <tTemp.pData_NxIhNARqldyJyY2PfT03dK8t9OLUR[1]>
@@ -2531,12 +2531,12 @@ on getIntArray me, tUseKey
   [ 34] pushint8 1 .............................. <1>
   [ 36] setlocal 1
   [ 38] getlocal 1
-  [ 40] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 40] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 43] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 45] lteq
   [ 46] jmpifz [104] ............................ repeat with i = 1 to pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count
-  [ 49] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
-  [ 52] getprop 1887 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 49] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
+  [ 52] getprop 1884 ............................ <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR>
   [ 55] getobjprop 22 ........................... <pData_NxIhNARqldyJyY2PfT03dK8t9OLUR.count>
   [ 57] getlocal 1 .............................. <i>
   [ 59] pushint8 1 .............................. <1>
@@ -2550,7 +2550,7 @@ on getIntArray me, tUseKey
   [ 74] getparam 0 .............................. <me>
   [ 76] getlocal 2 .............................. <tVal>
   [ 78] pusharglist 2 ........................... <me, tVal>
-  [ 80] objcall 1885 ............................ <me.encode(tVal)>
+  [ 80] objcall 1882 ............................ <me.encode(tVal)>
   [ 83] setlocal 2 .............................. tVal = me.encode(tVal)
   [ 85] getlocal 0 .............................. <tdata>
   [ 87] getlocal 1 .............................. <i>

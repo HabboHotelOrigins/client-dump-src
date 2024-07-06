@@ -14,7 +14,7 @@ on construct me
   [ 21] pushzero ................................ <0>
   [ 22] setprop 499 ............................. pwidth = 0
   [ 25] pushzero ................................ <0>
-  [ 26] setprop 504 ............................. pheight = 0
+  [ 26] setprop 505 ............................. pheight = 0
   [ 29] pushint8 1 .............................. <1>
   [ 31] setprop 1366 ............................ pVisible = 1
   [ 34] pushzero ................................ <0>
@@ -527,7 +527,7 @@ on moveBy me, tOffX, tOffY
   [107] sub ..................................... <pBoundary[3] - pLocX - pwidth>
   [108] setparam 1 .............................. tOffX = pBoundary[3] - pLocX - pwidth
   [110] getprop 469 ............................. <pLocY>
-  [113] getprop 504 ............................. <pheight>
+  [113] getprop 505 ............................. <pheight>
   [116] add ..................................... <pLocY + pheight>
   [117] getparam 2 .............................. <tOffY>
   [119] add ..................................... <pLocY + pheight + tOffY>
@@ -543,7 +543,7 @@ on moveBy me, tOffX, tOffY
   [140] objcall 54 .............................. <pBoundary[4]>
   [142] getprop 469 ............................. <pLocY>
   [145] sub ..................................... <pBoundary[4] - pLocY>
-  [146] getprop 504 ............................. <pheight>
+  [146] getprop 505 ............................. <pheight>
   [149] sub ..................................... <pBoundary[4] - pLocY - pheight>
   [150] setparam 2 .............................. tOffY = pBoundary[4] - pLocY - pheight
   [152] getprop 467 ............................. <pLocX>
@@ -624,7 +624,7 @@ on center me
   [ 34] getobjprop 43 ........................... <(the stage).sourceRect.height>
   [ 36] pushint8 2 .............................. <2>
   [ 38] div ..................................... <(the stage).sourceRect.height / 2>
-  [ 39] getprop 504 ............................. <pheight>
+  [ 39] getprop 505 ............................. <pheight>
   [ 42] pushint8 2 .............................. <2>
   [ 44] div ..................................... <pheight / 2>
   [ 45] sub ..................................... <((the stage).sourceRect.height / 2) - (pheight / 2)>
@@ -652,10 +652,10 @@ on resizeBy me, tOffX, tOffY
   [ 15] getparam 1 .............................. <tOffX>
   [ 17] add ..................................... <pwidth + tOffX>
   [ 18] setprop 499 ............................. pwidth = pwidth + tOffX
-  [ 21] getprop 504 ............................. <pheight>
+  [ 21] getprop 505 ............................. <pheight>
   [ 24] getparam 2 .............................. <tOffY>
   [ 26] add ..................................... <pheight + tOffY>
-  [ 27] setprop 504 ............................. pheight = pheight + tOffY
+  [ 27] setprop 505 ............................. pheight = pheight + tOffY
   [ 30] pushsymb 1426 ........................... <#resizeBy>
   [ 33] getprop 1442 ............................ <pElemList>
   [ 36] getparam 1 .............................. <tOffX>
@@ -671,7 +671,7 @@ on resizeTo me, tX, tY
   [  5] sub ..................................... <tX - pwidth>
   [  6] setlocal 0 .............................. tOffW = tX - pwidth
   [  8] getparam 2 .............................. <tY>
-  [ 10] getprop 504 ............................. <pheight>
+  [ 10] getprop 505 ............................. <pheight>
   [ 13] sub ..................................... <tY - pheight>
   [ 14] setlocal 1 .............................. tOffH = tY - pheight
   [ 16] getparam 0 .............................. <me>
@@ -726,7 +726,7 @@ on getClientRect me
   [  9] getprop 499 ............................. <pwidth>
   [ 12] add ..................................... <pLocX + pwidth>
   [ 13] getprop 469 ............................. <pLocY>
-  [ 16] getprop 504 ............................. <pheight>
+  [ 16] getprop 505 ............................. <pheight>
   [ 19] add ..................................... <pLocY + pheight>
   [ 20] pusharglist 4 ........................... <pLocX, pLocY, pLocX + pwidth, pLocY + pheight>
   [ 22] extcall 557 ............................. <rect(pLocX, pLocY, pLocX + pwidth, pLocY + pheight)>
@@ -957,7 +957,7 @@ on getProperty me, tProp
   [110] eq
   [111] jmpifz [126] ............................ (case) #height:
   [114] pop 1
-  [116] getprop 504 ............................. <pheight>
+  [116] getprop 505 ............................. <pheight>
   [119] pusharglistnoret 1 ...................... <pheight>
   [121] extcall 25 .............................. return pheight
   [123] jmp [293]
@@ -1009,7 +1009,7 @@ on getProperty me, tProp
   [228] extcall 25 .............................. return pSpriteList
   [230] jmp [293]
   [233] peek 0
-  [235] pushsymb 1458 ........................... <#elementList>
+  [235] pushsymb 1455 ........................... <#elementList>
   [238] eq
   [239] jmpifz [254] ............................ (case) #elementList:
   [242] pop 1
@@ -1106,7 +1106,7 @@ on setProperty me, tProp, tValue
   [144] objcall 979 ............................. me.hide()
   [147] jmp [166]
   [150] peek 0
-  [152] pushsymb 1459 ........................... <#otherwise>
+  [152] pushsymb 1456 ........................... <#otherwise>
   [155] eq
   [156] jmpifz [166] ............................ (case) #otherwise:
   [159] pop 1
@@ -1756,7 +1756,7 @@ on buildVisual me, tLayout
   [626] pusharglistnoret 3 ...................... <tItem, #id, tid>
   [628] objcall 24 .............................. tItem[#id] = tid
   [630] getlocal 24 ............................. <tItem>
-  [632] pushsymb 1462 ........................... <#mother>
+  [632] pushsymb 1459 ........................... <#mother>
   [635] getparam 0 .............................. <me>
   [637] pusharglist 1 ........................... <me>
   [639] objcall 3 ............................... <me.getID()>
@@ -2022,7 +2022,7 @@ on buildVisual me, tLayout
   [1176] objcall 54 ............................. <tElement[1]>
   [1178] setlocal 24 ............................ tItem = tElement[1]
   [1180] getlocal 24 ............................ <tItem>
-  [1182] pushsymb 1463 .......................... <#style>
+  [1182] pushsymb 1460 .......................... <#style>
   [1185] pushsymb 993 ........................... <#unique>
   [1188] pusharglistnoret 3 ..................... <tItem, #style, #unique>
   [1190] objcall 24 ............................. tItem[#style] = #unique
@@ -2043,7 +2043,7 @@ on buildVisual me, tLayout
   [1224] getlocal 8 ............................. <tid>
   [1226] pushsymb 456 ........................... <#type>
   [1229] pushsymb 992 ........................... <#wrapper>
-  [1232] pushsymb 1463 .......................... <#style>
+  [1232] pushsymb 1460 .......................... <#style>
   [1235] pushsymb 992 ........................... <#wrapper>
   [1238] pushsymb 464 ........................... <#buffer>
   [1241] getlocal 9 ............................. <tmember>
@@ -2108,7 +2108,7 @@ on buildVisual me, tLayout
   [1363] pusharglistnoret 3 ..................... <tItem, #locV, tItem[#locV] - tElemRect[2]>
   [1365] objcall 24 ............................. tItem[#locV] = tItem[#locV] - tElemRect[2]
   [1367] getlocal 24 ............................ <tItem>
-  [1369] pushsymb 1463 .......................... <#style>
+  [1369] pushsymb 1460 .......................... <#style>
   [1372] pushsymb 994 ........................... <#grouped>
   [1375] pusharglistnoret 3 ..................... <tItem, #style, #grouped>
   [1377] objcall 24 ............................. tItem[#style] = #grouped
@@ -2257,7 +2257,7 @@ on buildVisual me, tLayout
   [1688] pusharglist 2 .......................... <tGroupData, #rect>
   [1690] objcall 54 ............................. <tGroupData[#rect]>
   [1692] getobjprop 43 .......................... <tGroupData[#rect].height>
-  [1694] setprop 504 ............................ pheight = tGroupData[#rect].height
+  [1694] setprop 505 ............................ pheight = tGroupData[#rect].height
   [1697] jmp [1793]
   [1700] getprop 1444 ........................... <pClientRect>
   [1703] pushint8 1 ............................. <1>
@@ -2295,7 +2295,7 @@ on buildVisual me, tLayout
   [1768] getprop 499 ............................ <pwidth>
   [1771] nteq ................................... <tNewW <> pwidth>
   [1772] getlocal 28 ............................ <tNewH>
-  [1774] getprop 504 ............................ <pheight>
+  [1774] getprop 505 ............................ <pheight>
   [1777] nteq ................................... <tNewH <> pheight>
   [1778] or ..................................... <(tNewW <> pwidth) or (tNewH <> pheight)>
   [1779] jmpifz [1793] .......................... if (tNewW <> pwidth) or (tNewH <> pheight) then
@@ -2428,7 +2428,7 @@ end
 on prepare me
   [  0] pusharglist 0 ........................... <>
   [  2] thebuiltin 1394 ......................... <the mouseH>
-  [  5] getprop 1483 ............................ <pScaleOffset>
+  [  5] getprop 1480 ............................ <pScaleOffset>
   [  8] pushint8 1 .............................. <1>
   [ 10] pusharglist 2 ........................... <pScaleOffset, 1>
   [ 12] objcall 54 .............................. <pScaleOffset[1]>
@@ -2436,14 +2436,14 @@ on prepare me
   [ 15] setlocal 0 .............................. tOffX = the mouseH - pScaleOffset[1]
   [ 17] pusharglist 0 ........................... <>
   [ 19] thebuiltin 552 .......................... <the mouseV>
-  [ 22] getprop 1483 ............................ <pScaleOffset>
+  [ 22] getprop 1480 ............................ <pScaleOffset>
   [ 25] pushint8 2 .............................. <2>
   [ 27] pusharglist 2 ........................... <pScaleOffset, 2>
   [ 29] objcall 54 .............................. <pScaleOffset[2]>
   [ 31] sub ..................................... <the mouseV - pScaleOffset[2]>
   [ 32] setlocal 1 .............................. tOffY = the mouseV - pScaleOffset[2]
   [ 34] getmovieprop 1090 ....................... <the mouseLoc>
-  [ 37] setprop 1483 ............................ pScaleOffset = the mouseLoc
+  [ 37] setprop 1480 ............................ pScaleOffset = the mouseLoc
   [ 40] getprop 499 ............................. <pwidth>
   [ 43] getlocal 0 .............................. <tOffX>
   [ 45] add ..................................... <pwidth + tOffX>
@@ -2454,14 +2454,14 @@ on prepare me
   [ 54] getprop 499 ............................. <pwidth>
   [ 57] sub ..................................... <64 - pwidth>
   [ 58] setlocal 0 .............................. tOffX = 64 - pwidth
-  [ 60] getprop 504 ............................. <pheight>
+  [ 60] getprop 505 ............................. <pheight>
   [ 63] getlocal 1 .............................. <tOffY>
   [ 65] add ..................................... <pheight + tOffY>
   [ 66] pushint8 64 ............................. <64>
   [ 68] lt ...................................... <(pheight + tOffY) < 64>
   [ 69] jmpifz [ 80] ............................ if (pheight + tOffY) < 64 then
   [ 72] pushint8 64 ............................. <64>
-  [ 74] getprop 504 ............................. <pheight>
+  [ 74] getprop 505 ............................. <pheight>
   [ 77] sub ..................................... <64 - pheight>
   [ 78] setlocal 1 .............................. tOffY = 64 - pheight
   [ 80] getparam 0 .............................. <me>
@@ -2496,7 +2496,7 @@ end
 on CreateElement me, tProps
   [  0] getprop 1448 ............................ <pElemClsList>
   [  3] getparam 1 .............................. <tProps>
-  [  5] pushsymb 1463 ........................... <#style>
+  [  5] pushsymb 1460 ........................... <#style>
   [  8] pusharglist 2 ........................... <tProps, #style>
   [ 10] objcall 54 .............................. <tProps[#style]>
   [ 12] pusharglist 2 ........................... <pElemClsList, tProps[#style]>
@@ -2652,7 +2652,7 @@ on scale me, tBoolean
   [ 10] and ..................................... <(tBoolean = 1) and (pScaleFlag = 0)>
   [ 11] jmpifz [ 38] ............................ if (tBoolean = 1) and (pScaleFlag = 0) then / else
   [ 14] getmovieprop 1090 ....................... <the mouseLoc>
-  [ 17] setprop 1483 ............................ pScaleOffset = the mouseLoc
+  [ 17] setprop 1480 ............................ pScaleOffset = the mouseLoc
   [ 20] getparam 0 .............................. <me>
   [ 22] pusharglist 1 ........................... <me>
   [ 24] objcall 3 ............................... <me.getID()>

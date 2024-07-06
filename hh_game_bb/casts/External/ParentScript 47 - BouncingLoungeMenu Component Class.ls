@@ -3,27 +3,6 @@ property pFrameworkId, pUserTeamIndex
 on construct me
   pFrameworkId = getVariable("bb.loungesystem.id")
   pUserTeamIndex = 0
-  repeat with i = 0 to 7
-    tPartList = getVariable("human.parts.sh.sit." & i)
-    if tPartList = 0 then
-      tPartList = getVariable("human.parts.sh." & i)
-    end if
-    tPartListNew = ["bl"]
-    if tPartList <> 0 then
-      repeat with tPart in tPartList
-        tPartListNew.add(tPart)
-      end repeat
-    end if
-    setVariable("bouncing.human.parts.sh." & i, tPartListNew)
-  end repeat
-  tPartListNew = ["bl"]
-  tPartList = getVariable("human.parts.sh")
-  if tPartList <> 0 then
-    repeat with tPart in tPartList
-      tPartListNew.add(tPart)
-    end repeat
-  end if
-  setVariable("bouncing.human.parts.sh", tPartListNew)
   return 1
 end
 
@@ -36,7 +15,7 @@ on getGameSystem me
 end
 
 on getUserName me
-  return getObject(#session).GET(#userName)
+  return getObject(#session).get(#userName)
 end
 
 on isUserHost me

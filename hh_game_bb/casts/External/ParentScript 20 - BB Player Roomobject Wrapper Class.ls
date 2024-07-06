@@ -10,7 +10,7 @@ on deconstruct me
   if not getObject(#session).exists("user_index") then
     return 1
   end if
-  if pRoomIndex = getObject(#session).GET("user_index") then
+  if pRoomIndex = getObject(#session).get("user_index") then
     getObject(#session).Remove("user_index")
     if getObject(#session).exists("user_game_index") then
       getObject(#session).Remove("user_game_index")
@@ -25,7 +25,7 @@ on define me, tdata
     return error(me, "Invalid room index for avatar:" && tdata, #define)
   end if
   pRoomIndex = string(tdata[#room_index])
-  if tdata[#name] = getObject(#session).GET(#userName) then
+  if tdata[#name] = getObject(#session).get(#userName) then
     getObject(#session).set("user_index", pRoomIndex)
     getObject(#session).set("user_game_index", tdata[#id])
   end if
@@ -113,7 +113,7 @@ on createRoomObject me, tdata
   tAvatarStruct.addProp(#custom, tdata[#mission])
   tAvatarStruct.addProp(#sex, tdata[#sex])
   tAvatarStruct.addProp(#teamId, tdata[#teamId])
-  if tdata[#name] = getObject(#session).GET(#userName) then
+  if tdata[#name] = getObject(#session).get(#userName) then
     getObject(#session).set("user_index", tUserStrId)
   end if
   tFigure = tFigureSystemObj.parseFigure(tdata[#figure], tdata[#sex], "user")

@@ -1,14 +1,14 @@
 on construct me
   [  0] pushint8 1 .............................. <1>
   [  2] pusharglistnoret 1 ...................... <1>
-  [  4] extcall 28 .............................. return 1
+  [  4] extcall 13 .............................. return 1
   [  6] ret
 end
 
 on deconstruct me
   [  0] pushint8 1 .............................. <1>
   [  2] pusharglistnoret 1 ...................... <1>
-  [  4] extcall 28 .............................. return 1
+  [  4] extcall 13 .............................. return 1
   [  6] ret
 end
 
@@ -19,11 +19,11 @@ on Refresh me, tTopic, tdata
   [  4] jmpifz [ 12] ............................ if tdata = 0 then
   [  7] pushzero ................................ <0>
   [  8] pusharglistnoret 1 ...................... <0>
-  [ 10] extcall 28 .............................. return 0
+  [ 10] extcall 13 .............................. return 0
   [ 12] getparam 2 .............................. <tdata>
-  [ 14] pushsymb 782 ............................ <#reason>
+  [ 14] pushsymb 535 ............................ <#reason>
   [ 17] pusharglist 2 ........................... <tdata, #reason>
-  [ 19] objcall 31 .............................. <tdata[#reason]>
+  [ 19] objcall 18 .............................. <tdata[#reason]>
   [ 21] peek 0 .................................. case tdata[#reason] of
   [ 23] pushcons 0 .............................. <"game_deleted">
   [ 25] eq
@@ -40,41 +40,41 @@ on Refresh me, tTopic, tdata
   [ 48] jmp [103] ............................... (case) otherwise:
   [ 51] pushcons 4 .............................. <"gs_error_">
   [ 53] getparam 2 .............................. <tdata>
-  [ 55] pushsymb 783 ............................ <#request>
+  [ 55] pushsymb 536 ............................ <#request>
   [ 58] pusharglist 2 ........................... <tdata, #request>
-  [ 60] objcall 31 .............................. <tdata[#request]>
+  [ 60] objcall 18 .............................. <tdata[#request]>
   [ 62] joinstr ................................. <"gs_error_" & tdata[#request]>
   [ 63] pushcons 5 .............................. <"_">
   [ 65] joinstr ................................. <"gs_error_" & tdata[#request] & "_">
   [ 66] getparam 2 .............................. <tdata>
-  [ 68] pushsymb 782 ............................ <#reason>
+  [ 68] pushsymb 535 ............................ <#reason>
   [ 71] pusharglist 2 ........................... <tdata, #reason>
-  [ 73] objcall 31 .............................. <tdata[#reason]>
+  [ 73] objcall 18 .............................. <tdata[#reason]>
   [ 75] joinstr ................................. <"gs_error_" & tdata[#request] & "_" & tdata[#reason]>
   [ 76] setlocal 0 .............................. tAlertStr = "gs_error_" & tdata[#request] & "_" & tdata[#reason]
   [ 78] getlocal 0 .............................. <tAlertStr>
   [ 80] pusharglist 1 ........................... <tAlertStr>
-  [ 82] extcall 784 ............................. <textExists(tAlertStr)>
+  [ 82] extcall 537 ............................. <textExists(tAlertStr)>
   [ 85] not ..................................... <not textExists(tAlertStr)>
   [ 86] jmpifz [103] ............................ if not textExists(tAlertStr) then
   [ 89] pushcons 4 .............................. <"gs_error_">
   [ 91] getparam 2 .............................. <tdata>
-  [ 93] pushsymb 782 ............................ <#reason>
+  [ 93] pushsymb 535 ............................ <#reason>
   [ 96] pusharglist 2 ........................... <tdata, #reason>
-  [ 98] objcall 31 .............................. <tdata[#reason]>
+  [ 98] objcall 18 .............................. <tdata[#reason]>
   [100] joinstr ................................. <"gs_error_" & tdata[#reason]>
   [101] setlocal 0 .............................. tAlertStr = "gs_error_" & tdata[#reason]
   [103] pop 1 ................................... end case
-  [105] pushsymb 786 ............................ <#alert>
-  [108] pushsymb 197 ............................ <#id>
+  [105] pushsymb 538 ............................ <#alert>
+  [108] pushsymb 88 ............................. <#id>
   [110] pushcons 6 .............................. <"gs_error">
-  [112] pushsymb 787 ............................ <#Msg>
+  [112] pushsymb 539 ............................ <#msg>
   [115] getlocal 0 .............................. <tAlertStr>
-  [117] pusharglist 4 ........................... <[#id: "gs_error", #Msg: tAlertStr]>
-  [119] pushproplist ............................ <[#id: "gs_error", #Msg: tAlertStr]>
-  [120] pusharglist 2 ........................... <#alert, [#id: "gs_error", #Msg: tAlertStr]>
-  [122] extcall 785 ............................. <executeMessage(#alert, [#id: "gs_error", #Msg: tAlertStr])>
-  [125] pusharglistnoret 1 ...................... <executeMessage(#alert, [#id: "gs_error", #Msg: tAlertStr])>
-  [127] extcall 28 .............................. return executeMessage(#alert, [#id: "gs_error", #Msg: tAlertStr])
+  [117] pusharglist 4 ........................... <[#id: "gs_error", #msg: tAlertStr]>
+  [119] pushproplist ............................ <[#id: "gs_error", #msg: tAlertStr]>
+  [120] pusharglist 2 ........................... <#alert, [#id: "gs_error", #msg: tAlertStr]>
+  [122] extcall 533 ............................. <executeMessage(#alert, [#id: "gs_error", #msg: tAlertStr])>
+  [125] pusharglistnoret 1 ...................... <executeMessage(#alert, [#id: "gs_error", #msg: tAlertStr])>
+  [127] extcall 13 .............................. return executeMessage(#alert, [#id: "gs_error", #msg: tAlertStr])
   [129] ret
 end

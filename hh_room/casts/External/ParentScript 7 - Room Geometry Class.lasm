@@ -2,98 +2,98 @@ property pXOffset, pYOffset, pZOffset, pXFactor, pYFactor, pHFactor, pHeightMap,
 
 on construct me
   [  0] pushfloat32 0.0 ......................... <0.0>
-  [  5] setprop 974 ............................. pXOffset = 0.0
+  [  5] setprop 1015 ............................ pXOffset = 0.0
   [  8] pushfloat32 0.0 ......................... <0.0>
-  [ 13] setprop 975 ............................. pYOffset = 0.0
+  [ 13] setprop 1016 ............................ pYOffset = 0.0
   [ 16] pushfloat32 0.0 ......................... <0.0>
-  [ 21] setprop 976 ............................. pZOffset = 0.0
+  [ 21] setprop 1017 ............................ pZOffset = 0.0
   [ 24] pushfloat32 0.0 ......................... <0.0>
-  [ 29] setprop 977 ............................. pXFactor = 0.0
-  [ 32] pushfloat32 0.0 ......................... <0.0>
-  [ 37] setprop 978 ............................. pYFactor = 0.0
-  [ 40] pushfloat32 0.0 ......................... <0.0>
-  [ 45] setprop 979 ............................. pHFactor = 0.0
-  [ 48] pusharglist 0 ........................... <[]>
-  [ 50] pushlist ................................ <[]>
-  [ 51] pusharglist 1 ........................... <[[]]>
-  [ 53] pushlist ................................ <[[]]>
-  [ 54] setprop 980 ............................. pHeightMap = [[]]
-  [ 57] pusharglist 0 ........................... <[]>
-  [ 59] pushlist ................................ <[]>
-  [ 60] pusharglist 1 ........................... <[[]]>
-  [ 62] pushlist ................................ <[[]]>
-  [ 63] setprop 981 ............................. pPlaceMap = [[]]
-  [ 66] pushint8 1 .............................. <1>
-  [ 68] pusharglistnoret 1 ...................... <1>
-  [ 70] extcall 21 .............................. return 1
-  [ 72] ret
+  [ 29] setprop 50 .............................. pXFactor = 0.0
+  [ 31] pushfloat32 0.0 ......................... <0.0>
+  [ 36] setprop 1018 ............................ pYFactor = 0.0
+  [ 39] pushfloat32 0.0 ......................... <0.0>
+  [ 44] setprop 1019 ............................ pHFactor = 0.0
+  [ 47] pusharglist 0 ........................... <[]>
+  [ 49] pushlist ................................ <[]>
+  [ 50] pusharglist 1 ........................... <[[]]>
+  [ 52] pushlist ................................ <[[]]>
+  [ 53] setprop 1020 ............................ pHeightMap = [[]]
+  [ 56] pusharglist 0 ........................... <[]>
+  [ 58] pushlist ................................ <[]>
+  [ 59] pusharglist 1 ........................... <[[]]>
+  [ 61] pushlist ................................ <[[]]>
+  [ 62] setprop 1021 ............................ pPlaceMap = [[]]
+  [ 65] pushint8 1 .............................. <1>
+  [ 67] pusharglistnoret 1 ...................... <1>
+  [ 69] extcall 31 .............................. return 1
+  [ 71] ret
 end
 
 on define me, tdata
   [  0] getparam 1 .............................. <tdata>
-  [  2] pushsymb 174 ............................ <#offsetx>
-  [  4] pusharglist 2 ........................... <tdata, #offsetx>
-  [  6] objcall 9 ............................... <tdata[#offsetx]>
-  [  8] pusharglist 1 ........................... <tdata[#offsetx]>
-  [ 10] extcall 766 ............................. <getLocalFloat(tdata[#offsetx])>
-  [ 13] setprop 974 ............................. pXOffset = getLocalFloat(tdata[#offsetx])
-  [ 16] getparam 1 .............................. <tdata>
-  [ 18] pushsymb 175 ............................ <#offsety>
-  [ 20] pusharglist 2 ........................... <tdata, #offsety>
-  [ 22] objcall 9 ............................... <tdata[#offsety]>
-  [ 24] pusharglist 1 ........................... <tdata[#offsety]>
-  [ 26] extcall 766 ............................. <getLocalFloat(tdata[#offsety])>
-  [ 29] setprop 975 ............................. pYOffset = getLocalFloat(tdata[#offsety])
-  [ 32] getparam 1 .............................. <tdata>
-  [ 34] pushsymb 172 ............................ <#offsetz>
-  [ 36] pusharglist 2 ........................... <tdata, #offsetz>
-  [ 38] objcall 9 ............................... <tdata[#offsetz]>
-  [ 40] pusharglist 1 ........................... <tdata[#offsetz]>
-  [ 42] extcall 766 ............................. <getLocalFloat(tdata[#offsetz])>
-  [ 45] setprop 976 ............................. pZOffset = getLocalFloat(tdata[#offsetz])
-  [ 48] getparam 1 .............................. <tdata>
-  [ 50] pushsymb 982 ............................ <#factorx>
-  [ 53] pusharglist 2 ........................... <tdata, #factorx>
-  [ 55] objcall 9 ............................... <tdata[#factorx]>
-  [ 57] pusharglist 1 ........................... <tdata[#factorx]>
-  [ 59] extcall 766 ............................. <getLocalFloat(tdata[#factorx])>
-  [ 62] setprop 977 ............................. pXFactor = getLocalFloat(tdata[#factorx])
-  [ 65] getparam 1 .............................. <tdata>
-  [ 67] pushsymb 983 ............................ <#factory>
-  [ 70] pusharglist 2 ........................... <tdata, #factory>
-  [ 72] objcall 9 ............................... <tdata[#factory]>
-  [ 74] pusharglist 1 ........................... <tdata[#factory]>
-  [ 76] extcall 766 ............................. <getLocalFloat(tdata[#factory])>
-  [ 79] setprop 978 ............................. pYFactor = getLocalFloat(tdata[#factory])
-  [ 82] getparam 1 .............................. <tdata>
-  [ 84] pushsymb 984 ............................ <#factorh>
-  [ 87] pusharglist 2 ........................... <tdata, #factorh>
-  [ 89] objcall 9 ............................... <tdata[#factorh]>
-  [ 91] pusharglist 1 ........................... <tdata[#factorh]>
-  [ 93] extcall 766 ............................. <getLocalFloat(tdata[#factorh])>
-  [ 96] setprop 979 ............................. pHFactor = getLocalFloat(tdata[#factorh])
-  [ 99] pushint8 1 .............................. <1>
-  [101] pusharglistnoret 1 ...................... <1>
-  [103] extcall 21 .............................. return 1
-  [105] ret
+  [  2] pushsymb 278 ............................ <#offsetx>
+  [  5] pusharglist 2 ........................... <tdata, #offsetx>
+  [  7] objcall 34 .............................. <tdata[#offsetx]>
+  [  9] pusharglist 1 ........................... <tdata[#offsetx]>
+  [ 11] extcall 820 ............................. <getLocalFloat(tdata[#offsetx])>
+  [ 14] setprop 1015 ............................ pXOffset = getLocalFloat(tdata[#offsetx])
+  [ 17] getparam 1 .............................. <tdata>
+  [ 19] pushsymb 279 ............................ <#offsety>
+  [ 22] pusharglist 2 ........................... <tdata, #offsety>
+  [ 24] objcall 34 .............................. <tdata[#offsety]>
+  [ 26] pusharglist 1 ........................... <tdata[#offsety]>
+  [ 28] extcall 820 ............................. <getLocalFloat(tdata[#offsety])>
+  [ 31] setprop 1016 ............................ pYOffset = getLocalFloat(tdata[#offsety])
+  [ 34] getparam 1 .............................. <tdata>
+  [ 36] pushsymb 277 ............................ <#offsetz>
+  [ 39] pusharglist 2 ........................... <tdata, #offsetz>
+  [ 41] objcall 34 .............................. <tdata[#offsetz]>
+  [ 43] pusharglist 1 ........................... <tdata[#offsetz]>
+  [ 45] extcall 820 ............................. <getLocalFloat(tdata[#offsetz])>
+  [ 48] setprop 1017 ............................ pZOffset = getLocalFloat(tdata[#offsetz])
+  [ 51] getparam 1 .............................. <tdata>
+  [ 53] pushsymb 1022 ........................... <#factorx>
+  [ 56] pusharglist 2 ........................... <tdata, #factorx>
+  [ 58] objcall 34 .............................. <tdata[#factorx]>
+  [ 60] pusharglist 1 ........................... <tdata[#factorx]>
+  [ 62] extcall 820 ............................. <getLocalFloat(tdata[#factorx])>
+  [ 65] setprop 50 .............................. pXFactor = getLocalFloat(tdata[#factorx])
+  [ 67] getparam 1 .............................. <tdata>
+  [ 69] pushsymb 1023 ........................... <#factory>
+  [ 72] pusharglist 2 ........................... <tdata, #factory>
+  [ 74] objcall 34 .............................. <tdata[#factory]>
+  [ 76] pusharglist 1 ........................... <tdata[#factory]>
+  [ 78] extcall 820 ............................. <getLocalFloat(tdata[#factory])>
+  [ 81] setprop 1018 ............................ pYFactor = getLocalFloat(tdata[#factory])
+  [ 84] getparam 1 .............................. <tdata>
+  [ 86] pushsymb 1024 ........................... <#factorh>
+  [ 89] pusharglist 2 ........................... <tdata, #factorh>
+  [ 91] objcall 34 .............................. <tdata[#factorh]>
+  [ 93] pusharglist 1 ........................... <tdata[#factorh]>
+  [ 95] extcall 820 ............................. <getLocalFloat(tdata[#factorh])>
+  [ 98] setprop 1019 ............................ pHFactor = getLocalFloat(tdata[#factorh])
+  [101] pushint8 1 .............................. <1>
+  [103] pusharglistnoret 1 ...................... <1>
+  [105] extcall 31 .............................. return 1
+  [107] ret
 end
 
 on loadHeightMap me, tdata
   [  0] pusharglist 0 ........................... <[]>
   [  2] pushlist ................................ <[]>
-  [  3] setprop 980 ............................. pHeightMap = []
+  [  3] setprop 1020 ............................ pHeightMap = []
   [  6] pusharglist 0 ........................... <[]>
   [  8] pushlist ................................ <[]>
-  [  9] setprop 981 ............................. pPlaceMap = []
+  [  9] setprop 1021 ............................ pPlaceMap = []
   [ 12] pushint8 1 .............................. <1>
   [ 14] setlocal 0
   [ 16] getlocal 0
   [ 18] getparam 1 .............................. <tdata>
-  [ 20] pushsymb 817 ............................ <#line>
+  [ 20] pushsymb 870 ............................ <#line>
   [ 23] pusharglist 2 ........................... <tdata, #line>
-  [ 25] objcall 14 .............................. <tdata.line.count>
+  [ 25] objcall 33 .............................. <tdata.line.count>
   [ 27] lteq
-  [ 28] jmpifz [303] ............................ repeat with i = 1 to tdata.line.count
+  [ 28] jmpifz [298] ............................ repeat with i = 1 to tdata.line.count
   [ 31] pusharglist 0 ........................... <[]>
   [ 33] pushlist ................................ <[]>
   [ 34] setlocal 1 .............................. l = []
@@ -101,130 +101,130 @@ on loadHeightMap me, tdata
   [ 38] pushlist ................................ <[]>
   [ 39] setlocal 2 .............................. k = []
   [ 41] getparam 1 .............................. <tdata>
-  [ 43] pushsymb 817 ............................ <#line>
+  [ 43] pushsymb 870 ............................ <#line>
   [ 46] getlocal 0 .............................. <i>
   [ 48] pusharglist 3 ........................... <tdata, #line, i>
-  [ 50] objcall 33 .............................. <tdata.line[i]>
+  [ 50] objcall 68 .............................. <tdata.line[i]>
   [ 52] setlocal 3 .............................. tLine = tdata.line[i]
   [ 54] getlocal 3 .............................. <tLine>
   [ 56] pushcons 0 .............................. <EMPTY>
   [ 58] nteq .................................... <tLine <> EMPTY>
-  [ 59] jmpifz [293] ............................ if tLine <> EMPTY then
+  [ 59] jmpifz [288] ............................ if tLine <> EMPTY then
   [ 62] pushint8 1 .............................. <1>
   [ 64] setlocal 4
   [ 66] getlocal 4
   [ 68] getlocal 3 .............................. <tLine>
   [ 70] pusharglist 1 ........................... <tLine>
-  [ 72] extcall 622 ............................. <length(tLine)>
-  [ 75] lteq
-  [ 76] jmpifz [275] ............................ repeat with j = 1 to length(tLine)
-  [ 79] getlocal 3 .............................. <tLine>
-  [ 81] pushsymb 450 ............................ <#char>
-  [ 84] getlocal 4 .............................. <j>
-  [ 86] pusharglist 3 ........................... <tLine, #char, j>
-  [ 88] objcall 33 .............................. <tLine.char[j]>
-  [ 90] pushcons 1 .............................. <"x">
-  [ 92] eq ...................................... <tLine.char[j] = "x">
-  [ 93] jmpifz [121] ............................ if tLine.char[j] = "x" then
-  [ 96] getlocal 1 .............................. <l>
-  [ 98] pushint32 200000 ........................ <200000>
-  [103] pusharglistnoret 2 ...................... <l, 200000>
-  [105] objcall 186 ............................. l.add(200000)
-  [107] getlocal 2 .............................. <k>
-  [109] pushint32 200000 ........................ <200000>
-  [114] pusharglistnoret 2 ...................... <k, 200000>
-  [116] objcall 186 ............................. k.add(200000)
-  [118] jmp [266] ............................... next repeat
-  [121] getlocal 3 .............................. <tLine>
-  [123] pushsymb 450 ............................ <#char>
-  [126] getlocal 4 .............................. <j>
-  [128] pusharglist 3 ........................... <tLine, #char, j>
-  [130] objcall 33 .............................. <tLine.char[j]>
-  [132] pushcons 2 .............................. <"y">
-  [134] eq ...................................... <tLine.char[j] = "y">
-  [135] jmpifz [159] ............................ if tLine.char[j] = "y" then
-  [138] getlocal 1 .............................. <l>
-  [140] pushzero ................................ <0>
-  [141] pusharglistnoret 2 ...................... <l, 0>
-  [143] objcall 186 ............................. l.add(0)
-  [145] getlocal 2 .............................. <k>
-  [147] pushint32 100000 ........................ <100000>
-  [152] pusharglistnoret 2 ...................... <k, 100000>
-  [154] objcall 186 ............................. k.add(100000)
-  [156] jmp [266] ............................... next repeat
-  [159] getlocal 3 .............................. <tLine>
-  [161] pushsymb 450 ............................ <#char>
-  [164] getlocal 4 .............................. <j>
-  [166] pusharglist 3 ........................... <tLine, #char, j>
-  [168] objcall 33 .............................. <tLine.char[j]>
-  [170] pusharglist 1 ........................... <tLine.char[j]>
-  [172] extcall 20 .............................. <charToNum(tLine.char[j])>
-  [174] pushint8 65 ............................. <65>
-  [176] gteq .................................... <charToNum(tLine.char[j]) >= 65>
-  [177] getlocal 3 .............................. <tLine>
-  [179] pushsymb 450 ............................ <#char>
-  [182] getlocal 4 .............................. <j>
-  [184] pusharglist 3 ........................... <tLine, #char, j>
-  [186] objcall 33 .............................. <tLine.char[j]>
-  [188] pusharglist 1 ........................... <tLine.char[j]>
-  [190] extcall 20 .............................. <charToNum(tLine.char[j])>
-  [192] pushint8 73 ............................. <73>
-  [194] lt ...................................... <charToNum(tLine.char[j]) < 73>
-  [195] and ..................................... <(charToNum(tLine.char[j]) >= 65) and (charToNum(tLine.char[j]) < 73)>
-  [196] jmpifz [237] ............................ if (charToNum(tLine.char[j]) >= 65) and (charToNum(tLine.char[j]) < 73) then
-  [199] getlocal 1 .............................. <l>
-  [201] getlocal 3 .............................. <tLine>
-  [203] pushsymb 450 ............................ <#char>
-  [206] getlocal 4 .............................. <j>
-  [208] pusharglist 3 ........................... <tLine, #char, j>
-  [210] objcall 33 .............................. <tLine.char[j]>
-  [212] pusharglist 1 ........................... <tLine.char[j]>
-  [214] extcall 20 .............................. <charToNum(tLine.char[j])>
-  [216] pushint8 65 ............................. <65>
-  [218] sub ..................................... <charToNum(tLine.char[j]) - 65>
-  [219] pusharglistnoret 2 ...................... <l, charToNum(tLine.char[j]) - 65>
-  [221] objcall 186 ............................. l.add(charToNum(tLine.char[j]) - 65)
-  [223] getlocal 2 .............................. <k>
-  [225] pushint32 100000 ........................ <100000>
-  [230] pusharglistnoret 2 ...................... <k, 100000>
-  [232] objcall 186 ............................. k.add(100000)
-  [234] jmp [266] ............................... next repeat
-  [237] getlocal 1 .............................. <l>
-  [239] getlocal 3 .............................. <tLine>
-  [241] pushsymb 450 ............................ <#char>
-  [244] getlocal 4 .............................. <j>
-  [246] pusharglist 3 ........................... <tLine, #char, j>
-  [248] objcall 33 .............................. <tLine.char[j]>
-  [250] pusharglist 1 ........................... <tLine.char[j]>
-  [252] extcall 451 ............................. <integer(tLine.char[j])>
-  [255] pusharglistnoret 2 ...................... <l, integer(tLine.char[j])>
-  [257] objcall 186 ............................. l.add(integer(tLine.char[j]))
-  [259] getlocal 2 .............................. <k>
-  [261] pushzero ................................ <0>
-  [262] pusharglistnoret 2 ...................... <k, 0>
-  [264] objcall 186 ............................. k.add(0)
-  [266] pushint8 1
-  [268] getlocal 4
-  [270] add
-  [271] setlocal 4
-  [273] endrepeat [ 66]
-  [275] getprop 980 ............................. <pHeightMap>
-  [278] getlocal 1 .............................. <l>
-  [280] pusharglistnoret 2 ...................... <pHeightMap, l>
-  [282] objcall 186 ............................. pHeightMap.add(l)
-  [284] getprop 981 ............................. <pPlaceMap>
-  [287] getlocal 2 .............................. <k>
-  [289] pusharglistnoret 2 ...................... <pPlaceMap, k>
-  [291] objcall 186 ............................. pPlaceMap.add(k)
-  [293] pushint8 1
-  [295] getlocal 0
-  [297] add
-  [298] setlocal 0
-  [300] endrepeat [ 16]
-  [303] pushint8 1 .............................. <1>
-  [305] pusharglistnoret 1 ...................... <1>
-  [307] extcall 21 .............................. return 1
-  [309] ret
+  [ 72] extcall 67 .............................. <length(tLine)>
+  [ 74] lteq
+  [ 75] jmpifz [270] ............................ repeat with j = 1 to length(tLine)
+  [ 78] getlocal 3 .............................. <tLine>
+  [ 80] pushsymb 66 ............................. <#char>
+  [ 82] getlocal 4 .............................. <j>
+  [ 84] pusharglist 3 ........................... <tLine, #char, j>
+  [ 86] objcall 68 .............................. <tLine.char[j]>
+  [ 88] pushcons 1 .............................. <"x">
+  [ 90] eq ...................................... <tLine.char[j] = "x">
+  [ 91] jmpifz [119] ............................ if tLine.char[j] = "x" then
+  [ 94] getlocal 1 .............................. <l>
+  [ 96] pushint32 200000 ........................ <200000>
+  [101] pusharglistnoret 2 ...................... <l, 200000>
+  [103] objcall 88 .............................. l.add(200000)
+  [105] getlocal 2 .............................. <k>
+  [107] pushint32 200000 ........................ <200000>
+  [112] pusharglistnoret 2 ...................... <k, 200000>
+  [114] objcall 88 .............................. k.add(200000)
+  [116] jmp [261] ............................... next repeat
+  [119] getlocal 3 .............................. <tLine>
+  [121] pushsymb 66 ............................. <#char>
+  [123] getlocal 4 .............................. <j>
+  [125] pusharglist 3 ........................... <tLine, #char, j>
+  [127] objcall 68 .............................. <tLine.char[j]>
+  [129] pushcons 2 .............................. <"y">
+  [131] eq ...................................... <tLine.char[j] = "y">
+  [132] jmpifz [156] ............................ if tLine.char[j] = "y" then
+  [135] getlocal 1 .............................. <l>
+  [137] pushzero ................................ <0>
+  [138] pusharglistnoret 2 ...................... <l, 0>
+  [140] objcall 88 .............................. l.add(0)
+  [142] getlocal 2 .............................. <k>
+  [144] pushint32 100000 ........................ <100000>
+  [149] pusharglistnoret 2 ...................... <k, 100000>
+  [151] objcall 88 .............................. k.add(100000)
+  [153] jmp [261] ............................... next repeat
+  [156] getlocal 3 .............................. <tLine>
+  [158] pushsymb 66 ............................. <#char>
+  [160] getlocal 4 .............................. <j>
+  [162] pusharglist 3 ........................... <tLine, #char, j>
+  [164] objcall 68 .............................. <tLine.char[j]>
+  [166] pusharglist 1 ........................... <tLine.char[j]>
+  [168] extcall 718 ............................. <charToNum(tLine.char[j])>
+  [171] pushint8 65 ............................. <65>
+  [173] gteq .................................... <charToNum(tLine.char[j]) >= 65>
+  [174] getlocal 3 .............................. <tLine>
+  [176] pushsymb 66 ............................. <#char>
+  [178] getlocal 4 .............................. <j>
+  [180] pusharglist 3 ........................... <tLine, #char, j>
+  [182] objcall 68 .............................. <tLine.char[j]>
+  [184] pusharglist 1 ........................... <tLine.char[j]>
+  [186] extcall 718 ............................. <charToNum(tLine.char[j])>
+  [189] pushint8 73 ............................. <73>
+  [191] lt ...................................... <charToNum(tLine.char[j]) < 73>
+  [192] and ..................................... <(charToNum(tLine.char[j]) >= 65) and (charToNum(tLine.char[j]) < 73)>
+  [193] jmpifz [234] ............................ if (charToNum(tLine.char[j]) >= 65) and (charToNum(tLine.char[j]) < 73) then
+  [196] getlocal 1 .............................. <l>
+  [198] getlocal 3 .............................. <tLine>
+  [200] pushsymb 66 ............................. <#char>
+  [202] getlocal 4 .............................. <j>
+  [204] pusharglist 3 ........................... <tLine, #char, j>
+  [206] objcall 68 .............................. <tLine.char[j]>
+  [208] pusharglist 1 ........................... <tLine.char[j]>
+  [210] extcall 718 ............................. <charToNum(tLine.char[j])>
+  [213] pushint8 65 ............................. <65>
+  [215] sub ..................................... <charToNum(tLine.char[j]) - 65>
+  [216] pusharglistnoret 2 ...................... <l, charToNum(tLine.char[j]) - 65>
+  [218] objcall 88 .............................. l.add(charToNum(tLine.char[j]) - 65)
+  [220] getlocal 2 .............................. <k>
+  [222] pushint32 100000 ........................ <100000>
+  [227] pusharglistnoret 2 ...................... <k, 100000>
+  [229] objcall 88 .............................. k.add(100000)
+  [231] jmp [261] ............................... next repeat
+  [234] getlocal 1 .............................. <l>
+  [236] getlocal 3 .............................. <tLine>
+  [238] pushsymb 66 ............................. <#char>
+  [240] getlocal 4 .............................. <j>
+  [242] pusharglist 3 ........................... <tLine, #char, j>
+  [244] objcall 68 .............................. <tLine.char[j]>
+  [246] pusharglist 1 ........................... <tLine.char[j]>
+  [248] extcall 102 ............................. <integer(tLine.char[j])>
+  [250] pusharglistnoret 2 ...................... <l, integer(tLine.char[j])>
+  [252] objcall 88 .............................. l.add(integer(tLine.char[j]))
+  [254] getlocal 2 .............................. <k>
+  [256] pushzero ................................ <0>
+  [257] pusharglistnoret 2 ...................... <k, 0>
+  [259] objcall 88 .............................. k.add(0)
+  [261] pushint8 1
+  [263] getlocal 4
+  [265] add
+  [266] setlocal 4
+  [268] endrepeat [ 66]
+  [270] getprop 1020 ............................ <pHeightMap>
+  [273] getlocal 1 .............................. <l>
+  [275] pusharglistnoret 2 ...................... <pHeightMap, l>
+  [277] objcall 88 .............................. pHeightMap.add(l)
+  [279] getprop 1021 ............................ <pPlaceMap>
+  [282] getlocal 2 .............................. <k>
+  [284] pusharglistnoret 2 ...................... <pPlaceMap, k>
+  [286] objcall 88 .............................. pPlaceMap.add(k)
+  [288] pushint8 1
+  [290] getlocal 0
+  [292] add
+  [293] setlocal 0
+  [295] endrepeat [ 16]
+  [298] pushint8 1 .............................. <1>
+  [300] pusharglistnoret 1 ...................... <1>
+  [302] extcall 31 .............................. return 1
+  [304] ret
 end
 
 on getScreenCoordinate me, tLocX, tLocY, tHeight
@@ -237,334 +237,334 @@ on getScreenCoordinate me, tLocX, tLocY, tHeight
   [ 10] getparam 1 .............................. <tLocX>
   [ 12] getparam 2 .............................. <tLocY>
   [ 14] sub ..................................... <tLocX - tLocY>
-  [ 15] getprop 977 ............................. <pXFactor>
-  [ 18] pushfloat32 0.5 ......................... <0.5>
-  [ 23] mul ..................................... <pXFactor * 0.5>
-  [ 24] mul ..................................... <(tLocX - tLocY) * (pXFactor * 0.5)>
-  [ 25] getprop 974 ............................. <pXOffset>
-  [ 28] add ..................................... <((tLocX - tLocY) * (pXFactor * 0.5)) + pXOffset>
-  [ 29] setlocal 1 .............................. tLocH = ((tLocX - tLocY) * (pXFactor * 0.5)) + pXOffset
-  [ 31] getparam 2 .............................. <tLocY>
-  [ 33] getparam 1 .............................. <tLocX>
-  [ 35] add ..................................... <tLocY + tLocX>
-  [ 36] getprop 978 ............................. <pYFactor>
-  [ 39] mul ..................................... <(tLocY + tLocX) * pYFactor>
-  [ 40] pushfloat32 0.5 ......................... <0.5>
-  [ 45] mul ..................................... <(tLocY + tLocX) * pYFactor * 0.5>
-  [ 46] getprop 975 ............................. <pYOffset>
-  [ 49] add ..................................... <((tLocY + tLocX) * pYFactor * 0.5) + pYOffset>
-  [ 50] pusharglist 1 ........................... <((tLocY + tLocX) * pYFactor * 0.5) + pYOffset>
-  [ 52] extcall 616 ............................. <float(((tLocY + tLocX) * pYFactor * 0.5) + pYOffset)>
-  [ 55] getparam 3 .............................. <tHeight>
-  [ 57] getprop 979 ............................. <pHFactor>
-  [ 60] mul ..................................... <tHeight * pHFactor>
-  [ 61] sub ..................................... <float(((tLocY + tLocX) * pYFactor * 0.5) + pYOffset) - (tHeight * pHFactor)>
-  [ 62] setlocal 2 .............................. tLocV = float(((tLocY + tLocX) * pYFactor * 0.5) + pYOffset) - (tHeight * pHFactor)
-  [ 64] pushint16 1000 .......................... <1000>
-  [ 67] getparam 1 .............................. <tLocX>
-  [ 69] getparam 2 .............................. <tLocY>
-  [ 71] add ..................................... <tLocX + tLocY>
-  [ 72] pushint8 1 .............................. <1>
-  [ 74] add ..................................... <tLocX + tLocY + 1>
-  [ 75] mul ..................................... <1000 * (tLocX + tLocY + 1)>
-  [ 76] getprop 976 ............................. <pZOffset>
-  [ 79] add ..................................... <(1000 * (tLocX + tLocY + 1)) + pZOffset>
-  [ 80] setlocal 3 .............................. tlocz = (1000 * (tLocX + tLocY + 1)) + pZOffset
-  [ 82] getlocal 0 .............................. <tPrecision>
-  [ 84] pushzero ................................ <0>
-  [ 85] set 0 ................................... set the floatPrecision to tPrecision
-  [ 87] getlocal 1 .............................. <tLocH>
-  [ 89] pusharglist 1 ........................... <tLocH>
-  [ 91] extcall 451 ............................. <integer(tLocH)>
-  [ 94] getlocal 2 .............................. <tLocV>
-  [ 96] pusharglist 1 ........................... <tLocV>
-  [ 98] extcall 451 ............................. <integer(tLocV)>
-  [101] getlocal 3 .............................. <tlocz>
-  [103] pusharglist 1 ........................... <tlocz>
-  [105] extcall 451 ............................. <integer(tlocz)>
-  [108] pusharglist 3 ........................... <[integer(tLocH), integer(tLocV), integer(tlocz)]>
-  [110] pushlist ................................ <[integer(tLocH), integer(tLocV), integer(tlocz)]>
-  [111] pusharglistnoret 1 ...................... <[integer(tLocH), integer(tLocV), integer(tlocz)]>
-  [113] extcall 21 .............................. return [integer(tLocH), integer(tLocV), integer(tlocz)]
-  [115] ret
+  [ 15] getprop 50 .............................. <pXFactor>
+  [ 17] pushfloat32 0.5 ......................... <0.5>
+  [ 22] mul ..................................... <pXFactor * 0.5>
+  [ 23] mul ..................................... <(tLocX - tLocY) * (pXFactor * 0.5)>
+  [ 24] getprop 1015 ............................ <pXOffset>
+  [ 27] add ..................................... <((tLocX - tLocY) * (pXFactor * 0.5)) + pXOffset>
+  [ 28] setlocal 1 .............................. tLocH = ((tLocX - tLocY) * (pXFactor * 0.5)) + pXOffset
+  [ 30] getparam 2 .............................. <tLocY>
+  [ 32] getparam 1 .............................. <tLocX>
+  [ 34] add ..................................... <tLocY + tLocX>
+  [ 35] getprop 1018 ............................ <pYFactor>
+  [ 38] mul ..................................... <(tLocY + tLocX) * pYFactor>
+  [ 39] pushfloat32 0.5 ......................... <0.5>
+  [ 44] mul ..................................... <(tLocY + tLocX) * pYFactor * 0.5>
+  [ 45] getprop 1016 ............................ <pYOffset>
+  [ 48] add ..................................... <((tLocY + tLocX) * pYFactor * 0.5) + pYOffset>
+  [ 49] pusharglist 1 ........................... <((tLocY + tLocX) * pYFactor * 0.5) + pYOffset>
+  [ 51] extcall 669 ............................. <float(((tLocY + tLocX) * pYFactor * 0.5) + pYOffset)>
+  [ 54] getparam 3 .............................. <tHeight>
+  [ 56] getprop 1019 ............................ <pHFactor>
+  [ 59] mul ..................................... <tHeight * pHFactor>
+  [ 60] sub ..................................... <float(((tLocY + tLocX) * pYFactor * 0.5) + pYOffset) - (tHeight * pHFactor)>
+  [ 61] setlocal 2 .............................. tLocV = float(((tLocY + tLocX) * pYFactor * 0.5) + pYOffset) - (tHeight * pHFactor)
+  [ 63] pushint16 1000 .......................... <1000>
+  [ 66] getparam 1 .............................. <tLocX>
+  [ 68] getparam 2 .............................. <tLocY>
+  [ 70] add ..................................... <tLocX + tLocY>
+  [ 71] pushint8 1 .............................. <1>
+  [ 73] add ..................................... <tLocX + tLocY + 1>
+  [ 74] mul ..................................... <1000 * (tLocX + tLocY + 1)>
+  [ 75] getprop 1017 ............................ <pZOffset>
+  [ 78] add ..................................... <(1000 * (tLocX + tLocY + 1)) + pZOffset>
+  [ 79] setlocal 3 .............................. tlocz = (1000 * (tLocX + tLocY + 1)) + pZOffset
+  [ 81] getlocal 0 .............................. <tPrecision>
+  [ 83] pushzero ................................ <0>
+  [ 84] set 0 ................................... set the floatPrecision to tPrecision
+  [ 86] getlocal 1 .............................. <tLocH>
+  [ 88] pusharglist 1 ........................... <tLocH>
+  [ 90] extcall 102 ............................. <integer(tLocH)>
+  [ 92] getlocal 2 .............................. <tLocV>
+  [ 94] pusharglist 1 ........................... <tLocV>
+  [ 96] extcall 102 ............................. <integer(tLocV)>
+  [ 98] getlocal 3 .............................. <tlocz>
+  [100] pusharglist 1 ........................... <tlocz>
+  [102] extcall 102 ............................. <integer(tlocz)>
+  [104] pusharglist 3 ........................... <[integer(tLocH), integer(tLocV), integer(tlocz)]>
+  [106] pushlist ................................ <[integer(tLocH), integer(tLocV), integer(tlocz)]>
+  [107] pusharglistnoret 1 ...................... <[integer(tLocH), integer(tLocV), integer(tlocz)]>
+  [109] extcall 31 .............................. return [integer(tLocH), integer(tLocV), integer(tlocz)]
+  [111] ret
 end
 
 on getCoordinateHeight me, tX, tY
   [  0] getparam 1 .............................. <tX>
   [  2] pusharglist 1 ........................... <tX>
-  [  4] extcall 451 ............................. <integer(tX)>
-  [  7] setparam 1 .............................. tX = integer(tX)
-  [  9] getparam 2 .............................. <tY>
-  [ 11] pusharglist 1 ........................... <tY>
-  [ 13] extcall 451 ............................. <integer(tY)>
-  [ 16] setparam 2 .............................. tY = integer(tY)
-  [ 18] getparam 2 .............................. <tY>
-  [ 20] pushzero ................................ <0>
-  [ 21] lt ...................................... <tY < 0>
-  [ 22] getparam 2 .............................. <tY>
-  [ 24] getprop 980 ............................. <pHeightMap>
-  [ 27] getobjprop 14 ........................... <pHeightMap.count>
-  [ 29] gteq .................................... <tY >= pHeightMap.count>
-  [ 30] or ...................................... <(tY < 0) or (tY >= pHeightMap.count)>
-  [ 31] jmpifz [ 39] ............................ if (tY < 0) or (tY >= pHeightMap.count) then
-  [ 34] pushzero ................................ <0>
-  [ 35] pusharglistnoret 1 ...................... <0>
-  [ 37] extcall 21 .............................. return 0
-  [ 39] getprop 980 ............................. <pHeightMap>
-  [ 42] getparam 2 .............................. <tY>
-  [ 44] pushint8 1 .............................. <1>
-  [ 46] add ..................................... <tY + 1>
-  [ 47] pusharglist 1 ........................... <tY + 1>
-  [ 49] extcall 451 ............................. <integer(tY + 1)>
-  [ 52] pusharglist 2 ........................... <pHeightMap, integer(tY + 1)>
-  [ 54] objcall 9 ............................... <pHeightMap[integer(tY + 1)]>
-  [ 56] setlocal 0 .............................. tLine = pHeightMap[integer(tY + 1)]
-  [ 58] getparam 1 .............................. <tX>
-  [ 60] pushzero ................................ <0>
-  [ 61] lt ...................................... <tX < 0>
-  [ 62] getparam 1 .............................. <tX>
-  [ 64] getlocal 0 .............................. <tLine>
-  [ 66] getobjprop 14 ........................... <tLine.count>
-  [ 68] gteq .................................... <tX >= tLine.count>
-  [ 69] or ...................................... <(tX < 0) or (tX >= tLine.count)>
-  [ 70] jmpifz [ 78] ............................ if (tX < 0) or (tX >= tLine.count) then
-  [ 73] pushzero ................................ <0>
-  [ 74] pusharglistnoret 1 ...................... <0>
-  [ 76] extcall 21 .............................. return 0
-  [ 78] getlocal 0 .............................. <tLine>
-  [ 80] getparam 1 .............................. <tX>
-  [ 82] pushint8 1 .............................. <1>
-  [ 84] add ..................................... <tX + 1>
-  [ 85] pusharglist 2 ........................... <tLine, tX + 1>
-  [ 87] objcall 9 ............................... <tLine[tX + 1]>
-  [ 89] pusharglistnoret 1 ...................... <tLine[tX + 1]>
-  [ 91] extcall 21 .............................. return tLine[tX + 1]
-  [ 93] ret
+  [  4] extcall 102 ............................. <integer(tX)>
+  [  6] setparam 1 .............................. tX = integer(tX)
+  [  8] getparam 2 .............................. <tY>
+  [ 10] pusharglist 1 ........................... <tY>
+  [ 12] extcall 102 ............................. <integer(tY)>
+  [ 14] setparam 2 .............................. tY = integer(tY)
+  [ 16] getparam 2 .............................. <tY>
+  [ 18] pushzero ................................ <0>
+  [ 19] lt ...................................... <tY < 0>
+  [ 20] getparam 2 .............................. <tY>
+  [ 22] getprop 1020 ............................ <pHeightMap>
+  [ 25] getobjprop 33 ........................... <pHeightMap.count>
+  [ 27] gteq .................................... <tY >= pHeightMap.count>
+  [ 28] or ...................................... <(tY < 0) or (tY >= pHeightMap.count)>
+  [ 29] jmpifz [ 37] ............................ if (tY < 0) or (tY >= pHeightMap.count) then
+  [ 32] pushzero ................................ <0>
+  [ 33] pusharglistnoret 1 ...................... <0>
+  [ 35] extcall 31 .............................. return 0
+  [ 37] getprop 1020 ............................ <pHeightMap>
+  [ 40] getparam 2 .............................. <tY>
+  [ 42] pushint8 1 .............................. <1>
+  [ 44] add ..................................... <tY + 1>
+  [ 45] pusharglist 1 ........................... <tY + 1>
+  [ 47] extcall 102 ............................. <integer(tY + 1)>
+  [ 49] pusharglist 2 ........................... <pHeightMap, integer(tY + 1)>
+  [ 51] objcall 34 .............................. <pHeightMap[integer(tY + 1)]>
+  [ 53] setlocal 0 .............................. tLine = pHeightMap[integer(tY + 1)]
+  [ 55] getparam 1 .............................. <tX>
+  [ 57] pushzero ................................ <0>
+  [ 58] lt ...................................... <tX < 0>
+  [ 59] getparam 1 .............................. <tX>
+  [ 61] getlocal 0 .............................. <tLine>
+  [ 63] getobjprop 33 ........................... <tLine.count>
+  [ 65] gteq .................................... <tX >= tLine.count>
+  [ 66] or ...................................... <(tX < 0) or (tX >= tLine.count)>
+  [ 67] jmpifz [ 75] ............................ if (tX < 0) or (tX >= tLine.count) then
+  [ 70] pushzero ................................ <0>
+  [ 71] pusharglistnoret 1 ...................... <0>
+  [ 73] extcall 31 .............................. return 0
+  [ 75] getlocal 0 .............................. <tLine>
+  [ 77] getparam 1 .............................. <tX>
+  [ 79] pushint8 1 .............................. <1>
+  [ 81] add ..................................... <tX + 1>
+  [ 82] pusharglist 2 ........................... <tLine, tX + 1>
+  [ 84] objcall 34 .............................. <tLine[tX + 1]>
+  [ 86] pusharglistnoret 1 ...................... <tLine[tX + 1]>
+  [ 88] extcall 31 .............................. return tLine[tX + 1]
+  [ 90] ret
 end
 
 on getWorldCoordinate me, tLocX, tLocY
-  [  0] getprop 980 ............................. <pHeightMap>
+  [  0] getprop 1020 ............................ <pHeightMap>
   [  3] pusharglist 1 ........................... <pHeightMap>
-  [  5] extcall 10 .............................. <voidp(pHeightMap)>
+  [  5] extcall 120 ............................. <voidp(pHeightMap)>
   [  7] jmpifz [ 18] ............................ if voidp(pHeightMap) then
   [ 10] pusharglist 0 ........................... <>
-  [ 12] extcall 159 ............................. <VOID>
+  [ 12] extcall 30 .............................. <VOID>
   [ 14] pusharglistnoret 1 ...................... <VOID>
-  [ 16] extcall 21 .............................. return VOID
+  [ 16] extcall 31 .............................. return VOID
   [ 18] getparam 1 .............................. <tLocX>
-  [ 20] getprop 978 ............................. <pYFactor>
+  [ 20] getprop 1018 ............................ <pYFactor>
   [ 23] sub ..................................... <tLocX - pYFactor>
-  [ 24] getprop 974 ............................. <pXOffset>
+  [ 24] getprop 1015 ............................ <pXOffset>
   [ 27] sub ..................................... <tLocX - pYFactor - pXOffset>
-  [ 28] getprop 977 ............................. <pXFactor>
-  [ 31] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
-  [ 32] getparam 2 .............................. <tLocY>
-  [ 34] getprop 975 ............................. <pYOffset>
-  [ 37] sub ..................................... <tLocY - pYOffset>
-  [ 38] getprop 978 ............................. <pYFactor>
-  [ 41] div ..................................... <(tLocY - pYOffset) / pYFactor>
-  [ 42] add ..................................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor)>
-  [ 43] pusharglist 1 ........................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor)>
-  [ 45] extcall 451 ............................. <integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor))>
-  [ 48] setlocal 0 .............................. tX = integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor))
-  [ 50] getparam 2 .............................. <tLocY>
-  [ 52] getprop 975 ............................. <pYOffset>
-  [ 55] sub ..................................... <tLocY - pYOffset>
-  [ 56] getprop 978 ............................. <pYFactor>
-  [ 59] div ..................................... <(tLocY - pYOffset) / pYFactor>
-  [ 60] getparam 1 .............................. <tLocX>
-  [ 62] getprop 978 ............................. <pYFactor>
-  [ 65] sub ..................................... <tLocX - pYFactor>
-  [ 66] getprop 974 ............................. <pXOffset>
-  [ 69] sub ..................................... <tLocX - pYFactor - pXOffset>
-  [ 70] getprop 977 ............................. <pXFactor>
-  [ 73] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
-  [ 74] sub ..................................... <((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
-  [ 75] pusharglist 1 ........................... <((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
-  [ 77] extcall 451 ............................. <integer(((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))>
-  [ 80] setlocal 1 .............................. tY = integer(((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))
-  [ 82] pushint8 1 .............................. <1>
-  [ 84] inv ..................................... <-1>
-  [ 85] setlocal 2 .............................. tHeight = -1
+  [ 28] getprop 50 .............................. <pXFactor>
+  [ 30] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
+  [ 31] getparam 2 .............................. <tLocY>
+  [ 33] getprop 1016 ............................ <pYOffset>
+  [ 36] sub ..................................... <tLocY - pYOffset>
+  [ 37] getprop 1018 ............................ <pYFactor>
+  [ 40] div ..................................... <(tLocY - pYOffset) / pYFactor>
+  [ 41] add ..................................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor)>
+  [ 42] pusharglist 1 ........................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor)>
+  [ 44] extcall 102 ............................. <integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor))>
+  [ 46] setlocal 0 .............................. tX = integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY - pYOffset) / pYFactor))
+  [ 48] getparam 2 .............................. <tLocY>
+  [ 50] getprop 1016 ............................ <pYOffset>
+  [ 53] sub ..................................... <tLocY - pYOffset>
+  [ 54] getprop 1018 ............................ <pYFactor>
+  [ 57] div ..................................... <(tLocY - pYOffset) / pYFactor>
+  [ 58] getparam 1 .............................. <tLocX>
+  [ 60] getprop 1018 ............................ <pYFactor>
+  [ 63] sub ..................................... <tLocX - pYFactor>
+  [ 64] getprop 1015 ............................ <pXOffset>
+  [ 67] sub ..................................... <tLocX - pYFactor - pXOffset>
+  [ 68] getprop 50 .............................. <pXFactor>
+  [ 70] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
+  [ 71] sub ..................................... <((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
+  [ 72] pusharglist 1 ........................... <((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
+  [ 74] extcall 102 ............................. <integer(((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))>
+  [ 76] setlocal 1 .............................. tY = integer(((tLocY - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))
+  [ 78] pushint8 1 .............................. <1>
+  [ 80] inv ..................................... <-1>
+  [ 81] setlocal 2 .............................. tHeight = -1
+  [ 83] getlocal 1 .............................. <tY>
+  [ 85] pushzero ................................ <0>
+  [ 86] gteq .................................... <tY >= 0>
   [ 87] getlocal 1 .............................. <tY>
-  [ 89] pushzero ................................ <0>
-  [ 90] gteq .................................... <tY >= 0>
-  [ 91] getlocal 1 .............................. <tY>
-  [ 93] getprop 980 ............................. <pHeightMap>
-  [ 96] getobjprop 14 ........................... <pHeightMap.count>
-  [ 98] lt ...................................... <tY < pHeightMap.count>
-  [ 99] and ..................................... <(tY >= 0) and (tY < pHeightMap.count)>
-  [100] jmpifz [151] ............................ if (tY >= 0) and (tY < pHeightMap.count) then
+  [ 89] getprop 1020 ............................ <pHeightMap>
+  [ 92] getobjprop 33 ........................... <pHeightMap.count>
+  [ 94] lt ...................................... <tY < pHeightMap.count>
+  [ 95] and ..................................... <(tY >= 0) and (tY < pHeightMap.count)>
+  [ 96] jmpifz [147] ............................ if (tY >= 0) and (tY < pHeightMap.count) then
+  [ 99] getlocal 0 .............................. <tX>
+  [101] pushzero ................................ <0>
+  [102] gteq .................................... <tX >= 0>
   [103] getlocal 0 .............................. <tX>
-  [105] pushzero ................................ <0>
-  [106] gteq .................................... <tX >= 0>
-  [107] getlocal 0 .............................. <tX>
-  [109] getprop 980 ............................. <pHeightMap>
-  [112] getlocal 1 .............................. <tY>
-  [114] pushint8 1 .............................. <1>
-  [116] add ..................................... <tY + 1>
-  [117] pusharglist 2 ........................... <pHeightMap, tY + 1>
-  [119] objcall 9 ............................... <pHeightMap[tY + 1]>
-  [121] getobjprop 14 ........................... <pHeightMap[tY + 1].count>
-  [123] lt ...................................... <tX < pHeightMap[tY + 1].count>
-  [124] and ..................................... <(tX >= 0) and (tX < pHeightMap[tY + 1].count)>
-  [125] jmpifz [151] ............................ if (tX >= 0) and (tX < pHeightMap[tY + 1].count) then
-  [128] getprop 980 ............................. <pHeightMap>
-  [131] getlocal 1 .............................. <tY>
-  [133] pushint8 1 .............................. <1>
-  [135] add ..................................... <tY + 1>
-  [136] pusharglist 2 ........................... <pHeightMap, tY + 1>
-  [138] objcall 9 ............................... <pHeightMap[tY + 1]>
-  [140] getlocal 0 .............................. <tX>
-  [142] pushint8 1 .............................. <1>
-  [144] add ..................................... <tX + 1>
-  [145] pusharglist 2 ........................... <pHeightMap[tY + 1], tX + 1>
-  [147] objcall 9 ............................... <pHeightMap[tY + 1][tX + 1]>
-  [149] setlocal 2 .............................. tHeight = pHeightMap[tY + 1][tX + 1]
-  [151] getlocal 2 .............................. <tHeight>
-  [153] pushzero ................................ <0>
-  [154] eq ...................................... <tHeight = 0>
-  [155] jmpifz [174] ............................ if tHeight = 0 then / else
-  [158] getlocal 0 .............................. <tX>
-  [160] getlocal 1 .............................. <tY>
-  [162] getlocal 2 .............................. <tHeight>
-  [164] pusharglist 3 ........................... <[tX, tY, tHeight]>
-  [166] pushlist ................................ <[tX, tY, tHeight]>
-  [167] pusharglistnoret 1 ...................... <[tX, tY, tHeight]>
-  [169] extcall 21 .............................. return [tX, tY, tHeight]
-  [171] jmp [363]
-  [174] pushint8 1 .............................. <1>
-  [176] setlocal 3
-  [178] getlocal 3
-  [180] pushint8 9 .............................. <9>
-  [182] lteq
-  [183] jmpifz [363] ............................ repeat with i = 1 to 9
-  [186] getparam 1 .............................. <tLocX>
-  [188] getprop 978 ............................. <pYFactor>
-  [191] sub ..................................... <tLocX - pYFactor>
-  [192] getprop 974 ............................. <pXOffset>
-  [195] sub ..................................... <tLocX - pYFactor - pXOffset>
-  [196] getprop 977 ............................. <pXFactor>
-  [199] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
-  [200] getparam 2 .............................. <tLocY>
-  [202] getlocal 3 .............................. <i>
-  [204] getprop 979 ............................. <pHFactor>
-  [207] mul ..................................... <i * pHFactor>
-  [208] add ..................................... <tLocY + (i * pHFactor)>
-  [209] getprop 975 ............................. <pYOffset>
-  [212] sub ..................................... <tLocY + (i * pHFactor) - pYOffset>
-  [213] getprop 978 ............................. <pYFactor>
-  [216] div ..................................... <(tLocY + (i * pHFactor) - pYOffset) / pYFactor>
-  [217] add ..................................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor)>
-  [218] pusharglist 1 ........................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor)>
-  [220] extcall 451 ............................. <integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor))>
-  [223] setlocal 0 .............................. tX = integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor))
-  [225] getparam 2 .............................. <tLocY>
-  [227] getlocal 3 .............................. <i>
-  [229] getprop 979 ............................. <pHFactor>
-  [232] mul ..................................... <i * pHFactor>
-  [233] add ..................................... <tLocY + (i * pHFactor)>
-  [234] getprop 975 ............................. <pYOffset>
-  [237] sub ..................................... <tLocY + (i * pHFactor) - pYOffset>
-  [238] getprop 978 ............................. <pYFactor>
-  [241] div ..................................... <(tLocY + (i * pHFactor) - pYOffset) / pYFactor>
-  [242] getparam 1 .............................. <tLocX>
-  [244] getprop 978 ............................. <pYFactor>
-  [247] sub ..................................... <tLocX - pYFactor>
-  [248] getprop 974 ............................. <pXOffset>
-  [251] sub ..................................... <tLocX - pYFactor - pXOffset>
-  [252] getprop 977 ............................. <pXFactor>
-  [255] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
-  [256] sub ..................................... <((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
-  [257] pusharglist 1 ........................... <((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
-  [259] extcall 451 ............................. <integer(((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))>
-  [262] setlocal 1 .............................. tY = integer(((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))
-  [264] pushint8 1 .............................. <1>
-  [266] inv ..................................... <-1>
-  [267] setlocal 2 .............................. tHeight = -1
-  [269] getlocal 1 .............................. <tY>
-  [271] pushzero ................................ <0>
-  [272] gteq .................................... <tY >= 0>
-  [273] getlocal 1 .............................. <tY>
-  [275] getprop 980 ............................. <pHeightMap>
-  [278] getobjprop 14 ........................... <pHeightMap.count>
-  [280] lt ...................................... <tY < pHeightMap.count>
-  [281] and ..................................... <(tY >= 0) and (tY < pHeightMap.count)>
-  [282] jmpifz [333] ............................ if (tY >= 0) and (tY < pHeightMap.count) then
-  [285] getlocal 0 .............................. <tX>
-  [287] pushzero ................................ <0>
-  [288] gteq .................................... <tX >= 0>
-  [289] getlocal 0 .............................. <tX>
-  [291] getprop 980 ............................. <pHeightMap>
-  [294] getlocal 1 .............................. <tY>
-  [296] pushint8 1 .............................. <1>
-  [298] add ..................................... <tY + 1>
-  [299] pusharglist 2 ........................... <pHeightMap, tY + 1>
-  [301] objcall 9 ............................... <pHeightMap[tY + 1]>
-  [303] getobjprop 14 ........................... <pHeightMap[tY + 1].count>
-  [305] lt ...................................... <tX < pHeightMap[tY + 1].count>
-  [306] and ..................................... <(tX >= 0) and (tX < pHeightMap[tY + 1].count)>
-  [307] jmpifz [333] ............................ if (tX >= 0) and (tX < pHeightMap[tY + 1].count) then
-  [310] getprop 980 ............................. <pHeightMap>
-  [313] getlocal 1 .............................. <tY>
-  [315] pushint8 1 .............................. <1>
-  [317] add ..................................... <tY + 1>
-  [318] pusharglist 2 ........................... <pHeightMap, tY + 1>
-  [320] objcall 9 ............................... <pHeightMap[tY + 1]>
-  [322] getlocal 0 .............................. <tX>
-  [324] pushint8 1 .............................. <1>
-  [326] add ..................................... <tX + 1>
-  [327] pusharglist 2 ........................... <pHeightMap[tY + 1], tX + 1>
-  [329] objcall 9 ............................... <pHeightMap[tY + 1][tX + 1]>
-  [331] setlocal 2 .............................. tHeight = pHeightMap[tY + 1][tX + 1]
-  [333] getlocal 2 .............................. <tHeight>
-  [335] getlocal 3 .............................. <i>
-  [337] eq ...................................... <tHeight = i>
-  [338] jmpifz [354] ............................ if tHeight = i then
-  [341] getlocal 0 .............................. <tX>
-  [343] getlocal 1 .............................. <tY>
-  [345] getlocal 2 .............................. <tHeight>
-  [347] pusharglist 3 ........................... <[tX, tY, tHeight]>
-  [349] pushlist ................................ <[tX, tY, tHeight]>
-  [350] pusharglistnoret 1 ...................... <[tX, tY, tHeight]>
-  [352] extcall 21 .............................. return [tX, tY, tHeight]
-  [354] pushint8 1
-  [356] getlocal 3
-  [358] add
-  [359] setlocal 3
-  [361] endrepeat [178]
-  [363] pushzero ................................ <0>
-  [364] pusharglistnoret 1 ...................... <0>
-  [366] extcall 21 .............................. return 0
-  [368] ret
+  [105] getprop 1020 ............................ <pHeightMap>
+  [108] getlocal 1 .............................. <tY>
+  [110] pushint8 1 .............................. <1>
+  [112] add ..................................... <tY + 1>
+  [113] pusharglist 2 ........................... <pHeightMap, tY + 1>
+  [115] objcall 34 .............................. <pHeightMap[tY + 1]>
+  [117] getobjprop 33 ........................... <pHeightMap[tY + 1].count>
+  [119] lt ...................................... <tX < pHeightMap[tY + 1].count>
+  [120] and ..................................... <(tX >= 0) and (tX < pHeightMap[tY + 1].count)>
+  [121] jmpifz [147] ............................ if (tX >= 0) and (tX < pHeightMap[tY + 1].count) then
+  [124] getprop 1020 ............................ <pHeightMap>
+  [127] getlocal 1 .............................. <tY>
+  [129] pushint8 1 .............................. <1>
+  [131] add ..................................... <tY + 1>
+  [132] pusharglist 2 ........................... <pHeightMap, tY + 1>
+  [134] objcall 34 .............................. <pHeightMap[tY + 1]>
+  [136] getlocal 0 .............................. <tX>
+  [138] pushint8 1 .............................. <1>
+  [140] add ..................................... <tX + 1>
+  [141] pusharglist 2 ........................... <pHeightMap[tY + 1], tX + 1>
+  [143] objcall 34 .............................. <pHeightMap[tY + 1][tX + 1]>
+  [145] setlocal 2 .............................. tHeight = pHeightMap[tY + 1][tX + 1]
+  [147] getlocal 2 .............................. <tHeight>
+  [149] pushzero ................................ <0>
+  [150] eq ...................................... <tHeight = 0>
+  [151] jmpifz [170] ............................ if tHeight = 0 then / else
+  [154] getlocal 0 .............................. <tX>
+  [156] getlocal 1 .............................. <tY>
+  [158] getlocal 2 .............................. <tHeight>
+  [160] pusharglist 3 ........................... <[tX, tY, tHeight]>
+  [162] pushlist ................................ <[tX, tY, tHeight]>
+  [163] pusharglistnoret 1 ...................... <[tX, tY, tHeight]>
+  [165] extcall 31 .............................. return [tX, tY, tHeight]
+  [167] jmp [355]
+  [170] pushint8 1 .............................. <1>
+  [172] setlocal 3
+  [174] getlocal 3
+  [176] pushint8 9 .............................. <9>
+  [178] lteq
+  [179] jmpifz [355] ............................ repeat with i = 1 to 9
+  [182] getparam 1 .............................. <tLocX>
+  [184] getprop 1018 ............................ <pYFactor>
+  [187] sub ..................................... <tLocX - pYFactor>
+  [188] getprop 1015 ............................ <pXOffset>
+  [191] sub ..................................... <tLocX - pYFactor - pXOffset>
+  [192] getprop 50 .............................. <pXFactor>
+  [194] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
+  [195] getparam 2 .............................. <tLocY>
+  [197] getlocal 3 .............................. <i>
+  [199] getprop 1019 ............................ <pHFactor>
+  [202] mul ..................................... <i * pHFactor>
+  [203] add ..................................... <tLocY + (i * pHFactor)>
+  [204] getprop 1016 ............................ <pYOffset>
+  [207] sub ..................................... <tLocY + (i * pHFactor) - pYOffset>
+  [208] getprop 1018 ............................ <pYFactor>
+  [211] div ..................................... <(tLocY + (i * pHFactor) - pYOffset) / pYFactor>
+  [212] add ..................................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor)>
+  [213] pusharglist 1 ........................... <((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor)>
+  [215] extcall 102 ............................. <integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor))>
+  [217] setlocal 0 .............................. tX = integer(((tLocX - pYFactor - pXOffset) / pXFactor) + ((tLocY + (i * pHFactor) - pYOffset) / pYFactor))
+  [219] getparam 2 .............................. <tLocY>
+  [221] getlocal 3 .............................. <i>
+  [223] getprop 1019 ............................ <pHFactor>
+  [226] mul ..................................... <i * pHFactor>
+  [227] add ..................................... <tLocY + (i * pHFactor)>
+  [228] getprop 1016 ............................ <pYOffset>
+  [231] sub ..................................... <tLocY + (i * pHFactor) - pYOffset>
+  [232] getprop 1018 ............................ <pYFactor>
+  [235] div ..................................... <(tLocY + (i * pHFactor) - pYOffset) / pYFactor>
+  [236] getparam 1 .............................. <tLocX>
+  [238] getprop 1018 ............................ <pYFactor>
+  [241] sub ..................................... <tLocX - pYFactor>
+  [242] getprop 1015 ............................ <pXOffset>
+  [245] sub ..................................... <tLocX - pYFactor - pXOffset>
+  [246] getprop 50 .............................. <pXFactor>
+  [248] div ..................................... <(tLocX - pYFactor - pXOffset) / pXFactor>
+  [249] sub ..................................... <((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
+  [250] pusharglist 1 ........................... <((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor)>
+  [252] extcall 102 ............................. <integer(((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))>
+  [254] setlocal 1 .............................. tY = integer(((tLocY + (i * pHFactor) - pYOffset) / pYFactor) - ((tLocX - pYFactor - pXOffset) / pXFactor))
+  [256] pushint8 1 .............................. <1>
+  [258] inv ..................................... <-1>
+  [259] setlocal 2 .............................. tHeight = -1
+  [261] getlocal 1 .............................. <tY>
+  [263] pushzero ................................ <0>
+  [264] gteq .................................... <tY >= 0>
+  [265] getlocal 1 .............................. <tY>
+  [267] getprop 1020 ............................ <pHeightMap>
+  [270] getobjprop 33 ........................... <pHeightMap.count>
+  [272] lt ...................................... <tY < pHeightMap.count>
+  [273] and ..................................... <(tY >= 0) and (tY < pHeightMap.count)>
+  [274] jmpifz [325] ............................ if (tY >= 0) and (tY < pHeightMap.count) then
+  [277] getlocal 0 .............................. <tX>
+  [279] pushzero ................................ <0>
+  [280] gteq .................................... <tX >= 0>
+  [281] getlocal 0 .............................. <tX>
+  [283] getprop 1020 ............................ <pHeightMap>
+  [286] getlocal 1 .............................. <tY>
+  [288] pushint8 1 .............................. <1>
+  [290] add ..................................... <tY + 1>
+  [291] pusharglist 2 ........................... <pHeightMap, tY + 1>
+  [293] objcall 34 .............................. <pHeightMap[tY + 1]>
+  [295] getobjprop 33 ........................... <pHeightMap[tY + 1].count>
+  [297] lt ...................................... <tX < pHeightMap[tY + 1].count>
+  [298] and ..................................... <(tX >= 0) and (tX < pHeightMap[tY + 1].count)>
+  [299] jmpifz [325] ............................ if (tX >= 0) and (tX < pHeightMap[tY + 1].count) then
+  [302] getprop 1020 ............................ <pHeightMap>
+  [305] getlocal 1 .............................. <tY>
+  [307] pushint8 1 .............................. <1>
+  [309] add ..................................... <tY + 1>
+  [310] pusharglist 2 ........................... <pHeightMap, tY + 1>
+  [312] objcall 34 .............................. <pHeightMap[tY + 1]>
+  [314] getlocal 0 .............................. <tX>
+  [316] pushint8 1 .............................. <1>
+  [318] add ..................................... <tX + 1>
+  [319] pusharglist 2 ........................... <pHeightMap[tY + 1], tX + 1>
+  [321] objcall 34 .............................. <pHeightMap[tY + 1][tX + 1]>
+  [323] setlocal 2 .............................. tHeight = pHeightMap[tY + 1][tX + 1]
+  [325] getlocal 2 .............................. <tHeight>
+  [327] getlocal 3 .............................. <i>
+  [329] eq ...................................... <tHeight = i>
+  [330] jmpifz [346] ............................ if tHeight = i then
+  [333] getlocal 0 .............................. <tX>
+  [335] getlocal 1 .............................. <tY>
+  [337] getlocal 2 .............................. <tHeight>
+  [339] pusharglist 3 ........................... <[tX, tY, tHeight]>
+  [341] pushlist ................................ <[tX, tY, tHeight]>
+  [342] pusharglistnoret 1 ...................... <[tX, tY, tHeight]>
+  [344] extcall 31 .............................. return [tX, tY, tHeight]
+  [346] pushint8 1
+  [348] getlocal 3
+  [350] add
+  [351] setlocal 3
+  [353] endrepeat [174]
+  [355] pushzero ................................ <0>
+  [356] pusharglistnoret 1 ...................... <0>
+  [358] extcall 31 .............................. return 0
+  [360] ret
 end
 
 on getObjectPlaceMap me
-  [  0] getprop 981 ............................. <pPlaceMap>
+  [  0] getprop 1021 ............................ <pPlaceMap>
   [  3] pusharglistnoret 1 ...................... <pPlaceMap>
-  [  5] extcall 21 .............................. return pPlaceMap
+  [  5] extcall 31 .............................. return pPlaceMap
   [  7] ret
 end
 
 on getObjectHeightMap me
-  [  0] getprop 980 ............................. <pHeightMap>
+  [  0] getprop 1020 ............................ <pHeightMap>
   [  3] pusharglistnoret 1 ...................... <pHeightMap>
-  [  5] extcall 21 .............................. return pHeightMap
+  [  5] extcall 31 .............................. return pHeightMap
   [  7] ret
 end
 
 on getTileHeight me
-  [  0] getprop 978 ............................. <pYFactor>
+  [  0] getprop 1018 ............................ <pYFactor>
   [  3] pusharglistnoret 1 ...................... <pYFactor>
-  [  5] extcall 21 .............................. return pYFactor
+  [  5] extcall 31 .............................. return pYFactor
   [  7] ret
 end
 
 on getTileWidth me
-  [  0] getprop 977 ............................. <pXFactor>
-  [  3] pusharglistnoret 1 ...................... <pXFactor>
-  [  5] extcall 21 .............................. return pXFactor
-  [  7] ret
+  [  0] getprop 50 .............................. <pXFactor>
+  [  2] pusharglistnoret 1 ...................... <pXFactor>
+  [  4] extcall 31 .............................. return pXFactor
+  [  6] ret
 end
 
 on emptyTile me, tX, tY
@@ -576,9 +576,9 @@ on emptyTile me, tX, tY
   [  7] getparam 2 .............................. <tY>
   [  9] pushint8 1 .............................. <1>
   [ 11] add ..................................... <tY + 1>
-  [ 12] getprop 981 ............................. <pPlaceMap>
+  [ 12] getprop 1021 ............................ <pPlaceMap>
   [ 15] pusharglist 1 ........................... <pPlaceMap>
-  [ 17] extcall 14 .............................. <count(pPlaceMap)>
+  [ 17] extcall 33 .............................. <count(pPlaceMap)>
   [ 19] lteq .................................... <(tY + 1) <= count(pPlaceMap)>
   [ 20] and ..................................... <((tY + 1) > 0) and ((tY + 1) <= count(pPlaceMap))>
   [ 21] jmpifz [101] ............................ if ((tY + 1) > 0) and ((tY + 1) <= count(pPlaceMap)) then / else
@@ -590,276 +590,276 @@ on emptyTile me, tX, tY
   [ 31] getparam 1 .............................. <tX>
   [ 33] pushint8 1 .............................. <1>
   [ 35] add ..................................... <tX + 1>
-  [ 36] getprop 981 ............................. <pPlaceMap>
+  [ 36] getprop 1021 ............................ <pPlaceMap>
   [ 39] getparam 2 .............................. <tY>
   [ 41] pushint8 1 .............................. <1>
   [ 43] add ..................................... <tY + 1>
   [ 44] pusharglist 2 ........................... <pPlaceMap, tY + 1>
-  [ 46] objcall 9 ............................... <pPlaceMap[tY + 1]>
+  [ 46] objcall 34 .............................. <pPlaceMap[tY + 1]>
   [ 48] pusharglist 1 ........................... <pPlaceMap[tY + 1]>
-  [ 50] extcall 14 .............................. <count(pPlaceMap[tY + 1])>
+  [ 50] extcall 33 .............................. <count(pPlaceMap[tY + 1])>
   [ 52] lteq .................................... <(tX + 1) <= count(pPlaceMap[tY + 1])>
   [ 53] and ..................................... <((tX + 1) > 0) and ((tX + 1) <= count(pPlaceMap[tY + 1]))>
   [ 54] jmpifz [ 93] ............................ if ((tX + 1) > 0) and ((tX + 1) <= count(pPlaceMap[tY + 1])) then / else
-  [ 57] getprop 981 ............................. <pPlaceMap>
+  [ 57] getprop 1021 ............................ <pPlaceMap>
   [ 60] getparam 2 .............................. <tY>
   [ 62] pushint8 1 .............................. <1>
   [ 64] add ..................................... <tY + 1>
   [ 65] pusharglist 2 ........................... <pPlaceMap, tY + 1>
-  [ 67] objcall 9 ............................... <pPlaceMap[tY + 1]>
+  [ 67] objcall 34 .............................. <pPlaceMap[tY + 1]>
   [ 69] getparam 1 .............................. <tX>
   [ 71] pushint8 1 .............................. <1>
   [ 73] add ..................................... <tX + 1>
   [ 74] pusharglist 2 ........................... <pPlaceMap[tY + 1], tX + 1>
-  [ 76] objcall 9 ............................... <pPlaceMap[tY + 1][tX + 1]>
+  [ 76] objcall 34 .............................. <pPlaceMap[tY + 1][tX + 1]>
   [ 78] pushint16 1000 .......................... <1000>
   [ 81] gt ...................................... <pPlaceMap[tY + 1][tX + 1] > 1000>
   [ 82] jmpifz [ 90] ............................ if pPlaceMap[tY + 1][tX + 1] > 1000 then
   [ 85] pushzero ................................ <0>
   [ 86] pusharglistnoret 1 ...................... <0>
-  [ 88] extcall 21 .............................. return 0
+  [ 88] extcall 31 .............................. return 0
   [ 90] jmp [ 98]
   [ 93] pushzero ................................ <0>
   [ 94] pusharglistnoret 1 ...................... <0>
-  [ 96] extcall 21 .............................. return 0
+  [ 96] extcall 31 .............................. return 0
   [ 98] jmp [106]
   [101] pushzero ................................ <0>
   [102] pusharglistnoret 1 ...................... <0>
-  [104] extcall 21 .............................. return 0
+  [104] extcall 31 .............................. return 0
   [106] pushint8 1 .............................. <1>
   [108] pusharglistnoret 1 ...................... <1>
-  [110] extcall 21 .............................. return 1
+  [110] extcall 31 .............................. return 1
   [112] ret
 end
 
 on print me
   [  0] pushcons 3 .............................. <"- - - - - - - - - - - - - - -">
   [  2] pusharglistnoret 1 ...................... <"- - - - - - - - - - - - - - -">
-  [  4] extcall 503 ............................. put "- - - - - - - - - - - - - - -"
+  [  4] extcall 555 ............................. put "- - - - - - - - - - - - - - -"
   [  7] pusharglistnoret 0 ...................... <>
-  [  9] extcall 503 ............................. put 
+  [  9] extcall 555 ............................. put 
   [ 12] pushcons 4 .............................. <"X offset ">
-  [ 14] getprop 974 ............................. <pXOffset>
+  [ 14] getprop 1015 ............................ <pXOffset>
   [ 17] joinstr ................................. <"X offset " & pXOffset>
   [ 18] pusharglistnoret 1 ...................... <"X offset " & pXOffset>
-  [ 20] extcall 503 ............................. put "X offset " & pXOffset
+  [ 20] extcall 555 ............................. put "X offset " & pXOffset
   [ 23] pushcons 5 .............................. <"Y offset ">
-  [ 25] getprop 975 ............................. <pYOffset>
+  [ 25] getprop 1016 ............................ <pYOffset>
   [ 28] joinstr ................................. <"Y offset " & pYOffset>
   [ 29] pusharglistnoret 1 ...................... <"Y offset " & pYOffset>
-  [ 31] extcall 503 ............................. put "Y offset " & pYOffset
+  [ 31] extcall 555 ............................. put "Y offset " & pYOffset
   [ 34] pushcons 6 .............................. <"Z offset ">
-  [ 36] getprop 976 ............................. <pZOffset>
+  [ 36] getprop 1017 ............................ <pZOffset>
   [ 39] joinstr ................................. <"Z offset " & pZOffset>
   [ 40] pusharglistnoret 1 ...................... <"Z offset " & pZOffset>
-  [ 42] extcall 503 ............................. put "Z offset " & pZOffset
+  [ 42] extcall 555 ............................. put "Z offset " & pZOffset
   [ 45] pushcons 7 .............................. <"X factor ">
-  [ 47] getprop 977 ............................. <pXFactor>
-  [ 50] joinstr ................................. <"X factor " & pXFactor>
-  [ 51] pusharglistnoret 1 ...................... <"X factor " & pXFactor>
-  [ 53] extcall 503 ............................. put "X factor " & pXFactor
-  [ 56] pushcons 8 .............................. <"Y factor ">
-  [ 58] getprop 978 ............................. <pYFactor>
-  [ 61] joinstr ................................. <"Y factor " & pYFactor>
-  [ 62] pusharglistnoret 1 ...................... <"Y factor " & pYFactor>
-  [ 64] extcall 503 ............................. put "Y factor " & pYFactor
-  [ 67] pushcons 9 .............................. <"H factor ">
-  [ 69] getprop 979 ............................. <pHFactor>
-  [ 72] joinstr ................................. <"H factor " & pHFactor>
-  [ 73] pusharglistnoret 1 ...................... <"H factor " & pHFactor>
-  [ 75] extcall 503 ............................. put "H factor " & pHFactor
-  [ 78] pusharglistnoret 0 ...................... <>
-  [ 80] extcall 503 ............................. put 
-  [ 83] pushcons 10 ............................. <"HeightMap:">
-  [ 85] pusharglistnoret 1 ...................... <"HeightMap:">
-  [ 87] extcall 503 ............................. put "HeightMap:"
-  [ 90] pusharglistnoret 0 ...................... <>
-  [ 92] extcall 503 ............................. put 
-  [ 95] pushint8 1 .............................. <1>
-  [ 97] setlocal 0
-  [ 99] getlocal 0
-  [101] getprop 980 ............................. <pHeightMap>
-  [104] getobjprop 14 ........................... <pHeightMap.count>
-  [106] lteq
-  [107] jmpifz [275] ............................ repeat with x = 1 to pHeightMap.count
-  [110] pushcons 0 .............................. <EMPTY>
-  [112] setlocal 1 .............................. tStr = EMPTY
-  [114] pushint8 1 .............................. <1>
-  [116] setlocal 2
-  [118] getlocal 2
-  [120] getprop 980 ............................. <pHeightMap>
-  [123] getlocal 0 .............................. <x>
-  [125] pusharglist 2 ........................... <pHeightMap, x>
-  [127] objcall 9 ............................... <pHeightMap[x]>
-  [129] getobjprop 14 ........................... <pHeightMap[x].count>
-  [131] lteq
-  [132] jmpifz [241] ............................ repeat with y = 1 to pHeightMap[x].count
-  [135] getprop 980 ............................. <pHeightMap>
-  [138] getlocal 0 .............................. <x>
-  [140] pusharglist 2 ........................... <pHeightMap, x>
-  [142] objcall 9 ............................... <pHeightMap[x]>
-  [144] getlocal 2 .............................. <y>
-  [146] pusharglist 2 ........................... <pHeightMap[x], y>
-  [148] objcall 9 ............................... <pHeightMap[x][y]>
-  [150] pushint32 100000 ........................ <100000>
-  [155] lt ...................................... <pHeightMap[x][y] < 100000>
-  [156] jmpifz [185] ............................ if pHeightMap[x][y] < 100000 then
-  [159] getlocal 1 .............................. <tStr>
-  [161] getprop 980 ............................. <pHeightMap>
-  [164] getlocal 0 .............................. <x>
-  [166] pusharglist 2 ........................... <pHeightMap, x>
-  [168] objcall 9 ............................... <pHeightMap[x]>
-  [170] getlocal 2 .............................. <y>
-  [172] pusharglist 2 ........................... <pHeightMap[x], y>
-  [174] objcall 9 ............................... <pHeightMap[x][y]>
-  [176] joinstr ................................. <tStr & pHeightMap[x][y]>
-  [177] pushcons 11 ............................. <".">
-  [179] joinstr ................................. <tStr & pHeightMap[x][y] & ".">
-  [180] setlocal 1 .............................. tStr = tStr & pHeightMap[x][y] & "."
-  [182] jmp [232] ............................... next repeat
-  [185] getprop 980 ............................. <pHeightMap>
-  [188] getlocal 0 .............................. <x>
-  [190] pusharglist 2 ........................... <pHeightMap, x>
-  [192] objcall 9 ............................... <pHeightMap[x]>
-  [194] getlocal 2 .............................. <y>
-  [196] pusharglist 2 ........................... <pHeightMap[x], y>
-  [198] objcall 9 ............................... <pHeightMap[x][y]>
-  [200] pushint32 200000 ........................ <200000>
-  [205] lt ...................................... <pHeightMap[x][y] < 200000>
-  [206] jmpifz [222] ............................ if pHeightMap[x][y] < 200000 then
-  [209] getlocal 1 .............................. <tStr>
-  [211] pushcons 1 .............................. <"x">
-  [213] joinstr ................................. <tStr & "x">
-  [214] pushcons 11 ............................. <".">
-  [216] joinstr ................................. <tStr & "x" & ".">
-  [217] setlocal 1 .............................. tStr = tStr & "x" & "."
-  [219] jmp [232] ............................... next repeat
-  [222] getlocal 1 .............................. <tStr>
-  [224] pushcons 11 ............................. <".">
-  [226] joinstr ................................. <tStr & ".">
-  [227] pushcons 11 ............................. <".">
-  [229] joinstr ................................. <tStr & "." & ".">
-  [230] setlocal 1 .............................. tStr = tStr & "." & "."
-  [232] pushint8 1
-  [234] getlocal 2
-  [236] add
-  [237] setlocal 2
-  [239] endrepeat [118]
-  [241] pusharglist 0 ........................... <>
-  [243] extcall 992 ............................. <SPACE>
-  [246] pusharglist 0 ........................... <>
-  [248] extcall 992 ............................. <SPACE>
-  [251] joinstr ................................. <SPACE & SPACE>
-  [252] getlocal 1 .............................. <tStr>
-  [254] joinstr ................................. <SPACE & SPACE & tStr>
-  [255] pusharglist 0 ........................... <>
-  [257] extcall 992 ............................. <SPACE>
-  [260] joinstr ................................. <SPACE & SPACE & tStr & SPACE>
-  [261] pusharglistnoret 1 ...................... <SPACE & SPACE & tStr & SPACE>
-  [263] extcall 503 ............................. put SPACE & SPACE & tStr & SPACE
-  [266] pushint8 1
-  [268] getlocal 0
-  [270] add
-  [271] setlocal 0
-  [273] endrepeat [ 99]
-  [275] pusharglistnoret 0 ...................... <>
-  [277] extcall 503 ............................. put 
-  [280] pushcons 12 ............................. <"PlaceMap:">
-  [282] pusharglistnoret 1 ...................... <"PlaceMap:">
-  [284] extcall 503 ............................. put "PlaceMap:"
-  [287] pusharglistnoret 0 ...................... <>
-  [289] extcall 503 ............................. put 
-  [292] pushint8 1 .............................. <1>
-  [294] setlocal 0
-  [296] getlocal 0
-  [298] getprop 981 ............................. <pPlaceMap>
-  [301] getobjprop 14 ........................... <pPlaceMap.count>
-  [303] lteq
-  [304] jmpifz [472] ............................ repeat with x = 1 to pPlaceMap.count
-  [307] pushcons 0 .............................. <EMPTY>
-  [309] setlocal 1 .............................. tStr = EMPTY
-  [311] pushint8 1 .............................. <1>
-  [313] setlocal 2
-  [315] getlocal 2
-  [317] getprop 981 ............................. <pPlaceMap>
-  [320] getlocal 0 .............................. <x>
-  [322] pusharglist 2 ........................... <pPlaceMap, x>
-  [324] objcall 9 ............................... <pPlaceMap[x]>
-  [326] getobjprop 14 ........................... <pPlaceMap[x].count>
-  [328] lteq
-  [329] jmpifz [438] ............................ repeat with y = 1 to pPlaceMap[x].count
-  [332] getprop 981 ............................. <pPlaceMap>
-  [335] getlocal 0 .............................. <x>
-  [337] pusharglist 2 ........................... <pPlaceMap, x>
-  [339] objcall 9 ............................... <pPlaceMap[x]>
-  [341] getlocal 2 .............................. <y>
-  [343] pusharglist 2 ........................... <pPlaceMap[x], y>
-  [345] objcall 9 ............................... <pPlaceMap[x][y]>
-  [347] pushint32 100000 ........................ <100000>
-  [352] lt ...................................... <pPlaceMap[x][y] < 100000>
-  [353] jmpifz [382] ............................ if pPlaceMap[x][y] < 100000 then
-  [356] getlocal 1 .............................. <tStr>
-  [358] getprop 981 ............................. <pPlaceMap>
-  [361] getlocal 0 .............................. <x>
-  [363] pusharglist 2 ........................... <pPlaceMap, x>
-  [365] objcall 9 ............................... <pPlaceMap[x]>
-  [367] getlocal 2 .............................. <y>
-  [369] pusharglist 2 ........................... <pPlaceMap[x], y>
-  [371] objcall 9 ............................... <pPlaceMap[x][y]>
-  [373] joinstr ................................. <tStr & pPlaceMap[x][y]>
-  [374] pushcons 11 ............................. <".">
-  [376] joinstr ................................. <tStr & pPlaceMap[x][y] & ".">
-  [377] setlocal 1 .............................. tStr = tStr & pPlaceMap[x][y] & "."
-  [379] jmp [429] ............................... next repeat
-  [382] getprop 981 ............................. <pPlaceMap>
-  [385] getlocal 0 .............................. <x>
-  [387] pusharglist 2 ........................... <pPlaceMap, x>
-  [389] objcall 9 ............................... <pPlaceMap[x]>
-  [391] getlocal 2 .............................. <y>
-  [393] pusharglist 2 ........................... <pPlaceMap[x], y>
-  [395] objcall 9 ............................... <pPlaceMap[x][y]>
-  [397] pushint32 200000 ........................ <200000>
-  [402] lt ...................................... <pPlaceMap[x][y] < 200000>
-  [403] jmpifz [419] ............................ if pPlaceMap[x][y] < 200000 then
-  [406] getlocal 1 .............................. <tStr>
-  [408] pushcons 1 .............................. <"x">
-  [410] joinstr ................................. <tStr & "x">
-  [411] pushcons 11 ............................. <".">
-  [413] joinstr ................................. <tStr & "x" & ".">
-  [414] setlocal 1 .............................. tStr = tStr & "x" & "."
-  [416] jmp [429] ............................... next repeat
-  [419] getlocal 1 .............................. <tStr>
-  [421] pushcons 11 ............................. <".">
-  [423] joinstr ................................. <tStr & ".">
-  [424] pushcons 11 ............................. <".">
-  [426] joinstr ................................. <tStr & "." & ".">
-  [427] setlocal 1 .............................. tStr = tStr & "." & "."
-  [429] pushint8 1
-  [431] getlocal 2
-  [433] add
-  [434] setlocal 2
-  [436] endrepeat [315]
-  [438] pusharglist 0 ........................... <>
-  [440] extcall 992 ............................. <SPACE>
-  [443] pusharglist 0 ........................... <>
-  [445] extcall 992 ............................. <SPACE>
-  [448] joinstr ................................. <SPACE & SPACE>
-  [449] getlocal 1 .............................. <tStr>
-  [451] joinstr ................................. <SPACE & SPACE & tStr>
-  [452] pusharglist 0 ........................... <>
-  [454] extcall 992 ............................. <SPACE>
-  [457] joinstr ................................. <SPACE & SPACE & tStr & SPACE>
-  [458] pusharglistnoret 1 ...................... <SPACE & SPACE & tStr & SPACE>
-  [460] extcall 503 ............................. put SPACE & SPACE & tStr & SPACE
-  [463] pushint8 1
-  [465] getlocal 0
-  [467] add
-  [468] setlocal 0
-  [470] endrepeat [296]
-  [472] pusharglistnoret 0 ...................... <>
-  [474] extcall 503 ............................. put 
-  [477] pushcons 3 .............................. <"- - - - - - - - - - - - - - -">
-  [479] pusharglistnoret 1 ...................... <"- - - - - - - - - - - - - - -">
-  [481] extcall 503 ............................. put "- - - - - - - - - - - - - - -"
-  [484] ret
+  [ 47] getprop 50 .............................. <pXFactor>
+  [ 49] joinstr ................................. <"X factor " & pXFactor>
+  [ 50] pusharglistnoret 1 ...................... <"X factor " & pXFactor>
+  [ 52] extcall 555 ............................. put "X factor " & pXFactor
+  [ 55] pushcons 8 .............................. <"Y factor ">
+  [ 57] getprop 1018 ............................ <pYFactor>
+  [ 60] joinstr ................................. <"Y factor " & pYFactor>
+  [ 61] pusharglistnoret 1 ...................... <"Y factor " & pYFactor>
+  [ 63] extcall 555 ............................. put "Y factor " & pYFactor
+  [ 66] pushcons 9 .............................. <"H factor ">
+  [ 68] getprop 1019 ............................ <pHFactor>
+  [ 71] joinstr ................................. <"H factor " & pHFactor>
+  [ 72] pusharglistnoret 1 ...................... <"H factor " & pHFactor>
+  [ 74] extcall 555 ............................. put "H factor " & pHFactor
+  [ 77] pusharglistnoret 0 ...................... <>
+  [ 79] extcall 555 ............................. put 
+  [ 82] pushcons 10 ............................. <"HeightMap:">
+  [ 84] pusharglistnoret 1 ...................... <"HeightMap:">
+  [ 86] extcall 555 ............................. put "HeightMap:"
+  [ 89] pusharglistnoret 0 ...................... <>
+  [ 91] extcall 555 ............................. put 
+  [ 94] pushint8 1 .............................. <1>
+  [ 96] setlocal 0
+  [ 98] getlocal 0
+  [100] getprop 1020 ............................ <pHeightMap>
+  [103] getobjprop 33 ........................... <pHeightMap.count>
+  [105] lteq
+  [106] jmpifz [274] ............................ repeat with x = 1 to pHeightMap.count
+  [109] pushcons 0 .............................. <EMPTY>
+  [111] setlocal 1 .............................. tStr = EMPTY
+  [113] pushint8 1 .............................. <1>
+  [115] setlocal 2
+  [117] getlocal 2
+  [119] getprop 1020 ............................ <pHeightMap>
+  [122] getlocal 0 .............................. <x>
+  [124] pusharglist 2 ........................... <pHeightMap, x>
+  [126] objcall 34 .............................. <pHeightMap[x]>
+  [128] getobjprop 33 ........................... <pHeightMap[x].count>
+  [130] lteq
+  [131] jmpifz [240] ............................ repeat with y = 1 to pHeightMap[x].count
+  [134] getprop 1020 ............................ <pHeightMap>
+  [137] getlocal 0 .............................. <x>
+  [139] pusharglist 2 ........................... <pHeightMap, x>
+  [141] objcall 34 .............................. <pHeightMap[x]>
+  [143] getlocal 2 .............................. <y>
+  [145] pusharglist 2 ........................... <pHeightMap[x], y>
+  [147] objcall 34 .............................. <pHeightMap[x][y]>
+  [149] pushint32 100000 ........................ <100000>
+  [154] lt ...................................... <pHeightMap[x][y] < 100000>
+  [155] jmpifz [184] ............................ if pHeightMap[x][y] < 100000 then
+  [158] getlocal 1 .............................. <tStr>
+  [160] getprop 1020 ............................ <pHeightMap>
+  [163] getlocal 0 .............................. <x>
+  [165] pusharglist 2 ........................... <pHeightMap, x>
+  [167] objcall 34 .............................. <pHeightMap[x]>
+  [169] getlocal 2 .............................. <y>
+  [171] pusharglist 2 ........................... <pHeightMap[x], y>
+  [173] objcall 34 .............................. <pHeightMap[x][y]>
+  [175] joinstr ................................. <tStr & pHeightMap[x][y]>
+  [176] pushcons 11 ............................. <".">
+  [178] joinstr ................................. <tStr & pHeightMap[x][y] & ".">
+  [179] setlocal 1 .............................. tStr = tStr & pHeightMap[x][y] & "."
+  [181] jmp [231] ............................... next repeat
+  [184] getprop 1020 ............................ <pHeightMap>
+  [187] getlocal 0 .............................. <x>
+  [189] pusharglist 2 ........................... <pHeightMap, x>
+  [191] objcall 34 .............................. <pHeightMap[x]>
+  [193] getlocal 2 .............................. <y>
+  [195] pusharglist 2 ........................... <pHeightMap[x], y>
+  [197] objcall 34 .............................. <pHeightMap[x][y]>
+  [199] pushint32 200000 ........................ <200000>
+  [204] lt ...................................... <pHeightMap[x][y] < 200000>
+  [205] jmpifz [221] ............................ if pHeightMap[x][y] < 200000 then
+  [208] getlocal 1 .............................. <tStr>
+  [210] pushcons 1 .............................. <"x">
+  [212] joinstr ................................. <tStr & "x">
+  [213] pushcons 11 ............................. <".">
+  [215] joinstr ................................. <tStr & "x" & ".">
+  [216] setlocal 1 .............................. tStr = tStr & "x" & "."
+  [218] jmp [231] ............................... next repeat
+  [221] getlocal 1 .............................. <tStr>
+  [223] pushcons 11 ............................. <".">
+  [225] joinstr ................................. <tStr & ".">
+  [226] pushcons 11 ............................. <".">
+  [228] joinstr ................................. <tStr & "." & ".">
+  [229] setlocal 1 .............................. tStr = tStr & "." & "."
+  [231] pushint8 1
+  [233] getlocal 2
+  [235] add
+  [236] setlocal 2
+  [238] endrepeat [117]
+  [240] pusharglist 0 ........................... <>
+  [242] extcall 1032 ............................ <SPACE>
+  [245] pusharglist 0 ........................... <>
+  [247] extcall 1032 ............................ <SPACE>
+  [250] joinstr ................................. <SPACE & SPACE>
+  [251] getlocal 1 .............................. <tStr>
+  [253] joinstr ................................. <SPACE & SPACE & tStr>
+  [254] pusharglist 0 ........................... <>
+  [256] extcall 1032 ............................ <SPACE>
+  [259] joinstr ................................. <SPACE & SPACE & tStr & SPACE>
+  [260] pusharglistnoret 1 ...................... <SPACE & SPACE & tStr & SPACE>
+  [262] extcall 555 ............................. put SPACE & SPACE & tStr & SPACE
+  [265] pushint8 1
+  [267] getlocal 0
+  [269] add
+  [270] setlocal 0
+  [272] endrepeat [ 98]
+  [274] pusharglistnoret 0 ...................... <>
+  [276] extcall 555 ............................. put 
+  [279] pushcons 12 ............................. <"PlaceMap:">
+  [281] pusharglistnoret 1 ...................... <"PlaceMap:">
+  [283] extcall 555 ............................. put "PlaceMap:"
+  [286] pusharglistnoret 0 ...................... <>
+  [288] extcall 555 ............................. put 
+  [291] pushint8 1 .............................. <1>
+  [293] setlocal 0
+  [295] getlocal 0
+  [297] getprop 1021 ............................ <pPlaceMap>
+  [300] getobjprop 33 ........................... <pPlaceMap.count>
+  [302] lteq
+  [303] jmpifz [471] ............................ repeat with x = 1 to pPlaceMap.count
+  [306] pushcons 0 .............................. <EMPTY>
+  [308] setlocal 1 .............................. tStr = EMPTY
+  [310] pushint8 1 .............................. <1>
+  [312] setlocal 2
+  [314] getlocal 2
+  [316] getprop 1021 ............................ <pPlaceMap>
+  [319] getlocal 0 .............................. <x>
+  [321] pusharglist 2 ........................... <pPlaceMap, x>
+  [323] objcall 34 .............................. <pPlaceMap[x]>
+  [325] getobjprop 33 ........................... <pPlaceMap[x].count>
+  [327] lteq
+  [328] jmpifz [437] ............................ repeat with y = 1 to pPlaceMap[x].count
+  [331] getprop 1021 ............................ <pPlaceMap>
+  [334] getlocal 0 .............................. <x>
+  [336] pusharglist 2 ........................... <pPlaceMap, x>
+  [338] objcall 34 .............................. <pPlaceMap[x]>
+  [340] getlocal 2 .............................. <y>
+  [342] pusharglist 2 ........................... <pPlaceMap[x], y>
+  [344] objcall 34 .............................. <pPlaceMap[x][y]>
+  [346] pushint32 100000 ........................ <100000>
+  [351] lt ...................................... <pPlaceMap[x][y] < 100000>
+  [352] jmpifz [381] ............................ if pPlaceMap[x][y] < 100000 then
+  [355] getlocal 1 .............................. <tStr>
+  [357] getprop 1021 ............................ <pPlaceMap>
+  [360] getlocal 0 .............................. <x>
+  [362] pusharglist 2 ........................... <pPlaceMap, x>
+  [364] objcall 34 .............................. <pPlaceMap[x]>
+  [366] getlocal 2 .............................. <y>
+  [368] pusharglist 2 ........................... <pPlaceMap[x], y>
+  [370] objcall 34 .............................. <pPlaceMap[x][y]>
+  [372] joinstr ................................. <tStr & pPlaceMap[x][y]>
+  [373] pushcons 11 ............................. <".">
+  [375] joinstr ................................. <tStr & pPlaceMap[x][y] & ".">
+  [376] setlocal 1 .............................. tStr = tStr & pPlaceMap[x][y] & "."
+  [378] jmp [428] ............................... next repeat
+  [381] getprop 1021 ............................ <pPlaceMap>
+  [384] getlocal 0 .............................. <x>
+  [386] pusharglist 2 ........................... <pPlaceMap, x>
+  [388] objcall 34 .............................. <pPlaceMap[x]>
+  [390] getlocal 2 .............................. <y>
+  [392] pusharglist 2 ........................... <pPlaceMap[x], y>
+  [394] objcall 34 .............................. <pPlaceMap[x][y]>
+  [396] pushint32 200000 ........................ <200000>
+  [401] lt ...................................... <pPlaceMap[x][y] < 200000>
+  [402] jmpifz [418] ............................ if pPlaceMap[x][y] < 200000 then
+  [405] getlocal 1 .............................. <tStr>
+  [407] pushcons 1 .............................. <"x">
+  [409] joinstr ................................. <tStr & "x">
+  [410] pushcons 11 ............................. <".">
+  [412] joinstr ................................. <tStr & "x" & ".">
+  [413] setlocal 1 .............................. tStr = tStr & "x" & "."
+  [415] jmp [428] ............................... next repeat
+  [418] getlocal 1 .............................. <tStr>
+  [420] pushcons 11 ............................. <".">
+  [422] joinstr ................................. <tStr & ".">
+  [423] pushcons 11 ............................. <".">
+  [425] joinstr ................................. <tStr & "." & ".">
+  [426] setlocal 1 .............................. tStr = tStr & "." & "."
+  [428] pushint8 1
+  [430] getlocal 2
+  [432] add
+  [433] setlocal 2
+  [435] endrepeat [314]
+  [437] pusharglist 0 ........................... <>
+  [439] extcall 1032 ............................ <SPACE>
+  [442] pusharglist 0 ........................... <>
+  [444] extcall 1032 ............................ <SPACE>
+  [447] joinstr ................................. <SPACE & SPACE>
+  [448] getlocal 1 .............................. <tStr>
+  [450] joinstr ................................. <SPACE & SPACE & tStr>
+  [451] pusharglist 0 ........................... <>
+  [453] extcall 1032 ............................ <SPACE>
+  [456] joinstr ................................. <SPACE & SPACE & tStr & SPACE>
+  [457] pusharglistnoret 1 ...................... <SPACE & SPACE & tStr & SPACE>
+  [459] extcall 555 ............................. put SPACE & SPACE & tStr & SPACE
+  [462] pushint8 1
+  [464] getlocal 0
+  [466] add
+  [467] setlocal 0
+  [469] endrepeat [295]
+  [471] pusharglistnoret 0 ...................... <>
+  [473] extcall 555 ............................. put 
+  [476] pushcons 3 .............................. <"- - - - - - - - - - - - - - -">
+  [478] pusharglistnoret 1 ...................... <"- - - - - - - - - - - - - - -">
+  [480] extcall 555 ............................. put "- - - - - - - - - - - - - - -"
+  [483] ret
 end

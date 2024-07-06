@@ -193,7 +193,7 @@ on handle_fullgamestatus me, tMsg
   if not getObject(#session).exists(#gamespace_world_info) then
     return 0
   end if
-  tGameSpaceData = getObject(#session).GET(#gamespace_world_info)
+  tGameSpaceData = getObject(#session).get(#gamespace_world_info)
   if listp(tGameSpaceData) then
     tGameSystem.getVarMgr().set(#tournament_flag, tGameSpaceData[#tournament_flag])
   end if
@@ -325,10 +325,10 @@ on handle_gameplayerinfo me, tMsg
   tdata = [:]
   tNumPlayers = tConn.GetIntFrom()
   repeat with i = 1 to tNumPlayers
-    tID = tConn.GetIntFrom()
+    tid = tConn.GetIntFrom()
     tValue = tConn.GetStrFrom()
     tSkill = tConn.GetStrFrom()
-    tdata.addProp(string(tID), [#id: tID, #skillvalue: tValue, #skilllevel: tSkill])
+    tdata.addProp(string(tid), [#id: tid, #skillvalue: tValue, #skilllevel: tSkill])
   end repeat
   return me.getGameSystem().sendGameSystemEvent(#gameplayerinfo, tdata)
 end

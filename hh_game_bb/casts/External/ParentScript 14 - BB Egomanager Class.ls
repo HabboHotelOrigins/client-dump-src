@@ -55,7 +55,7 @@ on handleUserCreated me, tName, tUserStrId
   if not getObject(#session).exists("user_index") then
     return 0
   end if
-  if tUserStrId <> getObject(#session).GET("user_index") then
+  if tUserStrId <> getObject(#session).get("user_index") then
     return 0
   end if
   return getObject(#room_interface).showArrowHiliter(tUserStrId)
@@ -80,7 +80,7 @@ on getGameObject me
   if not tSession.exists("user_game_index") then
     return error(me, "Own user not found.", #getGameObject)
   end if
-  tUserIndex = tSession.GET("user_game_index")
+  tUserIndex = tSession.get("user_game_index")
   return tGameSystem.getGameObject(tUserIndex)
 end
 

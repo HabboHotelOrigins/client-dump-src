@@ -3,208 +3,208 @@ property pObjectId
 on construct me
   [  0] pushint8 1 .............................. <1>
   [  2] pusharglistnoret 1 ...................... <1>
-  [  4] extcall 28 .............................. return 1
+  [  4] extcall 13 .............................. return 1
   [  6] ret
 end
 
 on deconstruct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglistnoret 1 ...................... <me>
-  [  4] objcall 315 ............................. me.removeRoomObject()
-  [  7] pushint8 1 .............................. <1>
-  [  9] pusharglistnoret 1 ...................... <1>
-  [ 11] extcall 28 .............................. return 1
-  [ 13] ret
+  [  4] objcall 5 ............................... me.removeRoomObject()
+  [  6] pushint8 1 .............................. <1>
+  [  8] pusharglistnoret 1 ...................... <1>
+  [ 10] extcall 13 .............................. return 1
+  [ 12] ret
 end
 
 on define me, tdata
   [  0] getparam 0 .............................. <me>
   [  2] getparam 1 .............................. <tdata>
   [  4] pusharglist 2 ........................... <me, tdata>
-  [  6] objcall 314 ............................. <me.createRoomObject(tdata)>
-  [  9] pusharglistnoret 1 ...................... <me.createRoomObject(tdata)>
-  [ 11] extcall 28 .............................. return me.createRoomObject(tdata)
-  [ 13] ret
+  [  6] objcall 4 ............................... <me.createRoomObject(tdata)>
+  [  8] pusharglistnoret 1 ...................... <me.createRoomObject(tdata)>
+  [ 10] extcall 13 .............................. return me.createRoomObject(tdata)
+  [ 12] ret
 end
 
 on createRoomObject me, tdata
   [  0] getparam 1 .............................. <tdata>
-  [  2] pushsymb 197 ............................ <#id>
+  [  2] pushsymb 88 ............................. <#id>
   [  4] getparam 1 .............................. <tdata>
-  [  6] pushsymb 374 ............................ <#class>
-  [  9] pusharglist 2 ........................... <tdata, #class>
-  [ 11] objcall 31 .............................. <tdata[#class]>
-  [ 13] pushcons 0 .............................. <"_">
-  [ 15] joinstr ................................. <tdata[#class] & "_">
-  [ 16] getparam 1 .............................. <tdata>
-  [ 18] pushsymb 197 ............................ <#id>
-  [ 20] pusharglist 2 ........................... <tdata, #id>
-  [ 22] objcall 31 .............................. <tdata[#id]>
-  [ 24] joinstr ................................. <tdata[#class] & "_" & tdata[#id]>
-  [ 25] pusharglistnoret 3 ...................... <tdata, #id, tdata[#class] & "_" & tdata[#id]>
-  [ 27] objcall 123 ............................. tdata[#id] = tdata[#class] & "_" & tdata[#id]
-  [ 29] getparam 1 .............................. <tdata>
-  [ 31] pushsymb 197 ............................ <#id>
-  [ 33] pusharglist 2 ........................... <tdata, #id>
-  [ 35] objcall 31 .............................. <tdata[#id]>
-  [ 37] setprop 382 ............................. pObjectId = tdata[#id]
-  [ 40] getparam 1 .............................. <tdata>
-  [ 42] pushsymb 383 ............................ <#direction>
-  [ 45] pushzero ................................ <0>
-  [ 46] pushzero ................................ <0>
-  [ 47] pusharglist 2 ........................... <[0, 0]>
-  [ 49] pushlist ................................ <[0, 0]>
-  [ 50] pusharglistnoret 3 ...................... <tdata, #direction, [0, 0]>
-  [ 52] objcall 123 ............................. tdata[#direction] = [0, 0]
-  [ 54] getparam 1 .............................. <tdata>
-  [ 56] pushsymb 384 ............................ <#altitude>
-  [ 59] getparam 1 .............................. <tdata>
-  [ 61] pushsymb 62 ............................. <#z>
-  [ 63] pusharglist 2 ........................... <tdata, #z>
-  [ 65] objcall 31 .............................. <tdata[#z]>
-  [ 67] pusharglistnoret 3 ...................... <tdata, #altitude, tdata[#z]>
-  [ 69] objcall 123 ............................. tdata[#altitude] = tdata[#z]
-  [ 71] getparam 1 .............................. <tdata>
-  [ 73] pushsymb 385 ............................ <#dimensions>
-  [ 76] pushint8 1 .............................. <1>
-  [ 78] pushint8 1 .............................. <1>
-  [ 80] pusharglist 2 ........................... <[1, 1]>
-  [ 82] pushlist ................................ <[1, 1]>
-  [ 83] pusharglistnoret 3 ...................... <tdata, #dimensions, [1, 1]>
-  [ 85] objcall 123 ............................. tdata[#dimensions] = [1, 1]
-  [ 87] pushsymb 386 ............................ <#room_component>
-  [ 90] pusharglist 1 ........................... <#room_component>
-  [ 92] extcall 166 ............................. <getObject(#room_component)>
-  [ 94] setlocal 0 .............................. tRoomComponent = getObject(#room_component)
-  [ 96] getlocal 0 .............................. <tRoomComponent>
-  [ 98] pushzero ................................ <0>
-  [ 99] eq ...................................... <tRoomComponent = 0>
-  [100] jmpifz [108] ............................ if tRoomComponent = 0 then
-  [103] pushzero ................................ <0>
-  [104] pusharglistnoret 1 ...................... <0>
-  [106] extcall 28 .............................. return 0
-  [108] getlocal 0 .............................. <tRoomComponent>
-  [110] pusharglist 1 ........................... <tRoomComponent>
-  [112] objcall 387 ............................. <tRoomComponent.getClassContainer()>
-  [115] setlocal 1 .............................. tClassContainer = tRoomComponent.getClassContainer()
-  [117] getlocal 1 .............................. <tClassContainer>
-  [119] pushzero ................................ <0>
-  [120] eq ...................................... <tClassContainer = 0>
-  [121] jmpifz [139] ............................ if tClassContainer = 0 then
-  [124] getparam 0 .............................. <me>
-  [126] pushcons 1 .............................. <"Room class container not found!">
-  [128] pushsymb 314 ............................ <#createRoomObject>
-  [131] pusharglist 3 ........................... <me, "Room class container not found!", #createRoomObject>
-  [133] extcall 173 ............................. <error(me, "Room class container not found!", #createRoomObject)>
-  [135] pusharglistnoret 1 ...................... <error(me, "Room class container not found!", #createRoomObject)>
-  [137] extcall 28 .............................. return error(me, "Room class container not found!", #createRoomObject)
-  [139] getlocal 1 .............................. <tClassContainer>
+  [  6] pushsymb 22 ............................. <#class>
+  [  8] pusharglist 2 ........................... <tdata, #class>
+  [ 10] objcall 18 .............................. <tdata[#class]>
+  [ 12] pushcons 0 .............................. <"_">
+  [ 14] joinstr ................................. <tdata[#class] & "_">
+  [ 15] getparam 1 .............................. <tdata>
+  [ 17] pushsymb 88 ............................. <#id>
+  [ 19] pusharglist 2 ........................... <tdata, #id>
+  [ 21] objcall 18 .............................. <tdata[#id]>
+  [ 23] joinstr ................................. <tdata[#class] & "_" & tdata[#id]>
+  [ 24] pusharglistnoret 3 ...................... <tdata, #id, tdata[#class] & "_" & tdata[#id]>
+  [ 26] objcall 21 .............................. tdata[#id] = tdata[#class] & "_" & tdata[#id]
+  [ 28] getparam 1 .............................. <tdata>
+  [ 30] pushsymb 88 ............................. <#id>
+  [ 32] pusharglist 2 ........................... <tdata, #id>
+  [ 34] objcall 18 .............................. <tdata[#id]>
+  [ 36] setprop 225 ............................. pObjectId = tdata[#id]
+  [ 38] getparam 1 .............................. <tdata>
+  [ 40] pushsymb 44 ............................. <#direction>
+  [ 42] pushzero ................................ <0>
+  [ 43] pushzero ................................ <0>
+  [ 44] pusharglist 2 ........................... <[0, 0]>
+  [ 46] pushlist ................................ <[0, 0]>
+  [ 47] pusharglistnoret 3 ...................... <tdata, #direction, [0, 0]>
+  [ 49] objcall 21 .............................. tdata[#direction] = [0, 0]
+  [ 51] getparam 1 .............................. <tdata>
+  [ 53] pushsymb 226 ............................ <#altitude>
+  [ 55] getparam 1 .............................. <tdata>
+  [ 57] pushsymb 12 ............................. <#z>
+  [ 59] pusharglist 2 ........................... <tdata, #z>
+  [ 61] objcall 18 .............................. <tdata[#z]>
+  [ 63] pusharglistnoret 3 ...................... <tdata, #altitude, tdata[#z]>
+  [ 65] objcall 21 .............................. tdata[#altitude] = tdata[#z]
+  [ 67] getparam 1 .............................. <tdata>
+  [ 69] pushsymb 227 ............................ <#dimensions>
+  [ 71] pushint8 1 .............................. <1>
+  [ 73] pushint8 1 .............................. <1>
+  [ 75] pusharglist 2 ........................... <[1, 1]>
+  [ 77] pushlist ................................ <[1, 1]>
+  [ 78] pusharglistnoret 3 ...................... <tdata, #dimensions, [1, 1]>
+  [ 80] objcall 21 .............................. tdata[#dimensions] = [1, 1]
+  [ 82] pushsymb 228 ............................ <#room_component>
+  [ 84] pusharglist 1 ........................... <#room_component>
+  [ 86] extcall 153 ............................. <getObject(#room_component)>
+  [ 88] setlocal 0 .............................. tRoomComponent = getObject(#room_component)
+  [ 90] getlocal 0 .............................. <tRoomComponent>
+  [ 92] pushzero ................................ <0>
+  [ 93] eq ...................................... <tRoomComponent = 0>
+  [ 94] jmpifz [102] ............................ if tRoomComponent = 0 then
+  [ 97] pushzero ................................ <0>
+  [ 98] pusharglistnoret 1 ...................... <0>
+  [100] extcall 13 .............................. return 0
+  [102] getlocal 0 .............................. <tRoomComponent>
+  [104] pusharglist 1 ........................... <tRoomComponent>
+  [106] objcall 229 ............................. <tRoomComponent.getClassContainer()>
+  [108] setlocal 1 .............................. tClassContainer = tRoomComponent.getClassContainer()
+  [110] getlocal 1 .............................. <tClassContainer>
+  [112] pushzero ................................ <0>
+  [113] eq ...................................... <tClassContainer = 0>
+  [114] jmpifz [131] ............................ if tClassContainer = 0 then
+  [117] getparam 0 .............................. <me>
+  [119] pushcons 1 .............................. <"Room class container not found!">
+  [121] pushsymb 4 .............................. <#createRoomObject>
+  [123] pusharglist 3 ........................... <me, "Room class container not found!", #createRoomObject>
+  [125] extcall 19 .............................. <error(me, "Room class container not found!", #createRoomObject)>
+  [127] pusharglistnoret 1 ...................... <error(me, "Room class container not found!", #createRoomObject)>
+  [129] extcall 13 .............................. return error(me, "Room class container not found!", #createRoomObject)
+  [131] getlocal 1 .............................. <tClassContainer>
+  [133] getparam 1 .............................. <tdata>
+  [135] pushcons 2 .............................. <"class">
+  [137] pusharglist 2 ........................... <tdata, "class">
+  [139] objcall 18 .............................. <tdata["class"]>
   [141] getparam 1 .............................. <tdata>
-  [143] pushcons 2 .............................. <"class">
-  [145] pusharglist 2 ........................... <tdata, "class">
-  [147] objcall 31 .............................. <tdata["class"]>
-  [149] getparam 1 .............................. <tdata>
-  [151] pushsymb 375 ............................ <#classID>
-  [154] pusharglist 2 ........................... <tdata, #classID>
-  [156] objcall 31 .............................. <tdata[#classID]>
-  [158] pusharglist 1 ........................... <tdata[#classID]>
-  [160] extcall 344 ............................. <getClassVariable(tdata[#classID])>
-  [163] pusharglistnoret 3 ...................... <tClassContainer, tdata["class"], getClassVariable(tdata[#classID])>
-  [165] objcall 388 ............................. tClassContainer.set(tdata["class"], getClassVariable(tdata[#classID]))
-  [168] getlocal 0 .............................. <tRoomComponent>
-  [170] getparam 1 .............................. <tdata>
-  [172] pusharglist 2 ........................... <tRoomComponent, tdata>
-  [174] objcall 389 ............................. <tRoomComponent.validateActiveObjects(tdata)>
-  [177] pusharglistnoret 1 ...................... <tRoomComponent.validateActiveObjects(tdata)>
-  [179] extcall 28 .............................. return tRoomComponent.validateActiveObjects(tdata)
-  [181] ret
+  [143] pushsymb 27 ............................. <#classID>
+  [145] pusharglist 2 ........................... <tdata, #classID>
+  [147] objcall 18 .............................. <tdata[#classID]>
+  [149] pusharglist 1 ........................... <tdata[#classID]>
+  [151] extcall 40 .............................. <getClassVariable(tdata[#classID])>
+  [153] pusharglistnoret 3 ...................... <tClassContainer, tdata["class"], getClassVariable(tdata[#classID])>
+  [155] objcall 230 ............................. tClassContainer.set(tdata["class"], getClassVariable(tdata[#classID]))
+  [157] getlocal 0 .............................. <tRoomComponent>
+  [159] getparam 1 .............................. <tdata>
+  [161] pusharglist 2 ........................... <tRoomComponent, tdata>
+  [163] objcall 231 ............................. <tRoomComponent.validateActiveObjects(tdata)>
+  [165] pusharglistnoret 1 ...................... <tRoomComponent.validateActiveObjects(tdata)>
+  [167] extcall 13 .............................. return tRoomComponent.validateActiveObjects(tdata)
+  [169] ret
 end
 
 on getRoomObject me
-  [  0] pushsymb 386 ............................ <#room_component>
-  [  3] pusharglist 1 ........................... <#room_component>
-  [  5] extcall 166 ............................. <getObject(#room_component)>
-  [  7] setlocal 0 .............................. tRoomComponentObj = getObject(#room_component)
-  [  9] getlocal 0 .............................. <tRoomComponentObj>
-  [ 11] pushzero ................................ <0>
-  [ 12] eq ...................................... <tRoomComponentObj = 0>
-  [ 13] jmpifz [ 31] ............................ if tRoomComponentObj = 0 then
-  [ 16] getparam 0 .............................. <me>
-  [ 18] pushcons 3 .............................. <"Room component unavailable!">
-  [ 20] pushsymb 346 ............................ <#getRoomObject>
-  [ 23] pusharglist 3 ........................... <me, "Room component unavailable!", #getRoomObject>
-  [ 25] extcall 173 ............................. <error(me, "Room component unavailable!", #getRoomObject)>
-  [ 27] pusharglistnoret 1 ...................... <error(me, "Room component unavailable!", #getRoomObject)>
-  [ 29] extcall 28 .............................. return error(me, "Room component unavailable!", #getRoomObject)
-  [ 31] getlocal 0 .............................. <tRoomComponentObj>
-  [ 33] getprop 382 ............................. <pObjectId>
-  [ 36] pusharglist 2 ........................... <tRoomComponentObj, pObjectId>
-  [ 38] objcall 395 ............................. <tRoomComponentObj.getActiveObject(pObjectId)>
-  [ 41] pusharglistnoret 1 ...................... <tRoomComponentObj.getActiveObject(pObjectId)>
-  [ 43] extcall 28 .............................. return tRoomComponentObj.getActiveObject(pObjectId)
-  [ 45] ret
+  [  0] pushsymb 228 ............................ <#room_component>
+  [  2] pusharglist 1 ........................... <#room_component>
+  [  4] extcall 153 ............................. <getObject(#room_component)>
+  [  6] setlocal 0 .............................. tRoomComponentObj = getObject(#room_component)
+  [  8] getlocal 0 .............................. <tRoomComponentObj>
+  [ 10] pushzero ................................ <0>
+  [ 11] eq ...................................... <tRoomComponentObj = 0>
+  [ 12] jmpifz [ 29] ............................ if tRoomComponentObj = 0 then
+  [ 15] getparam 0 .............................. <me>
+  [ 17] pushcons 3 .............................. <"Room component unavailable!">
+  [ 19] pushsymb 45 ............................. <#getRoomObject>
+  [ 21] pusharglist 3 ........................... <me, "Room component unavailable!", #getRoomObject>
+  [ 23] extcall 19 .............................. <error(me, "Room component unavailable!", #getRoomObject)>
+  [ 25] pusharglistnoret 1 ...................... <error(me, "Room component unavailable!", #getRoomObject)>
+  [ 27] extcall 13 .............................. return error(me, "Room component unavailable!", #getRoomObject)
+  [ 29] getlocal 0 .............................. <tRoomComponentObj>
+  [ 31] getprop 225 ............................. <pObjectId>
+  [ 33] pusharglist 2 ........................... <tRoomComponentObj, pObjectId>
+  [ 35] objcall 234 ............................. <tRoomComponentObj.getActiveObject(pObjectId)>
+  [ 37] pusharglistnoret 1 ...................... <tRoomComponentObj.getActiveObject(pObjectId)>
+  [ 39] extcall 13 .............................. return tRoomComponentObj.getActiveObject(pObjectId)
+  [ 41] ret
 end
 
 on removeRoomObject me
-  [  0] pushsymb 386 ............................ <#room_component>
-  [  3] pusharglist 1 ........................... <#room_component>
-  [  5] extcall 166 ............................. <getObject(#room_component)>
-  [  7] setlocal 0 .............................. tRoomComponentObj = getObject(#room_component)
-  [  9] getlocal 0 .............................. <tRoomComponentObj>
-  [ 11] pushzero ................................ <0>
-  [ 12] eq ...................................... <tRoomComponentObj = 0>
-  [ 13] jmpifz [ 31] ............................ if tRoomComponentObj = 0 then
-  [ 16] getparam 0 .............................. <me>
-  [ 18] pushcons 3 .............................. <"Room component unavailable!">
-  [ 20] pushsymb 315 ............................ <#removeRoomObject>
-  [ 23] pusharglist 3 ........................... <me, "Room component unavailable!", #removeRoomObject>
-  [ 25] extcall 173 ............................. <error(me, "Room component unavailable!", #removeRoomObject)>
-  [ 27] pusharglistnoret 1 ...................... <error(me, "Room component unavailable!", #removeRoomObject)>
-  [ 29] extcall 28 .............................. return error(me, "Room component unavailable!", #removeRoomObject)
-  [ 31] getprop 382 ............................. <pObjectId>
-  [ 34] pusharglist 0 ........................... <>
-  [ 36] extcall 116 ............................. <VOID>
-  [ 38] eq ...................................... <pObjectId = VOID>
-  [ 39] jmpifz [ 47] ............................ if pObjectId = VOID then
-  [ 42] pushzero ................................ <0>
-  [ 43] pusharglistnoret 1 ...................... <0>
-  [ 45] extcall 28 .............................. return 0
-  [ 47] getlocal 0 .............................. <tRoomComponentObj>
-  [ 49] getprop 382 ............................. <pObjectId>
-  [ 52] pusharglist 2 ........................... <tRoomComponentObj, pObjectId>
-  [ 54] objcall 392 ............................. <tRoomComponentObj.activeObjectExists(pObjectId)>
-  [ 57] not ..................................... <not tRoomComponentObj.activeObjectExists(pObjectId)>
-  [ 58] jmpifz [ 67] ............................ if not tRoomComponentObj.activeObjectExists(pObjectId) then
-  [ 61] pushint8 1 .............................. <1>
-  [ 63] pusharglistnoret 1 ...................... <1>
-  [ 65] extcall 28 .............................. return 1
-  [ 67] getlocal 0 .............................. <tRoomComponentObj>
-  [ 69] getprop 382 ............................. <pObjectId>
-  [ 72] pusharglist 2 ........................... <tRoomComponentObj, pObjectId>
-  [ 74] objcall 393 ............................. <tRoomComponentObj.removeActiveObject(pObjectId)>
-  [ 77] pusharglistnoret 1 ...................... <tRoomComponentObj.removeActiveObject(pObjectId)>
-  [ 79] extcall 28 .............................. return tRoomComponentObj.removeActiveObject(pObjectId)
-  [ 81] ret
+  [  0] pushsymb 228 ............................ <#room_component>
+  [  2] pusharglist 1 ........................... <#room_component>
+  [  4] extcall 153 ............................. <getObject(#room_component)>
+  [  6] setlocal 0 .............................. tRoomComponentObj = getObject(#room_component)
+  [  8] getlocal 0 .............................. <tRoomComponentObj>
+  [ 10] pushzero ................................ <0>
+  [ 11] eq ...................................... <tRoomComponentObj = 0>
+  [ 12] jmpifz [ 29] ............................ if tRoomComponentObj = 0 then
+  [ 15] getparam 0 .............................. <me>
+  [ 17] pushcons 3 .............................. <"Room component unavailable!">
+  [ 19] pushsymb 5 .............................. <#removeRoomObject>
+  [ 21] pusharglist 3 ........................... <me, "Room component unavailable!", #removeRoomObject>
+  [ 23] extcall 19 .............................. <error(me, "Room component unavailable!", #removeRoomObject)>
+  [ 25] pusharglistnoret 1 ...................... <error(me, "Room component unavailable!", #removeRoomObject)>
+  [ 27] extcall 13 .............................. return error(me, "Room component unavailable!", #removeRoomObject)
+  [ 29] getprop 225 ............................. <pObjectId>
+  [ 31] pusharglist 0 ........................... <>
+  [ 33] extcall 43 .............................. <VOID>
+  [ 35] eq ...................................... <pObjectId = VOID>
+  [ 36] jmpifz [ 44] ............................ if pObjectId = VOID then
+  [ 39] pushzero ................................ <0>
+  [ 40] pusharglistnoret 1 ...................... <0>
+  [ 42] extcall 13 .............................. return 0
+  [ 44] getlocal 0 .............................. <tRoomComponentObj>
+  [ 46] getprop 225 ............................. <pObjectId>
+  [ 48] pusharglist 2 ........................... <tRoomComponentObj, pObjectId>
+  [ 50] objcall 236 ............................. <tRoomComponentObj.activeObjectExists(pObjectId)>
+  [ 52] not ..................................... <not tRoomComponentObj.activeObjectExists(pObjectId)>
+  [ 53] jmpifz [ 62] ............................ if not tRoomComponentObj.activeObjectExists(pObjectId) then
+  [ 56] pushint8 1 .............................. <1>
+  [ 58] pusharglistnoret 1 ...................... <1>
+  [ 60] extcall 13 .............................. return 1
+  [ 62] getlocal 0 .............................. <tRoomComponentObj>
+  [ 64] getprop 225 ............................. <pObjectId>
+  [ 66] pusharglist 2 ........................... <tRoomComponentObj, pObjectId>
+  [ 68] objcall 237 ............................. <tRoomComponentObj.removeActiveObject(pObjectId)>
+  [ 70] pusharglistnoret 1 ...................... <tRoomComponentObj.removeActiveObject(pObjectId)>
+  [ 72] extcall 13 .............................. return tRoomComponentObj.removeActiveObject(pObjectId)
+  [ 74] ret
 end
 
 on roomObjectAction me, tAction, tdata
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 346 ............................. <me.getRoomObject()>
-  [  7] setlocal 0 .............................. tRoomObject = me.getRoomObject()
-  [  9] getlocal 0 .............................. <tRoomObject>
-  [ 11] pushzero ................................ <0>
-  [ 12] eq ...................................... <tRoomObject = 0>
-  [ 13] jmpifz [ 21] ............................ if tRoomObject = 0 then
-  [ 16] pushzero ................................ <0>
-  [ 17] pusharglistnoret 1 ...................... <0>
-  [ 19] extcall 28 .............................. return 0
-  [ 21] getlocal 0 .............................. <tRoomObject>
-  [ 23] getparam 1 .............................. <tAction>
-  [ 25] getparam 2 .............................. <tdata>
-  [ 27] pusharglist 3 ........................... <tRoomObject, tAction, tdata>
-  [ 29] objcall 2 ............................... <tRoomObject.roomObjectAction(tAction, tdata)>
+  [  4] objcall 45 .............................. <me.getRoomObject()>
+  [  6] setlocal 0 .............................. tRoomObject = me.getRoomObject()
+  [  8] getlocal 0 .............................. <tRoomObject>
+  [ 10] pushzero ................................ <0>
+  [ 11] eq ...................................... <tRoomObject = 0>
+  [ 12] jmpifz [ 20] ............................ if tRoomObject = 0 then
+  [ 15] pushzero ................................ <0>
+  [ 16] pusharglistnoret 1 ...................... <0>
+  [ 18] extcall 13 .............................. return 0
+  [ 20] getlocal 0 .............................. <tRoomObject>
+  [ 22] getparam 1 .............................. <tAction>
+  [ 24] getparam 2 .............................. <tdata>
+  [ 26] pusharglist 3 ........................... <tRoomObject, tAction, tdata>
+  [ 28] objcall 1001 ............................ <tRoomObject.roomObjectAction(tAction, tdata)>
   [ 31] pusharglistnoret 1 ...................... <tRoomObject.roomObjectAction(tAction, tdata)>
-  [ 33] extcall 28 .............................. return tRoomObject.roomObjectAction(tAction, tdata)
+  [ 33] extcall 13 .............................. return tRoomObject.roomObjectAction(tAction, tdata)
   [ 35] ret
 end

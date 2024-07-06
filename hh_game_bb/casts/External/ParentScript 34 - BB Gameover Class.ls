@@ -58,12 +58,10 @@ on toggleWindowMode me
     me.renderFinalScoresText()
     me.showJoinedPlayers()
     tWndObj = getWindow(pWindowID)
-    tStageWidth = the stageRight - the stageLeft
-    tWindowWidth = tWndObj.getProperty(#width)
     if me.getGameSystem().getSpectatorModeFlag() then
-      tWndObj.moveTo((tStageWidth - tWindowWidth) / 2, 74)
+      tWndObj.moveTo(124, 74)
     else
-      tWndObj.moveTo((tStageWidth - tWindowWidth) / 2, 50)
+      tWndObj.moveTo(124, 50)
     end if
   else
     pOpenWindow = "bb_score_tiny.window"
@@ -109,22 +107,14 @@ on renderNumTickets me
   if me.getGameSystem() = 0 then
     return 0
   end if
-  if not me.getGameSystem().getGameTicketsNotUsedFlag() then
-    tNumTickets = string(me.getGameSystem().getNumTickets())
-    if tNumTickets.length = 1 then
-      tNumTickets = "00" & tNumTickets
-    end if
-    if tNumTickets.length = 2 then
-      tNumTickets = "0" & tNumTickets
-    end if
-    tElem.setText(tNumTickets)
-  else
-    tElem.hide()
-    tElem = tWndObj.getElement("bb_amount_tickets_bg")
-    if tElem <> 0 then
-      tElem.hide()
-    end if
+  tNumTickets = string(me.getGameSystem().getNumTickets())
+  if tNumTickets.length = 1 then
+    tNumTickets = "00" & tNumTickets
   end if
+  if tNumTickets.length = 2 then
+    tNumTickets = "0" & tNumTickets
+  end if
+  tElem.setText(tNumTickets)
 end
 
 on saveSortedScores me, tdata
@@ -159,7 +149,7 @@ on saveSortedScores me, tdata
   end repeat
   pScoreData = tSortedTeams
   if getObject(#session).exists("user_game_index") then
-    tOwnId = getObject(#session).GET("user_game_index")
+    tOwnId = getObject(#session).get("user_game_index")
   end if
   tOwnPlayerWins = 0
   pPlayerData = [:]
@@ -208,12 +198,6 @@ on renderFinalScoresText me
       tWndObj.getElement(tButtonID).hide()
     end repeat
   end if
-  if me.getGameSystem().getGameTicketsNotUsedFlag() then
-    tElem = tWndObj.getElement("gs_button_buytickets")
-    if tElem <> 0 then
-      tElem.hide()
-    end if
-  end if
   tTeamNum = pScoreData.count
   repeat with tTeamInfoCount = 1 to tTeamNum
     tdata = pScoreData[tTeamInfoCount]
@@ -244,12 +228,7 @@ on renderFinalScoresText me
     tElem.setText(pBestPlayer[#score])
     tElem = tWndObj.getElement("bb_icon_winner")
     if (tElem <> 0) and (ilk(pBestPlayer[#image]) = #image) then
-      tImage = image(tElem.getProperty(#width), tElem.getProperty(#height), 32)
-      tDX = (tImage.width - pBestPlayer[#image].width) / 2
-      tDY = tImage.height - pBestPlayer[#image].height
-      tDX = tDX + 4
-      tImage.copyPixels(pBestPlayer[#image], pBestPlayer[#image].rect + rect(tDX, tDY, tDX, tDY), pBestPlayer[#image].rect)
-      tElem.feedImage(tImage)
+      tElem.feedImage(pBestPlayer[#image])
     end if
   else
     tPlayerImage = member(getmemnum("guide_tie")).image
@@ -278,8 +257,7 @@ on getBestPlayerImage me, tUserID
   n = new(#bitmap, castLib("bin"))
   n.image = tTempImage.duplicate()
   tPlayerImage = image(tTempImage.width, tTempImage.height, 32)
-  tPlayerImage.copyPixels(tTempImage, tTempImage.rect, tTempImage.rect)
-  tPlayerImage = tPlayerImage.trimWhiteSpace()
+  tPlayerImage.copyPixels(tTempImage, tTempImage.rect + rect(7, -7, 7, -7), tTempImage.rect)
   return tPlayerImage
 end
 

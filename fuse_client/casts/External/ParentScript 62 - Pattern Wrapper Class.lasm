@@ -51,7 +51,7 @@ on resizeTo me, tX, tY
   [  8] setlocal 0 .............................. tOffH = tX - me.pwidth
   [ 10] getparam 2 .............................. <tY>
   [ 12] getparam 0 .............................. <me>
-  [ 14] getobjprop 504 .......................... <me.pheight>
+  [ 14] getobjprop 505 .......................... <me.pheight>
   [ 17] sub ..................................... <tY - me.pheight>
   [ 18] setlocal 1 .............................. tOffV = tY - me.pheight
   [ 20] getparam 0 .............................. <me>
@@ -74,7 +74,7 @@ on resizeBy me, tOffH, tOffV
   [  8] or ...................................... <(tOffH <> 0) or (tOffV <> 0)>
   [  9] jmpifz [183] ............................ if (tOffH <> 0) or (tOffV <> 0) then
   [ 12] getparam 0 .............................. <me>
-  [ 14] getobjprop 1489 ......................... <me.pScaleH>
+  [ 14] getobjprop 1486 ......................... <me.pScaleH>
   [ 17] peek 0 .................................. case me.pScaleH of
   [ 19] pushsymb 1305 ........................... <#move>
   [ 22] eq
@@ -111,7 +111,7 @@ on resizeBy me, tOffH, tOffV
   [ 89] setobjprop 467 .......................... me.pLocX = me.pLocX + (tOffH / 2)
   [ 92] pop 1 ................................... end case
   [ 94] getparam 0 .............................. <me>
-  [ 96] getobjprop 1490 ......................... <me.pScaleV>
+  [ 96] getobjprop 1487 ......................... <me.pScaleV>
   [ 99] peek 0 .................................. case me.pScaleV of
   [101] pushsymb 1305 ........................... <#move>
   [104] eq
@@ -129,10 +129,10 @@ on resizeBy me, tOffH, tOffV
   [130] jmpifz [149] ............................ (case) #scale:
   [133] getparam 0 .............................. <me>
   [135] getparam 0 .............................. <me>
-  [137] getobjprop 504 .......................... <me.pheight>
+  [137] getobjprop 505 .......................... <me.pheight>
   [140] getparam 2 .............................. <tOffV>
   [142] add ..................................... <me.pheight + tOffV>
-  [143] setobjprop 504 .......................... me.pheight = me.pheight + tOffV
+  [143] setobjprop 505 .......................... me.pheight = me.pheight + tOffV
   [146] jmp [174]
   [149] peek 0
   [151] pushsymb 508 ............................ <#center>
@@ -170,7 +170,7 @@ on render me
   [ 30] div ..................................... <me.pwidth / me.pimage.width>
   [ 31] setlocal 2 .............................. tXW = me.pwidth / me.pimage.width
   [ 33] getparam 0 .............................. <me>
-  [ 35] getobjprop 504 .......................... <me.pheight>
+  [ 35] getobjprop 505 .......................... <me.pheight>
   [ 38] getparam 0 .............................. <me>
   [ 40] getchainedprop 498 ...................... <me.pimage>
   [ 43] getobjprop 43 ........................... <me.pimage.height>
@@ -227,7 +227,7 @@ on render me
   [140] getchainedprop 498 ...................... <me.pimage>
   [143] getobjprop 557 .......................... <me.pimage.rect>
   [146] getparam 0 .............................. <me>
-  [148] getobjprop 1495 ......................... <me.pParams>
+  [148] getobjprop 1492 ......................... <me.pParams>
   [151] pusharglistnoret 5 ...................... <me.pBuffer.image, me.pimage, tRect, me.pimage.rect, me.pParams>
   [153] objcall 558 ............................. me.pBuffer.image.copyPixels(me.pimage, tRect, me.pimage.rect, me.pParams)
   [156] pushint8 1
@@ -259,11 +259,11 @@ on draw me
   [ 29] getparam 0 .............................. <me>
   [ 31] getobjprop 469 .......................... <me.pLocY>
   [ 34] getparam 0 .............................. <me>
-  [ 36] getobjprop 504 .......................... <me.pheight>
+  [ 36] getobjprop 505 .......................... <me.pheight>
   [ 39] add ..................................... <me.pLocY + me.pheight>
   [ 40] pusharglist 4 ........................... <me.pLocX, me.pLocY, me.pLocX + me.pwidth, me.pLocY + me.pheight>
   [ 42] extcall 557 ............................. <rect(me.pLocX, me.pLocY, me.pLocX + me.pwidth, me.pLocY + me.pheight)>
-  [ 45] pushsymb 1499 ........................... <#shapeType>
+  [ 45] pushsymb 1496 ........................... <#shapeType>
   [ 48] pushsymb 557 ............................ <#rect>
   [ 51] pushsymb 599 ............................ <#color>
   [ 54] pushint16 255 ........................... <255>

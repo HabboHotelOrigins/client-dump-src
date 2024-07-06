@@ -129,6 +129,8 @@ on solveMembers me
       if tMemNum < 1 then
         tMemNum = abs(tMemNum)
         tSpr.flipH = 1
+      else
+        tSpr.flipH = 0
       end if
       tSpr.castNum = tMemNum
       tSpr.width = member(tMemNum).width
@@ -168,6 +170,33 @@ on updateColor me, tHexstr
       tSpr.color = rgb(0, 0, 0)
     end if
   end if
+end
+
+on updatePosition me, pWallLocString, pLocalLocString, tDirChar
+  pLocX = 0
+  pLocY = 0
+  pLocH = 0
+  pLocZ = 0
+  pWallX = 0
+  pWallY = 0
+  pLocalX = 0
+  pLocalY = 0
+  tDelim = the itemDelimiter
+  tWallLoc = pWallLocString.word[1].char[4..length(pWallLocString.word[1])]
+  the itemDelimiter = ","
+  pWallX = integer(tWallLoc.item[1])
+  pWallY = integer(tWallLoc.item[2])
+  tLocalLoc = pLocalLocString.word[1].char[3..length(pLocalLocString.word[1])]
+  pLocalX = integer(tLocalLoc.item[1])
+  pLocalY = integer(tLocalLoc.item[2])
+  case tDirChar of
+    "r":
+      pDirection = "rightwall"
+    "l":
+      pDirection = "leftwall"
+  end case
+  the itemDelimiter = tDelim
+  me.updateLocation()
 end
 
 on updateLocation me

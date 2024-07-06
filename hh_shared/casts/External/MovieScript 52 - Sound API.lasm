@@ -1,0 +1,144 @@
+on constructSoundManager
+  [  0] pushsymb 866 ............................ <#sound_manager>
+  [  3] pushcons 0 .............................. <"sound.manager.class">
+  [  5] pushcons 1 .............................. <"Sound Manager Class">
+  [  7] pusharglist 2 ........................... <"sound.manager.class", "Sound Manager Class">
+  [  9] extcall 867 ............................. <getClassVariable("sound.manager.class", "Sound Manager Class")>
+  [ 12] pusharglist 2 ........................... <#sound_manager, getClassVariable("sound.manager.class", "Sound Manager Class")>
+  [ 14] extcall 865 ............................. <createManager(#sound_manager, getClassVariable("sound.manager.class", "Sound Manager Class"))>
+  [ 17] pusharglistnoret 1 ...................... <createManager(#sound_manager, getClassVariable("sound.manager.class", "Sound Manager Class"))>
+  [ 19] extcall 44 .............................. return createManager(#sound_manager, getClassVariable("sound.manager.class", "Sound Manager Class"))
+  [ 21] ret
+end
+
+on deconstructSoundManager
+  [  0] pushsymb 866 ............................ <#sound_manager>
+  [  3] pusharglist 1 ........................... <#sound_manager>
+  [  5] extcall 868 ............................. <removeManager(#sound_manager)>
+  [  8] pusharglistnoret 1 ...................... <removeManager(#sound_manager)>
+  [ 10] extcall 44 .............................. return removeManager(#sound_manager)
+  [ 12] ret
+end
+
+on getSoundManager
+  [  0] pusharglist 0 ........................... <>
+  [  2] extcall 869 ............................. <getObjectManager()>
+  [  5] setlocal 0 .............................. tMgr = getObjectManager()
+  [  7] getlocal 0 .............................. <tMgr>
+  [  9] pushsymb 866 ............................ <#sound_manager>
+  [ 12] pusharglist 2 ........................... <tMgr, #sound_manager>
+  [ 14] objcall 870 ............................. <tMgr.managerExists(#sound_manager)>
+  [ 17] not ..................................... <not tMgr.managerExists(#sound_manager)>
+  [ 18] jmpifz [ 29] ............................ if not tMgr.managerExists(#sound_manager) then
+  [ 21] pusharglist 0 ........................... <>
+  [ 23] localcall 0 ............................. <constructSoundManager()>
+  [ 25] pusharglistnoret 1 ...................... <constructSoundManager()>
+  [ 27] extcall 44 .............................. return constructSoundManager()
+  [ 29] getlocal 0 .............................. <tMgr>
+  [ 31] pushsymb 866 ............................ <#sound_manager>
+  [ 34] pusharglist 2 ........................... <tMgr, #sound_manager>
+  [ 36] objcall 871 ............................. <tMgr.getManager(#sound_manager)>
+  [ 39] pusharglistnoret 1 ...................... <tMgr.getManager(#sound_manager)>
+  [ 41] extcall 44 .............................. return tMgr.getManager(#sound_manager)
+  [ 43] ret
+end
+
+on setSoundState tValue
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSoundManager()>
+  [  4] getparam 0 .............................. <tValue>
+  [  6] pusharglist 2 ........................... <getSoundManager(), tValue>
+  [  8] objcall 861 ............................. <getSoundManager().setSoundState(tValue)>
+  [ 11] pusharglistnoret 1 ...................... <getSoundManager().setSoundState(tValue)>
+  [ 13] extcall 44 .............................. return getSoundManager().setSoundState(tValue)
+  [ 15] ret
+end
+
+on getSoundState
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSoundManager()>
+  [  4] pusharglist 1 ........................... <getSoundManager()>
+  [  6] objcall 862 ............................. <getSoundManager().getSoundState()>
+  [  9] pusharglistnoret 1 ...................... <getSoundManager().getSoundState()>
+  [ 11] extcall 44 .............................. return getSoundManager().getSoundState()
+  [ 13] ret
+end
+
+on playSound tMemName, tPriority, tProps
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSoundManager()>
+  [  4] getparam 0 .............................. <tMemName>
+  [  6] getparam 1 .............................. <tPriority>
+  [  8] getparam 2 .............................. <tProps>
+  [ 10] pusharglist 4 ........................... <getSoundManager(), tMemName, tPriority, tProps>
+  [ 12] objcall 873 ............................. <getSoundManager().play(tMemName, tPriority, tProps)>
+  [ 15] pusharglistnoret 1 ...................... <getSoundManager().play(tMemName, tPriority, tProps)>
+  [ 17] extcall 44 .............................. return getSoundManager().play(tMemName, tPriority, tProps)
+  [ 19] ret
+end
+
+on playSoundInChannel tMemName, tChannelNum
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSoundManager()>
+  [  4] getparam 0 .............................. <tMemName>
+  [  6] getparam 1 .............................. <tChannelNum>
+  [  8] pusharglist 3 ........................... <getSoundManager(), tMemName, tChannelNum>
+  [ 10] objcall 875 ............................. <getSoundManager().playInChannel(tMemName, tChannelNum)>
+  [ 13] pusharglistnoret 1 ...................... <getSoundManager().playInChannel(tMemName, tChannelNum)>
+  [ 15] extcall 44 .............................. return getSoundManager().playInChannel(tMemName, tChannelNum)
+  [ 17] ret
+end
+
+on queueSound tMemName, tChannelNum, tProps
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSoundManager()>
+  [  4] getparam 0 .............................. <tMemName>
+  [  6] getparam 1 .............................. <tChannelNum>
+  [  8] getparam 2 .............................. <tProps>
+  [ 10] pusharglist 4 ........................... <getSoundManager(), tMemName, tChannelNum, tProps>
+  [ 12] objcall 877 ............................. <getSoundManager().queue(tMemName, tChannelNum, tProps)>
+  [ 15] pusharglistnoret 1 ...................... <getSoundManager().queue(tMemName, tChannelNum, tProps)>
+  [ 17] extcall 44 .............................. return getSoundManager().queue(tMemName, tChannelNum, tProps)
+  [ 19] ret
+end
+
+on stopAllSounds tid
+  [  0] pushsymb 866 ............................ <#sound_manager>
+  [  3] pusharglist 1 ........................... <#sound_manager>
+  [  5] extcall 870 ............................. <managerExists(#sound_manager)>
+  [  8] not ..................................... <not managerExists(#sound_manager)>
+  [  9] jmpifz [ 17] ............................ if not managerExists(#sound_manager) then
+  [ 12] pushzero ................................ <0>
+  [ 13] pusharglistnoret 1 ...................... <0>
+  [ 15] extcall 44 .............................. return 0
+  [ 17] pusharglist 0 ........................... <>
+  [ 19] localcall 2 ............................. <getSoundManager()>
+  [ 21] getparam 0 .............................. <tid>
+  [ 23] pusharglist 2 ........................... <getSoundManager(), tid>
+  [ 25] objcall 864 ............................. <getSoundManager().stopAllSounds(tid)>
+  [ 28] pusharglistnoret 1 ...................... <getSoundManager().stopAllSounds(tid)>
+  [ 30] extcall 44 .............................. return getSoundManager().stopAllSounds(tid)
+  [ 32] ret
+end
+
+on startSoundChannel tNum
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSoundManager()>
+  [  4] getparam 0 .............................. <tNum>
+  [  6] pusharglist 2 ........................... <getSoundManager(), tNum>
+  [  8] objcall 878 ............................. <getSoundManager().playChannel(tNum)>
+  [ 11] pusharglistnoret 1 ...................... <getSoundManager().playChannel(tNum)>
+  [ 13] extcall 44 .............................. return getSoundManager().playChannel(tNum)
+  [ 15] ret
+end
+
+on stopSoundChannel tNum
+  [  0] pusharglist 0 ........................... <>
+  [  2] localcall 2 ............................. <getSoundManager()>
+  [  4] getparam 0 .............................. <tNum>
+  [  6] pusharglist 2 ........................... <getSoundManager(), tNum>
+  [  8] objcall 879 ............................. <getSoundManager().stopChannel(tNum)>
+  [ 11] pusharglistnoret 1 ...................... <getSoundManager().stopChannel(tNum)>
+  [ 13] extcall 44 .............................. return getSoundManager().stopChannel(tNum)
+  [ 15] ret
+end

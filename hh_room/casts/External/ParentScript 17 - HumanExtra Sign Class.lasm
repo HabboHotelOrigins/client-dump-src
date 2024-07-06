@@ -3,117 +3,117 @@ property pSignSpr, pSignMem
 on construct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 156 ............................. <me.getID()>
+  [  4] objcall 75 .............................. <me.getID()>
   [  6] pusharglist 1 ........................... <me.getID()>
-  [  8] extcall 358 ............................. <reserveSprite(me.getID())>
-  [ 11] pusharglist 1 ........................... <reserveSprite(me.getID())>
-  [ 13] extcall 182 ............................. <sprite(reserveSprite(me.getID()))>
-  [ 15] setprop 1418 ............................ pSignSpr = sprite(reserveSprite(me.getID()))
-  [ 18] pushint8 1 .............................. <1>
-  [ 20] pusharglistnoret 1 ...................... <1>
-  [ 22] extcall 21 .............................. return 1
-  [ 24] ret
-end
-
-on deconstruct me
-  [  0] getprop 1418 ............................ <pSignSpr>
-  [  3] getobjprop 18 ........................... <pSignSpr.spriteNum>
-  [  5] pusharglistnoret 1 ...................... <pSignSpr.spriteNum>
-  [  7] extcall 367 ............................. releaseSprite(pSignSpr.spriteNum)
-  [ 10] pusharglist 0 ........................... <>
-  [ 12] extcall 159 ............................. <VOID>
-  [ 14] setprop 1418 ............................ pSignSpr = VOID
+  [  8] extcall 74 .............................. <reserveSprite(me.getID())>
+  [ 10] pusharglist 1 ........................... <reserveSprite(me.getID())>
+  [ 12] extcall 73 .............................. <sprite(reserveSprite(me.getID()))>
+  [ 14] setprop 1441 ............................ pSignSpr = sprite(reserveSprite(me.getID()))
   [ 17] pushint8 1 .............................. <1>
   [ 19] pusharglistnoret 1 ...................... <1>
-  [ 21] extcall 21 .............................. return 1
+  [ 21] extcall 31 .............................. return 1
   [ 23] ret
 end
 
+on deconstruct me
+  [  0] getprop 1441 ............................ <pSignSpr>
+  [  3] getobjprop 36 ........................... <pSignSpr.spriteNum>
+  [  5] pusharglistnoret 1 ...................... <pSignSpr.spriteNum>
+  [  7] extcall 35 .............................. releaseSprite(pSignSpr.spriteNum)
+  [  9] pusharglist 0 ........................... <>
+  [ 11] extcall 30 .............................. <VOID>
+  [ 13] setprop 1441 ............................ pSignSpr = VOID
+  [ 16] pushint8 1 .............................. <1>
+  [ 18] pusharglistnoret 1 ...................... <1>
+  [ 20] extcall 31 .............................. return 1
+  [ 22] ret
+end
+
 on Refresh me
-  [  0] getprop 1418 ............................ <pSignSpr>
+  [  0] getprop 1441 ............................ <pSignSpr>
   [  3] pushzero ................................ <0>
-  [  4] setobjprop 251 .......................... pSignSpr.visible = 0
-  [  6] ret
+  [  4] setobjprop 341 .......................... pSignSpr.visible = 0
+  [  7] ret
 end
 
 on show_sign me, tProps
   [  0] getparam 1 .............................. <tProps>
   [  2] pushcons 0 .............................. <"signmember">
   [  4] pusharglist 2 ........................... <tProps, "signmember">
-  [  6] objcall 9 ............................... <tProps["signmember"]>
+  [  6] objcall 34 .............................. <tProps["signmember"]>
   [  8] setlocal 0 .............................. tSignMem = tProps["signmember"]
   [ 10] getparam 1 .............................. <tProps>
   [ 12] pushcons 1 .............................. <"sprite">
   [ 14] pusharglist 2 ........................... <tProps, "sprite">
-  [ 16] objcall 9 ............................... <tProps["sprite"]>
+  [ 16] objcall 34 .............................. <tProps["sprite"]>
   [ 18] setlocal 1 .............................. tHumanSpr = tProps["sprite"]
   [ 20] getparam 1 .............................. <tProps>
   [ 22] pushcons 2 .............................. <"direction">
   [ 24] pusharglist 2 ........................... <tProps, "direction">
-  [ 26] objcall 9 ............................... <tProps["direction"]>
+  [ 26] objcall 34 .............................. <tProps["direction"]>
   [ 28] setlocal 2 .............................. tDirection = tProps["direction"]
-  [ 30] getprop 1419 ............................ <pSignMem>
+  [ 30] getprop 1442 ............................ <pSignMem>
   [ 33] getlocal 0 .............................. <tSignMem>
   [ 35] nteq .................................... <pSignMem <> tSignMem>
-  [ 36] jmpifz [ 67] ............................ if pSignMem <> tSignMem then
-  [ 39] getprop 1418 ............................ <pSignSpr>
+  [ 36] jmpifz [ 66] ............................ if pSignMem <> tSignMem then
+  [ 39] getprop 1441 ............................ <pSignSpr>
   [ 42] pushint8 8 .............................. <8>
-  [ 44] setobjprop 419 .......................... pSignSpr.ink = 8
-  [ 47] getprop 1418 ............................ <pSignSpr>
-  [ 50] getlocal 0 .............................. <tSignMem>
-  [ 52] pusharglist 1 ........................... <tSignMem>
-  [ 54] extcall 37 .............................. <getmemnum(tSignMem)>
-  [ 56] pusharglist 1 ........................... <getmemnum(tSignMem)>
-  [ 58] extcall 30 .............................. <member(getmemnum(tSignMem))>
-  [ 60] setobjprop 30 ........................... pSignSpr.member = member(getmemnum(tSignMem))
-  [ 62] getlocal 0 .............................. <tSignMem>
-  [ 64] setprop 1419 ............................ pSignMem = tSignMem
-  [ 67] getlocal 1 .............................. <tHumanSpr>
-  [ 69] getobjprop 361 .......................... <tHumanSpr.loc>
-  [ 72] setlocal 3 .............................. tSignLoc = tHumanSpr.loc
-  [ 74] getlocal 2 .............................. <tDirection>
-  [ 76] pushzero ................................ <0>
-  [ 77] eq ...................................... <tDirection = 0>
-  [ 78] jmpifz [ 95] ............................ if tDirection = 0 then / else
-  [ 81] getlocal 3 .............................. <tSignLoc>
-  [ 83] getlocal 3 .............................. <tSignLoc>
-  [ 85] getobjprop 255 .......................... <tSignLoc.locH>
-  [ 87] pushint8 16 ............................. <16>
-  [ 89] sub ..................................... <tSignLoc.locH - 16>
-  [ 90] setobjprop 255 .......................... tSignLoc.locH = tSignLoc.locH - 16
-  [ 92] jmp [136]
-  [ 95] getlocal 2 .............................. <tDirection>
-  [ 97] pushint8 4 .............................. <4>
-  [ 99] eq ...................................... <tDirection = 4>
-  [100] jmpifz [117] ............................ if tDirection = 4 then / else
-  [103] getlocal 3 .............................. <tSignLoc>
-  [105] getlocal 3 .............................. <tSignLoc>
-  [107] getobjprop 255 .......................... <tSignLoc.locH>
-  [109] pushint8 2 .............................. <2>
-  [111] add ..................................... <tSignLoc.locH + 2>
-  [112] setobjprop 255 .......................... tSignLoc.locH = tSignLoc.locH + 2
-  [114] jmp [136]
-  [117] getlocal 2 .............................. <tDirection>
-  [119] pushint8 6 .............................. <6>
-  [121] eq ...................................... <tDirection = 6>
-  [122] jmpifz [136] ............................ if tDirection = 6 then
-  [125] getlocal 3 .............................. <tSignLoc>
-  [127] getlocal 3 .............................. <tSignLoc>
-  [129] getobjprop 255 .......................... <tSignLoc.locH>
-  [131] pushint8 18 ............................. <18>
-  [133] sub ..................................... <tSignLoc.locH - 18>
-  [134] setobjprop 255 .......................... tSignLoc.locH = tSignLoc.locH - 18
-  [136] getprop 1418 ............................ <pSignSpr>
-  [139] getlocal 3 .............................. <tSignLoc>
-  [141] setobjprop 361 .......................... pSignSpr.loc = tSignLoc
-  [144] getprop 1418 ............................ <pSignSpr>
-  [147] getlocal 1 .............................. <tHumanSpr>
-  [149] getobjprop 168 .......................... <tHumanSpr.locZ>
-  [151] pushint8 1 .............................. <1>
-  [153] add ..................................... <tHumanSpr.locZ + 1>
-  [154] setobjprop 168 .......................... pSignSpr.locZ = tHumanSpr.locZ + 1
-  [156] getprop 1418 ............................ <pSignSpr>
-  [159] pushint8 1 .............................. <1>
-  [161] setobjprop 251 .......................... pSignSpr.visible = 1
+  [ 44] setobjprop 93 ........................... pSignSpr.ink = 8
+  [ 46] getprop 1441 ............................ <pSignSpr>
+  [ 49] getlocal 0 .............................. <tSignMem>
+  [ 51] pusharglist 1 ........................... <tSignMem>
+  [ 53] extcall 65 .............................. <getmemnum(tSignMem)>
+  [ 55] pusharglist 1 ........................... <getmemnum(tSignMem)>
+  [ 57] extcall 64 .............................. <member(getmemnum(tSignMem))>
+  [ 59] setobjprop 64 ........................... pSignSpr.member = member(getmemnum(tSignMem))
+  [ 61] getlocal 0 .............................. <tSignMem>
+  [ 63] setprop 1442 ............................ pSignMem = tSignMem
+  [ 66] getlocal 1 .............................. <tHumanSpr>
+  [ 68] getobjprop 435 .......................... <tHumanSpr.loc>
+  [ 71] setlocal 3 .............................. tSignLoc = tHumanSpr.loc
+  [ 73] getlocal 2 .............................. <tDirection>
+  [ 75] pushzero ................................ <0>
+  [ 76] eq ...................................... <tDirection = 0>
+  [ 77] jmpifz [ 94] ............................ if tDirection = 0 then / else
+  [ 80] getlocal 3 .............................. <tSignLoc>
+  [ 82] getlocal 3 .............................. <tSignLoc>
+  [ 84] getobjprop 112 .......................... <tSignLoc.locH>
+  [ 86] pushint8 16 ............................. <16>
+  [ 88] sub ..................................... <tSignLoc.locH - 16>
+  [ 89] setobjprop 112 .......................... tSignLoc.locH = tSignLoc.locH - 16
+  [ 91] jmp [135]
+  [ 94] getlocal 2 .............................. <tDirection>
+  [ 96] pushint8 4 .............................. <4>
+  [ 98] eq ...................................... <tDirection = 4>
+  [ 99] jmpifz [116] ............................ if tDirection = 4 then / else
+  [102] getlocal 3 .............................. <tSignLoc>
+  [104] getlocal 3 .............................. <tSignLoc>
+  [106] getobjprop 112 .......................... <tSignLoc.locH>
+  [108] pushint8 2 .............................. <2>
+  [110] add ..................................... <tSignLoc.locH + 2>
+  [111] setobjprop 112 .......................... tSignLoc.locH = tSignLoc.locH + 2
+  [113] jmp [135]
+  [116] getlocal 2 .............................. <tDirection>
+  [118] pushint8 6 .............................. <6>
+  [120] eq ...................................... <tDirection = 6>
+  [121] jmpifz [135] ............................ if tDirection = 6 then
+  [124] getlocal 3 .............................. <tSignLoc>
+  [126] getlocal 3 .............................. <tSignLoc>
+  [128] getobjprop 112 .......................... <tSignLoc.locH>
+  [130] pushint8 18 ............................. <18>
+  [132] sub ..................................... <tSignLoc.locH - 18>
+  [133] setobjprop 112 .......................... tSignLoc.locH = tSignLoc.locH - 18
+  [135] getprop 1441 ............................ <pSignSpr>
+  [138] getlocal 3 .............................. <tSignLoc>
+  [140] setobjprop 435 .......................... pSignSpr.loc = tSignLoc
+  [143] getprop 1441 ............................ <pSignSpr>
+  [146] getlocal 1 .............................. <tHumanSpr>
+  [148] getobjprop 129 .......................... <tHumanSpr.locZ>
+  [150] pushint8 1 .............................. <1>
+  [152] add ..................................... <tHumanSpr.locZ + 1>
+  [153] setobjprop 129 .......................... pSignSpr.locZ = tHumanSpr.locZ + 1
+  [155] getprop 1441 ............................ <pSignSpr>
+  [158] pushint8 1 .............................. <1>
+  [160] setobjprop 341 .......................... pSignSpr.visible = 1
   [163] ret
 end

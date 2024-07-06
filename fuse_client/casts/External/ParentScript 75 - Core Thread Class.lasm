@@ -38,7 +38,7 @@ on construct me
   [ 70] pushcons 7 .............................. <EMPTY>
   [ 72] pusharglistnoret 3 ...................... <tSession, "client_lastclick", EMPTY>
   [ 74] objcall 60 .............................. tSession.set("client_lastclick", EMPTY)
-  [ 76] pushsymb 1747 ........................... <#headers>
+  [ 76] pushsymb 1744 ........................... <#headers>
   [ 79] pushcons 0 .............................. <"variable.manager.class">
   [ 81] pusharglist 1 ........................... <"variable.manager.class">
   [ 83] extcall 155 ............................. <getClassVariable("variable.manager.class")>
@@ -50,19 +50,19 @@ on construct me
   [ 96] extcall 155 ............................. <getClassVariable("variable.manager.class")>
   [ 98] pusharglistnoret 2 ...................... <#classes, getClassVariable("variable.manager.class")>
   [100] extcall 94 .............................. createObject(#classes, getClassVariable("variable.manager.class"))
-  [102] pushsymb 1748 ........................... <#cache>
+  [102] pushsymb 1745 ........................... <#cache>
   [105] pushcons 0 .............................. <"variable.manager.class">
   [107] pusharglist 1 ........................... <"variable.manager.class">
   [109] extcall 155 ............................. <getClassVariable("variable.manager.class")>
   [111] pusharglistnoret 2 ...................... <#cache, getClassVariable("variable.manager.class")>
   [113] extcall 94 .............................. createObject(#cache, getClassVariable("variable.manager.class"))
-  [115] pushsymb 1749 ........................... <#Initialize>
+  [115] pushsymb 1746 ........................... <#Initialize>
   [118] pusharglistnoret 1 ...................... <#Initialize>
   [120] extcall 350 ............................. createBroker(#Initialize)
   [123] getparam 0 .............................. <me>
   [125] pushcons 8 .............................. <"load_variables">
   [127] pusharglist 2 ........................... <me, "load_variables">
-  [129] objcall 1746 ............................ <me.updateState("load_variables")>
+  [129] objcall 1743 ............................ <me.updateState("load_variables")>
   [132] pusharglistnoret 1 ...................... <me.updateState("load_variables")>
   [134] extcall 25 .............................. return me.updateState("load_variables")
   [136] ret
@@ -71,7 +71,7 @@ end
 on deconstruct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
-  [  4] objcall 1745 ............................ <me.hideLogo()>
+  [  4] objcall 1742 ............................ <me.hideLogo()>
   [  7] pusharglistnoret 1 ...................... <me.hideLogo()>
   [  9] extcall 25 .............................. return me.hideLogo()
   [ 11] ret
@@ -95,21 +95,21 @@ on showLogo me
   [ 29] extcall 232 ............................. <reserveSprite(me.getID())>
   [ 31] pusharglist 1 ........................... <reserveSprite(me.getID())>
   [ 33] extcall 36 .............................. <sprite(reserveSprite(me.getID()))>
-  [ 35] setprop 1751 ............................ pLogoSpr = sprite(reserveSprite(me.getID()))
-  [ 38] getprop 1751 ............................ <pLogoSpr>
+  [ 35] setprop 1748 ............................ pLogoSpr = sprite(reserveSprite(me.getID()))
+  [ 38] getprop 1748 ............................ <pLogoSpr>
   [ 41] pushint8 36 ............................. <36>
   [ 43] setobjprop 562 .......................... pLogoSpr.ink = 36
-  [ 46] getprop 1751 ............................ <pLogoSpr>
+  [ 46] getprop 1748 ............................ <pLogoSpr>
   [ 49] pushint8 60 ............................. <60>
   [ 51] setobjprop 503 .......................... pLogoSpr.blend = 60
-  [ 54] getprop 1751 ............................ <pLogoSpr>
+  [ 54] getprop 1748 ............................ <pLogoSpr>
   [ 57] getlocal 0 .............................. <tmember>
   [ 59] setobjprop 41 ........................... pLogoSpr.member = tmember
-  [ 61] getprop 1751 ............................ <pLogoSpr>
+  [ 61] getprop 1748 ............................ <pLogoSpr>
   [ 64] pushint32 20000001 ...................... <20000001>
   [ 69] inv ..................................... <-20000001>
   [ 70] setobjprop 883 .......................... pLogoSpr.locZ = -20000001
-  [ 73] getprop 1751 ............................ <pLogoSpr>
+  [ 73] getprop 1748 ............................ <pLogoSpr>
   [ 76] getmovieprop 970 ........................ <the stage>
   [ 79] getchainedprop 971 ...................... <(the stage).sourceRect>
   [ 82] getobjprop 42 ........................... <(the stage).sourceRect.width>
@@ -133,18 +133,18 @@ on showLogo me
 end
 
 on hideLogo me
-  [  0] getprop 1751 ............................ <pLogoSpr>
+  [  0] getprop 1748 ............................ <pLogoSpr>
   [  3] getobjprop 490 .......................... <pLogoSpr.ilk>
   [  6] pushsymb 36 ............................. <#sprite>
   [  8] eq ...................................... <pLogoSpr.ilk = #sprite>
   [  9] jmpifz [ 28] ............................ if pLogoSpr.ilk = #sprite then
-  [ 12] getprop 1751 ............................ <pLogoSpr>
+  [ 12] getprop 1748 ............................ <pLogoSpr>
   [ 15] getobjprop 37 ........................... <pLogoSpr.spriteNum>
   [ 17] pusharglistnoret 1 ...................... <pLogoSpr.spriteNum>
   [ 19] extcall 233 ............................. releaseSprite(pLogoSpr.spriteNum)
   [ 21] pusharglist 0 ........................... <>
   [ 23] extcall 32 .............................. <VOID>
-  [ 25] setprop 1751 ............................ pLogoSpr = VOID
+  [ 25] setprop 1748 ............................ pLogoSpr = VOID
   [ 28] pushint8 1 .............................. <1>
   [ 30] pusharglistnoret 1 ...................... <1>
   [ 32] extcall 25 .............................. return 1
@@ -161,7 +161,7 @@ on updateState me, tstate
   [ 12] setprop 461 ............................. pState = tstate
   [ 15] getparam 0 .............................. <me>
   [ 17] pusharglistnoret 1 ...................... <me>
-  [ 19] objcall 1744 ............................ me.showLogo()
+  [ 19] objcall 1741 ............................ me.showLogo()
   [ 22] pushint8 4 .............................. <4>
   [ 24] pusharglistnoret 1 ...................... <4>
   [ 26] extcall 45 .............................. cursor(4)
@@ -181,7 +181,7 @@ on updateState me, tstate
   [ 55] getlocal 1 .............................. <i>
   [ 57] joinstr ................................. <"sw" & i>
   [ 58] pusharglist 1 ........................... <"sw" & i>
-  [ 60] extcall 1752 ............................ <externalParamValue("sw" & i)>
+  [ 60] extcall 1749 ............................ <externalParamValue("sw" & i)>
   [ 63] setlocal 2 .............................. tParamBundle = externalParamValue("sw" & i)
   [ 65] getlocal 2 .............................. <tParamBundle>
   [ 67] pusharglist 1 ........................... <tParamBundle>
@@ -293,7 +293,7 @@ on updateState me, tstate
   [294] setlocal 8 .............................. tMemNum = queueDownload(tURL, tMemName, #field, 1)
   [296] pop 1
   [298] getlocal 8 .............................. <tMemNum>
-  [300] pushsymb 1746 ........................... <#updateState>
+  [300] pushsymb 1743 ........................... <#updateState>
   [303] getparam 0 .............................. <me>
   [305] pusharglist 1 ........................... <me>
   [307] objcall 3 ............................... <me.getID()>
@@ -333,7 +333,7 @@ on updateState me, tstate
   [380] getlocal 1 .............................. <i>
   [382] joinstr ................................. <"sw" & i>
   [383] pusharglist 1 ........................... <"sw" & i>
-  [385] extcall 1752 ............................ <externalParamValue("sw" & i)>
+  [385] extcall 1749 ............................ <externalParamValue("sw" & i)>
   [388] setlocal 2 .............................. tParamBundle = externalParamValue("sw" & i)
   [390] getlocal 2 .............................. <tParamBundle>
   [392] pusharglist 1 ........................... <tParamBundle>
@@ -410,7 +410,7 @@ on updateState me, tstate
   [547] pusharglist 2 ........................... <"system.tempo", 30>
   [549] extcall 373 ............................. <getIntVariable("system.tempo", 30)>
   [552] pusharglistnoret 1 ...................... <getIntVariable("system.tempo", 30)>
-  [554] extcall 1753 ............................ puppetTempo(getIntVariable("system.tempo", 30))
+  [554] extcall 1750 ............................ puppetTempo(getIntVariable("system.tempo", 30))
   [557] pushcons 20 ............................. <"client.reload.url">
   [559] pusharglist 1 ........................... <"client.reload.url">
   [561] extcall 376 ............................. <variableExists("client.reload.url")>
@@ -430,7 +430,7 @@ on updateState me, tstate
   [593] getparam 0 .............................. <me>
   [595] pushcons 21 ............................. <"load_texts">
   [597] pusharglist 2 ........................... <me, "load_texts">
-  [599] objcall 1746 ............................ <me.updateState("load_texts")>
+  [599] objcall 1743 ............................ <me.updateState("load_texts")>
   [602] pusharglistnoret 1 ...................... <me.updateState("load_texts")>
   [604] extcall 25 .............................. return me.updateState("load_texts")
   [606] jmp [1286]
@@ -454,7 +454,7 @@ on updateState me, tstate
   [645] getparam 0 .............................. <me>
   [647] pushcons 23 ............................. <"load_casts">
   [649] pusharglist 2 ........................... <me, "load_casts">
-  [651] objcall 1746 ............................ <me.updateState("load_casts")>
+  [651] objcall 1743 ............................ <me.updateState("load_casts")>
   [654] pusharglistnoret 1 ...................... <me.updateState("load_casts")>
   [656] extcall 25 .............................. return me.updateState("load_casts")
   [658] getlocal 5 .............................. <tURL>
@@ -495,7 +495,7 @@ on updateState me, tstate
   [730] setlocal 8 .............................. tMemNum = queueDownload(tURL, tMemName, #field)
   [732] pop 1
   [734] getlocal 8 .............................. <tMemNum>
-  [736] pushsymb 1746 ........................... <#updateState>
+  [736] pushsymb 1743 ........................... <#updateState>
   [739] getparam 0 .............................. <me>
   [741] pusharglist 1 ........................... <me>
   [743] objcall 3 ............................... <me.getID()>
@@ -576,14 +576,14 @@ on updateState me, tstate
   [896] jmpifz [915] ............................ if getVariable("loading.bar.active") then
   [899] getlocal 12 ............................. <tLoadID>
   [901] pushsymb 464 ............................ <#buffer>
-  [904] pushsymb 1659 ........................... <#window>
+  [904] pushsymb 1656 ........................... <#window>
   [907] pusharglist 2 ........................... <[#buffer: #window]>
   [909] pushproplist ............................ <[#buffer: #window]>
   [910] pusharglistnoret 2 ...................... <tLoadID, [#buffer: #window]>
   [912] extcall 408 ............................. showLoadingBar(tLoadID, [#buffer: #window])
   [915] pop 1
   [917] getlocal 12 ............................. <tLoadID>
-  [919] pushsymb 1746 ........................... <#updateState>
+  [919] pushsymb 1743 ........................... <#updateState>
   [922] getparam 0 .............................. <me>
   [924] pusharglist 1 ........................... <me>
   [926] objcall 3 ............................... <me.getID()>
@@ -597,7 +597,7 @@ on updateState me, tstate
   [943] getparam 0 .............................. <me>
   [945] pushcons 27 ............................. <"init_threads">
   [947] pusharglist 2 ........................... <me, "init_threads">
-  [949] objcall 1746 ............................ <me.updateState("init_threads")>
+  [949] objcall 1743 ............................ <me.updateState("init_threads")>
   [952] pusharglistnoret 1 ...................... <me.updateState("init_threads")>
   [954] extcall 25 .............................. return me.updateState("init_threads")
   [956] jmp [1286]
@@ -695,14 +695,14 @@ on updateState me, tstate
   [1138] jmpifz [1157] .......................... if getVariable("loading.bar.active") then
   [1141] getlocal 12 ............................ <tLoadID>
   [1143] pushsymb 464 ........................... <#buffer>
-  [1146] pushsymb 1659 .......................... <#window>
+  [1146] pushsymb 1656 .......................... <#window>
   [1149] pusharglist 2 .......................... <[#buffer: #window]>
   [1151] pushproplist ........................... <[#buffer: #window]>
   [1152] pusharglistnoret 2 ..................... <tLoadID, [#buffer: #window]>
   [1154] extcall 408 ............................ showLoadingBar(tLoadID, [#buffer: #window])
   [1157] pop 1
   [1159] getlocal 12 ............................ <tLoadID>
-  [1161] pushsymb 1746 .......................... <#updateState>
+  [1161] pushsymb 1743 .......................... <#updateState>
   [1164] getparam 0 ............................. <me>
   [1166] pusharglist 1 .......................... <me>
   [1168] objcall 3 .............................. <me.getID()>
@@ -716,7 +716,7 @@ on updateState me, tstate
   [1185] getparam 0 ............................. <me>
   [1187] pushcons 27 ............................ <"init_threads">
   [1189] pusharglist 2 .......................... <me, "init_threads">
-  [1191] objcall 1746 ........................... <me.updateState("init_threads")>
+  [1191] objcall 1743 ........................... <me.updateState("init_threads")>
   [1194] pusharglistnoret 1 ..................... <me.updateState("init_threads")>
   [1196] extcall 25 ............................. return me.updateState("init_threads")
   [1198] jmp [1286]
@@ -736,13 +736,13 @@ on updateState me, tstate
   [1229] setobjprop 1013 ........................ (the stage).title = getVariable("client.window.title")
   [1232] getparam 0 ............................. <me>
   [1234] pusharglistnoret 1 ..................... <me>
-  [1236] objcall 1745 ........................... me.hideLogo()
+  [1236] objcall 1742 ........................... me.hideLogo()
   [1239] pusharglist 0 .......................... <>
   [1241] extcall 79 ............................. <getThreadManager()>
   [1243] pusharglistnoret 1 ..................... <getThreadManager()>
   [1245] objcall 159 ............................ getThreadManager().initAll()
   [1247] pop 1
-  [1249] pushsymb 1749 .......................... <#Initialize>
+  [1249] pushsymb 1746 .......................... <#Initialize>
   [1252] pushcons 29 ............................ <"initialize">
   [1254] pusharglist 2 .......................... <#Initialize, "initialize">
   [1256] extcall 357 ............................ <executeMessage(#Initialize, "initialize")>
@@ -754,7 +754,7 @@ on updateState me, tstate
   [1270] pushcons 30 ............................ <"Unknown state:">
   [1272] getparam 1 ............................. <tstate>
   [1274] joinpadstr ............................. <"Unknown state:" && tstate>
-  [1275] pushsymb 1746 .......................... <#updateState>
+  [1275] pushsymb 1743 .......................... <#updateState>
   [1278] pusharglist 3 .......................... <me, "Unknown state:" && tstate, #updateState>
   [1280] extcall 39 ............................. <error(me, "Unknown state:" && tstate, #updateState)>
   [1282] pusharglistnoret 1 ..................... <error(me, "Unknown state:" && tstate, #updateState)>

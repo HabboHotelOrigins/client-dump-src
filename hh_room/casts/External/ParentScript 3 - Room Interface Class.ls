@@ -1354,7 +1354,7 @@ on eventProcInterface me, tEvent, tSprID, tParam
       else
         tUserName = EMPTY
       end if
-      tComponent.getRoomConnection().send("ROOMBAN", [#string: string(tUserName), #string: string("BAN_USER_DAY")])
+      tComponent.getRoomConnection().send("ROOMBAN", [#string: string(tUserName), #string: string(tParam)])
       return me.hideInterface(#hide)
     "give_rights.button":
       if tComponent.userObjectExists(pSelectedObj) then
@@ -1464,6 +1464,17 @@ on eventProcRoom me, tEvent, tSprID, tParam
           return error(me, "Invalid active object:" && pSelectedObj, #eventProcRoom)
         end if
         me.getComponent().getRoomConnection().send("MOVESTUFF", pSelectedObj && tloc[1] && tloc[2] && tObj.pDirection[1])
+        me.stopObjectMover()
+      "moveItem":
+        tloc = getObject(pObjMoverID).getProperty(#itemLocStr)
+        if not tloc then
+          return 0
+        end if
+        tObj = me.getComponent().getItemObject(pSelectedObj)
+        if tObj = 0 then
+          return error(me, "Invalid item object:" && pSelectedObj, #eventProcRoom, #major)
+        end if
+        me.getComponent().getRoomConnection().send("MOVEITEM", [#integer: pSelectedObj, #string: string(tloc)])
         me.stopObjectMover()
       "placeActive":
         if getObject(#session).get("room_controller") or getObject(#session).get("user_rights").getOne("fuse_any_room_controller") then

@@ -7,10 +7,10 @@ on define me, tProps
   [  6] objcall 54 .............................. <tProps[#id]>
   [  8] setprop 463 ............................. pID = tProps[#id]
   [ 11] getparam 1 .............................. <tProps>
-  [ 13] pushsymb 1462 ........................... <#mother>
+  [ 13] pushsymb 1459 ........................... <#mother>
   [ 16] pusharglist 2 ........................... <tProps, #mother>
   [ 18] objcall 54 .............................. <tProps[#mother]>
-  [ 20] setprop 1492 ............................ pMotherId = tProps[#mother]
+  [ 20] setprop 1489 ............................ pMotherId = tProps[#mother]
   [ 23] getparam 1 .............................. <tProps>
   [ 25] pushsymb 456 ............................ <#type>
   [ 28] pusharglist 2 ........................... <tProps, #type>
@@ -35,12 +35,12 @@ on define me, tProps
   [ 71] pushsymb 1301 ........................... <#scaleH>
   [ 74] pusharglist 2 ........................... <tProps, #scaleH>
   [ 76] objcall 54 .............................. <tProps[#scaleH]>
-  [ 78] setprop 1489 ............................ pScaleH = tProps[#scaleH]
+  [ 78] setprop 1486 ............................ pScaleH = tProps[#scaleH]
   [ 81] getparam 1 .............................. <tProps>
   [ 83] pushsymb 1303 ........................... <#scaleV>
   [ 86] pusharglist 2 ........................... <tProps, #scaleV>
   [ 88] objcall 54 .............................. <tProps[#scaleV]>
-  [ 90] setprop 1490 ............................ pScaleV = tProps[#scaleV]
+  [ 90] setprop 1487 ............................ pScaleV = tProps[#scaleV]
   [ 93] getparam 1 .............................. <tProps>
   [ 95] pushsymb 506 ............................ <#locH>
   [ 98] pusharglist 2 ........................... <tProps, #locH>
@@ -60,9 +60,9 @@ on define me, tProps
   [130] pushsymb 43 ............................. <#height>
   [132] pusharglist 2 ........................... <tProps, #height>
   [134] objcall 54 .............................. <tProps[#height]>
-  [136] setprop 504 ............................. pheight = tProps[#height]
+  [136] setprop 505 ............................. pheight = tProps[#height]
   [139] getparam 1 .............................. <tProps>
-  [141] setprop 1493 ............................ pProps = tProps
+  [141] setprop 1490 ............................ pProps = tProps
   [144] pushint8 1 .............................. <1>
   [146] setprop 1366 ............................ pVisible = 1
   [149] getprop 493 ............................. <pPalette>
@@ -84,7 +84,7 @@ on define me, tProps
   [189] pusharglist 1 ........................... <getResourceManager().getmemnum(pPalette)>
   [191] extcall 41 .............................. <member(getResourceManager().getmemnum(pPalette))>
   [193] setprop 493 ............................. pPalette = member(getResourceManager().getmemnum(pPalette))
-  [196] getprop 1493 ............................ <pProps>
+  [196] getprop 1490 ............................ <pProps>
   [199] pushsymb 41 ............................. <#member>
   [201] pusharglist 2 ........................... <pProps, #member>
   [203] objcall 54 .............................. <pProps[#member]>
@@ -96,7 +96,7 @@ on define me, tProps
   [215] jmp [237]
   [218] pusharglist 0 ........................... <>
   [220] extcall 76 .............................. <getResourceManager()>
-  [222] getprop 1493 ............................ <pProps>
+  [222] getprop 1490 ............................ <pProps>
   [225] pushsymb 41 ............................. <#member>
   [227] pusharglist 2 ........................... <pProps, #member>
   [229] objcall 54 .............................. <pProps[#member]>
@@ -118,7 +118,7 @@ on define me, tProps
   [259] getlocal 1 .............................. <tmember>
   [261] getchainedprop 502 ...................... <tmember.image>
   [264] getobjprop 542 .......................... <tmember.image.depth>
-  [267] setprop 1494 ............................ pDepth = tmember.image.depth
+  [267] setprop 1491 ............................ pDepth = tmember.image.depth
   [270] getlocal 1 .............................. <tmember>
   [272] getchainedprop 502 ...................... <tmember.image>
   [275] pusharglist 1 ........................... <tmember.image>
@@ -135,16 +135,16 @@ on define me, tProps
   [305] jmp [333]
   [308] pushint8 6 .............................. <6>
   [310] get 7 ................................... <the colorDepth>
-  [312] setprop 1494 ............................ pDepth = the colorDepth
+  [312] setprop 1491 ............................ pDepth = the colorDepth
   [315] pushint8 1 .............................. <1>
   [317] pushint8 1 .............................. <1>
-  [319] getprop 1494 ............................ <pDepth>
+  [319] getprop 1491 ............................ <pDepth>
   [322] getprop 493 ............................. <pPalette>
   [325] pusharglist 4 ........................... <1, 1, pDepth, pPalette>
   [327] extcall 502 ............................. <image(1, 1, pDepth, pPalette)>
   [330] setprop 498 ............................. pimage = image(1, 1, pDepth, pPalette)
   [333] getparam 0 .............................. <me>
-  [335] pushsymb 1493 ........................... <#pProps>
+  [335] pushsymb 1490 ........................... <#pProps>
   [338] pushsymb 452 ............................ <#flipH>
   [341] pusharglist 3 ........................... <me, #pProps, #flipH>
   [343] objcall 290 ............................. <me.pProps[#flipH]>
@@ -153,7 +153,7 @@ on define me, tProps
   [351] pusharglistnoret 1 ...................... <me>
   [353] objcall 452 ............................. me.flipH()
   [356] getparam 0 .............................. <me>
-  [358] pushsymb 1493 ........................... <#pProps>
+  [358] pushsymb 1490 ........................... <#pProps>
   [361] pushsymb 453 ............................ <#flipV>
   [364] pusharglist 3 ........................... <me, #pProps, #flipV>
   [366] objcall 290 ............................. <me.pProps[#flipV]>
@@ -163,7 +163,7 @@ on define me, tProps
   [376] objcall 453 ............................. me.flipV()
   [379] pusharglist 0 ........................... <[:]>
   [381] pushproplist ............................ <[:]>
-  [382] setprop 1495 ............................ pParams = [:]
+  [382] setprop 1492 ............................ pParams = [:]
   [385] getparam 1 .............................. <tProps>
   [387] pushsymb 503 ............................ <#blend>
   [390] pusharglist 2 ........................... <tProps, #blend>
@@ -171,7 +171,7 @@ on define me, tProps
   [394] pushint8 100 ............................ <100>
   [396] lt ...................................... <tProps[#blend] < 100>
   [397] jmpifz [419] ............................ if tProps[#blend] < 100 then
-  [400] getprop 1495 ............................ <pParams>
+  [400] getprop 1492 ............................ <pParams>
   [403] pushsymb 503 ............................ <#blend>
   [406] getparam 1 .............................. <tProps>
   [408] pushsymb 503 ............................ <#blend>
@@ -190,7 +190,7 @@ on define me, tProps
   [433] extcall 578 ............................. <rgb(0, 0, 0)>
   [436] nteq .................................... <tProps[#color] <> rgb(0, 0, 0)>
   [437] jmpifz [459] ............................ if tProps[#color] <> rgb(0, 0, 0) then
-  [440] getprop 1495 ............................ <pParams>
+  [440] getprop 1492 ............................ <pParams>
   [443] pushsymb 599 ............................ <#color>
   [446] getparam 1 .............................. <tProps>
   [448] pushsymb 599 ............................ <#color>
@@ -209,7 +209,7 @@ on define me, tProps
   [479] extcall 578 ............................. <rgb(255, 255, 255)>
   [482] nteq .................................... <tProps[#bgColor] <> rgb(255, 255, 255)>
   [483] jmpifz [505] ............................ if tProps[#bgColor] <> rgb(255, 255, 255) then
-  [486] getprop 1495 ............................ <pParams>
+  [486] getprop 1492 ............................ <pParams>
   [489] pushsymb 1298 ........................... <#bgColor>
   [492] getparam 1 .............................. <tProps>
   [494] pushsymb 1298 ........................... <#bgColor>
@@ -224,7 +224,7 @@ on define me, tProps
   [514] pushzero ................................ <0>
   [515] nteq .................................... <tProps[#ink] <> 0>
   [516] jmpifz [538] ............................ if tProps[#ink] <> 0 then
-  [519] getprop 1495 ............................ <pParams>
+  [519] getprop 1492 ............................ <pParams>
   [522] pushsymb 562 ............................ <#ink>
   [525] getparam 1 .............................. <tProps>
   [527] pushsymb 562 ............................ <#ink>
@@ -232,14 +232,14 @@ on define me, tProps
   [532] objcall 54 .............................. <tProps[#ink]>
   [534] pusharglistnoret 3 ...................... <pParams, #ink, tProps[#ink]>
   [536] objcall 24 .............................. pParams[#ink] = tProps[#ink]
-  [538] getprop 1495 ............................ <pParams>
+  [538] getprop 1492 ............................ <pParams>
   [541] getobjprop 22 ........................... <pParams.count>
   [543] pushzero ................................ <0>
   [544] eq ...................................... <pParams.count = 0>
   [545] jmpifz [555] ............................ if pParams.count = 0 then
   [548] pusharglist 0 ........................... <>
   [550] extcall 32 .............................. <VOID>
-  [552] setprop 1495 ............................ pParams = VOID
+  [552] setprop 1492 ............................ pParams = VOID
   [555] pushint8 1 .............................. <1>
   [557] pusharglistnoret 1 ...................... <1>
   [559] extcall 25 .............................. return 1
@@ -282,7 +282,7 @@ on resizeTo me, tX, tY
   [  5] sub ..................................... <tX - pwidth>
   [  6] setlocal 0 .............................. tOffX = tX - pwidth
   [  8] getparam 2 .............................. <tY>
-  [ 10] getprop 504 ............................. <pheight>
+  [ 10] getprop 505 ............................. <pheight>
   [ 13] sub ..................................... <tY - pheight>
   [ 14] setlocal 1 .............................. tOffY = tY - pheight
   [ 16] getparam 0 .............................. <me>
@@ -296,7 +296,7 @@ on resizeTo me, tX, tY
 end
 
 on resizeBy me, tOffH, tOffV
-  [  0] getprop 1489 ............................ <pScaleH>
+  [  0] getprop 1486 ............................ <pScaleH>
   [  3] peek 0 .................................. case pScaleH of
   [  5] pushsymb 1305 ........................... <#move>
   [  8] eq
@@ -326,7 +326,7 @@ on resizeBy me, tOffH, tOffV
   [ 62] add ..................................... <pwidth + tOffH>
   [ 63] setprop 499 ............................. pwidth = pwidth + tOffH
   [ 66] pop 1 ................................... end case
-  [ 68] getprop 1490 ............................ <pScaleV>
+  [ 68] getprop 1487 ............................ <pScaleV>
   [ 71] peek 0 .................................. case pScaleV of
   [ 73] pushsymb 1305 ........................... <#move>
   [ 76] eq
@@ -351,10 +351,10 @@ on resizeBy me, tOffH, tOffV
   [118] pushsymb 1308 ........................... <#scale>
   [121] eq
   [122] jmpifz [134] ............................ (case) #scale:
-  [125] getprop 504 ............................. <pheight>
+  [125] getprop 505 ............................. <pheight>
   [128] getparam 2 .............................. <tOffV>
   [130] add ..................................... <pheight + tOffV>
-  [131] setprop 504 ............................. pheight = pheight + tOffV
+  [131] setprop 505 ............................. pheight = pheight + tOffV
   [134] pop 1 ................................... end case
   [136] getparam 0 .............................. <me>
   [138] pusharglistnoret 1 ...................... <me>
@@ -491,7 +491,7 @@ on getProperty me, tProp
   [ 66] eq
   [ 67] jmpifz [ 82] ............................ (case) #height:
   [ 70] pop 1
-  [ 72] getprop 504 ............................. <pheight>
+  [ 72] getprop 505 ............................. <pheight>
   [ 75] pusharglistnoret 1 ...................... <pheight>
   [ 77] extcall 25 .............................. return pheight
   [ 79] jmp [215]
@@ -518,7 +518,7 @@ on getProperty me, tProp
   [129] eq
   [130] jmpifz [145] ............................ (case) #scaleH:
   [133] pop 1
-  [135] getprop 1489 ............................ <pScaleH>
+  [135] getprop 1486 ............................ <pScaleH>
   [138] pusharglistnoret 1 ...................... <pScaleH>
   [140] extcall 25 .............................. return pScaleH
   [142] jmp [215]
@@ -527,7 +527,7 @@ on getProperty me, tProp
   [150] eq
   [151] jmpifz [166] ............................ (case) #scaleV:
   [154] pop 1
-  [156] getprop 1490 ............................ <pScaleV>
+  [156] getprop 1487 ............................ <pScaleV>
   [159] pusharglistnoret 1 ...................... <pScaleV>
   [161] extcall 25 .............................. return pScaleV
   [163] jmp [215]
@@ -536,7 +536,7 @@ on getProperty me, tProp
   [171] eq
   [172] jmpifz [187] ............................ (case) #depth:
   [175] pop 1
-  [177] getprop 1494 ............................ <pDepth>
+  [177] getprop 1491 ............................ <pDepth>
   [180] pusharglistnoret 1 ...................... <pDepth>
   [182] extcall 25 .............................. return pDepth
   [184] jmp [215]
@@ -564,7 +564,7 @@ on render me
   [  9] getprop 499 ............................. <pwidth>
   [ 12] add ..................................... <pLocX + pwidth>
   [ 13] getprop 469 ............................. <pLocY>
-  [ 16] getprop 504 ............................. <pheight>
+  [ 16] getprop 505 ............................. <pheight>
   [ 19] add ..................................... <pLocY + pheight>
   [ 20] pusharglist 4 ........................... <pLocX, pLocY, pLocX + pwidth, pLocY + pheight>
   [ 22] extcall 557 ............................. <rect(pLocX, pLocY, pLocX + pwidth, pLocY + pheight)>
@@ -577,7 +577,7 @@ on render me
   [ 41] getprop 498 ............................. <pimage>
   [ 44] getlocal 0 .............................. <tTargetRect>
   [ 46] getlocal 1 .............................. <tSourceRect>
-  [ 48] getprop 1495 ............................ <pParams>
+  [ 48] getprop 1492 ............................ <pParams>
   [ 51] pusharglistnoret 5 ...................... <pBuffer.image, pimage, tTargetRect, tSourceRect, pParams>
   [ 53] objcall 558 ............................. pBuffer.image.copyPixels(pimage, tTargetRect, tSourceRect, pParams)
   [ 56] ret
@@ -602,7 +602,7 @@ on draw me, tRGB
   [ 35] getprop 499 ............................. <pwidth>
   [ 38] add ..................................... <pLocX + pwidth>
   [ 39] getprop 469 ............................. <pLocY>
-  [ 42] getprop 504 ............................. <pheight>
+  [ 42] getprop 505 ............................. <pheight>
   [ 45] add ..................................... <pLocY + pheight>
   [ 46] pusharglist 4 ........................... <pLocX, pLocY, pLocX + pwidth, pLocY + pheight>
   [ 48] extcall 557 ............................. <rect(pLocX, pLocY, pLocX + pwidth, pLocY + pheight)>
@@ -610,7 +610,7 @@ on draw me, tRGB
   [ 53] getprop 465 ............................. <pBuffer>
   [ 56] getchainedprop 502 ...................... <pBuffer.image>
   [ 59] getlocal 0 .............................. <tTargetRect>
-  [ 61] pushsymb 1499 ........................... <#shapeType>
+  [ 61] pushsymb 1496 ........................... <#shapeType>
   [ 64] pushsymb 557 ............................ <#rect>
   [ 67] pushsymb 599 ............................ <#color>
   [ 70] getparam 1 .............................. <tRGB>

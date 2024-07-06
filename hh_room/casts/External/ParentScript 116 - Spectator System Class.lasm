@@ -2,52 +2,52 @@ property pSpectatorMode, pVisualizerId
 
 on construct me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1924 ............................ pSpectatorMode = 0
+  [  1] setprop 1928 ............................ pSpectatorMode = 0
   [  4] pushcons 0 .............................. <"passive_tv_screen">
-  [  6] setprop 1925 ............................ pVisualizerId = "passive_tv_screen"
-  [  9] pushsymb 491 ............................ <#leaveRoom>
+  [  6] setprop 1929 ............................ pVisualizerId = "passive_tv_screen"
+  [  9] pushsymb 552 ............................ <#leaveRoom>
   [ 12] getparam 0 .............................. <me>
   [ 14] pusharglist 1 ........................... <me>
-  [ 16] objcall 156 ............................. <me.getID()>
-  [ 18] pushsymb 1923 ........................... <#hideSpectatorView>
+  [ 16] objcall 75 .............................. <me.getID()>
+  [ 18] pushsymb 1927 ........................... <#hideSpectatorView>
   [ 21] pusharglistnoret 3 ...................... <#leaveRoom, me.getID(), #hideSpectatorView>
-  [ 23] extcall 155 ............................. registerMessage(#leaveRoom, me.getID(), #hideSpectatorView)
-  [ 25] pushsymb 578 ............................ <#changeRoom>
-  [ 28] getparam 0 .............................. <me>
-  [ 30] pusharglist 1 ........................... <me>
-  [ 32] objcall 156 ............................. <me.getID()>
-  [ 34] pushsymb 1923 ........................... <#hideSpectatorView>
-  [ 37] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #hideSpectatorView>
-  [ 39] extcall 155 ............................. registerMessage(#changeRoom, me.getID(), #hideSpectatorView)
-  [ 41] pushint8 1 .............................. <1>
-  [ 43] pusharglistnoret 1 ...................... <1>
-  [ 45] extcall 21 .............................. return 1
-  [ 47] ret
+  [ 23] extcall 264 ............................. registerMessage(#leaveRoom, me.getID(), #hideSpectatorView)
+  [ 26] pushsymb 631 ............................ <#changeRoom>
+  [ 29] getparam 0 .............................. <me>
+  [ 31] pusharglist 1 ........................... <me>
+  [ 33] objcall 75 .............................. <me.getID()>
+  [ 35] pushsymb 1927 ........................... <#hideSpectatorView>
+  [ 38] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #hideSpectatorView>
+  [ 40] extcall 264 ............................. registerMessage(#changeRoom, me.getID(), #hideSpectatorView)
+  [ 43] pushint8 1 .............................. <1>
+  [ 45] pusharglistnoret 1 ...................... <1>
+  [ 47] extcall 31 .............................. return 1
+  [ 49] ret
 end
 
 on deconstruct me
-  [  0] pushsymb 491 ............................ <#leaveRoom>
+  [  0] pushsymb 552 ............................ <#leaveRoom>
   [  3] getparam 0 .............................. <me>
   [  5] pusharglist 1 ........................... <me>
-  [  7] objcall 156 ............................. <me.getID()>
+  [  7] objcall 75 .............................. <me.getID()>
   [  9] pusharglistnoret 2 ...................... <#leaveRoom, me.getID()>
-  [ 11] extcall 158 ............................. unregisterMessage(#leaveRoom, me.getID())
-  [ 13] pushsymb 578 ............................ <#changeRoom>
-  [ 16] getparam 0 .............................. <me>
-  [ 18] pusharglist 1 ........................... <me>
-  [ 20] objcall 156 ............................. <me.getID()>
-  [ 22] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
-  [ 24] extcall 158 ............................. unregisterMessage(#changeRoom, me.getID())
-  [ 26] pushint8 1 .............................. <1>
-  [ 28] pusharglistnoret 1 ...................... <1>
-  [ 30] extcall 21 .............................. return 1
-  [ 32] ret
+  [ 11] extcall 266 ............................. unregisterMessage(#leaveRoom, me.getID())
+  [ 14] pushsymb 631 ............................ <#changeRoom>
+  [ 17] getparam 0 .............................. <me>
+  [ 19] pusharglist 1 ........................... <me>
+  [ 21] objcall 75 .............................. <me.getID()>
+  [ 23] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
+  [ 25] extcall 266 ............................. unregisterMessage(#changeRoom, me.getID())
+  [ 28] pushint8 1 .............................. <1>
+  [ 30] pusharglistnoret 1 ...................... <1>
+  [ 32] extcall 31 .............................. return 1
+  [ 34] ret
 end
 
 on getSpectatorMode me
-  [  0] getprop 1924 ............................ <pSpectatorMode>
+  [  0] getprop 1928 ............................ <pSpectatorMode>
   [  3] pusharglistnoret 1 ...................... <pSpectatorMode>
-  [  5] extcall 21 .............................. return pSpectatorMode
+  [  5] extcall 31 .............................. return pSpectatorMode
   [  7] ret
 end
 
@@ -55,156 +55,156 @@ on setSpectatorMode me, tstate, tSpaceType
   [  0] getparam 1 .............................. <tstate>
   [  2] pushint8 1 .............................. <1>
   [  4] eq ...................................... <tstate = 1>
-  [  5] jmpifz [ 30] ............................ if tstate = 1 then / else
+  [  5] jmpifz [ 31] ............................ if tstate = 1 then / else
   [  8] pushint8 1 .............................. <1>
-  [ 10] setprop 1924 ............................ pSpectatorMode = 1
+  [ 10] setprop 1928 ............................ pSpectatorMode = 1
   [ 13] getparam 0 .............................. <me>
   [ 15] pusharglistnoret 1 ...................... <me>
-  [ 17] objcall 1922 ............................ me.showSpectatorView()
-  [ 20] pushsymb 1926 ........................... <#spectatorMode_on>
+  [ 17] objcall 1926 ............................ me.showSpectatorView()
+  [ 20] pushsymb 1930 ........................... <#spectatorMode_on>
   [ 23] pusharglistnoret 1 ...................... <#spectatorMode_on>
-  [ 25] extcall 214 ............................. executeMessage(#spectatorMode_on)
-  [ 27] jmp [119]
-  [ 30] pushzero ................................ <0>
-  [ 31] setprop 1924 ............................ pSpectatorMode = 0
-  [ 34] getparam 2 .............................. <tSpaceType>
-  [ 36] peek 0 .................................. case tSpaceType of
-  [ 38] pushsymb 639 ............................ <#public>
-  [ 41] eq
-  [ 42] jmpifz [ 90] ............................ (case) #public:
-  [ 45] pushsymb 1635 ........................... <#info>
-  [ 48] pusharglist 1 ........................... <#info>
-  [ 50] extcall 488 ............................. <getConnection(#info)>
-  [ 53] pushzero ................................ <0>
-  [ 54] nteq .................................... <getConnection(#info) <> 0>
-  [ 55] jmpifz [ 73] ............................ if getConnection(#info) <> 0 then
-  [ 58] pushsymb 1635 ........................... <#info>
-  [ 61] pusharglist 1 ........................... <#info>
-  [ 63] extcall 488 ............................. <getConnection(#info)>
-  [ 66] pushcons 1 .............................. <"QUIT">
-  [ 68] pusharglistnoret 2 ...................... <getConnection(#info), "QUIT">
-  [ 70] objcall 396 ............................. getConnection(#info).send("QUIT")
-  [ 73] pushsymb 491 ............................ <#leaveRoom>
+  [ 25] extcall 310 ............................. executeMessage(#spectatorMode_on)
+  [ 28] jmp [123]
+  [ 31] pushzero ................................ <0>
+  [ 32] setprop 1928 ............................ pSpectatorMode = 0
+  [ 35] getparam 2 .............................. <tSpaceType>
+  [ 37] peek 0 .................................. case tSpaceType of
+  [ 39] pushsymb 691 ............................ <#public>
+  [ 42] eq
+  [ 43] jmpifz [ 92] ............................ (case) #public:
+  [ 46] pushsymb 1631 ........................... <#info>
+  [ 49] pusharglist 1 ........................... <#info>
+  [ 51] extcall 549 ............................. <getConnection(#info)>
+  [ 54] pushzero ................................ <0>
+  [ 55] nteq .................................... <getConnection(#info) <> 0>
+  [ 56] jmpifz [ 73] ............................ if getConnection(#info) <> 0 then
+  [ 59] pushsymb 1631 ........................... <#info>
+  [ 62] pusharglist 1 ........................... <#info>
+  [ 64] extcall 549 ............................. <getConnection(#info)>
+  [ 67] pushcons 1 .............................. <"QUIT">
+  [ 69] pusharglistnoret 2 ...................... <getConnection(#info), "QUIT">
+  [ 71] objcall 135 ............................. getConnection(#info).send("QUIT")
+  [ 73] pushsymb 552 ............................ <#leaveRoom>
   [ 76] pusharglistnoret 1 ...................... <#leaveRoom>
-  [ 78] extcall 214 ............................. executeMessage(#leaveRoom)
-  [ 80] pushsymb 1927 ........................... <#spectatorMode_off>
-  [ 83] pusharglistnoret 1 ...................... <#spectatorMode_off>
-  [ 85] extcall 214 ............................. executeMessage(#spectatorMode_off)
-  [ 87] jmp [117]
-  [ 90] peek 0
-  [ 92] pushsymb 219 ............................ <#private>
-  [ 94] eq
-  [ 95] jmpifz [101] ............................ (case) #private:
-  [ 98] jmp [117]
-  [101] peek 0
-  [103] pushsymb 657 ............................ <#game>
-  [106] eq
-  [107] jmpifz [117] ............................ (case) #game:
-  [110] pushsymb 1927 ........................... <#spectatorMode_off>
-  [113] pusharglistnoret 1 ...................... <#spectatorMode_off>
-  [115] extcall 214 ............................. executeMessage(#spectatorMode_off)
-  [117] pop 1 ................................... end case
-  [119] pushint8 1 .............................. <1>
-  [121] pusharglistnoret 1 ...................... <1>
-  [123] extcall 21 .............................. return 1
-  [125] ret
+  [ 78] extcall 310 ............................. executeMessage(#leaveRoom)
+  [ 81] pushsymb 1931 ........................... <#spectatorMode_off>
+  [ 84] pusharglistnoret 1 ...................... <#spectatorMode_off>
+  [ 86] extcall 310 ............................. executeMessage(#spectatorMode_off)
+  [ 89] jmp [121]
+  [ 92] peek 0
+  [ 94] pushsymb 314 ............................ <#private>
+  [ 97] eq
+  [ 98] jmpifz [104] ............................ (case) #private:
+  [101] jmp [121]
+  [104] peek 0
+  [106] pushsymb 710 ............................ <#game>
+  [109] eq
+  [110] jmpifz [121] ............................ (case) #game:
+  [113] pushsymb 1931 ........................... <#spectatorMode_off>
+  [116] pusharglistnoret 1 ...................... <#spectatorMode_off>
+  [118] extcall 310 ............................. executeMessage(#spectatorMode_off)
+  [121] pop 1 ................................... end case
+  [123] pushint8 1 .............................. <1>
+  [125] pusharglistnoret 1 ...................... <1>
+  [127] extcall 31 .............................. return 1
+  [129] ret
 end
 
 on showSpectatorView me
-  [  0] pushsymb 1929 ........................... <#room_interface>
+  [  0] pushsymb 1933 ........................... <#room_interface>
   [  3] pusharglist 1 ........................... <#room_interface>
-  [  5] extcall 153 ............................. <getObject(#room_interface)>
+  [  5] extcall 130 ............................. <getObject(#room_interface)>
   [  7] setlocal 0 .............................. tRoomInt = getObject(#room_interface)
   [  9] getlocal 0 .............................. <tRoomInt>
   [ 11] pusharglist 1 ........................... <tRoomInt>
-  [ 13] extcall 390 ............................. <objectp(tRoomInt)>
-  [ 16] jmpifz [ 85] ............................ if objectp(tRoomInt) then
-  [ 19] getlocal 0 .............................. <tRoomInt>
-  [ 21] pushsymb 370 ............................ <#Remove>
-  [ 24] pusharglistnoret 2 ...................... <tRoomInt, #Remove>
-  [ 26] objcall 112 ............................. tRoomInt.hideInterface(#Remove)
-  [ 28] getlocal 0 .............................. <tRoomInt>
-  [ 30] pusharglistnoret 1 ...................... <tRoomInt>
-  [ 32] objcall 52 .............................. tRoomInt.hideObjectInfo()
-  [ 34] getlocal 0 .............................. <tRoomInt>
-  [ 36] pusharglistnoret 1 ...................... <tRoomInt>
-  [ 38] objcall 49 .............................. tRoomInt.hideInfoStand()
-  [ 40] getlocal 0 .............................. <tRoomInt>
-  [ 42] pusharglistnoret 1 ...................... <tRoomInt>
-  [ 44] objcall 46 .............................. tRoomInt.showRoomBar()
-  [ 46] getlocal 0 .............................. <tRoomInt>
-  [ 48] pusharglist 1 ........................... <tRoomInt>
-  [ 50] objcall 70 .............................. <tRoomInt.getHiliter()>
-  [ 52] pushzero ................................ <0>
-  [ 53] nteq .................................... <tRoomInt.getHiliter() <> 0>
-  [ 54] jmpifz [ 85] ............................ if tRoomInt.getHiliter() <> 0 then
-  [ 57] getlocal 0 .............................. <tRoomInt>
-  [ 59] pusharglist 1 ........................... <tRoomInt>
-  [ 61] objcall 70 .............................. <tRoomInt.getHiliter()>
-  [ 63] pusharglist 1 ........................... <tRoomInt.getHiliter()>
-  [ 65] objcall 156 ............................. <tRoomInt.getHiliter().getID()>
-  [ 67] pusharglistnoret 1 ...................... <tRoomInt.getHiliter().getID()>
-  [ 69] extcall 199 ............................. removeUpdate(tRoomInt.getHiliter().getID())
+  [ 13] extcall 139 ............................. <objectp(tRoomInt)>
+  [ 15] jmpifz [ 86] ............................ if objectp(tRoomInt) then
+  [ 18] getlocal 0 .............................. <tRoomInt>
+  [ 20] pushsymb 442 ............................ <#Remove>
+  [ 23] pusharglistnoret 2 ...................... <tRoomInt, #Remove>
+  [ 25] objcall 224 ............................. tRoomInt.hideInterface(#Remove)
+  [ 27] getlocal 0 .............................. <tRoomInt>
+  [ 29] pusharglistnoret 1 ...................... <tRoomInt>
+  [ 31] objcall 169 ............................. tRoomInt.hideObjectInfo()
+  [ 33] getlocal 0 .............................. <tRoomInt>
+  [ 35] pusharglistnoret 1 ...................... <tRoomInt>
+  [ 37] objcall 166 ............................. tRoomInt.hideInfoStand()
+  [ 39] getlocal 0 .............................. <tRoomInt>
+  [ 41] pusharglistnoret 1 ...................... <tRoomInt>
+  [ 43] objcall 163 ............................. tRoomInt.showRoomBar()
+  [ 45] getlocal 0 .............................. <tRoomInt>
+  [ 47] pusharglist 1 ........................... <tRoomInt>
+  [ 49] objcall 185 ............................. <tRoomInt.getHiliter()>
+  [ 51] pushzero ................................ <0>
+  [ 52] nteq .................................... <tRoomInt.getHiliter() <> 0>
+  [ 53] jmpifz [ 86] ............................ if tRoomInt.getHiliter() <> 0 then
+  [ 56] getlocal 0 .............................. <tRoomInt>
+  [ 58] pusharglist 1 ........................... <tRoomInt>
+  [ 60] objcall 185 ............................. <tRoomInt.getHiliter()>
+  [ 62] pusharglist 1 ........................... <tRoomInt.getHiliter()>
+  [ 64] objcall 75 .............................. <tRoomInt.getHiliter().getID()>
+  [ 66] pusharglistnoret 1 ...................... <tRoomInt.getHiliter().getID()>
+  [ 68] extcall 298 ............................. removeUpdate(tRoomInt.getHiliter().getID())
   [ 71] getlocal 0 .............................. <tRoomInt>
   [ 73] pusharglist 1 ........................... <tRoomInt>
-  [ 75] objcall 70 .............................. <tRoomInt.getHiliter()>
+  [ 75] objcall 185 ............................. <tRoomInt.getHiliter()>
   [ 77] pusharglist 1 ........................... <tRoomInt.getHiliter()>
-  [ 79] objcall 156 ............................. <tRoomInt.getHiliter().getID()>
+  [ 79] objcall 75 .............................. <tRoomInt.getHiliter().getID()>
   [ 81] pusharglistnoret 1 ...................... <tRoomInt.getHiliter().getID()>
-  [ 83] extcall 160 ............................. removeObject(tRoomInt.getHiliter().getID())
-  [ 85] getprop 1925 ............................ <pVisualizerId>
-  [ 88] pusharglist 1 ........................... <pVisualizerId>
-  [ 90] extcall 200 ............................. <visualizerExists(pVisualizerId)>
-  [ 92] jmpifz [101] ............................ if visualizerExists(pVisualizerId) then
-  [ 95] pushint8 1 .............................. <1>
-  [ 97] pusharglistnoret 1 ...................... <1>
-  [ 99] extcall 21 .............................. return 1
-  [101] getprop 1925 ............................ <pVisualizerId>
-  [104] pushcons 2 .............................. <"habbo_tv.visual">
-  [106] pusharglistnoret 2 ...................... <pVisualizerId, "habbo_tv.visual">
-  [108] extcall 164 ............................. createVisualizer(pVisualizerId, "habbo_tv.visual")
-  [110] getprop 1925 ............................ <pVisualizerId>
-  [113] pusharglist 1 ........................... <pVisualizerId>
-  [115] extcall 165 ............................. <getVisualizer(pVisualizerId)>
-  [117] setlocal 1 .............................. tVisObj = getVisualizer(pVisualizerId)
-  [119] getlocal 0 .............................. <tRoomInt>
-  [121] pusharglist 1 ........................... <tRoomInt>
-  [123] objcall 68 .............................. <tRoomInt.getRoomVisualizer()>
-  [125] setlocal 2 .............................. tRoomVis = tRoomInt.getRoomVisualizer()
-  [127] getlocal 2 .............................. <tRoomVis>
-  [129] pushzero ................................ <0>
-  [130] eq ...................................... <tRoomVis = 0>
-  [131] jmpifz [139] ............................ if tRoomVis = 0 then
-  [134] pushzero ................................ <0>
-  [135] pusharglistnoret 1 ...................... <0>
-  [137] extcall 21 .............................. return 0
-  [139] getlocal 1 .............................. <tVisObj>
-  [141] getlocal 2 .............................. <tRoomVis>
-  [143] pushsymb 168 ............................ <#locZ>
-  [145] pusharglist 2 ........................... <tRoomVis, #locZ>
-  [147] objcall 77 .............................. <tRoomVis.getProperty(#locZ)>
-  [149] pushint8 1 .............................. <1>
-  [151] add ..................................... <tRoomVis.getProperty(#locZ) + 1>
-  [152] pusharglistnoret 2 ...................... <tVisObj, tRoomVis.getProperty(#locZ) + 1>
-  [154] objcall 1930 ............................ tVisObj.moveZ(tRoomVis.getProperty(#locZ) + 1)
-  [157] pushint8 1 .............................. <1>
-  [159] pusharglistnoret 1 ...................... <1>
-  [161] extcall 21 .............................. return 1
-  [163] ret
+  [ 83] extcall 267 ............................. removeObject(tRoomInt.getHiliter().getID())
+  [ 86] getprop 1929 ............................ <pVisualizerId>
+  [ 89] pusharglist 1 ........................... <pVisualizerId>
+  [ 91] extcall 299 ............................. <visualizerExists(pVisualizerId)>
+  [ 94] jmpifz [103] ............................ if visualizerExists(pVisualizerId) then
+  [ 97] pushint8 1 .............................. <1>
+  [ 99] pusharglistnoret 1 ...................... <1>
+  [101] extcall 31 .............................. return 1
+  [103] getprop 1929 ............................ <pVisualizerId>
+  [106] pushcons 2 .............................. <"habbo_tv.visual">
+  [108] pusharglistnoret 2 ...................... <pVisualizerId, "habbo_tv.visual">
+  [110] extcall 270 ............................. createVisualizer(pVisualizerId, "habbo_tv.visual")
+  [113] getprop 1929 ............................ <pVisualizerId>
+  [116] pusharglist 1 ........................... <pVisualizerId>
+  [118] extcall 271 ............................. <getVisualizer(pVisualizerId)>
+  [121] setlocal 1 .............................. tVisObj = getVisualizer(pVisualizerId)
+  [123] getlocal 0 .............................. <tRoomInt>
+  [125] pusharglist 1 ........................... <tRoomInt>
+  [127] objcall 119 ............................. <tRoomInt.getRoomVisualizer()>
+  [129] setlocal 2 .............................. tRoomVis = tRoomInt.getRoomVisualizer()
+  [131] getlocal 2 .............................. <tRoomVis>
+  [133] pushzero ................................ <0>
+  [134] eq ...................................... <tRoomVis = 0>
+  [135] jmpifz [143] ............................ if tRoomVis = 0 then
+  [138] pushzero ................................ <0>
+  [139] pusharglistnoret 1 ...................... <0>
+  [141] extcall 31 .............................. return 0
+  [143] getlocal 1 .............................. <tVisObj>
+  [145] getlocal 2 .............................. <tRoomVis>
+  [147] pushsymb 129 ............................ <#locZ>
+  [149] pusharglist 2 ........................... <tRoomVis, #locZ>
+  [151] objcall 124 ............................. <tRoomVis.getProperty(#locZ)>
+  [153] pushint8 1 .............................. <1>
+  [155] add ..................................... <tRoomVis.getProperty(#locZ) + 1>
+  [156] pusharglistnoret 2 ...................... <tVisObj, tRoomVis.getProperty(#locZ) + 1>
+  [158] objcall 1934 ............................ tVisObj.moveZ(tRoomVis.getProperty(#locZ) + 1)
+  [161] pushint8 1 .............................. <1>
+  [163] pusharglistnoret 1 ...................... <1>
+  [165] extcall 31 .............................. return 1
+  [167] ret
 end
 
 on hideSpectatorView me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1924 ............................ pSpectatorMode = 0
-  [  4] getprop 1925 ............................ <pVisualizerId>
+  [  1] setprop 1928 ............................ pSpectatorMode = 0
+  [  4] getprop 1929 ............................ <pVisualizerId>
   [  7] pusharglist 1 ........................... <pVisualizerId>
-  [  9] extcall 200 ............................. <visualizerExists(pVisualizerId)>
-  [ 11] jmpifz [ 21] ............................ if visualizerExists(pVisualizerId) then
-  [ 14] getprop 1925 ............................ <pVisualizerId>
-  [ 17] pusharglistnoret 1 ...................... <pVisualizerId>
-  [ 19] extcall 201 ............................. removeVisualizer(pVisualizerId)
-  [ 21] pushint8 1 .............................. <1>
-  [ 23] pusharglistnoret 1 ...................... <1>
-  [ 25] extcall 21 .............................. return 1
-  [ 27] ret
+  [  9] extcall 299 ............................. <visualizerExists(pVisualizerId)>
+  [ 12] jmpifz [ 23] ............................ if visualizerExists(pVisualizerId) then
+  [ 15] getprop 1929 ............................ <pVisualizerId>
+  [ 18] pusharglistnoret 1 ...................... <pVisualizerId>
+  [ 20] extcall 300 ............................. removeVisualizer(pVisualizerId)
+  [ 23] pushint8 1 .............................. <1>
+  [ 25] pusharglistnoret 1 ...................... <1>
+  [ 27] extcall 31 .............................. return 1
+  [ 29] ret
 end

@@ -15,9 +15,9 @@ on deconstruct me
 end
 
 on defineBalloon me
-  pSprite = sprite(me.GET(#sprite))
-  pMember = member(me.GET(#member))
-  pLoc = me.GET(#loc)
+  pSprite = sprite(me.get(#sprite))
+  pMember = member(me.get(#member))
+  pLoc = me.get(#loc)
   pSprite.loc = pLoc
   pSprite.member = pMember
   return 1
@@ -64,7 +64,7 @@ on set me, tKey, tValue
   return 1
 end
 
-on GET me, tKey
+on get me, tKey
   tValue = pProps[tKey]
   if voidp(tValue) then
     tValue = 0

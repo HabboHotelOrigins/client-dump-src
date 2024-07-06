@@ -1,689 +1,689 @@
 property pActivePostItId, pText, pcolor, pWindowID, pLocX, pLocY, pIsController, pChanged, pIsOwner, pCanRemoveStickies
 
 on construct me
-  [  0] pushsymb 1816 ........................... <#postit_window>
-  [  3] setprop 1593 ............................ pWindowID = #postit_window
-  [  6] pushsymb 491 ............................ <#leaveRoom>
+  [  0] pushsymb 1813 ........................... <#postit_window>
+  [  3] setprop 1589 ............................ pWindowID = #postit_window
+  [  6] pushsymb 552 ............................ <#leaveRoom>
   [  9] getparam 0 .............................. <me>
   [ 11] pusharglist 1 ........................... <me>
-  [ 13] objcall 156 ............................. <me.getID()>
-  [ 15] pushsymb 368 ............................ <#close>
+  [ 13] objcall 75 .............................. <me.getID()>
+  [ 15] pushsymb 440 ............................ <#close>
   [ 18] pusharglistnoret 3 ...................... <#leaveRoom, me.getID(), #close>
-  [ 20] extcall 155 ............................. registerMessage(#leaveRoom, me.getID(), #close)
-  [ 22] pushsymb 578 ............................ <#changeRoom>
-  [ 25] getparam 0 .............................. <me>
-  [ 27] pusharglist 1 ........................... <me>
-  [ 29] objcall 156 ............................. <me.getID()>
-  [ 31] pushsymb 368 ............................ <#close>
-  [ 34] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #close>
-  [ 36] extcall 155 ............................. registerMessage(#changeRoom, me.getID(), #close)
-  [ 38] pushint8 1 .............................. <1>
-  [ 40] pusharglistnoret 1 ...................... <1>
-  [ 42] extcall 21 .............................. return 1
-  [ 44] ret
+  [ 20] extcall 264 ............................. registerMessage(#leaveRoom, me.getID(), #close)
+  [ 23] pushsymb 631 ............................ <#changeRoom>
+  [ 26] getparam 0 .............................. <me>
+  [ 28] pusharglist 1 ........................... <me>
+  [ 30] objcall 75 .............................. <me.getID()>
+  [ 32] pushsymb 440 ............................ <#close>
+  [ 35] pusharglistnoret 3 ...................... <#changeRoom, me.getID(), #close>
+  [ 37] extcall 264 ............................. registerMessage(#changeRoom, me.getID(), #close)
+  [ 40] pushint8 1 .............................. <1>
+  [ 42] pusharglistnoret 1 ...................... <1>
+  [ 44] extcall 31 .............................. return 1
+  [ 46] ret
 end
 
 on deconstruct me
-  [  0] pushsymb 491 ............................ <#leaveRoom>
+  [  0] pushsymb 552 ............................ <#leaveRoom>
   [  3] getparam 0 .............................. <me>
   [  5] pusharglist 1 ........................... <me>
-  [  7] objcall 156 ............................. <me.getID()>
+  [  7] objcall 75 .............................. <me.getID()>
   [  9] pusharglistnoret 2 ...................... <#leaveRoom, me.getID()>
-  [ 11] extcall 158 ............................. unregisterMessage(#leaveRoom, me.getID())
-  [ 13] pushsymb 578 ............................ <#changeRoom>
-  [ 16] getparam 0 .............................. <me>
-  [ 18] pusharglist 1 ........................... <me>
-  [ 20] objcall 156 ............................. <me.getID()>
-  [ 22] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
-  [ 24] extcall 158 ............................. unregisterMessage(#changeRoom, me.getID())
-  [ 26] pushint8 1 .............................. <1>
-  [ 28] pusharglistnoret 1 ...................... <1>
-  [ 30] extcall 21 .............................. return 1
-  [ 32] ret
+  [ 11] extcall 266 ............................. unregisterMessage(#leaveRoom, me.getID())
+  [ 14] pushsymb 631 ............................ <#changeRoom>
+  [ 17] getparam 0 .............................. <me>
+  [ 19] pusharglist 1 ........................... <me>
+  [ 21] objcall 75 .............................. <me.getID()>
+  [ 23] pusharglistnoret 2 ...................... <#changeRoom, me.getID()>
+  [ 25] extcall 266 ............................. unregisterMessage(#changeRoom, me.getID())
+  [ 28] pushint8 1 .............................. <1>
+  [ 30] pusharglistnoret 1 ...................... <1>
+  [ 32] extcall 31 .............................. return 1
+  [ 34] ret
 end
 
 on open me, tid, tColor, tLocX, tLocY
   [  0] getparam 2 .............................. <tColor>
-  [  2] setprop 1817 ............................ pcolor = tColor
+  [  2] setprop 1814 ............................ pcolor = tColor
   [  5] getparam 3 .............................. <tLocX>
-  [  7] setprop 494 ............................. pLocX = tLocX
-  [ 10] getparam 4 .............................. <tLocY>
-  [ 12] setprop 496 ............................. pLocY = tLocY
-  [ 15] getprop 1593 ............................ <pWindowID>
-  [ 18] pusharglist 1 ........................... <pWindowID>
-  [ 20] extcall 162 ............................. <windowExists(pWindowID)>
-  [ 22] jmpifz [ 32] ............................ if windowExists(pWindowID) then
-  [ 25] getprop 1593 ............................ <pWindowID>
-  [ 28] pusharglistnoret 1 ...................... <pWindowID>
-  [ 30] extcall 232 ............................. removeWindow(pWindowID)
+  [  7] setprop 19 .............................. pLocX = tLocX
+  [  9] getparam 4 .............................. <tLocY>
+  [ 11] setprop 20 .............................. pLocY = tLocY
+  [ 13] getprop 1589 ............................ <pWindowID>
+  [ 16] pusharglist 1 ........................... <pWindowID>
+  [ 18] extcall 268 ............................. <windowExists(pWindowID)>
+  [ 21] jmpifz [ 32] ............................ if windowExists(pWindowID) then
+  [ 24] getprop 1589 ............................ <pWindowID>
+  [ 27] pusharglistnoret 1 ...................... <pWindowID>
+  [ 29] extcall 327 ............................. removeWindow(pWindowID)
   [ 32] pushcons 0 .............................. <"itemdata_received">
   [ 34] getparam 1 .............................. <tid>
   [ 36] pusharglist 1 ........................... <tid>
-  [ 38] extcall 451 ............................. <integer(tid)>
-  [ 41] joinstr ................................. <"itemdata_received" & integer(tid)>
-  [ 42] pusharglist 1 ........................... <"itemdata_received" & integer(tid)>
-  [ 44] extcall 685 ............................. <symbol("itemdata_received" & integer(tid))>
-  [ 47] pushsymb 1810 ........................... <#postit_manager>
-  [ 50] pushsymb 1813 ........................... <#setItemData>
-  [ 53] pusharglistnoret 3 ...................... <symbol("itemdata_received" & integer(tid)), #postit_manager, #setItemData>
-  [ 55] extcall 155 ............................. registerMessage(symbol("itemdata_received" & integer(tid)), #postit_manager, #setItemData)
-  [ 57] pushsymb 949 ............................ <#room>
-  [ 60] pusharglist 1 ........................... <#room>
-  [ 62] extcall 260 ............................. <getThread(#room)>
-  [ 65] pusharglist 1 ........................... <getThread(#room)>
-  [ 67] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 69] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 71] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 74] pushcons 1 .............................. <"G_IDATA">
-  [ 76] pushsymb 451 ............................ <#integer>
-  [ 79] getparam 1 .............................. <tid>
-  [ 81] pusharglist 1 ........................... <tid>
-  [ 83] extcall 451 ............................. <integer(tid)>
-  [ 86] pusharglist 2 ........................... <[#integer: integer(tid)]>
-  [ 88] pushproplist ............................ <[#integer: integer(tid)]>
-  [ 89] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "G_IDATA", [#integer: integer(tid)]>
-  [ 91] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("G_IDATA", [#integer: integer(tid)])
-  [ 94] pushsymb 233 ............................ <#session>
-  [ 96] pusharglist 1 ........................... <#session>
-  [ 98] extcall 153 ............................. <getObject(#session)>
-  [100] pushcons 2 .............................. <"room_controller">
-  [102] pusharglist 2 ........................... <getObject(#session), "room_controller">
-  [104] objcall 234 ............................. <getObject(#session).get("room_controller")>
-  [106] setprop 1818 ............................ pIsController = getObject(#session).get("room_controller")
-  [109] pushsymb 233 ............................ <#session>
-  [111] pusharglist 1 ........................... <#session>
-  [113] extcall 153 ............................. <getObject(#session)>
-  [115] pushcons 3 .............................. <"user_rights">
-  [117] pusharglist 2 ........................... <getObject(#session), "user_rights">
-  [119] objcall 234 ............................. <getObject(#session).get("user_rights")>
-  [121] pushcons 4 .............................. <"fuse_any_room_controller">
-  [123] pusharglist 2 ........................... <getObject(#session).get("user_rights"), "fuse_any_room_controller">
-  [125] objcall 238 ............................. <getObject(#session).get("user_rights").getOne("fuse_any_room_controller")>
-  [127] jmpifz [135] ............................ if getObject(#session).get("user_rights").getOne("fuse_any_room_controller") then
-  [130] pushint8 1 .............................. <1>
-  [132] setprop 1818 ............................ pIsController = 1
-  [135] pushsymb 233 ............................ <#session>
-  [137] pusharglist 1 ........................... <#session>
-  [139] extcall 153 ............................. <getObject(#session)>
-  [141] pushcons 5 .............................. <"room_owner">
-  [143] pusharglist 2 ........................... <getObject(#session), "room_owner">
-  [145] objcall 234 ............................. <getObject(#session).get("room_owner")>
-  [147] setprop 1819 ............................ pIsOwner = getObject(#session).get("room_owner")
-  [150] pushsymb 233 ............................ <#session>
-  [152] pusharglist 1 ........................... <#session>
-  [154] extcall 153 ............................. <getObject(#session)>
-  [156] pushcons 3 .............................. <"user_rights">
-  [158] pusharglist 2 ........................... <getObject(#session), "user_rights">
-  [160] objcall 234 ............................. <getObject(#session).get("user_rights")>
-  [162] pushcons 6 .............................. <"fuse_remove_stickies">
-  [164] pusharglist 2 ........................... <getObject(#session).get("user_rights"), "fuse_remove_stickies">
-  [166] objcall 238 ............................. <getObject(#session).get("user_rights").getOne("fuse_remove_stickies")>
-  [168] setprop 1820 ............................ pCanRemoveStickies = getObject(#session).get("user_rights").getOne("fuse_remove_stickies")
-  [171] ret
+  [ 38] extcall 102 ............................. <integer(tid)>
+  [ 40] joinstr ................................. <"itemdata_received" & integer(tid)>
+  [ 41] pusharglist 1 ........................... <"itemdata_received" & integer(tid)>
+  [ 43] extcall 739 ............................. <symbol("itemdata_received" & integer(tid))>
+  [ 46] pushsymb 1807 ........................... <#postit_manager>
+  [ 49] pushsymb 1810 ........................... <#setItemData>
+  [ 52] pusharglistnoret 3 ...................... <symbol("itemdata_received" & integer(tid)), #postit_manager, #setItemData>
+  [ 54] extcall 264 ............................. registerMessage(symbol("itemdata_received" & integer(tid)), #postit_manager, #setItemData)
+  [ 57] pushsymb 52 ............................. <#room>
+  [ 59] pusharglist 1 ........................... <#room>
+  [ 61] extcall 51 .............................. <getThread(#room)>
+  [ 63] pusharglist 1 ........................... <getThread(#room)>
+  [ 65] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 67] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 69] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 71] pushcons 1 .............................. <"G_IDATA">
+  [ 73] pushsymb 102 ............................ <#integer>
+  [ 75] getparam 1 .............................. <tid>
+  [ 77] pusharglist 1 ........................... <tid>
+  [ 79] extcall 102 ............................. <integer(tid)>
+  [ 81] pusharglist 2 ........................... <[#integer: integer(tid)]>
+  [ 83] pushproplist ............................ <[#integer: integer(tid)]>
+  [ 84] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "G_IDATA", [#integer: integer(tid)]>
+  [ 86] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("G_IDATA", [#integer: integer(tid)])
+  [ 88] pushsymb 131 ............................ <#session>
+  [ 90] pusharglist 1 ........................... <#session>
+  [ 92] extcall 130 ............................. <getObject(#session)>
+  [ 94] pushcons 2 .............................. <"room_controller">
+  [ 96] pusharglist 2 ........................... <getObject(#session), "room_controller">
+  [ 98] objcall 133 ............................. <getObject(#session).get("room_controller")>
+  [100] setprop 1815 ............................ pIsController = getObject(#session).get("room_controller")
+  [103] pushsymb 131 ............................ <#session>
+  [105] pusharglist 1 ........................... <#session>
+  [107] extcall 130 ............................. <getObject(#session)>
+  [109] pushcons 3 .............................. <"user_rights">
+  [111] pusharglist 2 ........................... <getObject(#session), "user_rights">
+  [113] objcall 133 ............................. <getObject(#session).get("user_rights")>
+  [115] pushcons 4 .............................. <"fuse_any_room_controller">
+  [117] pusharglist 2 ........................... <getObject(#session).get("user_rights"), "fuse_any_room_controller">
+  [119] objcall 330 ............................. <getObject(#session).get("user_rights").getOne("fuse_any_room_controller")>
+  [122] jmpifz [130] ............................ if getObject(#session).get("user_rights").getOne("fuse_any_room_controller") then
+  [125] pushint8 1 .............................. <1>
+  [127] setprop 1815 ............................ pIsController = 1
+  [130] pushsymb 131 ............................ <#session>
+  [132] pusharglist 1 ........................... <#session>
+  [134] extcall 130 ............................. <getObject(#session)>
+  [136] pushcons 5 .............................. <"room_owner">
+  [138] pusharglist 2 ........................... <getObject(#session), "room_owner">
+  [140] objcall 133 ............................. <getObject(#session).get("room_owner")>
+  [142] setprop 1816 ............................ pIsOwner = getObject(#session).get("room_owner")
+  [145] pushsymb 131 ............................ <#session>
+  [147] pusharglist 1 ........................... <#session>
+  [149] extcall 130 ............................. <getObject(#session)>
+  [151] pushcons 3 .............................. <"user_rights">
+  [153] pusharglist 2 ........................... <getObject(#session), "user_rights">
+  [155] objcall 133 ............................. <getObject(#session).get("user_rights")>
+  [157] pushcons 6 .............................. <"fuse_remove_stickies">
+  [159] pusharglist 2 ........................... <getObject(#session).get("user_rights"), "fuse_remove_stickies">
+  [161] objcall 330 ............................. <getObject(#session).get("user_rights").getOne("fuse_remove_stickies")>
+  [164] setprop 1817 ............................ pCanRemoveStickies = getObject(#session).get("user_rights").getOne("fuse_remove_stickies")
+  [167] ret
 end
 
 on close me
-  [  0] getprop 1821 ............................ <pActivePostItId>
+  [  0] getprop 1818 ............................ <pActivePostItId>
   [  3] pushzero ................................ <0>
   [  4] gt ...................................... <pActivePostItId > 0>
-  [  5] jmpifz [129] ............................ if pActivePostItId > 0 then
-  [  8] getprop 1817 ............................ <pcolor>
+  [  5] jmpifz [125] ............................ if pActivePostItId > 0 then
+  [  8] getprop 1814 ............................ <pcolor>
   [ 11] pusharglist 1 ........................... <pcolor>
-  [ 13] objcall 423 ............................. <pcolor.hexString()>
+  [ 13] objcall 491 ............................. <pcolor.hexString()>
   [ 16] setlocal 0 .............................. tColorHex = pcolor.hexString()
-  [ 18] getprop 1593 ............................ <pWindowID>
+  [ 18] getprop 1589 ............................ <pWindowID>
   [ 21] pusharglist 1 ........................... <pWindowID>
-  [ 23] extcall 204 ............................. <getWindow(pWindowID)>
-  [ 25] setlocal 1 .............................. tWindow = getWindow(pWindowID)
-  [ 27] getlocal 1 .............................. <tWindow>
-  [ 29] pushzero ................................ <0>
-  [ 30] eq ...................................... <tWindow = 0>
-  [ 31] jmpifz [ 39] ............................ if tWindow = 0 then
-  [ 34] pushzero ................................ <0>
-  [ 35] pusharglistnoret 1 ...................... <0>
-  [ 37] extcall 21 .............................. return 0
-  [ 39] getlocal 1 .............................. <tWindow>
-  [ 41] pushcons 7 .............................. <"stickies_text_field">
-  [ 43] pusharglist 2 ........................... <tWindow, "stickies_text_field">
-  [ 45] objcall 222 ............................. <tWindow.getElement("stickies_text_field")>
-  [ 47] pusharglist 1 ........................... <tWindow.getElement("stickies_text_field")>
-  [ 49] objcall 136 ............................. <tWindow.getElement("stickies_text_field").getText()>
-  [ 51] setlocal 2 .............................. tStickieText = tWindow.getElement("stickies_text_field").getText()
-  [ 53] getlocal 2 .............................. <tStickieText>
-  [ 55] pushint8 1 .............................. <1>
-  [ 57] pusharglist 2 ........................... <tStickieText, 1>
-  [ 59] extcall 610 ............................. <convertSpecialChars(tStickieText, 1)>
-  [ 62] setlocal 2 .............................. tStickieText = convertSpecialChars(tStickieText, 1)
-  [ 64] getlocal 0 .............................. <tColorHex>
-  [ 66] pushsymb 450 ............................ <#char>
-  [ 69] pushint8 2 .............................. <2>
-  [ 71] getlocal 0 .............................. <tColorHex>
-  [ 73] pusharglist 1 ........................... <tColorHex>
-  [ 75] extcall 622 ............................. <length(tColorHex)>
+  [ 23] extcall 303 ............................. <getWindow(pWindowID)>
+  [ 26] setlocal 1 .............................. tWindow = getWindow(pWindowID)
+  [ 28] getlocal 1 .............................. <tWindow>
+  [ 30] pushzero ................................ <0>
+  [ 31] eq ...................................... <tWindow = 0>
+  [ 32] jmpifz [ 40] ............................ if tWindow = 0 then
+  [ 35] pushzero ................................ <0>
+  [ 36] pusharglistnoret 1 ...................... <0>
+  [ 38] extcall 31 .............................. return 0
+  [ 40] getlocal 1 .............................. <tWindow>
+  [ 42] pushcons 7 .............................. <"stickies_text_field">
+  [ 44] pusharglist 2 ........................... <tWindow, "stickies_text_field">
+  [ 46] objcall 317 ............................. <tWindow.getElement("stickies_text_field")>
+  [ 49] pusharglist 1 ........................... <tWindow.getElement("stickies_text_field")>
+  [ 51] objcall 55 .............................. <tWindow.getElement("stickies_text_field").getText()>
+  [ 53] setlocal 2 .............................. tStickieText = tWindow.getElement("stickies_text_field").getText()
+  [ 55] getlocal 2 .............................. <tStickieText>
+  [ 57] pushint8 1 .............................. <1>
+  [ 59] pusharglist 2 ........................... <tStickieText, 1>
+  [ 61] extcall 663 ............................. <convertSpecialChars(tStickieText, 1)>
+  [ 64] setlocal 2 .............................. tStickieText = convertSpecialChars(tStickieText, 1)
+  [ 66] getlocal 0 .............................. <tColorHex>
+  [ 68] pushsymb 66 ............................. <#char>
+  [ 70] pushint8 2 .............................. <2>
+  [ 72] getlocal 0 .............................. <tColorHex>
+  [ 74] pusharglist 1 ........................... <tColorHex>
+  [ 76] extcall 67 .............................. <length(tColorHex)>
   [ 78] pusharglist 4 ........................... <tColorHex, #char, 2, length(tColorHex)>
-  [ 80] objcall 33 .............................. <tColorHex.char[2..length(tColorHex)]>
+  [ 80] objcall 68 .............................. <tColorHex.char[2..length(tColorHex)]>
   [ 82] getlocal 2 .............................. <tStickieText>
   [ 84] joinpadstr .............................. <tColorHex.char[2..length(tColorHex)] && tStickieText>
   [ 85] setlocal 3 .............................. tdata = tColorHex.char[2..length(tColorHex)] && tStickieText
-  [ 87] getprop 1822 ............................ <pChanged>
+  [ 87] getprop 1819 ............................ <pChanged>
   [ 90] pushint8 1 .............................. <1>
   [ 92] eq ...................................... <pChanged = 1>
-  [ 93] jmpifz [129] ............................ if pChanged = 1 then
-  [ 96] pushsymb 949 ............................ <#room>
-  [ 99] pusharglist 1 ........................... <#room>
-  [101] extcall 260 ............................. <getThread(#room)>
-  [104] pusharglist 1 ........................... <getThread(#room)>
-  [106] objcall 207 ............................. <getThread(#room).getComponent()>
-  [108] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [110] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [113] pushcons 8 .............................. <"SETITEMDATA">
-  [115] getprop 1821 ............................ <pActivePostItId>
-  [118] pushcons 9 .............................. <"/">
-  [120] joinstr ................................. <pActivePostItId & "/">
-  [121] getlocal 3 .............................. <tdata>
-  [123] joinstr ................................. <pActivePostItId & "/" & tdata>
-  [124] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "SETITEMDATA", pActivePostItId & "/" & tdata>
-  [126] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("SETITEMDATA", pActivePostItId & "/" & tdata)
-  [129] getprop 1593 ............................ <pWindowID>
-  [132] pusharglist 1 ........................... <pWindowID>
-  [134] extcall 162 ............................. <windowExists(pWindowID)>
-  [136] jmpifz [146] ............................ if windowExists(pWindowID) then
-  [139] getprop 1593 ............................ <pWindowID>
-  [142] pusharglistnoret 1 ...................... <pWindowID>
-  [144] extcall 232 ............................. removeWindow(pWindowID)
-  [146] ret
+  [ 93] jmpifz [125] ............................ if pChanged = 1 then
+  [ 96] pushsymb 52 ............................. <#room>
+  [ 98] pusharglist 1 ........................... <#room>
+  [100] extcall 51 .............................. <getThread(#room)>
+  [102] pusharglist 1 ........................... <getThread(#room)>
+  [104] objcall 115 ............................. <getThread(#room).getComponent()>
+  [106] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [108] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [110] pushcons 8 .............................. <"SETITEMDATA">
+  [112] getprop 1818 ............................ <pActivePostItId>
+  [115] pushcons 9 .............................. <"/">
+  [117] joinstr ................................. <pActivePostItId & "/">
+  [118] getlocal 3 .............................. <tdata>
+  [120] joinstr ................................. <pActivePostItId & "/" & tdata>
+  [121] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "SETITEMDATA", pActivePostItId & "/" & tdata>
+  [123] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("SETITEMDATA", pActivePostItId & "/" & tdata)
+  [125] getprop 1589 ............................ <pWindowID>
+  [128] pusharglist 1 ........................... <pWindowID>
+  [130] extcall 268 ............................. <windowExists(pWindowID)>
+  [133] jmpifz [144] ............................ if windowExists(pWindowID) then
+  [136] getprop 1589 ............................ <pWindowID>
+  [139] pusharglistnoret 1 ...................... <pWindowID>
+  [141] extcall 327 ............................. removeWindow(pWindowID)
+  [144] ret
 end
 
 on delete me
-  [  0] getprop 1593 ............................ <pWindowID>
+  [  0] getprop 1589 ............................ <pWindowID>
   [  3] pusharglist 1 ........................... <pWindowID>
-  [  5] extcall 162 ............................. <windowExists(pWindowID)>
-  [  7] jmpifz [ 17] ............................ if windowExists(pWindowID) then
-  [ 10] getprop 1593 ............................ <pWindowID>
-  [ 13] pusharglistnoret 1 ...................... <pWindowID>
-  [ 15] extcall 232 ............................. removeWindow(pWindowID)
-  [ 17] pushsymb 949 ............................ <#room>
-  [ 20] pusharglist 1 ........................... <#room>
-  [ 22] extcall 260 ............................. <getThread(#room)>
+  [  5] extcall 268 ............................. <windowExists(pWindowID)>
+  [  8] jmpifz [ 19] ............................ if windowExists(pWindowID) then
+  [ 11] getprop 1589 ............................ <pWindowID>
+  [ 14] pusharglistnoret 1 ...................... <pWindowID>
+  [ 16] extcall 327 ............................. removeWindow(pWindowID)
+  [ 19] pushsymb 52 ............................. <#room>
+  [ 21] pusharglist 1 ........................... <#room>
+  [ 23] extcall 51 .............................. <getThread(#room)>
   [ 25] pusharglist 1 ........................... <getThread(#room)>
-  [ 27] objcall 207 ............................. <getThread(#room).getComponent()>
+  [ 27] objcall 115 ............................. <getThread(#room).getComponent()>
   [ 29] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 31] objcall 395 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 34] pushcons 10 ............................. <"REMOVEITEM">
-  [ 36] getprop 1821 ............................ <pActivePostItId>
-  [ 39] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "REMOVEITEM", pActivePostItId>
-  [ 41] objcall 396 ............................. getThread(#room).getComponent().getRoomConnection().send("REMOVEITEM", pActivePostItId)
-  [ 44] ret
+  [ 31] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 33] pushcons 10 ............................. <"REMOVEITEM">
+  [ 35] getprop 1818 ............................ <pActivePostItId>
+  [ 38] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "REMOVEITEM", pActivePostItId>
+  [ 40] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("REMOVEITEM", pActivePostItId)
+  [ 42] ret
 end
 
 on setItemData me, tMsg
   [  0] getparam 1 .............................. <tMsg>
-  [  2] pushsymb 386 ............................ <#id>
+  [  2] pushsymb 459 ............................ <#id>
   [  5] pusharglist 2 ........................... <tMsg, #id>
-  [  7] objcall 9 ............................... <tMsg[#id]>
+  [  7] objcall 34 .............................. <tMsg[#id]>
   [  9] setlocal 0 .............................. tid = tMsg[#id]
   [ 11] getparam 1 .............................. <tMsg>
-  [ 13] pushsymb 218 ............................ <#type>
+  [ 13] pushsymb 49 ............................. <#type>
   [ 15] pusharglist 2 ........................... <tMsg, #type>
-  [ 17] objcall 9 ............................... <tMsg[#type]>
+  [ 17] objcall 34 .............................. <tMsg[#type]>
   [ 19] setlocal 1 .............................. ttype = tMsg[#type]
   [ 21] getparam 1 .............................. <tMsg>
-  [ 23] pushsymb 872 ............................ <#text>
+  [ 23] pushsymb 914 ............................ <#text>
   [ 26] pusharglist 2 ........................... <tMsg, #text>
-  [ 28] objcall 9 ............................... <tMsg[#text]>
-  [ 30] pushsymb 461 ............................ <#word>
-  [ 33] pushint8 2 .............................. <2>
-  [ 35] getparam 1 .............................. <tMsg>
-  [ 37] pushsymb 872 ............................ <#text>
-  [ 40] pusharglist 2 ........................... <tMsg, #text>
-  [ 42] objcall 9 ............................... <tMsg[#text]>
-  [ 44] pushsymb 461 ............................ <#word>
-  [ 47] pusharglist 2 ........................... <tMsg[#text], #word>
-  [ 49] objcall 14 .............................. <tMsg[#text].word.count>
-  [ 51] pusharglist 4 ........................... <tMsg[#text], #word, 2, tMsg[#text].word.count>
-  [ 53] objcall 33 .............................. <tMsg[#text].word[2..tMsg[#text].word.count]>
-  [ 55] setlocal 2 .............................. tText = tMsg[#text].word[2..tMsg[#text].word.count]
-  [ 57] pushcons 0 .............................. <"itemdata_received">
-  [ 59] getlocal 0 .............................. <tid>
-  [ 61] pusharglist 1 ........................... <tid>
-  [ 63] extcall 451 ............................. <integer(tid)>
-  [ 66] joinstr ................................. <"itemdata_received" & integer(tid)>
-  [ 67] pusharglist 1 ........................... <"itemdata_received" & integer(tid)>
-  [ 69] extcall 685 ............................. <symbol("itemdata_received" & integer(tid))>
-  [ 72] pushsymb 1810 ........................... <#postit_manager>
-  [ 75] pusharglistnoret 2 ...................... <symbol("itemdata_received" & integer(tid)), #postit_manager>
-  [ 77] extcall 158 ............................. unregisterMessage(symbol("itemdata_received" & integer(tid)), #postit_manager)
-  [ 79] getprop 1593 ............................ <pWindowID>
-  [ 82] pusharglist 1 ........................... <pWindowID>
-  [ 84] extcall 162 ............................. <windowExists(pWindowID)>
-  [ 86] jmpifz [ 96] ............................ if windowExists(pWindowID) then
-  [ 89] getprop 1593 ............................ <pWindowID>
-  [ 92] pusharglistnoret 1 ...................... <pWindowID>
-  [ 94] extcall 232 ............................. removeWindow(pWindowID)
+  [ 28] objcall 34 .............................. <tMsg[#text]>
+  [ 30] pushsymb 100 ............................ <#word>
+  [ 32] pushint8 2 .............................. <2>
+  [ 34] getparam 1 .............................. <tMsg>
+  [ 36] pushsymb 914 ............................ <#text>
+  [ 39] pusharglist 2 ........................... <tMsg, #text>
+  [ 41] objcall 34 .............................. <tMsg[#text]>
+  [ 43] pushsymb 100 ............................ <#word>
+  [ 45] pusharglist 2 ........................... <tMsg[#text], #word>
+  [ 47] objcall 33 .............................. <tMsg[#text].word.count>
+  [ 49] pusharglist 4 ........................... <tMsg[#text], #word, 2, tMsg[#text].word.count>
+  [ 51] objcall 68 .............................. <tMsg[#text].word[2..tMsg[#text].word.count]>
+  [ 53] setlocal 2 .............................. tText = tMsg[#text].word[2..tMsg[#text].word.count]
+  [ 55] pushcons 0 .............................. <"itemdata_received">
+  [ 57] getlocal 0 .............................. <tid>
+  [ 59] pusharglist 1 ........................... <tid>
+  [ 61] extcall 102 ............................. <integer(tid)>
+  [ 63] joinstr ................................. <"itemdata_received" & integer(tid)>
+  [ 64] pusharglist 1 ........................... <"itemdata_received" & integer(tid)>
+  [ 66] extcall 739 ............................. <symbol("itemdata_received" & integer(tid))>
+  [ 69] pushsymb 1807 ........................... <#postit_manager>
+  [ 72] pusharglistnoret 2 ...................... <symbol("itemdata_received" & integer(tid)), #postit_manager>
+  [ 74] extcall 266 ............................. unregisterMessage(symbol("itemdata_received" & integer(tid)), #postit_manager)
+  [ 77] getprop 1589 ............................ <pWindowID>
+  [ 80] pusharglist 1 ........................... <pWindowID>
+  [ 82] extcall 268 ............................. <windowExists(pWindowID)>
+  [ 85] jmpifz [ 96] ............................ if windowExists(pWindowID) then
+  [ 88] getprop 1589 ............................ <pWindowID>
+  [ 91] pusharglistnoret 1 ...................... <pWindowID>
+  [ 93] extcall 327 ............................. removeWindow(pWindowID)
   [ 96] getlocal 0 .............................. <tid>
-  [ 98] setprop 1821 ............................ pActivePostItId = tid
+  [ 98] setprop 1818 ............................ pActivePostItId = tid
   [101] getlocal 2 .............................. <tText>
-  [103] setprop 1826 ............................ pText = tText
-  [106] pushsymb 949 ............................ <#room>
-  [109] pusharglist 1 ........................... <#room>
-  [111] extcall 260 ............................. <getThread(#room)>
-  [114] pusharglist 1 ........................... <getThread(#room)>
-  [116] objcall 207 ............................. <getThread(#room).getComponent()>
-  [118] getprop 1821 ............................ <pActivePostItId>
-  [121] pusharglist 1 ........................... <pActivePostItId>
-  [123] extcall 453 ............................. <string(pActivePostItId)>
-  [126] pusharglist 2 ........................... <getThread(#room).getComponent(), string(pActivePostItId)>
-  [128] objcall 287 ............................. <getThread(#room).getComponent().getItemObject(string(pActivePostItId))>
-  [131] setlocal 3 .............................. tObject = getThread(#room).getComponent().getItemObject(string(pActivePostItId))
-  [133] getlocal 3 .............................. <tObject>
-  [135] pushzero ................................ <0>
-  [136] eq ...................................... <tObject = 0>
-  [137] jmpifz [159] ............................ if tObject = 0 then
-  [140] getparam 0 .............................. <me>
-  [142] pushcons 11 ............................. <"Couldn't find stickie:">
-  [144] getprop 1821 ............................ <pActivePostItId>
-  [147] joinpadstr .............................. <"Couldn't find stickie:" && pActivePostItId>
-  [148] pushsymb 1813 ........................... <#setItemData>
-  [151] pusharglist 3 ........................... <me, "Couldn't find stickie:" && pActivePostItId, #setItemData>
-  [153] extcall 161 ............................. <error(me, "Couldn't find stickie:" && pActivePostItId, #setItemData)>
-  [155] pusharglistnoret 1 ...................... <error(me, "Couldn't find stickie:" && pActivePostItId, #setItemData)>
-  [157] extcall 21 .............................. return error(me, "Couldn't find stickie:" && pActivePostItId, #setItemData)
-  [159] getlocal 3 .............................. <tObject>
-  [161] pusharglist 1 ........................... <tObject>
-  [163] objcall 474 ............................. <tObject.getClass()>
-  [166] pushcons 12 ............................. <"post.it.vd">
-  [168] eq ...................................... <tObject.getClass() = "post.it.vd">
-  [169] jmpifz [183] ............................ if tObject.getClass() = "post.it.vd" then / else
-  [172] pushcons 13 ............................. <"habbo_stickie_vd.window">
-  [174] setlocal 4 .............................. tWndType = "habbo_stickie_vd.window"
-  [176] pushcons 14 ............................. <"FFFFFF">
-  [178] setlocal 1 .............................. ttype = "FFFFFF"
-  [180] jmp [187]
-  [183] pushcons 15 ............................. <"habbo_stickies.window">
-  [185] setlocal 4 .............................. tWndType = "habbo_stickies.window"
-  [187] getprop 1593 ............................ <pWindowID>
-  [190] getlocal 4 .............................. <tWndType>
-  [192] pusharglistnoret 2 ...................... <pWindowID, tWndType>
-  [194] extcall 203 ............................. createWindow(pWindowID, tWndType)
-  [196] getprop 1593 ............................ <pWindowID>
-  [199] pusharglist 1 ........................... <pWindowID>
-  [201] extcall 204 ............................. <getWindow(pWindowID)>
-  [203] setlocal 5 .............................. tWindow = getWindow(pWindowID)
-  [205] getlocal 5 .............................. <tWindow>
-  [207] not ..................................... <not tWindow>
-  [208] jmpifz [216] ............................ if not tWindow then
-  [211] pushzero ................................ <0>
-  [212] pusharglistnoret 1 ...................... <0>
-  [214] extcall 21 .............................. return 0
-  [216] getprop 494 ............................. <pLocX>
-  [219] getmovieprop 253 ........................ <the stage>
-  [221] getchainedprop 290 ...................... <(the stage).image>
-  [224] getobjprop 252 .......................... <(the stage).image.width>
-  [226] getlocal 5 .............................. <tWindow>
-  [228] pushsymb 252 ............................ <#width>
-  [230] pusharglist 2 ........................... <tWindow, #width>
-  [232] objcall 77 .............................. <tWindow.getProperty(#width)>
-  [234] sub ..................................... <(the stage).image.width - tWindow.getProperty(#width)>
-  [235] gt ...................................... <pLocX > ((the stage).image.width - tWindow.getProperty(#width))>
-  [236] jmpifz [258] ............................ if pLocX > ((the stage).image.width - tWindow.getProperty(#width)) then
-  [239] getmovieprop 253 ........................ <the stage>
-  [241] getchainedprop 290 ...................... <(the stage).image>
-  [244] getobjprop 252 .......................... <(the stage).image.width>
-  [246] getlocal 5 .............................. <tWindow>
-  [248] pushsymb 252 ............................ <#width>
-  [250] pusharglist 2 ........................... <tWindow, #width>
-  [252] objcall 77 .............................. <tWindow.getProperty(#width)>
-  [254] sub ..................................... <(the stage).image.width - tWindow.getProperty(#width)>
-  [255] setprop 494 ............................. pLocX = (the stage).image.width - tWindow.getProperty(#width)
-  [258] getprop 496 ............................. <pLocY>
-  [261] pushint8 100 ............................ <100>
-  [263] lt ...................................... <pLocY < 100>
-  [264] jmpifz [272] ............................ if pLocY < 100 then
-  [267] pushint8 100 ............................ <100>
-  [269] setprop 496 ............................. pLocY = 100
-  [272] getparam 0 .............................. <me>
-  [274] getlocal 1 .............................. <ttype>
-  [276] pusharglist 1 ........................... <ttype>
-  [278] extcall 312 ............................. <rgb(ttype)>
-  [281] pusharglistnoret 2 ...................... <me, rgb(ttype)>
-  [283] objcall 1287 ............................ me.setColor(rgb(ttype))
-  [286] getlocal 5 .............................. <tWindow>
-  [288] getprop 494 ............................. <pLocX>
-  [291] getprop 496 ............................. <pLocY>
-  [294] pusharglistnoret 3 ...................... <tWindow, pLocX, pLocY>
-  [296] objcall 326 ............................. tWindow.moveTo(pLocX, pLocY)
-  [299] getlocal 5 .............................. <tWindow>
-  [301] pushcons 7 .............................. <"stickies_text_field">
-  [303] pusharglist 2 ........................... <tWindow, "stickies_text_field">
-  [305] objcall 222 ............................. <tWindow.getElement("stickies_text_field")>
-  [307] pushsymb 182 ............................ <#sprite>
-  [309] pusharglist 2 ........................... <tWindow.getElement("stickies_text_field"), #sprite>
-  [311] objcall 77 .............................. <tWindow.getElement("stickies_text_field").getProperty(#sprite)>
-  [313] pushint8 36 ............................. <36>
-  [315] setobjprop 419 .......................... tWindow.getElement("stickies_text_field").getProperty(#sprite).ink = 36
-  [318] getlocal 5 .............................. <tWindow>
-  [320] pushcons 7 .............................. <"stickies_text_field">
-  [322] pusharglist 2 ........................... <tWindow, "stickies_text_field">
-  [324] objcall 222 ............................. <tWindow.getElement("stickies_text_field")>
-  [326] getprop 1826 ............................ <pText>
-  [329] pusharglistnoret 2 ...................... <tWindow.getElement("stickies_text_field"), pText>
-  [331] objcall 223 ............................. tWindow.getElement("stickies_text_field").setText(pText)
-  [333] getlocal 5 .............................. <tWindow>
-  [335] pushsymb 1814 ........................... <#eventProcMouseDown>
-  [338] getparam 0 .............................. <me>
-  [340] pusharglist 1 ........................... <me>
-  [342] objcall 156 ............................. <me.getID()>
-  [344] pushsymb 180 ............................ <#mouseDown>
-  [346] pusharglistnoret 4 ...................... <tWindow, #eventProcMouseDown, me.getID(), #mouseDown>
-  [348] objcall 179 ............................. tWindow.registerProcedure(#eventProcMouseDown, me.getID(), #mouseDown)
-  [350] getlocal 5 .............................. <tWindow>
-  [352] pushsymb 1815 ........................... <#eventProcKeyDown>
-  [355] getparam 0 .............................. <me>
-  [357] pusharglist 1 ........................... <me>
-  [359] objcall 156 ............................. <me.getID()>
-  [361] pushsymb 211 ............................ <#keyDown>
-  [363] pusharglistnoret 4 ...................... <tWindow, #eventProcKeyDown, me.getID(), #keyDown>
-  [365] objcall 179 ............................. tWindow.registerProcedure(#eventProcKeyDown, me.getID(), #keyDown)
-  [367] getlocal 4 .............................. <tWndType>
-  [369] pushcons 15 ............................. <"habbo_stickies.window">
-  [371] eq ...................................... <tWndType = "habbo_stickies.window">
-  [372] jmpifz [565] ............................ if tWndType = "habbo_stickies.window" then / else
-  [375] getprop 1819 ............................ <pIsOwner>
-  [378] getprop 1820 ............................ <pCanRemoveStickies>
-  [381] or ...................................... <pIsOwner or pCanRemoveStickies>
-  [382] jmpifz [405] ............................ if pIsOwner or pCanRemoveStickies then / else
-  [385] getlocal 5 .............................. <tWindow>
-  [387] pushcons 16 ............................. <"stickies_delete_button">
-  [389] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
-  [391] objcall 222 ............................. <tWindow.getElement("stickies_delete_button")>
-  [393] pushsymb 362 ............................ <#blend>
-  [396] pushint8 100 ............................ <100>
-  [398] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #blend, 100>
-  [400] objcall 78 .............................. tWindow.getElement("stickies_delete_button").setProperty(#blend, 100)
-  [402] jmp [421]
-  [405] getlocal 5 .............................. <tWindow>
-  [407] pushcons 16 ............................. <"stickies_delete_button">
-  [409] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
-  [411] objcall 222 ............................. <tWindow.getElement("stickies_delete_button")>
-  [413] pushsymb 264 ............................ <#cursor>
-  [416] pushzero ................................ <0>
-  [417] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #cursor, 0>
-  [419] objcall 78 .............................. tWindow.getElement("stickies_delete_button").setProperty(#cursor, 0)
-  [421] getprop 1818 ............................ <pIsController>
-  [424] jmpifz [498] ............................ if pIsController then / else
-  [427] getlocal 5 .............................. <tWindow>
-  [429] pushcons 17 ............................. <"stickies_color1_button">
-  [431] pusharglist 2 ........................... <tWindow, "stickies_color1_button">
-  [433] objcall 222 ............................. <tWindow.getElement("stickies_color1_button")>
-  [435] pushsymb 362 ............................ <#blend>
-  [438] pushint8 100 ............................ <100>
-  [440] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color1_button"), #blend, 100>
-  [442] objcall 78 .............................. tWindow.getElement("stickies_color1_button").setProperty(#blend, 100)
-  [444] getlocal 5 .............................. <tWindow>
-  [446] pushcons 18 ............................. <"stickies_color2_button">
-  [448] pusharglist 2 ........................... <tWindow, "stickies_color2_button">
-  [450] objcall 222 ............................. <tWindow.getElement("stickies_color2_button")>
-  [452] pushsymb 362 ............................ <#blend>
-  [455] pushint8 100 ............................ <100>
-  [457] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color2_button"), #blend, 100>
-  [459] objcall 78 .............................. tWindow.getElement("stickies_color2_button").setProperty(#blend, 100)
-  [461] getlocal 5 .............................. <tWindow>
-  [463] pushcons 19 ............................. <"stickies_color3_button">
-  [465] pusharglist 2 ........................... <tWindow, "stickies_color3_button">
-  [467] objcall 222 ............................. <tWindow.getElement("stickies_color3_button")>
-  [469] pushsymb 362 ............................ <#blend>
+  [103] setprop 1823 ............................ pText = tText
+  [106] pushsymb 52 ............................. <#room>
+  [108] pusharglist 1 ........................... <#room>
+  [110] extcall 51 .............................. <getThread(#room)>
+  [112] pusharglist 1 ........................... <getThread(#room)>
+  [114] objcall 115 ............................. <getThread(#room).getComponent()>
+  [116] getprop 1818 ............................ <pActivePostItId>
+  [119] pusharglist 1 ........................... <pActivePostItId>
+  [121] extcall 519 ............................. <string(pActivePostItId)>
+  [124] pusharglist 2 ........................... <getThread(#room).getComponent(), string(pActivePostItId)>
+  [126] objcall 373 ............................. <getThread(#room).getComponent().getItemObject(string(pActivePostItId))>
+  [129] setlocal 3 .............................. tObject = getThread(#room).getComponent().getItemObject(string(pActivePostItId))
+  [131] getlocal 3 .............................. <tObject>
+  [133] pushzero ................................ <0>
+  [134] eq ...................................... <tObject = 0>
+  [135] jmpifz [157] ............................ if tObject = 0 then
+  [138] getparam 0 .............................. <me>
+  [140] pushcons 11 ............................. <"Couldn't find stickie:">
+  [142] getprop 1818 ............................ <pActivePostItId>
+  [145] joinpadstr .............................. <"Couldn't find stickie:" && pActivePostItId>
+  [146] pushsymb 1810 ........................... <#setItemData>
+  [149] pusharglist 3 ........................... <me, "Couldn't find stickie:" && pActivePostItId, #setItemData>
+  [151] extcall 72 .............................. <error(me, "Couldn't find stickie:" && pActivePostItId, #setItemData)>
+  [153] pusharglistnoret 1 ...................... <error(me, "Couldn't find stickie:" && pActivePostItId, #setItemData)>
+  [155] extcall 31 .............................. return error(me, "Couldn't find stickie:" && pActivePostItId, #setItemData)
+  [157] getlocal 3 .............................. <tObject>
+  [159] pusharglist 1 ........................... <tObject>
+  [161] objcall 3 ............................... <tObject.getClass()>
+  [163] pushcons 12 ............................. <"post.it.vd">
+  [165] eq ...................................... <tObject.getClass() = "post.it.vd">
+  [166] jmpifz [180] ............................ if tObject.getClass() = "post.it.vd" then / else
+  [169] pushcons 13 ............................. <"habbo_stickie_vd.window">
+  [171] setlocal 4 .............................. tWndType = "habbo_stickie_vd.window"
+  [173] pushcons 14 ............................. <"FFFFFF">
+  [175] setlocal 1 .............................. ttype = "FFFFFF"
+  [177] jmp [184]
+  [180] pushcons 15 ............................. <"habbo_stickies.window">
+  [182] setlocal 4 .............................. tWndType = "habbo_stickies.window"
+  [184] getprop 1589 ............................ <pWindowID>
+  [187] getlocal 4 .............................. <tWndType>
+  [189] pusharglistnoret 2 ...................... <pWindowID, tWndType>
+  [191] extcall 302 ............................. createWindow(pWindowID, tWndType)
+  [194] getprop 1589 ............................ <pWindowID>
+  [197] pusharglist 1 ........................... <pWindowID>
+  [199] extcall 303 ............................. <getWindow(pWindowID)>
+  [202] setlocal 5 .............................. tWindow = getWindow(pWindowID)
+  [204] getlocal 5 .............................. <tWindow>
+  [206] not ..................................... <not tWindow>
+  [207] jmpifz [215] ............................ if not tWindow then
+  [210] pushzero ................................ <0>
+  [211] pusharglistnoret 1 ...................... <0>
+  [213] extcall 31 .............................. return 0
+  [215] getprop 19 .............................. <pLocX>
+  [217] getmovieprop 342 ........................ <the stage>
+  [220] getchainedprop 63 ....................... <(the stage).image>
+  [222] getobjprop 80 ........................... <(the stage).image.width>
+  [224] getlocal 5 .............................. <tWindow>
+  [226] pushsymb 80 ............................. <#width>
+  [228] pusharglist 2 ........................... <tWindow, #width>
+  [230] objcall 124 ............................. <tWindow.getProperty(#width)>
+  [232] sub ..................................... <(the stage).image.width - tWindow.getProperty(#width)>
+  [233] gt ...................................... <pLocX > ((the stage).image.width - tWindow.getProperty(#width))>
+  [234] jmpifz [255] ............................ if pLocX > ((the stage).image.width - tWindow.getProperty(#width)) then
+  [237] getmovieprop 342 ........................ <the stage>
+  [240] getchainedprop 63 ....................... <(the stage).image>
+  [242] getobjprop 80 ........................... <(the stage).image.width>
+  [244] getlocal 5 .............................. <tWindow>
+  [246] pushsymb 80 ............................. <#width>
+  [248] pusharglist 2 ........................... <tWindow, #width>
+  [250] objcall 124 ............................. <tWindow.getProperty(#width)>
+  [252] sub ..................................... <(the stage).image.width - tWindow.getProperty(#width)>
+  [253] setprop 19 .............................. pLocX = (the stage).image.width - tWindow.getProperty(#width)
+  [255] getprop 20 .............................. <pLocY>
+  [257] pushint8 100 ............................ <100>
+  [259] lt ...................................... <pLocY < 100>
+  [260] jmpifz [267] ............................ if pLocY < 100 then
+  [263] pushint8 100 ............................ <100>
+  [265] setprop 20 .............................. pLocY = 100
+  [267] getparam 0 .............................. <me>
+  [269] getlocal 1 .............................. <ttype>
+  [271] pusharglist 1 ........................... <ttype>
+  [273] extcall 94 .............................. <rgb(ttype)>
+  [275] pusharglistnoret 2 ...................... <me, rgb(ttype)>
+  [277] objcall 1309 ............................ me.setColor(rgb(ttype))
+  [280] getlocal 5 .............................. <tWindow>
+  [282] getprop 19 .............................. <pLocX>
+  [284] getprop 20 .............................. <pLocY>
+  [286] pusharglistnoret 3 ...................... <tWindow, pLocX, pLocY>
+  [288] objcall 403 ............................. tWindow.moveTo(pLocX, pLocY)
+  [291] getlocal 5 .............................. <tWindow>
+  [293] pushcons 7 .............................. <"stickies_text_field">
+  [295] pusharglist 2 ........................... <tWindow, "stickies_text_field">
+  [297] objcall 317 ............................. <tWindow.getElement("stickies_text_field")>
+  [300] pushsymb 73 ............................. <#sprite>
+  [302] pusharglist 2 ........................... <tWindow.getElement("stickies_text_field"), #sprite>
+  [304] objcall 124 ............................. <tWindow.getElement("stickies_text_field").getProperty(#sprite)>
+  [306] pushint8 36 ............................. <36>
+  [308] setobjprop 93 ........................... tWindow.getElement("stickies_text_field").getProperty(#sprite).ink = 36
+  [310] getlocal 5 .............................. <tWindow>
+  [312] pushcons 7 .............................. <"stickies_text_field">
+  [314] pusharglist 2 ........................... <tWindow, "stickies_text_field">
+  [316] objcall 317 ............................. <tWindow.getElement("stickies_text_field")>
+  [319] getprop 1823 ............................ <pText>
+  [322] pusharglistnoret 2 ...................... <tWindow.getElement("stickies_text_field"), pText>
+  [324] objcall 318 ............................. tWindow.getElement("stickies_text_field").setText(pText)
+  [327] getlocal 5 .............................. <tWindow>
+  [329] pushsymb 1811 ........................... <#eventProcMouseDown>
+  [332] getparam 0 .............................. <me>
+  [334] pusharglist 1 ........................... <me>
+  [336] objcall 75 .............................. <me.getID()>
+  [338] pushsymb 83 ............................. <#mouseDown>
+  [340] pusharglistnoret 4 ...................... <tWindow, #eventProcMouseDown, me.getID(), #mouseDown>
+  [342] objcall 84 .............................. tWindow.registerProcedure(#eventProcMouseDown, me.getID(), #mouseDown)
+  [344] getlocal 5 .............................. <tWindow>
+  [346] pushsymb 1812 ........................... <#eventProcKeyDown>
+  [349] getparam 0 .............................. <me>
+  [351] pusharglist 1 ........................... <me>
+  [353] objcall 75 .............................. <me.getID()>
+  [355] pushsymb 309 ............................ <#keyDown>
+  [358] pusharglistnoret 4 ...................... <tWindow, #eventProcKeyDown, me.getID(), #keyDown>
+  [360] objcall 84 .............................. tWindow.registerProcedure(#eventProcKeyDown, me.getID(), #keyDown)
+  [362] getlocal 4 .............................. <tWndType>
+  [364] pushcons 15 ............................. <"habbo_stickies.window">
+  [366] eq ...................................... <tWndType = "habbo_stickies.window">
+  [367] jmpifz [570] ............................ if tWndType = "habbo_stickies.window" then / else
+  [370] getprop 1816 ............................ <pIsOwner>
+  [373] getprop 1817 ............................ <pCanRemoveStickies>
+  [376] or ...................................... <pIsOwner or pCanRemoveStickies>
+  [377] jmpifz [401] ............................ if pIsOwner or pCanRemoveStickies then / else
+  [380] getlocal 5 .............................. <tWindow>
+  [382] pushcons 16 ............................. <"stickies_delete_button">
+  [384] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
+  [386] objcall 317 ............................. <tWindow.getElement("stickies_delete_button")>
+  [389] pushsymb 436 ............................ <#blend>
+  [392] pushint8 100 ............................ <100>
+  [394] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #blend, 100>
+  [396] objcall 191 ............................. tWindow.getElement("stickies_delete_button").setProperty(#blend, 100)
+  [398] jmp [418]
+  [401] getlocal 5 .............................. <tWindow>
+  [403] pushcons 16 ............................. <"stickies_delete_button">
+  [405] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
+  [407] objcall 317 ............................. <tWindow.getElement("stickies_delete_button")>
+  [410] pushsymb 351 ............................ <#cursor>
+  [413] pushzero ................................ <0>
+  [414] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #cursor, 0>
+  [416] objcall 191 ............................. tWindow.getElement("stickies_delete_button").setProperty(#cursor, 0)
+  [418] getprop 1815 ............................ <pIsController>
+  [421] jmpifz [499] ............................ if pIsController then / else
+  [424] getlocal 5 .............................. <tWindow>
+  [426] pushcons 17 ............................. <"stickies_color1_button">
+  [428] pusharglist 2 ........................... <tWindow, "stickies_color1_button">
+  [430] objcall 317 ............................. <tWindow.getElement("stickies_color1_button")>
+  [433] pushsymb 436 ............................ <#blend>
+  [436] pushint8 100 ............................ <100>
+  [438] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color1_button"), #blend, 100>
+  [440] objcall 191 ............................. tWindow.getElement("stickies_color1_button").setProperty(#blend, 100)
+  [442] getlocal 5 .............................. <tWindow>
+  [444] pushcons 18 ............................. <"stickies_color2_button">
+  [446] pusharglist 2 ........................... <tWindow, "stickies_color2_button">
+  [448] objcall 317 ............................. <tWindow.getElement("stickies_color2_button")>
+  [451] pushsymb 436 ............................ <#blend>
+  [454] pushint8 100 ............................ <100>
+  [456] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color2_button"), #blend, 100>
+  [458] objcall 191 ............................. tWindow.getElement("stickies_color2_button").setProperty(#blend, 100)
+  [460] getlocal 5 .............................. <tWindow>
+  [462] pushcons 19 ............................. <"stickies_color3_button">
+  [464] pusharglist 2 ........................... <tWindow, "stickies_color3_button">
+  [466] objcall 317 ............................. <tWindow.getElement("stickies_color3_button")>
+  [469] pushsymb 436 ............................ <#blend>
   [472] pushint8 100 ............................ <100>
   [474] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color3_button"), #blend, 100>
-  [476] objcall 78 .............................. tWindow.getElement("stickies_color3_button").setProperty(#blend, 100)
+  [476] objcall 191 ............................. tWindow.getElement("stickies_color3_button").setProperty(#blend, 100)
   [478] getlocal 5 .............................. <tWindow>
   [480] pushcons 20 ............................. <"stickies_color4_button">
   [482] pusharglist 2 ........................... <tWindow, "stickies_color4_button">
-  [484] objcall 222 ............................. <tWindow.getElement("stickies_color4_button")>
-  [486] pushsymb 362 ............................ <#blend>
-  [489] pushint8 100 ............................ <100>
-  [491] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color4_button"), #blend, 100>
-  [493] objcall 78 .............................. tWindow.getElement("stickies_color4_button").setProperty(#blend, 100)
-  [495] jmp [562]
-  [498] getlocal 5 .............................. <tWindow>
-  [500] pushcons 17 ............................. <"stickies_color1_button">
-  [502] pusharglist 2 ........................... <tWindow, "stickies_color1_button">
-  [504] objcall 222 ............................. <tWindow.getElement("stickies_color1_button")>
-  [506] pushsymb 264 ............................ <#cursor>
-  [509] pushzero ................................ <0>
-  [510] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color1_button"), #cursor, 0>
-  [512] objcall 78 .............................. tWindow.getElement("stickies_color1_button").setProperty(#cursor, 0)
-  [514] getlocal 5 .............................. <tWindow>
-  [516] pushcons 18 ............................. <"stickies_color2_button">
-  [518] pusharglist 2 ........................... <tWindow, "stickies_color2_button">
-  [520] objcall 222 ............................. <tWindow.getElement("stickies_color2_button")>
-  [522] pushsymb 264 ............................ <#cursor>
-  [525] pushzero ................................ <0>
-  [526] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color2_button"), #cursor, 0>
-  [528] objcall 78 .............................. tWindow.getElement("stickies_color2_button").setProperty(#cursor, 0)
-  [530] getlocal 5 .............................. <tWindow>
-  [532] pushcons 19 ............................. <"stickies_color3_button">
-  [534] pusharglist 2 ........................... <tWindow, "stickies_color3_button">
-  [536] objcall 222 ............................. <tWindow.getElement("stickies_color3_button")>
-  [538] pushsymb 264 ............................ <#cursor>
-  [541] pushzero ................................ <0>
-  [542] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color3_button"), #cursor, 0>
-  [544] objcall 78 .............................. tWindow.getElement("stickies_color3_button").setProperty(#cursor, 0)
-  [546] getlocal 5 .............................. <tWindow>
-  [548] pushcons 20 ............................. <"stickies_color4_button">
-  [550] pusharglist 2 ........................... <tWindow, "stickies_color4_button">
-  [552] objcall 222 ............................. <tWindow.getElement("stickies_color4_button")>
-  [554] pushsymb 264 ............................ <#cursor>
-  [557] pushzero ................................ <0>
-  [558] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color4_button"), #cursor, 0>
-  [560] objcall 78 .............................. tWindow.getElement("stickies_color4_button").setProperty(#cursor, 0)
-  [562] jmp [619]
-  [565] getlocal 4 .............................. <tWndType>
-  [567] pushcons 21 ............................. <"habbo_stickies_vd.window">
-  [569] eq ...................................... <tWndType = "habbo_stickies_vd.window">
-  [570] jmpifz [619] ............................ if tWndType = "habbo_stickies_vd.window" then
-  [573] getprop 1819 ............................ <pIsOwner>
-  [576] getprop 1820 ............................ <pCanRemoveStickies>
-  [579] or ...................................... <pIsOwner or pCanRemoveStickies>
-  [580] jmpifz [603] ............................ if pIsOwner or pCanRemoveStickies then / else
-  [583] getlocal 5 .............................. <tWindow>
-  [585] pushcons 16 ............................. <"stickies_delete_button">
-  [587] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
-  [589] objcall 222 ............................. <tWindow.getElement("stickies_delete_button")>
-  [591] pushsymb 362 ............................ <#blend>
-  [594] pushint8 100 ............................ <100>
-  [596] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #blend, 100>
-  [598] objcall 78 .............................. tWindow.getElement("stickies_delete_button").setProperty(#blend, 100)
-  [600] jmp [619]
-  [603] getlocal 5 .............................. <tWindow>
-  [605] pushcons 16 ............................. <"stickies_delete_button">
-  [607] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
-  [609] objcall 222 ............................. <tWindow.getElement("stickies_delete_button")>
-  [611] pushsymb 264 ............................ <#cursor>
-  [614] pushzero ................................ <0>
-  [615] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #cursor, 0>
-  [617] objcall 78 .............................. tWindow.getElement("stickies_delete_button").setProperty(#cursor, 0)
-  [619] pushzero ................................ <0>
-  [620] setprop 1822 ............................ pChanged = 0
-  [623] ret
+  [484] objcall 317 ............................. <tWindow.getElement("stickies_color4_button")>
+  [487] pushsymb 436 ............................ <#blend>
+  [490] pushint8 100 ............................ <100>
+  [492] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color4_button"), #blend, 100>
+  [494] objcall 191 ............................. tWindow.getElement("stickies_color4_button").setProperty(#blend, 100)
+  [496] jmp [567]
+  [499] getlocal 5 .............................. <tWindow>
+  [501] pushcons 17 ............................. <"stickies_color1_button">
+  [503] pusharglist 2 ........................... <tWindow, "stickies_color1_button">
+  [505] objcall 317 ............................. <tWindow.getElement("stickies_color1_button")>
+  [508] pushsymb 351 ............................ <#cursor>
+  [511] pushzero ................................ <0>
+  [512] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color1_button"), #cursor, 0>
+  [514] objcall 191 ............................. tWindow.getElement("stickies_color1_button").setProperty(#cursor, 0)
+  [516] getlocal 5 .............................. <tWindow>
+  [518] pushcons 18 ............................. <"stickies_color2_button">
+  [520] pusharglist 2 ........................... <tWindow, "stickies_color2_button">
+  [522] objcall 317 ............................. <tWindow.getElement("stickies_color2_button")>
+  [525] pushsymb 351 ............................ <#cursor>
+  [528] pushzero ................................ <0>
+  [529] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color2_button"), #cursor, 0>
+  [531] objcall 191 ............................. tWindow.getElement("stickies_color2_button").setProperty(#cursor, 0)
+  [533] getlocal 5 .............................. <tWindow>
+  [535] pushcons 19 ............................. <"stickies_color3_button">
+  [537] pusharglist 2 ........................... <tWindow, "stickies_color3_button">
+  [539] objcall 317 ............................. <tWindow.getElement("stickies_color3_button")>
+  [542] pushsymb 351 ............................ <#cursor>
+  [545] pushzero ................................ <0>
+  [546] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color3_button"), #cursor, 0>
+  [548] objcall 191 ............................. tWindow.getElement("stickies_color3_button").setProperty(#cursor, 0)
+  [550] getlocal 5 .............................. <tWindow>
+  [552] pushcons 20 ............................. <"stickies_color4_button">
+  [554] pusharglist 2 ........................... <tWindow, "stickies_color4_button">
+  [556] objcall 317 ............................. <tWindow.getElement("stickies_color4_button")>
+  [559] pushsymb 351 ............................ <#cursor>
+  [562] pushzero ................................ <0>
+  [563] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_color4_button"), #cursor, 0>
+  [565] objcall 191 ............................. tWindow.getElement("stickies_color4_button").setProperty(#cursor, 0)
+  [567] jmp [626]
+  [570] getlocal 4 .............................. <tWndType>
+  [572] pushcons 21 ............................. <"habbo_stickies_vd.window">
+  [574] eq ...................................... <tWndType = "habbo_stickies_vd.window">
+  [575] jmpifz [626] ............................ if tWndType = "habbo_stickies_vd.window" then
+  [578] getprop 1816 ............................ <pIsOwner>
+  [581] getprop 1817 ............................ <pCanRemoveStickies>
+  [584] or ...................................... <pIsOwner or pCanRemoveStickies>
+  [585] jmpifz [609] ............................ if pIsOwner or pCanRemoveStickies then / else
+  [588] getlocal 5 .............................. <tWindow>
+  [590] pushcons 16 ............................. <"stickies_delete_button">
+  [592] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
+  [594] objcall 317 ............................. <tWindow.getElement("stickies_delete_button")>
+  [597] pushsymb 436 ............................ <#blend>
+  [600] pushint8 100 ............................ <100>
+  [602] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #blend, 100>
+  [604] objcall 191 ............................. tWindow.getElement("stickies_delete_button").setProperty(#blend, 100)
+  [606] jmp [626]
+  [609] getlocal 5 .............................. <tWindow>
+  [611] pushcons 16 ............................. <"stickies_delete_button">
+  [613] pusharglist 2 ........................... <tWindow, "stickies_delete_button">
+  [615] objcall 317 ............................. <tWindow.getElement("stickies_delete_button")>
+  [618] pushsymb 351 ............................ <#cursor>
+  [621] pushzero ................................ <0>
+  [622] pusharglistnoret 3 ...................... <tWindow.getElement("stickies_delete_button"), #cursor, 0>
+  [624] objcall 191 ............................. tWindow.getElement("stickies_delete_button").setProperty(#cursor, 0)
+  [626] pushzero ................................ <0>
+  [627] setprop 1819 ............................ pChanged = 0
+  [630] ret
 end
 
 on setColor me, tColor, tByUser
   [  0] getparam 2 .............................. <tByUser>
   [  2] jmpifz [ 10] ............................ if tByUser then
   [  5] pushint8 1 .............................. <1>
-  [  7] setprop 1822 ............................ pChanged = 1
+  [  7] setprop 1819 ............................ pChanged = 1
   [ 10] getparam 1 .............................. <tColor>
-  [ 12] setprop 1817 ............................ pcolor = tColor
-  [ 15] getprop 1593 ............................ <pWindowID>
+  [ 12] setprop 1814 ............................ pcolor = tColor
+  [ 15] getprop 1589 ............................ <pWindowID>
   [ 18] pusharglist 1 ........................... <pWindowID>
-  [ 20] extcall 204 ............................. <getWindow(pWindowID)>
-  [ 22] pushcons 22 ............................. <"stickies_bg">
-  [ 24] pusharglist 2 ........................... <getWindow(pWindowID), "stickies_bg">
-  [ 26] objcall 222 ............................. <getWindow(pWindowID).getElement("stickies_bg")>
-  [ 28] setlocal 0 .............................. tBgElem = getWindow(pWindowID).getElement("stickies_bg")
-  [ 30] getlocal 0 .............................. <tBgElem>
-  [ 32] pushzero ................................ <0>
-  [ 33] eq ...................................... <tBgElem = 0>
-  [ 34] jmpifz [ 41] ............................ if tBgElem = 0 then
-  [ 37] pusharglistnoret 0 ...................... <>
-  [ 39] extcall 21 .............................. return 
-  [ 41] getlocal 0 .............................. <tBgElem>
-  [ 43] pushsymb 182 ............................ <#sprite>
-  [ 45] pusharglist 2 ........................... <tBgElem, #sprite>
-  [ 47] objcall 77 .............................. <tBgElem.getProperty(#sprite)>
-  [ 49] getprop 1817 ............................ <pcolor>
-  [ 52] setobjprop 311 .......................... tBgElem.getProperty(#sprite).bgColor = pcolor
-  [ 55] pushsymb 949 ............................ <#room>
+  [ 20] extcall 303 ............................. <getWindow(pWindowID)>
+  [ 23] pushcons 22 ............................. <"stickies_bg">
+  [ 25] pusharglist 2 ........................... <getWindow(pWindowID), "stickies_bg">
+  [ 27] objcall 317 ............................. <getWindow(pWindowID).getElement("stickies_bg")>
+  [ 30] setlocal 0 .............................. tBgElem = getWindow(pWindowID).getElement("stickies_bg")
+  [ 32] getlocal 0 .............................. <tBgElem>
+  [ 34] pushzero ................................ <0>
+  [ 35] eq ...................................... <tBgElem = 0>
+  [ 36] jmpifz [ 43] ............................ if tBgElem = 0 then
+  [ 39] pusharglistnoret 0 ...................... <>
+  [ 41] extcall 31 .............................. return 
+  [ 43] getlocal 0 .............................. <tBgElem>
+  [ 45] pushsymb 73 ............................. <#sprite>
+  [ 47] pusharglist 2 ........................... <tBgElem, #sprite>
+  [ 49] objcall 124 ............................. <tBgElem.getProperty(#sprite)>
+  [ 51] getprop 1814 ............................ <pcolor>
+  [ 54] setobjprop 95 ........................... tBgElem.getProperty(#sprite).bgColor = pcolor
+  [ 56] pushsymb 52 ............................. <#room>
   [ 58] pusharglist 1 ........................... <#room>
-  [ 60] extcall 260 ............................. <getThread(#room)>
-  [ 63] pusharglist 1 ........................... <getThread(#room)>
-  [ 65] objcall 207 ............................. <getThread(#room).getComponent()>
-  [ 67] getprop 1821 ............................ <pActivePostItId>
-  [ 70] pusharglist 1 ........................... <pActivePostItId>
-  [ 72] extcall 453 ............................. <string(pActivePostItId)>
-  [ 75] pusharglist 2 ........................... <getThread(#room).getComponent(), string(pActivePostItId)>
-  [ 77] objcall 287 ............................. <getThread(#room).getComponent().getItemObject(string(pActivePostItId))>
-  [ 80] setlocal 1 .............................. tItemObject = getThread(#room).getComponent().getItemObject(string(pActivePostItId))
-  [ 82] getlocal 1 .............................. <tItemObject>
-  [ 84] pusharglist 1 ........................... <tItemObject>
-  [ 86] extcall 390 ............................. <objectp(tItemObject)>
-  [ 89] jmpifz [102] ............................ if objectp(tItemObject) then
-  [ 92] getlocal 1 .............................. <tItemObject>
-  [ 94] getprop 1817 ............................ <pcolor>
-  [ 97] pusharglistnoret 2 ...................... <tItemObject, pcolor>
-  [ 99] objcall 1287 ............................ tItemObject.setColor(pcolor)
-  [102] ret
+  [ 60] extcall 51 .............................. <getThread(#room)>
+  [ 62] pusharglist 1 ........................... <getThread(#room)>
+  [ 64] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 66] getprop 1818 ............................ <pActivePostItId>
+  [ 69] pusharglist 1 ........................... <pActivePostItId>
+  [ 71] extcall 519 ............................. <string(pActivePostItId)>
+  [ 74] pusharglist 2 ........................... <getThread(#room).getComponent(), string(pActivePostItId)>
+  [ 76] objcall 373 ............................. <getThread(#room).getComponent().getItemObject(string(pActivePostItId))>
+  [ 79] setlocal 1 .............................. tItemObject = getThread(#room).getComponent().getItemObject(string(pActivePostItId))
+  [ 81] getlocal 1 .............................. <tItemObject>
+  [ 83] pusharglist 1 ........................... <tItemObject>
+  [ 85] extcall 139 ............................. <objectp(tItemObject)>
+  [ 87] jmpifz [100] ............................ if objectp(tItemObject) then
+  [ 90] getlocal 1 .............................. <tItemObject>
+  [ 92] getprop 1814 ............................ <pcolor>
+  [ 95] pusharglistnoret 2 ...................... <tItemObject, pcolor>
+  [ 97] objcall 1309 ............................ tItemObject.setColor(pcolor)
+  [100] ret
 end
 
 on eventProcMouseDown me, tEvent, tElemID, tParam, tWndID
   [  0] getparam 4 .............................. <tWndID>
   [  2] pusharglist 1 ........................... <tWndID>
-  [  4] extcall 204 ............................. <getWindow(tWndID)>
-  [  6] getparam 2 .............................. <tElemID>
-  [  8] pusharglist 2 ........................... <getWindow(tWndID), tElemID>
-  [ 10] objcall 222 ............................. <getWindow(tWndID).getElement(tElemID)>
-  [ 12] pushsymb 362 ............................ <#blend>
-  [ 15] pusharglist 2 ........................... <getWindow(tWndID).getElement(tElemID), #blend>
-  [ 17] objcall 77 .............................. <getWindow(tWndID).getElement(tElemID).getProperty(#blend)>
-  [ 19] pushint8 100 ............................ <100>
-  [ 21] eq ...................................... <getWindow(tWndID).getElement(tElemID).getProperty(#blend) = 100>
-  [ 22] jmpifz [231] ............................ if getWindow(tWndID).getElement(tElemID).getProperty(#blend) = 100 then
-  [ 25] getparam 2 .............................. <tElemID>
-  [ 27] peek 0 .................................. case tElemID of
-  [ 29] pushcons 23 ............................. <"stickies_close_button">
-  [ 31] eq
-  [ 32] jmpifz [ 45] ............................ (case) "stickies_close_button":
-  [ 35] getparam 0 .............................. <me>
-  [ 37] pusharglistnoret 1 ...................... <me>
-  [ 39] objcall 368 ............................. me.close()
-  [ 42] jmp [229]
-  [ 45] peek 0
-  [ 47] pushcons 20 ............................. <"stickies_color4_button">
-  [ 49] eq
-  [ 50] jmpifz [ 85] ............................ (case) "stickies_color4_button":
-  [ 53] getprop 1818 ............................ <pIsController>
-  [ 56] jmpifz [ 82] ............................ if pIsController then
-  [ 59] getparam 0 .............................. <me>
-  [ 61] pushint16 156 ........................... <156>
-  [ 64] pushint16 206 ........................... <206>
-  [ 67] pushint16 255 ........................... <255>
-  [ 70] pusharglist 3 ........................... <156, 206, 255>
-  [ 72] extcall 312 ............................. <rgb(156, 206, 255)>
-  [ 75] pushint8 1 .............................. <1>
-  [ 77] pusharglistnoret 3 ...................... <me, rgb(156, 206, 255), 1>
-  [ 79] objcall 1287 ............................ me.setColor(rgb(156, 206, 255), 1)
-  [ 82] jmp [229]
-  [ 85] peek 0
-  [ 87] pushcons 19 ............................. <"stickies_color3_button">
-  [ 89] eq
-  [ 90] jmpifz [125] ............................ (case) "stickies_color3_button":
-  [ 93] getprop 1818 ............................ <pIsController>
-  [ 96] jmpifz [122] ............................ if pIsController then
-  [ 99] getparam 0 .............................. <me>
-  [101] pushint16 255 ........................... <255>
-  [104] pushint16 156 ........................... <156>
-  [107] pushint16 255 ........................... <255>
-  [110] pusharglist 3 ........................... <255, 156, 255>
-  [112] extcall 312 ............................. <rgb(255, 156, 255)>
+  [  4] extcall 303 ............................. <getWindow(tWndID)>
+  [  7] getparam 2 .............................. <tElemID>
+  [  9] pusharglist 2 ........................... <getWindow(tWndID), tElemID>
+  [ 11] objcall 317 ............................. <getWindow(tWndID).getElement(tElemID)>
+  [ 14] pushsymb 436 ............................ <#blend>
+  [ 17] pusharglist 2 ........................... <getWindow(tWndID).getElement(tElemID), #blend>
+  [ 19] objcall 124 ............................. <getWindow(tWndID).getElement(tElemID).getProperty(#blend)>
+  [ 21] pushint8 100 ............................ <100>
+  [ 23] eq ...................................... <getWindow(tWndID).getElement(tElemID).getProperty(#blend) = 100>
+  [ 24] jmpifz [229] ............................ if getWindow(tWndID).getElement(tElemID).getProperty(#blend) = 100 then
+  [ 27] getparam 2 .............................. <tElemID>
+  [ 29] peek 0 .................................. case tElemID of
+  [ 31] pushcons 23 ............................. <"stickies_close_button">
+  [ 33] eq
+  [ 34] jmpifz [ 47] ............................ (case) "stickies_close_button":
+  [ 37] getparam 0 .............................. <me>
+  [ 39] pusharglistnoret 1 ...................... <me>
+  [ 41] objcall 440 ............................. me.close()
+  [ 44] jmp [227]
+  [ 47] peek 0
+  [ 49] pushcons 20 ............................. <"stickies_color4_button">
+  [ 51] eq
+  [ 52] jmpifz [ 86] ............................ (case) "stickies_color4_button":
+  [ 55] getprop 1815 ............................ <pIsController>
+  [ 58] jmpifz [ 83] ............................ if pIsController then
+  [ 61] getparam 0 .............................. <me>
+  [ 63] pushint16 156 ........................... <156>
+  [ 66] pushint16 206 ........................... <206>
+  [ 69] pushint16 255 ........................... <255>
+  [ 72] pusharglist 3 ........................... <156, 206, 255>
+  [ 74] extcall 94 .............................. <rgb(156, 206, 255)>
+  [ 76] pushint8 1 .............................. <1>
+  [ 78] pusharglistnoret 3 ...................... <me, rgb(156, 206, 255), 1>
+  [ 80] objcall 1309 ............................ me.setColor(rgb(156, 206, 255), 1)
+  [ 83] jmp [227]
+  [ 86] peek 0
+  [ 88] pushcons 19 ............................. <"stickies_color3_button">
+  [ 90] eq
+  [ 91] jmpifz [125] ............................ (case) "stickies_color3_button":
+  [ 94] getprop 1815 ............................ <pIsController>
+  [ 97] jmpifz [122] ............................ if pIsController then
+  [100] getparam 0 .............................. <me>
+  [102] pushint16 255 ........................... <255>
+  [105] pushint16 156 ........................... <156>
+  [108] pushint16 255 ........................... <255>
+  [111] pusharglist 3 ........................... <255, 156, 255>
+  [113] extcall 94 .............................. <rgb(255, 156, 255)>
   [115] pushint8 1 .............................. <1>
   [117] pusharglistnoret 3 ...................... <me, rgb(255, 156, 255), 1>
-  [119] objcall 1287 ............................ me.setColor(rgb(255, 156, 255), 1)
-  [122] jmp [229]
+  [119] objcall 1309 ............................ me.setColor(rgb(255, 156, 255), 1)
+  [122] jmp [227]
   [125] peek 0
   [127] pushcons 18 ............................. <"stickies_color2_button">
   [129] eq
-  [130] jmpifz [165] ............................ (case) "stickies_color2_button":
-  [133] getprop 1818 ............................ <pIsController>
-  [136] jmpifz [162] ............................ if pIsController then
+  [130] jmpifz [164] ............................ (case) "stickies_color2_button":
+  [133] getprop 1815 ............................ <pIsController>
+  [136] jmpifz [161] ............................ if pIsController then
   [139] getparam 0 .............................. <me>
   [141] pushint16 156 ........................... <156>
   [144] pushint16 255 ........................... <255>
   [147] pushint16 156 ........................... <156>
   [150] pusharglist 3 ........................... <156, 255, 156>
-  [152] extcall 312 ............................. <rgb(156, 255, 156)>
-  [155] pushint8 1 .............................. <1>
-  [157] pusharglistnoret 3 ...................... <me, rgb(156, 255, 156), 1>
-  [159] objcall 1287 ............................ me.setColor(rgb(156, 255, 156), 1)
-  [162] jmp [229]
-  [165] peek 0
-  [167] pushcons 17 ............................. <"stickies_color1_button">
-  [169] eq
-  [170] jmpifz [204] ............................ (case) "stickies_color1_button":
-  [173] getprop 1818 ............................ <pIsController>
-  [176] jmpifz [201] ............................ if pIsController then
-  [179] getparam 0 .............................. <me>
-  [181] pushint16 255 ........................... <255>
-  [184] pushint16 255 ........................... <255>
-  [187] pushint8 51 ............................. <51>
-  [189] pusharglist 3 ........................... <255, 255, 51>
-  [191] extcall 312 ............................. <rgb(255, 255, 51)>
-  [194] pushint8 1 .............................. <1>
-  [196] pusharglistnoret 3 ...................... <me, rgb(255, 255, 51), 1>
-  [198] objcall 1287 ............................ me.setColor(rgb(255, 255, 51), 1)
-  [201] jmp [229]
-  [204] peek 0
-  [206] pushcons 16 ............................. <"stickies_delete_button">
-  [208] eq
-  [209] jmpifz [229] ............................ (case) "stickies_delete_button":
-  [212] getprop 1819 ............................ <pIsOwner>
-  [215] getprop 1820 ............................ <pCanRemoveStickies>
-  [218] or ...................................... <pIsOwner or pCanRemoveStickies>
-  [219] jmpifz [229] ............................ if pIsOwner or pCanRemoveStickies then
-  [222] getparam 0 .............................. <me>
-  [224] pusharglistnoret 1 ...................... <me>
-  [226] objcall 1812 ............................ delete me
-  [229] pop 1 ................................... end case
-  [231] pushint8 1 .............................. <1>
-  [233] pusharglistnoret 1 ...................... <1>
-  [235] extcall 21 .............................. return 1
-  [237] ret
+  [152] extcall 94 .............................. <rgb(156, 255, 156)>
+  [154] pushint8 1 .............................. <1>
+  [156] pusharglistnoret 3 ...................... <me, rgb(156, 255, 156), 1>
+  [158] objcall 1309 ............................ me.setColor(rgb(156, 255, 156), 1)
+  [161] jmp [227]
+  [164] peek 0
+  [166] pushcons 17 ............................. <"stickies_color1_button">
+  [168] eq
+  [169] jmpifz [202] ............................ (case) "stickies_color1_button":
+  [172] getprop 1815 ............................ <pIsController>
+  [175] jmpifz [199] ............................ if pIsController then
+  [178] getparam 0 .............................. <me>
+  [180] pushint16 255 ........................... <255>
+  [183] pushint16 255 ........................... <255>
+  [186] pushint8 51 ............................. <51>
+  [188] pusharglist 3 ........................... <255, 255, 51>
+  [190] extcall 94 .............................. <rgb(255, 255, 51)>
+  [192] pushint8 1 .............................. <1>
+  [194] pusharglistnoret 3 ...................... <me, rgb(255, 255, 51), 1>
+  [196] objcall 1309 ............................ me.setColor(rgb(255, 255, 51), 1)
+  [199] jmp [227]
+  [202] peek 0
+  [204] pushcons 16 ............................. <"stickies_delete_button">
+  [206] eq
+  [207] jmpifz [227] ............................ (case) "stickies_delete_button":
+  [210] getprop 1816 ............................ <pIsOwner>
+  [213] getprop 1817 ............................ <pCanRemoveStickies>
+  [216] or ...................................... <pIsOwner or pCanRemoveStickies>
+  [217] jmpifz [227] ............................ if pIsOwner or pCanRemoveStickies then
+  [220] getparam 0 .............................. <me>
+  [222] pusharglistnoret 1 ...................... <me>
+  [224] objcall 1809 ............................ delete me
+  [227] pop 1 ................................... end case
+  [229] pushint8 1 .............................. <1>
+  [231] pusharglistnoret 1 ...................... <1>
+  [233] extcall 31 .............................. return 1
+  [235] ret
 end
 
 on eventProcKeyDown me, tEvent, tSprID, tParam
   [  0] getparam 2 .............................. <tSprID>
   [  2] pushcons 7 .............................. <"stickies_text_field">
   [  4] eq ...................................... <tSprID = "stickies_text_field">
-  [  5] jmpifz [ 52] ............................ if tSprID = "stickies_text_field" then
+  [  5] jmpifz [ 51] ............................ if tSprID = "stickies_text_field" then
   [  8] pushint8 24 ............................. <24>
   [ 10] get 7 ................................... <the selStart>
-  [ 12] getprop 1826 ............................ <pText>
+  [ 12] getprop 1823 ............................ <pText>
   [ 15] pusharglist 1 ........................... <pText>
-  [ 17] extcall 622 ............................. <length(pText)>
-  [ 20] lt ...................................... <the selStart < length(pText)>
-  [ 21] getprop 1818 ............................ <pIsController>
-  [ 24] pushzero ................................ <0>
-  [ 25] eq ...................................... <pIsController = 0>
-  [ 26] and ..................................... <(the selStart < length(pText)) and (pIsController = 0)>
-  [ 27] jmpifz [ 47] ............................ if (the selStart < length(pText)) and (pIsController = 0) then
-  [ 30] getparam 0 .............................. <me>
-  [ 32] pushcons 24 ............................. <"Cannot edit postIts - only add!">
-  [ 34] pushsymb 1815 ........................... <#eventProcKeyDown>
-  [ 37] pusharglistnoret 3 ...................... <me, "Cannot edit postIts - only add!", #eventProcKeyDown>
-  [ 39] extcall 161 ............................. error(me, "Cannot edit postIts - only add!", #eventProcKeyDown)
-  [ 41] pushint8 1 .............................. <1>
-  [ 43] pusharglistnoret 1 ...................... <1>
-  [ 45] extcall 21 .............................. return 1
-  [ 47] pushint8 1 .............................. <1>
-  [ 49] setprop 1822 ............................ pChanged = 1
-  [ 52] ret
+  [ 17] extcall 67 .............................. <length(pText)>
+  [ 19] lt ...................................... <the selStart < length(pText)>
+  [ 20] getprop 1815 ............................ <pIsController>
+  [ 23] pushzero ................................ <0>
+  [ 24] eq ...................................... <pIsController = 0>
+  [ 25] and ..................................... <(the selStart < length(pText)) and (pIsController = 0)>
+  [ 26] jmpifz [ 46] ............................ if (the selStart < length(pText)) and (pIsController = 0) then
+  [ 29] getparam 0 .............................. <me>
+  [ 31] pushcons 24 ............................. <"Cannot edit postIts - only add!">
+  [ 33] pushsymb 1812 ........................... <#eventProcKeyDown>
+  [ 36] pusharglistnoret 3 ...................... <me, "Cannot edit postIts - only add!", #eventProcKeyDown>
+  [ 38] extcall 72 .............................. error(me, "Cannot edit postIts - only add!", #eventProcKeyDown)
+  [ 40] pushint8 1 .............................. <1>
+  [ 42] pusharglistnoret 1 ...................... <1>
+  [ 44] extcall 31 .............................. return 1
+  [ 46] pushint8 1 .............................. <1>
+  [ 48] setprop 1819 ............................ pChanged = 1
+  [ 51] ret
 end
