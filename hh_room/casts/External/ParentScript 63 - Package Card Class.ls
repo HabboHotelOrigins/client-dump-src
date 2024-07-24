@@ -20,7 +20,7 @@ end
 
 on define me, tProps
   pPackageID = tProps[#id]
-  pMessage = tProps[#msg]
+  pMessage = tProps[#Msg]
   me.showCard(tProps[#loc] + [0, -220])
   return 1
 end

@@ -5,44 +5,44 @@ on define me, tdata
   [  2] pushsymb 34 ............................. <#id>
   [  4] pusharglist 2 ........................... <tdata, #id>
   [  6] objcall 54 .............................. <tdata[#id]>
-  [  8] setprop 1156 ............................ pGroupId = tdata[#id]
+  [  8] setprop 1157 ............................ pGroupId = tdata[#id]
   [ 11] getparam 1 .............................. <tdata>
   [ 13] pushsymb 767 ............................ <#status>
   [ 16] pusharglist 2 ........................... <tdata, #status>
   [ 18] objcall 54 .............................. <tdata[#status]>
-  [ 20] setprop 1133 ............................ pStatus = tdata[#status]
+  [ 20] setprop 1134 ............................ pStatus = tdata[#status]
   [ 23] getparam 1 .............................. <tdata>
   [ 25] pushsymb 815 ............................ <#sofar>
   [ 28] pusharglist 2 ........................... <tdata, #sofar>
   [ 30] objcall 54 .............................. <tdata[#sofar]>
-  [ 32] setprop 1162 ............................ pLoadedSoFar = tdata[#sofar]
+  [ 32] setprop 1163 ............................ pLoadedSoFar = tdata[#sofar]
   [ 35] getparam 1 .............................. <tdata>
   [ 37] pushsymb 816 ............................ <#casts>
   [ 40] pusharglist 2 ........................... <tdata, #casts>
   [ 42] objcall 54 .............................. <tdata[#casts]>
   [ 44] getobjprop 22 ........................... <tdata[#casts].count>
-  [ 46] setprop 1163 ............................ pCastcount = tdata[#casts].count
+  [ 46] setprop 1164 ............................ pCastcount = tdata[#casts].count
   [ 49] getparam 1 .............................. <tdata>
   [ 51] pushsymb 766 ............................ <#callback>
   [ 54] pusharglist 2 ........................... <tdata, #callback>
   [ 56] objcall 54 .............................. <tdata[#callback]>
-  [ 58] setprop 1138 ............................ pCallBack = tdata[#callback]
+  [ 58] setprop 1139 ............................ pCallBack = tdata[#callback]
   [ 61] getparam 1 .............................. <tdata>
   [ 63] pushsymb 775 ............................ <#Percent>
   [ 66] pusharglist 2 ........................... <tdata, #Percent>
   [ 68] objcall 54 .............................. <tdata[#Percent]>
-  [ 70] setprop 1164 ............................ pCurrPercent = tdata[#Percent]
+  [ 70] setprop 1165 ............................ pCurrPercent = tdata[#Percent]
   [ 73] pushzero ................................ <0>
-  [ 74] setprop 1165 ............................ pTempPercent = 0
+  [ 74] setprop 1166 ............................ pTempPercent = 0
   [ 77] pushzero ................................ <0>
-  [ 78] setprop 1166 ............................ pLastPercent = 0
+  [ 78] setprop 1167 ............................ pLastPercent = 0
   [ 81] pushzero ................................ <0>
-  [ 82] setprop 1167 ............................ pCurLoadCount = 0
+  [ 82] setprop 1168 ............................ pCurLoadCount = 0
   [ 85] pushzero ................................ <0>
-  [ 86] setprop 1168 ............................ pTmpLoadCount = 0
+  [ 86] setprop 1169 ............................ pTmpLoadCount = 0
   [ 89] pusharglist 0 ........................... <[:]>
   [ 91] pushproplist ............................ <[:]>
-  [ 92] setprop 1169 ............................ pCastList = [:]
+  [ 92] setprop 1170 ............................ pCastList = [:]
   [ 95] getparam 1 .............................. <tdata>
   [ 97] pushsymb 816 ............................ <#casts>
   [100] pusharglist 2 ........................... <tdata, #casts>
@@ -60,7 +60,7 @@ on define me, tdata
   [124] pusharglist 2
   [126] extcall 54
   [128] setlocal 0
-  [130] getprop 1169 ............................ <pCastList>
+  [130] getprop 1170 ............................ <pCastList>
   [133] getlocal 0 .............................. <tCast>
   [135] pushzero ................................ <0>
   [136] pusharglistnoret 3 ...................... <pCastList, tCast, 0>
@@ -76,40 +76,40 @@ on define me, tdata
 end
 
 on OneCastDone me, tFile
-  [  0] getprop 1162 ............................ <pLoadedSoFar>
+  [  0] getprop 1163 ............................ <pLoadedSoFar>
   [  3] pushfloat32 1.0 ......................... <1.0>
   [  8] add ..................................... <pLoadedSoFar + 1.0>
-  [  9] setprop 1162 ............................ pLoadedSoFar = pLoadedSoFar + 1.0
-  [ 12] getprop 1162 ............................ <pLoadedSoFar>
+  [  9] setprop 1163 ............................ pLoadedSoFar = pLoadedSoFar + 1.0
+  [ 12] getprop 1163 ............................ <pLoadedSoFar>
   [ 15] pusharglist 1 ........................... <pLoadedSoFar>
   [ 17] extcall 957 ............................. <integer(pLoadedSoFar)>
-  [ 20] getprop 1163 ............................ <pCastcount>
+  [ 20] getprop 1164 ............................ <pCastcount>
   [ 23] eq ...................................... <integer(pLoadedSoFar) = pCastcount>
   [ 24] jmpifz [ 33] ............................ if integer(pLoadedSoFar) = pCastcount then
   [ 27] pushsymb 812 ............................ <#ready>
-  [ 30] setprop 1133 ............................ pStatus = #ready
-  [ 33] getprop 1169 ............................ <pCastList>
+  [ 30] setprop 1134 ............................ pStatus = #ready
+  [ 33] getprop 1170 ............................ <pCastList>
   [ 36] getparam 1 .............................. <tFile>
   [ 38] pushint8 1 .............................. <1>
   [ 40] pusharglistnoret 3 ...................... <pCastList, tFile, 1>
   [ 42] objcall 24 .............................. pCastList[tFile] = 1
   [ 44] pushint8 1 .............................. <1>
   [ 46] jmpifz [139] ............................ repeat while 1
-  [ 49] getprop 1169 ............................ <pCastList>
+  [ 49] getprop 1170 ............................ <pCastList>
   [ 52] pusharglist 1 ........................... <pCastList>
   [ 54] extcall 22 .............................. <count(pCastList)>
   [ 56] pushzero ................................ <0>
   [ 57] eq ...................................... <count(pCastList) = 0>
   [ 58] jmpifz [ 64] ............................ if count(pCastList) = 0 then
   [ 61] jmp [139] ............................... exit repeat
-  [ 64] getprop 1169 ............................ <pCastList>
+  [ 64] getprop 1170 ............................ <pCastList>
   [ 67] pushint8 1 .............................. <1>
   [ 69] pusharglist 2 ........................... <pCastList, 1>
   [ 71] objcall 54 .............................. <pCastList[1]>
   [ 73] pushint8 1 .............................. <1>
   [ 75] eq ...................................... <pCastList[1] = 1>
   [ 76] jmpifz [134] ............................ if pCastList[1] = 1 then
-  [ 79] getprop 1169 ............................ <pCastList>
+  [ 79] getprop 1170 ............................ <pCastList>
   [ 82] pushint8 1 .............................. <1>
   [ 84] pusharglist 2 ........................... <pCastList, 1>
   [ 86] objcall 23 .............................. <pCastList.getPropAt(1)>
@@ -128,7 +128,7 @@ on OneCastDone me, tFile
   [114] getobjprop 660 .......................... <castLib(tCastName).number>
   [117] pusharglistnoret 2 ...................... <getThreadManager(), castLib(tCastName).number>
   [119] objcall 149 ............................. getThreadManager().initThread(castLib(tCastName).number)
-  [121] getprop 1169 ............................ <pCastList>
+  [121] getprop 1170 ............................ <pCastList>
   [124] getlocal 0 .............................. <tCastName>
   [126] pusharglistnoret 2 ...................... <pCastList, tCastName>
   [128] objcall 661 ............................. pCastList.deleteProp(tCastName)
@@ -142,18 +142,18 @@ on OneCastDone me, tFile
 end
 
 on changeLoadingCount me, tPosOrNeg
-  [  0] getprop 1167 ............................ <pCurLoadCount>
+  [  0] getprop 1168 ............................ <pCurLoadCount>
   [  3] getparam 1 .............................. <tPosOrNeg>
   [  5] add ..................................... <pCurLoadCount + tPosOrNeg>
-  [  6] setprop 1167 ............................ pCurLoadCount = pCurLoadCount + tPosOrNeg
+  [  6] setprop 1168 ............................ pCurLoadCount = pCurLoadCount + tPosOrNeg
   [  9] ret
 end
 
 on resetPercentCounter me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1165 ............................ pTempPercent = 0
+  [  1] setprop 1166 ............................ pTempPercent = 0
   [  4] pushzero ................................ <0>
-  [  5] setprop 1168 ............................ pTmpLoadCount = 0
+  [  5] setprop 1169 ............................ pTmpLoadCount = 0
   [  8] pushint8 1 .............................. <1>
   [ 10] pusharglistnoret 1 ...................... <1>
   [ 12] extcall 25 .............................. return 1
@@ -161,66 +161,66 @@ on resetPercentCounter me
 end
 
 on UpdateTaskPercent me, tInstancePercent, tFile
-  [  0] getprop 1168 ............................ <pTmpLoadCount>
+  [  0] getprop 1169 ............................ <pTmpLoadCount>
   [  3] pushint8 1 .............................. <1>
   [  5] add ..................................... <pTmpLoadCount + 1>
-  [  6] setprop 1168 ............................ pTmpLoadCount = pTmpLoadCount + 1
-  [  9] getprop 1165 ............................ <pTempPercent>
+  [  6] setprop 1169 ............................ pTmpLoadCount = pTmpLoadCount + 1
+  [  9] getprop 1166 ............................ <pTempPercent>
   [ 12] getparam 1 .............................. <tInstancePercent>
   [ 14] add ..................................... <pTempPercent + tInstancePercent>
-  [ 15] setprop 1165 ............................ pTempPercent = pTempPercent + tInstancePercent
-  [ 18] getprop 1168 ............................ <pTmpLoadCount>
-  [ 21] getprop 1167 ............................ <pCurLoadCount>
+  [ 15] setprop 1166 ............................ pTempPercent = pTempPercent + tInstancePercent
+  [ 18] getprop 1169 ............................ <pTmpLoadCount>
+  [ 21] getprop 1168 ............................ <pCurLoadCount>
   [ 24] eq ...................................... <pTmpLoadCount = pCurLoadCount>
   [ 25] jmpifz [ 79] ............................ if pTmpLoadCount = pCurLoadCount then
   [ 28] pushfloat32 1.0 ......................... <1.0>
-  [ 33] getprop 1165 ............................ <pTempPercent>
-  [ 36] getprop 1162 ............................ <pLoadedSoFar>
+  [ 33] getprop 1166 ............................ <pTempPercent>
+  [ 36] getprop 1163 ............................ <pLoadedSoFar>
   [ 39] add ..................................... <pTempPercent + pLoadedSoFar>
   [ 40] mul ..................................... <1.0 * (pTempPercent + pLoadedSoFar)>
-  [ 41] getprop 1163 ............................ <pCastcount>
+  [ 41] getprop 1164 ............................ <pCastcount>
   [ 44] div ..................................... <1.0 * (pTempPercent + pLoadedSoFar) / pCastcount>
   [ 45] setlocal 0 .............................. tTemp = 1.0 * (pTempPercent + pLoadedSoFar) / pCastcount
   [ 47] getlocal 0 .............................. <tTemp>
   [ 49] pushfloat32 1.0 ......................... <1.0>
   [ 54] lteq .................................... <tTemp <= 1.0>
-  [ 55] getprop 1166 ............................ <pLastPercent>
+  [ 55] getprop 1167 ............................ <pLastPercent>
   [ 58] getlocal 0 .............................. <tTemp>
   [ 60] lteq .................................... <pLastPercent <= tTemp>
   [ 61] and ..................................... <(tTemp <= 1.0) and (pLastPercent <= tTemp)>
   [ 62] jmpifz [ 73] ............................ if (tTemp <= 1.0) and (pLastPercent <= tTemp) then / else
   [ 65] getlocal 0 .............................. <tTemp>
-  [ 67] setprop 1164 ............................ pCurrPercent = tTemp
+  [ 67] setprop 1165 ............................ pCurrPercent = tTemp
   [ 70] jmp [ 79]
-  [ 73] getprop 1166 ............................ <pLastPercent>
-  [ 76] setprop 1164 ............................ pCurrPercent = pLastPercent
+  [ 73] getprop 1167 ............................ <pLastPercent>
+  [ 76] setprop 1165 ............................ pCurrPercent = pLastPercent
   [ 79] ret
 end
 
 on getTaskState me
-  [  0] getprop 1133 ............................ <pStatus>
+  [  0] getprop 1134 ............................ <pStatus>
   [  3] pusharglistnoret 1 ...................... <pStatus>
   [  5] extcall 25 .............................. return pStatus
   [  7] ret
 end
 
 on getTaskPercent me
-  [  0] getprop 1164 ............................ <pCurrPercent>
+  [  0] getprop 1165 ............................ <pCurrPercent>
   [  3] pusharglistnoret 1 ...................... <pCurrPercent>
   [  5] extcall 25 .............................. return pCurrPercent
   [  7] ret
 end
 
 on DoCallBack me
-  [  0] getprop 1133 ............................ <pStatus>
+  [  0] getprop 1134 ............................ <pStatus>
   [  3] pushsymb 812 ............................ <#ready>
   [  6] eq ...................................... <pStatus = #ready>
   [  7] jmpifz [107] ............................ if pStatus = #ready then
-  [ 10] getprop 1138 ............................ <pCallBack>
+  [ 10] getprop 1139 ............................ <pCallBack>
   [ 13] pusharglist 1 ........................... <pCallBack>
   [ 15] extcall 53 .............................. <listp(pCallBack)>
   [ 17] jmpifz [107] ............................ if listp(pCallBack) then
-  [ 20] getprop 1138 ............................ <pCallBack>
+  [ 20] getprop 1139 ............................ <pCallBack>
   [ 23] peek 0
   [ 25] pusharglist 1
   [ 27] extcall 22
@@ -314,7 +314,7 @@ on addCallBack me, tid, tMethod, tClientID, tArgument
   [ 91] extcall 39 .............................. <error(me, "Handler not found in object:" && tMethod & "/" & tClientID, #addCallBack)>
   [ 93] pusharglistnoret 1 ...................... <error(me, "Handler not found in object:" && tMethod & "/" & tClientID, #addCallBack)>
   [ 95] extcall 25 .............................. return error(me, "Handler not found in object:" && tMethod & "/" & tClientID, #addCallBack)
-  [ 97] getprop 1133 ............................ <pStatus>
+  [ 97] getprop 1134 ............................ <pStatus>
   [100] pushsymb 812 ............................ <#ready>
   [103] eq ...................................... <pStatus = #ready>
   [104] jmpifz [136] ............................ if pStatus = #ready then / else
@@ -327,15 +327,15 @@ on addCallBack me, tid, tMethod, tClientID, tArgument
   [119] extcall 68 .............................. call(tMethod, getObject(tClientID), tArgument)
   [121] pusharglist 0 ........................... <>
   [123] extcall 179 ............................. <getCastLoadManager()>
-  [125] getprop 1156 ............................ <pGroupId>
+  [125] getprop 1157 ............................ <pGroupId>
   [128] pusharglistnoret 2 ...................... <getCastLoadManager(), pGroupId>
   [130] objcall 795 ............................. getCastLoadManager().removeCastLoadTask(pGroupId)
   [133] jmp [210]
-  [136] getprop 1133 ............................ <pStatus>
+  [136] getprop 1134 ............................ <pStatus>
   [139] pushsymb 813 ............................ <#LOADING>
   [142] eq ...................................... <pStatus = #LOADING>
   [143] jmpifz [210] ............................ if pStatus = #LOADING then
-  [146] getprop 1138 ............................ <pCallBack>
+  [146] getprop 1139 ............................ <pCallBack>
   [149] pusharglist 1 ........................... <pCallBack>
   [151] extcall 20 .............................. <voidp(pCallBack)>
   [153] jmpifz [185] ............................ if voidp(pCallBack) then / else
@@ -349,9 +349,9 @@ on addCallBack me, tid, tMethod, tClientID, tArgument
   [173] pushproplist ............................ <[#method: tMethod, #client: tClientID, #argument: tArgument]>
   [174] pusharglist 1 ........................... <[#method: tMethod, #client: tClientID, #argument: tArgument]>
   [176] extcall 491 ............................. <list([#method: tMethod, #client: tClientID, #argument: tArgument])>
-  [179] setprop 1138 ............................ pCallBack = list([#method: tMethod, #client: tClientID, #argument: tArgument])
+  [179] setprop 1139 ............................ pCallBack = list([#method: tMethod, #client: tClientID, #argument: tArgument])
   [182] jmp [210]
-  [185] getprop 1138 ............................ <pCallBack>
+  [185] getprop 1139 ............................ <pCallBack>
   [188] pushsymb 769 ............................ <#method>
   [191] getparam 2 .............................. <tMethod>
   [193] pushsymb 770 ............................ <#client>

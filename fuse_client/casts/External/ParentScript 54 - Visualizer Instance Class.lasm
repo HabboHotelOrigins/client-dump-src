@@ -4,38 +4,38 @@ on construct me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 1 ........................... <me>
   [  4] objcall 3 ............................... <me.getID()>
-  [  6] setprop 1363 ............................ pTitle = me.getID()
+  [  6] setprop 1365 ............................ pTitle = me.getID()
   [  9] pusharglist 0 ........................... <[]>
   [ 11] pushlist ................................ <[]>
-  [ 12] setprop 1364 ............................ pLayout = []
+  [ 12] setprop 1366 ............................ pLayout = []
   [ 15] pushzero ................................ <0>
   [ 16] setprop 467 ............................. pLocX = 0
   [ 19] pushzero ................................ <0>
   [ 20] setprop 469 ............................. pLocY = 0
   [ 23] pushzero ................................ <0>
-  [ 24] setprop 1365 ............................ pLocZ = 0
+  [ 24] setprop 1367 ............................ pLocZ = 0
   [ 27] pushzero ................................ <0>
   [ 28] setprop 499 ............................. pwidth = 0
   [ 31] pushzero ................................ <0>
   [ 32] setprop 505 ............................. pheight = 0
   [ 35] pushint8 1 .............................. <1>
-  [ 37] setprop 1366 ............................ pVisible = 1
+  [ 37] setprop 1368 ............................ pVisible = 1
   [ 40] pusharglist 0 ........................... <[]>
   [ 42] pushlist ................................ <[]>
-  [ 43] setprop 1367 ............................ pSpriteList = []
+  [ 43] setprop 1369 ............................ pSpriteList = []
   [ 46] pusharglist 0 ........................... <[]>
   [ 48] pushlist ................................ <[]>
-  [ 49] setprop 1368 ............................ pSpriteData = []
+  [ 49] setprop 1370 ............................ pSpriteData = []
   [ 52] pusharglist 0 ........................... <[:]>
   [ 54] pushproplist ............................ <[:]>
-  [ 55] setprop 1369 ............................ pActSprList = [:]
+  [ 55] setprop 1371 ............................ pActSprList = [:]
   [ 58] pushzero ................................ <0>
-  [ 59] setprop 1370 ............................ pDragFlag = 0
+  [ 59] setprop 1372 ............................ pDragFlag = 0
   [ 62] pushzero ................................ <0>
   [ 63] pushzero ................................ <0>
   [ 64] pusharglist 2 ........................... <[0, 0]>
   [ 66] pushlist ................................ <[0, 0]>
-  [ 67] setprop 1371 ............................ pDragOffset = [0, 0]
+  [ 67] setprop 1373 ............................ pDragOffset = [0, 0]
   [ 70] pushzero ................................ <0>
   [ 71] pushzero ................................ <0>
   [ 72] getmovieprop 970 ........................ <the stage>
@@ -58,10 +58,10 @@ on construct me
   [111] setprop 969 ............................. pBoundary = rect(0, 0, (the stage).sourceRect.width, (the stage).sourceRect.height) + [-1000, -1000, 1000, 1000]
   [114] pusharglist 0 ........................... <[:]>
   [116] pushproplist ............................ <[:]>
-  [117] setprop 1372 ............................ pWrappedParts = [:]
+  [117] setprop 1374 ............................ pWrappedParts = [:]
   [120] pusharglist 0 ........................... <[:]>
   [122] pushproplist ............................ <[:]>
-  [123] setprop 1373 ............................ pSwapAnimList = [:]
+  [123] setprop 1375 ............................ pSwapAnimList = [:]
   [126] pushint8 1 .............................. <1>
   [128] pusharglistnoret 1 ...................... <1>
   [130] extcall 25 .............................. return 1
@@ -77,11 +77,11 @@ on deconstruct me
   [ 10] pushint8 1 .............................. <1>
   [ 12] setlocal 0
   [ 14] getlocal 0
-  [ 16] getprop 1367 ............................ <pSpriteList>
+  [ 16] getprop 1369 ............................ <pSpriteList>
   [ 19] getobjprop 22 ........................... <pSpriteList.count>
   [ 21] lteq
   [ 22] jmpifz [ 49] ............................ repeat with i = 1 to pSpriteList.count
-  [ 25] getprop 1367 ............................ <pSpriteList>
+  [ 25] getprop 1369 ............................ <pSpriteList>
   [ 28] getlocal 0 .............................. <i>
   [ 30] pusharglist 2 ........................... <pSpriteList, i>
   [ 32] objcall 54 .............................. <pSpriteList[i]>
@@ -95,17 +95,17 @@ on deconstruct me
   [ 47] endrepeat [ 14]
   [ 49] pusharglist 0 ........................... <[]>
   [ 51] pushlist ................................ <[]>
-  [ 52] setprop 1367 ............................ pSpriteList = []
+  [ 52] setprop 1369 ............................ pSpriteList = []
   [ 55] pusharglist 0 ........................... <[]>
   [ 57] pushlist ................................ <[]>
-  [ 58] setprop 1368 ............................ pSpriteData = []
+  [ 58] setprop 1370 ............................ pSpriteData = []
   [ 61] pusharglist 0 ........................... <[:]>
   [ 63] pushproplist ............................ <[:]>
-  [ 64] setprop 1369 ............................ pActSprList = [:]
+  [ 64] setprop 1371 ............................ pActSprList = [:]
   [ 67] pusharglist 0 ........................... <[]>
   [ 69] pushlist ................................ <[]>
   [ 70] setprop 969 ............................. pBoundary = []
-  [ 73] getprop 1372 ............................ <pWrappedParts>
+  [ 73] getprop 1374 ............................ <pWrappedParts>
   [ 76] peek 0
   [ 78] pusharglist 1
   [ 80] extcall 22
@@ -128,7 +128,7 @@ on deconstruct me
   [113] pop 3
   [115] pusharglist 0 ........................... <[:]>
   [117] pushproplist ............................ <[:]>
-  [118] setprop 1372 ............................ pWrappedParts = [:]
+  [118] setprop 1374 ............................ pWrappedParts = [:]
   [121] pushint8 1 .............................. <1>
   [123] pusharglistnoret 1 ...................... <1>
   [125] extcall 25 .............................. return 1
@@ -181,7 +181,7 @@ on define me, tProps
   [ 91] pushsymb 883 ............................ <#locZ>
   [ 94] pusharglist 2 ........................... <tProps, #locZ>
   [ 96] objcall 54 .............................. <tProps[#locZ]>
-  [ 98] setprop 1365 ............................ pLocZ = tProps[#locZ]
+  [ 98] setprop 1367 ............................ pLocZ = tProps[#locZ]
   [101] getparam 1 .............................. <tProps>
   [103] pushsymb 973 ............................ <#layout>
   [106] pusharglist 2 ........................... <tProps, #layout>
@@ -194,7 +194,7 @@ on define me, tProps
   [120] pushsymb 973 ............................ <#layout>
   [123] pusharglist 2 ........................... <tProps, #layout>
   [125] objcall 54 .............................. <tProps[#layout]>
-  [127] setprop 1364 ............................ pLayout = tProps[#layout]
+  [127] setprop 1366 ............................ pLayout = tProps[#layout]
   [130] getparam 1 .............................. <tProps>
   [132] pushsymb 974 ............................ <#boundary>
   [135] pusharglist 2 ........................... <tProps, #boundary>
@@ -209,7 +209,7 @@ on define me, tProps
   [154] objcall 54 .............................. <tProps[#boundary]>
   [156] setprop 969 ............................. pBoundary = tProps[#boundary]
   [159] getparam 0 .............................. <me>
-  [161] getprop 1364 ............................ <pLayout>
+  [161] getprop 1366 ............................ <pLayout>
   [164] pusharglist 2 ........................... <me, pLayout>
   [166] objcall 539 ............................. <me.open(pLayout)>
   [169] pusharglistnoret 1 ...................... <me.open(pLayout)>
@@ -222,11 +222,11 @@ on open me, tLayout
   [  2] pusharglist 1 ........................... <tLayout>
   [  4] extcall 20 .............................. <voidp(tLayout)>
   [  6] jmpifz [ 14] ............................ if voidp(tLayout) then
-  [  9] getprop 1364 ............................ <pLayout>
+  [  9] getprop 1366 ............................ <pLayout>
   [ 12] setparam 1 .............................. tLayout = pLayout
   [ 14] getparam 1 .............................. <tLayout>
-  [ 16] setprop 1364 ............................ pLayout = tLayout
-  [ 19] getprop 1367 ............................ <pSpriteList>
+  [ 16] setprop 1366 ............................ pLayout = tLayout
+  [ 19] getprop 1369 ............................ <pSpriteList>
   [ 22] getobjprop 22 ........................... <pSpriteList.count>
   [ 24] pushzero ................................ <0>
   [ 25] gt ...................................... <pSpriteList.count > 0>
@@ -234,11 +234,11 @@ on open me, tLayout
   [ 29] pushint8 1 .............................. <1>
   [ 31] setlocal 0
   [ 33] getlocal 0
-  [ 35] getprop 1367 ............................ <pSpriteList>
+  [ 35] getprop 1369 ............................ <pSpriteList>
   [ 38] getobjprop 22 ........................... <pSpriteList.count>
   [ 40] lteq
   [ 41] jmpifz [ 68] ............................ repeat with i = 1 to pSpriteList.count
-  [ 44] getprop 1367 ............................ <pSpriteList>
+  [ 44] getprop 1369 ............................ <pSpriteList>
   [ 47] getlocal 0 .............................. <i>
   [ 49] pusharglist 2 ........................... <pSpriteList, i>
   [ 51] objcall 54 .............................. <pSpriteList[i]>
@@ -252,11 +252,11 @@ on open me, tLayout
   [ 66] endrepeat [ 33]
   [ 68] pusharglist 0 ........................... <[]>
   [ 70] pushlist ................................ <[]>
-  [ 71] setprop 1367 ............................ pSpriteList = []
+  [ 71] setprop 1369 ............................ pSpriteList = []
   [ 74] getparam 0 .............................. <me>
-  [ 76] getprop 1364 ............................ <pLayout>
+  [ 76] getprop 1366 ............................ <pLayout>
   [ 79] pusharglist 2 ........................... <me, pLayout>
-  [ 81] objcall 1362 ............................ <me.buildVisual(pLayout)>
+  [ 81] objcall 1364 ............................ <me.buildVisual(pLayout)>
   [ 84] pusharglistnoret 1 ...................... <me.buildVisual(pLayout)>
   [ 86] extcall 25 .............................. return me.buildVisual(pLayout)
   [ 88] ret
@@ -371,7 +371,7 @@ on moveBy me, tOffX, tOffY
   [172] getparam 1 .............................. <tOffX>
   [174] getparam 2 .............................. <tOffY>
   [176] pusharglistnoret 3 ...................... <me, tOffX, tOffY>
-  [178] objcall 1360 ............................ me.moveXY(tOffX, tOffY)
+  [178] objcall 1362 ............................ me.moveXY(tOffX, tOffY)
   [181] ret
 end
 
@@ -385,7 +385,7 @@ on moveZ me, tZ
   [ 13] pushcons 0 .............................. <"Integer expected:">
   [ 15] getparam 1 .............................. <tZ>
   [ 17] joinpadstr .............................. <"Integer expected:" && tZ>
-  [ 18] pushsymb 1345 ........................... <#moveZ>
+  [ 18] pushsymb 1347 ........................... <#moveZ>
   [ 21] pusharglist 3 ........................... <me, "Integer expected:" && tZ, #moveZ>
   [ 23] extcall 39 .............................. <error(me, "Integer expected:" && tZ, #moveZ)>
   [ 25] pusharglistnoret 1 ...................... <error(me, "Integer expected:" && tZ, #moveZ)>
@@ -393,11 +393,11 @@ on moveZ me, tZ
   [ 29] pushint8 1 .............................. <1>
   [ 31] setlocal 0
   [ 33] getlocal 0
-  [ 35] getprop 1367 ............................ <pSpriteList>
+  [ 35] getprop 1369 ............................ <pSpriteList>
   [ 38] getobjprop 22 ........................... <pSpriteList.count>
   [ 40] lteq
   [ 41] jmpifz [ 73] ............................ repeat with i = 1 to pSpriteList.count
-  [ 44] getprop 1367 ............................ <pSpriteList>
+  [ 44] getprop 1369 ............................ <pSpriteList>
   [ 47] getlocal 0 .............................. <i>
   [ 49] pusharglist 2 ........................... <pSpriteList, i>
   [ 51] objcall 54 .............................. <pSpriteList[i]>
@@ -412,7 +412,7 @@ on moveZ me, tZ
   [ 68] add
   [ 69] setlocal 0
   [ 71] endrepeat [ 33]
-  [ 73] getprop 1372 ............................ <pWrappedParts>
+  [ 73] getprop 1374 ............................ <pWrappedParts>
   [ 76] peek 0
   [ 78] pusharglist 1
   [ 80] extcall 22
@@ -427,7 +427,7 @@ on moveZ me, tZ
   [ 98] extcall 54
   [100] setlocal 1
   [102] getlocal 1 .............................. <tPart>
-  [104] pushsymb 1375 ........................... <#visLocZ>
+  [104] pushsymb 1377 ........................... <#visLocZ>
   [107] getparam 1 .............................. <tZ>
   [109] pusharglistnoret 3 ...................... <tPart, #visLocZ, tZ>
   [111] objcall 711 ............................. tPart.setProperty(#visLocZ, tZ)
@@ -436,12 +436,12 @@ on moveZ me, tZ
   [117] endrepeat [ 84]
   [119] pop 3
   [121] getparam 1 .............................. <tZ>
-  [123] setprop 1365 ............................ pLocZ = tZ
+  [123] setprop 1367 ............................ pLocZ = tZ
   [126] ret
 end
 
 on getSprite me, tid
-  [  0] getprop 1369 ............................ <pActSprList>
+  [  0] getprop 1371 ............................ <pActSprList>
   [  3] getparam 1 .............................. <tid>
   [  5] pusharglist 2 ........................... <pActSprList, tid>
   [  7] objcall 54 .............................. <pActSprList[tid]>
@@ -451,7 +451,7 @@ on getSprite me, tid
 end
 
 on getSprById me, tid
-  [  0] getprop 1369 ............................ <pActSprList>
+  [  0] getprop 1371 ............................ <pActSprList>
   [  3] getparam 1 .............................. <tid>
   [  5] pusharglist 2 ........................... <pActSprList, tid>
   [  7] objcall 54 .............................. <pActSprList[tid]>
@@ -461,7 +461,7 @@ on getSprById me, tid
 end
 
 on getSpriteByID me, tid
-  [  0] getprop 1369 ............................ <pActSprList>
+  [  0] getprop 1371 ............................ <pActSprList>
   [  3] getparam 1 .............................. <tid>
   [  5] pusharglist 2 ........................... <pActSprList, tid>
   [  7] objcall 54 .............................. <pActSprList[tid]>
@@ -471,7 +471,7 @@ on getSpriteByID me, tid
 end
 
 on spriteExists me, tid
-  [  0] getprop 1369 ............................ <pActSprList>
+  [  0] getprop 1371 ............................ <pActSprList>
   [  3] getparam 1 .............................. <tid>
   [  5] pusharglist 2 ........................... <pActSprList, tid>
   [  7] objcall 54 .............................. <pActSprList[tid]>
@@ -484,7 +484,7 @@ on spriteExists me, tid
 end
 
 on moveSprBy me, tid, tX, tY
-  [  0] getprop 1369 ............................ <pActSprList>
+  [  0] getprop 1371 ............................ <pActSprList>
   [  3] getparam 1 .............................. <tid>
   [  5] pusharglist 2 ........................... <pActSprList, tid>
   [  7] objcall 54 .............................. <pActSprList[tid]>
@@ -497,7 +497,7 @@ on moveSprBy me, tid, tX, tY
   [ 22] pushcons 1 .............................. <"Sprite not found:">
   [ 24] getparam 1 .............................. <tid>
   [ 26] joinpadstr .............................. <"Sprite not found:" && tid>
-  [ 27] pushsymb 1350 ........................... <#moveSprBy>
+  [ 27] pushsymb 1352 ........................... <#moveSprBy>
   [ 30] pusharglist 3 ........................... <me, "Sprite not found:" && tid, #moveSprBy>
   [ 32] extcall 39 .............................. <error(me, "Sprite not found:" && tid, #moveSprBy)>
   [ 34] pusharglistnoret 1 ...................... <error(me, "Sprite not found:" && tid, #moveSprBy)>
@@ -513,14 +513,14 @@ on moveSprBy me, tid, tX, tY
   [ 53] setobjprop 511 .......................... tsprite.loc = tsprite.loc + [tX, tY]
   [ 56] getparam 0 .............................. <me>
   [ 58] pusharglist 1 ........................... <me>
-  [ 60] objcall 1361 ............................ <me.Refresh()>
+  [ 60] objcall 1363 ............................ <me.Refresh()>
   [ 63] pusharglistnoret 1 ...................... <me.Refresh()>
   [ 65] extcall 25 .............................. return me.Refresh()
   [ 67] ret
 end
 
 on moveSprTo me, tid, tX, tY
-  [  0] getprop 1369 ............................ <pActSprList>
+  [  0] getprop 1371 ............................ <pActSprList>
   [  3] getparam 1 .............................. <tid>
   [  5] pusharglist 2 ........................... <pActSprList, tid>
   [  7] objcall 54 .............................. <pActSprList[tid]>
@@ -533,7 +533,7 @@ on moveSprTo me, tid, tX, tY
   [ 22] pushcons 1 .............................. <"Sprite not found:">
   [ 24] getparam 1 .............................. <tid>
   [ 26] joinpadstr .............................. <"Sprite not found:" && tid>
-  [ 27] pushsymb 1351 ........................... <#moveSprTo>
+  [ 27] pushsymb 1353 ........................... <#moveSprTo>
   [ 30] pusharglist 3 ........................... <me, "Sprite not found:" && tid, #moveSprTo>
   [ 32] extcall 39 .............................. <error(me, "Sprite not found:" && tid, #moveSprTo)>
   [ 34] pusharglistnoret 1 ...................... <error(me, "Sprite not found:" && tid, #moveSprTo)>
@@ -546,7 +546,7 @@ on moveSprTo me, tid, tX, tY
   [ 49] setobjprop 511 .......................... tsprite.loc = point(tX, tY)
   [ 52] getparam 0 .............................. <me>
   [ 54] pusharglist 1 ........................... <me>
-  [ 56] objcall 1361 ............................ <me.Refresh()>
+  [ 56] objcall 1363 ............................ <me.Refresh()>
   [ 59] pusharglistnoret 1 ...................... <me.Refresh()>
   [ 61] extcall 25 .............................. return me.Refresh()
   [ 63] ret
@@ -567,16 +567,16 @@ on setDeactive me
 end
 
 on hide me
-  [  0] getprop 1366 ............................ <pVisible>
+  [  0] getprop 1368 ............................ <pVisible>
   [  3] pushint8 1 .............................. <1>
   [  5] eq ...................................... <pVisible = 1>
   [  6] jmpifz [ 29] ............................ if pVisible = 1 then
   [  9] pushzero ................................ <0>
-  [ 10] setprop 1366 ............................ pVisible = 0
+  [ 10] setprop 1368 ............................ pVisible = 0
   [ 13] getparam 0 .............................. <me>
   [ 15] pushint16 10000 ......................... <10000>
   [ 18] pusharglistnoret 2 ...................... <me, 10000>
-  [ 20] objcall 1358 ............................ me.moveX(10000)
+  [ 20] objcall 1360 ............................ me.moveX(10000)
   [ 23] pushint8 1 .............................. <1>
   [ 25] pusharglistnoret 1 ...................... <1>
   [ 27] extcall 25 .............................. return 1
@@ -587,17 +587,17 @@ on hide me
 end
 
 on show me
-  [  0] getprop 1366 ............................ <pVisible>
+  [  0] getprop 1368 ............................ <pVisible>
   [  3] pushzero ................................ <0>
   [  4] eq ...................................... <pVisible = 0>
   [  5] jmpifz [ 30] ............................ if pVisible = 0 then
   [  8] pushint8 1 .............................. <1>
-  [ 10] setprop 1366 ............................ pVisible = 1
+  [ 10] setprop 1368 ............................ pVisible = 1
   [ 13] getparam 0 .............................. <me>
   [ 15] pushint16 10000 ......................... <10000>
   [ 18] inv ..................................... <-10000>
   [ 19] pusharglistnoret 2 ...................... <me, -10000>
-  [ 21] objcall 1358 ............................ me.moveX(-10000)
+  [ 21] objcall 1360 ............................ me.moveX(-10000)
   [ 24] pushint8 1 .............................. <1>
   [ 26] pusharglistnoret 1 ...................... <1>
   [ 28] extcall 25 .............................. return 1
@@ -611,7 +611,7 @@ on drag me, tBoolean
   [  0] getparam 1 .............................. <tBoolean>
   [  2] pushint8 1 .............................. <1>
   [  4] eq ...................................... <tBoolean = 1>
-  [  5] getprop 1370 ............................ <pDragFlag>
+  [  5] getprop 1372 ............................ <pDragFlag>
   [  8] pushzero ................................ <0>
   [  9] eq ...................................... <pDragFlag = 0>
   [ 10] and ..................................... <(tBoolean = 1) and (pDragFlag = 0)>
@@ -622,19 +622,19 @@ on drag me, tBoolean
   [ 23] pusharglist 2 ........................... <[pLocX, pLocY]>
   [ 25] pushlist ................................ <[pLocX, pLocY]>
   [ 26] sub ..................................... <the mouseLoc - [pLocX, pLocY]>
-  [ 27] setprop 1371 ............................ pDragOffset = the mouseLoc - [pLocX, pLocY]
+  [ 27] setprop 1373 ............................ pDragOffset = the mouseLoc - [pLocX, pLocY]
   [ 30] getparam 0 .............................. <me>
   [ 32] pusharglist 1 ........................... <me>
   [ 34] objcall 3 ............................... <me.getID()>
   [ 36] pusharglistnoret 1 ...................... <me.getID()>
   [ 38] extcall 108 ............................. receiveUpdate(me.getID())
   [ 40] pushint8 1 .............................. <1>
-  [ 42] setprop 1370 ............................ pDragFlag = 1
+  [ 42] setprop 1372 ............................ pDragFlag = 1
   [ 45] jmp [ 76]
   [ 48] getparam 1 .............................. <tBoolean>
   [ 50] pushzero ................................ <0>
   [ 51] eq ...................................... <tBoolean = 0>
-  [ 52] getprop 1370 ............................ <pDragFlag>
+  [ 52] getprop 1372 ............................ <pDragFlag>
   [ 55] pushint8 1 .............................. <1>
   [ 57] eq ...................................... <pDragFlag = 1>
   [ 58] and ..................................... <(tBoolean = 0) and (pDragFlag = 1)>
@@ -645,7 +645,7 @@ on drag me, tBoolean
   [ 68] pusharglistnoret 1 ...................... <me.getID()>
   [ 70] extcall 109 ............................. removeUpdate(me.getID())
   [ 72] pushzero ................................ <0>
-  [ 73] setprop 1370 ............................ pDragFlag = 0
+  [ 73] setprop 1372 ............................ pDragFlag = 0
   [ 76] pushint8 1 .............................. <1>
   [ 78] pusharglistnoret 1 ...................... <1>
   [ 80] extcall 25 .............................. return 1
@@ -659,7 +659,7 @@ on getProperty me, tProp
   [  7] eq
   [  8] jmpifz [ 23] ............................ (case) #layout:
   [ 11] pop 1
-  [ 13] getprop 1364 ............................ <pLayout>
+  [ 13] getprop 1366 ............................ <pLayout>
   [ 16] pusharglistnoret 1 ...................... <pLayout>
   [ 18] extcall 25 .............................. return pLayout
   [ 20] jmp [295]
@@ -686,7 +686,7 @@ on getProperty me, tProp
   [ 70] eq
   [ 71] jmpifz [ 86] ............................ (case) #locZ:
   [ 74] pop 1
-  [ 76] getprop 1365 ............................ <pLocZ>
+  [ 76] getprop 1367 ............................ <pLocZ>
   [ 79] pusharglistnoret 1 ...................... <pLocZ>
   [ 81] extcall 25 .............................. return pLocZ
   [ 83] jmp [295]
@@ -722,7 +722,7 @@ on getProperty me, tProp
   [152] eq
   [153] jmpifz [170] ............................ (case) #sprCount:
   [156] pop 1
-  [158] getprop 1367 ............................ <pSpriteList>
+  [158] getprop 1369 ............................ <pSpriteList>
   [161] getobjprop 22 ........................... <pSpriteList.count>
   [163] pusharglistnoret 1 ...................... <pSpriteList.count>
   [165] extcall 25 .............................. return pSpriteList.count
@@ -732,16 +732,16 @@ on getProperty me, tProp
   [175] eq
   [176] jmpifz [191] ............................ (case) #spriteList:
   [179] pop 1
-  [181] getprop 1367 ............................ <pSpriteList>
+  [181] getprop 1369 ............................ <pSpriteList>
   [184] pusharglistnoret 1 ...................... <pSpriteList>
   [186] extcall 25 .............................. return pSpriteList
   [188] jmp [295]
   [191] peek 0
-  [193] pushsymb 1378 ........................... <#spriteData>
+  [193] pushsymb 1380 ........................... <#spriteData>
   [196] eq
   [197] jmpifz [212] ............................ (case) #spriteData:
   [200] pop 1
-  [202] getprop 1368 ............................ <pSpriteData>
+  [202] getprop 1370 ............................ <pSpriteData>
   [205] pusharglistnoret 1 ...................... <pSpriteData>
   [207] extcall 25 .............................. return pSpriteData
   [209] jmp [295]
@@ -750,7 +750,7 @@ on getProperty me, tProp
   [217] eq
   [218] jmpifz [233] ............................ (case) #visible:
   [221] pop 1
-  [223] getprop 1366 ............................ <pVisible>
+  [223] getprop 1368 ............................ <pVisible>
   [226] pusharglistnoret 1 ...................... <pVisible>
   [228] extcall 25 .............................. return pVisible
   [230] jmp [295]
@@ -759,7 +759,7 @@ on getProperty me, tProp
   [238] eq
   [239] jmpifz [254] ............................ (case) #title:
   [242] pop 1
-  [244] getprop 1363 ............................ <pTitle>
+  [244] getprop 1365 ............................ <pTitle>
   [247] pusharglistnoret 1 ...................... <pTitle>
   [249] extcall 25 .............................. return pTitle
   [251] jmp [295]
@@ -775,11 +775,11 @@ on getProperty me, tProp
   [272] extcall 25 .............................. return me.getID()
   [274] jmp [295]
   [277] peek 0
-  [279] pushsymb 1379 ........................... <#swapAnims>
+  [279] pushsymb 1381 ........................... <#swapAnims>
   [282] eq
   [283] jmpifz [295] ............................ (case) #swapAnims:
   [286] pop 1
-  [288] getprop 1373 ............................ <pSwapAnimList>
+  [288] getprop 1375 ............................ <pSwapAnimList>
   [291] pusharglistnoret 1 ...................... <pSwapAnimList>
   [293] extcall 25 .............................. return pSwapAnimList
   [295] pop 1 ................................... end case
@@ -811,7 +811,7 @@ on setProperty me, tProp, tValue
   [ 40] getparam 0 .............................. <me>
   [ 42] getparam 2 .............................. <tValue>
   [ 44] pusharglist 2 ........................... <me, tValue>
-  [ 46] objcall 1358 ............................ <me.moveX(tValue)>
+  [ 46] objcall 1360 ............................ <me.moveX(tValue)>
   [ 49] pusharglistnoret 1 ...................... <me.moveX(tValue)>
   [ 51] extcall 25 .............................. return me.moveX(tValue)
   [ 53] jmp [203]
@@ -823,7 +823,7 @@ on setProperty me, tProp, tValue
   [ 67] getparam 0 .............................. <me>
   [ 69] getparam 2 .............................. <tValue>
   [ 71] pusharglist 2 ........................... <me, tValue>
-  [ 73] objcall 1359 ............................ <me.moveY(tValue)>
+  [ 73] objcall 1361 ............................ <me.moveY(tValue)>
   [ 76] pusharglistnoret 1 ...................... <me.moveY(tValue)>
   [ 78] extcall 25 .............................. return me.moveY(tValue)
   [ 80] jmp [203]
@@ -835,7 +835,7 @@ on setProperty me, tProp, tValue
   [ 94] getparam 0 .............................. <me>
   [ 96] getparam 2 .............................. <tValue>
   [ 98] pusharglist 2 ........................... <me, tValue>
-  [100] objcall 1345 ............................ <me.moveZ(tValue)>
+  [100] objcall 1347 ............................ <me.moveZ(tValue)>
   [103] pusharglistnoret 1 ...................... <me.moveZ(tValue)>
   [105] extcall 25 .............................. return me.moveZ(tValue)
   [107] jmp [203]
@@ -875,7 +875,7 @@ on setProperty me, tProp, tValue
   [186] eq
   [187] jmpifz [203] ............................ (case) #title:
   [190] getparam 2 .............................. <tValue>
-  [192] setprop 1363 ............................ pTitle = tValue
+  [192] setprop 1365 ............................ pTitle = tValue
   [195] pop 1
   [197] pushint8 1 .............................. <1>
   [199] pusharglistnoret 1 ...................... <1>
@@ -898,24 +898,24 @@ on getWrappedParts me, tWrapTypes
   [ 16] nteq .................................... <ilk(tWrapTypes) <> #list>
   [ 17] or ...................................... <voidp(tWrapTypes) or (ilk(tWrapTypes) <> #list)>
   [ 18] jmpifz [ 29] ............................ if voidp(tWrapTypes) or (ilk(tWrapTypes) <> #list) then
-  [ 21] pushsymb 1380 ........................... <#all>
+  [ 21] pushsymb 1382 ........................... <#all>
   [ 24] pusharglist 1 ........................... <[#all]>
   [ 26] pushlist ................................ <[#all]>
   [ 27] setparam 1 .............................. tWrapTypes = [#all]
   [ 29] getparam 1 .............................. <tWrapTypes>
-  [ 31] pushsymb 1380 ........................... <#all>
+  [ 31] pushsymb 1382 ........................... <#all>
   [ 34] pusharglist 2 ........................... <tWrapTypes, #all>
   [ 36] objcall 519 ............................. <tWrapTypes.getPos(#all)>
   [ 39] pushzero ................................ <0>
   [ 40] gt ...................................... <tWrapTypes.getPos(#all) > 0>
   [ 41] jmpifz [ 51] ............................ if tWrapTypes.getPos(#all) > 0 then
-  [ 44] getprop 1372 ............................ <pWrappedParts>
+  [ 44] getprop 1374 ............................ <pWrappedParts>
   [ 47] pusharglistnoret 1 ...................... <pWrappedParts>
   [ 49] extcall 25 .............................. return pWrappedParts
   [ 51] pusharglist 0 ........................... <[:]>
   [ 53] pushproplist ............................ <[:]>
   [ 54] setlocal 0 .............................. tWrappedParts = [:]
-  [ 56] getprop 1372 ............................ <pWrappedParts>
+  [ 56] getprop 1374 ............................ <pWrappedParts>
   [ 59] peek 0
   [ 61] pusharglist 1
   [ 63] extcall 22
@@ -987,7 +987,7 @@ on getPartAtLocation me, tLocX, tLocY, tWrapperTypes
   [ 17] pusharglist 1 ........................... <[tWrapperTypes]>
   [ 19] pushlist ................................ <[tWrapperTypes]>
   [ 20] setparam 3 .............................. tWrapperTypes = [tWrapperTypes]
-  [ 22] getprop 1372 ............................ <pWrappedParts>
+  [ 22] getprop 1374 ............................ <pWrappedParts>
   [ 25] peek 0
   [ 27] pusharglist 1
   [ 29] extcall 22
@@ -1013,7 +1013,7 @@ on getPartAtLocation me, tLocX, tLocY, tWrapperTypes
   [ 73] getparam 1 .............................. <tLocX>
   [ 75] getparam 2 .............................. <tLocY>
   [ 77] pusharglist 3 ........................... <tWrap, tLocX, tLocY>
-  [ 79] objcall 1384 ............................ <tWrap.getPartAt(tLocX, tLocY)>
+  [ 79] objcall 1386 ............................ <tWrap.getPartAt(tLocX, tLocY)>
   [ 82] setlocal 1 .............................. tPart = tWrap.getPartAt(tLocX, tLocY)
   [ 84] getlocal 1 .............................. <tPart>
   [ 86] pusharglist 1 ........................... <tPart>
@@ -1035,7 +1035,7 @@ on getPartAtLocation me, tLocX, tLocY, tWrapperTypes
 end
 
 on createWrapper me, tWrapID
-  [  0] getprop 1372 ............................ <pWrappedParts>
+  [  0] getprop 1374 ............................ <pWrappedParts>
   [  3] getparam 1 .............................. <tWrapID>
   [  5] pusharglist 2 ........................... <pWrappedParts, tWrapID>
   [  7] extcall 31 .............................. <getaProp(pWrappedParts, tWrapID)>
@@ -1047,7 +1047,7 @@ on createWrapper me, tWrapID
   [ 19] pushcons 2 .............................. <"Duplicate wrap id:">
   [ 21] getparam 1 .............................. <tWrapID>
   [ 23] joinpadstr .............................. <"Duplicate wrap id:" && tWrapID>
-  [ 24] pushsymb 1356 ........................... <#createWrapper>
+  [ 24] pushsymb 1358 ........................... <#createWrapper>
   [ 27] pusharglist 3 ........................... <me, "Duplicate wrap id:" && tWrapID, #createWrapper>
   [ 29] extcall 39 .............................. <error(me, "Duplicate wrap id:" && tWrapID, #createWrapper)>
   [ 31] pusharglistnoret 1 ...................... <error(me, "Duplicate wrap id:" && tWrapID, #createWrapper)>
@@ -1060,13 +1060,13 @@ on createWrapper me, tWrapID
   [ 46] extcall 94 .............................. <createObject(#random, getClassVariable("visualizer.wrapper.class"))>
   [ 48] setlocal 0 .............................. tWrap = createObject(#random, getClassVariable("visualizer.wrapper.class"))
   [ 50] getlocal 0 .............................. <tWrap>
-  [ 52] pushsymb 1386 ........................... <#owner>
+  [ 52] pushsymb 1388 ........................... <#owner>
   [ 55] getparam 0 .............................. <me>
   [ 57] pusharglist 1 ........................... <me>
   [ 59] objcall 3 ............................... <me.getID()>
   [ 61] pusharglistnoret 3 ...................... <tWrap, #owner, me.getID()>
   [ 63] objcall 711 ............................. tWrap.setProperty(#owner, me.getID())
-  [ 66] getprop 1372 ............................ <pWrappedParts>
+  [ 66] getprop 1374 ............................ <pWrappedParts>
   [ 69] getparam 1 .............................. <tWrapID>
   [ 71] getlocal 0 .............................. <tWrap>
   [ 73] pusharglistnoret 3 ...................... <pWrappedParts, tWrapID, tWrap>
@@ -1086,11 +1086,11 @@ on createWrapper me, tWrapID
   [101] getlocal 1 .............................. <tSpr>
   [103] pusharglistnoret 3 ...................... <tWrap, #sprite, tSpr>
   [105] objcall 711 ............................. tWrap.setProperty(#sprite, tSpr)
-  [108] getprop 1367 ............................ <pSpriteList>
+  [108] getprop 1369 ............................ <pSpriteList>
   [111] getlocal 1 .............................. <tSpr>
   [113] pusharglistnoret 2 ...................... <pSpriteList, tSpr>
   [115] objcall 666 ............................. pSpriteList.append(tSpr)
-  [118] getprop 1368 ............................ <pSpriteData>
+  [118] getprop 1370 ............................ <pSpriteData>
   [121] pusharglist 0 ........................... <[:]>
   [123] pushproplist ............................ <[:]>
   [124] pusharglistnoret 2 ...................... <pSpriteData, [:]>
@@ -1102,7 +1102,7 @@ on createWrapper me, tWrapID
 end
 
 on getWallPartUnderRect me, tRect, tSlope
-  [  0] getprop 1372 ............................ <pWrappedParts>
+  [  0] getprop 1374 ............................ <pWrappedParts>
   [  3] peek 0
   [  5] pusharglist 1
   [  7] extcall 22
@@ -1122,10 +1122,10 @@ on getWallPartUnderRect me, tRect, tSlope
   [ 36] objcall 444 ............................. <tWrap.getProperty(#type)>
   [ 39] setlocal 1 .............................. tWrapType = tWrap.getProperty(#type)
   [ 41] getlocal 1 .............................. <tWrapType>
-  [ 43] pushsymb 1388 ........................... <#wallleft>
+  [ 43] pushsymb 1390 ........................... <#wallleft>
   [ 46] eq ...................................... <tWrapType = #wallleft>
   [ 47] getlocal 1 .............................. <tWrapType>
-  [ 49] pushsymb 1389 ........................... <#wallright>
+  [ 49] pushsymb 1391 ........................... <#wallright>
   [ 52] eq ...................................... <tWrapType = #wallright>
   [ 53] or ...................................... <(tWrapType = #wallleft) or (tWrapType = #wallright)>
   [ 54] jmpifz [ 91] ............................ if (tWrapType = #wallleft) or (tWrapType = #wallright) then
@@ -1133,10 +1133,10 @@ on getWallPartUnderRect me, tRect, tSlope
   [ 59] getparam 1 .............................. <tRect>
   [ 61] getparam 2 .............................. <tSlope>
   [ 63] pusharglist 3 ........................... <tWrap, tRect, tSlope>
-  [ 65] objcall 1390 ............................ <tWrap.fitRectToWall(tRect, tSlope)>
+  [ 65] objcall 1392 ............................ <tWrap.fitRectToWall(tRect, tSlope)>
   [ 68] setlocal 2 .............................. tPart = tWrap.fitRectToWall(tRect, tSlope)
   [ 70] getlocal 2 .............................. <tPart>
-  [ 72] pushsymb 1391 ........................... <#insideWall>
+  [ 72] pushsymb 1393 ........................... <#insideWall>
   [ 75] pusharglist 2 ........................... <tPart, #insideWall>
   [ 77] objcall 54 .............................. <tPart[#insideWall]>
   [ 79] pushint8 1 .............................. <1>
@@ -1149,7 +1149,7 @@ on getWallPartUnderRect me, tRect, tSlope
   [ 93] add
   [ 94] endrepeat [ 11]
   [ 96] pop 3
-  [ 98] pushsymb 1391 ........................... <#insideWall>
+  [ 98] pushsymb 1393 ........................... <#insideWall>
   [101] pushzero ................................ <0>
   [102] pusharglist 2 ........................... <[#insideWall: 0]>
   [104] pushproplist ............................ <[#insideWall: 0]>
@@ -1162,15 +1162,15 @@ on moveX me, tOffX
   [  0] pushint8 1 .............................. <1>
   [  2] setlocal 0
   [  4] getlocal 0
-  [  6] getprop 1367 ............................ <pSpriteList>
+  [  6] getprop 1369 ............................ <pSpriteList>
   [  9] getobjprop 22 ........................... <pSpriteList.count>
   [ 11] lteq
   [ 12] jmpifz [ 51] ............................ repeat with i = 1 to pSpriteList.count
-  [ 15] getprop 1367 ............................ <pSpriteList>
+  [ 15] getprop 1369 ............................ <pSpriteList>
   [ 18] getlocal 0 .............................. <i>
   [ 20] pusharglist 2 ........................... <pSpriteList, i>
   [ 22] objcall 54 .............................. <pSpriteList[i]>
-  [ 24] getprop 1367 ............................ <pSpriteList>
+  [ 24] getprop 1369 ............................ <pSpriteList>
   [ 27] getlocal 0 .............................. <i>
   [ 29] pusharglist 2 ........................... <pSpriteList, i>
   [ 31] objcall 54 .............................. <pSpriteList[i]>
@@ -1190,15 +1190,15 @@ on moveY me, tOffY
   [  0] pushint8 1 .............................. <1>
   [  2] setlocal 0
   [  4] getlocal 0
-  [  6] getprop 1367 ............................ <pSpriteList>
+  [  6] getprop 1369 ............................ <pSpriteList>
   [  9] getobjprop 22 ........................... <pSpriteList.count>
   [ 11] lteq
   [ 12] jmpifz [ 51] ............................ repeat with i = 1 to pSpriteList.count
-  [ 15] getprop 1367 ............................ <pSpriteList>
+  [ 15] getprop 1369 ............................ <pSpriteList>
   [ 18] getlocal 0 .............................. <i>
   [ 20] pusharglist 2 ........................... <pSpriteList, i>
   [ 22] objcall 54 .............................. <pSpriteList[i]>
-  [ 24] getprop 1367 ............................ <pSpriteList>
+  [ 24] getprop 1369 ............................ <pSpriteList>
   [ 27] getlocal 0 .............................. <i>
   [ 29] pusharglist 2 ........................... <pSpriteList, i>
   [ 31] objcall 54 .............................. <pSpriteList[i]>
@@ -1218,15 +1218,15 @@ on moveXY me, tOffX, tOffY
   [  0] pushint8 1 .............................. <1>
   [  2] setlocal 0
   [  4] getlocal 0
-  [  6] getprop 1367 ............................ <pSpriteList>
+  [  6] getprop 1369 ............................ <pSpriteList>
   [  9] getobjprop 22 ........................... <pSpriteList.count>
   [ 11] lteq
   [ 12] jmpifz [ 56] ............................ repeat with i = 1 to pSpriteList.count
-  [ 15] getprop 1367 ............................ <pSpriteList>
+  [ 15] getprop 1369 ............................ <pSpriteList>
   [ 18] getlocal 0 .............................. <i>
   [ 20] pusharglist 2 ........................... <pSpriteList, i>
   [ 22] objcall 54 .............................. <pSpriteList[i]>
-  [ 24] getprop 1367 ............................ <pSpriteList>
+  [ 24] getprop 1369 ............................ <pSpriteList>
   [ 27] getlocal 0 .............................. <i>
   [ 29] pusharglist 2 ........................... <pSpriteList, i>
   [ 31] objcall 54 .............................. <pSpriteList[i]>
@@ -1248,15 +1248,15 @@ end
 on update me
   [  0] getparam 0 .............................. <me>
   [  2] pusharglist 0 ........................... <>
-  [  4] thebuiltin 1394 ......................... <the mouseH>
-  [  7] getprop 1371 ............................ <pDragOffset>
+  [  4] thebuiltin 1396 ......................... <the mouseH>
+  [  7] getprop 1373 ............................ <pDragOffset>
   [ 10] pushint8 1 .............................. <1>
   [ 12] pusharglist 2 ........................... <pDragOffset, 1>
   [ 14] objcall 54 .............................. <pDragOffset[1]>
   [ 16] sub ..................................... <the mouseH - pDragOffset[1]>
   [ 17] pusharglist 0 ........................... <>
   [ 19] thebuiltin 552 .......................... <the mouseV>
-  [ 22] getprop 1371 ............................ <pDragOffset>
+  [ 22] getprop 1373 ............................ <pDragOffset>
   [ 25] pushint8 2 .............................. <2>
   [ 27] pusharglist 2 ........................... <pDragOffset, 2>
   [ 29] objcall 54 .............................. <pDragOffset[2]>
@@ -1276,7 +1276,7 @@ on Refresh me
   [ 22] pusharglist 4 ........................... <100000, 100000, -100000, -100000>
   [ 24] extcall 557 ............................. <rect(100000, 100000, -100000, -100000)>
   [ 27] setlocal 0 .............................. tRect = rect(100000, 100000, -100000, -100000)
-  [ 29] getprop 1372 ............................ <pWrappedParts>
+  [ 29] getprop 1374 ............................ <pWrappedParts>
   [ 32] peek 0
   [ 34] pusharglist 1
   [ 36] extcall 22
@@ -1292,12 +1292,12 @@ on Refresh me
   [ 56] setlocal 1
   [ 58] getlocal 1 .............................. <tWrapper>
   [ 60] pusharglistnoret 1 ...................... <tWrapper>
-  [ 62] objcall 1395 ............................ tWrapper.updateWrap()
+  [ 62] objcall 1397 ............................ tWrapper.updateWrap()
   [ 65] pushint8 1
   [ 67] add
   [ 68] endrepeat [ 40]
   [ 70] pop 3
-  [ 72] getprop 1367 ............................ <pSpriteList>
+  [ 72] getprop 1369 ............................ <pSpriteList>
   [ 75] peek 0
   [ 77] pusharglist 1
   [ 79] extcall 22
@@ -1399,7 +1399,7 @@ on Refresh me
   [277] getlocal 0 .............................. <tRect>
   [279] getobjprop 43 ........................... <tRect.height>
   [281] setprop 505 ............................. pheight = tRect.height
-  [284] getprop 1368 ............................ <pSpriteData>
+  [284] getprop 1370 ............................ <pSpriteData>
   [287] getobjprop 22 ........................... <pSpriteData.count>
   [289] pushzero ................................ <0>
   [290] gt ...................................... <pSpriteData.count > 0>
@@ -1407,23 +1407,23 @@ on Refresh me
   [294] pushint8 1 .............................. <1>
   [296] setlocal 3
   [298] getlocal 3
-  [300] getprop 1367 ............................ <pSpriteList>
+  [300] getprop 1369 ............................ <pSpriteList>
   [303] getobjprop 22 ........................... <pSpriteList.count>
   [305] lteq
   [306] jmpifz [382] ............................ repeat with i = 1 to pSpriteList.count
-  [309] getprop 1368 ............................ <pSpriteData>
+  [309] getprop 1370 ............................ <pSpriteData>
   [312] getlocal 3 .............................. <i>
   [314] pusharglist 2 ........................... <pSpriteData, i>
   [316] objcall 54 .............................. <pSpriteData[i]>
   [318] pusharglist 1 ........................... <pSpriteData[i]>
   [320] extcall 53 .............................. <listp(pSpriteData[i])>
   [322] jmpifz [373] ............................ if listp(pSpriteData[i]) then
-  [325] getprop 1368 ............................ <pSpriteData>
+  [325] getprop 1370 ............................ <pSpriteData>
   [328] getlocal 3 .............................. <i>
   [330] pusharglist 2 ........................... <pSpriteData, i>
   [332] objcall 54 .............................. <pSpriteData[i]>
   [334] pushsymb 511 ............................ <#loc>
-  [337] getprop 1367 ............................ <pSpriteList>
+  [337] getprop 1369 ............................ <pSpriteList>
   [340] getlocal 3 .............................. <i>
   [342] pusharglist 2 ........................... <pSpriteList, i>
   [344] objcall 54 .............................. <pSpriteList[i]>
@@ -1471,7 +1471,7 @@ on buildVisual me, tLayout
   [ 32] pushcons 4 .............................. <"Invalid visualizer definition:">
   [ 34] getparam 1 .............................. <tLayout>
   [ 36] joinpadstr .............................. <"Invalid visualizer definition:" && tLayout>
-  [ 37] pushsymb 1362 ........................... <#buildVisual>
+  [ 37] pushsymb 1364 ........................... <#buildVisual>
   [ 40] pusharglist 3 ........................... <me, "Invalid visualizer definition:" && tLayout, #buildVisual>
   [ 42] extcall 39 .............................. <error(me, "Invalid visualizer definition:" && tLayout, #buildVisual)>
   [ 44] pusharglistnoret 1 ...................... <error(me, "Invalid visualizer definition:" && tLayout, #buildVisual)>
@@ -1570,7 +1570,7 @@ on buildVisual me, tLayout
   [232] joinpadstr .............................. <"Member" && tLayout[i][#member] && "required by visualizer:" && me.getID()>
   [233] pushcons 7 .............................. <"not found!">
   [235] joinpadstr .............................. <"Member" && tLayout[i][#member] && "required by visualizer:" && me.getID() && "not found!">
-  [236] pushsymb 1362 ........................... <#buildVisual>
+  [236] pushsymb 1364 ........................... <#buildVisual>
   [239] pusharglistnoret 3 ...................... <me, "Member" && tLayout[i][#member] && "required by visualizer:" && me.getID() && "not found!", #buildVisual>
   [241] extcall 39 .............................. error(me, "Member" && tLayout[i][#member] && "required by visualizer:" && me.getID() && "not found!", #buildVisual)
   [243] jmp [1471] .............................. next repeat
@@ -1580,7 +1580,7 @@ on buildVisual me, tLayout
   [252] objcall 54 .............................. <tLayout[i]>
   [254] setlocal 4 .............................. tElem = tLayout[i]
   [256] getlocal 4 .............................. <tElem>
-  [258] pushsymb 1396 ........................... <#wrapperID>
+  [258] pushsymb 1398 ........................... <#wrapperID>
   [261] pusharglist 2 ........................... <tElem, #wrapperID>
   [263] objcall 54 .............................. <tElem[#wrapperID]>
   [265] pusharglist 1 ........................... <tElem[#wrapperID]>
@@ -1588,11 +1588,11 @@ on buildVisual me, tLayout
   [269] not ..................................... <not voidp(tElem[#wrapperID])>
   [270] jmpifz [433] ............................ if not voidp(tElem[#wrapperID]) then / else
   [273] getlocal 4 .............................. <tElem>
-  [275] pushsymb 1396 ........................... <#wrapperID>
+  [275] pushsymb 1398 ........................... <#wrapperID>
   [278] pusharglist 2 ........................... <tElem, #wrapperID>
   [280] objcall 54 .............................. <tElem[#wrapperID]>
   [282] setlocal 5 .............................. tWrapID = tElem[#wrapperID]
-  [284] getprop 1372 ............................ <pWrappedParts>
+  [284] getprop 1374 ............................ <pWrappedParts>
   [287] getlocal 5 .............................. <tWrapID>
   [289] pusharglist 2 ........................... <pWrappedParts, tWrapID>
   [291] objcall 54 .............................. <pWrappedParts[tWrapID]>
@@ -1602,7 +1602,7 @@ on buildVisual me, tLayout
   [300] getparam 0 .............................. <me>
   [302] getlocal 5 .............................. <tWrapID>
   [304] pusharglist 2 ........................... <me, tWrapID>
-  [306] objcall 1356 ............................ <me.createWrapper(tWrapID)>
+  [306] objcall 1358 ............................ <me.createWrapper(tWrapID)>
   [309] setlocal 6 .............................. tPartWrapper = me.createWrapper(tWrapID)
   [311] pusharglist 0 ........................... <[:]>
   [313] pushproplist ............................ <[:]>
@@ -1613,32 +1613,32 @@ on buildVisual me, tLayout
   [322] pusharglistnoret 3 ...................... <tProps, #id, tWrapID>
   [324] objcall 24 .............................. tProps[#id] = tWrapID
   [326] getlocal 7 .............................. <tProps>
-  [328] pushsymb 1299 ........................... <#palette>
+  [328] pushsymb 1301 ........................... <#palette>
   [331] getlocal 4 .............................. <tElem>
-  [333] pushsymb 1299 ........................... <#palette>
+  [333] pushsymb 1301 ........................... <#palette>
   [336] pusharglist 2 ........................... <tElem, #palette>
   [338] objcall 54 .............................. <tElem[#palette]>
   [340] pusharglistnoret 3 ...................... <tProps, #palette, tElem[#palette]>
   [342] objcall 24 .............................. tProps[#palette] = tElem[#palette]
   [344] getlocal 7 .............................. <tProps>
-  [346] pushsymb 1397 ........................... <#offsetx>
+  [346] pushsymb 1399 ........................... <#offsetx>
   [349] getprop 467 ............................. <pLocX>
   [352] pusharglistnoret 3 ...................... <tProps, #offsetx, pLocX>
   [354] objcall 24 .............................. tProps[#offsetx] = pLocX
   [356] getlocal 7 .............................. <tProps>
-  [358] pushsymb 1398 ........................... <#offsety>
+  [358] pushsymb 1400 ........................... <#offsety>
   [361] getprop 469 ............................. <pLocY>
   [364] pusharglistnoret 3 ...................... <tProps, #offsety, pLocY>
   [366] objcall 24 .............................. tProps[#offsety] = pLocY
   [368] getlocal 7 .............................. <tProps>
   [370] pushsymb 883 ............................ <#locZ>
-  [373] getprop 1365 ............................ <pLocZ>
+  [373] getprop 1367 ............................ <pLocZ>
   [376] pusharglistnoret 3 ...................... <tProps, #locZ, pLocZ>
   [378] objcall 24 .............................. tProps[#locZ] = pLocZ
   [380] getlocal 7 .............................. <tProps>
-  [382] pushsymb 1399 ........................... <#typeDef>
+  [382] pushsymb 1401 ........................... <#typeDef>
   [385] getlocal 4 .............................. <tElem>
-  [387] pushsymb 1399 ........................... <#typeDef>
+  [387] pushsymb 1401 ........................... <#typeDef>
   [390] pusharglist 2 ........................... <tElem, #typeDef>
   [392] objcall 54 .............................. <tElem[#typeDef]>
   [394] pusharglistnoret 3 ...................... <tProps, #typeDef, tElem[#typeDef]>
@@ -1648,7 +1648,7 @@ on buildVisual me, tLayout
   [402] pusharglistnoret 2 ...................... <tPartWrapper, tProps>
   [404] objcall 436 ............................. tPartWrapper.define(tProps)
   [407] jmp [421]
-  [410] getprop 1372 ............................ <pWrappedParts>
+  [410] getprop 1374 ............................ <pWrappedParts>
   [413] getlocal 5 .............................. <tWrapID>
   [415] pusharglist 2 ........................... <pWrappedParts, tWrapID>
   [417] objcall 54 .............................. <pWrappedParts[tWrapID]>
@@ -1656,7 +1656,7 @@ on buildVisual me, tLayout
   [421] getlocal 6 .............................. <tPartWrapper>
   [423] getlocal 4 .............................. <tElem>
   [425] pusharglistnoret 2 ...................... <tPartWrapper, tElem>
-  [427] objcall 1400 ............................ tPartWrapper.addPart(tElem)
+  [427] objcall 1402 ............................ tPartWrapper.addPart(tElem)
   [430] jmp [1266]
   [433] pusharglist 0 ........................... <>
   [435] extcall 231 ............................. <getSpriteManager()>
@@ -1703,7 +1703,7 @@ on buildVisual me, tLayout
   [515] setlocal 0 .............................. tSpriteList = [:]
   [517] getparam 0 .............................. <me>
   [519] pushcons 8 .............................. <"Failed to build visual. System out of sprites!">
-  [521] pushsymb 1362 ........................... <#buildVisual>
+  [521] pushsymb 1364 ........................... <#buildVisual>
   [524] pusharglist 3 ........................... <me, "Failed to build visual. System out of sprites!", #buildVisual>
   [526] extcall 39 .............................. <error(me, "Failed to build visual. System out of sprites!", #buildVisual)>
   [528] pusharglistnoret 1 ...................... <error(me, "Failed to build visual. System out of sprites!", #buildVisual)>
@@ -1753,16 +1753,16 @@ on buildVisual me, tLayout
   [624] setobjprop 503 .......................... tSpr.blend = tElem[#blend]
   [627] getlocal 8 .............................. <tSpr>
   [629] getlocal 4 .............................. <tElem>
-  [631] pushsymb 1401 ........................... <#rotation>
+  [631] pushsymb 1403 ........................... <#rotation>
   [634] pusharglist 2 ........................... <tElem, #rotation>
   [636] objcall 54 .............................. <tElem[#rotation]>
-  [638] setobjprop 1401 ......................... tSpr.rotation = tElem[#rotation]
+  [638] setobjprop 1403 ......................... tSpr.rotation = tElem[#rotation]
   [641] getlocal 8 .............................. <tSpr>
   [643] getlocal 4 .............................. <tElem>
-  [645] pushsymb 1402 ........................... <#skew>
+  [645] pushsymb 1404 ........................... <#skew>
   [648] pusharglist 2 ........................... <tElem, #skew>
   [650] objcall 54 .............................. <tElem[#skew]>
-  [652] setobjprop 1402 ......................... tSpr.skew = tElem[#skew]
+  [652] setobjprop 1404 ......................... tSpr.skew = tElem[#skew]
   [655] getlocal 8 .............................. <tSpr>
   [657] getlocal 4 .............................. <tElem>
   [659] pushsymb 452 ............................ <#flipH>
@@ -1785,20 +1785,20 @@ on buildVisual me, tLayout
   [699] setobjprop 599 .......................... tSpr.color = rgb(tElem[#color])
   [702] getlocal 8 .............................. <tSpr>
   [704] getlocal 4 .............................. <tElem>
-  [706] pushsymb 1298 ........................... <#bgColor>
+  [706] pushsymb 1300 ........................... <#bgColor>
   [709] pusharglist 2 ........................... <tElem, #bgColor>
   [711] objcall 54 .............................. <tElem[#bgColor]>
   [713] pusharglist 1 ........................... <tElem[#bgColor]>
   [715] extcall 578 ............................. <rgb(tElem[#bgColor])>
-  [718] setobjprop 1298 ......................... tSpr.bgColor = rgb(tElem[#bgColor])
+  [718] setobjprop 1300 ......................... tSpr.bgColor = rgb(tElem[#bgColor])
   [721] getlocal 4 .............................. <tElem>
-  [723] pushsymb 1342 ........................... <#media>
+  [723] pushsymb 1344 ........................... <#media>
   [726] pusharglist 2 ........................... <tElem, #media>
   [728] objcall 54 .............................. <tElem[#media]>
   [730] pushsymb 516 ............................ <#text>
   [733] eq ...................................... <tElem[#media] = #text>
   [734] getlocal 4 .............................. <tElem>
-  [736] pushsymb 1342 ........................... <#media>
+  [736] pushsymb 1344 ........................... <#media>
   [739] pusharglist 2 ........................... <tElem, #media>
   [741] objcall 54 .............................. <tElem[#media]>
   [743] pushsymb 786 ............................ <#field>
@@ -1810,7 +1810,7 @@ on buildVisual me, tLayout
   [755] extcall 41 .............................. <member(tMemNum)>
   [757] setlocal 10 ............................. tTxtMem = member(tMemNum)
   [759] getlocal 4 .............................. <tElem>
-  [761] pushsymb 1296 ........................... <#txtColor>
+  [761] pushsymb 1298 ........................... <#txtColor>
   [764] pusharglist 2 ........................... <tElem, #txtColor>
   [766] objcall 54 .............................. <tElem[#txtColor]>
   [768] pusharglist 1 ........................... <tElem[#txtColor]>
@@ -1819,14 +1819,14 @@ on buildVisual me, tLayout
   [773] jmpifz [795] ............................ if not voidp(tElem[#txtColor]) then
   [776] getlocal 10 ............................. <tTxtMem>
   [778] getlocal 4 .............................. <tElem>
-  [780] pushsymb 1296 ........................... <#txtColor>
+  [780] pushsymb 1298 ........................... <#txtColor>
   [783] pusharglist 2 ........................... <tElem, #txtColor>
   [785] objcall 54 .............................. <tElem[#txtColor]>
   [787] pusharglist 1 ........................... <tElem[#txtColor]>
   [789] extcall 578 ............................. <rgb(tElem[#txtColor])>
   [792] setobjprop 599 .......................... tTxtMem.color = rgb(tElem[#txtColor])
   [795] getlocal 4 .............................. <tElem>
-  [797] pushsymb 1297 ........................... <#txtBgColor>
+  [797] pushsymb 1299 ........................... <#txtBgColor>
   [800] pusharglist 2 ........................... <tElem, #txtBgColor>
   [802] objcall 54 .............................. <tElem[#txtBgColor]>
   [804] pusharglist 1 ........................... <tElem[#txtBgColor]>
@@ -1835,12 +1835,12 @@ on buildVisual me, tLayout
   [809] jmpifz [831] ............................ if not voidp(tElem[#txtBgColor]) then
   [812] getlocal 10 ............................. <tTxtMem>
   [814] getlocal 4 .............................. <tElem>
-  [816] pushsymb 1297 ........................... <#txtBgColor>
+  [816] pushsymb 1299 ........................... <#txtBgColor>
   [819] pusharglist 2 ........................... <tElem, #txtBgColor>
   [821] objcall 54 .............................. <tElem[#txtBgColor]>
   [823] pusharglist 1 ........................... <tElem[#txtBgColor]>
   [825] extcall 578 ............................. <rgb(tElem[#txtBgColor])>
-  [828] setobjprop 1298 ......................... tTxtMem.bgColor = rgb(tElem[#txtBgColor])
+  [828] setobjprop 1300 ......................... tTxtMem.bgColor = rgb(tElem[#txtBgColor])
   [831] getlocal 10 ............................. <tTxtMem>
   [833] getobjprop 596 .......................... <tTxtMem.font>
   [836] getlocal 4 .............................. <tElem>
@@ -1884,7 +1884,7 @@ on buildVisual me, tLayout
   [922] objcall 54 .............................. <tElem[#fontStyle]>
   [924] setobjprop 597 .......................... tTxtMem.fontStyle = tElem[#fontStyle]
   [927] getlocal 4 .............................. <tElem>
-  [929] pushsymb 1342 ........................... <#media>
+  [929] pushsymb 1344 ........................... <#media>
   [932] pusharglist 2 ........................... <tElem, #media>
   [934] objcall 54 .............................. <tElem[#media]>
   [936] pushsymb 516 ............................ <#text>
@@ -1906,26 +1906,26 @@ on buildVisual me, tLayout
   [972] setobjprop 477 .......................... tTxtMem.fixedLineSpace = tElem[#fixedLineSpace]
   [975] jmp [1026]
   [978] getlocal 4 .............................. <tElem>
-  [980] pushsymb 1342 ........................... <#media>
+  [980] pushsymb 1344 ........................... <#media>
   [983] pusharglist 2 ........................... <tElem, #media>
   [985] objcall 54 .............................. <tElem[#media]>
   [987] pushsymb 786 ............................ <#field>
   [990] eq ...................................... <tElem[#media] = #field>
   [991] jmpifz [1026] ........................... if tElem[#media] = #field then
   [994] getlocal 10 ............................. <tTxtMem>
-  [996] getobjprop 1403 ......................... <tTxtMem.lineHeight>
+  [996] getobjprop 1405 ......................... <tTxtMem.lineHeight>
   [999] getlocal 4 .............................. <tElem>
-  [1001] pushsymb 1403 .......................... <#lineHeight>
+  [1001] pushsymb 1405 .......................... <#lineHeight>
   [1004] pusharglist 2 .......................... <tElem, #lineHeight>
   [1006] objcall 54 ............................. <tElem[#lineHeight]>
   [1008] nteq ................................... <tTxtMem.lineHeight <> tElem[#lineHeight]>
   [1009] jmpifz [1026] .......................... if tTxtMem.lineHeight <> tElem[#lineHeight] then
   [1012] getlocal 10 ............................ <tTxtMem>
   [1014] getlocal 4 ............................. <tElem>
-  [1016] pushsymb 1403 .......................... <#lineHeight>
+  [1016] pushsymb 1405 .......................... <#lineHeight>
   [1019] pusharglist 2 .......................... <tElem, #lineHeight>
   [1021] objcall 54 ............................. <tElem[#lineHeight]>
-  [1023] setobjprop 1403 ........................ tTxtMem.lineHeight = tElem[#lineHeight]
+  [1023] setobjprop 1405 ........................ tTxtMem.lineHeight = tElem[#lineHeight]
   [1026] getlocal 4 ............................. <tElem>
   [1028] pushsymb 883 ........................... <#locZ>
   [1031] pusharglist 2 .......................... <tElem, #locZ>
@@ -1934,7 +1934,7 @@ on buildVisual me, tLayout
   [1037] extcall 20 ............................. <voidp(tElem[#locZ])>
   [1039] jmpifz [1059] .......................... if voidp(tElem[#locZ]) then / else
   [1042] getlocal 8 ............................. <tSpr>
-  [1044] getprop 1365 ........................... <pLocZ>
+  [1044] getprop 1367 ........................... <pLocZ>
   [1047] getlocal 2 ............................. <i>
   [1049] add .................................... <pLocZ + i>
   [1050] pushint8 1 ............................. <1>
@@ -1948,7 +1948,7 @@ on buildVisual me, tLayout
   [1068] objcall 54 ............................. <tElem[#locZ]>
   [1070] pusharglist 1 .......................... <tElem[#locZ]>
   [1072] extcall 957 ............................ <integer(tElem[#locZ])>
-  [1075] getprop 1365 ........................... <pLocZ>
+  [1075] getprop 1367 ........................... <pLocZ>
   [1078] add .................................... <integer(tElem[#locZ]) + pLocZ>
   [1079] setobjprop 883 ......................... tSpr.locZ = integer(tElem[#locZ]) + pLocZ
   [1082] getlocal 4 ............................. <tElem>
@@ -2006,7 +2006,7 @@ on buildVisual me, tLayout
   [1187] pusharglistnoret 2 ..................... <tSpr, tElem[#cursor]>
   [1189] objcall 8 .............................. tSpr.setcursor(tElem[#cursor])
   [1191] getlocal 4 ............................. <tElem>
-  [1193] pushsymb 1404 .......................... <#link>
+  [1193] pushsymb 1406 .......................... <#link>
   [1196] pusharglist 2 .......................... <tElem, #link>
   [1198] objcall 54 ............................. <tElem[#link]>
   [1200] pusharglist 1 .......................... <tElem[#link]>
@@ -2015,12 +2015,12 @@ on buildVisual me, tLayout
   [1205] jmpifz [1223] .......................... if not voidp(tElem[#link]) then
   [1208] getlocal 8 ............................. <tSpr>
   [1210] getlocal 4 ............................. <tElem>
-  [1212] pushsymb 1404 .......................... <#link>
+  [1212] pushsymb 1406 .......................... <#link>
   [1215] pusharglist 2 .......................... <tElem, #link>
   [1217] objcall 54 ............................. <tElem[#link]>
   [1219] pusharglistnoret 2 ..................... <tSpr, tElem[#link]>
   [1221] objcall 10 ............................. tSpr.setLink(tElem[#link])
-  [1223] getprop 1369 ........................... <pActSprList>
+  [1223] getprop 1371 ........................... <pActSprList>
   [1226] getparam 1 ............................. <tLayout>
   [1228] getlocal 2 ............................. <i>
   [1230] pusharglist 2 .......................... <tLayout, i>
@@ -2031,7 +2031,7 @@ on buildVisual me, tLayout
   [1240] getlocal 8 ............................. <tSpr>
   [1242] pusharglistnoret 3 ..................... <pActSprList, tLayout[i][#id], tSpr>
   [1244] objcall 24 ............................. pActSprList[tLayout[i][#id]] = tSpr
-  [1246] getprop 1368 ........................... <pSpriteData>
+  [1246] getprop 1370 ........................... <pSpriteData>
   [1249] pusharglist 0 .......................... <[:]>
   [1251] pushproplist ........................... <[:]>
   [1252] pusharglistnoret 2 ..................... <pSpriteData, [:]>
@@ -2041,7 +2041,7 @@ on buildVisual me, tLayout
   [1261] pusharglistnoret 2 ..................... <tSpriteList, tSpr>
   [1263] objcall 666 ............................ tSpriteList.append(tSpr)
   [1266] getlocal 4 ............................. <tElem>
-  [1268] pushsymb 1405 .......................... <#swapAnimType>
+  [1268] pushsymb 1407 .......................... <#swapAnimType>
   [1271] pusharglist 2 .......................... <tElem, #swapAnimType>
   [1273] objcall 54 ............................. <tElem[#swapAnimType]>
   [1275] pusharglist 1 .......................... <tElem[#swapAnimType]>
@@ -2057,57 +2057,57 @@ on buildVisual me, tLayout
   [1294] pusharglistnoret 3 ..................... <tAnimProps, #sprite, tSpr>
   [1296] objcall 24 ............................. tAnimProps[#sprite] = tSpr
   [1298] getlocal 11 ............................ <tAnimProps>
-  [1300] pushsymb 1406 .......................... <#animType>
+  [1300] pushsymb 1408 .......................... <#animType>
   [1303] getlocal 4 ............................. <tElem>
-  [1305] pushsymb 1405 .......................... <#swapAnimType>
+  [1305] pushsymb 1407 .......................... <#swapAnimType>
   [1308] pusharglist 2 .......................... <tElem, #swapAnimType>
   [1310] objcall 54 ............................. <tElem[#swapAnimType]>
   [1312] pusharglistnoret 3 ..................... <tAnimProps, #animType, tElem[#swapAnimType]>
   [1314] objcall 24 ............................. tAnimProps[#animType] = tElem[#swapAnimType]
   [1316] getlocal 11 ............................ <tAnimProps>
-  [1318] pushsymb 1407 .......................... <#initDelayType>
+  [1318] pushsymb 1409 .......................... <#initDelayType>
   [1321] getlocal 4 ............................. <tElem>
-  [1323] pushsymb 1408 .......................... <#swapInitDelayType>
+  [1323] pushsymb 1410 .......................... <#swapInitDelayType>
   [1326] pusharglist 2 .......................... <tElem, #swapInitDelayType>
   [1328] objcall 54 ............................. <tElem[#swapInitDelayType]>
   [1330] pusharglistnoret 3 ..................... <tAnimProps, #initDelayType, tElem[#swapInitDelayType]>
   [1332] objcall 24 ............................. tAnimProps[#initDelayType] = tElem[#swapInitDelayType]
   [1334] getlocal 11 ............................ <tAnimProps>
-  [1336] pushsymb 1409 .......................... <#initDelay>
+  [1336] pushsymb 1411 .......................... <#initDelay>
   [1339] getlocal 4 ............................. <tElem>
-  [1341] pushsymb 1410 .......................... <#swapInitDelayValue>
+  [1341] pushsymb 1412 .......................... <#swapInitDelayValue>
   [1344] pusharglist 2 .......................... <tElem, #swapInitDelayValue>
   [1346] objcall 54 ............................. <tElem[#swapInitDelayValue]>
   [1348] pusharglistnoret 3 ..................... <tAnimProps, #initDelay, tElem[#swapInitDelayValue]>
   [1350] objcall 24 ............................. tAnimProps[#initDelay] = tElem[#swapInitDelayValue]
   [1352] getlocal 11 ............................ <tAnimProps>
-  [1354] pushsymb 1411 .......................... <#animDelayType>
+  [1354] pushsymb 1413 .......................... <#animDelayType>
   [1357] getlocal 4 ............................. <tElem>
-  [1359] pushsymb 1412 .......................... <#swapAnimDelayType>
+  [1359] pushsymb 1414 .......................... <#swapAnimDelayType>
   [1362] pusharglist 2 .......................... <tElem, #swapAnimDelayType>
   [1364] objcall 54 ............................. <tElem[#swapAnimDelayType]>
   [1366] pusharglistnoret 3 ..................... <tAnimProps, #animDelayType, tElem[#swapAnimDelayType]>
   [1368] objcall 24 ............................. tAnimProps[#animDelayType] = tElem[#swapAnimDelayType]
   [1370] getlocal 11 ............................ <tAnimProps>
-  [1372] pushsymb 1413 .......................... <#animDelay>
+  [1372] pushsymb 1415 .......................... <#animDelay>
   [1375] getlocal 4 ............................. <tElem>
-  [1377] pushsymb 1414 .......................... <#swapAnimDelayValue>
+  [1377] pushsymb 1416 .......................... <#swapAnimDelayValue>
   [1380] pusharglist 2 .......................... <tElem, #swapAnimDelayValue>
   [1382] objcall 54 ............................. <tElem[#swapAnimDelayValue]>
   [1384] pusharglistnoret 3 ..................... <tAnimProps, #animDelay, tElem[#swapAnimDelayValue]>
   [1386] objcall 24 ............................. tAnimProps[#animDelay] = tElem[#swapAnimDelayValue]
   [1388] getlocal 11 ............................ <tAnimProps>
-  [1390] pushsymb 1415 .......................... <#frameList>
+  [1390] pushsymb 1417 .......................... <#frameList>
   [1393] getlocal 4 ............................. <tElem>
-  [1395] pushsymb 1416 .......................... <#swapAnimFrameList>
+  [1395] pushsymb 1418 .......................... <#swapAnimFrameList>
   [1398] pusharglist 2 .......................... <tElem, #swapAnimFrameList>
   [1400] objcall 54 ............................. <tElem[#swapAnimFrameList]>
   [1402] pusharglistnoret 3 ..................... <tAnimProps, #frameList, tElem[#swapAnimFrameList]>
   [1404] objcall 24 ............................. tAnimProps[#frameList] = tElem[#swapAnimFrameList]
   [1406] getlocal 11 ............................ <tAnimProps>
-  [1408] pushsymb 1417 .......................... <#animLoopCount>
+  [1408] pushsymb 1419 .......................... <#animLoopCount>
   [1411] getlocal 4 ............................. <tElem>
-  [1413] pushsymb 1418 .......................... <#swapAnimLoopCount>
+  [1413] pushsymb 1420 .......................... <#swapAnimLoopCount>
   [1416] pusharglist 2 .......................... <tElem, #swapAnimLoopCount>
   [1418] objcall 54 ............................. <tElem[#swapAnimLoopCount]>
   [1420] pusharglistnoret 3 ..................... <tAnimProps, #animLoopCount, tElem[#swapAnimLoopCount]>
@@ -2120,7 +2120,7 @@ on buildVisual me, tLayout
   [1434] extcall 20 ............................. <voidp(tElem[#id])>
   [1436] not .................................... <not voidp(tElem[#id])>
   [1437] jmpifz [1460] .......................... if not voidp(tElem[#id]) then
-  [1440] getprop 1373 ........................... <pSwapAnimList>
+  [1440] getprop 1375 ........................... <pSwapAnimList>
   [1443] getlocal 4 ............................. <tElem>
   [1445] pushsymb 34 ............................ <#id>
   [1447] pusharglist 2 .......................... <tElem, #id>
@@ -2131,7 +2131,7 @@ on buildVisual me, tLayout
   [1457] jmp [1471] ............................. next repeat
   [1460] getparam 0 ............................. <me>
   [1462] pushcons 9 ............................. <"Animation had no ID">
-  [1464] pushsymb 1362 .......................... <#buildVisual>
+  [1464] pushsymb 1364 .......................... <#buildVisual>
   [1467] pusharglistnoret 3 ..................... <me, "Animation had no ID", #buildVisual>
   [1469] extcall 39 ............................. error(me, "Animation had no ID", #buildVisual)
   [1471] pushint8 1
@@ -2153,7 +2153,7 @@ on buildVisual me, tLayout
   [1503] pusharglist 2
   [1505] extcall 54
   [1507] setlocal 8
-  [1509] getprop 1367 ........................... <pSpriteList>
+  [1509] getprop 1369 ........................... <pSpriteList>
   [1512] getlocal 8 ............................. <tSpr>
   [1514] pusharglistnoret 2 ..................... <pSpriteList, tSpr>
   [1516] objcall 666 ............................ pSpriteList.append(tSpr)
@@ -2161,7 +2161,7 @@ on buildVisual me, tLayout
   [1521] add
   [1522] endrepeat [1491]
   [1524] pop 3
-  [1526] getprop 1372 ........................... <pWrappedParts>
+  [1526] getprop 1374 ........................... <pWrappedParts>
   [1529] peek 0
   [1531] pusharglist 1
   [1533] extcall 22
@@ -2183,14 +2183,14 @@ on buildVisual me, tLayout
   [1568] getparam 0 ............................. <me>
   [1570] getlocal 12 ............................ <tWrapper>
   [1572] pusharglistnoret 2 ..................... <me, tWrapper>
-  [1574] objcall 1354 ........................... me.activateWrap(tWrapper)
+  [1574] objcall 1356 ........................... me.activateWrap(tWrapper)
   [1577] pushint8 1
   [1579] add
   [1580] endrepeat [1537]
   [1582] pop 3
   [1584] getparam 0 ............................. <me>
   [1586] pusharglist 1 .......................... <me>
-  [1588] objcall 1361 ........................... <me.Refresh()>
+  [1588] objcall 1363 ........................... <me.Refresh()>
   [1591] pusharglistnoret 1 ..................... <me.Refresh()>
   [1593] extcall 25 ............................. return me.Refresh()
   [1595] ret

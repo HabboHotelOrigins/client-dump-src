@@ -1,15 +1,15 @@
 on prepare me
   [  0] getparam 0 .............................. <me>
   [  2] getparam 0 .............................. <me>
-  [  4] pushsymb 1490 ........................... <#pProps>
+  [  4] pushsymb 1492 ........................... <#pProps>
   [  7] pushsymb 503 ............................ <#blend>
   [ 10] pusharglist 3 ........................... <me, #pProps, #blend>
   [ 12] objcall 290 ............................. <me.pProps[#blend]>
-  [ 15] setobjprop 1546 ......................... me.pBlend = me.pProps[#blend]
+  [ 15] setobjprop 1548 ......................... me.pBlend = me.pProps[#blend]
   [ 18] getparam 0 .............................. <me>
   [ 20] pusharglist 0 ........................... <[:]>
   [ 22] pushproplist ............................ <[:]>
-  [ 23] setobjprop 1548 ......................... me.pButtonImg = [:]
+  [ 23] setobjprop 1550 ......................... me.pButtonImg = [:]
   [ 26] getparam 0 .............................. <me>
   [ 28] getobjprop 482 .......................... <me.pFixedSize>
   [ 31] pusharglist 1 ........................... <me.pFixedSize>
@@ -23,7 +23,7 @@ on prepare me
   [ 49] pushcons 0 .............................. <".">
   [ 51] setmovieprop 286 ........................ the itemDelimiter = "."
   [ 54] getparam 0 .............................. <me>
-  [ 56] pushsymb 1490 ........................... <#pProps>
+  [ 56] pushsymb 1492 ........................... <#pProps>
   [ 59] pushsymb 41 ............................. <#member>
   [ 61] pusharglist 3 ........................... <me, #pProps, #member>
   [ 63] objcall 290 ............................. <me.pProps[#member]>
@@ -60,7 +60,7 @@ on prepare me
   [133] getparam 0 .............................. <me>
   [135] pushsymb 496 ............................ <#up>
   [138] pusharglist 2 ........................... <me, #up>
-  [140] objcall 1543 ............................ <me.createButtonImg(#up)>
+  [140] objcall 1545 ............................ <me.createButtonImg(#up)>
   [143] setobjprop 498 .......................... me.pimage = me.createButtonImg(#up)
   [146] getparam 0 .............................. <me>
   [148] getchainedprop 35 ....................... <me.pSprite>
@@ -107,7 +107,7 @@ on changeState me, tstate
   [  2] getparam 0 .............................. <me>
   [  4] getparam 1 .............................. <tstate>
   [  6] pusharglist 2 ........................... <me, tstate>
-  [  8] objcall 1543 ............................ <me.createButtonImg(tstate)>
+  [  8] objcall 1545 ............................ <me.createButtonImg(tstate)>
   [ 11] setobjprop 498 .......................... me.pimage = me.createButtonImg(tstate)
   [ 14] getparam 0 .............................. <me>
   [ 16] pusharglistnoret 1 ...................... <me>
@@ -186,7 +186,7 @@ on UpdateImageObjects me, tPalette, tstate, tMemName
   [141] getparam 1 .............................. <tPalette>
   [143] setobjprop 573 .......................... tImage.paletteRef = tPalette
   [146] getparam 0 .............................. <me>
-  [148] getchainedprop 1548 ..................... <me.pButtonImg>
+  [148] getchainedprop 1550 ..................... <me.pButtonImg>
   [151] getparam 2 .............................. <tstate>
   [153] pusharglist 1 ........................... <tstate>
   [155] extcall 572 ............................. <symbol(tstate)>
@@ -198,7 +198,7 @@ end
 
 on createButtonImg me, tstate
   [  0] getparam 0 .............................. <me>
-  [  2] getchainedprop 1548 ..................... <me.pButtonImg>
+  [  2] getchainedprop 1550 ..................... <me.pButtonImg>
   [  5] getparam 1 .............................. <tstate>
   [  7] pusharglist 2 ........................... <me.pButtonImg, tstate>
   [  9] objcall 290 ............................. <me.pButtonImg.getProp(tstate)>

@@ -9,7 +9,11 @@ end
 
 on updateStuffdata me, tValue
   pAnimFrame = 1
-  pActive = 1
+  if (tValue = "TRUE") or (tValue = "1") then
+    pActive = 1
+  else
+    pActive = 0
+  end if
 end
 
 on update me

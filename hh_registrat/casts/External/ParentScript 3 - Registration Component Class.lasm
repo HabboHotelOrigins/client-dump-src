@@ -311,16 +311,16 @@ on setBlockTime me, tdata
   [ 15] pushsymb 183 ............................ <#alert>
   [ 17] pushsymb 218 ............................ <#title>
   [ 19] pushcons 22 ............................. <"alert_win_coppa">
-  [ 21] pushsymb 184 ............................ <#msg>
+  [ 21] pushsymb 184 ............................ <#Msg>
   [ 23] pushcons 23 ............................. <"alert_reg_age">
   [ 25] pushsymb 185 ............................ <#id>
   [ 27] pushcons 24 ............................. <"underage">
   [ 29] pushsymb 186 ............................ <#modal>
   [ 31] pushint8 1 .............................. <1>
-  [ 33] pusharglist 8 ........................... <[#title: "alert_win_coppa", #msg: "alert_reg_age", #id: "underage", #modal: 1]>
-  [ 35] pushproplist ............................ <[#title: "alert_win_coppa", #msg: "alert_reg_age", #id: "underage", #modal: 1]>
-  [ 36] pusharglistnoret 2 ...................... <#alert, [#title: "alert_win_coppa", #msg: "alert_reg_age", #id: "underage", #modal: 1]>
-  [ 38] extcall 182 ............................. executeMessage(#alert, [#title: "alert_win_coppa", #msg: "alert_reg_age", #id: "underage", #modal: 1])
+  [ 33] pusharglist 8 ........................... <[#title: "alert_win_coppa", #Msg: "alert_reg_age", #id: "underage", #modal: 1]>
+  [ 35] pushproplist ............................ <[#title: "alert_win_coppa", #Msg: "alert_reg_age", #id: "underage", #modal: 1]>
+  [ 36] pusharglistnoret 2 ...................... <#alert, [#title: "alert_win_coppa", #Msg: "alert_reg_age", #id: "underage", #modal: 1]>
+  [ 38] extcall 182 ............................. executeMessage(#alert, [#title: "alert_win_coppa", #Msg: "alert_reg_age", #id: "underage", #modal: 1])
   [ 40] pushcons 25 ............................. <"connection.info.id">
   [ 42] pusharglist 1 ........................... <"connection.info.id">
   [ 44] extcall 84 .............................. <getVariable("connection.info.id")>
@@ -338,16 +338,16 @@ on continueBlocking me
   [  6] pushsymb 183 ............................ <#alert>
   [  8] pushsymb 218 ............................ <#title>
   [ 10] pushcons 22 ............................. <"alert_win_coppa">
-  [ 12] pushsymb 184 ............................ <#msg>
+  [ 12] pushsymb 184 ............................ <#Msg>
   [ 14] pushcons 26 ............................. <"alert_reg_blocked">
   [ 16] pushsymb 185 ............................ <#id>
   [ 18] pushcons 24 ............................. <"underage">
   [ 20] pushsymb 186 ............................ <#modal>
   [ 22] pushint8 1 .............................. <1>
-  [ 24] pusharglist 8 ........................... <[#title: "alert_win_coppa", #msg: "alert_reg_blocked", #id: "underage", #modal: 1]>
-  [ 26] pushproplist ............................ <[#title: "alert_win_coppa", #msg: "alert_reg_blocked", #id: "underage", #modal: 1]>
-  [ 27] pusharglistnoret 2 ...................... <#alert, [#title: "alert_win_coppa", #msg: "alert_reg_blocked", #id: "underage", #modal: 1]>
-  [ 29] extcall 182 ............................. executeMessage(#alert, [#title: "alert_win_coppa", #msg: "alert_reg_blocked", #id: "underage", #modal: 1])
+  [ 24] pusharglist 8 ........................... <[#title: "alert_win_coppa", #Msg: "alert_reg_blocked", #id: "underage", #modal: 1]>
+  [ 26] pushproplist ............................ <[#title: "alert_win_coppa", #Msg: "alert_reg_blocked", #id: "underage", #modal: 1]>
+  [ 27] pusharglistnoret 2 ...................... <#alert, [#title: "alert_win_coppa", #Msg: "alert_reg_blocked", #id: "underage", #modal: 1]>
+  [ 29] extcall 182 ............................. executeMessage(#alert, [#title: "alert_win_coppa", #Msg: "alert_reg_blocked", #id: "underage", #modal: 1])
   [ 31] pushcons 25 ............................. <"connection.info.id">
   [ 33] pusharglist 1 ........................... <"connection.info.id">
   [ 35] extcall 84 .............................. <getVariable("connection.info.id")>
@@ -485,14 +485,14 @@ on checkUserName me, tNameStr
   [ 59] pusharglistnoret 2 ...................... <"alert_InvalidChar", replaceChunks(getText("alert_InvalidUserName"), "\\x", tFailed)>
   [ 61] extcall 198 ............................. setText("alert_InvalidChar", replaceChunks(getText("alert_InvalidUserName"), "\\x", tFailed))
   [ 63] pushsymb 183 ............................ <#alert>
-  [ 65] pushsymb 184 ............................ <#msg>
+  [ 65] pushsymb 184 ............................ <#Msg>
   [ 67] pushcons 34 ............................. <"alert_InvalidChar">
   [ 69] pushsymb 185 ............................ <#id>
   [ 71] pushcons 37 ............................. <"nameinvalid">
-  [ 73] pusharglist 4 ........................... <[#msg: "alert_InvalidChar", #id: "nameinvalid"]>
-  [ 75] pushproplist ............................ <[#msg: "alert_InvalidChar", #id: "nameinvalid"]>
-  [ 76] pusharglistnoret 2 ...................... <#alert, [#msg: "alert_InvalidChar", #id: "nameinvalid"]>
-  [ 78] extcall 182 ............................. executeMessage(#alert, [#msg: "alert_InvalidChar", #id: "nameinvalid"])
+  [ 73] pusharglist 4 ........................... <[#Msg: "alert_InvalidChar", #id: "nameinvalid"]>
+  [ 75] pushproplist ............................ <[#Msg: "alert_InvalidChar", #id: "nameinvalid"]>
+  [ 76] pusharglistnoret 2 ...................... <#alert, [#Msg: "alert_InvalidChar", #id: "nameinvalid"]>
+  [ 78] extcall 182 ............................. executeMessage(#alert, [#Msg: "alert_InvalidChar", #id: "nameinvalid"])
   [ 80] pushzero ................................ <0>
   [ 81] pusharglistnoret 1 ...................... <0>
   [ 83] extcall 23 .............................. return 0
@@ -793,214 +793,184 @@ on sendFigureUpdateToServer me, tPropList
   [ 79] objcall 175 ............................. <tFigure["figuretoServer"]>
   [ 81] pusharglistnoret 3 ...................... <tPropList, "figure", tFigure["figuretoServer"]>
   [ 83] objcall 233 ............................. tPropList["figure"] = tFigure["figuretoServer"]
-  [ 85] getparam 1 .............................. <tPropList>
-  [ 87] pushcons 4 .............................. <"password">
-  [ 89] pusharglist 2 ........................... <tPropList, "password">
-  [ 91] objcall 175 ............................. <tPropList["password"]>
-  [ 93] pusharglist 1 ........................... <tPropList["password"]>
-  [ 95] extcall 60 .............................. <voidp(tPropList["password"])>
-  [ 97] not ..................................... <not voidp(tPropList["password"])>
-  [ 98] jmpifz [145] ............................ if not voidp(tPropList["password"]) then
-  [101] getparam 1 .............................. <tPropList>
-  [103] pushcons 4 .............................. <"password">
-  [105] pusharglist 2 ........................... <tPropList, "password">
-  [107] objcall 175 ............................. <tPropList["password"]>
-  [109] peek 0 .................................. case tPropList["password"] of
-  [111] pushcons 0 .............................. <EMPTY>
-  [113] nteq
-  [114] jmpifz [127] ............................ (case) EMPTY, ...
-  [117] peek 0
-  [119] pusharglist 0 ........................... <>
-  [121] extcall 41 .............................. <VOID>
-  [123] eq
-  [124] jmpifz [143] ............................ (case) ..., VOID:
-  [127] pop 1
-  [129] getparam 0 .............................. <me>
-  [131] pushcons 47 ............................. <"Password was reseted, abort update!">
-  [133] pushsymb 211 ............................ <#sendFigureUpdateToServer>
-  [135] pusharglist 3 ........................... <me, "Password was reseted, abort update!", #sendFigureUpdateToServer>
-  [137] extcall 162 ............................. <error(me, "Password was reseted, abort update!", #sendFigureUpdateToServer)>
-  [139] pusharglistnoret 1 ...................... <error(me, "Password was reseted, abort update!", #sendFigureUpdateToServer)>
-  [141] extcall 23 .............................. return error(me, "Password was reseted, abort update!", #sendFigureUpdateToServer)
-  [143] pop 1
-  [145] pusharglist 0 ........................... <[:]>
-  [147] pushproplist ............................ <[:]>
-  [148] setlocal 1 .............................. tMsg = [:]
-  [150] pushcons 5 .............................. <"figure">
-  [152] pushcons 6 .............................. <"sex">
-  [154] pushcons 7 .............................. <"customData">
-  [156] pushcons 10 ............................. <"directMail">
-  [158] pushcons 11 ............................. <"has_read_agreement">
-  [160] pushcons 1 .............................. <"parentagree">
-  [162] pushcons 15 ............................. <"onlineStatus">
-  [164] pushcons 16 ............................. <"publicProfileEnabled">
-  [166] pushcons 17 ............................. <"friendRequestsEnabled">
-  [168] pushcons 18 ............................. <"offlineMessagingEnabled">
-  [170] pushcons 19 ............................. <"totpCode">
-  [172] pusharglist 11 .......................... <["figure", "sex", "customData", "directMail", "has_read_agreement", "parentagree", "onlineStatus", "publicProfileEnabled", "friendRequestsEnabled", "offlineMessagingEnabled", "totpCode"]>
-  [174] pushlist ................................ <["figure", "sex", "customData", "directMail", "has_read_agreement", "parentagree", "onlineStatus", "publicProfileEnabled", "friendRequestsEnabled", "offlineMessagingEnabled", "totpCode"]>
-  [175] peek 0
-  [177] pusharglist 1
-  [179] extcall 52
-  [181] pushint8 1
-  [183] peek 0
-  [185] peek 2
-  [187] lteq
-  [188] jmpifz [440] ............................ repeat with tProp in ["figure", "sex", "customData", "directMail", "has_read_agreement", "parentagree", "onlineStatus", "publicProfileEnabled", "friendRequestsEnabled", "offlineMessagingEnabled", "totpCode"]
-  [191] peek 2
-  [193] peek 1
-  [195] pusharglist 2
-  [197] extcall 175
-  [199] setlocal 2
-  [201] getparam 1 .............................. <tPropList>
-  [203] getlocal 2 .............................. <tProp>
-  [205] pusharglist 2 ........................... <tPropList, tProp>
-  [207] objcall 175 ............................. <tPropList[tProp]>
-  [209] setlocal 3 .............................. tValue = tPropList[tProp]
-  [211] pushzero ................................ <0>
-  [212] setlocal 4 .............................. tValueExists = 0
-  [214] pushsymb 30 ............................. <#session>
-  [216] pusharglist 1 ........................... <#session>
-  [218] extcall 29 .............................. <getObject(#session)>
-  [220] pushcons 48 ............................. <"user_">
-  [222] getlocal 2 .............................. <tProp>
-  [224] joinstr ................................. <"user_" & tProp>
-  [225] pusharglist 2 ........................... <getObject(#session), "user_" & tProp>
-  [227] objcall 31 .............................. <getObject(#session).exists("user_" & tProp)>
-  [229] jmpifz [253] ............................ if getObject(#session).exists("user_" & tProp) then
-  [232] pushsymb 30 ............................. <#session>
-  [234] pusharglist 1 ........................... <#session>
-  [236] extcall 29 .............................. <getObject(#session)>
-  [238] pushcons 48 ............................. <"user_">
-  [240] getlocal 2 .............................. <tProp>
-  [242] joinstr ................................. <"user_" & tProp>
-  [243] pusharglist 2 ........................... <getObject(#session), "user_" & tProp>
-  [245] objcall 32 .............................. <getObject(#session).get("user_" & tProp)>
-  [247] setlocal 5 .............................. tStoredValue = getObject(#session).get("user_" & tProp)
-  [249] pushint8 1 .............................. <1>
-  [251] setlocal 4 .............................. tValueExists = 1
-  [253] getlocal 3 .............................. <tValue>
-  [255] pusharglist 1 ........................... <[tValue]>
-  [257] pushlist ................................ <[tValue]>
-  [258] getlocal 5 .............................. <tStoredValue>
-  [260] pusharglist 2 ........................... <[tValue], tStoredValue>
-  [262] objcall 359 ............................. <[tValue].getPos(tStoredValue)>
-  [265] not ..................................... <not [tValue].getPos(tStoredValue)>
-  [266] getlocal 3 .............................. <tValue>
-  [268] pusharglist 1 ........................... <tValue>
-  [270] extcall 60 .............................. <voidp(tValue)>
-  [272] not ..................................... <not voidp(tValue)>
-  [273] and ..................................... <not [tValue].getPos(tStoredValue) and not voidp(tValue)>
-  [274] getlocal 4 .............................. <tValueExists>
-  [276] not ..................................... <not tValueExists>
-  [277] or ...................................... <(not [tValue].getPos(tStoredValue) and not voidp(tValue)) or not tValueExists>
-  [278] jmpifz [435] ............................ if (not [tValue].getPos(tStoredValue) and not voidp(tValue)) or not tValueExists then
-  [281] getprop 467 ............................. <pRegMsgStruct>
-  [284] getlocal 2 .............................. <tProp>
-  [286] pusharglist 2 ........................... <pRegMsgStruct, tProp>
-  [288] objcall 175 ............................. <pRegMsgStruct[tProp]>
-  [290] pusharglist 1 ........................... <pRegMsgStruct[tProp]>
-  [292] extcall 60 .............................. <voidp(pRegMsgStruct[tProp])>
-  [294] not ..................................... <not voidp(pRegMsgStruct[tProp])>
-  [295] jmpifz [435] ............................ if not voidp(pRegMsgStruct[tProp]) then
-  [298] getlocal 1 .............................. <tMsg>
-  [300] pushsymb 490 ............................ <#short>
-  [303] getprop 467 ............................. <pRegMsgStruct>
-  [306] getlocal 2 .............................. <tProp>
-  [308] pusharglist 2 ........................... <pRegMsgStruct, tProp>
-  [310] objcall 175 ............................. <pRegMsgStruct[tProp]>
-  [312] getobjprop 185 .......................... <pRegMsgStruct[tProp].id>
-  [314] pusharglistnoret 3 ...................... <tMsg, #short, pRegMsgStruct[tProp].id>
-  [316] objcall 306 ............................. tMsg.addProp(#short, pRegMsgStruct[tProp].id)
+  [ 85] pusharglist 0 ........................... <[:]>
+  [ 87] pushproplist ............................ <[:]>
+  [ 88] setlocal 1 .............................. tMsg = [:]
+  [ 90] pushcons 5 .............................. <"figure">
+  [ 92] pushcons 6 .............................. <"sex">
+  [ 94] pushcons 7 .............................. <"customData">
+  [ 96] pushcons 10 ............................. <"directMail">
+  [ 98] pushcons 11 ............................. <"has_read_agreement">
+  [100] pushcons 1 .............................. <"parentagree">
+  [102] pushcons 15 ............................. <"onlineStatus">
+  [104] pushcons 16 ............................. <"publicProfileEnabled">
+  [106] pushcons 17 ............................. <"friendRequestsEnabled">
+  [108] pushcons 18 ............................. <"offlineMessagingEnabled">
+  [110] pushcons 19 ............................. <"totpCode">
+  [112] pusharglist 11 .......................... <["figure", "sex", "customData", "directMail", "has_read_agreement", "parentagree", "onlineStatus", "publicProfileEnabled", "friendRequestsEnabled", "offlineMessagingEnabled", "totpCode"]>
+  [114] pushlist ................................ <["figure", "sex", "customData", "directMail", "has_read_agreement", "parentagree", "onlineStatus", "publicProfileEnabled", "friendRequestsEnabled", "offlineMessagingEnabled", "totpCode"]>
+  [115] peek 0
+  [117] pusharglist 1
+  [119] extcall 52
+  [121] pushint8 1
+  [123] peek 0
+  [125] peek 2
+  [127] lteq
+  [128] jmpifz [380] ............................ repeat with tProp in ["figure", "sex", "customData", "directMail", "has_read_agreement", "parentagree", "onlineStatus", "publicProfileEnabled", "friendRequestsEnabled", "offlineMessagingEnabled", "totpCode"]
+  [131] peek 2
+  [133] peek 1
+  [135] pusharglist 2
+  [137] extcall 175
+  [139] setlocal 2
+  [141] getparam 1 .............................. <tPropList>
+  [143] getlocal 2 .............................. <tProp>
+  [145] pusharglist 2 ........................... <tPropList, tProp>
+  [147] objcall 175 ............................. <tPropList[tProp]>
+  [149] setlocal 3 .............................. tValue = tPropList[tProp]
+  [151] pushzero ................................ <0>
+  [152] setlocal 4 .............................. tValueExists = 0
+  [154] pushsymb 30 ............................. <#session>
+  [156] pusharglist 1 ........................... <#session>
+  [158] extcall 29 .............................. <getObject(#session)>
+  [160] pushcons 47 ............................. <"user_">
+  [162] getlocal 2 .............................. <tProp>
+  [164] joinstr ................................. <"user_" & tProp>
+  [165] pusharglist 2 ........................... <getObject(#session), "user_" & tProp>
+  [167] objcall 31 .............................. <getObject(#session).exists("user_" & tProp)>
+  [169] jmpifz [193] ............................ if getObject(#session).exists("user_" & tProp) then
+  [172] pushsymb 30 ............................. <#session>
+  [174] pusharglist 1 ........................... <#session>
+  [176] extcall 29 .............................. <getObject(#session)>
+  [178] pushcons 47 ............................. <"user_">
+  [180] getlocal 2 .............................. <tProp>
+  [182] joinstr ................................. <"user_" & tProp>
+  [183] pusharglist 2 ........................... <getObject(#session), "user_" & tProp>
+  [185] objcall 32 .............................. <getObject(#session).get("user_" & tProp)>
+  [187] setlocal 5 .............................. tStoredValue = getObject(#session).get("user_" & tProp)
+  [189] pushint8 1 .............................. <1>
+  [191] setlocal 4 .............................. tValueExists = 1
+  [193] getlocal 3 .............................. <tValue>
+  [195] pusharglist 1 ........................... <[tValue]>
+  [197] pushlist ................................ <[tValue]>
+  [198] getlocal 5 .............................. <tStoredValue>
+  [200] pusharglist 2 ........................... <[tValue], tStoredValue>
+  [202] objcall 359 ............................. <[tValue].getPos(tStoredValue)>
+  [205] not ..................................... <not [tValue].getPos(tStoredValue)>
+  [206] getlocal 3 .............................. <tValue>
+  [208] pusharglist 1 ........................... <tValue>
+  [210] extcall 60 .............................. <voidp(tValue)>
+  [212] not ..................................... <not voidp(tValue)>
+  [213] and ..................................... <not [tValue].getPos(tStoredValue) and not voidp(tValue)>
+  [214] getlocal 4 .............................. <tValueExists>
+  [216] not ..................................... <not tValueExists>
+  [217] or ...................................... <(not [tValue].getPos(tStoredValue) and not voidp(tValue)) or not tValueExists>
+  [218] jmpifz [375] ............................ if (not [tValue].getPos(tStoredValue) and not voidp(tValue)) or not tValueExists then
+  [221] getprop 467 ............................. <pRegMsgStruct>
+  [224] getlocal 2 .............................. <tProp>
+  [226] pusharglist 2 ........................... <pRegMsgStruct, tProp>
+  [228] objcall 175 ............................. <pRegMsgStruct[tProp]>
+  [230] pusharglist 1 ........................... <pRegMsgStruct[tProp]>
+  [232] extcall 60 .............................. <voidp(pRegMsgStruct[tProp])>
+  [234] not ..................................... <not voidp(pRegMsgStruct[tProp])>
+  [235] jmpifz [375] ............................ if not voidp(pRegMsgStruct[tProp]) then
+  [238] getlocal 1 .............................. <tMsg>
+  [240] pushsymb 490 ............................ <#short>
+  [243] getprop 467 ............................. <pRegMsgStruct>
+  [246] getlocal 2 .............................. <tProp>
+  [248] pusharglist 2 ........................... <pRegMsgStruct, tProp>
+  [250] objcall 175 ............................. <pRegMsgStruct[tProp]>
+  [252] getobjprop 185 .......................... <pRegMsgStruct[tProp].id>
+  [254] pusharglistnoret 3 ...................... <tMsg, #short, pRegMsgStruct[tProp].id>
+  [256] objcall 306 ............................. tMsg.addProp(#short, pRegMsgStruct[tProp].id)
+  [259] getprop 467 ............................. <pRegMsgStruct>
+  [262] getlocal 2 .............................. <tProp>
+  [264] pusharglist 2 ........................... <pRegMsgStruct, tProp>
+  [266] objcall 175 ............................. <pRegMsgStruct[tProp]>
+  [268] getobjprop 251 .......................... <pRegMsgStruct[tProp].type>
+  [270] pushsymb 468 ............................ <#boolean>
+  [273] eq ...................................... <pRegMsgStruct[tProp].type = #boolean>
+  [274] jmpifz [286] ............................ if pRegMsgStruct[tProp].type = #boolean then
+  [277] getlocal 3 .............................. <tValue>
+  [279] pusharglist 1 ........................... <tValue>
+  [281] extcall 256 ............................. <integer(tValue)>
+  [284] setlocal 3 .............................. tValue = integer(tValue)
+  [286] getprop 467 ............................. <pRegMsgStruct>
+  [289] getlocal 2 .............................. <tProp>
+  [291] pusharglist 2 ........................... <pRegMsgStruct, tProp>
+  [293] objcall 175 ............................. <pRegMsgStruct[tProp]>
+  [295] getobjprop 251 .......................... <pRegMsgStruct[tProp].type>
+  [297] pushsymb 234 ............................ <#string>
+  [299] eq ...................................... <pRegMsgStruct[tProp].type = #string>
+  [300] getlocal 3 .............................. <tValue>
+  [302] getobjprop 173 .......................... <tValue.ilk>
+  [304] pushsymb 234 ............................ <#string>
+  [306] nteq .................................... <tValue.ilk <> #string>
+  [307] and ..................................... <(pRegMsgStruct[tProp].type = #string) and (tValue.ilk <> #string)>
+  [308] jmpifz [319] ............................ if (pRegMsgStruct[tProp].type = #string) and (tValue.ilk <> #string) then
+  [311] getlocal 3 .............................. <tValue>
+  [313] pusharglist 1 ........................... <tValue>
+  [315] extcall 234 ............................. <string(tValue)>
+  [317] setlocal 3 .............................. tValue = string(tValue)
   [319] getprop 467 ............................. <pRegMsgStruct>
   [322] getlocal 2 .............................. <tProp>
   [324] pusharglist 2 ........................... <pRegMsgStruct, tProp>
   [326] objcall 175 ............................. <pRegMsgStruct[tProp]>
   [328] getobjprop 251 .......................... <pRegMsgStruct[tProp].type>
-  [330] pushsymb 468 ............................ <#boolean>
-  [333] eq ...................................... <pRegMsgStruct[tProp].type = #boolean>
-  [334] jmpifz [346] ............................ if pRegMsgStruct[tProp].type = #boolean then
-  [337] getlocal 3 .............................. <tValue>
-  [339] pusharglist 1 ........................... <tValue>
-  [341] extcall 256 ............................. <integer(tValue)>
-  [344] setlocal 3 .............................. tValue = integer(tValue)
-  [346] getprop 467 ............................. <pRegMsgStruct>
-  [349] getlocal 2 .............................. <tProp>
-  [351] pusharglist 2 ........................... <pRegMsgStruct, tProp>
-  [353] objcall 175 ............................. <pRegMsgStruct[tProp]>
-  [355] getobjprop 251 .......................... <pRegMsgStruct[tProp].type>
-  [357] pushsymb 234 ............................ <#string>
-  [359] eq ...................................... <pRegMsgStruct[tProp].type = #string>
-  [360] getlocal 3 .............................. <tValue>
-  [362] getobjprop 173 .......................... <tValue.ilk>
-  [364] pushsymb 234 ............................ <#string>
-  [366] nteq .................................... <tValue.ilk <> #string>
-  [367] and ..................................... <(pRegMsgStruct[tProp].type = #string) and (tValue.ilk <> #string)>
-  [368] jmpifz [379] ............................ if (pRegMsgStruct[tProp].type = #string) and (tValue.ilk <> #string) then
-  [371] getlocal 3 .............................. <tValue>
-  [373] pusharglist 1 ........................... <tValue>
-  [375] extcall 234 ............................. <string(tValue)>
-  [377] setlocal 3 .............................. tValue = string(tValue)
-  [379] getprop 467 ............................. <pRegMsgStruct>
-  [382] getlocal 2 .............................. <tProp>
-  [384] pusharglist 2 ........................... <pRegMsgStruct, tProp>
-  [386] objcall 175 ............................. <pRegMsgStruct[tProp]>
-  [388] getobjprop 251 .......................... <pRegMsgStruct[tProp].type>
-  [390] pushsymb 490 ............................ <#short>
-  [393] eq ...................................... <pRegMsgStruct[tProp].type = #short>
-  [394] getlocal 3 .............................. <tValue>
-  [396] getobjprop 173 .......................... <tValue.ilk>
-  [398] pushsymb 256 ............................ <#integer>
-  [401] nteq .................................... <tValue.ilk <> #integer>
-  [402] and ..................................... <(pRegMsgStruct[tProp].type = #short) and (tValue.ilk <> #integer)>
-  [403] jmpifz [415] ............................ if (pRegMsgStruct[tProp].type = #short) and (tValue.ilk <> #integer) then
-  [406] getlocal 3 .............................. <tValue>
-  [408] pusharglist 1 ........................... <tValue>
-  [410] extcall 256 ............................. <integer(tValue)>
-  [413] setlocal 3 .............................. tValue = integer(tValue)
-  [415] getlocal 1 .............................. <tMsg>
-  [417] getprop 467 ............................. <pRegMsgStruct>
-  [420] getlocal 2 .............................. <tProp>
-  [422] pusharglist 2 ........................... <pRegMsgStruct, tProp>
-  [424] objcall 175 ............................. <pRegMsgStruct[tProp]>
-  [426] getobjprop 251 .......................... <pRegMsgStruct[tProp].type>
-  [428] getlocal 3 .............................. <tValue>
-  [430] pusharglistnoret 3 ...................... <tMsg, pRegMsgStruct[tProp].type, tValue>
-  [432] objcall 306 ............................. tMsg.addProp(pRegMsgStruct[tProp].type, tValue)
-  [435] pushint8 1
-  [437] add
-  [438] endrepeat [183]
-  [440] pop 3
-  [442] pushcons 25 ............................. <"connection.info.id">
-  [444] pusharglist 1 ........................... <"connection.info.id">
-  [446] extcall 84 .............................. <getVariable("connection.info.id")>
-  [448] pusharglist 1 ........................... <getVariable("connection.info.id")>
-  [450] extcall 427 ............................. <connectionExists(getVariable("connection.info.id"))>
-  [453] jmpifz [483] ............................ if connectionExists(getVariable("connection.info.id")) then / else
-  [456] pushcons 25 ............................. <"connection.info.id">
-  [458] pusharglist 1 ........................... <"connection.info.id">
-  [460] extcall 84 .............................. <getVariable("connection.info.id")>
-  [462] pusharglist 1 ........................... <getVariable("connection.info.id")>
-  [464] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [467] pushcons 49 ............................. <"UPDATE">
-  [469] getlocal 1 .............................. <tMsg>
-  [471] pusharglist 3 ........................... <getConnection(getVariable("connection.info.id")), "UPDATE", tMsg>
-  [473] objcall 481 ............................. <getConnection(getVariable("connection.info.id")).send("UPDATE", tMsg)>
-  [476] pusharglistnoret 1 ...................... <getConnection(getVariable("connection.info.id")).send("UPDATE", tMsg)>
-  [478] extcall 23 .............................. return getConnection(getVariable("connection.info.id")).send("UPDATE", tMsg)
-  [480] jmp [504]
-  [483] getparam 0 .............................. <me>
-  [485] pushcons 46 ............................. <"Connection not found:">
-  [487] pushcons 25 ............................. <"connection.info.id">
-  [489] pusharglist 1 ........................... <"connection.info.id">
-  [491] extcall 84 .............................. <getVariable("connection.info.id")>
-  [493] joinpadstr .............................. <"Connection not found:" && getVariable("connection.info.id")>
-  [494] pushsymb 211 ............................ <#sendFigureUpdateToServer>
-  [496] pusharglist 3 ........................... <me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer>
-  [498] extcall 162 ............................. <error(me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer)>
-  [500] pusharglistnoret 1 ...................... <error(me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer)>
-  [502] extcall 23 .............................. return error(me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer)
-  [504] ret
+  [330] pushsymb 490 ............................ <#short>
+  [333] eq ...................................... <pRegMsgStruct[tProp].type = #short>
+  [334] getlocal 3 .............................. <tValue>
+  [336] getobjprop 173 .......................... <tValue.ilk>
+  [338] pushsymb 256 ............................ <#integer>
+  [341] nteq .................................... <tValue.ilk <> #integer>
+  [342] and ..................................... <(pRegMsgStruct[tProp].type = #short) and (tValue.ilk <> #integer)>
+  [343] jmpifz [355] ............................ if (pRegMsgStruct[tProp].type = #short) and (tValue.ilk <> #integer) then
+  [346] getlocal 3 .............................. <tValue>
+  [348] pusharglist 1 ........................... <tValue>
+  [350] extcall 256 ............................. <integer(tValue)>
+  [353] setlocal 3 .............................. tValue = integer(tValue)
+  [355] getlocal 1 .............................. <tMsg>
+  [357] getprop 467 ............................. <pRegMsgStruct>
+  [360] getlocal 2 .............................. <tProp>
+  [362] pusharglist 2 ........................... <pRegMsgStruct, tProp>
+  [364] objcall 175 ............................. <pRegMsgStruct[tProp]>
+  [366] getobjprop 251 .......................... <pRegMsgStruct[tProp].type>
+  [368] getlocal 3 .............................. <tValue>
+  [370] pusharglistnoret 3 ...................... <tMsg, pRegMsgStruct[tProp].type, tValue>
+  [372] objcall 306 ............................. tMsg.addProp(pRegMsgStruct[tProp].type, tValue)
+  [375] pushint8 1
+  [377] add
+  [378] endrepeat [123]
+  [380] pop 3
+  [382] pushcons 25 ............................. <"connection.info.id">
+  [384] pusharglist 1 ........................... <"connection.info.id">
+  [386] extcall 84 .............................. <getVariable("connection.info.id")>
+  [388] pusharglist 1 ........................... <getVariable("connection.info.id")>
+  [390] extcall 427 ............................. <connectionExists(getVariable("connection.info.id"))>
+  [393] jmpifz [423] ............................ if connectionExists(getVariable("connection.info.id")) then / else
+  [396] pushcons 25 ............................. <"connection.info.id">
+  [398] pusharglist 1 ........................... <"connection.info.id">
+  [400] extcall 84 .............................. <getVariable("connection.info.id")>
+  [402] pusharglist 1 ........................... <getVariable("connection.info.id")>
+  [404] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
+  [407] pushcons 48 ............................. <"UPDATE">
+  [409] getlocal 1 .............................. <tMsg>
+  [411] pusharglist 3 ........................... <getConnection(getVariable("connection.info.id")), "UPDATE", tMsg>
+  [413] objcall 481 ............................. <getConnection(getVariable("connection.info.id")).send("UPDATE", tMsg)>
+  [416] pusharglistnoret 1 ...................... <getConnection(getVariable("connection.info.id")).send("UPDATE", tMsg)>
+  [418] extcall 23 .............................. return getConnection(getVariable("connection.info.id")).send("UPDATE", tMsg)
+  [420] jmp [444]
+  [423] getparam 0 .............................. <me>
+  [425] pushcons 46 ............................. <"Connection not found:">
+  [427] pushcons 25 ............................. <"connection.info.id">
+  [429] pusharglist 1 ........................... <"connection.info.id">
+  [431] extcall 84 .............................. <getVariable("connection.info.id")>
+  [433] joinpadstr .............................. <"Connection not found:" && getVariable("connection.info.id")>
+  [434] pushsymb 211 ............................ <#sendFigureUpdateToServer>
+  [436] pusharglist 3 ........................... <me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer>
+  [438] extcall 162 ............................. <error(me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer)>
+  [440] pusharglistnoret 1 ...................... <error(me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer)>
+  [442] extcall 23 .............................. return error(me, "Connection not found:" && getVariable("connection.info.id"), #sendFigureUpdateToServer)
+  [444] ret
 end
 
 on newFigureReady me
@@ -1008,7 +978,7 @@ on newFigureReady me
   [  2] pusharglistnoret 1 ...................... <me>
   [  4] objcall 95 .............................. me.closeFigureCreator()
   [  6] getparam 0 .............................. <me>
-  [  8] pushcons 50 ............................. <"start">
+  [  8] pushcons 49 ............................. <"start">
   [ 10] pusharglistnoret 2 ...................... <me, "start">
   [ 12] objcall 27 .............................. me.updateState("start")
   [ 14] pushint8 1 .............................. <1>
@@ -1029,7 +999,7 @@ on figureUpdateReady me
   [ 18] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 20] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 22] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 25] pushcons 51 ............................. <"INFORETRIEVE">
+  [ 25] pushcons 50 ............................. <"INFORETRIEVE">
   [ 27] pusharglistnoret 2 ...................... <getConnection(getVariable("connection.info.id")), "INFORETRIEVE">
   [ 29] objcall 481 ............................. getConnection(getVariable("connection.info.id")).send("INFORETRIEVE")
   [ 32] jmp [ 52]
@@ -1045,14 +1015,14 @@ on figureUpdateReady me
   [ 52] pushsymb 30 ............................. <#session>
   [ 54] pusharglist 1 ........................... <#session>
   [ 56] extcall 29 .............................. <getObject(#session)>
-  [ 58] pushcons 52 ............................. <"conf_parent_email_request_reregistration">
+  [ 58] pushcons 51 ............................. <"conf_parent_email_request_reregistration">
   [ 60] pusharglist 2 ........................... <getObject(#session), "conf_parent_email_request_reregistration">
   [ 62] objcall 31 .............................. <getObject(#session).exists("conf_parent_email_request_reregistration")>
   [ 64] jmpifz [ 88] ............................ if getObject(#session).exists("conf_parent_email_request_reregistration") then
   [ 67] pushsymb 30 ............................. <#session>
   [ 69] pusharglist 1 ........................... <#session>
   [ 71] extcall 29 .............................. <getObject(#session)>
-  [ 73] pushcons 52 ............................. <"conf_parent_email_request_reregistration">
+  [ 73] pushcons 51 ............................. <"conf_parent_email_request_reregistration">
   [ 75] pusharglist 2 ........................... <getObject(#session), "conf_parent_email_request_reregistration">
   [ 77] objcall 32 .............................. <getObject(#session).get("conf_parent_email_request_reregistration")>
   [ 79] jmpifz [ 88] ............................ if getObject(#session).get("conf_parent_email_request_reregistration") then
@@ -1063,7 +1033,7 @@ on figureUpdateReady me
   [ 90] pusharglistnoret 1 ...................... <me>
   [ 92] objcall 95 .............................. me.closeFigureCreator()
   [ 94] getparam 0 .............................. <me>
-  [ 96] pushcons 50 ............................. <"start">
+  [ 96] pushcons 49 ............................. <"start">
   [ 98] pusharglist 2 ........................... <me, "start">
   [100] objcall 27 .............................. <me.updateState("start")>
   [102] pusharglistnoret 1 ...................... <me.updateState("start")>
@@ -1133,7 +1103,7 @@ on getAvailableSetList me
   [ 33] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 35] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 37] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 40] pushcons 53 ............................. <"GETAVAILABLESETS">
+  [ 40] pushcons 52 ............................. <"GETAVAILABLESETS">
   [ 42] pusharglistnoret 2 ...................... <getConnection(getVariable("connection.info.id")), "GETAVAILABLESETS">
   [ 44] objcall 481 ............................. getConnection(getVariable("connection.info.id")).send("GETAVAILABLESETS")
   [ 47] ret
@@ -1151,7 +1121,7 @@ on checkAge me, tAge
   [ 18] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 20] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 22] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 25] pushcons 54 ............................. <"AC">
+  [ 25] pushcons 53 ............................. <"AC">
   [ 27] getparam 1 .............................. <tAge>
   [ 29] pusharglistnoret 3 ...................... <getConnection(getVariable("connection.info.id")), "AC", tAge>
   [ 31] objcall 481 ............................. getConnection(getVariable("connection.info.id")).send("AC", tAge)
@@ -1173,7 +1143,7 @@ on checkEmailAddress me, tEmail
   [ 18] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 20] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 22] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 25] pushcons 55 ............................. <"APPROVEEMAIL">
+  [ 25] pushcons 54 ............................. <"APPROVEEMAIL">
   [ 27] pushsymb 234 ............................ <#string>
   [ 29] getparam 1 .............................. <tEmail>
   [ 31] pusharglist 2 ........................... <[#string: tEmail]>
@@ -1198,7 +1168,7 @@ on sendTotpEmailVerificationNeededQuery me, tEmail
   [ 18] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 20] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 22] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 25] pushcons 56 ............................. <"TOTP_EMAIL_REQUIRED">
+  [ 25] pushcons 55 ............................. <"TOTP_EMAIL_REQUIRED">
   [ 27] pushsymb 234 ............................ <#string>
   [ 29] getparam 1 .............................. <tEmail>
   [ 31] pusharglist 2 ........................... <[#string: tEmail]>
@@ -1223,7 +1193,7 @@ on parentEmailNeedQuery me, tBirthday, tHabboID
   [ 18] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 20] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 22] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 25] pushcons 57 ............................. <"PARENT_EMAIL_REQUIRED">
+  [ 25] pushcons 56 ............................. <"PARENT_EMAIL_REQUIRED">
   [ 27] pushsymb 234 ............................ <#string>
   [ 29] getparam 1 .............................. <tBirthday>
   [ 31] pushsymb 234 ............................ <#string>
@@ -1256,7 +1226,7 @@ on sendParentEmail me
   [ 32] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 34] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 36] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 39] pushcons 58 ............................. <"SEND_PARENT_EMAIL">
+  [ 39] pushcons 57 ............................. <"SEND_PARENT_EMAIL">
   [ 41] pushsymb 234 ............................ <#string>
   [ 43] getlocal 0 .............................. <tParentEmail>
   [ 45] pusharglist 2 ........................... <[#string: tParentEmail]>
@@ -1281,7 +1251,7 @@ on validateParentEmail me, tUserEmail, tParentEmail
   [ 18] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 20] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 22] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 25] pushcons 59 ............................. <"VALIDATE_PARENT_EMAIL">
+  [ 25] pushcons 58 ............................. <"VALIDATE_PARENT_EMAIL">
   [ 27] pushsymb 234 ............................ <#string>
   [ 29] getparam 2 .............................. <tParentEmail>
   [ 31] pusharglist 2 ........................... <[#string: tParentEmail]>
@@ -1327,7 +1297,7 @@ on sendValidatePassword me, tPassword
   [ 56] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 58] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 60] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 63] pushcons 60 ............................. <"APPROVE_PASSWORD">
+  [ 63] pushcons 59 ............................. <"APPROVE_PASSWORD">
   [ 65] pushsymb 234 ............................ <#string>
   [ 67] getlocal 0 .............................. <tUserName>
   [ 69] pushsymb 234 ............................ <#string>
@@ -1425,7 +1395,7 @@ on sendUpdateAccountMsg me, tPropList
   [  8] not ..................................... <not ilk(tPropList, #propList)>
   [  9] jmpifz [ 33] ............................ if not ilk(tPropList, #propList) then / else
   [ 12] getparam 0 .............................. <me>
-  [ 14] pushcons 61 ............................. <"tPropList was not propertylist:">
+  [ 14] pushcons 60 ............................. <"tPropList was not propertylist:">
   [ 16] getparam 1 .............................. <tPropList>
   [ 18] joinpadstr .............................. <"tPropList was not propertylist:" && tPropList>
   [ 19] pushsymb 501 ............................ <#sendUpdateMsg>
@@ -1449,7 +1419,7 @@ on sendUpdateAccountMsg me, tPropList
   [ 57] or ...................................... <voidp(tPropList["oldpassword"]) or voidp(tPropList["birthday"])>
   [ 58] jmpifz [ 82] ............................ if voidp(tPropList["oldpassword"]) or voidp(tPropList["birthday"]) then / else
   [ 61] getparam 0 .............................. <me>
-  [ 63] pushcons 62 ............................. <"Missing old password or birthday:">
+  [ 63] pushcons 61 ............................. <"Missing old password or birthday:">
   [ 65] getparam 1 .............................. <tPropList>
   [ 67] joinpadstr .............................. <"Missing old password or birthday:" && tPropList>
   [ 68] pushsymb 501 ............................ <#sendUpdateMsg>
@@ -1473,7 +1443,7 @@ on sendUpdateAccountMsg me, tPropList
   [106] and ..................................... <voidp(tPropList["password"]) and voidp(tPropList["email"])>
   [107] jmpifz [131] ............................ if voidp(tPropList["password"]) and voidp(tPropList["email"]) then / else
   [110] getparam 0 .............................. <me>
-  [112] pushcons 63 ............................. <"Password or email required:">
+  [112] pushcons 62 ............................. <"Password or email required:">
   [114] getparam 1 .............................. <tPropList>
   [116] joinpadstr .............................. <"Password or email required:" && tPropList>
   [117] pushsymb 501 ............................ <#sendUpdateMsg>
@@ -1499,7 +1469,7 @@ on sendUpdateAccountMsg me, tPropList
   [157] and ..................................... <not voidp(tPropList["password"]) and not voidp(tPropList["email"])>
   [158] jmpifz [179] ............................ if not voidp(tPropList["password"]) and not voidp(tPropList["email"]) then
   [161] getparam 0 .............................. <me>
-  [163] pushcons 64 ............................. <"Password and email cannot appear together:">
+  [163] pushcons 63 ............................. <"Password and email cannot appear together:">
   [165] getparam 1 .............................. <tPropList>
   [167] joinpadstr .............................. <"Password and email cannot appear together:" && tPropList>
   [168] pushsymb 501 ............................ <#sendUpdateMsg>
@@ -1617,7 +1587,7 @@ on sendUpdateAccountMsg me, tPropList
   [403] objcall 306 ............................. tMsg.addProp(pRegMsgStruct[tProp].type, tValue)
   [406] jmp [427] ............................... next repeat
   [409] getparam 0 .............................. <me>
-  [411] pushcons 65 ............................. <"Data property not found from structs!">
+  [411] pushcons 64 ............................. <"Data property not found from structs!">
   [413] getlocal 2 .............................. <tProp>
   [415] joinpadstr .............................. <"Data property not found from structs!" && tProp>
   [416] pushsymb 501 ............................ <#sendUpdateMsg>
@@ -1641,7 +1611,7 @@ on sendUpdateAccountMsg me, tPropList
   [454] extcall 84 .............................. <getVariable("connection.info.id")>
   [456] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [458] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [461] pushcons 66 ............................. <"UPDATE_ACCOUNT">
+  [461] pushcons 65 ............................. <"UPDATE_ACCOUNT">
   [463] getlocal 0 .............................. <tMsg>
   [465] pusharglistnoret 3 ...................... <getConnection(getVariable("connection.info.id")), "UPDATE_ACCOUNT", tMsg>
   [467] objcall 481 ............................. getConnection(getVariable("connection.info.id")).send("UPDATE_ACCOUNT", tMsg)
@@ -1656,7 +1626,7 @@ on submitGdprRequestMsg me, tPropList
   [  8] not ..................................... <not ilk(tPropList, #propList)>
   [  9] jmpifz [ 33] ............................ if not ilk(tPropList, #propList) then / else
   [ 12] getparam 0 .............................. <me>
-  [ 14] pushcons 61 ............................. <"tPropList was not propertylist:">
+  [ 14] pushcons 60 ............................. <"tPropList was not propertylist:">
   [ 16] getparam 1 .............................. <tPropList>
   [ 18] joinpadstr .............................. <"tPropList was not propertylist:" && tPropList>
   [ 19] pushsymb 501 ............................ <#sendUpdateMsg>
@@ -1666,14 +1636,14 @@ on submitGdprRequestMsg me, tPropList
   [ 28] extcall 23 .............................. return error(me, "tPropList was not propertylist:" && tPropList, #sendUpdateMsg)
   [ 30] jmp [ 66]
   [ 33] getparam 1 .............................. <tPropList>
-  [ 35] pushcons 67 ............................. <"gdprRequestType">
+  [ 35] pushcons 66 ............................. <"gdprRequestType">
   [ 37] pusharglist 2 ........................... <tPropList, "gdprRequestType">
   [ 39] objcall 175 ............................. <tPropList["gdprRequestType"]>
   [ 41] pusharglist 1 ........................... <tPropList["gdprRequestType"]>
   [ 43] extcall 60 .............................. <voidp(tPropList["gdprRequestType"])>
   [ 45] jmpifz [ 66] ............................ if voidp(tPropList["gdprRequestType"]) then
   [ 48] getparam 0 .............................. <me>
-  [ 50] pushcons 68 ............................. <"Missing GDPR request type:">
+  [ 50] pushcons 67 ............................. <"Missing GDPR request type:">
   [ 52] getparam 1 .............................. <tPropList>
   [ 54] joinpadstr .............................. <"Missing GDPR request type:" && tPropList>
   [ 55] pushsymb 501 ............................ <#sendUpdateMsg>
@@ -1682,7 +1652,7 @@ on submitGdprRequestMsg me, tPropList
   [ 62] pusharglistnoret 1 ...................... <error(me, "Missing GDPR request type:" && tPropList, #sendUpdateMsg)>
   [ 64] extcall 23 .............................. return error(me, "Missing GDPR request type:" && tPropList, #sendUpdateMsg)
   [ 66] getparam 1 .............................. <tPropList>
-  [ 68] pushcons 67 ............................. <"gdprRequestType">
+  [ 68] pushcons 66 ............................. <"gdprRequestType">
   [ 70] pusharglist 2 ........................... <tPropList, "gdprRequestType">
   [ 72] objcall 175 ............................. <tPropList["gdprRequestType"]>
   [ 74] setlocal 0 .............................. tValue = tPropList["gdprRequestType"]
@@ -1697,7 +1667,7 @@ on submitGdprRequestMsg me, tPropList
   [ 94] extcall 84 .............................. <getVariable("connection.info.id")>
   [ 96] pusharglist 1 ........................... <getVariable("connection.info.id")>
   [ 98] extcall 480 ............................. <getConnection(getVariable("connection.info.id"))>
-  [101] pushcons 69 ............................. <"SUBMIT_GDPR_REQUEST">
+  [101] pushcons 68 ............................. <"SUBMIT_GDPR_REQUEST">
   [103] pushsymb 256 ............................ <#integer>
   [106] getlocal 0 .............................. <tValue>
   [108] pusharglist 1 ........................... <tValue>
@@ -1733,7 +1703,7 @@ on updateState me, tstate, tProps
   [ 25] extcall 23 .............................. return 0
   [ 27] jmp [1147]
   [ 30] peek 0
-  [ 32] pushcons 70 ............................. <"loadFigurePartList">
+  [ 32] pushcons 69 ............................. <"loadFigurePartList">
   [ 34] eq
   [ 35] jmpifz [143] ............................ (case) "loadFigurePartList":
   [ 38] pop 1
@@ -1741,29 +1711,29 @@ on updateState me, tstate, tProps
   [ 42] extcall 23 .............................. return 
   [ 44] getparam 1 .............................. <tstate>
   [ 46] setprop 26 .............................. pState = tstate
-  [ 48] pushcons 71 ............................. <"external.figurepartlist.txt">
+  [ 48] pushcons 70 ............................. <"external.figurepartlist.txt">
   [ 50] pusharglist 1 ........................... <"external.figurepartlist.txt">
   [ 52] extcall 84 .............................. <getVariable("external.figurepartlist.txt")>
   [ 54] setlocal 0 .............................. tURL = getVariable("external.figurepartlist.txt")
   [ 56] getlocal 0 .............................. <tURL>
   [ 58] setlocal 1 .............................. tMem = tURL
   [ 60] getmovieprop 502 ........................ <the moviePath>
-  [ 63] pushcons 72 ............................. <"http://">
+  [ 63] pushcons 71 ............................. <"http://">
   [ 65] containsstr ............................. <the moviePath contains "http://">
   [ 66] jmpifz [ 83] ............................ if the moviePath contains "http://" then / else
   [ 69] getlocal 0 .............................. <tURL>
-  [ 71] pushcons 73 ............................. <"?">
+  [ 71] pushcons 72 ............................. <"?">
   [ 73] joinstr ................................. <tURL & "?">
   [ 74] getmovieprop 436 ........................ <the milliSeconds>
   [ 77] joinstr ................................. <tURL & "?" & the milliSeconds>
   [ 78] setlocal 0 .............................. tURL = tURL & "?" & the milliSeconds
   [ 80] jmp [102]
   [ 83] getlocal 0 .............................. <tURL>
-  [ 85] pushcons 72 ............................. <"http://">
+  [ 85] pushcons 71 ............................. <"http://">
   [ 87] containsstr ............................. <tURL contains "http://">
   [ 88] jmpifz [102] ............................ if tURL contains "http://" then
   [ 91] getlocal 0 .............................. <tURL>
-  [ 93] pushcons 73 ............................. <"?">
+  [ 93] pushcons 72 ............................. <"?">
   [ 95] joinstr ................................. <tURL & "?">
   [ 96] getmovieprop 436 ........................ <the milliSeconds>
   [ 99] joinstr ................................. <tURL & "?" & the milliSeconds>
@@ -1781,19 +1751,19 @@ on updateState me, tstate, tProps
   [123] getparam 0 .............................. <me>
   [125] pusharglist 1 ........................... <me>
   [127] objcall 85 .............................. <me.getID()>
-  [129] pushcons 74 ............................. <"initialize">
+  [129] pushcons 73 ............................. <"initialize">
   [131] pusharglist 4 ........................... <tmember, #updateState, me.getID(), "initialize">
   [133] extcall 504 ............................. <registerDownloadCallback(tmember, #updateState, me.getID(), "initialize")>
   [136] pusharglistnoret 1 ...................... <registerDownloadCallback(tmember, #updateState, me.getID(), "initialize")>
   [138] extcall 23 .............................. return registerDownloadCallback(tmember, #updateState, me.getID(), "initialize")
   [140] jmp [1147]
   [143] peek 0
-  [145] pushcons 74 ............................. <"initialize">
+  [145] pushcons 73 ............................. <"initialize">
   [147] eq
   [148] jmpifz [300] ............................ (case) "initialize":
   [151] getparam 1 .............................. <tstate>
   [153] setprop 26 .............................. pState = tstate
-  [155] pushcons 71 ............................. <"external.figurepartlist.txt">
+  [155] pushcons 70 ............................. <"external.figurepartlist.txt">
   [157] pusharglist 1 ........................... <"external.figurepartlist.txt">
   [159] extcall 84 .............................. <getVariable("external.figurepartlist.txt")>
   [161] setlocal 3 .............................. tMemName = getVariable("external.figurepartlist.txt")
@@ -1812,7 +1782,7 @@ on updateState me, tstate, tProps
   [187] extcall 41 .............................. <VOID>
   [189] setlocal 4 .............................. tValidpartList = VOID
   [191] getparam 0 .............................. <me>
-  [193] pushcons 75 ............................. <"Failure while loading part list">
+  [193] pushcons 74 ............................. <"Failure while loading part list">
   [195] pushsymb 27 ............................. <#updateState>
   [197] pusharglistnoret 3 ...................... <me, "Failure while loading part list", #updateState>
   [199] extcall 162 ............................. error(me, "Failure while loading part list", #updateState)
@@ -1840,7 +1810,7 @@ on updateState me, tstate, tProps
   [250] objcall 509 ............................. me.initializeValidPartLists(tValidpartList)
   [253] pushint8 1 .............................. <1>
   [255] setprop 460 ............................. pFigurePartListLoadedFlag = 1
-  [258] pushcons 76 ............................. <"figurepartlist.loaded">
+  [258] pushcons 75 ............................. <"figurepartlist.loaded">
   [260] pushint8 1 .............................. <1>
   [262] pusharglistnoret 2 ...................... <"figurepartlist.loaded", 1>
   [264] extcall 164 ............................. setVariable("figurepartlist.loaded", 1)
@@ -1853,14 +1823,14 @@ on updateState me, tstate, tProps
   [280] extcall 510 ............................. removeMember(tMemName)
   [283] pop 1
   [285] getparam 0 .............................. <me>
-  [287] pushcons 50 ............................. <"start">
+  [287] pushcons 49 ............................. <"start">
   [289] pusharglist 2 ........................... <me, "start">
   [291] objcall 27 .............................. <me.updateState("start")>
   [293] pusharglistnoret 1 ...................... <me.updateState("start")>
   [295] extcall 23 .............................. return me.updateState("start")
   [297] jmp [1147]
   [300] peek 0
-  [302] pushcons 50 ............................. <"start">
+  [302] pushcons 49 ............................. <"start">
   [304] eq
   [305] jmpifz [323] ............................ (case) "start":
   [308] getparam 1 .............................. <tstate>
@@ -1896,7 +1866,7 @@ on updateState me, tstate, tProps
   [368] jmpifz [387] ............................ if not objectExists(#session) then
   [371] pop 1
   [373] getparam 0 .............................. <me>
-  [375] pushcons 77 ............................. <"Session object not found">
+  [375] pushcons 76 ............................. <"Session object not found">
   [377] pushsymb 27 ............................. <#updateState>
   [379] pusharglist 3 ........................... <me, "Session object not found", #updateState>
   [381] extcall 162 ............................. <error(me, "Session object not found", #updateState)>
@@ -1933,7 +1903,7 @@ on updateState me, tstate, tProps
   [451] pushsymb 30 ............................. <#session>
   [453] pusharglist 1 ........................... <#session>
   [455] extcall 29 .............................. <getObject(#session)>
-  [457] pushcons 78 ............................. <"server_date">
+  [457] pushcons 77 ............................. <"server_date">
   [459] pusharglist 2 ........................... <getObject(#session), "server_date">
   [461] objcall 31 .............................. <getObject(#session).exists("server_date")>
   [463] not ..................................... <not getObject(#session).exists("server_date")>
@@ -1943,12 +1913,12 @@ on updateState me, tstate, tProps
   [472] extcall 29 .............................. <getObject(#getServerDate)>
   [474] pusharglistnoret 1 ...................... <getObject(#getServerDate)>
   [476] objcall 513 ............................. getObject(#getServerDate).getDate()
-  [479] pushcons 79 ............................. <"topt_verification">
+  [479] pushcons 78 ............................. <"topt_verification">
   [481] setlocal 5 .............................. tRegistrationProcessMode = "topt_verification"
   [483] pushsymb 30 ............................. <#session>
   [485] pusharglist 1 ........................... <#session>
   [487] extcall 29 .............................. <getObject(#session)>
-  [489] pushcons 80 ............................. <"conf_coppa">
+  [489] pushcons 79 ............................. <"conf_coppa">
   [491] pusharglist 2 ........................... <getObject(#session), "conf_coppa">
   [493] objcall 32 .............................. <getObject(#session).get("conf_coppa")>
   [495] pushcons 28 ............................. <"Blocktime">
@@ -2021,7 +1991,7 @@ on updateState me, tstate, tProps
   [632] getparam 0 .............................. <me>
   [634] pusharglist 1 ........................... <me>
   [636] objcall 43 .............................. <me.getInterface()>
-  [638] pushcons 81 ............................. <"update">
+  [638] pushcons 80 ............................. <"update">
   [640] pusharglistnoret 2 ...................... <me.getInterface(), "update">
   [642] objcall 96 .............................. me.getInterface().showLoadingWindow("update")
   [644] pop 1
@@ -2033,13 +2003,13 @@ on updateState me, tstate, tProps
   [656] pushsymb 30 ............................. <#session>
   [658] pusharglist 1 ........................... <#session>
   [660] extcall 29 .............................. <getObject(#session)>
-  [662] pushcons 82 ............................. <"user_figure">
+  [662] pushcons 81 ............................. <"user_figure">
   [664] pusharglist 2 ........................... <getObject(#session), "user_figure">
   [666] objcall 32 .............................. <getObject(#session).get("user_figure")>
   [668] pushsymb 30 ............................. <#session>
   [670] pusharglist 1 ........................... <#session>
   [672] extcall 29 .............................. <getObject(#session)>
-  [674] pushcons 83 ............................. <"user_sex">
+  [674] pushcons 82 ............................. <"user_sex">
   [676] pusharglist 2 ........................... <getObject(#session), "user_sex">
   [678] objcall 32 .............................. <getObject(#session).get("user_sex")>
   [680] pusharglist 3 ........................... <getObject("Figure_System"), getObject(#session).get("user_figure"), getObject(#session).get("user_sex")>
@@ -2048,14 +2018,14 @@ on updateState me, tstate, tProps
   [687] pushsymb 30 ............................. <#session>
   [689] pusharglist 1 ........................... <#session>
   [691] extcall 29 .............................. <getObject(#session)>
-  [693] pushcons 82 ............................. <"user_figure">
+  [693] pushcons 81 ............................. <"user_figure">
   [695] getlocal 6 .............................. <tFigure>
   [697] pusharglistnoret 3 ...................... <getObject(#session), "user_figure", tFigure>
   [699] objcall 36 .............................. getObject(#session).set("user_figure", tFigure)
   [701] getparam 0 .............................. <me>
   [703] pusharglist 1 ........................... <me>
   [705] objcall 43 .............................. <me.getInterface()>
-  [707] pushcons 81 ............................. <"update">
+  [707] pushcons 80 ............................. <"update">
   [709] pusharglistnoret 2 ...................... <me.getInterface(), "update">
   [711] objcall 93 .............................. me.getInterface().showHideFigureCreator("update")
   [713] pop 1
@@ -2092,7 +2062,7 @@ on updateState me, tstate, tProps
   [777] getparam 0 .............................. <me>
   [779] pusharglist 1 ........................... <me>
   [781] objcall 43 .............................. <me.getInterface()>
-  [783] pushcons 84 ............................. <"forced">
+  [783] pushcons 83 ............................. <"forced">
   [785] pusharglistnoret 2 ...................... <me.getInterface(), "forced">
   [787] objcall 96 .............................. me.getInterface().showLoadingWindow("forced")
   [789] pop 1
@@ -2104,13 +2074,13 @@ on updateState me, tstate, tProps
   [801] pushsymb 30 ............................. <#session>
   [803] pusharglist 1 ........................... <#session>
   [805] extcall 29 .............................. <getObject(#session)>
-  [807] pushcons 82 ............................. <"user_figure">
+  [807] pushcons 81 ............................. <"user_figure">
   [809] pusharglist 2 ........................... <getObject(#session), "user_figure">
   [811] objcall 32 .............................. <getObject(#session).get("user_figure")>
   [813] pushsymb 30 ............................. <#session>
   [815] pusharglist 1 ........................... <#session>
   [817] extcall 29 .............................. <getObject(#session)>
-  [819] pushcons 83 ............................. <"user_sex">
+  [819] pushcons 82 ............................. <"user_sex">
   [821] pusharglist 2 ........................... <getObject(#session), "user_sex">
   [823] objcall 32 .............................. <getObject(#session).get("user_sex")>
   [825] pusharglist 3 ........................... <getObject("Figure_System"), getObject(#session).get("user_figure"), getObject(#session).get("user_sex")>
@@ -2119,21 +2089,21 @@ on updateState me, tstate, tProps
   [832] pushsymb 30 ............................. <#session>
   [834] pusharglist 1 ........................... <#session>
   [836] extcall 29 .............................. <getObject(#session)>
-  [838] pushcons 82 ............................. <"user_figure">
+  [838] pushcons 81 ............................. <"user_figure">
   [840] getlocal 6 .............................. <tFigure>
   [842] pusharglistnoret 3 ...................... <getObject(#session), "user_figure", tFigure>
   [844] objcall 36 .............................. getObject(#session).set("user_figure", tFigure)
   [846] pushsymb 30 ............................. <#session>
   [848] pusharglist 1 ........................... <#session>
   [850] extcall 29 .............................. <getObject(#session)>
-  [852] pushcons 80 ............................. <"conf_coppa">
+  [852] pushcons 79 ............................. <"conf_coppa">
   [854] pusharglist 2 ........................... <getObject(#session), "conf_coppa">
   [856] objcall 32 .............................. <getObject(#session).get("conf_coppa")>
   [858] setlocal 7 .............................. tCoppaFlag = getObject(#session).get("conf_coppa")
   [860] pushsymb 30 ............................. <#session>
   [862] pusharglist 1 ........................... <#session>
   [864] extcall 29 .............................. <getObject(#session)>
-  [866] pushcons 52 ............................. <"conf_parent_email_request_reregistration">
+  [866] pushcons 51 ............................. <"conf_parent_email_request_reregistration">
   [868] pusharglist 2 ........................... <getObject(#session), "conf_parent_email_request_reregistration">
   [870] objcall 32 .............................. <getObject(#session).get("conf_parent_email_request_reregistration")>
   [872] setlocal 8 .............................. tParentEmailFlag = getObject(#session).get("conf_parent_email_request_reregistration")
@@ -2148,7 +2118,7 @@ on updateState me, tstate, tProps
   [887] getparam 0 .............................. <me>
   [889] pusharglist 1 ........................... <me>
   [891] objcall 43 .............................. <me.getInterface()>
-  [893] pushcons 85 ............................. <"coppa_forced">
+  [893] pushcons 84 ............................. <"coppa_forced">
   [895] pushint8 1 .............................. <1>
   [897] pusharglistnoret 3 ...................... <me.getInterface(), "coppa_forced", 1>
   [899] objcall 93 .............................. me.getInterface().showHideFigureCreator("coppa_forced", 1)
@@ -2164,7 +2134,7 @@ on updateState me, tstate, tProps
   [918] getparam 0 .............................. <me>
   [920] pusharglist 1 ........................... <me>
   [922] objcall 43 .............................. <me.getInterface()>
-  [924] pushcons 86 ............................. <"parent_email_coppa_forced">
+  [924] pushcons 85 ............................. <"parent_email_coppa_forced">
   [926] pushint8 1 .............................. <1>
   [928] pusharglistnoret 3 ...................... <me.getInterface(), "parent_email_coppa_forced", 1>
   [930] objcall 93 .............................. me.getInterface().showHideFigureCreator("parent_email_coppa_forced", 1)
@@ -2180,7 +2150,7 @@ on updateState me, tstate, tProps
   [948] getparam 0 .............................. <me>
   [950] pusharglist 1 ........................... <me>
   [952] objcall 43 .............................. <me.getInterface()>
-  [954] pushcons 87 ............................. <"parent_email_forced">
+  [954] pushcons 86 ............................. <"parent_email_forced">
   [956] pushint8 1 .............................. <1>
   [958] pusharglistnoret 3 ...................... <me.getInterface(), "parent_email_forced", 1>
   [960] objcall 93 .............................. me.getInterface().showHideFigureCreator("parent_email_forced", 1)
@@ -2188,21 +2158,21 @@ on updateState me, tstate, tProps
   [965] getparam 0 .............................. <me>
   [967] pusharglist 1 ........................... <me>
   [969] objcall 43 .............................. <me.getInterface()>
-  [971] pushcons 84 ............................. <"forced">
+  [971] pushcons 83 ............................. <"forced">
   [973] pushint8 1 .............................. <1>
   [975] pusharglistnoret 3 ...................... <me.getInterface(), "forced", 1>
   [977] objcall 93 .............................. me.getInterface().showHideFigureCreator("forced", 1)
   [979] pushsymb 30 ............................. <#session>
   [981] pusharglist 1 ........................... <#session>
   [983] extcall 29 .............................. <getObject(#session)>
-  [985] pushcons 52 ............................. <"conf_parent_email_request_reregistration">
+  [985] pushcons 51 ............................. <"conf_parent_email_request_reregistration">
   [987] pusharglist 2 ........................... <getObject(#session), "conf_parent_email_request_reregistration">
   [989] objcall 32 .............................. <getObject(#session).get("conf_parent_email_request_reregistration")>
   [991] jmpifz [1117] ........................... if getObject(#session).get("conf_parent_email_request_reregistration") then
   [994] pushsymb 30 ............................. <#session>
   [996] pusharglist 1 ........................... <#session>
   [998] extcall 29 .............................. <getObject(#session)>
-  [1000] pushcons 88 ............................ <"user_birthday">
+  [1000] pushcons 87 ............................ <"user_birthday">
   [1002] pusharglist 2 .......................... <getObject(#session), "user_birthday">
   [1004] objcall 32 ............................. <getObject(#session).get("user_birthday")>
   [1006] setlocal 9 ............................. tTempBirthday = getObject(#session).get("user_birthday")
@@ -2214,7 +2184,7 @@ on updateState me, tstate, tProps
   [1019] jmpifz [1092] .......................... if stringp(tTempBirthday) then
   [1022] getmovieprop 255 ....................... <the itemDelimiter>
   [1024] setlocal 11 ............................ tDelim = the itemDelimiter
-  [1026] pushcons 89 ............................ <".">
+  [1026] pushcons 88 ............................ <".">
   [1028] setmovieprop 255 ....................... the itemDelimiter = "."
   [1030] getlocal 9 ............................. <tTempBirthday>
   [1032] pushsymb 257 ........................... <#item>
@@ -2228,7 +2198,7 @@ on updateState me, tstate, tProps
   [1050] pushint8 3 ............................. <3>
   [1052] pusharglist 3 .......................... <tTempBirthday, #item, 3>
   [1054] objcall 243 ............................ <tTempBirthday.item[3]>
-  [1056] pushcons 89 ............................ <".">
+  [1056] pushcons 88 ............................ <".">
   [1058] joinstr ................................ <tTempBirthday.item[3] & ".">
   [1059] getlocal 9 ............................. <tTempBirthday>
   [1061] pushsymb 257 ........................... <#item>
@@ -2236,7 +2206,7 @@ on updateState me, tstate, tProps
   [1066] pusharglist 3 .......................... <tTempBirthday, #item, 2>
   [1068] objcall 243 ............................ <tTempBirthday.item[2]>
   [1070] joinstr ................................ <tTempBirthday.item[3] & "." & tTempBirthday.item[2]>
-  [1071] pushcons 89 ............................ <".">
+  [1071] pushcons 88 ............................ <".">
   [1073] joinstr ................................ <tTempBirthday.item[3] & "." & tTempBirthday.item[2] & ".">
   [1074] getlocal 9 ............................. <tTempBirthday>
   [1076] pushsymb 257 ........................... <#item>
@@ -2250,7 +2220,7 @@ on updateState me, tstate, tProps
   [1092] pushsymb 30 ............................ <#session>
   [1094] pusharglist 1 .......................... <#session>
   [1096] extcall 29 ............................. <getObject(#session)>
-  [1098] pushcons 90 ............................ <"user_name">
+  [1098] pushcons 89 ............................ <"user_name">
   [1100] pusharglist 2 .......................... <getObject(#session), "user_name">
   [1102] objcall 32 ............................. <getObject(#session).get("user_name")>
   [1104] setlocal 12 ............................ tHabboID = getObject(#session).get("user_name")
@@ -2266,7 +2236,7 @@ on updateState me, tstate, tProps
   [1125] jmp [1147] ............................. (case) otherwise:
   [1128] pop 1
   [1130] getparam 0 ............................. <me>
-  [1132] pushcons 91 ............................ <"Unknown state:">
+  [1132] pushcons 90 ............................ <"Unknown state:">
   [1134] getparam 1 ............................. <tstate>
   [1136] joinpadstr ............................. <"Unknown state:" && tstate>
   [1137] pushsymb 27 ............................ <#updateState>

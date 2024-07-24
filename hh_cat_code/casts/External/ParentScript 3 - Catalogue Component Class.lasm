@@ -718,33 +718,38 @@ on refreshCatalogue me
   [ 35] pusharglist 0 ........................... <[:]>
   [ 37] pushproplist ............................ <[:]>
   [ 38] setprop 322 ............................. pCatalogProps = [:]
-  [ 41] pushcons 27 ............................. <"connection.info.id">
-  [ 43] pusharglist 1 ........................... <"connection.info.id">
-  [ 45] extcall 252 ............................. <getVariable("connection.info.id")>
-  [ 47] pusharglist 1 ........................... <getVariable("connection.info.id")>
-  [ 49] extcall 331 ............................. <connectionExists(getVariable("connection.info.id"))>
-  [ 52] jmpifz [ 97] ............................ if connectionExists(getVariable("connection.info.id")) then
-  [ 55] getparam 0 .............................. <me>
-  [ 57] pusharglist 1 ........................... <me>
-  [ 59] objcall 318 ............................. <me.getLanguage()>
-  [ 62] setlocal 0 .............................. tLanguage = me.getLanguage()
-  [ 64] pushcons 27 ............................. <"connection.info.id">
-  [ 66] pusharglist 1 ........................... <"connection.info.id">
-  [ 68] extcall 252 ............................. <getVariable("connection.info.id")>
-  [ 70] pusharglist 1 ........................... <getVariable("connection.info.id")>
-  [ 72] extcall 332 ............................. <getConnection(getVariable("connection.info.id"))>
-  [ 75] pushcons 30 ............................. <"GCIX">
-  [ 77] pushsymb 89 ............................. <#string>
-  [ 79] pushcons 2 .............................. <"production">
-  [ 81] pushsymb 89 ............................. <#string>
-  [ 83] getlocal 0 .............................. <tLanguage>
-  [ 85] pusharglist 4 ........................... <[#string: "production", #string: tLanguage]>
-  [ 87] pushproplist ............................ <[#string: "production", #string: tLanguage]>
-  [ 88] pusharglist 3 ........................... <getConnection(getVariable("connection.info.id")), "GCIX", [#string: "production", #string: tLanguage]>
-  [ 90] objcall 333 ............................. <getConnection(getVariable("connection.info.id")).send("GCIX", [#string: "production", #string: tLanguage])>
-  [ 93] pusharglistnoret 1 ...................... <getConnection(getVariable("connection.info.id")).send("GCIX", [#string: "production", #string: tLanguage])>
-  [ 95] extcall 43 .............................. return getConnection(getVariable("connection.info.id")).send("GCIX", [#string: "production", #string: tLanguage])
-  [ 97] ret
+  [ 41] getprop 322 ............................. <pCatalogProps>
+  [ 44] pushcons 1 .............................. <"editmode">
+  [ 46] pushcons 2 .............................. <"production">
+  [ 48] pusharglistnoret 3 ...................... <pCatalogProps, "editmode", "production">
+  [ 50] objcall 236 ............................. pCatalogProps["editmode"] = "production"
+  [ 52] pushcons 27 ............................. <"connection.info.id">
+  [ 54] pusharglist 1 ........................... <"connection.info.id">
+  [ 56] extcall 252 ............................. <getVariable("connection.info.id")>
+  [ 58] pusharglist 1 ........................... <getVariable("connection.info.id")>
+  [ 60] extcall 331 ............................. <connectionExists(getVariable("connection.info.id"))>
+  [ 63] jmpifz [108] ............................ if connectionExists(getVariable("connection.info.id")) then
+  [ 66] getparam 0 .............................. <me>
+  [ 68] pusharglist 1 ........................... <me>
+  [ 70] objcall 318 ............................. <me.getLanguage()>
+  [ 73] setlocal 0 .............................. tLanguage = me.getLanguage()
+  [ 75] pushcons 27 ............................. <"connection.info.id">
+  [ 77] pusharglist 1 ........................... <"connection.info.id">
+  [ 79] extcall 252 ............................. <getVariable("connection.info.id")>
+  [ 81] pusharglist 1 ........................... <getVariable("connection.info.id")>
+  [ 83] extcall 332 ............................. <getConnection(getVariable("connection.info.id"))>
+  [ 86] pushcons 30 ............................. <"GCIX">
+  [ 88] pushsymb 89 ............................. <#string>
+  [ 90] pushcons 2 .............................. <"production">
+  [ 92] pushsymb 89 ............................. <#string>
+  [ 94] getlocal 0 .............................. <tLanguage>
+  [ 96] pusharglist 4 ........................... <[#string: "production", #string: tLanguage]>
+  [ 98] pushproplist ............................ <[#string: "production", #string: tLanguage]>
+  [ 99] pusharglist 3 ........................... <getConnection(getVariable("connection.info.id")), "GCIX", [#string: "production", #string: tLanguage]>
+  [101] objcall 333 ............................. <getConnection(getVariable("connection.info.id")).send("GCIX", [#string: "production", #string: tLanguage])>
+  [104] pusharglistnoret 1 ...................... <getConnection(getVariable("connection.info.id")).send("GCIX", [#string: "production", #string: tLanguage])>
+  [106] extcall 43 .............................. return getConnection(getVariable("connection.info.id")).send("GCIX", [#string: "production", #string: tLanguage])
+  [108] ret
 end
 
 on saveCataloguePage me, tdata

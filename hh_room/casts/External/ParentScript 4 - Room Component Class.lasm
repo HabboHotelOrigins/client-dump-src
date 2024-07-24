@@ -3935,12 +3935,12 @@ on executeEnterRoomAlert me
   [  6] gt ...................................... <pEnterRoomAlert.length > 0>
   [  7] jmpifz [ 32] ............................ if pEnterRoomAlert.length > 0 then
   [ 10] pushsymb 457 ............................ <#alert>
-  [ 13] pushsymb 458 ............................ <#msg>
+  [ 13] pushsymb 458 ............................ <#Msg>
   [ 16] getprop 633 ............................. <pEnterRoomAlert>
-  [ 19] pusharglist 2 ........................... <[#msg: pEnterRoomAlert]>
-  [ 21] pushproplist ............................ <[#msg: pEnterRoomAlert]>
-  [ 22] pusharglistnoret 2 ...................... <#alert, [#msg: pEnterRoomAlert]>
-  [ 24] extcall 310 ............................. executeMessage(#alert, [#msg: pEnterRoomAlert])
+  [ 19] pusharglist 2 ........................... <[#Msg: pEnterRoomAlert]>
+  [ 21] pushproplist ............................ <[#Msg: pEnterRoomAlert]>
+  [ 22] pusharglistnoret 2 ...................... <#alert, [#Msg: pEnterRoomAlert]>
+  [ 24] extcall 310 ............................. executeMessage(#alert, [#Msg: pEnterRoomAlert])
   [ 27] pushcons 2 .............................. <EMPTY>
   [ 29] setprop 633 ............................. pEnterRoomAlert = EMPTY
   [ 32] ret

@@ -83,7 +83,7 @@ on showCard me
   [ 32] getparam 0 .............................. <me>
   [ 34] pusharglist 1 ........................... <me>
   [ 36] objcall 75 .............................. <me.getID()>
-  [ 38] pushsymb 458 ............................ <#msg>
+  [ 38] pushsymb 458 ............................ <#Msg>
   [ 41] getprop 1745 ............................ <pMessage>
   [ 44] pushsymb 435 ............................ <#loc>
   [ 47] getparam 0 .............................. <me>
@@ -92,10 +92,10 @@ on showCard me
   [ 53] pusharglist 3 ........................... <me, #pSprList, 1>
   [ 55] objcall 101 ............................. <me.pSprList[1]>
   [ 57] getobjprop 435 .......................... <me.pSprList[1].loc>
-  [ 60] pusharglist 6 ........................... <[#id: me.getID(), #msg: pMessage, #loc: me.pSprList[1].loc]>
-  [ 62] pushproplist ............................ <[#id: me.getID(), #msg: pMessage, #loc: me.pSprList[1].loc]>
-  [ 63] pusharglistnoret 2 ...................... <getObject(pCardObj), [#id: me.getID(), #msg: pMessage, #loc: me.pSprList[1].loc]>
-  [ 65] objcall 2 ............................... getObject(pCardObj).define([#id: me.getID(), #msg: pMessage, #loc: me.pSprList[1].loc])
+  [ 60] pusharglist 6 ........................... <[#id: me.getID(), #Msg: pMessage, #loc: me.pSprList[1].loc]>
+  [ 62] pushproplist ............................ <[#id: me.getID(), #Msg: pMessage, #loc: me.pSprList[1].loc]>
+  [ 63] pusharglistnoret 2 ...................... <getObject(pCardObj), [#id: me.getID(), #Msg: pMessage, #loc: me.pSprList[1].loc]>
+  [ 65] objcall 2 ............................... getObject(pCardObj).define([#id: me.getID(), #Msg: pMessage, #loc: me.pSprList[1].loc])
   [ 67] pushint8 1 .............................. <1>
   [ 69] pusharglistnoret 1 ...................... <1>
   [ 71] extcall 31 .............................. return 1

@@ -433,16 +433,16 @@ on petNameUnacceptable me
   [ 38] pusharglistnoret 2 ...................... <tWndObj.getElement("dedication_text"), EMPTY>
   [ 40] objcall 98 .............................. tWndObj.getElement("dedication_text").setText(EMPTY)
   [ 42] pushsymb 495 ............................ <#alert>
-  [ 45] pushsymb 496 ............................ <#msg>
+  [ 45] pushsymb 496 ............................ <#Msg>
   [ 48] pushcons 23 ............................. <"catalog_pet_unacceptable">
   [ 50] pushsymb 237 ............................ <#id>
   [ 52] pushcons 24 ............................. <"ctlg_petunacceptable">
-  [ 54] pusharglist 4 ........................... <[#msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"]>
-  [ 56] pushproplist ............................ <[#msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"]>
-  [ 57] pusharglist 2 ........................... <#alert, [#msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"]>
-  [ 59] extcall 494 ............................. <executeMessage(#alert, [#msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"])>
-  [ 62] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"])>
-  [ 64] extcall 43 .............................. return executeMessage(#alert, [#msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"])
+  [ 54] pusharglist 4 ........................... <[#Msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"]>
+  [ 56] pushproplist ............................ <[#Msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"]>
+  [ 57] pusharglist 2 ........................... <#alert, [#Msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"]>
+  [ 59] extcall 494 ............................. <executeMessage(#alert, [#Msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"])>
+  [ 62] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"])>
+  [ 64] extcall 43 .............................. return executeMessage(#alert, [#Msg: "catalog_pet_unacceptable", #id: "ctlg_petunacceptable"])
   [ 66] ret
 end
 
@@ -922,16 +922,16 @@ on eventProc me, tEvent, tSprID, tProp
   [101] lt ...................................... <tText.length < 1>
   [102] jmpifz [132] ............................ if tText.length < 1 then / else
   [105] pushsymb 495 ............................ <#alert>
-  [108] pushsymb 496 ............................ <#msg>
+  [108] pushsymb 496 ............................ <#Msg>
   [111] pushcons 39 ............................. <"catalog_give_petname">
   [113] pushsymb 237 ............................ <#id>
   [115] pushcons 40 ............................. <"ctlg_petmsg">
-  [117] pusharglist 4 ........................... <[#msg: "catalog_give_petname", #id: "ctlg_petmsg"]>
-  [119] pushproplist ............................ <[#msg: "catalog_give_petname", #id: "ctlg_petmsg"]>
-  [120] pusharglist 2 ........................... <#alert, [#msg: "catalog_give_petname", #id: "ctlg_petmsg"]>
-  [122] extcall 494 ............................. <executeMessage(#alert, [#msg: "catalog_give_petname", #id: "ctlg_petmsg"])>
-  [125] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: "catalog_give_petname", #id: "ctlg_petmsg"])>
-  [127] extcall 43 .............................. return executeMessage(#alert, [#msg: "catalog_give_petname", #id: "ctlg_petmsg"])
+  [117] pusharglist 4 ........................... <[#Msg: "catalog_give_petname", #id: "ctlg_petmsg"]>
+  [119] pushproplist ............................ <[#Msg: "catalog_give_petname", #id: "ctlg_petmsg"]>
+  [120] pusharglist 2 ........................... <#alert, [#Msg: "catalog_give_petname", #id: "ctlg_petmsg"]>
+  [122] extcall 494 ............................. <executeMessage(#alert, [#Msg: "catalog_give_petname", #id: "ctlg_petmsg"])>
+  [125] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: "catalog_give_petname", #id: "ctlg_petmsg"])>
+  [127] extcall 43 .............................. return executeMessage(#alert, [#Msg: "catalog_give_petname", #id: "ctlg_petmsg"])
   [129] jmp [166]
   [132] getlocal 1 .............................. <tText>
   [134] getobjprop 193 .......................... <tText.length>
@@ -939,16 +939,16 @@ on eventProc me, tEvent, tSprID, tProp
   [138] gt ...................................... <tText.length > 15>
   [139] jmpifz [166] ............................ if tText.length > 15 then
   [142] pushsymb 495 ............................ <#alert>
-  [145] pushsymb 496 ............................ <#msg>
+  [145] pushsymb 496 ............................ <#Msg>
   [148] pushcons 41 ............................. <"catalog_pet_name_length">
   [150] pushsymb 237 ............................ <#id>
   [152] pushcons 40 ............................. <"ctlg_petmsg">
-  [154] pusharglist 4 ........................... <[#msg: "catalog_pet_name_length", #id: "ctlg_petmsg"]>
-  [156] pushproplist ............................ <[#msg: "catalog_pet_name_length", #id: "ctlg_petmsg"]>
-  [157] pusharglist 2 ........................... <#alert, [#msg: "catalog_pet_name_length", #id: "ctlg_petmsg"]>
-  [159] extcall 494 ............................. <executeMessage(#alert, [#msg: "catalog_pet_name_length", #id: "ctlg_petmsg"])>
-  [162] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: "catalog_pet_name_length", #id: "ctlg_petmsg"])>
-  [164] extcall 43 .............................. return executeMessage(#alert, [#msg: "catalog_pet_name_length", #id: "ctlg_petmsg"])
+  [154] pusharglist 4 ........................... <[#Msg: "catalog_pet_name_length", #id: "ctlg_petmsg"]>
+  [156] pushproplist ............................ <[#Msg: "catalog_pet_name_length", #id: "ctlg_petmsg"]>
+  [157] pusharglist 2 ........................... <#alert, [#Msg: "catalog_pet_name_length", #id: "ctlg_petmsg"]>
+  [159] extcall 494 ............................. <executeMessage(#alert, [#Msg: "catalog_pet_name_length", #id: "ctlg_petmsg"])>
+  [162] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: "catalog_pet_name_length", #id: "ctlg_petmsg"])>
+  [164] extcall 43 .............................. return executeMessage(#alert, [#Msg: "catalog_pet_name_length", #id: "ctlg_petmsg"])
   [166] getlocal 1 .............................. <tText>
   [168] pushsymb 341 ............................ <#char>
   [171] pushint8 1 .............................. <1>

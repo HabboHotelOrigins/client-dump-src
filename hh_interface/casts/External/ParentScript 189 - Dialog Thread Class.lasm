@@ -261,18 +261,18 @@ on ShowAlert me, tProps
   [ 37] pusharglist 1 ........................... <tProps>
   [ 39] extcall 87 .............................. <stringp(tProps)>
   [ 41] jmpifz [ 53] ............................ if stringp(tProps) then
-  [ 44] pushsymb 88 ............................. <#msg>
+  [ 44] pushsymb 88 ............................. <#Msg>
   [ 46] getparam 1 .............................. <tProps>
-  [ 48] pusharglist 2 ........................... <[#msg: tProps]>
-  [ 50] pushproplist ............................ <[#msg: tProps]>
-  [ 51] setparam 1 .............................. tProps = [#msg: tProps]
+  [ 48] pusharglist 2 ........................... <[#Msg: tProps]>
+  [ 50] pushproplist ............................ <[#Msg: tProps]>
+  [ 51] setparam 1 .............................. tProps = [#Msg: tProps]
   [ 53] getparam 1 .............................. <tProps>
-  [ 55] pushsymb 88 ............................. <#msg>
-  [ 57] pusharglist 2 ........................... <tProps, #msg>
-  [ 59] objcall 73 .............................. <tProps[#msg]>
-  [ 61] pusharglist 1 ........................... <tProps[#msg]>
-  [ 63] extcall 89 .............................. <getText(tProps[#msg])>
-  [ 65] setlocal 0 .............................. tText = getText(tProps[#msg])
+  [ 55] pushsymb 88 ............................. <#Msg>
+  [ 57] pusharglist 2 ........................... <tProps, #Msg>
+  [ 59] objcall 73 .............................. <tProps[#Msg]>
+  [ 61] pusharglist 1 ........................... <tProps[#Msg]>
+  [ 63] extcall 89 .............................. <getText(tProps[#Msg])>
+  [ 65] setlocal 0 .............................. tText = getText(tProps[#Msg])
   [ 67] pushcons 6 .............................. <"win_error">
   [ 69] pushcons 7 .............................. <"Notice!">
   [ 71] pusharglist 2 ........................... <"win_error", "Notice!">
@@ -799,12 +799,12 @@ on showDialog me, tWndID, tProps
   [437] eq ...................................... <count(tReportableUsers) = 0>
   [438] jmpifz [457] ............................ if count(tReportableUsers) = 0 then / else
   [441] getparam 0 .............................. <me>
-  [443] pushsymb 88 ............................. <#msg>
+  [443] pushsymb 88 ............................. <#Msg>
   [445] pushcons 29 ............................. <"help.cfh.error.nochathistory">
-  [447] pusharglist 2 ........................... <[#msg: "help.cfh.error.nochathistory"]>
-  [449] pushproplist ............................ <[#msg: "help.cfh.error.nochathistory"]>
-  [450] pusharglistnoret 2 ...................... <me, [#msg: "help.cfh.error.nochathistory"]>
-  [452] objcall 4 ............................... me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+  [447] pusharglist 2 ........................... <[#Msg: "help.cfh.error.nochathistory"]>
+  [449] pushproplist ............................ <[#Msg: "help.cfh.error.nochathistory"]>
+  [450] pusharglistnoret 2 ...................... <me, [#Msg: "help.cfh.error.nochathistory"]>
+  [452] objcall 4 ............................... me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
   [454] jmp [506]
   [457] pushcons 30 ............................. <"connection.info.id">
   [459] pusharglist 1 ........................... <"connection.info.id">
@@ -2084,12 +2084,12 @@ on showChatSelectionWindow me
   [ 56] eq ...................................... <tReportedUser = EMPTY>
   [ 57] jmpifz [ 78] ............................ if tReportedUser = EMPTY then
   [ 60] getparam 0 .............................. <me>
-  [ 62] pushsymb 88 ............................. <#msg>
+  [ 62] pushsymb 88 ............................. <#Msg>
   [ 64] pushcons 29 ............................. <"help.cfh.error.nochathistory">
-  [ 66] pusharglist 2 ........................... <[#msg: "help.cfh.error.nochathistory"]>
-  [ 68] pushproplist ............................ <[#msg: "help.cfh.error.nochathistory"]>
-  [ 69] pusharglistnoret 2 ...................... <me, [#msg: "help.cfh.error.nochathistory"]>
-  [ 71] objcall 4 ............................... me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+  [ 66] pusharglist 2 ........................... <[#Msg: "help.cfh.error.nochathistory"]>
+  [ 68] pushproplist ............................ <[#Msg: "help.cfh.error.nochathistory"]>
+  [ 69] pusharglistnoret 2 ...................... <me, [#Msg: "help.cfh.error.nochathistory"]>
+  [ 71] objcall 4 ............................... me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
   [ 73] pushzero ................................ <0>
   [ 74] pusharglistnoret 1 ...................... <0>
   [ 76] extcall 69 .............................. return 0
@@ -2268,12 +2268,12 @@ on showChatSelectionWindow me
   [409] endrepeat [242]
   [411] jmp [437]
   [414] getparam 0 .............................. <me>
-  [416] pushsymb 88 ............................. <#msg>
+  [416] pushsymb 88 ............................. <#Msg>
   [418] pushcons 29 ............................. <"help.cfh.error.nochathistory">
-  [420] pusharglist 2 ........................... <[#msg: "help.cfh.error.nochathistory"]>
-  [422] pushproplist ............................ <[#msg: "help.cfh.error.nochathistory"]>
-  [423] pusharglistnoret 2 ...................... <me, [#msg: "help.cfh.error.nochathistory"]>
-  [425] objcall 4 ............................... me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+  [420] pusharglist 2 ........................... <[#Msg: "help.cfh.error.nochathistory"]>
+  [422] pushproplist ............................ <[#Msg: "help.cfh.error.nochathistory"]>
+  [423] pusharglistnoret 2 ...................... <me, [#Msg: "help.cfh.error.nochathistory"]>
+  [425] objcall 4 ............................... me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
   [427] getlocal 2 .............................. <tWndObj>
   [429] pusharglist 1 ........................... <tWndObj>
   [431] objcall 197 ............................. <tWndObj.close()>
@@ -2374,12 +2374,12 @@ on sendCallForHelpWithReporting me
   [ 78] eq ...................................... <tReportedUser = EMPTY>
   [ 79] jmpifz [100] ............................ if tReportedUser = EMPTY then
   [ 82] getparam 0 .............................. <me>
-  [ 84] pushsymb 88 ............................. <#msg>
+  [ 84] pushsymb 88 ............................. <#Msg>
   [ 86] pushcons 29 ............................. <"help.cfh.error.nochathistory">
-  [ 88] pusharglist 2 ........................... <[#msg: "help.cfh.error.nochathistory"]>
-  [ 90] pushproplist ............................ <[#msg: "help.cfh.error.nochathistory"]>
-  [ 91] pusharglistnoret 2 ...................... <me, [#msg: "help.cfh.error.nochathistory"]>
-  [ 93] objcall 4 ............................... me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+  [ 88] pusharglist 2 ........................... <[#Msg: "help.cfh.error.nochathistory"]>
+  [ 90] pushproplist ............................ <[#Msg: "help.cfh.error.nochathistory"]>
+  [ 91] pusharglistnoret 2 ...................... <me, [#Msg: "help.cfh.error.nochathistory"]>
+  [ 93] objcall 4 ............................... me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
   [ 95] pushzero ................................ <0>
   [ 96] pusharglistnoret 1 ...................... <0>
   [ 98] extcall 69 .............................. return 0
@@ -2448,12 +2448,12 @@ on sendCallForHelpWithReporting me
   [218] eq ...................................... <tSelectedChatList.count = 0>
   [219] jmpifz [240] ............................ if tSelectedChatList.count = 0 then
   [222] getparam 0 .............................. <me>
-  [224] pushsymb 88 ............................. <#msg>
+  [224] pushsymb 88 ............................. <#Msg>
   [226] pushcons 29 ............................. <"help.cfh.error.nochathistory">
-  [228] pusharglist 2 ........................... <[#msg: "help.cfh.error.nochathistory"]>
-  [230] pushproplist ............................ <[#msg: "help.cfh.error.nochathistory"]>
-  [231] pusharglistnoret 2 ...................... <me, [#msg: "help.cfh.error.nochathistory"]>
-  [233] objcall 4 ............................... me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+  [228] pusharglist 2 ........................... <[#Msg: "help.cfh.error.nochathistory"]>
+  [230] pushproplist ............................ <[#Msg: "help.cfh.error.nochathistory"]>
+  [231] pusharglistnoret 2 ...................... <me, [#Msg: "help.cfh.error.nochathistory"]>
+  [233] objcall 4 ............................... me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
   [235] pushzero ................................ <0>
   [236] pusharglistnoret 1 ...................... <0>
   [238] extcall 69 .............................. return 0

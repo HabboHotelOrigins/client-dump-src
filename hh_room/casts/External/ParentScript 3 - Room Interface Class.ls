@@ -800,17 +800,17 @@ end
 on notify me, ttype
   case ttype of
     400:
-      executeMessage(#alert, [#msg: "room_cant_trade"])
+      executeMessage(#alert, [#Msg: "room_cant_trade"])
     401:
-      executeMessage(#alert, [#msg: "room_max_pet_limit"])
+      executeMessage(#alert, [#Msg: "room_max_pet_limit"])
     402:
-      executeMessage(#alert, [#msg: "room_cant_set_item"])
+      executeMessage(#alert, [#Msg: "room_cant_set_item"])
     403:
-      executeMessage(#alert, [#msg: "wallitem_post.it.limit"])
+      executeMessage(#alert, [#Msg: "wallitem_post.it.limit"])
     404:
-      executeMessage(#alert, [#msg: "queue_tile_limit"])
+      executeMessage(#alert, [#Msg: "queue_tile_limit"])
     405:
-      executeMessage(#alert, [#msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1])
+      executeMessage(#alert, [#Msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1])
   end case
 end
 

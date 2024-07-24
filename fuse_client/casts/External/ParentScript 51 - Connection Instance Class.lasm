@@ -18,57 +18,57 @@ on construct me
   [ 33] pushzero ................................ <0>
   [ 34] setprop 911 ............................. pUnicodeDirector = 0
   [ 37] pushzero ................................ <0>
-  [ 38] setprop 1202 ............................ pEncryptionOn = 0
+  [ 38] setprop 1203 ............................ pEncryptionOn = 0
   [ 41] pushcons 0 .............................. <"struct.message">
   [ 43] pusharglist 1 ........................... <"struct.message">
   [ 45] extcall 374 ............................. <getStructVariable("struct.message")>
-  [ 48] setprop 1203 ............................ pMsgStruct = getStructVariable("struct.message")
-  [ 51] getprop 1203 ............................ <pMsgStruct>
-  [ 54] pushsymb 1204 ........................... <#connection>
+  [ 48] setprop 1204 ............................ pMsgStruct = getStructVariable("struct.message")
+  [ 51] getprop 1204 ............................ <pMsgStruct>
+  [ 54] pushsymb 1205 ........................... <#connection>
   [ 57] getparam 0 .............................. <me>
   [ 59] pusharglistnoret 3 ...................... <pMsgStruct, #connection, me>
   [ 61] objcall 128 ............................. pMsgStruct.setaProp(#connection, me)
   [ 63] pushzero ................................ <0>
-  [ 64] setprop 1205 ............................ pMsgOffset = 0
+  [ 64] setprop 1206 ............................ pMsgOffset = 0
   [ 67] pushzero ................................ <0>
-  [ 68] setprop 1206 ............................ pMsgSize = 0
+  [ 68] setprop 1207 ............................ pMsgSize = 0
   [ 71] pushzero ................................ <0>
   [ 72] setprop 1086 ............................ pDecoder = 0
   [ 75] pushzero ................................ <0>
-  [ 76] setprop 1207 ............................ pEncoder = 0
+  [ 76] setprop 1208 ............................ pEncoder = 0
   [ 79] pushzero ................................ <0>
-  [ 80] setprop 1208 ............................ pHeaderDecoder = 0
+  [ 80] setprop 1209 ............................ pHeaderDecoder = 0
   [ 83] pushzero ................................ <0>
-  [ 84] setprop 1209 ............................ pHeaderEncoder = 0
+  [ 84] setprop 1210 ............................ pHeaderEncoder = 0
   [ 87] pushcons 1 .............................. <EMPTY>
-  [ 89] setprop 1210 ............................ pLastContent = EMPTY
+  [ 89] setprop 1211 ............................ pLastContent = EMPTY
   [ 92] pushzero ................................ <0>
-  [ 93] setprop 1211 ............................ pConnectionShouldBeKilled = 0
+  [ 93] setprop 1212 ............................ pConnectionShouldBeKilled = 0
   [ 96] pushcons 2 .............................. <"struct.pointer">
   [ 98] pusharglist 1 ........................... <"struct.pointer">
   [100] extcall 374 ............................. <getStructVariable("struct.pointer")>
-  [103] setprop 1212 ............................ pCommandsPntr = getStructVariable("struct.pointer")
+  [103] setprop 1213 ............................ pCommandsPntr = getStructVariable("struct.pointer")
   [106] pushcons 2 .............................. <"struct.pointer">
   [108] pusharglist 1 ........................... <"struct.pointer">
   [110] extcall 374 ............................. <getStructVariable("struct.pointer")>
-  [113] setprop 1213 ............................ pListenersPntr = getStructVariable("struct.pointer")
+  [113] setprop 1214 ............................ pListenersPntr = getStructVariable("struct.pointer")
   [116] getparam 0 .............................. <me>
   [118] pushcons 3 .............................. <"connection.log.level">
   [120] pushzero ................................ <0>
   [121] pusharglist 2 ........................... <"connection.log.level", 0>
   [123] extcall 373 ............................. <getIntVariable("connection.log.level", 0)>
   [126] pusharglistnoret 2 ...................... <me, getIntVariable("connection.log.level", 0)>
-  [128] objcall 1182 ............................ me.setLogMode(getIntVariable("connection.log.level", 0))
+  [128] objcall 1183 ............................ me.setLogMode(getIntVariable("connection.log.level", 0))
   [131] pushcons 1 .............................. <EMPTY>
-  [133] setprop 1214 ............................ pToken = EMPTY
+  [133] setprop 1215 ............................ pToken = EMPTY
   [136] pushzero ................................ <0>
-  [137] setprop 1215 ............................ pMsgCount = 0
+  [137] setprop 1216 ............................ pMsgCount = 0
   [140] pushzero ................................ <0>
-  [141] setprop 1216 ............................ pTx = 0
+  [141] setprop 1217 ............................ pTx = 0
   [144] pushzero ................................ <0>
-  [145] setprop 1217 ............................ pRx = 0
+  [145] setprop 1218 ............................ pRx = 0
   [148] pushzero ................................ <0>
-  [149] setprop 1218 ............................ pHelloReceived = 0
+  [149] setprop 1219 ............................ pHelloReceived = 0
   [152] pushint8 1 .............................. <1>
   [154] pusharglistnoret 1 ...................... <1>
   [156] extcall 25 .............................. return 1
@@ -79,37 +79,37 @@ on deconstruct me
   [  0] getparam 0 .............................. <me>
   [  2] pushint8 1 .............................. <1>
   [  4] pusharglist 2 ........................... <me, 1>
-  [  6] objcall 1173 ............................ <me.disconnect(1)>
+  [  6] objcall 1174 ............................ <me.disconnect(1)>
   [  9] pusharglistnoret 1 ...................... <me.disconnect(1)>
   [ 11] extcall 25 .............................. return me.disconnect(1)
   [ 13] ret
 end
 
 on connect me, tHost, tPort
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] getparam 1 .............................. <tHost>
-  [ 31] setprop 1219 ............................ pHost = tHost
+  [ 31] setprop 1220 ............................ pHost = tHost
   [ 34] getparam 2 .............................. <tPort>
-  [ 36] setprop 1220 ............................ pPort = tPort
+  [ 36] setprop 1221 ............................ pPort = tPort
   [ 39] pushcons 4 .............................. <"Multiuser">
   [ 41] pusharglist 1 ........................... <"Multiuser">
-  [ 43] extcall 1222 ............................ <xtra("Multiuser")>
+  [ 43] extcall 1223 ............................ <xtra("Multiuser")>
   [ 46] pusharglist 1 ........................... <xtra("Multiuser")>
   [ 48] extcall 116 ............................. <new(xtra("Multiuser"))>
-  [ 50] setprop 1221 ............................ pXtra = new(xtra("Multiuser"))
-  [ 53] getprop 1221 ............................ <pXtra>
+  [ 50] setprop 1222 ............................ pXtra = new(xtra("Multiuser"))
+  [ 53] getprop 1222 ............................ <pXtra>
   [ 56] pushint8 16 ............................. <16>
   [ 58] pushint16 1024 .......................... <1024>
   [ 61] mul ..................................... <16 * 1024>
@@ -118,26 +118,26 @@ on connect me, tHost, tPort
   [ 67] mul ..................................... <100 * 1024>
   [ 68] pushint8 100 ............................ <100>
   [ 70] pusharglistnoret 4 ...................... <pXtra, 16 * 1024, 100 * 1024, 100>
-  [ 72] objcall 1223 ............................ pXtra.setNetBufferLimits(16 * 1024, 100 * 1024, 100)
-  [ 75] getprop 1221 ............................ <pXtra>
-  [ 78] pushsymb 1198 ........................... <#xtraMsgHandler>
+  [ 72] objcall 1224 ............................ pXtra.setNetBufferLimits(16 * 1024, 100 * 1024, 100)
+  [ 75] getprop 1222 ............................ <pXtra>
+  [ 78] pushsymb 1199 ........................... <#xtraMsgHandler>
   [ 81] getparam 0 .............................. <me>
   [ 83] pusharglist 3 ........................... <pXtra, #xtraMsgHandler, me>
-  [ 85] objcall 1224 ............................ <pXtra.setNetMessageHandler(#xtraMsgHandler, me)>
+  [ 85] objcall 1225 ............................ <pXtra.setNetMessageHandler(#xtraMsgHandler, me)>
   [ 88] setlocal 0 .............................. tErrCode = pXtra.setNetMessageHandler(#xtraMsgHandler, me)
   [ 90] getlocal 0 .............................. <tErrCode>
   [ 92] pushzero ................................ <0>
   [ 93] eq ...................................... <tErrCode = 0>
   [ 94] jmpifz [122] ............................ if tErrCode = 0 then / else
-  [ 97] getprop 1221 ............................ <pXtra>
+  [ 97] getprop 1222 ............................ <pXtra>
   [100] pushcons 5 .............................. <"*">
   [102] pushcons 5 .............................. <"*">
-  [104] getprop 1219 ............................ <pHost>
-  [107] getprop 1220 ............................ <pPort>
+  [104] getprop 1220 ............................ <pHost>
+  [107] getprop 1221 ............................ <pPort>
   [110] pushcons 5 .............................. <"*">
   [112] pushint8 1 .............................. <1>
   [114] pusharglistnoret 7 ...................... <pXtra, "*", "*", pHost, pPort, "*", 1>
-  [116] objcall 1225 ............................ pXtra.connectToNetServer("*", "*", pHost, pPort, "*", 1)
+  [116] objcall 1226 ............................ pXtra.connectToNetServer("*", "*", pHost, pPort, "*", 1)
   [119] jmp [140]
   [122] getparam 0 .............................. <me>
   [124] pushcons 6 .............................. <"Creation of callback failed:">
@@ -149,8 +149,8 @@ on connect me, tHost, tPort
   [136] pusharglistnoret 1 ...................... <error(me, "Creation of callback failed:" && tErrCode, #connect)>
   [138] extcall 25 .............................. return error(me, "Creation of callback failed:" && tErrCode, #connect)
   [140] pushcons 1 .............................. <EMPTY>
-  [142] setprop 1210 ............................ pLastContent = EMPTY
-  [145] getprop 1226 ............................ <pLogMode>
+  [142] setprop 1211 ............................ pLastContent = EMPTY
+  [145] getprop 1227 ............................ <pLogMode>
   [148] pushzero ................................ <0>
   [149] gt ...................................... <pLogMode > 0>
   [150] jmpifz [177] ............................ if pLogMode > 0 then
@@ -160,12 +160,12 @@ on connect me, tHost, tPort
   [159] pusharglist 1 ........................... <me>
   [161] objcall 3 ............................... <me.getID()>
   [163] joinpadstr .............................. <"Connection initialized:" && me.getID()>
-  [164] getprop 1219 ............................ <pHost>
+  [164] getprop 1220 ............................ <pHost>
   [167] joinpadstr .............................. <"Connection initialized:" && me.getID() && pHost>
-  [168] getprop 1220 ............................ <pPort>
+  [168] getprop 1221 ............................ <pPort>
   [171] joinpadstr .............................. <"Connection initialized:" && me.getID() && pHost && pPort>
   [172] pusharglistnoret 2 ...................... <me, "Connection initialized:" && me.getID() && pHost && pPort>
-  [174] objcall 1201 ............................ me.log("Connection initialized:" && me.getID() && pHost && pPort)
+  [174] objcall 1202 ............................ me.log("Connection initialized:" && me.getID() && pHost && pPort)
   [177] pushint8 1 .............................. <1>
   [179] pusharglistnoret 1 ...................... <1>
   [181] extcall 25 .............................. return 1
@@ -181,31 +181,31 @@ on disconnect me, tControlled
   [ 10] pushint8 1 .............................. <1>
   [ 12] inv ..................................... <-1>
   [ 13] pusharglistnoret 2 ...................... <me, -1>
-  [ 15] objcall 1200 ............................ me.forwardMsg(-1)
+  [ 15] objcall 1201 ............................ me.forwardMsg(-1)
   [ 18] pushint8 1 .............................. <1>
-  [ 20] setprop 1211 ............................ pConnectionShouldBeKilled = 1
-  [ 23] getprop 1221 ............................ <pXtra>
+  [ 20] setprop 1212 ............................ pConnectionShouldBeKilled = 1
+  [ 23] getprop 1222 ............................ <pXtra>
   [ 26] pusharglist 1 ........................... <pXtra>
   [ 28] extcall 112 ............................. <objectp(pXtra)>
   [ 30] jmpifz [ 65] ............................ if objectp(pXtra) then
-  [ 33] getprop 1221 ............................ <pXtra>
+  [ 33] getprop 1222 ............................ <pXtra>
   [ 36] pushzero ................................ <0>
   [ 37] pushzero ................................ <0>
   [ 38] pushzero ................................ <0>
   [ 39] pusharglist 1 ........................... <0>
   [ 41] extcall 861 ............................. <numToChar(0)>
   [ 44] pusharglistnoret 4 ...................... <pXtra, 0, 0, numToChar(0)>
-  [ 46] objcall 1228 ............................ pXtra.sendNetMessage(0, 0, numToChar(0))
-  [ 49] getprop 1221 ............................ <pXtra>
+  [ 46] objcall 1229 ............................ pXtra.sendNetMessage(0, 0, numToChar(0))
+  [ 49] getprop 1222 ............................ <pXtra>
   [ 52] pusharglist 0 ........................... <>
   [ 54] extcall 32 .............................. <VOID>
   [ 56] pusharglist 0 ........................... <>
   [ 58] extcall 32 .............................. <VOID>
   [ 60] pusharglistnoret 3 ...................... <pXtra, VOID, VOID>
-  [ 62] objcall 1224 ............................ pXtra.setNetMessageHandler(VOID, VOID)
+  [ 62] objcall 1225 ............................ pXtra.setNetMessageHandler(VOID, VOID)
   [ 65] pusharglist 0 ........................... <>
   [ 67] extcall 32 .............................. <VOID>
-  [ 69] setprop 1221 ............................ pXtra = VOID
+  [ 69] setprop 1222 ............................ pXtra = VOID
   [ 72] getparam 1 .............................. <tControlled>
   [ 74] not ..................................... <not tControlled>
   [ 75] jmpifz [ 96] ............................ if not tControlled then
@@ -215,7 +215,7 @@ on disconnect me, tControlled
   [ 84] pusharglist 1 ........................... <me>
   [ 86] objcall 3 ............................... <me.getID()>
   [ 88] joinpadstr .............................. <"Connection disconnected:" && me.getID()>
-  [ 89] pushsymb 1173 ........................... <#disconnect>
+  [ 89] pushsymb 1174 ........................... <#disconnect>
   [ 92] pusharglistnoret 3 ...................... <me, "Connection disconnected:" && me.getID(), #disconnect>
   [ 94] extcall 39 .............................. error(me, "Connection disconnected:" && me.getID(), #disconnect)
   [ 96] pushint8 1 .............................. <1>
@@ -225,8 +225,8 @@ on disconnect me, tControlled
 end
 
 on connectionReady me
-  [  0] getprop 1230 ............................ <pConnectionOk>
-  [  3] getprop 1231 ............................ <pConnectionSecured>
+  [  0] getprop 1231 ............................ <pConnectionOk>
+  [  3] getprop 1232 ............................ <pConnectionSecured>
   [  6] and ..................................... <pConnectionOk and pConnectionSecured>
   [  7] pusharglistnoret 1 ...................... <pConnectionOk and pConnectionSecured>
   [  9] extcall 25 .............................. return pConnectionOk and pConnectionSecured
@@ -243,7 +243,7 @@ on setDecoder me, tDecoder
   [ 12] pushcons 9 .............................. <"Decoder object expected:">
   [ 14] getparam 1 .............................. <tDecoder>
   [ 16] joinpadstr .............................. <"Decoder object expected:" && tDecoder>
-  [ 17] pushsymb 1174 ........................... <#setDecoder>
+  [ 17] pushsymb 1175 ........................... <#setDecoder>
   [ 20] pusharglist 3 ........................... <me, "Decoder object expected:" && tDecoder, #setDecoder>
   [ 22] extcall 39 .............................. <error(me, "Decoder object expected:" && tDecoder, #setDecoder)>
   [ 24] pusharglistnoret 1 ...................... <error(me, "Decoder object expected:" && tDecoder, #setDecoder)>
@@ -274,7 +274,7 @@ on setEncoder me, tEncoder
   [ 12] pushcons 10 ............................. <"Encoder object expected:">
   [ 14] getparam 1 .............................. <tEncoder>
   [ 16] joinpadstr .............................. <"Encoder object expected:" && tEncoder>
-  [ 17] pushsymb 1176 ........................... <#setEncoder>
+  [ 17] pushsymb 1177 ........................... <#setEncoder>
   [ 20] pushsymb 972 ............................ <#major>
   [ 23] pusharglist 4 ........................... <me, "Encoder object expected:" && tEncoder, #setEncoder, #major>
   [ 25] extcall 39 .............................. <error(me, "Encoder object expected:" && tEncoder, #setEncoder, #major)>
@@ -282,7 +282,7 @@ on setEncoder me, tEncoder
   [ 29] extcall 25 .............................. return error(me, "Encoder object expected:" && tEncoder, #setEncoder, #major)
   [ 31] jmp [ 45]
   [ 34] getparam 1 .............................. <tEncoder>
-  [ 36] setprop 1207 ............................ pEncoder = tEncoder
+  [ 36] setprop 1208 ............................ pEncoder = tEncoder
   [ 39] pushint8 1 .............................. <1>
   [ 41] pusharglistnoret 1 ...................... <1>
   [ 43] extcall 25 .............................. return 1
@@ -290,7 +290,7 @@ on setEncoder me, tEncoder
 end
 
 on getEncoder me
-  [  0] getprop 1207 ............................ <pEncoder>
+  [  0] getprop 1208 ............................ <pEncoder>
   [  3] pusharglistnoret 1 ...................... <pEncoder>
   [  5] extcall 25 .............................. return pEncoder
   [  7] ret
@@ -306,7 +306,7 @@ on setHeaderDecoder me, tDecoder
   [ 12] pushcons 9 .............................. <"Decoder object expected:">
   [ 14] getparam 1 .............................. <tDecoder>
   [ 16] joinpadstr .............................. <"Decoder object expected:" && tDecoder>
-  [ 17] pushsymb 1178 ........................... <#setHeaderDecoder>
+  [ 17] pushsymb 1179 ........................... <#setHeaderDecoder>
   [ 20] pushsymb 972 ............................ <#major>
   [ 23] pusharglist 4 ........................... <me, "Decoder object expected:" && tDecoder, #setHeaderDecoder, #major>
   [ 25] extcall 39 .............................. <error(me, "Decoder object expected:" && tDecoder, #setHeaderDecoder, #major)>
@@ -314,7 +314,7 @@ on setHeaderDecoder me, tDecoder
   [ 29] extcall 25 .............................. return error(me, "Decoder object expected:" && tDecoder, #setHeaderDecoder, #major)
   [ 31] jmp [ 45]
   [ 34] getparam 1 .............................. <tDecoder>
-  [ 36] setprop 1208 ............................ pHeaderDecoder = tDecoder
+  [ 36] setprop 1209 ............................ pHeaderDecoder = tDecoder
   [ 39] pushint8 1 .............................. <1>
   [ 41] pusharglistnoret 1 ...................... <1>
   [ 43] extcall 25 .............................. return 1
@@ -322,7 +322,7 @@ on setHeaderDecoder me, tDecoder
 end
 
 on getHeaderDecoder me
-  [  0] getprop 1208 ............................ <pHeaderDecoder>
+  [  0] getprop 1209 ............................ <pHeaderDecoder>
   [  3] pusharglistnoret 1 ...................... <pHeaderDecoder>
   [  5] extcall 25 .............................. return pHeaderDecoder
   [  7] ret
@@ -338,7 +338,7 @@ on setHeaderEncoder me, tEncoder
   [ 12] pushcons 10 ............................. <"Encoder object expected:">
   [ 14] getparam 1 .............................. <tEncoder>
   [ 16] joinpadstr .............................. <"Encoder object expected:" && tEncoder>
-  [ 17] pushsymb 1180 ........................... <#setHeaderEncoder>
+  [ 17] pushsymb 1181 ........................... <#setHeaderEncoder>
   [ 20] pushsymb 972 ............................ <#major>
   [ 23] pusharglist 4 ........................... <me, "Encoder object expected:" && tEncoder, #setHeaderEncoder, #major>
   [ 25] extcall 39 .............................. <error(me, "Encoder object expected:" && tEncoder, #setHeaderEncoder, #major)>
@@ -346,7 +346,7 @@ on setHeaderEncoder me, tEncoder
   [ 29] extcall 25 .............................. return error(me, "Encoder object expected:" && tEncoder, #setHeaderEncoder, #major)
   [ 31] jmp [ 45]
   [ 34] getparam 1 .............................. <tEncoder>
-  [ 36] setprop 1209 ............................ pHeaderEncoder = tEncoder
+  [ 36] setprop 1210 ............................ pHeaderEncoder = tEncoder
   [ 39] pushint8 1 .............................. <1>
   [ 41] pusharglistnoret 1 ...................... <1>
   [ 43] extcall 25 .............................. return 1
@@ -354,7 +354,7 @@ on setHeaderEncoder me, tEncoder
 end
 
 on getHeaderEncoder me
-  [  0] getprop 1209 ............................ <pHeaderEncoder>
+  [  0] getprop 1210 ............................ <pHeaderEncoder>
   [  3] pusharglistnoret 1 ...................... <pHeaderEncoder>
   [  5] extcall 25 .............................. return pHeaderEncoder
   [  7] ret
@@ -370,14 +370,14 @@ on setLogMode me, tMode
   [ 14] pushcons 11 ............................. <"Invalid argument:">
   [ 16] getparam 1 .............................. <tMode>
   [ 18] joinpadstr .............................. <"Invalid argument:" && tMode>
-  [ 19] pushsymb 1182 ........................... <#setLogMode>
+  [ 19] pushsymb 1183 ........................... <#setLogMode>
   [ 22] pusharglist 3 ........................... <me, "Invalid argument:" && tMode, #setLogMode>
   [ 24] extcall 39 .............................. <error(me, "Invalid argument:" && tMode, #setLogMode)>
   [ 26] pusharglistnoret 1 ...................... <error(me, "Invalid argument:" && tMode, #setLogMode)>
   [ 28] extcall 25 .............................. return error(me, "Invalid argument:" && tMode, #setLogMode)
   [ 30] getparam 1 .............................. <tMode>
-  [ 32] setprop 1226 ............................ pLogMode = tMode
-  [ 35] getprop 1226 ............................ <pLogMode>
+  [ 32] setprop 1227 ............................ pLogMode = tMode
+  [ 35] getprop 1227 ............................ <pLogMode>
   [ 38] pushint8 2 .............................. <2>
   [ 40] eq ...................................... <pLogMode = 2>
   [ 41] jmpifz [ 81] ............................ if pLogMode = 2 then
@@ -390,13 +390,13 @@ on setLogMode me, tMode
   [ 57] extcall 52 .............................. <getmemnum("connectionLog.text")>
   [ 59] pusharglist 1 ........................... <getmemnum("connectionLog.text")>
   [ 61] extcall 41 .............................. <member(getmemnum("connectionLog.text"))>
-  [ 63] setprop 1234 ............................ pLogfield = member(getmemnum("connectionLog.text"))
+  [ 63] setprop 1235 ............................ pLogfield = member(getmemnum("connectionLog.text"))
   [ 66] jmp [ 81]
   [ 69] pusharglist 0 ........................... <>
   [ 71] extcall 32 .............................. <VOID>
-  [ 73] setprop 1234 ............................ pLogfield = VOID
+  [ 73] setprop 1235 ............................ pLogfield = VOID
   [ 76] pushint8 1 .............................. <1>
-  [ 78] setprop 1226 ............................ pLogMode = 1
+  [ 78] setprop 1227 ............................ pLogMode = 1
   [ 81] pushint8 1 .............................. <1>
   [ 83] pusharglistnoret 1 ...................... <1>
   [ 85] extcall 25 .............................. return 1
@@ -404,7 +404,7 @@ on setLogMode me, tMode
 end
 
 on getLogMode me
-  [  0] getprop 1226 ............................ <pLogMode>
+  [  0] getprop 1227 ............................ <pLogMode>
   [  3] pusharglistnoret 1 ...................... <pLogMode>
   [  5] extcall 25 .............................. return pLogMode
   [  7] ret
@@ -412,9 +412,9 @@ end
 
 on setEncryption me, tBoolean
   [  0] getparam 1 .............................. <tBoolean>
-  [  2] setprop 1202 ............................ pEncryptionOn = tBoolean
+  [  2] setprop 1203 ............................ pEncryptionOn = tBoolean
   [  5] pushint8 1 .............................. <1>
-  [  7] setprop 1231 ............................ pConnectionSecured = 1
+  [  7] setprop 1232 ............................ pConnectionSecured = 1
   [ 10] pushint8 1 .............................. <1>
   [ 12] pusharglistnoret 1 ...................... <1>
   [ 14] extcall 25 .............................. return 1
@@ -422,20 +422,20 @@ on setEncryption me, tBoolean
 end
 
 on send me, tCmd, tMsg
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1211 ............................ <pConnectionShouldBeKilled>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1212 ............................ <pConnectionShouldBeKilled>
   [ 32] jmpifz [ 40] ............................ if pConnectionShouldBeKilled then
   [ 35] pushzero ................................ <0>
   [ 36] pusharglistnoret 1 ...................... <0>
@@ -449,11 +449,11 @@ on send me, tCmd, tMsg
   [ 54] getparam 1 .............................. <tCmd>
   [ 56] getparam 2 .............................. <tMsg>
   [ 58] pusharglist 3 ........................... <me, tCmd, tMsg>
-  [ 60] objcall 1185 ............................ <me.sendNew(tCmd, tMsg)>
+  [ 60] objcall 1186 ............................ <me.sendNew(tCmd, tMsg)>
   [ 63] pusharglistnoret 1 ...................... <me.sendNew(tCmd, tMsg)>
   [ 65] extcall 25 .............................. return me.sendNew(tCmd, tMsg)
-  [ 67] getprop 1230 ............................ <pConnectionOk>
-  [ 70] getprop 1221 ............................ <pXtra>
+  [ 67] getprop 1231 ............................ <pConnectionOk>
+  [ 70] getprop 1222 ............................ <pXtra>
   [ 73] pusharglist 1 ........................... <pXtra>
   [ 75] extcall 112 ............................. <objectp(pXtra)>
   [ 77] and ..................................... <pConnectionOk and objectp(pXtra)>
@@ -465,7 +465,7 @@ on send me, tCmd, tMsg
   [ 88] pusharglist 1 ........................... <me>
   [ 90] objcall 3 ............................... <me.getID()>
   [ 92] joinpadstr .............................. <"Connection not ready:" && me.getID()>
-  [ 93] pushsymb 1055 ........................... <#send>
+  [ 93] pushsymb 1056 ........................... <#send>
   [ 96] pushsymb 972 ............................ <#major>
   [ 99] pusharglist 4 ........................... <me, "Connection not ready:" && me.getID(), #send, #major>
   [101] extcall 39 .............................. <error(me, "Connection not ready:" && me.getID(), #send, #major)>
@@ -480,7 +480,7 @@ on send me, tCmd, tMsg
   [121] pusharglist 1 ........................... <tMsg>
   [123] extcall 595 ............................. <string(tMsg)>
   [126] setparam 2 .............................. tMsg = string(tMsg)
-  [128] getprop 1202 ............................ <pEncryptionOn>
+  [128] getprop 1203 ............................ <pEncryptionOn>
   [131] not ..................................... <not pEncryptionOn>
   [132] getprop 911 ............................. <pUnicodeDirector>
   [135] and ..................................... <not pEncryptionOn and pUnicodeDirector>
@@ -504,8 +504,8 @@ on send me, tCmd, tMsg
   [174] jmpifz [195] ............................ if charToNum(tMsg.char[i]) > 127 then
   [177] getparam 0 .............................. <me>
   [179] pushcons 14 ............................. <"Encryption required for non-ascii content with SW11">
-  [181] pushsymb 1055 ........................... <#send>
-  [184] pushsymb 1236 ........................... <#critical>
+  [181] pushsymb 1056 ........................... <#send>
+  [184] pushsymb 1237 ........................... <#critical>
   [187] pusharglist 4 ........................... <me, "Encryption required for non-ascii content with SW11", #send, #critical>
   [189] extcall 39 .............................. <error(me, "Encryption required for non-ascii content with SW11", #send, #critical)>
   [191] pusharglistnoret 1 ...................... <error(me, "Encryption required for non-ascii content with SW11", #send, #critical)>
@@ -526,7 +526,7 @@ on send me, tCmd, tMsg
   [222] jmpifz [246] ............................ if tCmd.ilk <> #integer then
   [225] getparam 1 .............................. <tCmd>
   [227] setlocal 1 .............................. tStr = tCmd
-  [229] getprop 1212 ............................ <pCommandsPntr>
+  [229] getprop 1213 ............................ <pCommandsPntr>
   [232] pushsymb 113 ............................ <#value>
   [234] pusharglist 2 ........................... <pCommandsPntr, #value>
   [236] objcall 31 .............................. <pCommandsPntr.getaProp(#value)>
@@ -541,13 +541,13 @@ on send me, tCmd, tMsg
   [254] jmpifz [275] ............................ if tCmd.ilk = #void then
   [257] getparam 0 .............................. <me>
   [259] pushcons 15 ............................. <"Unrecognized command!">
-  [261] pushsymb 1055 ........................... <#send>
+  [261] pushsymb 1056 ........................... <#send>
   [264] pushsymb 972 ............................ <#major>
   [267] pusharglist 4 ........................... <me, "Unrecognized command!", #send, #major>
   [269] extcall 39 .............................. <error(me, "Unrecognized command!", #send, #major)>
   [271] pusharglistnoret 1 ...................... <error(me, "Unrecognized command!", #send, #major)>
   [273] extcall 25 .............................. return error(me, "Unrecognized command!", #send, #major)
-  [275] getprop 1226 ............................ <pLogMode>
+  [275] getprop 1227 ............................ <pLogMode>
   [278] pushzero ................................ <0>
   [279] gt ...................................... <pLogMode > 0>
   [280] jmpifz [307] ............................ if pLogMode > 0 then
@@ -564,7 +564,7 @@ on send me, tCmd, tMsg
   [299] getparam 2 .............................. <tMsg>
   [301] joinpadstr .............................. <"<--" && tStr && "(" & tCmd & ")" && tMsg>
   [302] pusharglistnoret 2 ...................... <me, "<--" && tStr && "(" & tCmd & ")" && tMsg>
-  [304] objcall 1201 ............................ me.log("<--" && tStr && "(" & tCmd & ")" && tMsg)
+  [304] objcall 1202 ............................ me.log("<--" && tStr && "(" & tCmd & ")" && tMsg)
   [307] getparam 1 .............................. <tCmd>
   [309] getparam 2 .............................. <tMsg>
   [311] joinstr ................................. <tCmd & tMsg>
@@ -649,8 +649,8 @@ on send me, tCmd, tMsg
   [464] getlocal 5 .............................. <tL1>
   [466] joinstr ................................. <tL3 & tL2 & tL1>
   [467] setlocal 8 .............................. tHeader = tL3 & tL2 & tL1
-  [469] getprop 1202 ............................ <pEncryptionOn>
-  [472] getprop 1207 ............................ <pEncoder>
+  [469] getprop 1203 ............................ <pEncryptionOn>
+  [472] getprop 1208 ............................ <pEncoder>
   [475] pusharglist 1 ........................... <pEncoder>
   [477] extcall 112 ............................. <objectp(pEncoder)>
   [479] and ..................................... <pEncryptionOn and objectp(pEncoder)>
@@ -663,14 +663,14 @@ on send me, tCmd, tMsg
   [494] objcall 22 .............................. <tMsg.char.count>
   [496] setlocal 10 ............................. tOriginalMessageLength = tMsg.char.count
   [498] getparam 0 .............................. <me>
-  [500] getprop 1216 ............................ <pTx>
+  [500] getprop 1217 ............................ <pTx>
   [503] pusharglist 2 ........................... <me, pTx>
-  [505] objcall 1197 ............................ <me.iterateRandom(pTx)>
-  [508] setprop 1216 ............................ pTx = me.iterateRandom(pTx)
-  [511] getprop 1207 ............................ <pEncoder>
+  [505] objcall 1198 ............................ <me.iterateRandom(pTx)>
+  [508] setprop 1217 ............................ pTx = me.iterateRandom(pTx)
+  [511] getprop 1208 ............................ <pEncoder>
   [514] getparam 2 .............................. <tMsg>
   [516] pusharglist 2 ........................... <pEncoder, tMsg>
-  [518] objcall 1054 ............................ <pEncoder.encipher(tMsg)>
+  [518] objcall 1238 ............................ <pEncoder.encipher(tMsg)>
   [521] setparam 2 .............................. tMsg = pEncoder.encipher(tMsg)
   [523] getparam 2 .............................. <tMsg>
   [525] pushsymb 291 ............................ <#char>
@@ -750,10 +750,10 @@ on send me, tCmd, tMsg
   [684] add
   [685] setlocal 0
   [687] endrepeat [642]
-  [689] getprop 1209 ............................ <pHeaderEncoder>
+  [689] getprop 1210 ............................ <pHeaderEncoder>
   [692] getlocal 8 .............................. <tHeader>
   [694] pusharglist 2 ........................... <pHeaderEncoder, tHeader>
-  [696] objcall 1054 ............................ <pHeaderEncoder.encipher(tHeader)>
+  [696] objcall 1238 ............................ <pHeaderEncoder.encipher(tHeader)>
   [699] setlocal 8 .............................. tHeader = pHeaderEncoder.encipher(tHeader)
   [701] pusharglist 0 ........................... <[]>
   [703] pushlist ................................ <[]>
@@ -803,14 +803,14 @@ on send me, tCmd, tMsg
   [785] joinstr ................................. <"Uncrypted message length " & tOriginalMessageLength & ", Message length " & tLength & ", Header " & tHeaderUncData & ", Encrypted header " & tHeaderDecData & ", Message content : " & tOriginalContent>
   [786] pusharglistnoret 1 ...................... <"Uncrypted message length " & tOriginalMessageLength & ", Message length " & tLength & ", Header " & tHeaderUncData & ", Encrypted header " & tHeaderDecData & ", Message content : " & tOriginalContent>
   [788] extcall 644 ............................. put "Uncrypted message length " & tOriginalMessageLength & ", Message length " & tLength & ", Header " & tHeaderUncData & ", Encrypted header " & tHeaderDecData & ", Message content : " & tOriginalContent
-  [791] getprop 1221 ............................ <pXtra>
+  [791] getprop 1222 ............................ <pXtra>
   [794] pushzero ................................ <0>
   [795] pushzero ................................ <0>
   [796] getlocal 8 .............................. <tHeader>
   [798] getparam 2 .............................. <tMsg>
   [800] joinstr ................................. <tHeader & tMsg>
   [801] pusharglistnoret 4 ...................... <pXtra, 0, 0, tHeader & tMsg>
-  [803] objcall 1228 ............................ pXtra.sendNetMessage(0, 0, tHeader & tMsg)
+  [803] objcall 1229 ............................ pXtra.sendNetMessage(0, 0, tHeader & tMsg)
   [806] pushint8 1 .............................. <1>
   [808] pusharglistnoret 1 ...................... <1>
   [810] extcall 25 .............................. return 1
@@ -818,21 +818,21 @@ on send me, tCmd, tMsg
 end
 
 on sendNew me, tCmd, tParmArr
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1230 ............................ <pConnectionOk>
-  [ 32] getprop 1221 ............................ <pXtra>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1231 ............................ <pConnectionOk>
+  [ 32] getprop 1222 ............................ <pXtra>
   [ 35] pusharglist 1 ........................... <pXtra>
   [ 37] extcall 112 ............................. <objectp(pXtra)>
   [ 39] and ..................................... <pConnectionOk and objectp(pXtra)>
@@ -844,7 +844,7 @@ on sendNew me, tCmd, tParmArr
   [ 50] pusharglist 1 ........................... <me>
   [ 52] objcall 3 ............................... <me.getID()>
   [ 54] joinpadstr .............................. <"Connection not ready:" && me.getID()>
-  [ 55] pushsymb 1055 ........................... <#send>
+  [ 55] pushsymb 1056 ........................... <#send>
   [ 58] pushsymb 972 ............................ <#major>
   [ 61] pusharglist 4 ........................... <me, "Connection not ready:" && me.getID(), #send, #major>
   [ 63] extcall 39 .............................. <error(me, "Connection not ready:" && me.getID(), #send, #major)>
@@ -913,7 +913,7 @@ on sendNew me, tCmd, tParmArr
   [194] joinstr ................................. <"String expected:" && tCmd & ":">
   [195] getlocal 4 .............................. <tParm>
   [197] joinstr ................................. <"String expected:" && tCmd & ":" & tParm>
-  [198] pushsymb 1185 ........................... <#sendNew>
+  [198] pushsymb 1186 ........................... <#sendNew>
   [201] pushsymb 972 ............................ <#major>
   [204] pusharglist 4 ........................... <me, "String expected:" && tCmd & ":" & tParm, #sendNew, #major>
   [206] extcall 39 .............................. <error(me, "String expected:" && tCmd & ":" & tParm, #sendNew, #major)>
@@ -994,7 +994,7 @@ on sendNew me, tCmd, tParmArr
   [344] setlocal 1 .............................. tLength = tLength + tLen + 2
   [346] jmp [736]
   [349] peek 0
-  [351] pushsymb 1245 ........................... <#short>
+  [351] pushsymb 1247 ........................... <#short>
   [354] eq
   [355] jmpifz [472] ............................ (case) #short:
   [358] getlocal 4 .............................. <tParm>
@@ -1016,7 +1016,7 @@ on sendNew me, tCmd, tParmArr
   [392] joinstr ................................. <"Short expected:" && tCmd & ":">
   [393] getlocal 4 .............................. <tParm>
   [395] joinstr ................................. <"Short expected:" && tCmd & ":" & tParm>
-  [396] pushsymb 1185 ........................... <#sendNew>
+  [396] pushsymb 1186 ........................... <#sendNew>
   [399] pushsymb 972 ............................ <#major>
   [402] pusharglist 4 ........................... <me, "Short expected:" && tCmd & ":" & tParm, #sendNew, #major>
   [404] extcall 39 .............................. <error(me, "Short expected:" && tCmd & ":" & tParm, #sendNew, #major)>
@@ -1057,11 +1057,11 @@ on sendNew me, tCmd, tParmArr
   [477] nteq
   [478] jmpifz [490] ............................ (case) #integer, ...
   [481] peek 0
-  [483] pushsymb 1246 ........................... <#boolean>
+  [483] pushsymb 1248 ........................... <#boolean>
   [486] eq
   [487] jmpifz [719] ............................ (case) ..., #boolean:
   [490] getlocal 3 .............................. <ttype>
-  [492] pushsymb 1246 ........................... <#boolean>
+  [492] pushsymb 1248 ........................... <#boolean>
   [495] eq ...................................... <ttype = #boolean>
   [496] jmpifz [505] ............................ if ttype = #boolean then
   [499] getlocal 4 .............................. <tParm>
@@ -1087,7 +1087,7 @@ on sendNew me, tCmd, tParmArr
   [539] joinstr ................................. <"Integer expected:" && tCmd & ":">
   [540] getlocal 4 .............................. <tParm>
   [542] joinstr ................................. <"Integer expected:" && tCmd & ":" & tParm>
-  [543] pushsymb 1185 ........................... <#sendNew>
+  [543] pushsymb 1186 ........................... <#sendNew>
   [546] pushsymb 972 ............................ <#major>
   [549] pusharglist 4 ........................... <me, "Integer expected:" && tCmd & ":" & tParm, #sendNew, #major>
   [551] extcall 39 .............................. <error(me, "Integer expected:" && tCmd & ":" & tParm, #sendNew, #major)>
@@ -1183,7 +1183,7 @@ on sendNew me, tCmd, tParmArr
   [721] pushcons 28 ............................. <"Unsupported param type:">
   [723] getlocal 3 .............................. <ttype>
   [725] joinpadstr .............................. <"Unsupported param type:" && ttype>
-  [726] pushsymb 1055 ........................... <#send>
+  [726] pushsymb 1056 ........................... <#send>
   [729] pushsymb 972 ............................ <#major>
   [732] pusharglistnoret 4 ...................... <me, "Unsupported param type:" && ttype, #send, #major>
   [734] extcall 39 .............................. error(me, "Unsupported param type:" && ttype, #send, #major)
@@ -1200,7 +1200,7 @@ on sendNew me, tCmd, tParmArr
   [757] jmpifz [781] ............................ if tCmd.ilk <> #integer then
   [760] getparam 1 .............................. <tCmd>
   [762] setlocal 11 ............................. tStr = tCmd
-  [764] getprop 1212 ............................ <pCommandsPntr>
+  [764] getprop 1213 ............................ <pCommandsPntr>
   [767] pushsymb 113 ............................ <#value>
   [769] pusharglist 2 ........................... <pCommandsPntr, #value>
   [771] objcall 31 .............................. <pCommandsPntr.getaProp(#value)>
@@ -1215,13 +1215,13 @@ on sendNew me, tCmd, tParmArr
   [789] jmpifz [810] ............................ if tCmd.ilk = #void then
   [792] getparam 0 .............................. <me>
   [794] pushcons 15 ............................. <"Unrecognized command!">
-  [796] pushsymb 1055 ........................... <#send>
+  [796] pushsymb 1056 ........................... <#send>
   [799] pushsymb 972 ............................ <#major>
   [802] pusharglist 4 ........................... <me, "Unrecognized command!", #send, #major>
   [804] extcall 39 .............................. <error(me, "Unrecognized command!", #send, #major)>
   [806] pusharglistnoret 1 ...................... <error(me, "Unrecognized command!", #send, #major)>
   [808] extcall 25 .............................. return error(me, "Unrecognized command!", #send, #major)
-  [810] getprop 1226 ............................ <pLogMode>
+  [810] getprop 1227 ............................ <pLogMode>
   [813] pushzero ................................ <0>
   [814] gt ...................................... <pLogMode > 0>
   [815] jmpifz [842] ............................ if pLogMode > 0 then
@@ -1238,7 +1238,7 @@ on sendNew me, tCmd, tParmArr
   [834] getlocal 0 .............................. <tMsg>
   [836] joinpadstr .............................. <"<--" && tStr && "(" & tCmd & ")" && tMsg>
   [837] pusharglistnoret 2 ...................... <me, "<--" && tStr && "(" & tCmd & ")" && tMsg>
-  [839] objcall 1201 ............................ me.log("<--" && tStr && "(" & tCmd & ")" && tMsg)
+  [839] objcall 1202 ............................ me.log("<--" && tStr && "(" & tCmd & ")" && tMsg)
   [842] getparam 1 .............................. <tCmd>
   [844] getlocal 0 .............................. <tMsg>
   [846] joinstr ................................. <tCmd & tMsg>
@@ -1283,8 +1283,8 @@ on sendNew me, tCmd, tParmArr
   [930] getlocal 13 ............................. <tL1>
   [932] joinstr ................................. <tL3 & tL2 & tL1>
   [933] setlocal 16 ............................. tHeader = tL3 & tL2 & tL1
-  [935] getprop 1202 ............................ <pEncryptionOn>
-  [938] getprop 1207 ............................ <pEncoder>
+  [935] getprop 1203 ............................ <pEncryptionOn>
+  [938] getprop 1208 ............................ <pEncoder>
   [941] pusharglist 1 ........................... <pEncoder>
   [943] extcall 112 ............................. <objectp(pEncoder)>
   [945] and ..................................... <pEncryptionOn and objectp(pEncoder)>
@@ -1297,14 +1297,14 @@ on sendNew me, tCmd, tParmArr
   [960] objcall 22 .............................. <tMsg.char.count>
   [962] setlocal 18 ............................. tOriginalMessageLength = tMsg.char.count
   [964] getparam 0 .............................. <me>
-  [966] getprop 1216 ............................ <pTx>
+  [966] getprop 1217 ............................ <pTx>
   [969] pusharglist 2 ........................... <me, pTx>
-  [971] objcall 1197 ............................ <me.iterateRandom(pTx)>
-  [974] setprop 1216 ............................ pTx = me.iterateRandom(pTx)
-  [977] getprop 1207 ............................ <pEncoder>
+  [971] objcall 1198 ............................ <me.iterateRandom(pTx)>
+  [974] setprop 1217 ............................ pTx = me.iterateRandom(pTx)
+  [977] getprop 1208 ............................ <pEncoder>
   [980] getlocal 0 .............................. <tMsg>
   [982] pusharglist 2 ........................... <pEncoder, tMsg>
-  [984] objcall 1054 ............................ <pEncoder.encipher(tMsg)>
+  [984] objcall 1238 ............................ <pEncoder.encipher(tMsg)>
   [987] setlocal 0 .............................. tMsg = pEncoder.encipher(tMsg)
   [989] getlocal 0 .............................. <tMsg>
   [991] pushsymb 291 ............................ <#char>
@@ -1384,10 +1384,10 @@ on sendNew me, tCmd, tParmArr
   [1150] add
   [1151] setlocal 2
   [1153] endrepeat [1108]
-  [1155] getprop 1209 ........................... <pHeaderEncoder>
+  [1155] getprop 1210 ........................... <pHeaderEncoder>
   [1158] getlocal 16 ............................ <tHeader>
   [1160] pusharglist 2 .......................... <pHeaderEncoder, tHeader>
-  [1162] objcall 1054 ........................... <pHeaderEncoder.encipher(tHeader)>
+  [1162] objcall 1238 ........................... <pHeaderEncoder.encipher(tHeader)>
   [1165] setlocal 16 ............................ tHeader = pHeaderEncoder.encipher(tHeader)
   [1167] pusharglist 0 .......................... <[]>
   [1169] pushlist ............................... <[]>
@@ -1437,14 +1437,14 @@ on sendNew me, tCmd, tParmArr
   [1251] joinstr ................................ <"Uncrypted message length " & tOriginalMessageLength & ", Message length " & tLength & ", Header " & tHeaderUncData & ", Encrypted header " & tHeaderDecData & ", Message content : " & tOriginalContent>
   [1252] pusharglistnoret 1 ..................... <"Uncrypted message length " & tOriginalMessageLength & ", Message length " & tLength & ", Header " & tHeaderUncData & ", Encrypted header " & tHeaderDecData & ", Message content : " & tOriginalContent>
   [1254] extcall 644 ............................ put "Uncrypted message length " & tOriginalMessageLength & ", Message length " & tLength & ", Header " & tHeaderUncData & ", Encrypted header " & tHeaderDecData & ", Message content : " & tOriginalContent
-  [1257] getprop 1221 ........................... <pXtra>
+  [1257] getprop 1222 ........................... <pXtra>
   [1260] pushzero ............................... <0>
   [1261] pushzero ............................... <0>
   [1262] getlocal 16 ............................ <tHeader>
   [1264] getlocal 0 ............................. <tMsg>
   [1266] joinstr ................................ <tHeader & tMsg>
   [1267] pusharglistnoret 4 ..................... <pXtra, 0, 0, tHeader & tMsg>
-  [1269] objcall 1228 ........................... pXtra.sendNetMessage(0, 0, tHeader & tMsg)
+  [1269] objcall 1229 ........................... pXtra.sendNetMessage(0, 0, tHeader & tMsg)
   [1272] pushint8 1 ............................. <1>
   [1274] pusharglistnoret 1 ..................... <1>
   [1276] extcall 25 ............................. return 1
@@ -1452,19 +1452,19 @@ on sendNew me, tCmd, tParmArr
 end
 
 on randomPad me, tMsg, tTarget
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] pushzero ................................ <0>
   [ 30] pushint8 103 ............................ <103>
   [ 32] pusharglist 2 ........................... <[0, 103]>
@@ -1519,19 +1519,19 @@ on randomPad me, tMsg, tTarget
 end
 
 on unPad me, tMsg
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] pushint8 103 ............................ <103>
   [ 31] setlocal 0 .............................. tEscapeChar = 103
   [ 33] pushzero ................................ <0>
@@ -1578,19 +1578,19 @@ on unPad me, tMsg
 end
 
 on addPad me, tMsg, tAmount
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] getparam 1 .............................. <tMsg>
   [ 31] setlocal 0 .............................. tContent = tMsg
   [ 33] pushint8 1 .............................. <1>
@@ -1619,19 +1619,19 @@ on addPad me, tMsg, tAmount
 end
 
 on removePad me, tMsg, tAmount
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] getparam 1 .............................. <tMsg>
   [ 31] getparam 2 .............................. <tAmount>
   [ 33] pushint8 1 .............................. <1>
@@ -1646,9 +1646,9 @@ on removePad me, tMsg, tAmount
 end
 
 on getWaitingMessagesCount me
-  [  0] getprop 1221 ............................ <pXtra>
+  [  0] getprop 1222 ............................ <pXtra>
   [  3] pusharglist 1 ........................... <pXtra>
-  [  5] objcall 1256 ............................ <pXtra.getNumberWaitingNetMessages()>
+  [  5] objcall 1258 ............................ <pXtra.getNumberWaitingNetMessages()>
   [  8] pusharglistnoret 1 ...................... <pXtra.getNumberWaitingNetMessages()>
   [ 10] extcall 25 .............................. return pXtra.getNumberWaitingNetMessages()
   [ 12] ret
@@ -1661,10 +1661,10 @@ on processWaitingMessages me, tCount
   [  6] jmpifz [ 13] ............................ if voidp(tCount) then
   [  9] pushint8 1 .............................. <1>
   [ 11] setparam 1 .............................. tCount = 1
-  [ 13] getprop 1221 ............................ <pXtra>
+  [ 13] getprop 1222 ............................ <pXtra>
   [ 16] getparam 1 .............................. <tCount>
   [ 18] pusharglist 2 ........................... <pXtra, tCount>
-  [ 20] objcall 1257 ............................ <pXtra.checkNetMessages(tCount)>
+  [ 20] objcall 1259 ............................ <pXtra.checkNetMessages(tCount)>
   [ 23] pusharglistnoret 1 ...................... <pXtra.checkNetMessages(tCount)>
   [ 25] extcall 25 .............................. return pXtra.checkNetMessages(tCount)
   [ 27] ret
@@ -1673,51 +1673,51 @@ end
 on getProperty me, tProp
   [  0] getparam 1 .............................. <tProp>
   [  2] peek 0 .................................. case tProp of
-  [  4] pushsymb 1222 ........................... <#xtra>
+  [  4] pushsymb 1223 ........................... <#xtra>
   [  7] eq
   [  8] jmpifz [ 23] ............................ (case) #xtra:
   [ 11] pop 1
-  [ 13] getprop 1221 ............................ <pXtra>
+  [ 13] getprop 1222 ............................ <pXtra>
   [ 16] pusharglistnoret 1 ...................... <pXtra>
   [ 18] extcall 25 .............................. return pXtra
   [ 20] jmp [175]
   [ 23] peek 0
-  [ 25] pushsymb 1258 ........................... <#host>
+  [ 25] pushsymb 1260 ........................... <#host>
   [ 28] eq
   [ 29] jmpifz [ 44] ............................ (case) #host:
   [ 32] pop 1
-  [ 34] getprop 1219 ............................ <pHost>
+  [ 34] getprop 1220 ............................ <pHost>
   [ 37] pusharglistnoret 1 ...................... <pHost>
   [ 39] extcall 25 .............................. return pHost
   [ 41] jmp [175]
   [ 44] peek 0
-  [ 46] pushsymb 1259 ........................... <#port>
+  [ 46] pushsymb 1261 ........................... <#port>
   [ 49] eq
   [ 50] jmpifz [ 65] ............................ (case) #port:
   [ 53] pop 1
-  [ 55] getprop 1220 ............................ <pPort>
+  [ 55] getprop 1221 ............................ <pPort>
   [ 58] pusharglistnoret 1 ...................... <pPort>
   [ 60] extcall 25 .............................. return pPort
   [ 62] jmp [175]
   [ 65] peek 0
-  [ 67] pushsymb 1260 ........................... <#decoder>
+  [ 67] pushsymb 1262 ........................... <#decoder>
   [ 70] eq
   [ 71] jmpifz [ 90] ............................ (case) #decoder:
   [ 74] pop 1
   [ 76] getparam 0 .............................. <me>
   [ 78] pusharglist 1 ........................... <me>
-  [ 80] objcall 1175 ............................ <me.getDecoder()>
+  [ 80] objcall 1176 ............................ <me.getDecoder()>
   [ 83] pusharglistnoret 1 ...................... <me.getDecoder()>
   [ 85] extcall 25 .............................. return me.getDecoder()
   [ 87] jmp [175]
   [ 90] peek 0
-  [ 92] pushsymb 1261 ........................... <#logmode>
+  [ 92] pushsymb 1263 ........................... <#logmode>
   [ 95] eq
   [ 96] jmpifz [115] ............................ (case) #logmode:
   [ 99] pop 1
   [101] getparam 0 .............................. <me>
   [103] pusharglist 1 ........................... <me>
-  [105] objcall 1183 ............................ <me.getLogMode()>
+  [105] objcall 1184 ............................ <me.getLogMode()>
   [108] pusharglistnoret 1 ...................... <me.getLogMode()>
   [110] extcall 25 .............................. return me.getLogMode()
   [112] jmp [175]
@@ -1726,7 +1726,7 @@ on getProperty me, tProp
   [120] eq
   [121] jmpifz [136] ............................ (case) #listener:
   [124] pop 1
-  [126] getprop 1213 ............................ <pListenersPntr>
+  [126] getprop 1214 ............................ <pListenersPntr>
   [129] pusharglistnoret 1 ...................... <pListenersPntr>
   [131] extcall 25 .............................. return pListenersPntr
   [133] jmp [175]
@@ -1735,16 +1735,16 @@ on getProperty me, tProp
   [141] eq
   [142] jmpifz [157] ............................ (case) #commands:
   [145] pop 1
-  [147] getprop 1212 ............................ <pCommandsPntr>
+  [147] getprop 1213 ............................ <pCommandsPntr>
   [150] pusharglistnoret 1 ...................... <pCommandsPntr>
   [152] extcall 25 .............................. return pCommandsPntr
   [154] jmp [175]
   [157] peek 0
-  [159] pushsymb 1052 ........................... <#message>
+  [159] pushsymb 1054 ........................... <#message>
   [162] eq
   [163] jmpifz [175] ............................ (case) #message:
   [166] pop 1
-  [168] getprop 1203 ............................ <pMsgStruct>
+  [168] getprop 1204 ............................ <pMsgStruct>
   [171] pusharglistnoret 1 ...................... <pMsgStruct>
   [173] extcall 25 .............................. return pMsgStruct
   [175] pop 1 ................................... end case
@@ -1757,26 +1757,26 @@ end
 on setProperty me, tProp, tValue
   [  0] getparam 1 .............................. <tProp>
   [  2] peek 0 .................................. case tProp of
-  [  4] pushsymb 1260 ........................... <#decoder>
+  [  4] pushsymb 1262 ........................... <#decoder>
   [  7] eq
   [  8] jmpifz [ 29] ............................ (case) #decoder:
   [ 11] pop 1
   [ 13] getparam 0 .............................. <me>
   [ 15] getparam 2 .............................. <tValue>
   [ 17] pusharglist 2 ........................... <me, tValue>
-  [ 19] objcall 1174 ............................ <me.setDecoder(tValue)>
+  [ 19] objcall 1175 ............................ <me.setDecoder(tValue)>
   [ 22] pusharglistnoret 1 ...................... <me.setDecoder(tValue)>
   [ 24] extcall 25 .............................. return me.setDecoder(tValue)
   [ 26] jmp [147]
   [ 29] peek 0
-  [ 31] pushsymb 1261 ........................... <#logmode>
+  [ 31] pushsymb 1263 ........................... <#logmode>
   [ 34] eq
   [ 35] jmpifz [ 56] ............................ (case) #logmode:
   [ 38] pop 1
   [ 40] getparam 0 .............................. <me>
   [ 42] getparam 2 .............................. <tValue>
   [ 44] pusharglist 2 ........................... <me, tValue>
-  [ 46] objcall 1182 ............................ <me.setLogMode(tValue)>
+  [ 46] objcall 1183 ............................ <me.setLogMode(tValue)>
   [ 49] pusharglistnoret 1 ...................... <me.setLogMode(tValue)>
   [ 51] extcall 25 .............................. return me.setLogMode(tValue)
   [ 53] jmp [147]
@@ -1790,7 +1790,7 @@ on setProperty me, tProp, tValue
   [ 73] eq ...................................... <tValue.ilk = #struct>
   [ 74] jmpifz [ 93] ............................ if tValue.ilk = #struct then / else
   [ 77] getparam 2 .............................. <tValue>
-  [ 79] setprop 1213 ............................ pListenersPntr = tValue
+  [ 79] setprop 1214 ............................ pListenersPntr = tValue
   [ 82] pop 1
   [ 84] pushint8 1 .............................. <1>
   [ 86] pusharglistnoret 1 ...................... <1>
@@ -1811,7 +1811,7 @@ on setProperty me, tProp, tValue
   [120] eq ...................................... <tValue.ilk = #struct>
   [121] jmpifz [140] ............................ if tValue.ilk = #struct then / else
   [124] getparam 2 .............................. <tValue>
-  [126] setprop 1212 ............................ pCommandsPntr = tValue
+  [126] setprop 1213 ............................ pCommandsPntr = tValue
   [129] pop 1
   [131] pushint8 1 .............................. <1>
   [133] pusharglistnoret 1 ...................... <1>
@@ -1829,20 +1829,20 @@ on setProperty me, tProp, tValue
 end
 
 on GetBoolFrom me
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1203 ............................ <pMsgStruct>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1204 ............................ <pMsgStruct>
   [ 32] pushsymb 487 ............................ <#content>
   [ 35] pusharglist 2 ........................... <pMsgStruct, #content>
   [ 37] objcall 31 .............................. <pMsgStruct.getaProp(#content)>
@@ -1863,7 +1863,7 @@ on GetBoolFrom me
   [ 60] pusharglist 2 ........................... <charToNum(char 1 of tByteStr), 63>
   [ 62] extcall 863 ............................. <bitAnd(charToNum(char 1 of tByteStr), 63)>
   [ 65] setlocal 1 .............................. tByte = bitAnd(charToNum(char 1 of tByteStr), 63)
-  [ 67] getprop 1203 ............................ <pMsgStruct>
+  [ 67] getprop 1204 ............................ <pMsgStruct>
   [ 70] pushsymb 487 ............................ <#content>
   [ 73] getlocal 0 .............................. <tByteStr>
   [ 75] pushsymb 291 ............................ <#char>
@@ -1884,20 +1884,20 @@ on GetBoolFrom me
 end
 
 on GetByteFrom me
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1203 ............................ <pMsgStruct>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1204 ............................ <pMsgStruct>
   [ 32] pushsymb 487 ............................ <#content>
   [ 35] pusharglist 2 ........................... <pMsgStruct, #content>
   [ 37] objcall 31 .............................. <pMsgStruct.getaProp(#content)>
@@ -1918,7 +1918,7 @@ on GetByteFrom me
   [ 60] pusharglist 2 ........................... <charToNum(char 1 of tByteStr), 63>
   [ 62] extcall 863 ............................. <bitAnd(charToNum(char 1 of tByteStr), 63)>
   [ 65] setlocal 1 .............................. tByte = bitAnd(charToNum(char 1 of tByteStr), 63)
-  [ 67] getprop 1203 ............................ <pMsgStruct>
+  [ 67] getprop 1204 ............................ <pMsgStruct>
   [ 70] pushsymb 487 ............................ <#content>
   [ 73] getlocal 0 .............................. <tByteStr>
   [ 75] pushsymb 291 ............................ <#char>
@@ -1937,20 +1937,20 @@ on GetByteFrom me
 end
 
 on GetIntFrom me
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1203 ............................ <pMsgStruct>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1204 ............................ <pMsgStruct>
   [ 32] pushsymb 487 ............................ <#content>
   [ 35] pusharglist 2 ........................... <pMsgStruct, #content>
   [ 37] objcall 31 .............................. <pMsgStruct.getaProp(#content)>
@@ -2047,7 +2047,7 @@ on GetIntFrom me
   [215] getlocal 4 .............................. <tInt>
   [217] inv ..................................... <-tInt>
   [218] setlocal 4 .............................. tInt = -tInt
-  [220] getprop 1203 ............................ <pMsgStruct>
+  [220] getprop 1204 ............................ <pMsgStruct>
   [223] pushsymb 487 ............................ <#content>
   [226] getlocal 0 .............................. <tByteStr>
   [228] pushsymb 291 ............................ <#char>
@@ -2068,20 +2068,20 @@ on GetIntFrom me
 end
 
 on GetStrFrom me
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1203 ............................ <pMsgStruct>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1204 ............................ <pMsgStruct>
   [ 32] pushsymb 487 ............................ <#content>
   [ 35] pusharglist 2 ........................... <pMsgStruct, #content>
   [ 37] objcall 31 .............................. <pMsgStruct.getaProp(#content)>
@@ -2113,7 +2113,7 @@ on GetStrFrom me
   [ 83] jmp [ 90]
   [ 86] pushcons 1 .............................. <EMPTY>
   [ 88] setlocal 2 .............................. tStr = EMPTY
-  [ 90] getprop 1203 ............................ <pMsgStruct>
+  [ 90] getprop 1204 ............................ <pMsgStruct>
   [ 93] pushsymb 487 ............................ <#content>
   [ 96] getlocal 1 .............................. <tLen>
   [ 98] pushint8 1 .............................. <1>
@@ -2161,7 +2161,7 @@ on print me
   [ 38] joinstr ................................. <"-- -- -- -- -- -- -- --" & RETURN>
   [ 39] pushzero ................................ <0>
   [ 40] put 37 .................................. put "-- -- -- -- -- -- -- --" & RETURN after tStr
-  [ 42] getprop 1213 ............................ <pListenersPntr>
+  [ 42] getprop 1214 ............................ <pListenersPntr>
   [ 45] pushsymb 113 ............................ <#value>
   [ 47] pusharglist 2 ........................... <pListenersPntr, #value>
   [ 49] objcall 31 .............................. <pListenersPntr.getaProp(#value)>
@@ -2250,33 +2250,33 @@ on print me
 end
 
 on SetToken me, tToken
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] getparam 1 .............................. <tToken>
-  [ 31] setprop 1214 ............................ pToken = tToken
-  [ 34] getprop 1214 ............................ <pToken>
-  [ 37] getprop 1214 ............................ <pToken>
+  [ 31] setprop 1215 ............................ pToken = tToken
+  [ 34] getprop 1215 ............................ <pToken>
+  [ 37] getprop 1215 ............................ <pToken>
   [ 40] getobjprop 293 .......................... <pToken.length>
   [ 43] pushint8 3 .............................. <3>
   [ 45] sub ..................................... <pToken.length - 3>
-  [ 46] getprop 1214 ............................ <pToken>
+  [ 46] getprop 1215 ............................ <pToken>
   [ 49] getobjprop 293 .......................... <pToken.length>
   [ 52] pusharglist 3 ........................... <pToken, pToken.length - 3, pToken.length>
   [ 54] extcall 932 ............................. <chars(pToken, pToken.length - 3, pToken.length)>
   [ 57] setlocal 0 .............................. tSeedHex = chars(pToken, pToken.length - 3, pToken.length)
   [ 59] pushzero ................................ <0>
-  [ 60] setprop 1216 ............................ pTx = 0
+  [ 60] setprop 1217 ............................ pTx = 0
   [ 63] pushcons 34 ............................. <"0">
   [ 65] pushzero ................................ <0>
   [ 66] pushcons 35 ............................. <"1">
@@ -2330,11 +2330,11 @@ on SetToken me, tToken
   [160] pushint8 3 .............................. <3>
   [162] lteq
   [163] jmpifz [218] ............................ repeat with i = 0 to 3
-  [166] getprop 1216 ............................ <pTx>
+  [166] getprop 1217 ............................ <pTx>
   [169] pushint8 16 ............................. <16>
   [171] getlocal 2 .............................. <i>
   [173] pusharglist 2 ........................... <16, i>
-  [175] extcall 1111 ............................ <power(16, i)>
+  [175] extcall 1112 ............................ <power(16, i)>
   [178] pusharglist 1 ........................... <power(16, i)>
   [180] extcall 957 ............................. <integer(power(16, i))>
   [183] getlocal 1 .............................. <tVals>
@@ -2349,15 +2349,15 @@ on SetToken me, tToken
   [202] objcall 54 .............................. <tVals[tSeedHex.char[4 - i]]>
   [204] mul ..................................... <integer(power(16, i)) * tVals[tSeedHex.char[4 - i]]>
   [205] add ..................................... <pTx + (integer(power(16, i)) * tVals[tSeedHex.char[4 - i]])>
-  [206] setprop 1216 ............................ pTx = pTx + (integer(power(16, i)) * tVals[tSeedHex.char[4 - i]])
+  [206] setprop 1217 ............................ pTx = pTx + (integer(power(16, i)) * tVals[tSeedHex.char[4 - i]])
   [209] pushint8 1
   [211] getlocal 2
   [213] add
   [214] setlocal 2
   [216] endrepeat [158]
   [218] pushzero ................................ <0>
-  [219] setprop 1217 ............................ pRx = 0
-  [222] getprop 1214 ............................ <pToken>
+  [219] setprop 1218 ............................ pRx = 0
+  [222] getprop 1215 ............................ <pToken>
   [225] pushint8 1 .............................. <1>
   [227] pushint8 4 .............................. <4>
   [229] pusharglist 3 ........................... <pToken, 1, 4>
@@ -2369,11 +2369,11 @@ on SetToken me, tToken
   [241] pushint8 3 .............................. <3>
   [243] lteq
   [244] jmpifz [299] ............................ repeat with i = 0 to 3
-  [247] getprop 1217 ............................ <pRx>
+  [247] getprop 1218 ............................ <pRx>
   [250] pushint8 16 ............................. <16>
   [252] getlocal 2 .............................. <i>
   [254] pusharglist 2 ........................... <16, i>
-  [256] extcall 1111 ............................ <power(16, i)>
+  [256] extcall 1112 ............................ <power(16, i)>
   [259] pusharglist 1 ........................... <power(16, i)>
   [261] extcall 957 ............................. <integer(power(16, i))>
   [264] getlocal 1 .............................. <tVals>
@@ -2388,7 +2388,7 @@ on SetToken me, tToken
   [283] objcall 54 .............................. <tVals[tSeedHex.char[4 - i]]>
   [285] mul ..................................... <integer(power(16, i)) * tVals[tSeedHex.char[4 - i]]>
   [286] add ..................................... <pRx + (integer(power(16, i)) * tVals[tSeedHex.char[4 - i]])>
-  [287] setprop 1217 ............................ pRx = pRx + (integer(power(16, i)) * tVals[tSeedHex.char[4 - i]])
+  [287] setprop 1218 ............................ pRx = pRx + (integer(power(16, i)) * tVals[tSeedHex.char[4 - i]])
   [290] pushint8 1
   [292] getlocal 2
   [294] add
@@ -2398,19 +2398,19 @@ on SetToken me, tToken
 end
 
 on iterateRandom me, tSeed
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] pushint8 1 .............................. <1>
   [ 31] jmpifz [ 53] ............................ if 1 then
   [ 34] pushint16 19979 ......................... <19979>
@@ -2426,20 +2426,20 @@ on iterateRandom me, tSeed
 end
 
 on xtraMsgHandler me
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1211 ............................ <pConnectionShouldBeKilled>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1212 ............................ <pConnectionShouldBeKilled>
   [ 32] pushzero ................................ <0>
   [ 33] nteq .................................... <pConnectionShouldBeKilled <> 0>
   [ 34] jmpifz [ 42] ............................ if pConnectionShouldBeKilled <> 0 then
@@ -2447,13 +2447,13 @@ on xtraMsgHandler me
   [ 38] pusharglistnoret 1 ...................... <0>
   [ 40] extcall 25 .............................. return 0
   [ 42] pushint8 1 .............................. <1>
-  [ 44] setprop 1230 ............................ pConnectionOk = 1
-  [ 47] getprop 1221 ............................ <pXtra>
+  [ 44] setprop 1231 ............................ pConnectionOk = 1
+  [ 47] getprop 1222 ............................ <pXtra>
   [ 50] pusharglist 1 ........................... <pXtra>
-  [ 52] objcall 1274 ............................ <pXtra.getNetMessage()>
+  [ 52] objcall 1276 ............................ <pXtra.getNetMessage()>
   [ 55] setlocal 0 .............................. tNewMsg = pXtra.getNetMessage()
   [ 57] getlocal 0 .............................. <tNewMsg>
-  [ 59] pushsymb 1275 ........................... <#errorCode>
+  [ 59] pushsymb 1277 ........................... <#errorCode>
   [ 62] pusharglist 2 ........................... <tNewMsg, #errorCode>
   [ 64] objcall 31 .............................. <tNewMsg.getaProp(#errorCode)>
   [ 66] setlocal 1 .............................. tErrCode = tNewMsg.getaProp(#errorCode)
@@ -2466,7 +2466,7 @@ on xtraMsgHandler me
   [ 81] pushzero ................................ <0>
   [ 82] nteq .................................... <tErrCode <> 0>
   [ 83] jmpifz [154] ............................ if tErrCode <> 0 then
-  [ 86] getprop 1226 ............................ <pLogMode>
+  [ 86] getprop 1227 ............................ <pLogMode>
   [ 89] pushzero ................................ <0>
   [ 90] gt ...................................... <pLogMode > 0>
   [ 91] jmpifz [142] ............................ if pLogMode > 0 then
@@ -2479,24 +2479,24 @@ on xtraMsgHandler me
   [105] pushcons 57 ............................. <"was disconnected">
   [107] joinpadstr .............................. <"Connection" && me.getID() && "was disconnected">
   [108] pusharglistnoret 2 ...................... <me, "Connection" && me.getID() && "was disconnected">
-  [110] objcall 1201 ............................ me.log("Connection" && me.getID() && "was disconnected")
+  [110] objcall 1202 ............................ me.log("Connection" && me.getID() && "was disconnected")
   [113] getparam 0 .............................. <me>
   [115] pushcons 58 ............................. <"host = ">
-  [117] getprop 1219 ............................ <pHost>
+  [117] getprop 1220 ............................ <pHost>
   [120] joinstr ................................. <"host = " & pHost>
   [121] pushcons 59 ............................. <", port = ">
   [123] joinpadstr .............................. <"host = " & pHost && ", port = ">
-  [124] getprop 1220 ............................ <pPort>
+  [124] getprop 1221 ............................ <pPort>
   [127] joinstr ................................. <"host = " & pHost && ", port = " & pPort>
   [128] pusharglistnoret 2 ...................... <me, "host = " & pHost && ", port = " & pPort>
-  [130] objcall 1201 ............................ me.log("host = " & pHost && ", port = " & pPort)
+  [130] objcall 1202 ............................ me.log("host = " & pHost && ", port = " & pPort)
   [133] getparam 0 .............................. <me>
   [135] getlocal 0 .............................. <tNewMsg>
   [137] pusharglistnoret 2 ...................... <me, tNewMsg>
-  [139] objcall 1201 ............................ me.log(tNewMsg)
+  [139] objcall 1202 ............................ me.log(tNewMsg)
   [142] getparam 0 .............................. <me>
   [144] pusharglistnoret 1 ...................... <me>
-  [146] objcall 1173 ............................ me.disconnect()
+  [146] objcall 1174 ............................ me.disconnect()
   [149] pushzero ................................ <0>
   [150] pusharglistnoret 1 ...................... <0>
   [152] extcall 25 .............................. return 0
@@ -2511,24 +2511,24 @@ on xtraMsgHandler me
   [171] getparam 0 .............................. <me>
   [173] getlocal 2 .............................. <tContent>
   [175] pusharglistnoret 2 ...................... <me, tContent>
-  [177] objcall 1199 ............................ me.msghandler(tContent)
+  [177] objcall 1200 ............................ me.msghandler(tContent)
   [180] ret
 end
 
 on msghandler me, tContent
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
   [ 29] getparam 1 .............................. <tContent>
   [ 31] getobjprop 490 .......................... <tContent.ilk>
   [ 34] pushsymb 595 ............................ <#string>
@@ -2542,12 +2542,12 @@ on msghandler me, tContent
   [ 50] joinstr ................................. <"Handling Msg: " & tContent>
   [ 51] pusharglistnoret 1 ...................... <"Handling Msg: " & tContent>
   [ 53] extcall 644 ............................. put "Handling Msg: " & tContent
-  [ 56] getprop 1210 ............................ <pLastContent>
+  [ 56] getprop 1211 ............................ <pLastContent>
   [ 59] getobjprop 293 .......................... <pLastContent.length>
   [ 62] pushzero ................................ <0>
   [ 63] gt ...................................... <pLastContent.length > 0>
   [ 64] jmpifz [ 90] ............................ if pLastContent.length > 0 then
-  [ 67] getprop 1210 ............................ <pLastContent>
+  [ 67] getprop 1211 ............................ <pLastContent>
   [ 70] getparam 1 .............................. <tContent>
   [ 72] joinstr ................................. <pLastContent & tContent>
   [ 73] setparam 1 .............................. tContent = pLastContent & tContent
@@ -2557,7 +2557,7 @@ on msghandler me, tContent
   [ 80] pusharglistnoret 1 ...................... <"Start of new Message: " && tContent>
   [ 82] extcall 644 ............................. put "Start of new Message: " && tContent
   [ 85] pushcons 1 .............................. <EMPTY>
-  [ 87] setprop 1210 ............................ pLastContent = EMPTY
+  [ 87] setprop 1211 ............................ pLastContent = EMPTY
   [ 90] getparam 1 .............................. <tContent>
   [ 92] getobjprop 293 .......................... <tContent.length>
   [ 95] pushzero ................................ <0>
@@ -2568,10 +2568,10 @@ on msghandler me, tContent
   [105] pushint8 3 .............................. <3>
   [107] lt ...................................... <tContent.length < 3>
   [108] jmpifz [124] ............................ if tContent.length < 3 then
-  [111] getprop 1210 ............................ <pLastContent>
+  [111] getprop 1211 ............................ <pLastContent>
   [114] getparam 1 .............................. <tContent>
   [116] joinstr ................................. <pLastContent & tContent>
-  [117] setprop 1210 ............................ pLastContent = pLastContent & tContent
+  [117] setprop 1211 ............................ pLastContent = pLastContent & tContent
   [120] pusharglistnoret 0 ...................... <>
   [122] extcall 25 .............................. return 
   [124] pushint8 2 .............................. <2>
@@ -2692,12 +2692,12 @@ on msghandler me, tContent
   [345] eq ...................................... <tLength = 0>
   [346] jmpifz [361] ............................ if tLength = 0 then / else
   [349] getparam 1 .............................. <tContent>
-  [351] setprop 1210 ............................ pLastContent = tContent
+  [351] setprop 1211 ............................ pLastContent = tContent
   [354] pusharglistnoret 0 ...................... <>
   [356] extcall 25 .............................. return 
   [358] jmp [366]
   [361] pushcons 1 .............................. <EMPTY>
-  [363] setprop 1210 ............................ pLastContent = EMPTY
+  [363] setprop 1211 ............................ pLastContent = EMPTY
   [366] pushint8 3 .............................. <3>
   [368] getlocal 3 .............................. <tLength>
   [370] pushint8 1 .............................. <1>
@@ -2733,7 +2733,7 @@ on msghandler me, tContent
   [415] getlocal 2 .............................. <tMsgType>
   [417] pushzero ................................ <0>
   [418] eq ...................................... <tMsgType = 0>
-  [419] getprop 1218 ............................ <pHelloReceived>
+  [419] getprop 1219 ............................ <pHelloReceived>
   [422] and ..................................... <(tMsgType = 0) and pHelloReceived>
   [423] jmpifz [431] ............................ if (tMsgType = 0) and pHelloReceived then
   [426] pushzero ................................ <0>
@@ -2743,26 +2743,26 @@ on msghandler me, tContent
   [433] getlocal 2 .............................. <tMsgType>
   [435] getlocal 6 .............................. <tParams>
   [437] pusharglistnoret 3 ...................... <me, tMsgType, tParams>
-  [439] objcall 1200 ............................ me.forwardMsg(tMsgType, tParams)
+  [439] objcall 1201 ............................ me.forwardMsg(tMsgType, tParams)
   [442] endrepeat [ 90]
   [445] ret
 end
 
 on forwardMsg me, tSubject, tParams
-  [  0] getmovieprop 1036 ....................... <the traceScript>
+  [  0] getmovieprop 1038 ....................... <the traceScript>
   [  3] jmpifz [ 11] ............................ if the traceScript then
   [  6] pushzero ................................ <0>
   [  7] pusharglistnoret 1 ...................... <0>
   [  9] extcall 25 .............................. return 0
   [ 11] pushzero ................................ <0>
-  [ 12] setmovieprop 1036 ....................... the traceScript = 0
-  [ 15] gettoplevelprop 1037 .................... <_movie>
+  [ 12] setmovieprop 1038 ....................... the traceScript = 0
+  [ 15] gettoplevelprop 1039 .................... <_movie>
   [ 18] pushzero ................................ <0>
-  [ 19] setobjprop 1036 ......................... _movie.traceScript = 0
+  [ 19] setobjprop 1038 ......................... _movie.traceScript = 0
   [ 22] gettoplevelprop 909 ..................... <_player>
   [ 25] pushzero ................................ <0>
-  [ 26] setobjprop 1036 ......................... _player.traceScript = 0
-  [ 29] getprop 1226 ............................ <pLogMode>
+  [ 26] setobjprop 1038 ......................... _player.traceScript = 0
+  [ 29] getprop 1227 ............................ <pLogMode>
   [ 32] pushzero ................................ <0>
   [ 33] gt ...................................... <pLogMode > 0>
   [ 34] jmpifz [ 55] ............................ if pLogMode > 0 then
@@ -2775,7 +2775,7 @@ on forwardMsg me, tSubject, tParams
   [ 47] getparam 2 .............................. <tParams>
   [ 49] joinstr ................................. <"-->" && tSubject & RETURN & tParams>
   [ 50] pusharglistnoret 2 ...................... <me, "-->" && tSubject & RETURN & tParams>
-  [ 52] objcall 1201 ............................ me.log("-->" && tSubject & RETURN & tParams)
+  [ 52] objcall 1202 ............................ me.log("-->" && tSubject & RETURN & tParams)
   [ 55] pushsymb 59 ............................. <#session>
   [ 57] pusharglist 1 ........................... <#session>
   [ 59] extcall 58 .............................. <getObject(#session)>
@@ -2794,7 +2794,7 @@ on forwardMsg me, tSubject, tParams
   [ 84] pusharglist 2 ........................... <getStringServices(), tParams>
   [ 86] objcall 273 ............................. <getStringServices().convertSpecialChars(tParams)>
   [ 89] setparam 2 .............................. tParams = getStringServices().convertSpecialChars(tParams)
-  [ 91] getprop 1213 ............................ <pListenersPntr>
+  [ 91] getprop 1214 ............................ <pListenersPntr>
   [ 94] pushsymb 113 ............................ <#value>
   [ 96] pusharglist 2 ........................... <pListenersPntr, #value>
   [ 98] objcall 31 .............................. <pListenersPntr.getaProp(#value)>
@@ -2817,7 +2817,7 @@ on forwardMsg me, tSubject, tParams
   [132] pusharglist 1 ........................... <me>
   [134] objcall 3 ............................... <me.getID()>
   [136] joinpadstr .............................. <"Listener not found:" && tSubject && "/" && me.getID()>
-  [137] pushsymb 1200 ........................... <#forwardMsg>
+  [137] pushsymb 1201 ........................... <#forwardMsg>
   [140] pusharglist 3 ........................... <me, "Listener not found:" && tSubject && "/" && me.getID(), #forwardMsg>
   [142] extcall 39 .............................. <error(me, "Listener not found:" && tSubject && "/" && me.getID(), #forwardMsg)>
   [144] pusharglistnoret 1 ...................... <error(me, "Listener not found:" && tSubject && "/" && me.getID(), #forwardMsg)>
@@ -2850,12 +2850,12 @@ on forwardMsg me, tSubject, tParams
   [198] pushzero ................................ <0>
   [199] nteq .................................... <tObject <> 0>
   [200] jmpifz [247] ............................ if tObject <> 0 then
-  [203] getprop 1203 ............................ <pMsgStruct>
-  [206] pushsymb 1282 ........................... <#subject>
+  [203] getprop 1204 ............................ <pMsgStruct>
+  [206] pushsymb 1284 ........................... <#subject>
   [209] getparam 1 .............................. <tSubject>
   [211] pusharglistnoret 3 ...................... <pMsgStruct, #subject, tSubject>
   [213] objcall 128 ............................. pMsgStruct.setaProp(#subject, tSubject)
-  [215] getprop 1203 ............................ <pMsgStruct>
+  [215] getprop 1204 ............................ <pMsgStruct>
   [218] pushsymb 487 ............................ <#content>
   [221] getparam 2 .............................. <tParams>
   [223] pusharglistnoret 3 ...................... <pMsgStruct, #content, tParams>
@@ -2865,7 +2865,7 @@ on forwardMsg me, tSubject, tParams
   [231] pusharglist 2 ........................... <tCallback, 2>
   [233] objcall 54 .............................. <tCallback[2]>
   [235] getlocal 4 .............................. <tObject>
-  [237] getprop 1203 ............................ <pMsgStruct>
+  [237] getprop 1204 ............................ <pMsgStruct>
   [240] pusharglistnoret 3 ...................... <tCallback[2], tObject, pMsgStruct>
   [242] extcall 68 .............................. call(tCallback[2], tObject, pMsgStruct)
   [244] jmp [283] ............................... next repeat
@@ -2876,7 +2876,7 @@ on forwardMsg me, tSubject, tParams
   [255] pusharglist 2 ........................... <tCallback, 1>
   [257] objcall 54 .............................. <tCallback[1]>
   [259] joinpadstr .............................. <"Listening obj not found, removed:" && tCallback[1]>
-  [260] pushsymb 1200 ........................... <#forwardMsg>
+  [260] pushsymb 1201 ........................... <#forwardMsg>
   [263] pusharglistnoret 3 ...................... <me, "Listening obj not found, removed:" && tCallback[1], #forwardMsg>
   [265] extcall 39 .............................. error(me, "Listening obj not found, removed:" && tCallback[1], #forwardMsg)
   [267] getlocal 0 .............................. <tCallbackList>
@@ -2904,12 +2904,12 @@ on log me, tMsg
   [  9] pushzero ................................ <0>
   [ 10] pusharglistnoret 1 ...................... <0>
   [ 12] extcall 25 .............................. return 0
-  [ 14] getprop 1226 ............................ <pLogMode>
+  [ 14] getprop 1227 ............................ <pLogMode>
   [ 17] peek 0 .................................. case pLogMode of
   [ 19] pushint8 2 .............................. <2>
   [ 21] eq
   [ 22] jmpifz [ 64] ............................ (case) 2:
-  [ 25] getprop 1234 ............................ <pLogfield>
+  [ 25] getprop 1235 ............................ <pLogfield>
   [ 28] pushsymb 41 ............................. <#member>
   [ 30] pusharglist 2 ........................... <pLogfield, #member>
   [ 32] extcall 490 ............................. <ilk(pLogfield, #member)>
@@ -2925,14 +2925,14 @@ on log me, tMsg
   [ 52] joinstr ................................. <RETURN & "[Connection" && me.getID() & "] :">
   [ 53] getparam 1 .............................. <tMsg>
   [ 55] joinpadstr .............................. <RETURN & "[Connection" && me.getID() & "] :" && tMsg>
-  [ 56] pushvarref 1234 ......................... <pLogfield>
+  [ 56] pushvarref 1235 ......................... <pLogfield>
   [ 59] put 35 .................................. put RETURN & "[Connection" && me.getID() & "] :" && tMsg after pLogfield
   [ 61] jmp [ 82]
   [ 64] peek 0
   [ 66] pushint8 3 .............................. <3>
   [ 68] eq
   [ 69] jmpifz [ 82] ............................ (case) 3:
-  [ 72] pushsymb 1284 ........................... <#logdata>
+  [ 72] pushsymb 1286 ........................... <#logdata>
   [ 75] getparam 1 .............................. <tMsg>
   [ 77] pusharglistnoret 2 ...................... <#logdata, tMsg>
   [ 79] extcall 357 ............................. executeMessage(#logdata, tMsg)

@@ -4,11 +4,11 @@ on define me, tFile, tURL, tpreloadId
   [  0] getparam 1 .............................. <tFile>
   [  2] setprop 835 ............................. pFile = tFile
   [  5] getparam 2 .............................. <tURL>
-  [  7] setprop 1136 ............................ pURL = tURL
+  [  7] setprop 1137 ............................ pURL = tURL
   [ 10] getparam 3 .............................. <tpreloadId>
-  [ 12] setprop 1156 ............................ pGroupId = tpreloadId
+  [ 12] setprop 1157 ............................ pGroupId = tpreloadId
   [ 15] pushint8 1 .............................. <1>
-  [ 17] setprop 1142 ............................ ptryCount = 1
+  [ 17] setprop 1143 ............................ ptryCount = 1
   [ 20] getparam 0 .............................. <me>
   [ 22] pusharglist 1 ........................... <me>
   [ 24] objcall 341 ............................. <me.Activate()>
@@ -18,33 +18,33 @@ on define me, tFile, tURL, tpreloadId
 end
 
 on Activate me
-  [  0] getprop 1142 ............................ <ptryCount>
+  [  0] getprop 1143 ............................ <ptryCount>
   [  3] pushint8 3 .............................. <3>
   [  5] gt ...................................... <ptryCount > 3>
   [  6] jmpifz [ 41] ............................ if ptryCount > 3 then
-  [  9] getprop 1136 ............................ <pURL>
+  [  9] getprop 1137 ............................ <pURL>
   [ 12] pushcons 0 .............................. <"http://">
   [ 14] containsstr ............................. <pURL contains "http://">
   [ 15] jmpifz [ 41] ............................ if pURL contains "http://" then
-  [ 18] getprop 1136 ............................ <pURL>
+  [ 18] getprop 1137 ............................ <pURL>
   [ 21] pushcons 1 .............................. <"?">
   [ 23] containsstr ............................. <pURL contains "?">
   [ 24] not ..................................... <not (pURL contains "?")>
   [ 25] jmpifz [ 41] ............................ if not (pURL contains "?") then
-  [ 28] getprop 1136 ............................ <pURL>
+  [ 28] getprop 1137 ............................ <pURL>
   [ 31] pushcons 1 .............................. <"?">
   [ 33] joinstr ................................. <pURL & "?">
   [ 34] getmovieprop 673 ........................ <the milliSeconds>
   [ 37] joinstr ................................. <pURL & "?" & the milliSeconds>
-  [ 38] setprop 1136 ............................ pURL = pURL & "?" & the milliSeconds
-  [ 41] getprop 1136 ............................ <pURL>
+  [ 38] setprop 1137 ............................ pURL = pURL & "?" & the milliSeconds
+  [ 41] getprop 1137 ............................ <pURL>
   [ 44] pusharglist 1 ........................... <pURL>
-  [ 46] extcall 1141 ............................ <preloadNetThing(pURL)>
-  [ 49] setprop 1139 ............................ pNetId = preloadNetThing(pURL)
+  [ 46] extcall 1142 ............................ <preloadNetThing(pURL)>
+  [ 49] setprop 1140 ............................ pNetId = preloadNetThing(pURL)
   [ 52] getmovieprop 673 ........................ <the milliSeconds>
-  [ 55] setprop 1158 ............................ pLoadTime = the milliSeconds
+  [ 55] setprop 1159 ............................ pLoadTime = the milliSeconds
   [ 58] pushzero ................................ <0>
-  [ 59] setprop 1159 ............................ pBytesSoFar = 0
+  [ 59] setprop 1160 ............................ pBytesSoFar = 0
   [ 62] pushfloat32 0.0 ......................... <0.0>
   [ 67] setprop 836 ............................. pPercent = 0.0
   [ 70] pushsymb 813 ............................ <#LOADING>
@@ -57,15 +57,15 @@ end
 
 on update me
   [  0] getprop 461 ............................. <pState>
-  [  3] pushsymb 1160 ........................... <#done>
+  [  3] pushsymb 1161 ........................... <#done>
   [  6] eq ...................................... <pState = #done>
   [  7] jmpifz [ 16] ............................ if pState = #done then
   [ 10] pushint8 1 .............................. <1>
   [ 12] pusharglistnoret 1 ...................... <1>
   [ 14] extcall 25 .............................. return 1
-  [ 16] getprop 1139 ............................ <pNetId>
+  [ 16] getprop 1140 ............................ <pNetId>
   [ 19] pusharglist 1 ........................... <pNetId>
-  [ 21] extcall 1143 ............................ <getStreamStatus(pNetId)>
+  [ 21] extcall 1144 ............................ <getStreamStatus(pNetId)>
   [ 24] setlocal 0 .............................. tStreamStatus = getStreamStatus(pNetId)
   [ 26] getlocal 0 .............................. <tStreamStatus>
   [ 28] pusharglist 1 ........................... <tStreamStatus>
@@ -86,15 +86,15 @@ on update me
   [ 57] pusharglistnoret 1 ...................... <error(me, "Invalid stream status:" && pFile && "/" && tStreamStatus, #update)>
   [ 59] extcall 25 .............................. return error(me, "Invalid stream status:" && pFile && "/" && tStreamStatus, #update)
   [ 61] getlocal 0 .............................. <tStreamStatus>
-  [ 63] getobjprop 1144 ......................... <tStreamStatus.bytesSoFar>
+  [ 63] getobjprop 1145 ......................... <tStreamStatus.bytesSoFar>
   [ 66] pushzero ................................ <0>
   [ 67] gt ...................................... <tStreamStatus.bytesSoFar > 0>
   [ 68] jmpifz [131] ............................ if tStreamStatus.bytesSoFar > 0 then
   [ 71] getlocal 0 .............................. <tStreamStatus>
-  [ 73] getobjprop 1144 ......................... <tStreamStatus.bytesSoFar>
+  [ 73] getobjprop 1145 ......................... <tStreamStatus.bytesSoFar>
   [ 76] setlocal 1 .............................. tBytesSoFar = tStreamStatus.bytesSoFar
   [ 78] getlocal 0 .............................. <tStreamStatus>
-  [ 80] getobjprop 1145 ......................... <tStreamStatus.bytesTotal>
+  [ 80] getobjprop 1146 ......................... <tStreamStatus.bytesTotal>
   [ 83] setlocal 2 .............................. tBytesTotal = tStreamStatus.bytesTotal
   [ 85] getlocal 2 .............................. <tBytesTotal>
   [ 87] pushzero ................................ <0>
@@ -113,22 +113,22 @@ on update me
   [114] getprop 835 ............................. <pFile>
   [117] getprop 461 ............................. <pState>
   [120] getprop 836 ............................. <pPercent>
-  [123] getprop 1156 ............................ <pGroupId>
+  [123] getprop 1157 ............................ <pGroupId>
   [126] pusharglistnoret 5 ...................... <getCastLoadManager(), pFile, pState, pPercent, pGroupId>
   [128] objcall 796 ............................. getCastLoadManager().TellStreamState(pFile, pState, pPercent, pGroupId)
   [131] getlocal 0 .............................. <tStreamStatus>
-  [133] getobjprop 1144 ......................... <tStreamStatus.bytesSoFar>
-  [136] getprop 1159 ............................ <pBytesSoFar>
+  [133] getobjprop 1145 ......................... <tStreamStatus.bytesSoFar>
+  [136] getprop 1160 ............................ <pBytesSoFar>
   [139] nteq .................................... <tStreamStatus.bytesSoFar <> pBytesSoFar>
   [140] jmpifz [160] ............................ if tStreamStatus.bytesSoFar <> pBytesSoFar then / else
   [143] getlocal 0 .............................. <tStreamStatus>
-  [145] getobjprop 1144 ......................... <tStreamStatus.bytesSoFar>
-  [148] setprop 1159 ............................ pBytesSoFar = tStreamStatus.bytesSoFar
+  [145] getobjprop 1145 ......................... <tStreamStatus.bytesSoFar>
+  [148] setprop 1160 ............................ pBytesSoFar = tStreamStatus.bytesSoFar
   [151] getmovieprop 673 ........................ <the milliSeconds>
-  [154] setprop 1158 ............................ pLoadTime = the milliSeconds
+  [154] setprop 1159 ............................ pLoadTime = the milliSeconds
   [157] jmp [367]
   [160] getmovieprop 673 ........................ <the milliSeconds>
-  [163] getprop 1158 ............................ <pLoadTime>
+  [163] getprop 1159 ............................ <pLoadTime>
   [166] sub ..................................... <the milliSeconds - pLoadTime>
   [167] pushcons 4 .............................. <"castload.retry.delay">
   [169] pushint16 10000 ......................... <10000>
@@ -138,9 +138,9 @@ on update me
   [178] jmpifz [367] ............................ if (the milliSeconds - pLoadTime) > getIntVariable("castload.retry.delay", 10000) then
   [181] pusharglist 0 ........................... <>
   [183] extcall 179 ............................. <getCastLoadManager()>
-  [185] getprop 1139 ............................ <pNetId>
+  [185] getprop 1140 ............................ <pNetId>
   [188] pusharglist 1 ........................... <pNetId>
-  [190] extcall 1147 ............................ <netError(pNetId)>
+  [190] extcall 1148 ............................ <netError(pNetId)>
   [193] pusharglist 2 ........................... <getCastLoadManager(), netError(pNetId)>
   [195] objcall 752 ............................. <getCastLoadManager().solveNetErrorMsg(netError(pNetId))>
   [198] setlocal 3 .............................. tErrorMsg = getCastLoadManager().solveNetErrorMsg(netError(pNetId))
@@ -148,7 +148,7 @@ on update me
   [202] pushcons 5 .............................. <"Failed network operation:">
   [204] pushcons 6 .............................. <RETURN>
   [206] joinstr ................................. <"Failed network operation:" & RETURN>
-  [207] getprop 1136 ............................ <pURL>
+  [207] getprop 1137 ............................ <pURL>
   [210] joinstr ................................. <"Failed network operation:" & RETURN & pURL>
   [211] pushcons 6 .............................. <RETURN>
   [213] joinstr ................................. <"Failed network operation:" & RETURN & pURL & RETURN>
@@ -157,11 +157,11 @@ on update me
   [217] pushsymb 674 ............................ <#update>
   [220] pusharglistnoret 3 ...................... <me, "Failed network operation:" & RETURN & pURL & RETURN & tErrorMsg, #update>
   [222] extcall 39 .............................. error(me, "Failed network operation:" & RETURN & pURL & RETURN & tErrorMsg, #update)
-  [224] getprop 1142 ............................ <ptryCount>
+  [224] getprop 1143 ............................ <ptryCount>
   [227] pushint8 1 .............................. <1>
   [229] add ..................................... <ptryCount + 1>
-  [230] setprop 1142 ............................ ptryCount = ptryCount + 1
-  [233] getprop 1142 ............................ <ptryCount>
+  [230] setprop 1143 ............................ ptryCount = ptryCount + 1
+  [233] getprop 1143 ............................ <ptryCount>
   [236] pushcons 7 .............................. <"castload.retry.count">
   [238] pushint8 10 ............................. <10>
   [240] pusharglist 2 ........................... <"castload.retry.count", 10>
@@ -175,14 +175,14 @@ on update me
   [261] getprop 835 ............................. <pFile>
   [264] getprop 461 ............................. <pState>
   [267] getprop 836 ............................. <pPercent>
-  [270] getprop 1156 ............................ <pGroupId>
+  [270] getprop 1157 ............................ <pGroupId>
   [273] pusharglistnoret 5 ...................... <getCastLoadManager(), pFile, pState, pPercent, pGroupId>
   [275] objcall 796 ............................. getCastLoadManager().TellStreamState(pFile, pState, pPercent, pGroupId)
   [278] pusharglist 0 ........................... <>
   [280] extcall 179 ............................. <getCastLoadManager()>
   [282] getprop 835 ............................. <pFile>
-  [285] getprop 1136 ............................ <pURL>
-  [288] getprop 1156 ............................ <pGroupId>
+  [285] getprop 1137 ............................ <pURL>
+  [288] getprop 1157 ............................ <pGroupId>
   [291] getprop 461 ............................. <pState>
   [294] pusharglistnoret 5 ...................... <getCastLoadManager(), pFile, pURL, pGroupId, pState>
   [296] objcall 793 ............................. getCastLoadManager().DoneCurrentDownLoad(pFile, pURL, pGroupId, pState)
@@ -198,7 +198,7 @@ on update me
   [315] joinstr ................................. <"Failed network operation:" & RETURN & "Tried to load file" && QUOTE & pFile>
   [316] pushcons 9 .............................. <QUOTE>
   [318] joinstr ................................. <"Failed network operation:" & RETURN & "Tried to load file" && QUOTE & pFile & QUOTE>
-  [319] getprop 1142 ............................ <ptryCount>
+  [319] getprop 1143 ............................ <ptryCount>
   [322] joinpadstr .............................. <"Failed network operation:" & RETURN & "Tried to load file" && QUOTE & pFile & QUOTE && ptryCount>
   [323] pushcons 10 ............................. <"times.">
   [325] joinpadstr .............................. <"Failed network operation:" & RETURN & "Tried to load file" && QUOTE & pFile & QUOTE && ptryCount && "times.">
@@ -212,7 +212,7 @@ on update me
   [341] getprop 835 ............................. <pFile>
   [344] getprop 461 ............................. <pState>
   [347] pushfloat32 0.0 ......................... <0.0>
-  [352] getprop 1156 ............................ <pGroupId>
+  [352] getprop 1157 ............................ <pGroupId>
   [355] pusharglistnoret 5 ...................... <getCastLoadManager(), pFile, pState, 0.0, pGroupId>
   [357] objcall 796 ............................. getCastLoadManager().TellStreamState(pFile, pState, 0.0, pGroupId)
   [360] getparam 0 .............................. <me>
@@ -230,9 +230,9 @@ on update me
   [382] jmpifz [390] ............................ if (tStreamStatus.error <> EMPTY) and (tStreamStatus.error <> "OK") then
   [385] pushsymb 39 ............................. <#error>
   [387] setprop 461 ............................. pState = #error
-  [390] getprop 1139 ............................ <pNetId>
+  [390] getprop 1140 ............................ <pNetId>
   [393] pusharglist 1 ........................... <pNetId>
-  [395] extcall 1146 ............................ <netDone(pNetId)>
+  [395] extcall 1147 ............................ <netDone(pNetId)>
   [398] getprop 461 ............................. <pState>
   [401] pushsymb 39 ............................. <#error>
   [403] nteq .................................... <pState <> #error>
@@ -240,13 +240,13 @@ on update me
   [405] jmpifz [443] ............................ if netDone(pNetId) and (pState <> #error) then
   [408] pushfloat32 1.0 ......................... <1.0>
   [413] setprop 836 ............................. pPercent = 1.0
-  [416] pushsymb 1160 ........................... <#done>
+  [416] pushsymb 1161 ........................... <#done>
   [419] setprop 461 ............................. pState = #done
   [422] pusharglist 0 ........................... <>
   [424] extcall 179 ............................. <getCastLoadManager()>
   [426] getprop 835 ............................. <pFile>
-  [429] getprop 1136 ............................ <pURL>
-  [432] getprop 1156 ............................ <pGroupId>
+  [429] getprop 1137 ............................ <pURL>
+  [432] getprop 1157 ............................ <pGroupId>
   [435] getprop 461 ............................. <pState>
   [438] pusharglistnoret 5 ...................... <getCastLoadManager(), pFile, pURL, pGroupId, pState>
   [440] objcall 793 ............................. getCastLoadManager().DoneCurrentDownLoad(pFile, pURL, pGroupId, pState)

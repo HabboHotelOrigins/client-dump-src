@@ -46,6 +46,7 @@ on select me
 end
 
 on giveDrink me
+  getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
   getThread(#room).getComponent().getRoomConnection().send("LOOKTO", me.pLocX && me.pLocY)
   getThread(#room).getComponent().getRoomConnection().send("CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])])
 end

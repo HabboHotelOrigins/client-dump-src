@@ -192,6 +192,7 @@ on refreshCatalogue me
     me.getInterface().showCatalogWasPublishedDialog()
   end if
   pCatalogProps = [:]
+  pCatalogProps["editmode"] = "production"
   if connectionExists(getVariable("connection.info.id")) then
     tLanguage = me.getLanguage()
     return getConnection(getVariable("connection.info.id")).send("GCIX", [#string: "production", #string: tLanguage])

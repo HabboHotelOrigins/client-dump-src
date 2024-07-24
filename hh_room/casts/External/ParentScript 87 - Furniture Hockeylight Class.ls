@@ -9,7 +9,7 @@ on prepare me, tdata
 end
 
 on updateStuffdata me, tValue
-  if tValue = "I" then
+  if (tValue = "I") or (tValue = "1") then
     me.setOn()
   end if
   return 1

@@ -394,7 +394,7 @@ on dump me, tField, tDelimiter
   [303] pusharglist 1 ........................... <tValue>
   [305] extcall 944 ............................. <float(tValue)>
   [308] pusharglist 1 ........................... <float(tValue)>
-  [310] extcall 1116 ............................ <floatp(float(tValue))>
+  [310] extcall 1117 ............................ <floatp(float(tValue))>
   [313] jmpifz [325] ............................ if floatp(float(tValue)) then
   [316] getlocal 5 .............................. <tValue>
   [318] pusharglist 1 ........................... <tValue>

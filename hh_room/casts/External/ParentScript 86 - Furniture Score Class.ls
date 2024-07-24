@@ -38,7 +38,7 @@ on setScore me, tScore, tSpriteList
       tLoc4 = tSpriteList[1].loc + [-34, -100]
     end if
   end if
-  if tScore = "x" then
+  if tScore = "-1" then
     pScore = "x"
     tSpriteList[3].blend = 0
     tSpriteList[4].blend = 0
@@ -73,6 +73,7 @@ end
 
 on select me
   tUpdate = 0
+  tIncrement = 0
   tScore = pScore
   tloc = point(the mouseH - me.pSprList[1].left, the mouseV - me.pSprList[1].top)
   if me.pXFactor = 32 then
@@ -92,6 +93,7 @@ on select me
     else
       if inside(tloc, tRect2) then
         tUpdate = 1
+        tIncrement = 1
         tScore = tScore + 1
         if tScore > 99 then
           tScore = 0
@@ -100,15 +102,20 @@ on select me
     end if
   end if
   if (tUpdate = 0) and the doubleClick then
-    tUpdate = 1
     if pScore = "x" then
       tScore = 0
     else
       tScore = "x"
     end if
+    getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: string(3)])
+    return 1
   end if
   if tUpdate then
-    getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: string(tScore)])
+    if tIncrement then
+      getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: string(2)])
+    else
+      getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: string(1)])
+    end if
   end if
   return 1
 end

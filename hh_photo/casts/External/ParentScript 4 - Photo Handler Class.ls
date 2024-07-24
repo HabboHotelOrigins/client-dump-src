@@ -13,6 +13,11 @@ end
 on handle_ok me
 end
 
+on handle_mus_ping me, tMsg
+  addMessageToBinaryQueue("MUS_PONG/")
+  return 1
+end
+
 on handle_film me, tMsg
   tFilmCnt = tMsg.getaProp(#connection).GetIntFrom(tMsg)
   me.getComponent().setFilm(tFilmCnt)
@@ -22,9 +27,8 @@ on handle_film me, tMsg
 end
 
 on handle_mus_ticket me, tMsg
-  tMusTicket = tMsg.getaProp(#connection).GetStrFrom(tMsg)
+  tMusTicket = tMsg.connection.GetStrFrom()
   getObject(#session).set("mus_ticket", tMusTicket)
-  return 1
 end
 
 on handle_film_mus me, tMsg

@@ -58,7 +58,7 @@ on resizeTo me, tX, tY
   [ 22] getlocal 0 .............................. <tOffH>
   [ 24] getlocal 1 .............................. <tOffV>
   [ 26] pusharglist 3 ........................... <me, tOffH, tOffV>
-  [ 28] objcall 1426 ............................ <me.resizeBy(tOffH, tOffV)>
+  [ 28] objcall 1428 ............................ <me.resizeBy(tOffH, tOffV)>
   [ 31] pusharglistnoret 1 ...................... <me.resizeBy(tOffH, tOffV)>
   [ 33] extcall 25 .............................. return me.resizeBy(tOffH, tOffV)
   [ 35] ret
@@ -74,9 +74,9 @@ on resizeBy me, tOffH, tOffV
   [  8] or ...................................... <(tOffH <> 0) or (tOffV <> 0)>
   [  9] jmpifz [183] ............................ if (tOffH <> 0) or (tOffV <> 0) then
   [ 12] getparam 0 .............................. <me>
-  [ 14] getobjprop 1486 ......................... <me.pScaleH>
+  [ 14] getobjprop 1488 ......................... <me.pScaleH>
   [ 17] peek 0 .................................. case me.pScaleH of
-  [ 19] pushsymb 1305 ........................... <#move>
+  [ 19] pushsymb 1307 ........................... <#move>
   [ 22] eq
   [ 23] jmpifz [ 42] ............................ (case) #move:
   [ 26] getparam 0 .............................. <me>
@@ -87,7 +87,7 @@ on resizeBy me, tOffH, tOffV
   [ 36] setobjprop 467 .......................... me.pLocX = me.pLocX + tOffH
   [ 39] jmp [ 92]
   [ 42] peek 0
-  [ 44] pushsymb 1308 ........................... <#scale>
+  [ 44] pushsymb 1310 ........................... <#scale>
   [ 47] eq
   [ 48] jmpifz [ 67] ............................ (case) #scale:
   [ 51] getparam 0 .............................. <me>
@@ -111,9 +111,9 @@ on resizeBy me, tOffH, tOffV
   [ 89] setobjprop 467 .......................... me.pLocX = me.pLocX + (tOffH / 2)
   [ 92] pop 1 ................................... end case
   [ 94] getparam 0 .............................. <me>
-  [ 96] getobjprop 1487 ......................... <me.pScaleV>
+  [ 96] getobjprop 1489 ......................... <me.pScaleV>
   [ 99] peek 0 .................................. case me.pScaleV of
-  [101] pushsymb 1305 ........................... <#move>
+  [101] pushsymb 1307 ........................... <#move>
   [104] eq
   [105] jmpifz [124] ............................ (case) #move:
   [108] getparam 0 .............................. <me>
@@ -124,7 +124,7 @@ on resizeBy me, tOffH, tOffV
   [118] setobjprop 469 .......................... me.pLocY = me.pLocY + tOffV
   [121] jmp [174]
   [124] peek 0
-  [126] pushsymb 1308 ........................... <#scale>
+  [126] pushsymb 1310 ........................... <#scale>
   [129] eq
   [130] jmpifz [149] ............................ (case) #scale:
   [133] getparam 0 .............................. <me>
@@ -227,7 +227,7 @@ on render me
   [140] getchainedprop 498 ...................... <me.pimage>
   [143] getobjprop 557 .......................... <me.pimage.rect>
   [146] getparam 0 .............................. <me>
-  [148] getobjprop 1492 ......................... <me.pParams>
+  [148] getobjprop 1494 ......................... <me.pParams>
   [151] pusharglistnoret 5 ...................... <me.pBuffer.image, me.pimage, tRect, me.pimage.rect, me.pParams>
   [153] objcall 558 ............................. me.pBuffer.image.copyPixels(me.pimage, tRect, me.pimage.rect, me.pParams)
   [156] pushint8 1
@@ -263,7 +263,7 @@ on draw me
   [ 39] add ..................................... <me.pLocY + me.pheight>
   [ 40] pusharglist 4 ........................... <me.pLocX, me.pLocY, me.pLocX + me.pwidth, me.pLocY + me.pheight>
   [ 42] extcall 557 ............................. <rect(me.pLocX, me.pLocY, me.pLocX + me.pwidth, me.pLocY + me.pheight)>
-  [ 45] pushsymb 1496 ........................... <#shapeType>
+  [ 45] pushsymb 1498 ........................... <#shapeType>
   [ 48] pushsymb 557 ............................ <#rect>
   [ 51] pushsymb 599 ............................ <#color>
   [ 54] pushint16 255 ........................... <255>
@@ -274,6 +274,6 @@ on draw me
   [ 66] pusharglist 4 ........................... <[#shapeType: #rect, #color: rgb(255, 0, 128)]>
   [ 68] pushproplist ............................ <[#shapeType: #rect, #color: rgb(255, 0, 128)]>
   [ 69] pusharglistnoret 3 ...................... <me.pBuffer.image, rect(me.pLocX, me.pLocY, me.pLocX + me.pwidth, me.pLocY + me.pheight), [#shapeType: #rect, #color: rgb(255, 0, 128)]>
-  [ 71] objcall 1433 ............................ me.pBuffer.image.draw(rect(me.pLocX, me.pLocY, me.pLocX + me.pwidth, me.pLocY + me.pheight), [#shapeType: #rect, #color: rgb(255, 0, 128)])
+  [ 71] objcall 1435 ............................ me.pBuffer.image.draw(rect(me.pLocX, me.pLocY, me.pLocX + me.pwidth, me.pLocY + me.pheight), [#shapeType: #rect, #color: rgb(255, 0, 128)])
   [ 74] ret
 end

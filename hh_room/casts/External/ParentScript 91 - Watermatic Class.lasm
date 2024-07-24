@@ -257,35 +257,55 @@ on giveDrink me
   [  8] objcall 115 ............................. <getThread(#room).getComponent()>
   [ 10] pusharglist 1 ........................... <getThread(#room).getComponent()>
   [ 12] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 14] pushcons 6 .............................. <"LOOKTO">
-  [ 16] getparam 0 .............................. <me>
-  [ 18] getobjprop 19 ........................... <me.pLocX>
-  [ 20] getparam 0 .............................. <me>
-  [ 22] getobjprop 20 ........................... <me.pLocY>
-  [ 24] joinpadstr .............................. <me.pLocX && me.pLocY>
-  [ 25] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "LOOKTO", me.pLocX && me.pLocY>
-  [ 27] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("LOOKTO", me.pLocX && me.pLocY)
-  [ 29] pushsymb 52 ............................. <#room>
-  [ 31] pusharglist 1 ........................... <#room>
-  [ 33] extcall 51 .............................. <getThread(#room)>
-  [ 35] pusharglist 1 ........................... <getThread(#room)>
-  [ 37] objcall 115 ............................. <getThread(#room).getComponent()>
-  [ 39] pusharglist 1 ........................... <getThread(#room).getComponent()>
-  [ 41] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
-  [ 43] pushcons 7 .............................. <"CARRYDRINK">
-  [ 45] pushsymb 519 ............................ <#string>
-  [ 48] getprop 1767 ............................ <pTokenList>
-  [ 51] getprop 1767 ............................ <pTokenList>
-  [ 54] getobjprop 33 ........................... <pTokenList.count>
-  [ 56] pusharglist 1 ........................... <pTokenList.count>
-  [ 58] extcall 285 ............................. <random(pTokenList.count)>
-  [ 61] pusharglist 2 ........................... <pTokenList, random(pTokenList.count)>
-  [ 63] objcall 34 .............................. <pTokenList[random(pTokenList.count)]>
-  [ 65] pusharglist 1 ........................... <pTokenList[random(pTokenList.count)]>
-  [ 67] extcall 519 ............................. <string(pTokenList[random(pTokenList.count)])>
-  [ 70] pusharglist 2 ........................... <[#string: string(pTokenList[random(pTokenList.count)])]>
-  [ 72] pushproplist ............................ <[#string: string(pTokenList[random(pTokenList.count)])]>
-  [ 73] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])]>
-  [ 75] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])])
-  [ 77] ret
+  [ 14] pushcons 6 .............................. <"SETSTUFFDATA">
+  [ 16] pushsymb 519 ............................ <#string>
+  [ 19] getparam 0 .............................. <me>
+  [ 21] pusharglist 1 ........................... <me>
+  [ 23] objcall 75 .............................. <me.getID()>
+  [ 25] pusharglist 1 ........................... <me.getID()>
+  [ 27] extcall 519 ............................. <string(me.getID())>
+  [ 30] pushsymb 519 ............................ <#string>
+  [ 33] pushcons 7 .............................. <"TRUE">
+  [ 35] pusharglist 4 ........................... <[#string: string(me.getID()), #string: "TRUE"]>
+  [ 37] pushproplist ............................ <[#string: string(me.getID()), #string: "TRUE"]>
+  [ 38] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"]>
+  [ 40] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
+  [ 42] pushsymb 52 ............................. <#room>
+  [ 44] pusharglist 1 ........................... <#room>
+  [ 46] extcall 51 .............................. <getThread(#room)>
+  [ 48] pusharglist 1 ........................... <getThread(#room)>
+  [ 50] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 52] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 54] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 56] pushcons 8 .............................. <"LOOKTO">
+  [ 58] getparam 0 .............................. <me>
+  [ 60] getobjprop 19 ........................... <me.pLocX>
+  [ 62] getparam 0 .............................. <me>
+  [ 64] getobjprop 20 ........................... <me.pLocY>
+  [ 66] joinpadstr .............................. <me.pLocX && me.pLocY>
+  [ 67] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "LOOKTO", me.pLocX && me.pLocY>
+  [ 69] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("LOOKTO", me.pLocX && me.pLocY)
+  [ 71] pushsymb 52 ............................. <#room>
+  [ 73] pusharglist 1 ........................... <#room>
+  [ 75] extcall 51 .............................. <getThread(#room)>
+  [ 77] pusharglist 1 ........................... <getThread(#room)>
+  [ 79] objcall 115 ............................. <getThread(#room).getComponent()>
+  [ 81] pusharglist 1 ........................... <getThread(#room).getComponent()>
+  [ 83] objcall 134 ............................. <getThread(#room).getComponent().getRoomConnection()>
+  [ 85] pushcons 9 .............................. <"CARRYDRINK">
+  [ 87] pushsymb 519 ............................ <#string>
+  [ 90] getprop 1767 ............................ <pTokenList>
+  [ 93] getprop 1767 ............................ <pTokenList>
+  [ 96] getobjprop 33 ........................... <pTokenList.count>
+  [ 98] pusharglist 1 ........................... <pTokenList.count>
+  [100] extcall 285 ............................. <random(pTokenList.count)>
+  [103] pusharglist 2 ........................... <pTokenList, random(pTokenList.count)>
+  [105] objcall 34 .............................. <pTokenList[random(pTokenList.count)]>
+  [107] pusharglist 1 ........................... <pTokenList[random(pTokenList.count)]>
+  [109] extcall 519 ............................. <string(pTokenList[random(pTokenList.count)])>
+  [112] pusharglist 2 ........................... <[#string: string(pTokenList[random(pTokenList.count)])]>
+  [114] pushproplist ............................ <[#string: string(pTokenList[random(pTokenList.count)])]>
+  [115] pusharglistnoret 3 ...................... <getThread(#room).getComponent().getRoomConnection(), "CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])]>
+  [117] objcall 135 ............................. getThread(#room).getComponent().getRoomConnection().send("CARRYDRINK", [#string: string(pTokenList[random(pTokenList.count)])])
+  [119] ret
 end

@@ -3,13 +3,13 @@ property pID, pElemList, pBuffer, pSprite, pPalette, pScaleH, pScaleV, pLocX, pL
 on construct me
   [  0] pusharglist 0 ........................... <[]>
   [  2] pushlist ................................ <[]>
-  [  3] setprop 1442 ............................ pElemList = []
+  [  3] setprop 1444 ............................ pElemList = []
   [  6] pushsymb 494 ............................ <#systemMac>
   [  9] setprop 493 ............................. pPalette = #systemMac
-  [ 12] pushsymb 1302 ........................... <#fixed>
-  [ 15] setprop 1486 ............................ pScaleH = #fixed
-  [ 18] pushsymb 1302 ........................... <#fixed>
-  [ 21] setprop 1487 ............................ pScaleV = #fixed
+  [ 12] pushsymb 1304 ........................... <#fixed>
+  [ 15] setprop 1488 ............................ pScaleH = #fixed
+  [ 18] pushsymb 1304 ........................... <#fixed>
+  [ 21] setprop 1489 ............................ pScaleV = #fixed
   [ 24] pushzero ................................ <0>
   [ 25] setprop 467 ............................. pLocX = 0
   [ 28] pushzero ................................ <0>
@@ -19,7 +19,7 @@ on construct me
   [ 36] pushzero ................................ <0>
   [ 37] setprop 505 ............................. pheight = 0
   [ 40] pushint8 1 .............................. <1>
-  [ 42] setprop 1366 ............................ pVisible = 1
+  [ 42] setprop 1368 ............................ pVisible = 1
   [ 45] pushint8 1 .............................. <1>
   [ 47] pusharglistnoret 1 ...................... <1>
   [ 49] extcall 25 .............................. return 1
@@ -28,12 +28,12 @@ end
 
 on deconstruct me
   [  0] pushsymb 119 ............................ <#deconstruct>
-  [  2] getprop 1442 ............................ <pElemList>
+  [  2] getprop 1444 ............................ <pElemList>
   [  5] pusharglistnoret 2 ...................... <#deconstruct, pElemList>
   [  7] extcall 68 .............................. call(#deconstruct, pElemList)
   [  9] pusharglist 0 ........................... <[]>
   [ 11] pushlist ................................ <[]>
-  [ 12] setprop 1442 ............................ pElemList = []
+  [ 12] setprop 1444 ............................ pElemList = []
   [ 15] pusharglist 0 ........................... <>
   [ 17] extcall 32 .............................. <VOID>
   [ 19] setprop 465 ............................. pBuffer = VOID
@@ -97,24 +97,24 @@ on add me, tElement
   [ 11] pusharglistnoret 1 ...................... <0>
   [ 13] extcall 25 .............................. return 0
   [ 15] getparam 1 .............................. <tElement>
-  [ 17] pushsymb 1301 ........................... <#scaleH>
+  [ 17] pushsymb 1303 ........................... <#scaleH>
   [ 20] pusharglist 2 ........................... <tElement, #scaleH>
   [ 22] objcall 444 ............................. <tElement.getProperty(#scaleH)>
-  [ 25] pushsymb 1302 ........................... <#fixed>
+  [ 25] pushsymb 1304 ........................... <#fixed>
   [ 28] nteq .................................... <tElement.getProperty(#scaleH) <> #fixed>
   [ 29] jmpifz [ 38] ............................ if tElement.getProperty(#scaleH) <> #fixed then
-  [ 32] pushsymb 1308 ........................... <#scale>
-  [ 35] setprop 1486 ............................ pScaleH = #scale
+  [ 32] pushsymb 1310 ........................... <#scale>
+  [ 35] setprop 1488 ............................ pScaleH = #scale
   [ 38] getparam 1 .............................. <tElement>
-  [ 40] pushsymb 1303 ........................... <#scaleV>
+  [ 40] pushsymb 1305 ........................... <#scaleV>
   [ 43] pusharglist 2 ........................... <tElement, #scaleV>
   [ 45] objcall 444 ............................. <tElement.getProperty(#scaleV)>
-  [ 48] pushsymb 1302 ........................... <#fixed>
+  [ 48] pushsymb 1304 ........................... <#fixed>
   [ 51] nteq .................................... <tElement.getProperty(#scaleV) <> #fixed>
   [ 52] jmpifz [ 61] ............................ if tElement.getProperty(#scaleV) <> #fixed then
-  [ 55] pushsymb 1308 ........................... <#scale>
-  [ 58] setprop 1487 ............................ pScaleV = #scale
-  [ 61] getprop 1442 ............................ <pElemList>
+  [ 55] pushsymb 1310 ........................... <#scale>
+  [ 58] setprop 1489 ............................ pScaleV = #scale
+  [ 61] getprop 1444 ............................ <pElemList>
   [ 64] getparam 1 .............................. <tElement>
   [ 66] pusharglistnoret 2 ...................... <pElemList, tElement>
   [ 68] objcall 122 ............................. pElemList.add(tElement)
@@ -126,7 +126,7 @@ end
 
 on show me
   [  0] pushint8 1 .............................. <1>
-  [  2] setprop 1366 ............................ pVisible = 1
+  [  2] setprop 1368 ............................ pVisible = 1
   [  5] getprop 35 .............................. <pSprite>
   [  7] pushint8 1 .............................. <1>
   [  9] setobjprop 880 .......................... pSprite.visible = 1
@@ -138,7 +138,7 @@ end
 
 on hide me
   [  0] pushzero ................................ <0>
-  [  1] setprop 1366 ............................ pVisible = 0
+  [  1] setprop 1368 ............................ pVisible = 0
   [  4] getprop 35 .............................. <pSprite>
   [  6] pushzero ................................ <0>
   [  7] setobjprop 880 .......................... pSprite.visible = 0
@@ -195,16 +195,16 @@ on resizeBy me, tOffW, tOffH
   [  7] nteq .................................... <tOffH <> 0>
   [  8] or ...................................... <(tOffW <> 0) or (tOffH <> 0)>
   [  9] jmpifz [324] ............................ if (tOffW <> 0) or (tOffH <> 0) then
-  [ 12] getprop 1486 ............................ <pScaleH>
+  [ 12] getprop 1488 ............................ <pScaleH>
   [ 15] peek 0 .................................. case pScaleH of
-  [ 17] pushsymb 1302 ........................... <#fixed>
+  [ 17] pushsymb 1304 ........................... <#fixed>
   [ 20] eq
   [ 21] jmpifz [ 30] ............................ (case) #fixed:
   [ 24] pushzero ................................ <0>
   [ 25] setparam 1 .............................. tOffW = 0
   [ 27] jmp [ 95]
   [ 30] peek 0
-  [ 32] pushsymb 1308 ........................... <#scale>
+  [ 32] pushsymb 1310 ........................... <#scale>
   [ 35] eq
   [ 36] jmpifz [ 51] ............................ (case) #scale:
   [ 39] getprop 499 ............................. <pwidth>
@@ -213,7 +213,7 @@ on resizeBy me, tOffW, tOffH
   [ 45] setprop 499 ............................. pwidth = pwidth + tOffW
   [ 48] jmp [ 95]
   [ 51] peek 0
-  [ 53] pushsymb 1305 ........................... <#move>
+  [ 53] pushsymb 1307 ........................... <#move>
   [ 56] eq
   [ 57] jmpifz [ 73] ............................ (case) #move:
   [ 60] getparam 0 .............................. <me>
@@ -234,22 +234,22 @@ on resizeBy me, tOffW, tOffH
   [ 90] pusharglistnoret 3 ...................... <me, tOffW / 2, 0>
   [ 92] objcall 982 ............................. me.moveBy(tOffW / 2, 0)
   [ 95] pop 1 ................................... end case
-  [ 97] getprop 1486 ............................ <pScaleH>
-  [100] pushsymb 1308 ........................... <#scale>
+  [ 97] getprop 1488 ............................ <pScaleH>
+  [100] pushsymb 1310 ........................... <#scale>
   [103] nteq .................................... <pScaleH <> #scale>
   [104] jmpifz [110] ............................ if pScaleH <> #scale then
   [107] pushzero ................................ <0>
   [108] setparam 1 .............................. tOffW = 0
-  [110] getprop 1487 ............................ <pScaleV>
+  [110] getprop 1489 ............................ <pScaleV>
   [113] peek 0 .................................. case pScaleV of
-  [115] pushsymb 1302 ........................... <#fixed>
+  [115] pushsymb 1304 ........................... <#fixed>
   [118] eq
   [119] jmpifz [128] ............................ (case) #fixed:
   [122] pushzero ................................ <0>
   [123] setparam 2 .............................. tOffH = 0
   [125] jmp [193]
   [128] peek 0
-  [130] pushsymb 1308 ........................... <#scale>
+  [130] pushsymb 1310 ........................... <#scale>
   [133] eq
   [134] jmpifz [149] ............................ (case) #scale:
   [137] getprop 505 ............................. <pheight>
@@ -258,7 +258,7 @@ on resizeBy me, tOffW, tOffH
   [143] setprop 505 ............................. pheight = pheight + tOffH
   [146] jmp [193]
   [149] peek 0
-  [151] pushsymb 1305 ........................... <#move>
+  [151] pushsymb 1307 ........................... <#move>
   [154] eq
   [155] jmpifz [171] ............................ (case) #move:
   [158] getparam 0 .............................. <me>
@@ -279,8 +279,8 @@ on resizeBy me, tOffW, tOffH
   [188] pusharglistnoret 3 ...................... <me, 0, tOffH / 2>
   [190] objcall 982 ............................. me.moveBy(0, tOffH / 2)
   [193] pop 1 ................................... end case
-  [195] getprop 1487 ............................ <pScaleV>
-  [198] pushsymb 1308 ........................... <#scale>
+  [195] getprop 1489 ............................ <pScaleV>
+  [198] pushsymb 1310 ........................... <#scale>
   [201] nteq .................................... <pScaleV <> #scale>
   [202] jmpifz [208] ............................ if pScaleV <> #scale then
   [205] pushzero ................................ <0>
@@ -330,8 +330,8 @@ on resizeBy me, tOffW, tOffH
   [304] getprop 35 .............................. <pSprite>
   [306] pushzero ................................ <0>
   [307] setobjprop 879 .......................... pSprite.stretch = 0
-  [310] pushsymb 1426 ........................... <#resizeBy>
-  [313] getprop 1442 ............................ <pElemList>
+  [310] pushsymb 1428 ........................... <#resizeBy>
+  [313] getprop 1444 ............................ <pElemList>
   [316] getparam 1 .............................. <tOffW>
   [318] getparam 2 .............................. <tOffH>
   [320] pusharglistnoret 4 ...................... <#resizeBy, pElemList, tOffW, tOffH>
@@ -379,20 +379,20 @@ on getProperty me, tProp
   [ 81] extcall 25 .............................. return pSprite
   [ 83] jmp [464]
   [ 86] peek 0
-  [ 88] pushsymb 1301 ........................... <#scaleH>
+  [ 88] pushsymb 1303 ........................... <#scaleH>
   [ 91] eq
   [ 92] jmpifz [107] ............................ (case) #scaleH:
   [ 95] pop 1
-  [ 97] getprop 1486 ............................ <pScaleH>
+  [ 97] getprop 1488 ............................ <pScaleH>
   [100] pusharglistnoret 1 ...................... <pScaleH>
   [102] extcall 25 .............................. return pScaleH
   [104] jmp [464]
   [107] peek 0
-  [109] pushsymb 1303 ........................... <#scaleV>
+  [109] pushsymb 1305 ........................... <#scaleV>
   [112] eq
   [113] jmpifz [128] ............................ (case) #scaleV:
   [116] pop 1
-  [118] getprop 1487 ............................ <pScaleV>
+  [118] getprop 1489 ............................ <pScaleV>
   [121] pusharglistnoret 1 ...................... <pScaleV>
   [123] extcall 25 .............................. return pScaleV
   [125] jmp [464]
@@ -482,12 +482,12 @@ on getProperty me, tProp
   [320] extcall 25 .............................. return pSprite.color
   [322] jmp [464]
   [325] peek 0
-  [327] pushsymb 1298 ........................... <#bgColor>
+  [327] pushsymb 1300 ........................... <#bgColor>
   [330] eq
   [331] jmpifz [348] ............................ (case) #bgColor:
   [334] pop 1
   [336] getprop 35 .............................. <pSprite>
-  [338] getobjprop 1298 ......................... <pSprite.bgColor>
+  [338] getobjprop 1300 ......................... <pSprite.bgColor>
   [341] pusharglistnoret 1 ...................... <pSprite.bgColor>
   [343] extcall 25 .............................. return pSprite.bgColor
   [345] jmp [464]
@@ -512,7 +512,7 @@ on getProperty me, tProp
   [389] extcall 25 .............................. return pSprite.ink
   [391] jmp [464]
   [394] peek 0
-  [396] pushsymb 1299 ........................... <#palette>
+  [396] pushsymb 1301 ........................... <#palette>
   [399] eq
   [400] jmpifz [415] ............................ (case) #palette:
   [403] pop 1
@@ -525,7 +525,7 @@ on getProperty me, tProp
   [420] eq
   [421] jmpifz [436] ............................ (case) #visible:
   [424] pop 1
-  [426] getprop 1366 ............................ <pVisible>
+  [426] getprop 1368 ............................ <pVisible>
   [429] pusharglistnoret 1 ...................... <pVisible>
   [431] extcall 25 .............................. return pVisible
   [433] jmp [464]
@@ -550,18 +550,18 @@ end
 on setProperty me, tProp, tValue
   [  0] getparam 1 .............................. <tProp>
   [  2] peek 0 .................................. case tProp of
-  [  4] pushsymb 1301 ........................... <#scaleH>
+  [  4] pushsymb 1303 ........................... <#scaleH>
   [  7] eq
   [  8] jmpifz [ 19] ............................ (case) #scaleH:
   [ 11] getparam 2 .............................. <tValue>
-  [ 13] setprop 1486 ............................ pScaleH = tValue
+  [ 13] setprop 1488 ............................ pScaleH = tValue
   [ 16] jmp [562]
   [ 19] peek 0
-  [ 21] pushsymb 1303 ........................... <#scaleV>
+  [ 21] pushsymb 1305 ........................... <#scaleV>
   [ 24] eq
   [ 25] jmpifz [ 36] ............................ (case) #scaleV:
   [ 28] getparam 2 .............................. <tValue>
-  [ 30] setprop 1487 ............................ pScaleV = tValue
+  [ 30] setprop 1489 ............................ pScaleV = tValue
   [ 33] jmp [562]
   [ 36] peek 0
   [ 38] pushsymb 540 ............................ <#locX>
@@ -613,7 +613,7 @@ on setProperty me, tProp, tValue
   [147] sub ..................................... <pwidth - tValue>
   [148] pushzero ................................ <0>
   [149] pusharglistnoret 3 ...................... <me, pwidth - tValue, 0>
-  [151] objcall 1426 ............................ me.resizeBy(pwidth - tValue, 0)
+  [151] objcall 1428 ............................ me.resizeBy(pwidth - tValue, 0)
   [154] jmp [562]
   [157] peek 0
   [159] pushsymb 43 ............................. <#height>
@@ -625,7 +625,7 @@ on setProperty me, tProp, tValue
   [171] getparam 2 .............................. <tValue>
   [173] sub ..................................... <pheight - tValue>
   [174] pusharglistnoret 3 ...................... <me, 0, pheight - tValue>
-  [176] objcall 1426 ............................ me.resizeBy(0, pheight - tValue)
+  [176] objcall 1428 ............................ me.resizeBy(0, pheight - tValue)
   [179] jmp [562]
   [182] peek 0
   [184] pushsymb 599 ............................ <#color>
@@ -636,12 +636,12 @@ on setProperty me, tProp, tValue
   [195] setobjprop 599 .......................... pSprite.color = tValue
   [198] jmp [562]
   [201] peek 0
-  [203] pushsymb 1298 ........................... <#bgColor>
+  [203] pushsymb 1300 ........................... <#bgColor>
   [206] eq
   [207] jmpifz [220] ............................ (case) #bgColor:
   [210] getprop 35 .............................. <pSprite>
   [212] getparam 2 .............................. <tValue>
-  [214] setobjprop 1298 ......................... pSprite.bgColor = tValue
+  [214] setobjprop 1300 ......................... pSprite.bgColor = tValue
   [217] jmp [562]
   [220] peek 0
   [222] pushsymb 503 ............................ <#blend>
@@ -721,7 +721,7 @@ on setProperty me, tProp, tValue
   [402] setobjprop 884 .......................... pSprite.castNum = pBuffer.number
   [405] jmp [562]
   [408] peek 0
-  [410] pushsymb 1299 ........................... <#palette>
+  [410] pushsymb 1301 ........................... <#palette>
   [413] eq
   [414] jmpifz [437] ............................ (case) #palette:
   [417] getparam 2 .............................. <tValue>
@@ -792,25 +792,25 @@ end
 
 on prepare me
   [  0] pushsymb 437 ............................ <#prepare>
-  [  3] getprop 1442 ............................ <pElemList>
+  [  3] getprop 1444 ............................ <pElemList>
   [  6] pusharglistnoret 2 ...................... <#prepare, pElemList>
   [  8] extcall 68 .............................. call(#prepare, pElemList)
   [ 10] ret
 end
 
 on render me
-  [  0] getprop 1366 ............................ <pVisible>
+  [  0] getprop 1368 ............................ <pVisible>
   [  3] jmpifz [ 16] ............................ if pVisible then
   [  6] pushsymb 449 ............................ <#render>
-  [  9] getprop 1442 ............................ <pElemList>
+  [  9] getprop 1444 ............................ <pElemList>
   [ 12] pusharglistnoret 2 ...................... <#render, pElemList>
   [ 14] extcall 68 .............................. call(#render, pElemList)
   [ 16] ret
 end
 
 on draw me, tRGB
-  [  0] pushsymb 1433 ........................... <#draw>
-  [  3] getprop 1442 ............................ <pElemList>
+  [  0] pushsymb 1435 ........................... <#draw>
+  [  3] getprop 1444 ............................ <pElemList>
   [  6] getparam 1 .............................. <tRGB>
   [  8] pusharglistnoret 3 ...................... <#draw, pElemList, tRGB>
   [ 10] extcall 68 .............................. call(#draw, pElemList, tRGB)

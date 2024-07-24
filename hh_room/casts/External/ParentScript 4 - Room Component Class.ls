@@ -1049,7 +1049,7 @@ end
 
 on executeEnterRoomAlert me
   if pEnterRoomAlert.length > 0 then
-    executeMessage(#alert, [#msg: pEnterRoomAlert])
+    executeMessage(#alert, [#Msg: pEnterRoomAlert])
     pEnterRoomAlert = EMPTY
   end if
 end

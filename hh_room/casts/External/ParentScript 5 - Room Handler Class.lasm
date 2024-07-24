@@ -2956,27 +2956,27 @@ end
 
 on handle_youarenotallowed me
   [  0] pushsymb 457 ............................ <#alert>
-  [  3] pushsymb 458 ............................ <#msg>
+  [  3] pushsymb 458 ............................ <#Msg>
   [  6] pushcons 61 ............................. <"trade_youarenotallowed">
   [  8] pushsymb 459 ............................ <#id>
   [ 11] pushcons 62 ............................. <"youarenotallowed">
-  [ 13] pusharglist 4 ........................... <[#msg: "trade_youarenotallowed", #id: "youarenotallowed"]>
-  [ 15] pushproplist ............................ <[#msg: "trade_youarenotallowed", #id: "youarenotallowed"]>
-  [ 16] pusharglistnoret 2 ...................... <#alert, [#msg: "trade_youarenotallowed", #id: "youarenotallowed"]>
-  [ 18] extcall 310 ............................. executeMessage(#alert, [#msg: "trade_youarenotallowed", #id: "youarenotallowed"])
+  [ 13] pusharglist 4 ........................... <[#Msg: "trade_youarenotallowed", #id: "youarenotallowed"]>
+  [ 15] pushproplist ............................ <[#Msg: "trade_youarenotallowed", #id: "youarenotallowed"]>
+  [ 16] pusharglistnoret 2 ...................... <#alert, [#Msg: "trade_youarenotallowed", #id: "youarenotallowed"]>
+  [ 18] extcall 310 ............................. executeMessage(#alert, [#Msg: "trade_youarenotallowed", #id: "youarenotallowed"])
   [ 21] ret
 end
 
 on handle_othernotallowed me
   [  0] pushsymb 457 ............................ <#alert>
-  [  3] pushsymb 458 ............................ <#msg>
+  [  3] pushsymb 458 ............................ <#Msg>
   [  6] pushcons 63 ............................. <"trade_othernotallowed">
   [  8] pushsymb 459 ............................ <#id>
   [ 11] pushcons 64 ............................. <"othernotallowed">
-  [ 13] pusharglist 4 ........................... <[#msg: "trade_othernotallowed", #id: "othernotallowed"]>
-  [ 15] pushproplist ............................ <[#msg: "trade_othernotallowed", #id: "othernotallowed"]>
-  [ 16] pusharglistnoret 2 ...................... <#alert, [#msg: "trade_othernotallowed", #id: "othernotallowed"]>
-  [ 18] extcall 310 ............................. executeMessage(#alert, [#msg: "trade_othernotallowed", #id: "othernotallowed"])
+  [ 13] pusharglist 4 ........................... <[#Msg: "trade_othernotallowed", #id: "othernotallowed"]>
+  [ 15] pushproplist ............................ <[#Msg: "trade_othernotallowed", #id: "othernotallowed"]>
+  [ 16] pusharglistnoret 2 ...................... <#alert, [#Msg: "trade_othernotallowed", #id: "othernotallowed"]>
+  [ 18] extcall 310 ............................. executeMessage(#alert, [#Msg: "trade_othernotallowed", #id: "othernotallowed"])
   [ 21] ret
 end
 

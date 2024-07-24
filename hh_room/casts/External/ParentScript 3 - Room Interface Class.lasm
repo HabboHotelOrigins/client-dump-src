@@ -2884,76 +2884,76 @@ on notify me, ttype
   [  7] eq
   [  8] jmpifz [ 30] ............................ (case) 400:
   [ 11] pushsymb 457 ............................ <#alert>
-  [ 14] pushsymb 458 ............................ <#msg>
+  [ 14] pushsymb 458 ............................ <#Msg>
   [ 17] pushcons 116 ............................ <"room_cant_trade">
-  [ 19] pusharglist 2 ........................... <[#msg: "room_cant_trade"]>
-  [ 21] pushproplist ............................ <[#msg: "room_cant_trade"]>
-  [ 22] pusharglistnoret 2 ...................... <#alert, [#msg: "room_cant_trade"]>
-  [ 24] extcall 310 ............................. executeMessage(#alert, [#msg: "room_cant_trade"])
+  [ 19] pusharglist 2 ........................... <[#Msg: "room_cant_trade"]>
+  [ 21] pushproplist ............................ <[#Msg: "room_cant_trade"]>
+  [ 22] pusharglistnoret 2 ...................... <#alert, [#Msg: "room_cant_trade"]>
+  [ 24] extcall 310 ............................. executeMessage(#alert, [#Msg: "room_cant_trade"])
   [ 27] jmp [177]
   [ 30] peek 0
   [ 32] pushint16 401 ........................... <401>
   [ 35] eq
   [ 36] jmpifz [ 58] ............................ (case) 401:
   [ 39] pushsymb 457 ............................ <#alert>
-  [ 42] pushsymb 458 ............................ <#msg>
+  [ 42] pushsymb 458 ............................ <#Msg>
   [ 45] pushcons 117 ............................ <"room_max_pet_limit">
-  [ 47] pusharglist 2 ........................... <[#msg: "room_max_pet_limit"]>
-  [ 49] pushproplist ............................ <[#msg: "room_max_pet_limit"]>
-  [ 50] pusharglistnoret 2 ...................... <#alert, [#msg: "room_max_pet_limit"]>
-  [ 52] extcall 310 ............................. executeMessage(#alert, [#msg: "room_max_pet_limit"])
+  [ 47] pusharglist 2 ........................... <[#Msg: "room_max_pet_limit"]>
+  [ 49] pushproplist ............................ <[#Msg: "room_max_pet_limit"]>
+  [ 50] pusharglistnoret 2 ...................... <#alert, [#Msg: "room_max_pet_limit"]>
+  [ 52] extcall 310 ............................. executeMessage(#alert, [#Msg: "room_max_pet_limit"])
   [ 55] jmp [177]
   [ 58] peek 0
   [ 60] pushint16 402 ........................... <402>
   [ 63] eq
   [ 64] jmpifz [ 86] ............................ (case) 402:
   [ 67] pushsymb 457 ............................ <#alert>
-  [ 70] pushsymb 458 ............................ <#msg>
+  [ 70] pushsymb 458 ............................ <#Msg>
   [ 73] pushcons 118 ............................ <"room_cant_set_item">
-  [ 75] pusharglist 2 ........................... <[#msg: "room_cant_set_item"]>
-  [ 77] pushproplist ............................ <[#msg: "room_cant_set_item"]>
-  [ 78] pusharglistnoret 2 ...................... <#alert, [#msg: "room_cant_set_item"]>
-  [ 80] extcall 310 ............................. executeMessage(#alert, [#msg: "room_cant_set_item"])
+  [ 75] pusharglist 2 ........................... <[#Msg: "room_cant_set_item"]>
+  [ 77] pushproplist ............................ <[#Msg: "room_cant_set_item"]>
+  [ 78] pusharglistnoret 2 ...................... <#alert, [#Msg: "room_cant_set_item"]>
+  [ 80] extcall 310 ............................. executeMessage(#alert, [#Msg: "room_cant_set_item"])
   [ 83] jmp [177]
   [ 86] peek 0
   [ 88] pushint16 403 ........................... <403>
   [ 91] eq
   [ 92] jmpifz [114] ............................ (case) 403:
   [ 95] pushsymb 457 ............................ <#alert>
-  [ 98] pushsymb 458 ............................ <#msg>
+  [ 98] pushsymb 458 ............................ <#Msg>
   [101] pushcons 119 ............................ <"wallitem_post.it.limit">
-  [103] pusharglist 2 ........................... <[#msg: "wallitem_post.it.limit"]>
-  [105] pushproplist ............................ <[#msg: "wallitem_post.it.limit"]>
-  [106] pusharglistnoret 2 ...................... <#alert, [#msg: "wallitem_post.it.limit"]>
-  [108] extcall 310 ............................. executeMessage(#alert, [#msg: "wallitem_post.it.limit"])
+  [103] pusharglist 2 ........................... <[#Msg: "wallitem_post.it.limit"]>
+  [105] pushproplist ............................ <[#Msg: "wallitem_post.it.limit"]>
+  [106] pusharglistnoret 2 ...................... <#alert, [#Msg: "wallitem_post.it.limit"]>
+  [108] extcall 310 ............................. executeMessage(#alert, [#Msg: "wallitem_post.it.limit"])
   [111] jmp [177]
   [114] peek 0
   [116] pushint16 404 ........................... <404>
   [119] eq
   [120] jmpifz [142] ............................ (case) 404:
   [123] pushsymb 457 ............................ <#alert>
-  [126] pushsymb 458 ............................ <#msg>
+  [126] pushsymb 458 ............................ <#Msg>
   [129] pushcons 120 ............................ <"queue_tile_limit">
-  [131] pusharglist 2 ........................... <[#msg: "queue_tile_limit"]>
-  [133] pushproplist ............................ <[#msg: "queue_tile_limit"]>
-  [134] pusharglistnoret 2 ...................... <#alert, [#msg: "queue_tile_limit"]>
-  [136] extcall 310 ............................. executeMessage(#alert, [#msg: "queue_tile_limit"])
+  [131] pusharglist 2 ........................... <[#Msg: "queue_tile_limit"]>
+  [133] pushproplist ............................ <[#Msg: "queue_tile_limit"]>
+  [134] pusharglistnoret 2 ...................... <#alert, [#Msg: "queue_tile_limit"]>
+  [136] extcall 310 ............................. executeMessage(#alert, [#Msg: "queue_tile_limit"])
   [139] jmp [177]
   [142] peek 0
   [144] pushint16 405 ........................... <405>
   [147] eq
   [148] jmpifz [177] ............................ (case) 405:
   [151] pushsymb 457 ............................ <#alert>
-  [154] pushsymb 458 ............................ <#msg>
+  [154] pushsymb 458 ............................ <#Msg>
   [157] pushcons 121 ............................ <"room_alert_furni_limit">
   [159] pushsymb 459 ............................ <#id>
   [162] pushcons 122 ............................ <"roomfullfurni">
   [164] pushsymb 460 ............................ <#modal>
   [167] pushint8 1 .............................. <1>
-  [169] pusharglist 6 ........................... <[#msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1]>
-  [171] pushproplist ............................ <[#msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1]>
-  [172] pusharglistnoret 2 ...................... <#alert, [#msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1]>
-  [174] extcall 310 ............................. executeMessage(#alert, [#msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1])
+  [169] pusharglist 6 ........................... <[#Msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1]>
+  [171] pushproplist ............................ <[#Msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1]>
+  [172] pusharglistnoret 2 ...................... <#alert, [#Msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1]>
+  [174] extcall 310 ............................. executeMessage(#alert, [#Msg: "room_alert_furni_limit", #id: "roomfullfurni", #modal: 1])
   [177] pop 1 ................................... end case
   [179] ret
 end

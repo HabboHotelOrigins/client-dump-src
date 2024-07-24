@@ -751,73 +751,58 @@ on store_watchfailed me, tParamList
 end
 
 on store_gamelocation me, tParamList
-  [  0] pushsymb 186 ............................ <#changeRoom>
-  [  2] pusharglistnoret 1 ...................... <#changeRoom>
-  [  4] extcall 200 ............................. executeMessage(#changeRoom)
-  [  6] getparam 0 .............................. <me>
-  [  8] pusharglist 1 ........................... <me>
-  [ 10] objcall 124 ............................. <me.getVariableManager()>
-  [ 12] setlocal 0 .............................. tVarMgr = me.getVariableManager()
-  [ 14] getlocal 0 .............................. <tVarMgr>
-  [ 16] pushsymb 77 ............................. <#observed_instance_data>
-  [ 18] pusharglist 0 ........................... <[:]>
-  [ 20] pushproplist ............................ <[:]>
-  [ 21] pusharglistnoret 3 ...................... <tVarMgr, #observed_instance_data, [:]>
-  [ 23] objcall 193 ............................. tVarMgr.set(#observed_instance_data, [:])
-  [ 25] getlocal 0 .............................. <tVarMgr>
-  [ 27] pushsymb 191 ............................ <#game_status>
-  [ 29] pushsymb 239 ............................ <#game_waiting_for_start>
-  [ 31] pusharglistnoret 3 ...................... <tVarMgr, #game_status, #game_waiting_for_start>
-  [ 33] objcall 193 ............................. tVarMgr.set(#game_status, #game_waiting_for_start)
-  [ 35] pushsymb 72 ............................. <#session>
-  [ 37] pusharglist 1 ........................... <#session>
-  [ 39] extcall 71 .............................. <getObject(#session)>
-  [ 41] pushzero ................................ <0>
-  [ 42] eq ...................................... <getObject(#session) = 0>
-  [ 43] jmpifz [ 51] ............................ if getObject(#session) = 0 then
-  [ 46] pushzero ................................ <0>
-  [ 47] pusharglistnoret 1 ...................... <0>
-  [ 49] extcall 53 .............................. return 0
-  [ 51] getparam 1 .............................. <tParamList>
-  [ 53] pushsymb 75 ............................. <#tournament_flag>
-  [ 55] getparam 0 .............................. <me>
-  [ 57] pusharglist 1 ........................... <me>
-  [ 59] objcall 124 ............................. <me.getVariableManager()>
-  [ 61] pushsymb 75 ............................. <#tournament_flag>
-  [ 63] pusharglist 2 ........................... <me.getVariableManager(), #tournament_flag>
-  [ 65] objcall 73 .............................. <me.getVariableManager().get(#tournament_flag)>
-  [ 67] pusharglistnoret 3 ...................... <tParamList, #tournament_flag, me.getVariableManager().get(#tournament_flag)>
-  [ 69] objcall 240 ............................. tParamList.addProp(#tournament_flag, me.getVariableManager().get(#tournament_flag))
-  [ 71] pushsymb 72 ............................. <#session>
-  [ 73] pusharglist 1 ........................... <#session>
-  [ 75] extcall 71 .............................. <getObject(#session)>
-  [ 77] pushsymb 205 ............................ <#gamespace_world_info>
+  [  0] getparam 0 .............................. <me>
+  [  2] pusharglist 1 ........................... <me>
+  [  4] objcall 124 ............................. <me.getVariableManager()>
+  [  6] setlocal 0 .............................. tVarMgr = me.getVariableManager()
+  [  8] getlocal 0 .............................. <tVarMgr>
+  [ 10] pushsymb 77 ............................. <#observed_instance_data>
+  [ 12] pusharglist 0 ........................... <[:]>
+  [ 14] pushproplist ............................ <[:]>
+  [ 15] pusharglistnoret 3 ...................... <tVarMgr, #observed_instance_data, [:]>
+  [ 17] objcall 193 ............................. tVarMgr.set(#observed_instance_data, [:])
+  [ 19] getlocal 0 .............................. <tVarMgr>
+  [ 21] pushsymb 191 ............................ <#game_status>
+  [ 23] pushsymb 239 ............................ <#game_waiting_for_start>
+  [ 25] pusharglistnoret 3 ...................... <tVarMgr, #game_status, #game_waiting_for_start>
+  [ 27] objcall 193 ............................. tVarMgr.set(#game_status, #game_waiting_for_start)
+  [ 29] pushsymb 72 ............................. <#session>
+  [ 31] pusharglist 1 ........................... <#session>
+  [ 33] extcall 71 .............................. <getObject(#session)>
+  [ 35] pushzero ................................ <0>
+  [ 36] eq ...................................... <getObject(#session) = 0>
+  [ 37] jmpifz [ 45] ............................ if getObject(#session) = 0 then
+  [ 40] pushzero ................................ <0>
+  [ 41] pusharglistnoret 1 ...................... <0>
+  [ 43] extcall 53 .............................. return 0
+  [ 45] getparam 1 .............................. <tParamList>
+  [ 47] pushsymb 75 ............................. <#tournament_flag>
+  [ 49] getparam 0 .............................. <me>
+  [ 51] pusharglist 1 ........................... <me>
+  [ 53] objcall 124 ............................. <me.getVariableManager()>
+  [ 55] pushsymb 75 ............................. <#tournament_flag>
+  [ 57] pusharglist 2 ........................... <me.getVariableManager(), #tournament_flag>
+  [ 59] objcall 73 .............................. <me.getVariableManager().get(#tournament_flag)>
+  [ 61] pusharglistnoret 3 ...................... <tParamList, #tournament_flag, me.getVariableManager().get(#tournament_flag)>
+  [ 63] objcall 240 ............................. tParamList.addProp(#tournament_flag, me.getVariableManager().get(#tournament_flag))
+  [ 65] pushsymb 72 ............................. <#session>
+  [ 67] pusharglist 1 ........................... <#session>
+  [ 69] extcall 71 .............................. <getObject(#session)>
+  [ 71] pushsymb 205 ............................ <#gamespace_world_info>
+  [ 73] getparam 1 .............................. <tParamList>
+  [ 75] pusharglistnoret 3 ...................... <getObject(#session), #gamespace_world_info, tParamList>
+  [ 77] objcall 193 ............................. getObject(#session).set(#gamespace_world_info, tParamList)
   [ 79] getparam 1 .............................. <tParamList>
-  [ 81] pusharglistnoret 3 ...................... <getObject(#session), #gamespace_world_info, tParamList>
-  [ 83] objcall 193 ............................. getObject(#session).set(#gamespace_world_info, tParamList)
-  [ 85] getparam 0 .............................. <me>
-  [ 87] pusharglist 1 ........................... <me>
-  [ 89] objcall 81 .............................. <me.getMessageSender()>
-  [ 91] pushzero ................................ <0>
-  [ 92] pusharglistnoret 2 ...................... <me.getMessageSender(), 0>
-  [ 94] objcall 11 .............................. me.getMessageSender().setInstanceListUpdates(0)
-  [ 96] getparam 1 .............................. <tParamList>
-  [ 98] pushsymb 201 ............................ <#unitId>
-  [100] pusharglist 2 ........................... <tParamList, #unitId>
-  [102] objcall 99 .............................. <tParamList[#unitId]>
-  [104] setlocal 1 .............................. tUnitId = tParamList[#unitId]
-  [106] getparam 1 .............................. <tParamList>
-  [108] pushsymb 202 ............................ <#worldId>
-  [110] pusharglist 2 ........................... <tParamList, #worldId>
-  [112] objcall 99 .............................. <tParamList[#worldId]>
-  [114] setlocal 2 .............................. tWorldId = tParamList[#worldId]
-  [116] getparam 0 .............................. <me>
-  [118] getlocal 1 .............................. <tUnitId>
-  [120] getlocal 2 .............................. <tWorldId>
-  [122] pushsymb 241 ............................ <#game>
-  [124] pusharglistnoret 4 ...................... <me, tUnitId, tWorldId, #game>
-  [126] objcall 182 ............................. me.spaceTravel(tUnitId, tWorldId, #game)
-  [128] ret
+  [ 81] pushsymb 201 ............................ <#unitId>
+  [ 83] pusharglist 2 ........................... <tParamList, #unitId>
+  [ 85] objcall 99 .............................. <tParamList[#unitId]>
+  [ 87] setlocal 1 .............................. tUnitId = tParamList[#unitId]
+  [ 89] getparam 1 .............................. <tParamList>
+  [ 91] pushsymb 202 ............................ <#worldId>
+  [ 93] pusharglist 2 ........................... <tParamList, #worldId>
+  [ 95] objcall 99 .............................. <tParamList[#worldId]>
+  [ 97] setlocal 2 .............................. tWorldId = tParamList[#worldId]
+  [ 99] ret
 end
 
 on store_gamestatus me, tdata

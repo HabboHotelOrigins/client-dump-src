@@ -61,15 +61,15 @@ on prepare me
   [ 49] getlocal 1 .............................. <tid>
   [ 51] pusharglist 2 ........................... <tRoomVis, tid>
   [ 53] objcall 141 ............................. <tRoomVis.getSprById(tid)>
-  [ 55] setlocal 2 .............................. tSprite = tRoomVis.getSprById(tid)
-  [ 57] getlocal 2 .............................. <tSprite>
+  [ 55] setlocal 2 .............................. tsprite = tRoomVis.getSprById(tid)
+  [ 57] getlocal 2 .............................. <tsprite>
   [ 59] pushsymb 180 ............................ <#busTeleport>
   [ 61] getparam 0 .............................. <me>
   [ 63] pusharglist 1 ........................... <me>
   [ 65] objcall 14 .............................. <me.getID()>
   [ 67] pushsymb 142 ............................ <#mouseDown>
-  [ 69] pusharglistnoret 4 ...................... <tSprite, #busTeleport, me.getID(), #mouseDown>
-  [ 71] extcall 22 .............................. registerProcedure(tSprite, #busTeleport, me.getID(), #mouseDown)
+  [ 69] pusharglistnoret 4 ...................... <tsprite, #busTeleport, me.getID(), #mouseDown>
+  [ 71] extcall 22 .............................. registerProcedure(tsprite, #busTeleport, me.getID(), #mouseDown)
   [ 73] pushint8 1
   [ 75] add
   [ 76] endrepeat [ 29]

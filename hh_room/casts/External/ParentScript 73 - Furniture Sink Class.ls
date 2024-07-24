@@ -11,8 +11,10 @@ end
 on updateStuffdata me, tValue
   if (tValue = "TRUE") or (tValue = "1") then
     pDoorTimer = 80
+    me.openCloseDoor(#open)
   else
     pDoorTimer = 0
+    me.openCloseDoor(#close)
   end if
 end
 
@@ -63,7 +65,7 @@ on giveDrink me
   if tConnection = 0 then
     return 0
   end if
-  getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
+  tConnection.send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
   tConnection.send("LOOKTO", me.pLocX && me.pLocY)
   tConnection.send("CARRYDRINK", [#string: string(me.getDrinkname())])
 end
@@ -72,21 +74,32 @@ on getDrinkname me
   return pTokenList[random(pTokenList.count)]
 end
 
+on openCloseDoor me, tOpen
+  if (tOpen = #open) or (tOpen = 1) then
+    tFrame = 1
+  else
+    tFrame = 0
+  end if
+  repeat with tsprite in me.pSprList
+    tCurName = tsprite.member.name
+    tNewName = tCurName.char[1..length(tCurName) - 1] & tFrame
+    if memberExists(tNewName) then
+      tMem = member(getmemnum(tNewName))
+      tsprite.member = tMem
+      tsprite.width = tMem.width
+      tsprite.height = tMem.height
+    end if
+  end repeat
+end
+
 on update me
   if pDoorTimer <> 0 then
-    if me.pSprList.count < 2 then
+    if me.pSprList.count < 1 then
       return 
     end if
-    tName = me.pSprList[2].member.name
-    tName = tName.char[1..length(tName) - 1] & 1
-    tmember = member(abs(getmemnum(tName)))
     pDoorTimer = pDoorTimer - 1
     if pDoorTimer = 0 then
-      tName = tName.char[1..length(tName) - 1] & 0
-      tmember = member(getmemnum(tName))
+      me.openCloseDoor(#close)
     end if
-    me.pSprList[2].castNum = tmember.number
-    me.pSprList[2].width = tmember.width
-    me.pSprList[2].height = tmember.height
   end if
 end

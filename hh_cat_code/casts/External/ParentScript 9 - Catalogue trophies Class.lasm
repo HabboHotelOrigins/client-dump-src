@@ -1339,16 +1339,16 @@ on eventProc me, tEvent, tSprID, tProp
   [249] lt ...................................... <tText.length < 1>
   [250] jmpifz [280] ............................ if tText.length < 1 then / else
   [253] pushsymb 495 ............................ <#alert>
-  [256] pushsymb 496 ............................ <#msg>
+  [256] pushsymb 496 ............................ <#Msg>
   [259] pushcons 39 ............................. <"catalog_give_trophymsg">
   [261] pushsymb 237 ............................ <#id>
   [263] pushcons 40 ............................. <"ctlg_trophymsg">
-  [265] pusharglist 4 ........................... <[#msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"]>
-  [267] pushproplist ............................ <[#msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"]>
-  [268] pusharglist 2 ........................... <#alert, [#msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"]>
-  [270] extcall 494 ............................. <executeMessage(#alert, [#msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"])>
-  [273] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"])>
-  [275] extcall 43 .............................. return executeMessage(#alert, [#msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"])
+  [265] pusharglist 4 ........................... <[#Msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"]>
+  [267] pushproplist ............................ <[#Msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"]>
+  [268] pusharglist 2 ........................... <#alert, [#Msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"]>
+  [270] extcall 494 ............................. <executeMessage(#alert, [#Msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"])>
+  [273] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"])>
+  [275] extcall 43 .............................. return executeMessage(#alert, [#Msg: "catalog_give_trophymsg", #id: "ctlg_trophymsg"])
   [277] jmp [315]
   [280] getlocal 4 .............................. <tText>
   [282] getobjprop 193 .......................... <tText.length>
@@ -1356,16 +1356,16 @@ on eventProc me, tEvent, tSprID, tProp
   [287] gt ...................................... <tText.length > 150>
   [288] jmpifz [315] ............................ if tText.length > 150 then
   [291] pushsymb 495 ............................ <#alert>
-  [294] pushsymb 496 ............................ <#msg>
+  [294] pushsymb 496 ............................ <#Msg>
   [297] pushcons 41 ............................. <"catalog_length_trophymsg">
   [299] pushsymb 237 ............................ <#id>
   [301] pushcons 40 ............................. <"ctlg_trophymsg">
-  [303] pusharglist 4 ........................... <[#msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"]>
-  [305] pushproplist ............................ <[#msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"]>
-  [306] pusharglist 2 ........................... <#alert, [#msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"]>
-  [308] extcall 494 ............................. <executeMessage(#alert, [#msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"])>
-  [311] pusharglistnoret 1 ...................... <executeMessage(#alert, [#msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"])>
-  [313] extcall 43 .............................. return executeMessage(#alert, [#msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"])
+  [303] pusharglist 4 ........................... <[#Msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"]>
+  [305] pushproplist ............................ <[#Msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"]>
+  [306] pusharglist 2 ........................... <#alert, [#Msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"]>
+  [308] extcall 494 ............................. <executeMessage(#alert, [#Msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"])>
+  [311] pusharglistnoret 1 ...................... <executeMessage(#alert, [#Msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"])>
+  [313] extcall 43 .............................. return executeMessage(#alert, [#Msg: "catalog_length_trophymsg", #id: "ctlg_trophymsg"])
   [315] getprop 150 ............................. <pSelectedProduct>
   [317] getobjprop 135 .......................... <pSelectedProduct.ilk>
   [319] pushsymb 136 ............................ <#propList>

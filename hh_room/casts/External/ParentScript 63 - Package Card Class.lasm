@@ -63,10 +63,10 @@ on define me, tProps
   [  7] objcall 34 .............................. <tProps[#id]>
   [  9] setprop 1749 ............................ pPackageID = tProps[#id]
   [ 12] getparam 1 .............................. <tProps>
-  [ 14] pushsymb 458 ............................ <#msg>
-  [ 17] pusharglist 2 ........................... <tProps, #msg>
-  [ 19] objcall 34 .............................. <tProps[#msg]>
-  [ 21] setprop 1745 ............................ pMessage = tProps[#msg]
+  [ 14] pushsymb 458 ............................ <#Msg>
+  [ 17] pusharglist 2 ........................... <tProps, #Msg>
+  [ 19] objcall 34 .............................. <tProps[#Msg]>
+  [ 21] setprop 1745 ............................ pMessage = tProps[#Msg]
   [ 24] getparam 0 .............................. <me>
   [ 26] getparam 1 .............................. <tProps>
   [ 28] pushsymb 435 ............................ <#loc>

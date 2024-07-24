@@ -536,7 +536,7 @@ on getMoviePath me
   [ 11] not ..................................... <not variableExists(tVariableID)>
   [ 12] jmpifz [ 30] ............................ if not variableExists(tVariableID) then
   [ 15] getlocal 0 .............................. <tVariableID>
-  [ 17] getmovieprop 1101 ....................... <the moviePath>
+  [ 17] getmovieprop 1102 ....................... <the moviePath>
   [ 20] pusharglist 1 ........................... <the moviePath>
   [ 22] extcall 281 ............................. <obfuscate(the moviePath)>
   [ 25] pusharglistnoret 2 ...................... <tVariableID, obfuscate(the moviePath)>
@@ -739,7 +739,7 @@ on sendProcessTracking me, tStepValue
   [ 34] pusharglist 1 ........................... <"javascriptLog">
   [ 36] extcall 115 ............................. <script("javascriptLog")>
   [ 38] pusharglist 1 ........................... <script("javascriptLog")>
-  [ 40] objcall 1107 ............................ <script("javascriptLog").newJavascriptLog()>
+  [ 40] objcall 1108 ............................ <script("javascriptLog").newJavascriptLog()>
   [ 43] setlocal 0 .............................. tJsHandler = script("javascriptLog").newJavascriptLog()
   [ 45] getlocal 0 .............................. <tJsHandler>
   [ 47] getparam 1 .............................. <tStepValue>
@@ -852,10 +852,10 @@ on secretDecode me, tKey
   [193] pushint8 8 .............................. <8>
   [195] mul ..................................... <(i - 1) mod 3 * 8>
   [196] pusharglist 2 ........................... <2, (i - 1) mod 3 * 8>
-  [198] extcall 1111 ............................ <power(2, (i - 1) mod 3 * 8)>
+  [198] extcall 1112 ............................ <power(2, (i - 1) mod 3 * 8)>
   [201] mul ..................................... <a * power(2, (i - 1) mod 3 * 8)>
   [202] pusharglist 2 ........................... <tCheckSum, a * power(2, (i - 1) mod 3 * 8)>
-  [204] extcall 1110 ............................ <bitXor(tCheckSum, a * power(2, (i - 1) mod 3 * 8))>
+  [204] extcall 1111 ............................ <bitXor(tCheckSum, a * power(2, (i - 1) mod 3 * 8))>
   [207] setlocal 2 .............................. tCheckSum = bitXor(tCheckSum, a * power(2, (i - 1) mod 3 * 8))
   [209] pushint8 1
   [211] getlocal 3
@@ -991,7 +991,7 @@ on readValueFromField me, tField, tDelimiter, tSearchedKey
   [265] pusharglist 1 ........................... <tValue>
   [267] extcall 944 ............................. <float(tValue)>
   [270] pusharglist 1 ........................... <float(tValue)>
-  [272] extcall 1116 ............................ <floatp(float(tValue))>
+  [272] extcall 1117 ............................ <floatp(float(tValue))>
   [275] jmpifz [287] ............................ if floatp(float(tValue)) then
   [278] getlocal 5 .............................. <tValue>
   [280] pusharglist 1 ........................... <tValue>
@@ -1124,12 +1124,12 @@ on generateMachineId me, tMaxLength
   [  3] pusharglist 1 ........................... <the milliSeconds>
   [  5] extcall 595 ............................. <string(the milliSeconds)>
   [  8] pusharglist 0 ........................... <>
-  [ 10] thebuiltin 1119 ......................... <the time>
+  [ 10] thebuiltin 1120 ......................... <the time>
   [ 13] pusharglist 1 ........................... <the time>
   [ 15] extcall 595 ............................. <string(the time)>
   [ 18] joinstr ................................. <string(the milliSeconds) & string(the time)>
   [ 19] pusharglist 0 ........................... <>
-  [ 21] thebuiltin 1120 ......................... <the date>
+  [ 21] thebuiltin 1121 ......................... <the date>
   [ 24] pusharglist 1 ........................... <the date>
   [ 26] extcall 595 ............................. <string(the date)>
   [ 29] joinstr ................................. <string(the milliSeconds) & string(the time) & string(the date)>
@@ -1218,7 +1218,7 @@ on prepareToolTip me
   [ 26] extcall 41 .............................. <member(createMember("ToolTip Text", #field))>
   [ 28] setprop 1081 ............................ pToolTipMem = member(createMember("ToolTip Text", #field))
   [ 31] getprop 1081 ............................ <pToolTipMem>
-  [ 34] pushsymb 1122 ........................... <#adjust>
+  [ 34] pushsymb 1123 ........................... <#adjust>
   [ 37] setobjprop 853 .......................... pToolTipMem.boxType = #adjust
   [ 40] getprop 1081 ............................ <pToolTipMem>
   [ 43] pushzero ................................ <0>
@@ -1233,10 +1233,10 @@ on prepareToolTip me
   [ 61] setobjprop 557 .......................... pToolTipMem.rect = rect(0, 0, 10, 20)
   [ 64] getprop 1081 ............................ <pToolTipMem>
   [ 67] pushint8 1 .............................. <1>
-  [ 69] setobjprop 1123 ......................... pToolTipMem.border = 1
+  [ 69] setobjprop 1124 ......................... pToolTipMem.border = 1
   [ 72] getprop 1081 ............................ <pToolTipMem>
   [ 75] pushint8 4 .............................. <4>
-  [ 77] setobjprop 1124 ......................... pToolTipMem.margin = 4
+  [ 77] setobjprop 1125 ......................... pToolTipMem.margin = 4
   [ 80] getprop 1081 ............................ <pToolTipMem>
   [ 83] pushcons 58 ............................. <"center">
   [ 85] setobjprop 472 .......................... pToolTipMem.alignment = "center"

@@ -255,27 +255,41 @@ on giveDrink me
   [ 24] pusharglistnoret 1 ...................... <0>
   [ 26] extcall 31 .............................. return 0
   [ 28] getlocal 0 .............................. <tConnection>
-  [ 30] pushcons 2 .............................. <"LOOKTO">
-  [ 32] getparam 0 .............................. <me>
-  [ 34] getobjprop 19 ........................... <me.pLocX>
-  [ 36] getparam 0 .............................. <me>
-  [ 38] getobjprop 20 ........................... <me.pLocY>
-  [ 40] joinpadstr .............................. <me.pLocX && me.pLocY>
-  [ 41] pusharglistnoret 3 ...................... <tConnection, "LOOKTO", me.pLocX && me.pLocY>
-  [ 43] objcall 135 ............................. tConnection.send("LOOKTO", me.pLocX && me.pLocY)
-  [ 45] getlocal 0 .............................. <tConnection>
-  [ 47] pushcons 3 .............................. <"CARRYDRINK">
-  [ 49] pushsymb 519 ............................ <#string>
-  [ 52] getparam 0 .............................. <me>
-  [ 54] pusharglist 1 ........................... <me>
-  [ 56] objcall 1765 ............................ <me.getDrinkname()>
-  [ 59] pusharglist 1 ........................... <me.getDrinkname()>
-  [ 61] extcall 519 ............................. <string(me.getDrinkname())>
-  [ 64] pusharglist 2 ........................... <[#string: string(me.getDrinkname())]>
-  [ 66] pushproplist ............................ <[#string: string(me.getDrinkname())]>
-  [ 67] pusharglistnoret 3 ...................... <tConnection, "CARRYDRINK", [#string: string(me.getDrinkname())]>
-  [ 69] objcall 135 ............................. tConnection.send("CARRYDRINK", [#string: string(me.getDrinkname())])
-  [ 71] ret
+  [ 30] pushcons 2 .............................. <"SETSTUFFDATA">
+  [ 32] pushsymb 519 ............................ <#string>
+  [ 35] getparam 0 .............................. <me>
+  [ 37] pusharglist 1 ........................... <me>
+  [ 39] objcall 75 .............................. <me.getID()>
+  [ 41] pusharglist 1 ........................... <me.getID()>
+  [ 43] extcall 519 ............................. <string(me.getID())>
+  [ 46] pushsymb 519 ............................ <#string>
+  [ 49] pushcons 3 .............................. <"TRUE">
+  [ 51] pusharglist 4 ........................... <[#string: string(me.getID()), #string: "TRUE"]>
+  [ 53] pushproplist ............................ <[#string: string(me.getID()), #string: "TRUE"]>
+  [ 54] pusharglistnoret 3 ...................... <tConnection, "SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"]>
+  [ 56] objcall 135 ............................. tConnection.send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
+  [ 58] getlocal 0 .............................. <tConnection>
+  [ 60] pushcons 4 .............................. <"LOOKTO">
+  [ 62] getparam 0 .............................. <me>
+  [ 64] getobjprop 19 ........................... <me.pLocX>
+  [ 66] getparam 0 .............................. <me>
+  [ 68] getobjprop 20 ........................... <me.pLocY>
+  [ 70] joinpadstr .............................. <me.pLocX && me.pLocY>
+  [ 71] pusharglistnoret 3 ...................... <tConnection, "LOOKTO", me.pLocX && me.pLocY>
+  [ 73] objcall 135 ............................. tConnection.send("LOOKTO", me.pLocX && me.pLocY)
+  [ 75] getlocal 0 .............................. <tConnection>
+  [ 77] pushcons 5 .............................. <"CARRYDRINK">
+  [ 79] pushsymb 519 ............................ <#string>
+  [ 82] getparam 0 .............................. <me>
+  [ 84] pusharglist 1 ........................... <me>
+  [ 86] objcall 1765 ............................ <me.getDrinkname()>
+  [ 89] pusharglist 1 ........................... <me.getDrinkname()>
+  [ 91] extcall 519 ............................. <string(me.getDrinkname())>
+  [ 94] pusharglist 2 ........................... <[#string: string(me.getDrinkname())]>
+  [ 96] pushproplist ............................ <[#string: string(me.getDrinkname())]>
+  [ 97] pusharglistnoret 3 ...................... <tConnection, "CARRYDRINK", [#string: string(me.getDrinkname())]>
+  [ 99] objcall 135 ............................. tConnection.send("CARRYDRINK", [#string: string(me.getDrinkname())])
+  [101] ret
 end
 
 on getDrinkname me

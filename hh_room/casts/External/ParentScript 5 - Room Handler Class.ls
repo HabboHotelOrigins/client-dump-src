@@ -623,11 +623,11 @@ on handle_removestripitem me, tMsg
 end
 
 on handle_youarenotallowed me
-  executeMessage(#alert, [#msg: "trade_youarenotallowed", #id: "youarenotallowed"])
+  executeMessage(#alert, [#Msg: "trade_youarenotallowed", #id: "youarenotallowed"])
 end
 
 on handle_othernotallowed me
-  executeMessage(#alert, [#msg: "trade_othernotallowed", #id: "othernotallowed"])
+  executeMessage(#alert, [#Msg: "trade_othernotallowed", #id: "othernotallowed"])
 end
 
 on handle_idata me, tMsg

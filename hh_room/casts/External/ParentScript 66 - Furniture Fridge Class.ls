@@ -65,7 +65,7 @@ on giveDrink me
   if tConnection = 0 then
     return 0
   end if
-  getThread(#room).getComponent().getRoomConnection().send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
+  tConnection.send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
   tConnection.send("LOOKTO", me.pLocX && me.pLocY)
   tConnection.send("CARRYDRINK", [#string: string(me.getDrinkname())])
 end

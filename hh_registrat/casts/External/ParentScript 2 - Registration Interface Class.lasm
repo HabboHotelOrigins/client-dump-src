@@ -280,16 +280,16 @@ on userNameUnacceptable me
   [ 12] pusharglistnoret 2 ...................... <me, "reg_namepage.window">
   [ 14] objcall 65 .............................. me.changePage("reg_namepage.window")
   [ 16] pushsymb 183 ............................ <#alert>
-  [ 18] pushsymb 184 ............................ <#msg>
+  [ 18] pushsymb 184 ............................ <#Msg>
   [ 20] pushcons 18 ............................. <"Alert_unacceptableName">
   [ 22] pushsymb 185 ............................ <#id>
   [ 24] pushcons 19 ............................. <"namenogood">
   [ 26] pushsymb 186 ............................ <#modal>
   [ 28] pushint8 1 .............................. <1>
-  [ 30] pusharglist 6 ........................... <[#msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1]>
-  [ 32] pushproplist ............................ <[#msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1]>
-  [ 33] pusharglistnoret 2 ...................... <#alert, [#msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1]>
-  [ 35] extcall 182 ............................. executeMessage(#alert, [#msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1])
+  [ 30] pusharglist 6 ........................... <[#Msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1]>
+  [ 32] pushproplist ............................ <[#Msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1]>
+  [ 33] pusharglistnoret 2 ...................... <#alert, [#Msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1]>
+  [ 35] extcall 182 ............................. executeMessage(#alert, [#Msg: "Alert_unacceptableName", #id: "namenogood", #modal: 1])
   [ 37] getparam 0 .............................. <me>
   [ 39] pusharglistnoret 1 ...................... <me>
   [ 41] objcall 135 ............................. me.clearUserNameField()
@@ -306,16 +306,16 @@ on userNameTooLong me
   [ 12] pusharglistnoret 2 ...................... <me, "reg_namepage.window">
   [ 14] objcall 65 .............................. me.changePage("reg_namepage.window")
   [ 16] pushsymb 183 ............................ <#alert>
-  [ 18] pushsymb 184 ............................ <#msg>
+  [ 18] pushsymb 184 ............................ <#Msg>
   [ 20] pushcons 20 ............................. <"Alert_NameTooLong">
   [ 22] pushsymb 185 ............................ <#id>
   [ 24] pushcons 21 ............................. <"nametoolong">
   [ 26] pushsymb 186 ............................ <#modal>
   [ 28] pushint8 1 .............................. <1>
-  [ 30] pusharglist 6 ........................... <[#msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1]>
-  [ 32] pushproplist ............................ <[#msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1]>
-  [ 33] pusharglistnoret 2 ...................... <#alert, [#msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1]>
-  [ 35] extcall 182 ............................. executeMessage(#alert, [#msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1])
+  [ 30] pusharglist 6 ........................... <[#Msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1]>
+  [ 32] pushproplist ............................ <[#Msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1]>
+  [ 33] pusharglistnoret 2 ...................... <#alert, [#Msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1]>
+  [ 35] extcall 182 ............................. executeMessage(#alert, [#Msg: "Alert_NameTooLong", #id: "nametoolong", #modal: 1])
   [ 37] ret
 end
 
@@ -329,16 +329,16 @@ on userNameAlreadyReserved me
   [ 12] pusharglistnoret 2 ...................... <me, "reg_namepage.window">
   [ 14] objcall 65 .............................. me.changePage("reg_namepage.window")
   [ 16] pushsymb 183 ............................ <#alert>
-  [ 18] pushsymb 184 ............................ <#msg>
+  [ 18] pushsymb 184 ............................ <#Msg>
   [ 20] pushcons 22 ............................. <"Alert_NameAlreadyUse">
   [ 22] pushsymb 185 ............................ <#id>
   [ 24] pushcons 23 ............................. <"namereserved">
   [ 26] pushsymb 186 ............................ <#modal>
   [ 28] pushint8 1 .............................. <1>
-  [ 30] pusharglist 6 ........................... <[#msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1]>
-  [ 32] pushproplist ............................ <[#msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1]>
-  [ 33] pusharglistnoret 2 ...................... <#alert, [#msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1]>
-  [ 35] extcall 182 ............................. executeMessage(#alert, [#msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1])
+  [ 30] pusharglist 6 ........................... <[#Msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1]>
+  [ 32] pushproplist ............................ <[#Msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1]>
+  [ 33] pusharglistnoret 2 ...................... <#alert, [#Msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1]>
+  [ 35] extcall 182 ............................. executeMessage(#alert, [#Msg: "Alert_NameAlreadyUse", #id: "namereserved", #modal: 1])
   [ 37] getparam 0 .............................. <me>
   [ 39] pusharglistnoret 1 ...................... <me>
   [ 41] objcall 135 ............................. me.clearUserNameField()
@@ -575,16 +575,16 @@ on userEmailUnacceptable me
   [ 17] extcall 167 ............................. removeWindow(pVerifyChangeWndID)
   [ 19] pop 1
   [ 21] pushsymb 183 ............................ <#alert>
-  [ 23] pushsymb 184 ............................ <#msg>
+  [ 23] pushsymb 184 ............................ <#Msg>
   [ 25] pushcons 39 ............................. <"reg_verification_invalidEmail">
   [ 27] pushsymb 185 ............................ <#id>
   [ 29] pushcons 40 ............................. <"emailnogood">
   [ 31] pushsymb 186 ............................ <#modal>
   [ 33] pushint8 1 .............................. <1>
-  [ 35] pusharglist 6 ........................... <[#msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1]>
-  [ 37] pushproplist ............................ <[#msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1]>
-  [ 38] pusharglistnoret 2 ...................... <#alert, [#msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1]>
-  [ 40] extcall 182 ............................. executeMessage(#alert, [#msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1])
+  [ 35] pusharglist 6 ........................... <[#Msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1]>
+  [ 37] pushproplist ............................ <[#Msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1]>
+  [ 38] pusharglistnoret 2 ...................... <#alert, [#Msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1]>
+  [ 40] extcall 182 ............................. executeMessage(#alert, [#Msg: "reg_verification_invalidEmail", #id: "emailnogood", #modal: 1])
   [ 42] pushint8 1 .............................. <1>
   [ 44] pusharglistnoret 1 ...................... <1>
   [ 46] extcall 23 .............................. return 1
@@ -751,16 +751,16 @@ on parentEmailIncorrect me
   [ 12] pusharglistnoret 2 ...................... <me, "reg_parent_email.window">
   [ 14] objcall 65 .............................. me.changePage("reg_parent_email.window")
   [ 16] pushsymb 183 ............................ <#alert>
-  [ 18] pushsymb 184 ............................ <#msg>
+  [ 18] pushsymb 184 ............................ <#Msg>
   [ 20] pushcons 49 ............................. <"alert_reg_parent_email">
   [ 22] pushsymb 185 ............................ <#id>
   [ 24] pushcons 50 ............................. <"parentemailincorrect">
   [ 26] pushsymb 186 ............................ <#modal>
   [ 28] pushint8 1 .............................. <1>
-  [ 30] pusharglist 6 ........................... <[#msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1]>
-  [ 32] pushproplist ............................ <[#msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1]>
-  [ 33] pusharglistnoret 2 ...................... <#alert, [#msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1]>
-  [ 35] extcall 182 ............................. executeMessage(#alert, [#msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1])
+  [ 30] pusharglist 6 ........................... <[#Msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1]>
+  [ 32] pushproplist ............................ <[#Msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1]>
+  [ 33] pusharglistnoret 2 ...................... <#alert, [#Msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1]>
+  [ 35] extcall 182 ............................. executeMessage(#alert, [#Msg: "alert_reg_parent_email", #id: "parentemailincorrect", #modal: 1])
   [ 37] pushzero ................................ <0>
   [ 38] pusharglistnoret 1 ...................... <0>
   [ 40] extcall 23 .............................. return 0
@@ -4195,16 +4195,16 @@ on checkName me
   [ 94] eq ...................................... <length(tName) = 0>
   [ 95] jmpifz [127] ............................ if length(tName) = 0 then / else
   [ 98] pushsymb 183 ............................ <#alert>
-  [100] pushsymb 184 ............................ <#msg>
+  [100] pushsymb 184 ............................ <#Msg>
   [102] pushcons 164 ............................ <"Alert_NoNameSet">
   [104] pushsymb 185 ............................ <#id>
   [106] pushcons 165 ............................ <"nonameset">
   [108] pushsymb 186 ............................ <#modal>
   [110] pushint8 1 .............................. <1>
-  [112] pusharglist 6 ........................... <[#msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1]>
-  [114] pushproplist ............................ <[#msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1]>
-  [115] pusharglistnoret 2 ...................... <#alert, [#msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1]>
-  [117] extcall 182 ............................. executeMessage(#alert, [#msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1])
+  [112] pusharglist 6 ........................... <[#Msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1]>
+  [114] pushproplist ............................ <[#Msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1]>
+  [115] pusharglistnoret 2 ...................... <#alert, [#Msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1]>
+  [117] extcall 182 ............................. executeMessage(#alert, [#Msg: "Alert_NoNameSet", #id: "nonameset", #modal: 1])
   [119] pushzero ................................ <0>
   [120] pusharglistnoret 1 ...................... <0>
   [122] extcall 23 .............................. return 0
@@ -4219,16 +4219,16 @@ on checkName me
   [142] lt ...................................... <length(tName) < getIntVariable("name.length.min", 3)>
   [143] jmpifz [183] ............................ if length(tName) < getIntVariable("name.length.min", 3) then / else
   [146] pushsymb 183 ............................ <#alert>
-  [148] pushsymb 184 ............................ <#msg>
+  [148] pushsymb 184 ............................ <#Msg>
   [150] pushcons 167 ............................ <"Alert_YourNameIstooShort">
   [152] pushsymb 185 ............................ <#id>
   [154] pushcons 168 ............................ <"name2short">
   [156] pushsymb 186 ............................ <#modal>
   [158] pushint8 1 .............................. <1>
-  [160] pusharglist 6 ........................... <[#msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1]>
-  [162] pushproplist ............................ <[#msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1]>
-  [163] pusharglistnoret 2 ...................... <#alert, [#msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1]>
-  [165] extcall 182 ............................. executeMessage(#alert, [#msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1])
+  [160] pusharglist 6 ........................... <[#Msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1]>
+  [162] pushproplist ............................ <[#Msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1]>
+  [163] pusharglistnoret 2 ...................... <#alert, [#Msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1]>
+  [165] extcall 182 ............................. executeMessage(#alert, [#Msg: "Alert_YourNameIstooShort", #id: "name2short", #modal: 1])
   [167] getparam 0 .............................. <me>
   [169] pushcons 97 ............................. <"char_name_field">
   [171] pusharglistnoret 2 ...................... <me, "char_name_field">
@@ -5190,16 +5190,16 @@ on leavePage me, tCurrentWindow
   [ 44] pushsymb 183 ............................ <#alert>
   [ 46] pushsymb 218 ............................ <#title>
   [ 48] pushcons 186 ............................ <"alert_reg_t">
-  [ 50] pushsymb 184 ............................ <#msg>
+  [ 50] pushsymb 184 ............................ <#Msg>
   [ 52] getprop 355 ............................. <pErrorMsg>
   [ 55] pushsymb 185 ............................ <#id>
   [ 57] pushcons 187 ............................ <"problems">
   [ 59] pushsymb 186 ............................ <#modal>
   [ 61] pushint8 1 .............................. <1>
-  [ 63] pusharglist 8 ........................... <[#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [ 65] pushproplist ............................ <[#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [ 66] pusharglistnoret 2 ...................... <#alert, [#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [ 68] extcall 182 ............................. executeMessage(#alert, [#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1])
+  [ 63] pusharglist 8 ........................... <[#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [ 65] pushproplist ............................ <[#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [ 66] pusharglistnoret 2 ...................... <#alert, [#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [ 68] extcall 182 ............................. executeMessage(#alert, [#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1])
   [ 70] pop 1
   [ 72] pushzero ................................ <0>
   [ 73] pusharglistnoret 1 ...................... <0>
@@ -5394,16 +5394,16 @@ on leavePage me, tCurrentWindow
   [454] pushsymb 183 ............................ <#alert>
   [456] pushsymb 218 ............................ <#title>
   [458] pushcons 186 ............................ <"alert_reg_t">
-  [460] pushsymb 184 ............................ <#msg>
+  [460] pushsymb 184 ............................ <#Msg>
   [462] getprop 355 ............................. <pErrorMsg>
   [465] pushsymb 185 ............................ <#id>
   [467] pushcons 187 ............................ <"problems">
   [469] pushsymb 186 ............................ <#modal>
   [471] pushint8 1 .............................. <1>
-  [473] pusharglist 8 ........................... <[#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [475] pushproplist ............................ <[#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [476] pusharglistnoret 2 ...................... <#alert, [#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [478] extcall 182 ............................. executeMessage(#alert, [#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1])
+  [473] pusharglist 8 ........................... <[#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [475] pushproplist ............................ <[#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [476] pusharglistnoret 2 ...................... <#alert, [#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [478] extcall 182 ............................. executeMessage(#alert, [#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1])
   [480] pop 1
   [482] pushzero ................................ <0>
   [483] pusharglistnoret 1 ...................... <0>
@@ -5612,16 +5612,16 @@ on leavePage me, tCurrentWindow
   [886] pushsymb 183 ............................ <#alert>
   [888] pushsymb 218 ............................ <#title>
   [890] pushcons 186 ............................ <"alert_reg_t">
-  [892] pushsymb 184 ............................ <#msg>
+  [892] pushsymb 184 ............................ <#Msg>
   [894] getprop 355 ............................. <pErrorMsg>
   [897] pushsymb 185 ............................ <#id>
   [899] pushcons 187 ............................ <"problems">
   [901] pushsymb 186 ............................ <#modal>
   [903] pushint8 1 .............................. <1>
-  [905] pusharglist 8 ........................... <[#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [907] pushproplist ............................ <[#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [908] pusharglistnoret 2 ...................... <#alert, [#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1]>
-  [910] extcall 182 ............................. executeMessage(#alert, [#title: "alert_reg_t", #msg: pErrorMsg, #id: "problems", #modal: 1])
+  [905] pusharglist 8 ........................... <[#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [907] pushproplist ............................ <[#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [908] pusharglistnoret 2 ...................... <#alert, [#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1]>
+  [910] extcall 182 ............................. executeMessage(#alert, [#title: "alert_reg_t", #Msg: pErrorMsg, #id: "problems", #modal: 1])
   [912] pop 1
   [914] pushzero ................................ <0>
   [915] pusharglistnoret 1 ...................... <0>
@@ -6002,16 +6002,16 @@ on leavePage me, tCurrentWindow
   [1666] pushsymb 183 ........................... <#alert>
   [1668] pushsymb 218 ........................... <#title>
   [1670] pushcons 186 ........................... <"alert_reg_t">
-  [1672] pushsymb 184 ........................... <#msg>
+  [1672] pushsymb 184 ........................... <#Msg>
   [1674] pushcons 194 ........................... <"Alert_CheckBirthday">
   [1676] pushsymb 185 ........................... <#id>
   [1678] pushcons 187 ........................... <"problems">
   [1680] pushsymb 186 ........................... <#modal>
   [1682] pushint8 1 ............................. <1>
-  [1684] pusharglist 8 .......................... <[#title: "alert_reg_t", #msg: "Alert_CheckBirthday", #id: "problems", #modal: 1]>
-  [1686] pushproplist ........................... <[#title: "alert_reg_t", #msg: "Alert_CheckBirthday", #id: "problems", #modal: 1]>
-  [1687] pusharglistnoret 2 ..................... <#alert, [#title: "alert_reg_t", #msg: "Alert_CheckBirthday", #id: "problems", #modal: 1]>
-  [1689] extcall 182 ............................ executeMessage(#alert, [#title: "alert_reg_t", #msg: "Alert_CheckBirthday", #id: "problems", #modal: 1])
+  [1684] pusharglist 8 .......................... <[#title: "alert_reg_t", #Msg: "Alert_CheckBirthday", #id: "problems", #modal: 1]>
+  [1686] pushproplist ........................... <[#title: "alert_reg_t", #Msg: "Alert_CheckBirthday", #id: "problems", #modal: 1]>
+  [1687] pusharglistnoret 2 ..................... <#alert, [#title: "alert_reg_t", #Msg: "Alert_CheckBirthday", #id: "problems", #modal: 1]>
+  [1689] extcall 182 ............................ executeMessage(#alert, [#title: "alert_reg_t", #Msg: "Alert_CheckBirthday", #id: "problems", #modal: 1])
   [1691] pop 1
   [1693] pushzero ............................... <0>
   [1694] pusharglistnoret 1 ..................... <0>
@@ -6210,16 +6210,16 @@ on enterPage me, tWindow
   [254] pushsymb 183 ............................ <#alert>
   [256] pushsymb 218 ............................ <#title>
   [258] pushcons 196 ............................ <"reg_note_title">
-  [260] pushsymb 184 ............................ <#msg>
+  [260] pushsymb 184 ............................ <#Msg>
   [262] pushcons 197 ............................ <"reg_note_text">
   [264] pushsymb 185 ............................ <#id>
   [266] pushcons 198 ............................ <"pwnote">
   [268] pushsymb 186 ............................ <#modal>
   [270] pushint8 1 .............................. <1>
-  [272] pusharglist 8 ........................... <[#title: "reg_note_title", #msg: "reg_note_text", #id: "pwnote", #modal: 1]>
-  [274] pushproplist ............................ <[#title: "reg_note_title", #msg: "reg_note_text", #id: "pwnote", #modal: 1]>
-  [275] pusharglistnoret 2 ...................... <#alert, [#title: "reg_note_title", #msg: "reg_note_text", #id: "pwnote", #modal: 1]>
-  [277] extcall 182 ............................. executeMessage(#alert, [#title: "reg_note_title", #msg: "reg_note_text", #id: "pwnote", #modal: 1])
+  [272] pusharglist 8 ........................... <[#title: "reg_note_title", #Msg: "reg_note_text", #id: "pwnote", #modal: 1]>
+  [274] pushproplist ............................ <[#title: "reg_note_title", #Msg: "reg_note_text", #id: "pwnote", #modal: 1]>
+  [275] pusharglistnoret 2 ...................... <#alert, [#title: "reg_note_title", #Msg: "reg_note_text", #id: "pwnote", #modal: 1]>
+  [277] extcall 182 ............................. executeMessage(#alert, [#title: "reg_note_title", #Msg: "reg_note_text", #id: "pwnote", #modal: 1])
   [279] jmp [801]
   [282] peek 0
   [284] pushcons 199 ............................ <"reg_infopage_no_age">
@@ -6669,32 +6669,32 @@ on responseToGdprRequest me, tStatus
   [ 21] eq
   [ 22] jmpifz [ 49] ............................ (case) "1":
   [ 25] pushsymb 183 ............................ <#alert>
-  [ 27] pushsymb 184 ............................ <#msg>
+  [ 27] pushsymb 184 ............................ <#Msg>
   [ 29] pushcons 222 ............................ <"Alert_GDPR_In_Progress">
   [ 31] pushsymb 185 ............................ <#id>
   [ 33] pushcons 223 ............................ <"GDPR_In_Progress">
   [ 35] pushsymb 186 ............................ <#modal>
   [ 37] pushint8 1 .............................. <1>
-  [ 39] pusharglist 6 ........................... <[#msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1]>
-  [ 41] pushproplist ............................ <[#msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1]>
-  [ 42] pusharglistnoret 2 ...................... <#alert, [#msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1]>
-  [ 44] extcall 182 ............................. executeMessage(#alert, [#msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1])
+  [ 39] pusharglist 6 ........................... <[#Msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1]>
+  [ 41] pushproplist ............................ <[#Msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1]>
+  [ 42] pusharglistnoret 2 ...................... <#alert, [#Msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1]>
+  [ 44] extcall 182 ............................. executeMessage(#alert, [#Msg: "Alert_GDPR_In_Progress", #id: "GDPR_In_Progress", #modal: 1])
   [ 46] jmp [ 89]
   [ 49] peek 0
   [ 51] pushcons 224 ............................ <"3">
   [ 53] eq
   [ 54] jmpifz [ 81] ............................ (case) "3":
   [ 57] pushsymb 183 ............................ <#alert>
-  [ 59] pushsymb 184 ............................ <#msg>
+  [ 59] pushsymb 184 ............................ <#Msg>
   [ 61] pushcons 225 ............................ <"Alert_GDPR_Success">
   [ 63] pushsymb 185 ............................ <#id>
   [ 65] pushcons 226 ............................ <"GDPR_Success">
   [ 67] pushsymb 186 ............................ <#modal>
   [ 69] pushint8 1 .............................. <1>
-  [ 71] pusharglist 6 ........................... <[#msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1]>
-  [ 73] pushproplist ............................ <[#msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1]>
-  [ 74] pusharglistnoret 2 ...................... <#alert, [#msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1]>
-  [ 76] extcall 182 ............................. executeMessage(#alert, [#msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1])
+  [ 71] pusharglist 6 ........................... <[#Msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1]>
+  [ 73] pushproplist ............................ <[#Msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1]>
+  [ 74] pusharglistnoret 2 ...................... <#alert, [#Msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1]>
+  [ 76] extcall 182 ............................. executeMessage(#alert, [#Msg: "Alert_GDPR_Success", #id: "GDPR_Success", #modal: 1])
   [ 78] jmp [ 89] ............................... (case) otherwise:
   [ 81] getlocal 0 .............................. <tWndObj>
   [ 83] pushcons 227 ............................ <"reg_gdpr_request_error.window">
@@ -7479,7 +7479,7 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1234] gt ..................................... <tValidKeys.length > 0>
   [1235] jmpifz [1264] .......................... if tValidKeys.length > 0 then
   [1238] pushsymb 434 ........................... <#helptooltip>
-  [1241] pushsymb 184 ........................... <#msg>
+  [1241] pushsymb 184 ........................... <#Msg>
   [1243] pushcons 28 ............................ <"reg_use_allowed_chars">
   [1245] pusharglist 1 .......................... <"reg_use_allowed_chars">
   [1247] extcall 74 ............................. <getText("reg_use_allowed_chars")>
@@ -7487,10 +7487,10 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1251] joinpadstr ............................. <getText("reg_use_allowed_chars") && tValidKeys>
   [1252] pushsymb 435 ........................... <#pos>
   [1255] getlocal 0 ............................. <tRect>
-  [1257] pusharglist 4 .......................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1259] pushproplist ........................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1260] pusharglistnoret 2 ..................... <#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1262] extcall 182 ............................ executeMessage(#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
+  [1257] pusharglist 4 .......................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1259] pushproplist ........................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1260] pusharglistnoret 2 ..................... <#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1262] extcall 182 ............................ executeMessage(#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
   [1264] pop 2
   [1266] pushint8 1 ............................. <1>
   [1268] pusharglistnoret 1 ..................... <1>
@@ -7550,7 +7550,7 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1378] containsstr ............................ <tDeniedKeys contains the key>
   [1379] jmpifz [1416] .......................... if tDeniedKeys contains the key then
   [1382] pushsymb 434 ........................... <#helptooltip>
-  [1385] pushsymb 184 ........................... <#msg>
+  [1385] pushsymb 184 ........................... <#Msg>
   [1387] pushcons 28 ............................ <"reg_use_allowed_chars">
   [1389] pusharglist 1 .......................... <"reg_use_allowed_chars">
   [1391] extcall 74 ............................. <getText("reg_use_allowed_chars")>
@@ -7558,10 +7558,10 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1395] joinpadstr ............................. <getText("reg_use_allowed_chars") && tValidKeys>
   [1396] pushsymb 435 ........................... <#pos>
   [1399] getlocal 0 ............................. <tRect>
-  [1401] pusharglist 4 .......................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1403] pushproplist ........................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1404] pusharglistnoret 2 ..................... <#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1406] extcall 182 ............................ executeMessage(#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
+  [1401] pusharglist 4 .......................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1403] pushproplist ........................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1404] pusharglistnoret 2 ..................... <#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1406] extcall 182 ............................ executeMessage(#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
   [1408] pop 2
   [1410] pushint8 1 ............................. <1>
   [1412] pusharglistnoret 1 ..................... <1>
@@ -7576,7 +7576,7 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1429] extcall 23 ............................. return 0
   [1431] jmp [1468]
   [1434] pushsymb 434 ........................... <#helptooltip>
-  [1437] pushsymb 184 ........................... <#msg>
+  [1437] pushsymb 184 ........................... <#Msg>
   [1439] pushcons 28 ............................ <"reg_use_allowed_chars">
   [1441] pusharglist 1 .......................... <"reg_use_allowed_chars">
   [1443] extcall 74 ............................. <getText("reg_use_allowed_chars")>
@@ -7584,10 +7584,10 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1447] joinpadstr ............................. <getText("reg_use_allowed_chars") && tValidKeys>
   [1448] pushsymb 435 ........................... <#pos>
   [1451] getlocal 0 ............................. <tRect>
-  [1453] pusharglist 4 .......................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1455] pushproplist ........................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1456] pusharglistnoret 2 ..................... <#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1458] extcall 182 ............................ executeMessage(#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
+  [1453] pusharglist 4 .......................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1455] pushproplist ........................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1456] pusharglistnoret 2 ..................... <#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1458] extcall 182 ............................ executeMessage(#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
   [1460] pop 2
   [1462] pushint8 1 ............................. <1>
   [1464] pusharglistnoret 1 ..................... <1>
@@ -7666,7 +7666,7 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1613] gt ..................................... <tValidKeys.length > 0>
   [1614] jmpifz [1643] .......................... if tValidKeys.length > 0 then
   [1617] pushsymb 434 ........................... <#helptooltip>
-  [1620] pushsymb 184 ........................... <#msg>
+  [1620] pushsymb 184 ........................... <#Msg>
   [1622] pushcons 28 ............................ <"reg_use_allowed_chars">
   [1624] pusharglist 1 .......................... <"reg_use_allowed_chars">
   [1626] extcall 74 ............................. <getText("reg_use_allowed_chars")>
@@ -7674,10 +7674,10 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1630] joinpadstr ............................. <getText("reg_use_allowed_chars") && tValidKeys>
   [1631] pushsymb 435 ........................... <#pos>
   [1634] getlocal 0 ............................. <tRect>
-  [1636] pusharglist 4 .......................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1638] pushproplist ........................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1639] pusharglistnoret 2 ..................... <#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1641] extcall 182 ............................ executeMessage(#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
+  [1636] pusharglist 4 .......................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1638] pushproplist ........................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1639] pusharglistnoret 2 ..................... <#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1641] extcall 182 ............................ executeMessage(#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
   [1643] pop 2
   [1645] pushint8 1 ............................. <1>
   [1647] pusharglistnoret 1 ..................... <1>
@@ -7771,7 +7771,7 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1827] not .................................... <not (tValidKeys contains tTheKey)>
   [1828] jmpifz [1865] .......................... if not (tValidKeys contains tTheKey) then
   [1831] pushsymb 434 ........................... <#helptooltip>
-  [1834] pushsymb 184 ........................... <#msg>
+  [1834] pushsymb 184 ........................... <#Msg>
   [1836] pushcons 28 ............................ <"reg_use_allowed_chars">
   [1838] pusharglist 1 .......................... <"reg_use_allowed_chars">
   [1840] extcall 74 ............................. <getText("reg_use_allowed_chars")>
@@ -7779,10 +7779,10 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1844] joinpadstr ............................. <getText("reg_use_allowed_chars") && tValidKeys>
   [1845] pushsymb 435 ........................... <#pos>
   [1848] getlocal 0 ............................. <tRect>
-  [1850] pusharglist 4 .......................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1852] pushproplist ........................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1853] pusharglistnoret 2 ..................... <#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [1855] extcall 182 ............................ executeMessage(#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
+  [1850] pusharglist 4 .......................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1852] pushproplist ........................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1853] pusharglistnoret 2 ..................... <#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [1855] extcall 182 ............................ executeMessage(#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
   [1857] pop 2
   [1859] pushint8 1 ............................. <1>
   [1861] pusharglistnoret 1 ..................... <1>
@@ -7796,14 +7796,14 @@ on eventProcFigurecreator me, tEvent, tSprID, tParm, tWndID
   [1878] gt ..................................... <pTempPassword[tSprID].length > 32>
   [1879] jmpifz [1910] .......................... if pTempPassword[tSprID].length > 32 then
   [1882] pushsymb 434 ........................... <#helptooltip>
-  [1885] pushsymb 184 ........................... <#msg>
+  [1885] pushsymb 184 ........................... <#Msg>
   [1887] pushcons 258 ........................... <"alert_shortenPW">
   [1890] pushsymb 435 ........................... <#pos>
   [1893] getlocal 0 ............................. <tRect>
-  [1895] pusharglist 4 .......................... <[#msg: "alert_shortenPW", #pos: tRect]>
-  [1897] pushproplist ........................... <[#msg: "alert_shortenPW", #pos: tRect]>
-  [1898] pusharglistnoret 2 ..................... <#helptooltip, [#msg: "alert_shortenPW", #pos: tRect]>
-  [1900] extcall 182 ............................ executeMessage(#helptooltip, [#msg: "alert_shortenPW", #pos: tRect])
+  [1895] pusharglist 4 .......................... <[#Msg: "alert_shortenPW", #pos: tRect]>
+  [1897] pushproplist ........................... <[#Msg: "alert_shortenPW", #pos: tRect]>
+  [1898] pusharglistnoret 2 ..................... <#helptooltip, [#Msg: "alert_shortenPW", #pos: tRect]>
+  [1900] extcall 182 ............................ executeMessage(#helptooltip, [#Msg: "alert_shortenPW", #pos: tRect])
   [1902] pop 2
   [1904] pushint8 1 ............................. <1>
   [1906] pusharglistnoret 1 ..................... <1>
@@ -8144,7 +8144,7 @@ on eventProcVerifyWindow me, tEvent, tSprID, tParm, tWndID
   [329] not ..................................... <not (tValidKeys contains tTheKey)>
   [330] jmpifz [367] ............................ if not (tValidKeys contains tTheKey) then
   [333] pushsymb 434 ............................ <#helptooltip>
-  [336] pushsymb 184 ............................ <#msg>
+  [336] pushsymb 184 ............................ <#Msg>
   [338] pushcons 28 ............................. <"reg_use_allowed_chars">
   [340] pusharglist 1 ........................... <"reg_use_allowed_chars">
   [342] extcall 74 .............................. <getText("reg_use_allowed_chars")>
@@ -8152,10 +8152,10 @@ on eventProcVerifyWindow me, tEvent, tSprID, tParm, tWndID
   [346] joinpadstr .............................. <getText("reg_use_allowed_chars") && tValidKeys>
   [347] pushsymb 435 ............................ <#pos>
   [350] getlocal 1 .............................. <tRect>
-  [352] pusharglist 4 ........................... <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [354] pushproplist ............................ <[#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [355] pusharglistnoret 2 ...................... <#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
-  [357] extcall 182 ............................. executeMessage(#helptooltip, [#msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
+  [352] pusharglist 4 ........................... <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [354] pushproplist ............................ <[#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [355] pusharglistnoret 2 ...................... <#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect]>
+  [357] extcall 182 ............................. executeMessage(#helptooltip, [#Msg: getText("reg_use_allowed_chars") && tValidKeys, #pos: tRect])
   [359] pop 1
   [361] pushint8 1 .............................. <1>
   [363] pusharglistnoret 1 ...................... <1>
@@ -8169,14 +8169,14 @@ on eventProcVerifyWindow me, tEvent, tSprID, tParm, tWndID
   [380] gt ...................................... <pTempPassword[tSprID].length > 32>
   [381] jmpifz [412] ............................ if pTempPassword[tSprID].length > 32 then
   [384] pushsymb 434 ............................ <#helptooltip>
-  [387] pushsymb 184 ............................ <#msg>
+  [387] pushsymb 184 ............................ <#Msg>
   [389] pushcons 258 ............................ <"alert_shortenPW">
   [392] pushsymb 435 ............................ <#pos>
   [395] getlocal 1 .............................. <tRect>
-  [397] pusharglist 4 ........................... <[#msg: "alert_shortenPW", #pos: tRect]>
-  [399] pushproplist ............................ <[#msg: "alert_shortenPW", #pos: tRect]>
-  [400] pusharglistnoret 2 ...................... <#helptooltip, [#msg: "alert_shortenPW", #pos: tRect]>
-  [402] extcall 182 ............................. executeMessage(#helptooltip, [#msg: "alert_shortenPW", #pos: tRect])
+  [397] pusharglist 4 ........................... <[#Msg: "alert_shortenPW", #pos: tRect]>
+  [399] pushproplist ............................ <[#Msg: "alert_shortenPW", #pos: tRect]>
+  [400] pusharglistnoret 2 ...................... <#helptooltip, [#Msg: "alert_shortenPW", #pos: tRect]>
+  [402] extcall 182 ............................. executeMessage(#helptooltip, [#Msg: "alert_shortenPW", #pos: tRect])
   [404] pop 1
   [406] pushint8 1 .............................. <1>
   [408] pusharglistnoret 1 ...................... <1>

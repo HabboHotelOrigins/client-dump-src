@@ -12,6 +12,8 @@ on Refresh me, tTopic, tdata
       return me.handle_instancelist(tdata)
     #msgstruct_gameinstance:
       return me.handle_gameinstance(tdata)
+    #msgstruct_gamelocation:
+      return me.handle_gamelocation(tdata)
     #msgstruct_gamestatus:
       return me.handle_gamestatus(tdata)
     #msgstruct_fullgamestatus:
@@ -57,6 +59,13 @@ on handle_instancelist me, tMsg
   end repeat
   return me.getGameSystem().sendGameSystemEvent(#instancelist, tResult)
   return tResult
+end
+
+on handle_gamelocation me, tMsg
+  tConn = tMsg.connection
+  tUnitId = tConn.GetIntFrom()
+  tWorldId = tConn.GetIntFrom()
+  return me.getGameSystem().sendGameSystemEvent(#gamelocation, [#unitId: tUnitId, #worldId: tWorldId])
 end
 
 on handle_gameinstance me, tMsg

@@ -123,7 +123,7 @@ on delay me, tTime, tMethod, tArgument
   [ 74] pusharglist 1 ........................... <tUniqueId>
   [ 76] extcall 672 ............................. <timeout(tUniqueId)>
   [ 79] getparam 1 .............................. <tTime>
-  [ 81] pushsymb 1130 ........................... <#executeDelay>
+  [ 81] pushsymb 1131 ........................... <#executeDelay>
   [ 84] getparam 0 .............................. <me>
   [ 86] pusharglistnoret 4 ...................... <timeout(tUniqueId), tTime, #executeDelay, me>
   [ 88] objcall 116 ............................. timeout(tUniqueId).new(tTime, #executeDelay, me)

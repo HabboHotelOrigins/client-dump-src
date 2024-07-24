@@ -51,9 +51,9 @@ end
 
 on giveDrink me
   tConnection = getThread(#room).getComponent().getRoomConnection()
-  tConnection.send("SETSTUFFDATA", me.getID() & "/" & "DOOROPEN" & "/" & "TRUE")
+  tConnection.send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
   tConnection.send("LOOKTO", me.pLocX && me.pLocY)
-  tConnection.send("CARRYDRINK", me.getDrinkname())
+  tConnection.send("CARRYDRINK", [#string: string(me.getDrinkname())])
 end
 
 on getDrinkname me

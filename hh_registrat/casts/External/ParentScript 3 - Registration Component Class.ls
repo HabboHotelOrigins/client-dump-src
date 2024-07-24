@@ -51,13 +51,13 @@ end
 on setBlockTime me, tdata
   setPref("blocktime", tdata)
   me.closeFigureCreator()
-  executeMessage(#alert, [#title: "alert_win_coppa", #msg: "alert_reg_age", #id: "underage", #modal: 1])
+  executeMessage(#alert, [#title: "alert_win_coppa", #Msg: "alert_reg_age", #id: "underage", #modal: 1])
   return removeConnection(getVariable("connection.info.id"))
 end
 
 on continueBlocking me
   me.closeFigureCreator()
-  executeMessage(#alert, [#title: "alert_win_coppa", #msg: "alert_reg_blocked", #id: "underage", #modal: 1])
+  executeMessage(#alert, [#title: "alert_win_coppa", #Msg: "alert_reg_blocked", #id: "underage", #modal: 1])
   return removeConnection(getVariable("connection.info.id"))
 end
 
@@ -100,7 +100,7 @@ on checkUserName me, tNameStr
     if not getObject(#string_validator).validateString(tNameStr) then
       tFailed = getObject(#string_validator).getFailedChar()
       setText("alert_InvalidChar", replaceChunks(getText("alert_InvalidUserName"), "\x", tFailed))
-      executeMessage(#alert, [#msg: "alert_InvalidChar", #id: "nameinvalid"])
+      executeMessage(#alert, [#Msg: "alert_InvalidChar", #id: "nameinvalid"])
       return 0
     end if
   end if
@@ -164,12 +164,6 @@ on sendFigureUpdateToServer me, tPropList
   if not voidp(tPropList["figure"]) then
     tFigure = getObject("Figure_System").GenerateFigureDataToServerMode(tPropList["figure"], tPropList["sex"])
     tPropList["figure"] = tFigure["figuretoServer"]
-  end if
-  if not voidp(tPropList["password"]) then
-    case tPropList["password"] of
-      EMPTY, VOID:
-        return error(me, "Password was reseted, abort update!", #sendFigureUpdateToServer)
-    end case
   end if
   tMsg = [:]
   repeat with tProp in ["figure", "sex", "customData", "directMail", "has_read_agreement", "parentagree", "onlineStatus", "publicProfileEnabled", "friendRequestsEnabled", "offlineMessagingEnabled", "totpCode"]

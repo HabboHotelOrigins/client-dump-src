@@ -85,9 +85,9 @@ on ShowAlert me, tProps
     return error(me, "Properties for window expected!", #showHideWindow)
   end if
   if stringp(tProps) then
-    tProps = [#msg: tProps]
+    tProps = [#Msg: tProps]
   end if
-  tText = getText(tProps[#msg])
+  tText = getText(tProps[#Msg])
   tWndTitle = getText("win_error", "Notice!")
   tTextImg = getWriter(pWriterPlain).render(tText).duplicate()
   if voidp(tProps[#id]) then
@@ -207,7 +207,7 @@ on showDialog me, tWndID, tProps
     #call_for_help, "call_for_help":
       tReportableUsers = getObject(#session).get("reportable_users")
       if count(tReportableUsers) = 0 then
-        me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+        me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
       else
         me.openCfhWindowWithReportingOptions()
         return 1
@@ -564,7 +564,7 @@ on showChatSelectionWindow me
     end if
   end repeat
   if pReportedUser = EMPTY then
-    me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+    me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
     return 0
   end if
   tWndObj = getWindow(pReportWindowTitle)
@@ -623,7 +623,7 @@ on updateChatReportView me
       tElem.show()
     end if
   else
-    me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+    me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
     return tWndObj.close()
   end if
 end
@@ -649,7 +649,7 @@ on sendCallForHelpWithReporting me
     end if
   end repeat
   if pReportedUser = EMPTY then
-    me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+    me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
     return 0
   end if
   tReportedRoomId = -1
@@ -666,7 +666,7 @@ on sendCallForHelpWithReporting me
     end if
   end repeat
   if tSelectedChatList.count = 0 then
-    me.ShowAlert([#msg: "help.cfh.error.nochathistory"])
+    me.ShowAlert([#Msg: "help.cfh.error.nochathistory"])
     return 0
   end if
   executeMessage(#sendCallForHelpWithReporting, [#topicId: pReportTopicId, #reportedRoomId: tReportedRoomId, #reportedUser: pReportedUser, #reportText: tReportText, #selectedChat: tSelectedChatList])

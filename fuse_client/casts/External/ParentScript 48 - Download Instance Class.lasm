@@ -1,30 +1,30 @@
 property pStatus, pMemName, pMemNum, pURL, pType, pCallBack, pNetId, pPercent, ptryCount
 
 on define me, tMemName, tdata
-  [  0] pushsymb 1134 ........................... <#initializing>
-  [  3] setprop 1133 ............................ pStatus = #initializing
+  [  0] pushsymb 1135 ........................... <#initializing>
+  [  3] setprop 1134 ............................ pStatus = #initializing
   [  6] getparam 1 .............................. <tMemName>
   [  8] setprop 784 ............................. pMemName = tMemName
   [ 11] getparam 2 .............................. <tdata>
   [ 13] pushsymb 765 ............................ <#memNum>
   [ 16] pusharglist 2 ........................... <tdata, #memNum>
   [ 18] objcall 54 .............................. <tdata[#memNum]>
-  [ 20] setprop 1135 ............................ pMemNum = tdata[#memNum]
+  [ 20] setprop 1136 ............................ pMemNum = tdata[#memNum]
   [ 23] getparam 2 .............................. <tdata>
   [ 25] pushsymb 764 ............................ <#url>
   [ 28] pusharglist 2 ........................... <tdata, #url>
   [ 30] objcall 54 .............................. <tdata[#url]>
-  [ 32] setprop 1136 ............................ pURL = tdata[#url]
+  [ 32] setprop 1137 ............................ pURL = tdata[#url]
   [ 35] getparam 2 .............................. <tdata>
   [ 37] pushsymb 456 ............................ <#type>
   [ 40] pusharglist 2 ........................... <tdata, #type>
   [ 42] objcall 54 .............................. <tdata[#type]>
-  [ 44] setprop 1137 ............................ pType = tdata[#type]
+  [ 44] setprop 1138 ............................ pType = tdata[#type]
   [ 47] getparam 2 .............................. <tdata>
   [ 49] pushsymb 766 ............................ <#callback>
   [ 52] pusharglist 2 ........................... <tdata, #callback>
   [ 54] objcall 54 .............................. <tdata[#callback]>
-  [ 56] setprop 1138 ............................ pCallBack = tdata[#callback]
+  [ 56] setprop 1139 ............................ pCallBack = tdata[#callback]
   [ 59] pushfloat32 0.0 ......................... <0.0>
   [ 64] setprop 836 ............................. pPercent = 0.0
   [ 67] getparam 0 .............................. <me>
@@ -41,7 +41,7 @@ on addCallBack me, tMemName, tCallback
   [  5] eq ...................................... <tMemName = pMemName>
   [  6] jmpifz [ 23] ............................ if tMemName = pMemName then / else
   [  9] getparam 2 .............................. <tCallback>
-  [ 11] setprop 1138 ............................ pCallBack = tCallback
+  [ 11] setprop 1139 ............................ pCallBack = tCallback
   [ 14] pushint8 1 .............................. <1>
   [ 16] pusharglistnoret 1 ...................... <1>
   [ 18] extcall 25 .............................. return 1
@@ -59,7 +59,7 @@ on getProperty me, tProp
   [  7] eq
   [  8] jmpifz [ 23] ............................ (case) #status:
   [ 11] pop 1
-  [ 13] getprop 1133 ............................ <pStatus>
+  [ 13] getprop 1134 ............................ <pStatus>
   [ 16] pusharglistnoret 1 ...................... <pStatus>
   [ 18] extcall 25 .............................. return pStatus
   [ 20] jmp [ 93]
@@ -77,7 +77,7 @@ on getProperty me, tProp
   [ 49] eq
   [ 50] jmpifz [ 65] ............................ (case) #url:
   [ 53] pop 1
-  [ 55] getprop 1136 ............................ <pURL>
+  [ 55] getprop 1137 ............................ <pURL>
   [ 58] pusharglistnoret 1 ...................... <pURL>
   [ 60] extcall 25 .............................. return pURL
   [ 62] jmp [ 93]
@@ -86,7 +86,7 @@ on getProperty me, tProp
   [ 70] eq
   [ 71] jmpifz [ 86] ............................ (case) #type:
   [ 74] pop 1
-  [ 76] getprop 1137 ............................ <pType>
+  [ 76] getprop 1138 ............................ <pType>
   [ 79] pusharglistnoret 1 ...................... <pType>
   [ 81] extcall 25 .............................. return pType
   [ 83] jmp [ 93] ............................... (case) otherwise:
@@ -99,27 +99,27 @@ on getProperty me, tProp
 end
 
 on Activate me
-  [  0] getprop 1137 ............................ <pType>
+  [  0] getprop 1138 ............................ <pType>
   [  3] pushsymb 516 ............................ <#text>
   [  6] eq ...................................... <pType = #text>
-  [  7] getprop 1137 ............................ <pType>
+  [  7] getprop 1138 ............................ <pType>
   [ 10] pushsymb 786 ............................ <#field>
   [ 13] eq ...................................... <pType = #field>
   [ 14] or ...................................... <(pType = #text) or (pType = #field)>
   [ 15] jmpifz [ 32] ............................ if (pType = #text) or (pType = #field) then / else
-  [ 18] getprop 1136 ............................ <pURL>
+  [ 18] getprop 1137 ............................ <pURL>
   [ 21] pusharglist 1 ........................... <pURL>
-  [ 23] extcall 1140 ............................ <getNetText(pURL)>
-  [ 26] setprop 1139 ............................ pNetId = getNetText(pURL)
+  [ 23] extcall 1141 ............................ <getNetText(pURL)>
+  [ 26] setprop 1140 ............................ pNetId = getNetText(pURL)
   [ 29] jmp [ 43]
-  [ 32] getprop 1136 ............................ <pURL>
+  [ 32] getprop 1137 ............................ <pURL>
   [ 35] pusharglist 1 ........................... <pURL>
-  [ 37] extcall 1141 ............................ <preloadNetThing(pURL)>
-  [ 40] setprop 1139 ............................ pNetId = preloadNetThing(pURL)
+  [ 37] extcall 1142 ............................ <preloadNetThing(pURL)>
+  [ 40] setprop 1140 ............................ pNetId = preloadNetThing(pURL)
   [ 43] pushsymb 813 ............................ <#LOADING>
-  [ 46] setprop 1133 ............................ pStatus = #LOADING
+  [ 46] setprop 1134 ............................ pStatus = #LOADING
   [ 49] pushzero ................................ <0>
-  [ 50] setprop 1142 ............................ ptryCount = 0
+  [ 50] setprop 1143 ............................ ptryCount = 0
   [ 53] pushint8 1 .............................. <1>
   [ 55] pusharglistnoret 1 ...................... <1>
   [ 57] extcall 25 .............................. return 1
@@ -127,28 +127,28 @@ on Activate me
 end
 
 on update me
-  [  0] getprop 1133 ............................ <pStatus>
+  [  0] getprop 1134 ............................ <pStatus>
   [  3] pushsymb 813 ............................ <#LOADING>
   [  6] nteq .................................... <pStatus <> #LOADING>
   [  7] jmpifz [ 15] ............................ if pStatus <> #LOADING then
   [ 10] pushzero ................................ <0>
   [ 11] pusharglistnoret 1 ...................... <0>
   [ 13] extcall 25 .............................. return 0
-  [ 15] getprop 1139 ............................ <pNetId>
+  [ 15] getprop 1140 ............................ <pNetId>
   [ 18] pusharglist 1 ........................... <pNetId>
-  [ 20] extcall 1143 ............................ <getStreamStatus(pNetId)>
+  [ 20] extcall 1144 ............................ <getStreamStatus(pNetId)>
   [ 23] setlocal 0 .............................. tStreamStatus = getStreamStatus(pNetId)
   [ 25] getlocal 0 .............................. <tStreamStatus>
   [ 27] pusharglist 1 ........................... <tStreamStatus>
   [ 29] extcall 53 .............................. <listp(tStreamStatus)>
   [ 31] jmpifz [ 95] ............................ if listp(tStreamStatus) then
   [ 34] getlocal 0 .............................. <tStreamStatus>
-  [ 36] pushsymb 1144 ........................... <#bytesSoFar>
+  [ 36] pushsymb 1145 ........................... <#bytesSoFar>
   [ 39] pusharglist 2 ........................... <tStreamStatus, #bytesSoFar>
   [ 41] objcall 54 .............................. <tStreamStatus[#bytesSoFar]>
   [ 43] setlocal 1 .............................. tBytesSoFar = tStreamStatus[#bytesSoFar]
   [ 45] getlocal 0 .............................. <tStreamStatus>
-  [ 47] pushsymb 1145 ........................... <#bytesTotal>
+  [ 47] pushsymb 1146 ........................... <#bytesTotal>
   [ 50] pusharglist 2 ........................... <tStreamStatus, #bytesTotal>
   [ 52] objcall 54 .............................. <tStreamStatus[#bytesTotal]>
   [ 54] setlocal 2 .............................. tBytesTotal = tStreamStatus[#bytesTotal]
@@ -159,7 +159,7 @@ on update me
   [ 63] getlocal 1 .............................. <tBytesSoFar>
   [ 65] setlocal 2 .............................. tBytesTotal = tBytesSoFar
   [ 67] getlocal 0 .............................. <tStreamStatus>
-  [ 69] pushsymb 1144 ........................... <#bytesSoFar>
+  [ 69] pushsymb 1145 ........................... <#bytesSoFar>
   [ 72] pusharglist 2 ........................... <tStreamStatus, #bytesSoFar>
   [ 74] objcall 54 .............................. <tStreamStatus[#bytesSoFar]>
   [ 76] pushzero ................................ <0>
@@ -171,39 +171,39 @@ on update me
   [ 89] getlocal 2 .............................. <tBytesTotal>
   [ 91] div ..................................... <1.0 * tBytesSoFar / tBytesTotal>
   [ 92] setprop 836 ............................. pPercent = 1.0 * tBytesSoFar / tBytesTotal
-  [ 95] getprop 1139 ............................ <pNetId>
+  [ 95] getprop 1140 ............................ <pNetId>
   [ 98] pusharglist 1 ........................... <pNetId>
-  [100] extcall 1146 ............................ <netDone(pNetId)>
+  [100] extcall 1147 ............................ <netDone(pNetId)>
   [103] pushint8 1 .............................. <1>
   [105] eq ...................................... <netDone(pNetId) = 1>
   [106] jmpifz [418] ............................ if netDone(pNetId) = 1 then
-  [109] getprop 1139 ............................ <pNetId>
+  [109] getprop 1140 ............................ <pNetId>
   [112] pusharglist 1 ........................... <pNetId>
-  [114] extcall 1147 ............................ <netError(pNetId)>
+  [114] extcall 1148 ............................ <netError(pNetId)>
   [117] pushcons 0 .............................. <"OK">
   [119] eq ...................................... <netError(pNetId) = "OK">
   [120] jmpifz [163] ............................ if netError(pNetId) = "OK" then / else
   [123] getparam 0 .............................. <me>
-  [125] getprop 1136 ............................ <pURL>
+  [125] getprop 1137 ............................ <pURL>
   [128] pusharglistnoret 2 ...................... <me, pURL>
-  [130] objcall 1132 ............................ me.importFileToCast(pURL)
+  [130] objcall 1133 ............................ me.importFileToCast(pURL)
   [133] pusharglist 0 ........................... <>
   [135] extcall 199 ............................. <getDownloadManager()>
   [137] getprop 784 ............................. <pMemName>
-  [140] getprop 1138 ............................ <pCallBack>
+  [140] getprop 1139 ............................ <pCallBack>
   [143] pusharglistnoret 3 ...................... <getDownloadManager(), pMemName, pCallBack>
   [145] objcall 755 ............................. getDownloadManager().removeActiveTask(pMemName, pCallBack)
   [148] pushsymb 768 ............................ <#complete>
-  [151] setprop 1133 ............................ pStatus = #complete
+  [151] setprop 1134 ............................ pStatus = #complete
   [154] pushint8 1 .............................. <1>
   [156] pusharglistnoret 1 ...................... <1>
   [158] extcall 25 .............................. return 1
   [160] jmp [418]
   [163] pusharglist 0 ........................... <>
   [165] extcall 199 ............................. <getDownloadManager()>
-  [167] getprop 1139 ............................ <pNetId>
+  [167] getprop 1140 ............................ <pNetId>
   [170] pusharglist 1 ........................... <pNetId>
-  [172] extcall 1147 ............................ <netError(pNetId)>
+  [172] extcall 1148 ............................ <netError(pNetId)>
   [175] pusharglist 2 ........................... <getDownloadManager(), netError(pNetId)>
   [177] objcall 752 ............................. <getDownloadManager().solveNetErrorMsg(netError(pNetId))>
   [180] setlocal 3 .............................. tError = getDownloadManager().solveNetErrorMsg(netError(pNetId))
@@ -220,9 +220,9 @@ on update me
   [199] pushsymb 674 ............................ <#update>
   [202] pusharglistnoret 3 ...................... <me, "Download error:" & RETURN & pMemName & RETURN & tError, #update>
   [204] extcall 39 .............................. error(me, "Download error:" & RETURN & pMemName & RETURN & tError, #update)
-  [206] getprop 1139 ............................ <pNetId>
+  [206] getprop 1140 ............................ <pNetId>
   [209] pusharglist 1 ........................... <pNetId>
-  [211] extcall 1147 ............................ <netError(pNetId)>
+  [211] extcall 1148 ............................ <netError(pNetId)>
   [214] peek 0 .................................. case netError(pNetId) of
   [216] pushint8 6 .............................. <6>
   [218] nteq
@@ -235,7 +235,7 @@ on update me
   [233] pushint16 4165 .......................... <4165>
   [236] eq
   [237] jmpifz [307] ............................ (case) ..., 4165:
-  [240] getprop 1136 ............................ <pURL>
+  [240] getprop 1137 ............................ <pURL>
   [243] pusharglist 0 ........................... <>
   [245] extcall 199 ............................. <getDownloadManager()>
   [247] pushsymb 779 ............................ <#defaultURL>
@@ -249,9 +249,9 @@ on update me
   [264] pushsymb 779 ............................ <#defaultURL>
   [267] pusharglist 2 ........................... <getDownloadManager(), #defaultURL>
   [269] objcall 444 ............................. <getDownloadManager().getProperty(#defaultURL)>
-  [272] getprop 1136 ............................ <pURL>
+  [272] getprop 1137 ............................ <pURL>
   [275] joinstr ................................. <getDownloadManager().getProperty(#defaultURL) & pURL>
-  [276] setprop 1136 ............................ pURL = getDownloadManager().getProperty(#defaultURL) & pURL
+  [276] setprop 1137 ............................ pURL = getDownloadManager().getProperty(#defaultURL) & pURL
   [279] getparam 0 .............................. <me>
   [281] pusharglistnoret 1 ...................... <me>
   [283] objcall 341 ............................. me.Activate()
@@ -259,7 +259,7 @@ on update me
   [289] pusharglist 0 ........................... <>
   [291] extcall 199 ............................. <getDownloadManager()>
   [293] getprop 784 ............................. <pMemName>
-  [296] getprop 1138 ............................ <pCallBack>
+  [296] getprop 1139 ............................ <pCallBack>
   [299] pusharglistnoret 3 ...................... <getDownloadManager(), pMemName, pCallBack>
   [301] objcall 755 ............................. getDownloadManager().removeActiveTask(pMemName, pCallBack)
   [304] jmp [354]
@@ -271,7 +271,7 @@ on update me
   [318] pusharglist 0 ........................... <>
   [320] extcall 199 ............................. <getDownloadManager()>
   [322] getprop 784 ............................. <pMemName>
-  [325] getprop 1138 ............................ <pCallBack>
+  [325] getprop 1139 ............................ <pCallBack>
   [328] pusharglist 3 ........................... <getDownloadManager(), pMemName, pCallBack>
   [330] objcall 755 ............................. <getDownloadManager().removeActiveTask(pMemName, pCallBack)>
   [333] pusharglistnoret 1 ...................... <getDownloadManager().removeActiveTask(pMemName, pCallBack)>
@@ -282,13 +282,13 @@ on update me
   [345] eq
   [346] jmpifz [354] ............................ (case) 4155:
   [349] pusharglistnoret 0 ...................... <>
-  [351] extcall 1148 ............................ nothing()
+  [351] extcall 1149 ............................ nothing()
   [354] pop 1 ................................... end case
-  [356] getprop 1142 ............................ <ptryCount>
+  [356] getprop 1143 ............................ <ptryCount>
   [359] pushint8 1 .............................. <1>
   [361] add ..................................... <ptryCount + 1>
-  [362] setprop 1142 ............................ ptryCount = ptryCount + 1
-  [365] getprop 1142 ............................ <ptryCount>
+  [362] setprop 1143 ............................ ptryCount = ptryCount + 1
+  [365] getprop 1143 ............................ <ptryCount>
   [368] pushcons 3 .............................. <"download.retry.count">
   [370] pushint8 10 ............................. <10>
   [372] pusharglist 2 ........................... <"download.retry.count", 10>
@@ -298,14 +298,14 @@ on update me
   [381] pusharglist 0 ........................... <>
   [383] extcall 199 ............................. <getDownloadManager()>
   [385] getprop 784 ............................. <pMemName>
-  [388] getprop 1138 ............................ <pCallBack>
+  [388] getprop 1139 ............................ <pCallBack>
   [391] pusharglistnoret 3 ...................... <getDownloadManager(), pMemName, pCallBack>
   [393] objcall 755 ............................. getDownloadManager().removeActiveTask(pMemName, pCallBack)
   [396] getparam 0 .............................. <me>
   [398] pushcons 4 .............................. <"Download failed:">
   [400] pushcons 2 .............................. <RETURN>
   [402] joinstr ................................. <"Download failed:" & RETURN>
-  [403] getprop 1136 ............................ <pURL>
+  [403] getprop 1137 ............................ <pURL>
   [406] joinstr ................................. <"Download failed:" & RETURN & pURL>
   [407] pushsymb 674 ............................ <#update>
   [410] pusharglist 3 ........................... <me, "Download failed:" & RETURN & pURL, #update>
@@ -316,11 +316,11 @@ on update me
 end
 
 on importFileToCast me
-  [  0] getprop 1135 ............................ <pMemNum>
+  [  0] getprop 1136 ............................ <pMemNum>
   [  3] pusharglist 1 ........................... <pMemNum>
   [  5] extcall 41 .............................. <member(pMemNum)>
   [  7] setlocal 0 .............................. tmember = member(pMemNum)
-  [  9] getprop 1137 ............................ <pType>
+  [  9] getprop 1138 ............................ <pType>
   [ 12] peek 0 .................................. case pType of
   [ 14] pushsymb 516 ............................ <#text>
   [ 17] nteq
@@ -330,9 +330,9 @@ on importFileToCast me
   [ 26] eq
   [ 27] jmpifz [ 46] ............................ (case) ..., #field:
   [ 30] getlocal 0 .............................. <tmember>
-  [ 32] getprop 1139 ............................ <pNetId>
+  [ 32] getprop 1140 ............................ <pNetId>
   [ 35] pusharglist 1 ........................... <pNetId>
-  [ 37] extcall 1152 ............................ <netTextResult(pNetId)>
+  [ 37] extcall 1153 ............................ <netTextResult(pNetId)>
   [ 40] setobjprop 516 .......................... tmember.text = netTextResult(pNetId)
   [ 43] jmp [ 89]
   [ 46] peek 0
@@ -340,20 +340,20 @@ on importFileToCast me
   [ 51] eq
   [ 52] jmpifz [ 79] ............................ (case) #bitmap:
   [ 55] getlocal 0 .............................. <tmember>
-  [ 57] getprop 1136 ............................ <pURL>
-  [ 60] pushsymb 1154 ........................... <#dither>
+  [ 57] getprop 1137 ............................ <pURL>
+  [ 60] pushsymb 1155 ........................... <#dither>
   [ 63] pushzero ................................ <0>
-  [ 64] pushsymb 1155 ........................... <#trimWhiteSpace>
+  [ 64] pushsymb 1156 ........................... <#trimWhiteSpace>
   [ 67] pushzero ................................ <0>
   [ 68] pusharglist 4 ........................... <[#dither: 0, #trimWhiteSpace: 0]>
   [ 70] pushproplist ............................ <[#dither: 0, #trimWhiteSpace: 0]>
   [ 71] pusharglistnoret 3 ...................... <tmember, pURL, [#dither: 0, #trimWhiteSpace: 0]>
-  [ 73] extcall 1153 ............................ importFileInto(tmember, pURL, [#dither: 0, #trimWhiteSpace: 0])
+  [ 73] extcall 1154 ............................ importFileInto(tmember, pURL, [#dither: 0, #trimWhiteSpace: 0])
   [ 76] jmp [ 89] ............................... (case) otherwise:
   [ 79] getlocal 0 .............................. <tmember>
-  [ 81] getprop 1136 ............................ <pURL>
+  [ 81] getprop 1137 ............................ <pURL>
   [ 84] pusharglistnoret 2 ...................... <tmember, pURL>
-  [ 86] extcall 1153 ............................ importFileInto(tmember, pURL)
+  [ 86] extcall 1154 ............................ importFileInto(tmember, pURL)
   [ 89] pop 1 ................................... end case
   [ 91] getlocal 0 .............................. <tmember>
   [ 93] getprop 784 ............................. <pMemName>

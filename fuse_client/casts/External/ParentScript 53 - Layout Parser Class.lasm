@@ -3,7 +3,7 @@ property pCache
 on construct me
   [  0] pusharglist 0 ........................... <[:]>
   [  2] pushproplist ............................ <[:]>
-  [  3] setprop 1294 ............................ pCache = [:]
+  [  3] setprop 1296 ............................ pCache = [:]
   [  6] pushint8 1 .............................. <1>
   [  8] pusharglistnoret 1 ...................... <1>
   [ 10] extcall 25 .............................. return 1
@@ -15,14 +15,14 @@ on parse me, tFieldName
   [  2] pusharglist 1 ........................... <tFieldName>
   [  4] extcall 170 ............................. <memberExists(tFieldName)>
   [  6] jmpifz [160] ............................ if memberExists(tFieldName) then / else
-  [  9] getprop 1294 ............................ <pCache>
+  [  9] getprop 1296 ............................ <pCache>
   [ 12] getparam 1 .............................. <tFieldName>
   [ 14] pusharglist 2 ........................... <pCache, tFieldName>
   [ 16] objcall 54 .............................. <pCache[tFieldName]>
   [ 18] pusharglist 1 ........................... <pCache[tFieldName]>
   [ 20] extcall 53 .............................. <listp(pCache[tFieldName])>
   [ 22] jmpifz [ 39] ............................ if listp(pCache[tFieldName]) then / else
-  [ 25] getprop 1294 ............................ <pCache>
+  [ 25] getprop 1296 ............................ <pCache>
   [ 28] getparam 1 .............................. <tFieldName>
   [ 30] pusharglist 2 ........................... <pCache, tFieldName>
   [ 32] objcall 54 .............................. <pCache[tFieldName]>
@@ -35,9 +35,9 @@ on parse me, tFieldName
   [ 47] getparam 0 .............................. <me>
   [ 49] getparam 1 .............................. <tFieldName>
   [ 51] pusharglist 2 ........................... <me, tFieldName>
-  [ 53] objcall 1291 ............................ <me.parse_window(tFieldName)>
+  [ 53] objcall 1293 ............................ <me.parse_window(tFieldName)>
   [ 56] setlocal 0 .............................. tdata = me.parse_window(tFieldName)
-  [ 58] getprop 1294 ............................ <pCache>
+  [ 58] getprop 1296 ............................ <pCache>
   [ 61] getparam 1 .............................. <tFieldName>
   [ 63] getlocal 0 .............................. <tdata>
   [ 65] pusharglistnoret 3 ...................... <pCache, tFieldName, tdata>
@@ -50,9 +50,9 @@ on parse me, tFieldName
   [ 80] getparam 0 .............................. <me>
   [ 82] getparam 1 .............................. <tFieldName>
   [ 84] pusharglist 2 ........................... <me, tFieldName>
-  [ 86] objcall 1292 ............................ <me.parse_element(tFieldName)>
+  [ 86] objcall 1294 ............................ <me.parse_element(tFieldName)>
   [ 89] setlocal 0 .............................. tdata = me.parse_element(tFieldName)
-  [ 91] getprop 1294 ............................ <pCache>
+  [ 91] getprop 1296 ............................ <pCache>
   [ 94] getparam 1 .............................. <tFieldName>
   [ 96] getlocal 0 .............................. <tdata>
   [ 98] pusharglistnoret 3 ...................... <pCache, tFieldName, tdata>
@@ -65,7 +65,7 @@ on parse me, tFieldName
   [113] getparam 0 .............................. <me>
   [115] getparam 1 .............................. <tFieldName>
   [117] pusharglist 2 ........................... <me, tFieldName>
-  [119] objcall 1293 ............................ <me.parse_visual(tFieldName)>
+  [119] objcall 1295 ............................ <me.parse_visual(tFieldName)>
   [122] setlocal 0 .............................. tdata = me.parse_visual(tFieldName)
   [124] jmp [157]
   [127] getparam 1 .............................. <tFieldName>
@@ -75,9 +75,9 @@ on parse me, tFieldName
   [135] getparam 0 .............................. <me>
   [137] getparam 1 .............................. <tFieldName>
   [139] pusharglist 2 ........................... <me, tFieldName>
-  [141] objcall 1293 ............................ <me.parse_visual(tFieldName)>
+  [141] objcall 1295 ............................ <me.parse_visual(tFieldName)>
   [144] setlocal 0 .............................. tdata = me.parse_visual(tFieldName)
-  [146] getprop 1294 ............................ <pCache>
+  [146] getprop 1296 ............................ <pCache>
   [149] getparam 1 .............................. <tFieldName>
   [151] getlocal 0 .............................. <tdata>
   [153] pusharglistnoret 3 ...................... <pCache, tFieldName, tdata>
@@ -124,14 +124,14 @@ on parse_window me, tFieldName
   [ 46] pushcons 8 .............................. <"</rect>">
   [ 48] pusharglist 4 ........................... <[#open: "<rect>", #close: "</rect>"]>
   [ 50] pushproplist ............................ <[#open: "<rect>", #close: "</rect>"]>
-  [ 51] pushsymb 1123 ........................... <#border>
+  [ 51] pushsymb 1124 ........................... <#border>
   [ 54] pushsymb 539 ............................ <#open>
   [ 57] pushcons 9 .............................. <"<border>">
   [ 59] pushsymb 462 ............................ <#close>
   [ 62] pushcons 10 ............................. <"</border>">
   [ 64] pusharglist 4 ........................... <[#open: "<border>", #close: "</border>"]>
   [ 66] pushproplist ............................ <[#open: "<border>", #close: "</border>"]>
-  [ 67] pushsymb 1295 ........................... <#clientrect>
+  [ 67] pushsymb 1297 ........................... <#clientrect>
   [ 70] pushsymb 539 ............................ <#open>
   [ 73] pushcons 11 ............................. <"<clientrect>">
   [ 75] pushsymb 462 ............................ <#close>
@@ -326,16 +326,16 @@ on parse_window me, tFieldName
   [460] extcall 54
   [462] setlocal 12
   [464] getlocal 12 ............................. <tElem>
-  [466] pushsymb 1296 ........................... <#txtColor>
+  [466] pushsymb 1298 ........................... <#txtColor>
   [469] pusharglist 2 ........................... <tElem, #txtColor>
   [471] objcall 54 .............................. <tElem[#txtColor]>
   [473] pusharglist 1 ........................... <tElem[#txtColor]>
   [475] extcall 38 .............................. <stringp(tElem[#txtColor])>
   [477] jmpifz [503] ............................ if stringp(tElem[#txtColor]) then
   [480] getlocal 12 ............................. <tElem>
-  [482] pushsymb 1296 ........................... <#txtColor>
+  [482] pushsymb 1298 ........................... <#txtColor>
   [485] getlocal 12 ............................. <tElem>
-  [487] pushsymb 1296 ........................... <#txtColor>
+  [487] pushsymb 1298 ........................... <#txtColor>
   [490] pusharglist 2 ........................... <tElem, #txtColor>
   [492] objcall 54 .............................. <tElem[#txtColor]>
   [494] pusharglist 1 ........................... <tElem[#txtColor]>
@@ -343,16 +343,16 @@ on parse_window me, tFieldName
   [499] pusharglistnoret 3 ...................... <tElem, #txtColor, rgb(tElem[#txtColor])>
   [501] objcall 24 .............................. tElem[#txtColor] = rgb(tElem[#txtColor])
   [503] getlocal 12 ............................. <tElem>
-  [505] pushsymb 1297 ........................... <#txtBgColor>
+  [505] pushsymb 1299 ........................... <#txtBgColor>
   [508] pusharglist 2 ........................... <tElem, #txtBgColor>
   [510] objcall 54 .............................. <tElem[#txtBgColor]>
   [512] pusharglist 1 ........................... <tElem[#txtBgColor]>
   [514] extcall 38 .............................. <stringp(tElem[#txtBgColor])>
   [516] jmpifz [542] ............................ if stringp(tElem[#txtBgColor]) then
   [519] getlocal 12 ............................. <tElem>
-  [521] pushsymb 1297 ........................... <#txtBgColor>
+  [521] pushsymb 1299 ........................... <#txtBgColor>
   [524] getlocal 12 ............................. <tElem>
-  [526] pushsymb 1297 ........................... <#txtBgColor>
+  [526] pushsymb 1299 ........................... <#txtBgColor>
   [529] pusharglist 2 ........................... <tElem, #txtBgColor>
   [531] objcall 54 .............................. <tElem[#txtBgColor]>
   [533] pusharglist 1 ........................... <tElem[#txtBgColor]>
@@ -372,14 +372,14 @@ on parse_window me, tFieldName
   [565] pusharglistnoret 3 ...................... <tElem, #color, "#000000">
   [567] objcall 24 .............................. tElem[#color] = "#000000"
   [569] getlocal 12 ............................. <tElem>
-  [571] pushsymb 1298 ........................... <#bgColor>
+  [571] pushsymb 1300 ........................... <#bgColor>
   [574] pusharglist 2 ........................... <tElem, #bgColor>
   [576] objcall 54 .............................. <tElem[#bgColor]>
   [578] pusharglist 1 ........................... <tElem[#bgColor]>
   [580] extcall 20 .............................. <voidp(tElem[#bgColor])>
   [582] jmpifz [596] ............................ if voidp(tElem[#bgColor]) then
   [585] getlocal 12 ............................. <tElem>
-  [587] pushsymb 1298 ........................... <#bgColor>
+  [587] pushsymb 1300 ........................... <#bgColor>
   [590] pushcons 16 ............................. <"#FFFFFF">
   [592] pusharglistnoret 3 ...................... <tElem, #bgColor, "#FFFFFF">
   [594] objcall 24 .............................. tElem[#bgColor] = "#FFFFFF"
@@ -394,9 +394,9 @@ on parse_window me, tFieldName
   [615] pusharglistnoret 3 ...................... <tElem, #color, rgb(tElem[#color])>
   [617] objcall 24 .............................. tElem[#color] = rgb(tElem[#color])
   [619] getlocal 12 ............................. <tElem>
-  [621] pushsymb 1298 ........................... <#bgColor>
+  [621] pushsymb 1300 ........................... <#bgColor>
   [624] getlocal 12 ............................. <tElem>
-  [626] pushsymb 1298 ........................... <#bgColor>
+  [626] pushsymb 1300 ........................... <#bgColor>
   [629] pusharglist 2 ........................... <tElem, #bgColor>
   [631] objcall 54 .............................. <tElem[#bgColor]>
   [633] pusharglist 1 ........................... <tElem[#bgColor]>
@@ -404,7 +404,7 @@ on parse_window me, tFieldName
   [638] pusharglistnoret 3 ...................... <tElem, #bgColor, rgb(tElem[#bgColor])>
   [640] objcall 24 .............................. tElem[#bgColor] = rgb(tElem[#bgColor])
   [642] getlocal 12 ............................. <tElem>
-  [644] pushsymb 1299 ........................... <#palette>
+  [644] pushsymb 1301 ........................... <#palette>
   [647] pusharglist 2 ........................... <tElem, #palette>
   [649] objcall 54 .............................. <tElem[#palette]>
   [651] setlocal 15 ............................. tPalette = tElem[#palette]
@@ -436,7 +436,7 @@ on parse_window me, tFieldName
   [702] getlocal 15 ............................. <tPalette>
   [704] pushcons 17 ............................. <"Duplicate">
   [706] joinpadstr .............................. <tPalette && "Duplicate">
-  [707] pushsymb 1299 ........................... <#palette>
+  [707] pushsymb 1301 ........................... <#palette>
   [710] pusharglist 3 ........................... <tResMngr, tPalette && "Duplicate", #palette>
   [712] objcall 164 ............................. <tResMngr.createMember(tPalette && "Duplicate", #palette)>
   [714] pusharglistnoret 2 ...................... <member(tPalMemNum), tResMngr.createMember(tPalette && "Duplicate", #palette)>
@@ -446,18 +446,18 @@ on parse_window me, tFieldName
   [724] getlocal 15 ............................. <tPalette>
   [726] pushcons 17 ............................. <"Duplicate">
   [728] joinpadstr .............................. <tPalette && "Duplicate">
-  [729] pushsymb 1299 ........................... <#palette>
+  [729] pushsymb 1301 ........................... <#palette>
   [732] pusharglistnoret 3 ...................... <tResMngr, tPalette && "Duplicate", #palette>
   [734] objcall 164 ............................. tResMngr.createMember(tPalette && "Duplicate", #palette)
   [736] getparam 0 .............................. <me>
   [738] pushcons 18 ............................. <"Palette member missing:">
   [740] getlocal 15 ............................. <tPalette>
   [742] joinpadstr .............................. <"Palette member missing:" && tPalette>
-  [743] pushsymb 1291 ........................... <#parse_window>
+  [743] pushsymb 1293 ........................... <#parse_window>
   [746] pusharglistnoret 3 ...................... <me, "Palette member missing:" && tPalette, #parse_window>
   [748] extcall 39 .............................. error(me, "Palette member missing:" && tPalette, #parse_window)
   [750] getlocal 12 ............................. <tElem>
-  [752] pushsymb 1299 ........................... <#palette>
+  [752] pushsymb 1301 ........................... <#palette>
   [755] getlocal 15 ............................. <tPalette>
   [757] pushcons 17 ............................. <"Duplicate">
   [759] joinpadstr .............................. <tPalette && "Duplicate">
@@ -544,14 +544,14 @@ on parse_window me, tFieldName
   [941] pusharglistnoret 3 ...................... <tElem, #fontStyle, tFontStruct.getaProp(#fontStyle)>
   [943] objcall 24 .............................. tElem[#fontStyle] = tFontStruct.getaProp(#fontStyle)
   [945] getlocal 12 ............................. <tElem>
-  [947] pushsymb 1296 ........................... <#txtColor>
+  [947] pushsymb 1298 ........................... <#txtColor>
   [950] pusharglist 2 ........................... <tElem, #txtColor>
   [952] objcall 54 .............................. <tElem[#txtColor]>
   [954] pusharglist 1 ........................... <tElem[#txtColor]>
   [956] extcall 20 .............................. <voidp(tElem[#txtColor])>
   [958] jmpifz [979] ............................ if voidp(tElem[#txtColor]) then
   [961] getlocal 12 ............................. <tElem>
-  [963] pushsymb 1296 ........................... <#txtColor>
+  [963] pushsymb 1298 ........................... <#txtColor>
   [966] getlocal 17 ............................. <tFontStruct>
   [968] pushsymb 599 ............................ <#color>
   [971] pusharglist 2 ........................... <tFontStruct, #color>
@@ -559,14 +559,14 @@ on parse_window me, tFieldName
   [975] pusharglistnoret 3 ...................... <tElem, #txtColor, tFontStruct.getaProp(#color)>
   [977] objcall 24 .............................. tElem[#txtColor] = tFontStruct.getaProp(#color)
   [979] getlocal 12 ............................. <tElem>
-  [981] pushsymb 1297 ........................... <#txtBgColor>
+  [981] pushsymb 1299 ........................... <#txtBgColor>
   [984] pusharglist 2 ........................... <tElem, #txtBgColor>
   [986] objcall 54 .............................. <tElem[#txtBgColor]>
   [988] pusharglist 1 ........................... <tElem[#txtBgColor]>
   [990] extcall 20 .............................. <voidp(tElem[#txtBgColor])>
   [992] jmpifz [1018] ........................... if voidp(tElem[#txtBgColor]) then
   [995] getlocal 12 ............................. <tElem>
-  [997] pushsymb 1297 ........................... <#txtBgColor>
+  [997] pushsymb 1299 ........................... <#txtBgColor>
   [1000] pushint16 255 .......................... <255>
   [1003] pushint16 255 .......................... <255>
   [1006] pushint16 255 .......................... <255>
@@ -590,7 +590,7 @@ on parse_window me, tFieldName
   [1048] pusharglistnoret 3 ..................... <tElem, #fixedLineSpace, tElem[#fontSize]>
   [1050] objcall 24 ............................. tElem[#fixedLineSpace] = tElem[#fontSize]
   [1052] getlocal 12 ............................ <tElem>
-  [1054] pushsymb 1300 .......................... <#strech>
+  [1054] pushsymb 1302 .......................... <#strech>
   [1057] pusharglist 2 .......................... <tElem, #strech>
   [1059] objcall 54 ............................. <tElem[#strech]>
   [1061] pusharglist 1 .......................... <tElem[#strech]>
@@ -598,186 +598,186 @@ on parse_window me, tFieldName
   [1065] not .................................... <not voidp(tElem[#strech])>
   [1066] jmpifz [1507] .......................... if not voidp(tElem[#strech]) then
   [1069] getlocal 12 ............................ <tElem>
-  [1071] pushsymb 1301 .......................... <#scaleH>
-  [1074] pushsymb 1302 .......................... <#fixed>
+  [1071] pushsymb 1303 .......................... <#scaleH>
+  [1074] pushsymb 1304 .......................... <#fixed>
   [1077] pusharglistnoret 3 ..................... <tElem, #scaleH, #fixed>
   [1079] objcall 24 ............................. tElem[#scaleH] = #fixed
   [1081] getlocal 12 ............................ <tElem>
-  [1083] pushsymb 1303 .......................... <#scaleV>
-  [1086] pushsymb 1302 .......................... <#fixed>
+  [1083] pushsymb 1305 .......................... <#scaleV>
+  [1086] pushsymb 1304 .......................... <#fixed>
   [1089] pusharglistnoret 3 ..................... <tElem, #scaleV, #fixed>
   [1091] objcall 24 ............................. tElem[#scaleV] = #fixed
   [1093] getlocal 12 ............................ <tElem>
-  [1095] pushsymb 1300 .......................... <#strech>
+  [1095] pushsymb 1302 .......................... <#strech>
   [1098] pusharglist 2 .......................... <tElem, #strech>
   [1100] objcall 54 ............................. <tElem[#strech]>
   [1102] peek 0 ................................. case tElem[#strech] of
-  [1104] pushsymb 1304 .......................... <#moveH>
+  [1104] pushsymb 1306 .......................... <#moveH>
   [1107] eq
   [1108] jmpifz [1126] .......................... (case) #moveH:
   [1111] getlocal 12 ............................ <tElem>
-  [1113] pushsymb 1301 .......................... <#scaleH>
-  [1116] pushsymb 1305 .......................... <#move>
+  [1113] pushsymb 1303 .......................... <#scaleH>
+  [1116] pushsymb 1307 .......................... <#move>
   [1119] pusharglistnoret 3 ..................... <tElem, #scaleH, #move>
   [1121] objcall 24 ............................. tElem[#scaleH] = #move
   [1123] jmp [1495]
   [1126] peek 0
-  [1128] pushsymb 1306 .......................... <#moveV>
+  [1128] pushsymb 1308 .......................... <#moveV>
   [1131] eq
   [1132] jmpifz [1150] .......................... (case) #moveV:
   [1135] getlocal 12 ............................ <tElem>
-  [1137] pushsymb 1303 .......................... <#scaleV>
-  [1140] pushsymb 1305 .......................... <#move>
+  [1137] pushsymb 1305 .......................... <#scaleV>
+  [1140] pushsymb 1307 .......................... <#move>
   [1143] pusharglistnoret 3 ..................... <tElem, #scaleV, #move>
   [1145] objcall 24 ............................. tElem[#scaleV] = #move
   [1147] jmp [1495]
   [1150] peek 0
-  [1152] pushsymb 1307 .......................... <#strechH>
+  [1152] pushsymb 1309 .......................... <#strechH>
   [1155] eq
   [1156] jmpifz [1174] .......................... (case) #strechH:
   [1159] getlocal 12 ............................ <tElem>
-  [1161] pushsymb 1301 .......................... <#scaleH>
-  [1164] pushsymb 1308 .......................... <#scale>
+  [1161] pushsymb 1303 .......................... <#scaleH>
+  [1164] pushsymb 1310 .......................... <#scale>
   [1167] pusharglistnoret 3 ..................... <tElem, #scaleH, #scale>
   [1169] objcall 24 ............................. tElem[#scaleH] = #scale
   [1171] jmp [1495]
   [1174] peek 0
-  [1176] pushsymb 1309 .......................... <#strechV>
+  [1176] pushsymb 1311 .......................... <#strechV>
   [1179] eq
   [1180] jmpifz [1198] .......................... (case) #strechV:
   [1183] getlocal 12 ............................ <tElem>
-  [1185] pushsymb 1303 .......................... <#scaleV>
-  [1188] pushsymb 1308 .......................... <#scale>
+  [1185] pushsymb 1305 .......................... <#scaleV>
+  [1188] pushsymb 1310 .......................... <#scale>
   [1191] pusharglistnoret 3 ..................... <tElem, #scaleV, #scale>
   [1193] objcall 24 ............................. tElem[#scaleV] = #scale
   [1195] jmp [1495]
   [1198] peek 0
-  [1200] pushsymb 1310 .......................... <#centerH>
+  [1200] pushsymb 1312 .......................... <#centerH>
   [1203] eq
   [1204] jmpifz [1222] .......................... (case) #centerH:
   [1207] getlocal 12 ............................ <tElem>
-  [1209] pushsymb 1301 .......................... <#scaleH>
+  [1209] pushsymb 1303 .......................... <#scaleH>
   [1212] pushsymb 508 ........................... <#center>
   [1215] pusharglistnoret 3 ..................... <tElem, #scaleH, #center>
   [1217] objcall 24 ............................. tElem[#scaleH] = #center
   [1219] jmp [1495]
   [1222] peek 0
-  [1224] pushsymb 1311 .......................... <#centerV>
+  [1224] pushsymb 1313 .......................... <#centerV>
   [1227] eq
   [1228] jmpifz [1246] .......................... (case) #centerV:
   [1231] getlocal 12 ............................ <tElem>
-  [1233] pushsymb 1303 .......................... <#scaleV>
+  [1233] pushsymb 1305 .......................... <#scaleV>
   [1236] pushsymb 508 ........................... <#center>
   [1239] pusharglistnoret 3 ..................... <tElem, #scaleV, #center>
   [1241] objcall 24 ............................. tElem[#scaleV] = #center
   [1243] jmp [1495]
   [1246] peek 0
-  [1248] pushsymb 1312 .......................... <#moveHV>
+  [1248] pushsymb 1314 .......................... <#moveHV>
   [1251] eq
   [1252] jmpifz [1282] .......................... (case) #moveHV:
   [1255] getlocal 12 ............................ <tElem>
-  [1257] pushsymb 1301 .......................... <#scaleH>
-  [1260] pushsymb 1305 .......................... <#move>
+  [1257] pushsymb 1303 .......................... <#scaleH>
+  [1260] pushsymb 1307 .......................... <#move>
   [1263] pusharglistnoret 3 ..................... <tElem, #scaleH, #move>
   [1265] objcall 24 ............................. tElem[#scaleH] = #move
   [1267] getlocal 12 ............................ <tElem>
-  [1269] pushsymb 1303 .......................... <#scaleV>
-  [1272] pushsymb 1305 .......................... <#move>
+  [1269] pushsymb 1305 .......................... <#scaleV>
+  [1272] pushsymb 1307 .......................... <#move>
   [1275] pusharglistnoret 3 ..................... <tElem, #scaleV, #move>
   [1277] objcall 24 ............................. tElem[#scaleV] = #move
   [1279] jmp [1495]
   [1282] peek 0
-  [1284] pushsymb 1313 .......................... <#strechHV>
+  [1284] pushsymb 1315 .......................... <#strechHV>
   [1287] eq
   [1288] jmpifz [1318] .......................... (case) #strechHV:
   [1291] getlocal 12 ............................ <tElem>
-  [1293] pushsymb 1301 .......................... <#scaleH>
-  [1296] pushsymb 1308 .......................... <#scale>
+  [1293] pushsymb 1303 .......................... <#scaleH>
+  [1296] pushsymb 1310 .......................... <#scale>
   [1299] pusharglistnoret 3 ..................... <tElem, #scaleH, #scale>
   [1301] objcall 24 ............................. tElem[#scaleH] = #scale
   [1303] getlocal 12 ............................ <tElem>
-  [1305] pushsymb 1303 .......................... <#scaleV>
-  [1308] pushsymb 1308 .......................... <#scale>
+  [1305] pushsymb 1305 .......................... <#scaleV>
+  [1308] pushsymb 1310 .......................... <#scale>
   [1311] pusharglistnoret 3 ..................... <tElem, #scaleV, #scale>
   [1313] objcall 24 ............................. tElem[#scaleV] = #scale
   [1315] jmp [1495]
   [1318] peek 0
-  [1320] pushsymb 1314 .......................... <#centerHV>
+  [1320] pushsymb 1316 .......................... <#centerHV>
   [1323] eq
   [1324] jmpifz [1354] .......................... (case) #centerHV:
   [1327] getlocal 12 ............................ <tElem>
-  [1329] pushsymb 1301 .......................... <#scaleH>
+  [1329] pushsymb 1303 .......................... <#scaleH>
   [1332] pushsymb 508 ........................... <#center>
   [1335] pusharglistnoret 3 ..................... <tElem, #scaleH, #center>
   [1337] objcall 24 ............................. tElem[#scaleH] = #center
   [1339] getlocal 12 ............................ <tElem>
-  [1341] pushsymb 1303 .......................... <#scaleV>
+  [1341] pushsymb 1305 .......................... <#scaleV>
   [1344] pushsymb 508 ........................... <#center>
   [1347] pusharglistnoret 3 ..................... <tElem, #scaleV, #center>
   [1349] objcall 24 ............................. tElem[#scaleV] = #center
   [1351] jmp [1495]
   [1354] peek 0
-  [1356] pushsymb 1315 .......................... <#moveHstrechV>
+  [1356] pushsymb 1317 .......................... <#moveHstrechV>
   [1359] eq
   [1360] jmpifz [1390] .......................... (case) #moveHstrechV:
   [1363] getlocal 12 ............................ <tElem>
-  [1365] pushsymb 1301 .......................... <#scaleH>
-  [1368] pushsymb 1305 .......................... <#move>
+  [1365] pushsymb 1303 .......................... <#scaleH>
+  [1368] pushsymb 1307 .......................... <#move>
   [1371] pusharglistnoret 3 ..................... <tElem, #scaleH, #move>
   [1373] objcall 24 ............................. tElem[#scaleH] = #move
   [1375] getlocal 12 ............................ <tElem>
-  [1377] pushsymb 1303 .......................... <#scaleV>
-  [1380] pushsymb 1308 .......................... <#scale>
+  [1377] pushsymb 1305 .......................... <#scaleV>
+  [1380] pushsymb 1310 .......................... <#scale>
   [1383] pusharglistnoret 3 ..................... <tElem, #scaleV, #scale>
   [1385] objcall 24 ............................. tElem[#scaleV] = #scale
   [1387] jmp [1495]
   [1390] peek 0
-  [1392] pushsymb 1316 .......................... <#moveVstrechH>
+  [1392] pushsymb 1318 .......................... <#moveVstrechH>
   [1395] eq
   [1396] jmpifz [1426] .......................... (case) #moveVstrechH:
   [1399] getlocal 12 ............................ <tElem>
-  [1401] pushsymb 1301 .......................... <#scaleH>
-  [1404] pushsymb 1308 .......................... <#scale>
+  [1401] pushsymb 1303 .......................... <#scaleH>
+  [1404] pushsymb 1310 .......................... <#scale>
   [1407] pusharglistnoret 3 ..................... <tElem, #scaleH, #scale>
   [1409] objcall 24 ............................. tElem[#scaleH] = #scale
   [1411] getlocal 12 ............................ <tElem>
-  [1413] pushsymb 1303 .......................... <#scaleV>
-  [1416] pushsymb 1305 .......................... <#move>
+  [1413] pushsymb 1305 .......................... <#scaleV>
+  [1416] pushsymb 1307 .......................... <#move>
   [1419] pusharglistnoret 3 ..................... <tElem, #scaleV, #move>
   [1421] objcall 24 ............................. tElem[#scaleV] = #move
   [1423] jmp [1495]
   [1426] peek 0
-  [1428] pushsymb 1317 .......................... <#moveHcenterV>
+  [1428] pushsymb 1319 .......................... <#moveHcenterV>
   [1431] eq
   [1432] jmpifz [1462] .......................... (case) #moveHcenterV:
   [1435] getlocal 12 ............................ <tElem>
-  [1437] pushsymb 1301 .......................... <#scaleH>
-  [1440] pushsymb 1305 .......................... <#move>
+  [1437] pushsymb 1303 .......................... <#scaleH>
+  [1440] pushsymb 1307 .......................... <#move>
   [1443] pusharglistnoret 3 ..................... <tElem, #scaleH, #move>
   [1445] objcall 24 ............................. tElem[#scaleH] = #move
   [1447] getlocal 12 ............................ <tElem>
-  [1449] pushsymb 1303 .......................... <#scaleV>
+  [1449] pushsymb 1305 .......................... <#scaleV>
   [1452] pushsymb 508 ........................... <#center>
   [1455] pusharglistnoret 3 ..................... <tElem, #scaleV, #center>
   [1457] objcall 24 ............................. tElem[#scaleV] = #center
   [1459] jmp [1495]
   [1462] peek 0
-  [1464] pushsymb 1318 .......................... <#moveVcenterH>
+  [1464] pushsymb 1320 .......................... <#moveVcenterH>
   [1467] eq
   [1468] jmpifz [1495] .......................... (case) #moveVcenterH:
   [1471] getlocal 12 ............................ <tElem>
-  [1473] pushsymb 1301 .......................... <#scaleH>
+  [1473] pushsymb 1303 .......................... <#scaleH>
   [1476] pushsymb 508 ........................... <#center>
   [1479] pusharglistnoret 3 ..................... <tElem, #scaleH, #center>
   [1481] objcall 24 ............................. tElem[#scaleH] = #center
   [1483] getlocal 12 ............................ <tElem>
-  [1485] pushsymb 1303 .......................... <#scaleV>
-  [1488] pushsymb 1305 .......................... <#move>
+  [1485] pushsymb 1305 .......................... <#scaleV>
+  [1488] pushsymb 1307 .......................... <#move>
   [1491] pusharglistnoret 3 ..................... <tElem, #scaleV, #move>
   [1493] objcall 24 ............................. tElem[#scaleV] = #move
   [1495] pop 1 .................................. end case
   [1497] getlocal 12 ............................ <tElem>
-  [1499] pushsymb 1300 .......................... <#strech>
+  [1499] pushsymb 1302 .......................... <#strech>
   [1502] pusharglistnoret 2 ..................... <tElem, #strech>
   [1504] objcall 661 ............................ tElem.deleteProp(#strech)
   [1507] pushint8 1
@@ -1044,7 +1044,7 @@ on parse_window me, tFieldName
   [2041] pusharglistnoret 3 ..................... <tLayDefinition[#rect], 1, tLayDefinition[#rect][1] - [tOffX, tOffY, tOffX, tOffY]>
   [2043] objcall 24 ............................. tLayDefinition[#rect][1] = tLayDefinition[#rect][1] - [tOffX, tOffY, tOffX, tOffY]
   [2045] getlocal 2 ............................. <tLayDefinition>
-  [2047] pushsymb 1123 .......................... <#border>
+  [2047] pushsymb 1124 .......................... <#border>
   [2050] pusharglist 2 .......................... <tLayDefinition, #border>
   [2052] objcall 54 ............................. <tLayDefinition[#border]>
   [2054] getobjprop 22 .......................... <tLayDefinition[#border].count>
@@ -1052,7 +1052,7 @@ on parse_window me, tFieldName
   [2057] eq ..................................... <tLayDefinition[#border].count = 0>
   [2058] jmpifz [2221] .......................... if tLayDefinition[#border].count = 0 then
   [2061] getlocal 2 ............................. <tLayDefinition>
-  [2063] pushsymb 1295 .......................... <#clientrect>
+  [2063] pushsymb 1297 .......................... <#clientrect>
   [2066] pusharglist 2 .......................... <tLayDefinition, #clientrect>
   [2068] objcall 54 ............................. <tLayDefinition[#clientrect]>
   [2070] getobjprop 22 .......................... <tLayDefinition[#clientrect].count>
@@ -1060,7 +1060,7 @@ on parse_window me, tFieldName
   [2073] gt ..................................... <tLayDefinition[#clientrect].count > 0>
   [2074] jmpifz [2201] .......................... if tLayDefinition[#clientrect].count > 0 then / else
   [2077] getlocal 2 ............................. <tLayDefinition>
-  [2079] pushsymb 1295 .......................... <#clientrect>
+  [2079] pushsymb 1297 .......................... <#clientrect>
   [2082] pusharglist 2 .......................... <tLayDefinition, #clientrect>
   [2084] objcall 54 ............................. <tLayDefinition[#clientrect]>
   [2086] pushint8 1 ............................. <1>
@@ -1113,7 +1113,7 @@ on parse_window me, tFieldName
   [2180] pushlist ............................... <[tClientRect[1], tClientRect[2], tWinWidth - tClientRect[3], tWinHeight - tClientRect[4]]>
   [2181] setlocal 26 ............................ tBorder = [tClientRect[1], tClientRect[2], tWinWidth - tClientRect[3], tWinHeight - tClientRect[4]]
   [2183] getlocal 2 ............................. <tLayDefinition>
-  [2185] pushsymb 1123 .......................... <#border>
+  [2185] pushsymb 1124 .......................... <#border>
   [2188] pusharglist 2 .......................... <tLayDefinition, #border>
   [2190] objcall 54 ............................. <tLayDefinition[#border]>
   [2192] getlocal 26 ............................ <tBorder>
@@ -1121,7 +1121,7 @@ on parse_window me, tFieldName
   [2196] objcall 122 ............................ tLayDefinition[#border].add(tBorder)
   [2198] jmp [2221]
   [2201] getlocal 2 ............................. <tLayDefinition>
-  [2203] pushsymb 1123 .......................... <#border>
+  [2203] pushsymb 1124 .......................... <#border>
   [2206] pusharglist 2 .......................... <tLayDefinition, #border>
   [2208] objcall 54 ............................. <tLayDefinition[#border]>
   [2210] pushzero ............................... <0>
@@ -1191,7 +1191,7 @@ on parse_element me, tFieldName
   [ 94] setlocal 4 .............................. tValue = value(tLine)
   [ 96] getlocal 0 .............................. <tProps>
   [ 98] getlocal 4 .............................. <tValue>
-  [100] pushsymb 1338 ........................... <#state>
+  [100] pushsymb 1340 ........................... <#state>
   [103] pusharglist 2 ........................... <tValue, #state>
   [105] objcall 54 .............................. <tValue[#state]>
   [107] getlocal 4 .............................. <tValue>
@@ -1218,7 +1218,7 @@ on parse_visual me, tFieldName
   [ 12] extcall 41 .............................. <member(getResourceManager().getmemnum(tFieldName))>
   [ 14] getobjprop 516 .......................... <member(getResourceManager().getmemnum(tFieldName)).text>
   [ 17] setlocal 0 .............................. tdata = member(getResourceManager().getmemnum(tFieldName)).text
-  [ 19] pushsymb 1339 ........................... <#roomdata>
+  [ 19] pushsymb 1341 ........................... <#roomdata>
   [ 22] pushsymb 539 ............................ <#open>
   [ 25] pushcons 22 ............................. <"<roomdata>">
   [ 27] pushsymb 462 ............................ <#close>
@@ -1232,7 +1232,7 @@ on parse_visual me, tFieldName
   [ 46] pushcons 8 .............................. <"</rect>">
   [ 48] pusharglist 4 ........................... <[#open: "<rect>", #close: "</rect>"]>
   [ 50] pushproplist ............................ <[#open: "<rect>", #close: "</rect>"]>
-  [ 51] pushsymb 1340 ........................... <#version>
+  [ 51] pushsymb 1342 ........................... <#version>
   [ 54] pushsymb 539 ............................ <#open>
   [ 57] pushcons 24 ............................. <"<version>">
   [ 59] pushsymb 462 ............................ <#close>
@@ -1375,7 +1375,7 @@ on parse_visual me, tFieldName
   [343] setlocal 5
   [345] endrepeat [104]
   [347] getlocal 2 .............................. <tLayDefinition>
-  [349] pushsymb 1340 ........................... <#version>
+  [349] pushsymb 1342 ........................... <#version>
   [352] pusharglist 2 ........................... <tLayDefinition, #version>
   [354] objcall 54 .............................. <tLayDefinition[#version]>
   [356] pusharglist 1 ........................... <tLayDefinition[#version]>
@@ -1385,7 +1385,7 @@ on parse_visual me, tFieldName
   [365] pushcons 26 ............................. <"Old visualizer definition:">
   [367] getparam 1 .............................. <tFieldName>
   [369] joinpadstr .............................. <"Old visualizer definition:" && tFieldName>
-  [370] pushsymb 1341 ........................... <#parse_room>
+  [370] pushsymb 1343 ........................... <#parse_room>
   [373] pusharglistnoret 3 ...................... <me, "Old visualizer definition:" && tFieldName, #parse_room>
   [375] extcall 39 .............................. error(me, "Old visualizer definition:" && tFieldName, #parse_room)
   [377] getlocal 2 .............................. <tLayDefinition>
@@ -1406,13 +1406,13 @@ on parse_visual me, tFieldName
   [408] extcall 54
   [410] setlocal 10
   [412] getlocal 10 ............................. <tElem>
-  [414] pushsymb 1342 ........................... <#media>
+  [414] pushsymb 1344 ........................... <#media>
   [417] pusharglist 2 ........................... <tElem, #media>
   [419] objcall 54 .............................. <tElem[#media]>
   [421] pushsymb 786 ............................ <#field>
   [424] eq ...................................... <tElem[#media] = #field>
   [425] getlocal 10 ............................. <tElem>
-  [427] pushsymb 1342 ........................... <#media>
+  [427] pushsymb 1344 ........................... <#media>
   [430] pusharglist 2 ........................... <tElem, #media>
   [432] objcall 54 .............................. <tElem[#media]>
   [434] pushsymb 516 ............................ <#text>
@@ -1420,7 +1420,7 @@ on parse_visual me, tFieldName
   [438] or ...................................... <(tElem[#media] = #field) or (tElem[#media] = #text)>
   [439] jmpifz [500] ............................ if (tElem[#media] = #field) or (tElem[#media] = #text) then
   [442] getlocal 10 ............................. <tElem>
-  [444] pushsymb 1296 ........................... <#txtColor>
+  [444] pushsymb 1298 ........................... <#txtColor>
   [447] getlocal 10 ............................. <tElem>
   [449] pushsymb 599 ............................ <#color>
   [452] pusharglist 2 ........................... <tElem, #color>
@@ -1428,9 +1428,9 @@ on parse_visual me, tFieldName
   [456] pusharglistnoret 3 ...................... <tElem, #txtColor, tElem[#color]>
   [458] objcall 24 .............................. tElem[#txtColor] = tElem[#color]
   [460] getlocal 10 ............................. <tElem>
-  [462] pushsymb 1297 ........................... <#txtBgColor>
+  [462] pushsymb 1299 ........................... <#txtBgColor>
   [465] getlocal 10 ............................. <tElem>
-  [467] pushsymb 1298 ........................... <#bgColor>
+  [467] pushsymb 1300 ........................... <#bgColor>
   [470] pusharglist 2 ........................... <tElem, #bgColor>
   [472] objcall 54 .............................. <tElem[#bgColor]>
   [474] pusharglistnoret 3 ...................... <tElem, #txtBgColor, tElem[#bgColor]>
@@ -1441,16 +1441,16 @@ on parse_visual me, tFieldName
   [485] pusharglistnoret 3 ...................... <tElem, #color, "#000000">
   [487] objcall 24 .............................. tElem[#color] = "#000000"
   [489] getlocal 10 ............................. <tElem>
-  [491] pushsymb 1298 ........................... <#bgColor>
+  [491] pushsymb 1300 ........................... <#bgColor>
   [494] pushcons 16 ............................. <"#FFFFFF">
   [496] pusharglistnoret 3 ...................... <tElem, #bgColor, "#FFFFFF">
   [498] objcall 24 .............................. tElem[#bgColor] = "#FFFFFF"
   [500] getlocal 10 ............................. <tElem>
-  [502] pushsymb 1343 ........................... <#foreColor>
+  [502] pushsymb 1345 ........................... <#foreColor>
   [505] pusharglistnoret 2 ...................... <tElem, #foreColor>
   [507] objcall 661 ............................. tElem.deleteProp(#foreColor)
   [510] getlocal 10 ............................. <tElem>
-  [512] pushsymb 1344 ........................... <#backColor>
+  [512] pushsymb 1346 ........................... <#backColor>
   [515] pusharglistnoret 2 ...................... <tElem, #backColor>
   [517] objcall 661 ............................. tElem.deleteProp(#backColor)
   [520] pushint8 1
@@ -1487,14 +1487,14 @@ on parse_visual me, tFieldName
   [585] pusharglistnoret 3 ...................... <tElem, #color, "#000000">
   [587] objcall 24 .............................. tElem[#color] = "#000000"
   [589] getlocal 10 ............................. <tElem>
-  [591] pushsymb 1298 ........................... <#bgColor>
+  [591] pushsymb 1300 ........................... <#bgColor>
   [594] pusharglist 2 ........................... <tElem, #bgColor>
   [596] objcall 54 .............................. <tElem[#bgColor]>
   [598] pusharglist 1 ........................... <tElem[#bgColor]>
   [600] extcall 20 .............................. <voidp(tElem[#bgColor])>
   [602] jmpifz [616] ............................ if voidp(tElem[#bgColor]) then
   [605] getlocal 10 ............................. <tElem>
-  [607] pushsymb 1298 ........................... <#bgColor>
+  [607] pushsymb 1300 ........................... <#bgColor>
   [610] pushcons 16 ............................. <"#FFFFFF">
   [612] pusharglistnoret 3 ...................... <tElem, #bgColor, "#FFFFFF">
   [614] objcall 24 .............................. tElem[#bgColor] = "#FFFFFF"
@@ -1519,9 +1519,9 @@ on parse_visual me, tFieldName
   [654] pushsymb 727 ............................ <#name>
   [657] pusharglist 2 ........................... <tLayDefinition, #name>
   [659] objcall 54 .............................. <tLayDefinition[#name]>
-  [661] pushsymb 1339 ........................... <#roomdata>
+  [661] pushsymb 1341 ........................... <#roomdata>
   [664] getlocal 2 .............................. <tLayDefinition>
-  [666] pushsymb 1339 ........................... <#roomdata>
+  [666] pushsymb 1341 ........................... <#roomdata>
   [669] pusharglist 2 ........................... <tLayDefinition, #roomdata>
   [671] objcall 54 .............................. <tLayDefinition[#roomdata]>
   [673] pushsymb 557 ............................ <#rect>

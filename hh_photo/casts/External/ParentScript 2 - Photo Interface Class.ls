@@ -199,7 +199,7 @@ on eventProcCameraMouseDown me, tEvent, tSprID, tParam
         beep(1)
       end if
       if (pmode = #still) and (me.getComponent().getFilm() = 0) then
-        executeMessage(#alert, [#msg: "cam_save_nofilm"])
+        executeMessage(#alert, [#Msg: "cam_save_nofilm"])
       end if
     "cam_zoom_in":
       if pmode = #still then

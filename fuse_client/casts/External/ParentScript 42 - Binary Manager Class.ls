@@ -52,10 +52,6 @@ on checkConnection me
   end if
   if getMultiuser(pConnectionId).connectionReady() and pHandshakeFinished then
     tTicket = getObject(#session).get("mus_ticket")
-    if pUseCrypto then
-      tUserID = pCrypto.encipher(tUserID)
-      tMachineID = pCrypto.encipher(tMachineID)
-    end if
     getMultiuser(pConnectionId).send("LOGIN" && tTicket)
     me.next()
   else
@@ -111,6 +107,9 @@ on binaryDataAuthKeyError me
 end
 
 on binaryDataReceived me, tdata
+  if count(pQueue) = 0 then
+    return 0
+  end if
   tTask = pQueue[1]
   pQueue.deleteAt(1)
   if tTask[#callback] <> VOID then
@@ -134,6 +133,8 @@ on registerCmds me, tBool
   tList["BINDATA_AUTHKEYERROR"] = #binaryDataAuthKeyError
   tList["DISCONNECT"] = #deconstruct
   tList["HELLO"] = #helloReply
+  tList["TICKET"] = #handleMusTicket
+  tList["PING"] = #handlePing
   tList["U_RTS"] = #foo
   if tBool then
     return getMultiuserManager().registerListener(pConnectionId, me.getID(), tList)
@@ -143,6 +144,16 @@ on registerCmds me, tBool
 end
 
 on foo me
+end
+
+on handleMusTicket me, tMsg
+  tMusTicket = tMsg[#content]
+  getObject(#session).set("mus_ticket", tMusTicket)
+end
+
+on handlePing me, tMsg
+  getMultiuser(pConnectionId).send("PONG")
+  me.next()
 end
 
 on helloReply me, tMsg

@@ -250,36 +250,40 @@ on giveDrink me
   [ 14] setlocal 0 .............................. tConnection = getThread(#room).getComponent().getRoomConnection()
   [ 16] getlocal 0 .............................. <tConnection>
   [ 18] pushcons 5 .............................. <"SETSTUFFDATA">
-  [ 20] getparam 0 .............................. <me>
-  [ 22] pusharglist 1 ........................... <me>
-  [ 24] objcall 14 .............................. <me.getID()>
-  [ 26] pushcons 6 .............................. <"/">
-  [ 28] joinstr ................................. <me.getID() & "/">
-  [ 29] pushcons 7 .............................. <"DOOROPEN">
-  [ 31] joinstr ................................. <me.getID() & "/" & "DOOROPEN">
-  [ 32] pushcons 6 .............................. <"/">
-  [ 34] joinstr ................................. <me.getID() & "/" & "DOOROPEN" & "/">
-  [ 35] pushcons 3 .............................. <"TRUE">
-  [ 37] joinstr ................................. <me.getID() & "/" & "DOOROPEN" & "/" & "TRUE">
-  [ 38] pusharglistnoret 3 ...................... <tConnection, "SETSTUFFDATA", me.getID() & "/" & "DOOROPEN" & "/" & "TRUE">
-  [ 40] objcall 72 .............................. tConnection.send("SETSTUFFDATA", me.getID() & "/" & "DOOROPEN" & "/" & "TRUE")
-  [ 42] getlocal 0 .............................. <tConnection>
-  [ 44] pushcons 8 .............................. <"LOOKTO">
-  [ 46] getparam 0 .............................. <me>
-  [ 48] getobjprop 88 ........................... <me.pLocX>
-  [ 50] getparam 0 .............................. <me>
-  [ 52] getobjprop 89 ........................... <me.pLocY>
-  [ 54] joinpadstr .............................. <me.pLocX && me.pLocY>
-  [ 55] pusharglistnoret 3 ...................... <tConnection, "LOOKTO", me.pLocX && me.pLocY>
-  [ 57] objcall 72 .............................. tConnection.send("LOOKTO", me.pLocX && me.pLocY)
-  [ 59] getlocal 0 .............................. <tConnection>
-  [ 61] pushcons 9 .............................. <"CARRYDRINK">
-  [ 63] getparam 0 .............................. <me>
-  [ 65] pusharglist 1 ........................... <me>
-  [ 67] objcall 80 .............................. <me.getDrinkname()>
-  [ 69] pusharglistnoret 3 ...................... <tConnection, "CARRYDRINK", me.getDrinkname()>
-  [ 71] objcall 72 .............................. tConnection.send("CARRYDRINK", me.getDrinkname())
-  [ 73] ret
+  [ 20] pushsymb 48 ............................. <#string>
+  [ 22] getparam 0 .............................. <me>
+  [ 24] pusharglist 1 ........................... <me>
+  [ 26] objcall 14 .............................. <me.getID()>
+  [ 28] pusharglist 1 ........................... <me.getID()>
+  [ 30] extcall 48 .............................. <string(me.getID())>
+  [ 32] pushsymb 48 ............................. <#string>
+  [ 34] pushcons 3 .............................. <"TRUE">
+  [ 36] pusharglist 4 ........................... <[#string: string(me.getID()), #string: "TRUE"]>
+  [ 38] pushproplist ............................ <[#string: string(me.getID()), #string: "TRUE"]>
+  [ 39] pusharglistnoret 3 ...................... <tConnection, "SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"]>
+  [ 41] objcall 72 .............................. tConnection.send("SETSTUFFDATA", [#string: string(me.getID()), #string: "TRUE"])
+  [ 43] getlocal 0 .............................. <tConnection>
+  [ 45] pushcons 6 .............................. <"LOOKTO">
+  [ 47] getparam 0 .............................. <me>
+  [ 49] getobjprop 88 ........................... <me.pLocX>
+  [ 51] getparam 0 .............................. <me>
+  [ 53] getobjprop 89 ........................... <me.pLocY>
+  [ 55] joinpadstr .............................. <me.pLocX && me.pLocY>
+  [ 56] pusharglistnoret 3 ...................... <tConnection, "LOOKTO", me.pLocX && me.pLocY>
+  [ 58] objcall 72 .............................. tConnection.send("LOOKTO", me.pLocX && me.pLocY)
+  [ 60] getlocal 0 .............................. <tConnection>
+  [ 62] pushcons 7 .............................. <"CARRYDRINK">
+  [ 64] pushsymb 48 ............................. <#string>
+  [ 66] getparam 0 .............................. <me>
+  [ 68] pusharglist 1 ........................... <me>
+  [ 70] objcall 80 .............................. <me.getDrinkname()>
+  [ 72] pusharglist 1 ........................... <me.getDrinkname()>
+  [ 74] extcall 48 .............................. <string(me.getDrinkname())>
+  [ 76] pusharglist 2 ........................... <[#string: string(me.getDrinkname())]>
+  [ 78] pushproplist ............................ <[#string: string(me.getDrinkname())]>
+  [ 79] pusharglistnoret 3 ...................... <tConnection, "CARRYDRINK", [#string: string(me.getDrinkname())]>
+  [ 81] objcall 72 .............................. tConnection.send("CARRYDRINK", [#string: string(me.getDrinkname())])
+  [ 83] ret
 end
 
 on getDrinkname me

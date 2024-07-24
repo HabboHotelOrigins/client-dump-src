@@ -121,7 +121,10 @@ on setItemData me, tMsg
   pPhotoId = pItemId
   tAuthId = tMsg[#text].line[1].word[1]
   pPhotoTime = tMsg[#text].line[1].word[2..3]
-  pPhotoText = tMsg[#text].line[2..tMsg[#text].line.count]
+  pPhotoText = EMPTY
+  if tMsg[#text].line[1].word.count > 3 then
+    pPhotoText = tMsg[#text].line[1].word[4..tMsg[#text].line[1].word.count]
+  end if
   pPhotoText = me.convertScandinavian(pPhotoText)
   unregisterMessage(symbol("itemdata_received" & pItemId), me.getID())
   if pLocX > 500 then
